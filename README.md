@@ -2,7 +2,7 @@
 
 Civilization VI: Gathering Storm 的非官方《诡秘之主》模组源码。
 Lua Gameplay / UI、SQL / XML 数据与运行资源均位于 `RedPriestPath/`。
-steam链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3780342356&utm_source=chatgpt.com
+steam链接：https://steamcommunity.com/sharedfiles/filedetails
 
 | 版本 | 资源号 | Git 分支 / 标签 |
 | --- | --- | --- |
