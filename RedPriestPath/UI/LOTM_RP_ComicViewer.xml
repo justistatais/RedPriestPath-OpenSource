@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+    <Container ID="Vignette" Style="FullScreenVignetteConsumer" Hidden="1"/>
+    <Grid ID="Popup" Anchor="C,C" Size="1120,940" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1">
+        <Label ID="Title" Anchor="C,T" Offset="0,18" Style="FontFlair26" FontStyle="glow" ColorSet="ShellHeader" String="LOC_LOTM_COMIC_TITLE"/>
+        <Stack ID="CategoryStack" Anchor="C,T" Offset="0,58" StackGrowth="Right" Padding="8">
+            <GridButton ID="CategoryStart" Size="180,36" Style="MainButton" String="LOC_LOTM_COMIC_START"/>
+            <GridButton ID="CategoryVictory" Hidden="1" Size="180,36" Style="MainButton" String="LOC_LOTM_COMIC_VICTORY"/>
+            <GridButton ID="CategoryDefeat" Hidden="1" Size="180,36" Style="MainButton" String="LOC_LOTM_COMIC_DEFEAT"/>
+        </Stack>
+        <ScrollPanel ID="ComicScroll" Anchor="C,T" Offset="0,104" Size="1060,748" Vertical="1" Horizontal="1" AutoScrollBar="1" ConsumeMouse="1">
+            <ScrollBar Anchor="R,C" Style="ScrollVerticalBar"/>
+            <ScrollBar Anchor="C,B" Style="ScrollHorizontalBar"/>
+            <Image ID="ComicImage" Anchor="L,T" Offset="0,0" Size="1024,1536"/>
+        </ScrollPanel>
+        <Label ID="PageLabel" Anchor="C,B" Offset="0,58" Style="FontNormal16" Align="center"/>
+        <GridButton ID="Previous" Anchor="L,B" Offset="36,22" Size="180,42" Style="MainButton" String="LOC_LOTM_COMIC_PREVIOUS"/>
+        <GridButton ID="Next" Anchor="R,B" Offset="-136,22" Size="180,42" Style="MainButton" String="LOC_LOTM_COMIC_NEXT"/>
+        <Button ID="Close" Anchor="R,T" Offset="-10,10" Style="CloseButtonSmall" ToolTip="LOC_CLOSE"/>
+        <Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+    </Grid>
+</Context>

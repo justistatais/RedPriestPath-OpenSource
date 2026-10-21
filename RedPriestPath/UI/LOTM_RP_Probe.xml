@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+	<GridButton
+		ID="ProbeButton"
+		Anchor="R,B"
+		Offset="310,178"
+		Size="260,42"
+		Style="MainButton"
+		String="LOC_LOTM_RP_PROBE_BUTTON"
+		ToolTip="LOC_LOTM_RP_PROBE_TOOLTIP"
+		Hidden="1"/>
+</Context>

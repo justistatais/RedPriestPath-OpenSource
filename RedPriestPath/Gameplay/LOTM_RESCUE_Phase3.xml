@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Types>
+		<Row Type="UNIT_LOTM_RESCUE_FOOL_SAINT" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_FOOL_ANGEL" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_NIGHT_SAINT" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_NIGHT_ANGEL" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_STORM_SAINT" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_STORM_ANGEL" Kind="KIND_UNIT"/>
+		<Row Type="ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION" Kind="KIND_ABILITY"/>
+	</Types>
+	<Tags>
+		<Row Tag="CLASS_LOTM_RESCUE_GUARDIAN" Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	<UnitAbilities>
+		<Row UnitAbilityType="ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION"
+			Name="LOC_ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION_NAME"
+			Description="LOC_ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION_DESCRIPTION"/>
+	</UnitAbilities>
+	<UnitAbilityModifiers>
+		<Row UnitAbilityType="ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION" ModifierId="CANNOT_ATTACK"/>
+	</UnitAbilityModifiers>
+	<Units>
+		<Row UnitType="UNIT_LOTM_RESCUE_FOOL_SAINT" Name="LOC_UNIT_LOTM_RESCUE_FOOL_SAINT_NAME" Description="LOC_UNIT_LOTM_RESCUE_SAINT_DESCRIPTION" BaseSightRange="3" BaseMoves="3" Combat="90" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_FOOL_ANGEL" Name="LOC_UNIT_LOTM_RESCUE_FOOL_ANGEL_NAME" Description="LOC_UNIT_LOTM_RESCUE_ANGEL_DESCRIPTION" BaseSightRange="4" BaseMoves="4" Combat="130" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_NIGHT_SAINT" Name="LOC_UNIT_LOTM_RESCUE_NIGHT_SAINT_NAME" Description="LOC_UNIT_LOTM_RESCUE_SAINT_DESCRIPTION" BaseSightRange="3" BaseMoves="3" Combat="90" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_NIGHT_ANGEL" Name="LOC_UNIT_LOTM_RESCUE_NIGHT_ANGEL_NAME" Description="LOC_UNIT_LOTM_RESCUE_ANGEL_DESCRIPTION" BaseSightRange="4" BaseMoves="4" Combat="130" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_STORM_SAINT" Name="LOC_UNIT_LOTM_RESCUE_STORM_SAINT_NAME" Description="LOC_UNIT_LOTM_RESCUE_SAINT_DESCRIPTION" BaseSightRange="3" BaseMoves="3" Combat="90" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_STORM_ANGEL" Name="LOC_UNIT_LOTM_RESCUE_STORM_ANGEL_NAME" Description="LOC_UNIT_LOTM_RESCUE_ANGEL_DESCRIPTION" BaseSightRange="4" BaseMoves="4" Combat="130" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+	</Units>
+	<TypeTags>
+		<Row Type="UNIT_LOTM_RESCUE_FOOL_SAINT" Tag="CLASS_LOTM_RESCUE_GUARDIAN"/>
+		<Row Type="UNIT_LOTM_RESCUE_FOOL_ANGEL" Tag="CLASS_LOTM_RESCUE_GUARDIAN"/>
+		<Row Type="UNIT_LOTM_RESCUE_NIGHT_SAINT" Tag="CLASS_LOTM_RESCUE_GUARDIAN"/>
+		<Row Type="UNIT_LOTM_RESCUE_NIGHT_ANGEL" Tag="CLASS_LOTM_RESCUE_GUARDIAN"/>
+		<Row Type="UNIT_LOTM_RESCUE_STORM_SAINT" Tag="CLASS_LOTM_RESCUE_GUARDIAN"/>
+		<Row Type="UNIT_LOTM_RESCUE_STORM_ANGEL" Tag="CLASS_LOTM_RESCUE_GUARDIAN"/>
+		<!-- The legacy non-aggression Ability remains registered for save migration,
+		     but is no longer granted to new guardians. -->
+	</TypeTags>
+</GameInfo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+	<GridButton ID="OwnPillageButton" Anchor="R,B" Offset="310,226" Size="300,42" Style="MainButton"
+		String="LOC_LOTM_RESCUE_ARTIFACT_EMBER_PILLAGE_BUTTON"
+		ToolTip="LOC_LOTM_RESCUE_ARTIFACT_EMBER_PILLAGE_TOOLTIP" Hidden="1"/>
+</Context>

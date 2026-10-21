@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+	<Container ID="Root" Anchor="C,C" Size="760,460" ConsumeMouse="1">
+		<Image ID="ModalBG" Size="760,460" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1"/>
+		<Grid Size="parent,48" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40">
+			<Label ID="Title" Anchor="C,C" Style="FontFlair26" FontStyle="glow" ColorSet="ShellHeader" String="LOC_LOTM_WORLD_GATHERING_TITLE"/>
+		</Grid>
+		<Grid Offset="20,68" Size="280,292" Texture="Controls_SubContainer3" SliceCorner="10,10" SliceSize="1,1" SliceTextureSize="40,40" Color="0,0,0,60">
+			<Image ID="ItemIcon" Anchor="C,C" Size="240,240"/>
+		</Grid>
+		<Grid Offset="312,68" Size="428,292" Texture="Controls_SubContainer3" SliceCorner="10,10" SliceSize="1,1" SliceTextureSize="40,40" Color="0,0,0,60">
+			<Label ID="Intro" Anchor="C,T" Offset="0,24" Size="378,78" WrapWidth="378" Align="Center" Style="FontNormal20" FontStyle="shadow" ColorSet="ShellHeader"/>
+			<Label ID="Item" Anchor="C,T" Offset="0,104" Size="378,48" WrapWidth="378" Align="Center" Style="FontFlair26" FontStyle="glow" ColorSet="ShellHeader"/>
+			<Label ID="Question" Anchor="C,T" Offset="0,162" Size="378,54" WrapWidth="378" Align="Center" Style="FontNormal20" FontStyle="shadow" ColorSet="ShellHeader" String="LOC_LOTM_WORLD_GATHERING_QUESTION"/>
+			<Label ID="Price" Anchor="C,T" Offset="0,225" Size="378,52" WrapWidth="378" Align="Center" Style="FontNormal20" FontStyle="shadow" ColorSet="ShellHeader"/>
+		</Grid>
+		<GridButton ID="BuyButton" Anchor="C,B" Offset="-125,25" Size="220,48" Style="ButtonConfirm" String="LOC_LOTM_WORLD_BUY"/>
+		<GridButton ID="LeaveButton" Anchor="C,B" Offset="125,25" Size="220,48" Style="MainButton" String="LOC_LOTM_WORLD_LEAVE"/>
+		<Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+	</Container>
+</Context>

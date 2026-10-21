@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+	<GridButton ID="OpenButton" Anchor="R,T" Offset="22,142" Size="150,38"
+		Style="MainButton" String="LOC_LOTM_TP_PANEL_OPEN" Hidden="1"/>
+	<Container ID="Panel" Anchor="R,T" Offset="18,188" Size="440,330" Hidden="1" ConsumeMouse="1">
+		<Image Size="440,330" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1"/>
+		<Grid Size="parent,46" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40">
+			<Label Anchor="C,C" Style="FontFlair24" String="LOC_LOTM_TP_DETAILS_TITLE"/>
+		</Grid>
+		<Button ID="CloseButton" Anchor="R,T" Offset="10,8" Style="CloseButtonSmall" ToolTip="LOC_CLOSE"/>
+		<Label ID="SequenceLabel" Anchor="L,T" Offset="24,66" Style="FontNormal18"/>
+		<Label ID="FakeGoldLabel" Anchor="L,T" Offset="24,102" Style="FontNormal18"/>
+		<Label ID="TargetLabel" Anchor="L,T" Offset="24,138" WrapWidth="390" Style="FontNormal16"/>
+		<GridButton ID="TargetButton" Anchor="L,T" Offset="24,178" Size="188,42"
+			Style="ButtonConfirm" String="LOC_LOTM_TP_TARGET_NEXT"/>
+		<GridButton ID="AbilityButton" Anchor="R,T" Offset="24,178" Size="188,42"
+			Style="ButtonConfirm" String="LOC_LOTM_TP_ABILITY_NEXT" Hidden="1"/>
+		<GridButton ID="RedeemButton" Anchor="L,T" Offset="24,224" Size="388,36"
+			Style="ButtonConfirm" String="LOC_LOTM_TP_REDEEM_FAKE_GOLD"/>
+		<Label ID="ProbeLabel" Anchor="L,T" Offset="24,270" WrapWidth="390" Style="FontNormal14"/>
+		<Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+	</Container>
+	<Container ID="FinalPopup" Anchor="C,C" Size="700,330" Hidden="1" ConsumeMouse="1">
+		<Image Size="700,330" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1"/>
+		<Grid Size="parent,50" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40">
+			<Label Anchor="C,C" Style="FontFlair26" String="LOC_LOTM_TP_FINAL_TITLE"/>
+		</Grid>
+		<Label Anchor="C,T" Offset="0,78" WrapWidth="640" Align="Center" Style="FontNormal18"
+			String="LOC_LOTM_TP_FINAL_BODY"/>
+		<GridButton ID="FinalTechButton" Anchor="L,B" Offset="28,28" Size="200,54"
+			Style="ButtonConfirm" String="LOC_LOTM_TP_FINAL_TECH"/>
+		<GridButton ID="FinalFaithButton" Anchor="C,B" Offset="0,28" Size="200,54"
+			Style="ButtonConfirm" String="LOC_LOTM_TP_FINAL_FAITH"/>
+		<GridButton ID="FinalCultureButton" Anchor="R,B" Offset="28,28" Size="200,54"
+			Style="ButtonConfirm" String="LOC_LOTM_TP_FINAL_CULTURE"/>
+		<Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+	</Container>
+</Context>

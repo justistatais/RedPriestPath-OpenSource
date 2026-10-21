@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_GAMEMODE_LOTM_RESCUE_NAME" Language="zh_Hans_CN"><Text>救赎模式</Text></Row>
+		<Row Tag="LOC_GAMEMODE_LOTM_RESCUE_DESCRIPTION" Language="zh_Hans_CN"><Text>生成中央封印区与愚者、黑夜、风暴三处预定区域，并保持四块区域的实时视野。中央区域开局直接建立中世纪星空降临封印城。本模式仅开放救赎胜利，其他胜利方式停用。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MAJOR_ALLIANCE_NAME" Language="zh_Hans_CN"><Text>救赎模式：主要文明永久结盟</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MAJOR_ALLIANCE_DESCRIPTION" Language="zh_Hans_CN"><Text>默认开启。救赎模式开局后，所有存活主要文明建立引擎级永久联盟，任何一方都不能宣战，AI主动宣战因此被直接禁止。若希望保留玩家战争自由，请在开局前关闭；关闭后仍会压低AI战争行动并纠正AI主动战争，但不再提供引擎级绝对禁止。</Text></Row>
+		<Row Tag="LOC_CIVILIZATION_LOTM_RESCUE_TEST_NAME" Language="zh_Hans_CN"><Text>星空降临测试势力</Text></Row>
+		<Row Tag="LOC_CIVILIZATION_LOTM_RESCUE_TEST_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式阶段2A专用隐藏势力。</Text></Row>
+		<Row Tag="LOC_CIVILIZATION_LOTM_RESCUE_TEST_ADJECTIVE" Language="zh_Hans_CN"><Text>星空降临</Text></Row>
+		<Row Tag="LOC_LEADER_LOTM_RESCUE_TEST_NAME" Language="zh_Hans_CN"><Text>未知</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_TEST_ABILITY_NAME" Language="zh_Hans_CN"><Text>中央封印</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_TEST_ABILITY_DESCRIPTION" Language="zh_Hans_CN"><Text>阶段2A引擎验证专用；不参与正常城邦使者系统。</Text></Row>
+		<Row Tag="LOC_CITY_NAME_LOTM_RESCUE_TEST" Language="zh_Hans_CN"><Text>星空降临</Text></Row>
+		<Row Tag="LOC_BUILDING_LOTM_RESCUE_SEAL_CORE_NAME" Language="zh_Hans_CN"><Text>中央封印核心</Text></Row>
+		<Row Tag="LOC_LOTM_RP_MOD_NAME" Language="zh_Hans_CN">
+			<Text>诡秘之主单位与玩法</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_MOD_TEASER" Language="zh_Hans_CN">
+			<Text>红祭司、完美者及黑皇帝序列9–0三途径候选版。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_MOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>为“风云变幻”规则集增加逐人类玩家、互斥生效的红祭司、完美者与黑皇帝途径选择。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_NAME" Language="zh_Hans_CN">
+			<Text>途径</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>为该人类玩家独立选择途径。AI玩家应保持为“无”。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_NONE_NAME" Language="zh_Hans_CN">
+			<Text>无</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_NONE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>该玩家不参与任何途径。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_RED_PRIEST_NAME" Language="zh_Hans_CN">
+			<Text>红祭司</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_RED_PRIEST_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>该人类玩家参与红祭司途径。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_PP_PATH_NAME" Language="zh_Hans_CN"><Text>完美者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_PATH_DESCRIPTION" Language="zh_Hans_CN"><Text>该人类玩家选择完美者途径；当前开放序列9至序列0。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PATH_NAME" Language="zh_Hans_CN"><Text>黑皇帝</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PATH_DESCRIPTION" Language="zh_Hans_CN"><Text>该人类玩家选择黑皇帝途径；当前开放序列9至序列0。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_NAME" Language="zh_Hans_CN"><Text>《诡秘之主》模组语言</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_DESCRIPTION" Language="zh_Hans_CN"><Text>选择本局中本模组全部名称、说明、按钮和说明书使用的语言。默认中文；开始游戏后不可更改。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_NAME" Language="zh_Hans_CN"><Text>简体中文（默认）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_DESCRIPTION" Language="zh_Hans_CN"><Text>本局使用简体中文显示《诡秘之主》模组文本。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_NAME" Language="zh_Hans_CN"><Text>English</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION" Language="zh_Hans_CN"><Text>本局使用英文显示《诡秘之主》模组文本。</Text></Row>
+	</LocalizedText>
+</GameData>

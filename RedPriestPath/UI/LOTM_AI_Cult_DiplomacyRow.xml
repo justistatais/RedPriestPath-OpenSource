@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\..\..\CivTech\Libs\ForgeUI\ForgeUI_Assets\Controls.xsd" Style="FontNormal16" FontStyle="Shadow">
+ <Container ID="Top" Size="auto,auto" AutoSizePadding="0,2">
+  <ScrollTextField Offset="60,10" Style="FontNormal16" Size="140,16" String="LOC_LOTM_CULT_DIPLO_LABEL"/>
+  <Container Size="330,34" Offset="214,5">
+   <Image ID="CultIcon" Offset="0,1" Size="32,32"/>
+   <Label ID="CultText" Offset="40,7" Style="FontNormal16" WrapWidth="285"/>
+  </Container>
+ </Container>
+</Context>

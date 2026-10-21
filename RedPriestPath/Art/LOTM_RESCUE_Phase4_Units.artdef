@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetObjects..ArtDefSet>
+	<m_Version><major>4</major><minor>0</minor><build>762</build><revision>531</revision></m_Version>
+	<m_TemplateName text="Units"/>
+	<m_RootCollections>
+		<Element>
+			<m_CollectionName text="Units"/>
+			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+			<Element><m_Fields><m_Values><Element class="AssetObjects..ArtDefReferenceValue"><m_ElementName text="UNIT_WARRIOR"/><m_RootCollectionName text="Units"/><m_ArtDefPath text="Units.artdef"/><m_CollectionIsLocked>true</m_CollectionIsLocked><m_TemplateName text="Units"/><m_ParamName text="ProxyUnit"/></Element></m_Values></m_Fields><m_ChildCollections/><m_Name text="UNIT_LOTM_RESCUE_LOST_CONTROL_LOW"/><m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections></Element>
+			<Element><m_Fields><m_Values><Element class="AssetObjects..ArtDefReferenceValue"><m_ElementName text="UNIT_SWORDSMAN"/><m_RootCollectionName text="Units"/><m_ArtDefPath text="Units.artdef"/><m_CollectionIsLocked>true</m_CollectionIsLocked><m_TemplateName text="Units"/><m_ParamName text="ProxyUnit"/></Element></m_Values></m_Fields><m_ChildCollections/><m_Name text="UNIT_LOTM_RESCUE_LOST_CONTROL_MID"/><m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections></Element>
+			<Element><m_Fields><m_Values><Element class="AssetObjects..ArtDefReferenceValue"><m_ElementName text="UNIT_INFANTRY"/><m_RootCollectionName text="Units"/><m_ArtDefPath text="Units.artdef"/><m_CollectionIsLocked>true</m_CollectionIsLocked><m_TemplateName text="Units"/><m_ParamName text="ProxyUnit"/></Element></m_Values></m_Fields><m_ChildCollections/><m_Name text="UNIT_LOTM_RESCUE_LOST_CONTROL_HIGH"/><m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections></Element>
+		</Element>
+	</m_RootCollections>
+</AssetObjects..ArtDefSet>

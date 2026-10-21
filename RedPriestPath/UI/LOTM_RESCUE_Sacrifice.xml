@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+ <GridButton ID="SacrificeButton" Anchor="R,B" Offset="310,274" Size="300,42" Style="MainButton" Hidden="1"/>
+</Context>

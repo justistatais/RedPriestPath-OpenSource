@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Types>
+		<Row Type="MODIFIER_LOTM_RP_MAJOR_OPPOSING_PLAYERS_ATTACH_MODIFIER" Kind="KIND_MODIFIER"/>
+	</Types>
+
+	<DynamicModifiers>
+		<!-- Firaxis victory rules use COLLECTION_MAJOR_OPPOSING_PLAYERS to enumerate
+		     non-team major players. Unlike COLLECTION_ALL_PLAYERS it never includes the owner. -->
+		<Row>
+			<ModifierType>MODIFIER_LOTM_RP_MAJOR_OPPOSING_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<CollectionType>COLLECTION_MAJOR_OPPOSING_PLAYERS</CollectionType>
+			<EffectType>EFFECT_ATTACH_MODIFIER</EffectType>
+		</Row>
+	</DynamicModifiers>
+
+	<TypeTags>
+		<Row Type="ABILITY_LOTM_RP_HUNTER_INSTINCT" Tag="CLASS_RECON"/>
+		<Row Type="ABILITY_LOTM_RP_PROVOKER" Tag="CLASS_RECON"/>
+		<Row Type="ABILITY_LOTM_RP_PROVOKER_GARRISONED" Tag="CLASS_RECON"/>
+		<!-- Only combat units can attack a city; this meta-class is used by Firaxis DLC abilities. -->
+		<Row Type="ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS" Tag="CLASS_ALL_COMBAT_UNITS"/>
+	</TypeTags>
+
+	<UnitAbilities>
+		<Row
+			UnitAbilityType="ABILITY_LOTM_RP_HUNTER_INSTINCT"
+			Name="LOC_ABILITY_LOTM_RP_HUNTER_INSTINCT_NAME"
+			Description="LOC_ABILITY_LOTM_RP_HUNTER_INSTINCT_DESCRIPTION"
+			Inactive="true"
+			Permanent="true"/>
+		<Row
+			UnitAbilityType="ABILITY_LOTM_RP_PROVOKER"
+			Name="LOC_ABILITY_LOTM_RP_PROVOKER_NAME"
+			Description="LOC_ABILITY_LOTM_RP_PROVOKER_DESCRIPTION"
+			Inactive="true"
+			Permanent="true"/>
+		<Row
+			UnitAbilityType="ABILITY_LOTM_RP_PROVOKER_GARRISONED"
+			Name="LOC_ABILITY_LOTM_RP_PROVOKER_GARRISONED_NAME"
+			Description="LOC_ABILITY_LOTM_RP_PROVOKER_GARRISONED_DESCRIPTION"
+			Inactive="true"/>
+		<Row
+			UnitAbilityType="ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS"
+			Name="LOC_ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS_NAME"
+			Description="LOC_ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS_DESCRIPTION"
+			Inactive="true"
+			Permanent="true"/>
+	</UnitAbilities>
+
+	<UnitAbilityModifiers>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_HUNTER_INSTINCT" ModifierId="LOTM_RP_MOD_HUNTER_SIGHT"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_HUNTER_INSTINCT" ModifierId="LOTM_RP_MOD_HUNTER_FOREST_MOVE"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_HUNTER_INSTINCT" ModifierId="LOTM_RP_MOD_HUNTER_HILLS_MOVE"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_HUNTER_INSTINCT" ModifierId="LOTM_RP_MOD_HUNTER_COMBAT"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_HUNTER_INSTINCT" ModifierId="LOTM_RP_MOD_HUNTER_MOVEMENT"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_PROVOKER" ModifierId="LOTM_RP_MOD_PROVOKER_AURA"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_PROVOKER" ModifierId="LOTM_RP_MOD_PROVOKER_MELEE_DEFENSE"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_PROVOKER_GARRISONED" ModifierId="LOTM_RP_MOD_PROVOKER_GARRISON_STRENGTH"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS" ModifierId="LOTM_RP_MOD_CONQUEST_BYPASS_WALLS"/>
+		<Row UnitAbilityType="ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS" ModifierId="LOTM_RP_MOD_CONQUEST_PARTICLE_BEAM_STRENGTH"/>
+	</UnitAbilityModifiers>
+
+	<Modifiers>
+		<!-- Player-owned permanent grants survive sequence changes and hero respawns. -->
+		<Row>
+			<ModifierId>LOTM_RP_MOD_GRANT_HUNTER_INSTINCT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</SubjectRequirementSetId>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_GRANT_PROVOKER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</SubjectRequirementSetId>
+			<Permanent>true</Permanent>
+		</Row>
+
+		<Row>
+			<ModifierId>LOTM_RP_MOD_HUNTER_SIGHT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_SIGHT</ModifierType>
+		</Row>
+		<!-- Firaxis' FOREST movement category covers both Woods and Rainforest. -->
+		<Row>
+			<ModifierId>LOTM_RP_MOD_HUNTER_FOREST_MOVE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_TERRAIN_COST</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_HUNTER_HILLS_MOVE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_TERRAIN_COST</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_HUNTER_COMBAT</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_ATTACKING_BARB_OR_WOUNDED</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_HUNTER_MOVEMENT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT</ModifierType>
+		</Row>
+
+		<!-- Varu-style owner-centered aura. Both levels are capped to one stack. -->
+		<Row>
+			<ModifierId>LOTM_RP_MOD_PROVOKER_AURA</ModifierId>
+			<ModifierType>MODIFIER_ALL_UNITS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_ADJACENT_ENEMY</SubjectRequirementSetId>
+			<SubjectStackLimit>1</SubjectStackLimit>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_PROVOKER_AURA_DEBUFF</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectStackLimit>1</SubjectStackLimit>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_PROVOKER_MELEE_DEFENSE</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_DEFENDING_MELEE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_PROVOKER_GARRISON_STRENGTH</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectStackLimit>1</SubjectStackLimit>
+		</Row>
+
+		<!-- Legacy rc.16 direct modifiers stay defined at zero so existing saves can resolve
+		     their attached IDs without stacking with the corrected friendly chains below. -->
+		<Row>
+			<ModifierId>LOTM_RP_MOD_GRANT_IRONBLOOD_LEGION</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_IRONBLOOD_MOVEMENT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT</ModifierType>
+			<Permanent>true</Permanent>
+		</Row>
+		<!-- Sequence 4 corrected friendly bonuses: enumerate the owner's units first, then
+		     attach the same per-unit effects used by Firaxis' global combat bonuses. -->
+		<Row>
+			<ModifierId>LOTM_RP_MOD_IRONBLOOD_FRIENDLY_STRENGTH_AURA_V2</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER</ModifierType>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_IRONBLOOD_FRIENDLY_STRENGTH_EFFECT_V2</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectStackLimit>1</SubjectStackLimit>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_IRONBLOOD_FRIENDLY_MOVEMENT_AURA_V2</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER</ModifierType>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_IRONBLOOD_FRIENDLY_MOVEMENT_EFFECT_V2</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT</ModifierType>
+			<SubjectStackLimit>1</SubjectStackLimit>
+		</Row>
+
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_PROVOKER_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_PYROMANIAC_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_CONSPIRATOR_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_REAPER_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_IRONBLOOD_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_WAR_BISHOP_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_WEATHER_WARLOCK_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_CONQUEROR_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_WAR_FESTIVAL_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_ALLOW_UNCONSECRATED_WAR_FESTIVAL_PROJECT</ModifierId><ModifierType>MODIFIER_PLAYER_ALLOW_PROJECT</ModifierType><Permanent>true</Permanent></Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_WAR_BISHOP_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER</ModifierType>
+			<OwnerRequirementSetId>LOTM_RP_REQSET_PLAYER_AT_WAR</OwnerRequirementSetId>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_WAR_BISHOP_WEARINESS</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_WAR_WEARINESS</ModifierType>
+			<OwnerRequirementSetId>LOTM_RP_REQSET_PLAYER_AT_WAR</OwnerRequirementSetId>
+			<Permanent>true</Permanent>
+		</Row>
+
+		<!-- Legacy rc.16/17 enemy auras remain resolvable, but their children are zeroed below.
+		     This immediately neutralizes stale self-debuffs in upgraded saves. -->
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_AURA</ModifierId><ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType><SubjectRequirementSetId>LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER</SubjectRequirementSetId><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_AURA</ModifierId><ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType><SubjectRequirementSetId>LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER</SubjectRequirementSetId><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_AURA</ModifierId><ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType><SubjectRequirementSetId>LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER</SubjectRequirementSetId><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS</ModifierId><ModifierType>MODIFIER_PLAYER_ADJUST_WAR_WEARINESS</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+		<!-- Corrected enemy auras: the collection itself excludes the owner and teammates;
+		     the relationship requirement then keeps only opposing majors currently at war. -->
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_AURA_V2</ModifierId><ModifierType>MODIFIER_LOTM_RP_MAJOR_OPPOSING_PLAYERS_ATTACH_MODIFIER</ModifierType><SubjectRequirementSetId>LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER</SubjectRequirementSetId><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_AURA_V2</ModifierId><ModifierType>MODIFIER_LOTM_RP_MAJOR_OPPOSING_PLAYERS_ATTACH_MODIFIER</ModifierType><SubjectRequirementSetId>LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER</SubjectRequirementSetId><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_AURA_V2</ModifierId><ModifierType>MODIFIER_LOTM_RP_MAJOR_OPPOSING_PLAYERS_ATTACH_MODIFIER</ModifierType><SubjectRequirementSetId>LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER</SubjectRequirementSetId><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_V2</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_V2</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_V2</ModifierId><ModifierType>MODIFIER_PLAYER_ADJUST_WAR_WEARINESS</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+		<!-- Legacy rc.16 friendly movement ID is neutralized for save compatibility. -->
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT_AURA_V2</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT_EFFECT_V2</ModifierId><ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT</ModifierType><SubjectStackLimit>1</SubjectStackLimit></Row>
+
+		<!-- Sequence 1 uses both halves of Firaxis' GDR Particle Beam Siege Cannon:
+		     full ranged damage to districts plus five times its +30 district strength. -->
+		<Row><ModifierId>LOTM_RP_MOD_GRANT_CONQUEST_BYPASS_WALLS</ModifierId><ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType><Permanent>true</Permanent></Row>
+		<Row><ModifierId>LOTM_RP_MOD_CONQUEST_BYPASS_WALLS</ModifierId><ModifierType>MODIFIER_PLAYER_UNIT_IGNORE_RANGED_VS_DISTRICT_PENALTY</ModifierType></Row>
+		<Row><ModifierId>LOTM_RP_MOD_CONQUEST_PARTICLE_BEAM_STRENGTH</ModifierId><ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType><SubjectRequirementSetId>SIEGE_LASER_STRENGTH_REQUIREMENTS</SubjectRequirementSetId></Row>
+
+		<!-- Sequence 0 adds +800% on top of inherited Sequence 3's +100%, so the
+		     cumulative wartime result is +900%: ten times peacetime Production. -->
+		<Row><ModifierId>LOTM_RP_MOD_RED_PRIEST_WAR_PRODUCTION</ModifierId><ModifierType>MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER</ModifierType><OwnerRequirementSetId>LOTM_RP_REQSET_PLAYER_AT_WAR</OwnerRequirementSetId><Permanent>true</Permanent></Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row ModifierId="LOTM_RP_MOD_GRANT_HUNTER_INSTINCT" Name="AbilityType" Value="ABILITY_LOTM_RP_HUNTER_INSTINCT"/>
+		<Row ModifierId="LOTM_RP_MOD_GRANT_PROVOKER" Name="AbilityType" Value="ABILITY_LOTM_RP_PROVOKER"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_SIGHT" Name="Amount" Value="5"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_FOREST_MOVE" Name="Ignore" Value="true"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_FOREST_MOVE" Name="Type" Value="FOREST"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_HILLS_MOVE" Name="Ignore" Value="true"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_HILLS_MOVE" Name="Type" Value="HILLS"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_COMBAT" Name="Amount" Value="30"/>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_MOVEMENT" Name="Amount" Value="2"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_AURA" Name="ModifierId" Value="LOTM_RP_MOD_PROVOKER_AURA_DEBUFF"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_AURA_DEBUFF" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_MELEE_DEFENSE" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_GARRISON_STRENGTH" Name="Amount" Value="40"/>
+		<Row ModifierId="LOTM_RP_MOD_GRANT_IRONBLOOD_LEGION" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_IRONBLOOD_MOVEMENT" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_STRENGTH_AURA_V2" Name="ModifierId" Value="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_STRENGTH_EFFECT_V2"/>
+		<Row ModifierId="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_STRENGTH_EFFECT_V2" Name="Amount" Value="30"/>
+		<Row ModifierId="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_MOVEMENT_AURA_V2" Name="ModifierId" Value="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_MOVEMENT_EFFECT_V2"/>
+		<Row ModifierId="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_MOVEMENT_EFFECT_V2" Name="Amount" Value="3"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_PROVOKER_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_PROVOKER_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_PYROMANIAC_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_PYROMANIAC_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_CONSPIRATOR_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_CONSPIRATOR_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_REAPER_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_REAPER_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_IRONBLOOD_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_WAR_BISHOP_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_WAR_BISHOP_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_WEATHER_WARLOCK_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_CONQUEROR_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_CONQUEROR_POTION"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_WAR_FESTIVAL_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_WAR_FESTIVAL"/>
+		<Row ModifierId="LOTM_RP_MOD_ALLOW_UNCONSECRATED_WAR_FESTIVAL_PROJECT" Name="ProjectType" Value="PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED"/>
+		<Row ModifierId="LOTM_RP_MOD_WAR_BISHOP_PRODUCTION" Name="YieldType" Value="YIELD_PRODUCTION"/>
+		<Row ModifierId="LOTM_RP_MOD_WAR_BISHOP_PRODUCTION" Name="Amount" Value="100"/>
+		<!-- Negative values reduce weariness; Firaxis uses -100 for full immunity. -->
+		<Row ModifierId="LOTM_RP_MOD_WAR_BISHOP_WEARINESS" Name="Amount" Value="-100"/>
+		<Row ModifierId="LOTM_RP_MOD_WAR_BISHOP_WEARINESS" Name="Overall" Value="true"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_AURA" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_AURA" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_AURA" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS" Name="Overall" Value="true"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_AURA_V2" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_V2"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_AURA_V2" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_V2"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_AURA_V2" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_V2"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_V2" Name="Amount" Value="-20"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_MOVEMENT_V2" Name="Amount" Value="-2"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_V2" Name="Amount" Value="100"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_WEARINESS_V2" Name="Overall" Value="true"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT" Name="Amount" Value="0"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT_AURA_V2" Name="ModifierId" Value="LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT_EFFECT_V2"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_FRIENDLY_MOVEMENT_EFFECT_V2" Name="Amount" Value="2"/>
+		<Row ModifierId="LOTM_RP_MOD_GRANT_CONQUEST_BYPASS_WALLS" Name="AbilityType" Value="ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS"/>
+		<Row ModifierId="LOTM_RP_MOD_CONQUEST_BYPASS_WALLS" Name="Ignore" Value="true"/>
+		<Row ModifierId="LOTM_RP_MOD_CONQUEST_PARTICLE_BEAM_STRENGTH" Name="Amount" Value="150"/>
+		<Row ModifierId="LOTM_RP_MOD_RED_PRIEST_WAR_PRODUCTION" Name="YieldType" Value="YIELD_PRODUCTION"/>
+		<Row ModifierId="LOTM_RP_MOD_RED_PRIEST_WAR_PRODUCTION" Name="Amount" Value="800"/>
+	</ModifierArguments>
+
+	<RequirementSets>
+		<Row RequirementSetId="LOTM_RP_REQSET_ATTACKING_BARB_OR_WOUNDED" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_OPPONENT_BARB_OR_WOUNDED" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_ADJACENT_ENEMY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_DEFENDING_MELEE" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_PLAYER_AT_WAR" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+	</RequirementSets>
+
+	<RequirementSetRequirements>
+		<Row RequirementSetId="LOTM_RP_REQSET_ATTACKING_BARB_OR_WOUNDED" RequirementId="LOTM_RP_REQUIRES_ATTACKING"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_ATTACKING_BARB_OR_WOUNDED" RequirementId="LOTM_RP_REQUIRES_OPPONENT_BARB_OR_WOUNDED"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_OPPONENT_BARB_OR_WOUNDED" RequirementId="LOTM_RP_REQUIRES_OPPONENT_BARBARIAN"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_OPPONENT_BARB_OR_WOUNDED" RequirementId="LOTM_RP_REQUIRES_OPPONENT_WOUNDED"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_ADJACENT_ENEMY" RequirementId="LOTM_RP_REQUIRES_ADJACENT_OWNER_AT_WAR"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_DEFENDING_MELEE" RequirementId="LOTM_RP_REQUIRES_DEFENDING"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_DEFENDING_MELEE" RequirementId="LOTM_RP_REQUIRES_MELEE_COMBAT"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_PLAYER_AT_WAR" RequirementId="LOTM_RP_REQUIRES_PLAYER_AT_WAR"/>
+		<Row RequirementSetId="LOTM_RP_REQSET_MAJOR_AT_WAR_WITH_OWNER" RequirementId="LOTM_RP_REQUIRES_NOT_AT_PEACE_WITH_OWNER"/>
+	</RequirementSetRequirements>
+
+	<Requirements>
+		<Row RequirementId="LOTM_RP_REQUIRES_ATTACKING" RequirementType="REQUIREMENT_PLAYER_IS_ATTACKING"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_OPPONENT_BARB_OR_WOUNDED" RequirementType="REQUIREMENT_REQUIREMENTSET_IS_MET"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_OPPONENT_BARBARIAN" RequirementType="REQUIREMENT_OPPONENT_IS_BARBARIAN"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_OPPONENT_WOUNDED" RequirementType="REQUIREMENT_OPPONENT_IS_WOUNDED"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_ADJACENT_OWNER_AT_WAR" RequirementType="REQUIREMENT_PLOT_ADJACENT_TO_OWNER_AT_WAR"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_DEFENDING" RequirementType="REQUIREMENT_PLAYER_IS_ATTACKING" Inverse="true"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_MELEE_COMBAT" RequirementType="REQUIREMENT_COMBAT_TYPE_MATCHES"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_PLAYER_AT_WAR" RequirementType="REQUIREMENT_PLAYER_IS_AT_WAR"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_NOT_AT_PEACE_WITH_OWNER" RequirementType="REQUIREMENT_PLAYER_IS_AT_PEACE" Inverse="true"/>
+	</Requirements>
+
+	<RequirementArguments>
+		<Row RequirementId="LOTM_RP_REQUIRES_OPPONENT_BARB_OR_WOUNDED" Name="RequirementSetId" Value="LOTM_RP_REQSET_OPPONENT_BARB_OR_WOUNDED"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_ADJACENT_OWNER_AT_WAR" Name="MinDistance" Value="1"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_ADJACENT_OWNER_AT_WAR" Name="MaxDistance" Value="1"/>
+		<Row RequirementId="LOTM_RP_REQUIRES_MELEE_COMBAT" Name="CombatType" Value="COMBAT_MELEE"/>
+	</RequirementArguments>
+
+	<ModifierStrings>
+		<Row ModifierId="LOTM_RP_MOD_HUNTER_COMBAT" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_HUNTER_COMBAT"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_AURA_DEBUFF" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_PROVOKER_AURA"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_MELEE_DEFENSE" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_PROVOKER_DEFENSE"/>
+		<Row ModifierId="LOTM_RP_MOD_PROVOKER_GARRISON_STRENGTH" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_PROVOKER_GARRISON"/>
+		<Row ModifierId="LOTM_RP_MOD_IRONBLOOD_FRIENDLY_STRENGTH_EFFECT_V2" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_IRONBLOOD_STRENGTH"/>
+		<Row ModifierId="LOTM_RP_MOD_WEATHER_ENEMY_STRENGTH_V2" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_WEATHER_ENEMY_STRENGTH"/>
+		<Row ModifierId="LOTM_RP_MOD_CONQUEST_BYPASS_WALLS" Context="Preview" Text="LOC_LOTM_RP_PREVIEW_CONQUEST_BYPASS_WALLS"/>
+	</ModifierStrings>
+</GameInfo>

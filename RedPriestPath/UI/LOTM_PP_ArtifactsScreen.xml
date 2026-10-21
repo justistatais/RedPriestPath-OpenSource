@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context FontStyle="Stroke" Hidden="1">
+ <Instance Name="LOTM_PP_ArtifactLaunchItem">
+  <Button ID="LaunchButton" Anchor="L,C" Size="49,49" Texture="LaunchBar_Hook_GovernmentButton" StateOffsetIncrement="0,49" ToolTip="LOC_LOTM_PP_ARTIFACTS_TITLE">
+   <Image ID="LaunchIcon" Size="40,40" Anchor="C,C"/>
+  </Button>
+ </Instance>
+
+ <!-- Firaxis GreatWorksOverview.xml instances, kept in this independent context. -->
+ <Instance Name="GreatWorkSlot">
+  <Container ID="TopControl" Size="248,150">
+   <Button ID="DefaultBG" Texture="GreatWorks_MuseumSlot" Size="248,150" NoStateChange="true"/>
+   <Button ID="HighlightedBG" Offset="2,2" Texture="GreatWorks_MuseumHighlight" Size="244,146" NoStateChange="true" Hidden="1"/>
+   <Label ID="BuildingName" Offset="0,10" Anchor="C,T" Align="center" Style="GreatWorksBuildingName"/>
+   <Label ID="CityName" Offset="0,27" Anchor="C,T" Align="center" Style="GreatWorksCityName"/>
+   <Stack ID="GreatWorks" Size="248,150" Offset="0,2" Anchor="C,C" Padding="2" StackGrowth="right"/>
+   <Label ID="ThemingLabel" Offset="0,111" Anchor="C,T" Align="center" Style="GreatWorksBuildingTheme"/>
+   <Stack ID="ThemeBonuses" Offset="0,131" Anchor="C,T" Padding="5" StackGrowth="right"/>
+   <Image ID="DisabledBG" Offset="-5,-5" Texture="GreatWorks_MuseumLowLight" Size="258,160" Hidden="1"/>
+  </Container>
+ </Instance>
+
+ <Instance Name="GreatWork">
+  <Container ID="TopControl" Size="38,64">
+   <Button ID="EmptySlot" Offset="0,2" Texture="GreatWorks_EmptySlot" Size="38,60" NoStateChange="true"/>
+   <Button ID="EmptySlotHighlight" Offset="-2,0" Texture="GreatWorks_EmptySlotHighlight" Size="42,64" NoStateChange="true" Hidden="1"/>
+   <Image ID="SlotTypeIcon" Anchor="C,C" Texture="GreatWorksSlotTypes40" Size="40,40"/>
+   <Drag ID="GreatWorkDraggable" Size="parent,parent" Buttons="L" SnapBackSpeed="0" DragThreshold="8">
+    <Image ID="GreatWorkIcon" Offset="-13,-2" Texture="GreatWorks64" Size="64,64" Hidden="1"/>
+   </Drag>
+  </Container>
+ </Instance>
+
+ <Container ID="Screen" Anchor="C,C" Size="parent,parent" Hidden="1" ConsumeMouseButton="1" ConsumeMouseWheel="1" ConsumeMouseOver="1">
+  <Container Style="FullScreenVignetteConsumer" ConsumeAllMouse="0" ConsumeMouseButton="1" ConsumeMouseWheel="1" ConsumeMouseOver="1"/>
+  <Container ID="Page" Anchor="C,C" Size="1024,768" ConsumeMouseButton="1" ConsumeMouseWheel="1" ConsumeMouseOver="1">
+  <Image ID="ModalBG" Size="1024,768" Texture="Religion_BG" StretchMode="Tile" ConsumeMouseButton="1" ConsumeMouseWheel="1"/>
+  <Image Size="parent,40" Texture="Controls_SubHeader2"/>
+  <Grid Offset="-5,-5" Size="parent+10,parent+10" Style="WindowFrameAlpha"/>
+  <Label ID="ModalScreenTitle" Anchor="C,T" Offset="0,5" Style="FontFlair28" FontStyle="glow" Color="206,218,225,255" EffectColor="74,108,37,191"/>
+  <Button ID="ModalScreenClose" Anchor="R,T" Style="CloseButtonLarge" Offset="-8,-5"/>
+
+  <Grid Offset="7,80" Size="1008,54" Texture="GreatWorks_Header" SliceCorner="18,18" SliceSize="18,18" SliceTextureSize="60,54">
+   <Label Offset="27,18" Style="GreatWorksHeader" String="LOC_LOTM_PP_ARTIFACTS_ORGANIZE"/>
+   <Line Start="750,8" End="750,45" Width="2" Color="0,0,0,122"/>
+   <Label ID="EquipmentCount" Offset="770,11" Align="left" Style="GreatWorksSubHeader"/>
+   <Label ID="InventoryCount" Offset="770,31" Align="left" Style="GreatWorksSubHeader"/>
+  </Grid>
+
+  <Label Offset="132,145" Style="FontFlair22" Color="76,61,43,255" String="LOC_LOTM_PP_ARTIFACTS_EQUIPPED"/>
+  <Label Offset="648,145" Style="FontFlair22" Color="76,61,43,255" String="LOC_LOTM_PP_ARTIFACTS_INVENTORY"/>
+  <Stack Offset="585,140" Size="390,38" StackGrowth="right" Padding="6">
+   <Button ID="PathPerfect" Size="126,36" Texture="Controls_Button" ToolTip="LOC_LOTM_ARTIFACT_TAB_PERFECT"><Label Anchor="C,C" Style="FontNormal16" Color="255,255,255,255" FontStyle="shadow" String="LOC_LOTM_ARTIFACT_TAB_PERFECT"/></Button>
+   <Button ID="PathRedPriest" Size="126,36" Texture="Controls_Button" ToolTip="LOC_LOTM_ARTIFACT_TAB_RED_PRIEST"><Label Anchor="C,C" Style="FontNormal16" Color="255,255,255,255" FontStyle="shadow" String="LOC_LOTM_ARTIFACT_TAB_RED_PRIEST"/></Button>
+   <Button ID="PathBlackEmperor" Size="126,36" Texture="Controls_Button" ToolTip="LOC_LOTM_ARTIFACT_TAB_BLACK_EMPEROR"><Label Anchor="C,C" Style="FontNormal16" Color="255,255,255,255" FontStyle="shadow" String="LOC_LOTM_ARTIFACT_TAB_BLACK_EMPEROR"/></Button>
+  </Stack>
+  <Line Start="512,140" End="512,690" Width="2" Color="86,72,52,135"/>
+
+  <Stack ID="EquipmentGroups" Offset="132,178" Size="248,480" StackGrowth="down" Padding="10"/>
+  <Stack ID="InventoryGroups" Offset="644,178" Size="248,480" StackGrowth="down" Padding="10"/>
+  <Label Anchor="C,B" Offset="0,32" WrapWidth="900" Align="center" Style="FontNormal14" Color="70,59,44,255" String="LOC_LOTM_PP_ARTIFACTS_DRAG_HINT"/>
+  </Container>
+ </Container>
+</Context>

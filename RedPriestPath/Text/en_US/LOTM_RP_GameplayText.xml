@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_PATH_PROJECT_GATE_NAME" Language="en_US"><Text>Current potion digested and advancement requirements met</Text></Row>
+		<Row Tag="LOC_LOTM_TEST_COMBAT_PLUS" Language="en_US"><Text>Test: Combat +200</Text></Row>
+		<Row Tag="LOC_LOTM_TEST_COMBAT_NORMAL" Language="en_US"><Text>Test: Restore Normal</Text></Row>
+	<Row Tag="LOC_LOTM_TEST_COMBAT_TOOLTIP" Language="en_US"><Text>Test only: toggle +200 combat strength and +999 capital production for the pathway holder.</Text></Row>
+		<Row Tag="LOC_PROMOTION_CLASS_LOTM_RP_PATH_HOLDER_NAME" Language="en_US"><Text>Path Holder Promotions</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_1_NAME" Language="en_US"><Text>Combat Thrill 1</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_1_DESCRIPTION" Language="en_US"><Text>+10 base Combat Strength, shown directly on the unit panel.</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_2_NAME" Language="en_US"><Text>Combat Thrill 2</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_2_DESCRIPTION" Language="en_US"><Text>+15 base Combat Strength, shown directly on the unit panel.</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_3_NAME" Language="en_US"><Text>Combat Thrill 3</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_3_DESCRIPTION" Language="en_US"><Text>+15 base Combat Strength, shown directly on the unit panel.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_WAR_AURA_NAME" Language="en_US"><Text>War Aura</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_WAR_AURA_DESCRIPTION" Language="en_US"><Text>+10 Combat Strength while adjacent to a Pathway Holder with Combat Thrill 3.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_WAR_AURA_COMBAT_PREVIEW" Language="en_US"><Text>War Aura: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_1_NAME" Language="en_US"><Text>Road Runner 1</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_1_DESCRIPTION" Language="en_US"><Text>+1 Movement.</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_2_NAME" Language="en_US"><Text>Road Runner 2</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_2_DESCRIPTION" Language="en_US"><Text>+2 Movement.</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_3_NAME" Language="en_US"><Text>Road Runner 3</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_3_DESCRIPTION" Language="en_US"><Text>+2 Movement.</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RP_PATH_HOLDER_NAME" Language="en_US">
+			<Text>Path Holder</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_LOTM_RP_PATH_HOLDER_DESCRIPTION" Language="en_US">
+			<Text>A unique path hero whose abilities follow the path chosen at game start. It cannot be trained or combined into a Corps or Army.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_HUNTER_INSTINCT_NAME" Language="en_US">
+			<Text>Hunter's Instinct</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_HUNTER_INSTINCT_DESCRIPTION" Language="en_US">
+			<Text>+2 Movement and +5 Sight. Ignores extra movement costs from Woods, Rainforest, and Hills. +30 Combat Strength when attacking Barbarians or wounded units; the conditions do not stack.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_NAME" Language="en_US">
+			<Text>Provoker</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_DESCRIPTION" Language="en_US">
+			<Text>+40 Combat Strength while fortified. At the start of each friendly turn, remaining fortified restores the holder to 100% health.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_GARRISONED_NAME" Language="en_US">
+			<Text>Provoker: Fortified</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_GARRISONED_DESCRIPTION" Language="en_US">
+			<Text>+40 Combat Strength while fortified.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PROVOKER_POTION_NAME" Language="en_US">
+			<Text>Provoker Potion</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PROVOKER_POTION_SHORT_NAME" Language="en_US">
+			<Text>Provoker Potion</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PROVOKER_POTION_DESCRIPTION" Language="en_US">
+			<Text>Complete after reaching 6 total Sequence 9 digestion points to advance to Sequence 8. Sequence 9 abilities are retained and digestion progress resets.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PYROMANIAC_POTION_NAME" Language="en_US">
+			<Text>Pyromaniac Potion</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PYROMANIAC_POTION_SHORT_NAME" Language="en_US">
+			<Text>Pyromaniac Potion</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PYROMANIAC_POTION_DESCRIPTION" Language="en_US">
+			<Text>Complete after reaching 6 total Sequence 8 digestion points to advance to Sequence 7. Earlier sequence abilities are retained and digestion progress resets. Sequence 7 unlocks Arson.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_HUNTER_COMBAT" Language="en_US">
+			<Text>Hunter's Instinct: +30 Combat Strength</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_PROVOKER_AURA" Language="en_US">
+			<Text>Provoker aura: {1_Amount} Combat Strength</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_PROVOKER_DEFENSE" Language="en_US">
+			<Text>Provoker melee defense: +{1_Amount} Combat Strength</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_PROVOKER_GARRISON" Language="en_US">
+			<Text>Provoker Fortified: +40 Combat Strength</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PROBE_BUTTON" Language="en_US">
+			<Text>Send Sync Probe</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PROBE_TOOLTIP" Language="en_US">
+			<Text>Development only: submits an EXECUTE_SCRIPT command that writes parameters to the Gameplay log without changing game state.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_TITLE" Language="en_US">
+			<Text>Red Priest Path</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE" Language="en_US">
+			<Text>Current: Sequence {1_Sequence}  {2_Name}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S9" Language="en_US"><Text>Hunter</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S8" Language="en_US"><Text>Provoker</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S7" Language="en_US"><Text>Pyromaniac</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S6" Language="en_US"><Text>Conspirator</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S5" Language="en_US"><Text>Reaper</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S4" Language="en_US"><Text>Iron-Blooded Knight</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S3" Language="en_US"><Text>War Bishop</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S2" Language="en_US"><Text>Weather Warlock</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S1" Language="en_US"><Text>Conqueror</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S0" Language="en_US"><Text>Red Priest</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_PROGRESS_SINGLE" Language="en_US">
+			<Text>Digestion: {1_Total}/6</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_PROGRESS_COMPLETE" Language="en_US">
+			<Text>Ultimate Sequence: no further digestion required</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S9" Language="en_US">
+			<Text>Current skill: Hunter's Instinct</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S8" Language="en_US">
+			<Text>Current skill: Provoker (and Hunter's Instinct)</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S7" Language="en_US">
+			<Text>Current skill: Arson (and prior skills)</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S9" Language="en_US">
+			<Text>Next: each Path Holder XP increase grants 1 point; reach 6 total, then complete the Provoker Potion.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S8" Language="en_US">
+			<Text>Next: reach 6 total, then complete the Pyromaniac Potion.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_ARSON" Language="en_US">
+			<Text>Arson: {1_Status}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_READY" Language="en_US">
+			<Text>Ready</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_COOLDOWN" Language="en_US">
+			<Text>{1_Turns} turn(s)</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_BUTTON" Language="en_US">
+			<Text>Arson</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_BUTTON_COOLDOWN" Language="en_US">
+			<Text>Arson ({1_Turns})</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_TOOLTIP" Language="en_US">
+			<Text>Target a visible non-City-Center land tile within 6 hexes containing units at war with you, instantly destroying every enemy unit there. Cannot affect cities or non-enemy units; consumes movement and has a 5-turn cooldown.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_COOLDOWN" Language="en_US">
+			<Text>Arson is cooling down for {1_Turns} more turn(s).</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_INACTIVE_TURN" Language="en_US">
+			<Text>Arson is unavailable while your turn is inactive.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_DEAD" Language="en_US">
+			<Text>The registered hero is not alive.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_NO_TARGET" Language="en_US">
+			<Text>No currently visible legal land tile is within 6 hexes.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_TARGET_HINT" Language="en_US">
+			<Text>Choose a non-City-Center land tile within 6 hexes containing an enemy unit.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_SUCCESS" Language="en_US">
+			<Text>Arson: enemy units destroyed</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_TITLE" Language="en_US">
+			<Text>Choose a Path</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_BODY" Language="en_US">
+			<Text>Choose the Paragon, Red Priest, or Black Emperor Pathway, or the Redemption-only Thief Pathway, or no Pathway for this player.[NEWLINE][NEWLINE]Choosing a Pathway immediately grants the unique Pathway Holder at your capital. Pathways are mutually exclusive and this choice is permanent. Human players choose independently; AI players cannot choose a Pathway.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_ENABLE" Language="en_US">
+			<Text>Choose Red Priest</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_NONE" Language="en_US">
+			<Text>Do Not Enable</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_LAUNCH_TOOLTIP" Language="en_US">
+			<Text>Red Priest Path</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_TITLE" Language="en_US">
+			<Text>Red Priest Path</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_PATH_DESCRIPTION" Language="en_US">
+			<Text>Your unique Path Holder retains inherited abilities while advancing from Sequence 9 to Sequence 0. Digestion progress is private to the local player.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_HERO_ACTIVE" Language="en_US">
+			<Text>Path Holder: active</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_HERO_RESPAWN" Language="en_US">
+			<Text>Path Holder: returns in {1_Turns} turn(s)</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_HERO_PENDING" Language="en_US">
+			<Text>Path Holder: waiting for a capital or legal adjacent tile</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_LOCATE_HERO" Language="en_US">
+			<Text>Locate Path Holder</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_TITLE" Language="en_US">
+			<Text>Skill Effects</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S9" Language="en_US">
+			<Text>Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S8" Language="en_US">
+			<Text>Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S7" Language="en_US">
+			<Text>Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_ESTABLISH_CHURCH_NAME" Language="en_US">
+			<Text>Establish a Church</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_ESTABLISH_CHURCH_DESCRIPTION" Language="en_US">
+			<Text>While any Path is selected, automatically gain 1 digestion point toward the current Sequence every 3 turns. The 2-points-per-turn cap still applies.</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_TRUE_GOD_CHURCH_NAME" Language="en_US">
+			<Text>Establish the True God's Church</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_TRUE_GOD_CHURCH_DESCRIPTION" Language="en_US">
+			<Text>If the religion's founder selected any Path, gain 1 digestion point toward the current Sequence every turn. That Path's final Sequence 0 ritual uses its normal Production cost; without this belief, the ritual costs twice as much.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONSPIRATOR_POTION_NAME" Language="en_US"><Text>Conspirator Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONSPIRATOR_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 6</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONSPIRATOR_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Conspirator after digesting Sequence 7.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_REAPER_POTION_NAME" Language="en_US"><Text>Reaper Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_REAPER_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 5</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_REAPER_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Reaper after digesting Sequence 6.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION_NAME" Language="en_US"><Text>Iron-Blooded Knight Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 4</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Iron-Blooded Knight after digesting Sequence 5 and researching Industrialization.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_BISHOP_POTION_NAME" Language="en_US"><Text>War Bishop Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_BISHOP_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 3</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_BISHOP_POTION_DESCRIPTION" Language="en_US"><Text>After Sequence 4 reaches 6 total digestion, completing this project advances to War Bishop.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION_NAME" Language="en_US"><Text>Weather Warlock Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 2</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Weather Warlock after digesting Sequence 3.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONQUEROR_POTION_NAME" Language="en_US"><Text>Conqueror Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONQUEROR_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 1</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONQUEROR_POTION_DESCRIPTION" Language="en_US"><Text>After Sequence 2 reaches 6 total digestion, complete this project to advance to Conqueror.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_NAME" Language="en_US"><Text>War Festival</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_DESCRIPTION" Language="en_US"><Text>After Sequence 1 reaches 6 total digestion and the True God's Church is established, complete the festival to advance to Red Priest.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED_NAME" Language="en_US"><Text>Unconsecrated War Festival</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 0 at double Production</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED_DESCRIPTION" Language="en_US"><Text>Without the True God's Church, this War Festival costs twice the normal base Production. Complete it after reaching 6 digestion at Sequence 1 to advance to Red Priest.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS_NAME" Language="en_US"><Text>Conquest: Shatter Defenses</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS_DESCRIPTION" Language="en_US"><Text>Friendly combat units deal massive damage when attacking Cities and Encampments.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_IRONBLOOD_STRENGTH" Language="en_US"><Text>Iron-Blooded Legion: +30 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_WEATHER_ENEMY_STRENGTH" Language="en_US"><Text>Weather Manipulation: -20 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_CONQUEST_BYPASS_WALLS" Language="en_US"><Text>Conquest: deal massive damage to Cities and Encampments</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S6" Language="en_US"><Text>Current skill: Conspirator (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S5" Language="en_US"><Text>Current skill: Reap (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S4" Language="en_US"><Text>Current skill: Iron-Blooded Legion (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S3" Language="en_US"><Text>Current skill: War Sermon (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S2" Language="en_US"><Text>Current skill: Weather Manipulation (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S1" Language="en_US"><Text>Current skill: Conquest (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S0" Language="en_US"><Text>Current skill: Red Priest (and all prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S7" Language="en_US"><Text>Next: reach 6 total digestion, then complete the Conspirator Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S6" Language="en_US"><Text>Next: reach 6 total digestion, then complete the Reaper Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S5" Language="en_US"><Text>Next: reach 6 total digestion, research Industrialization, then complete the Iron-Blooded Knight Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S5_UNLOCKED" Language="en_US"><Text>Advancement project unlocked: after researching Industrialization, the Iron-Blooded Knight Potion appears in the city project list; completing it advances to Sequence 4.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S4" Language="en_US"><Text>Next: reach 6 total digestion, then complete the War Bishop Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S3" Language="en_US"><Text>Next: reach 6 total digestion, then complete the Weather Warlock Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S2" Language="en_US"><Text>Next: reach 6 total digestion, then complete the Conqueror Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S1" Language="en_US"><Text>Next: reach 6 digestion. With the True God's Church, complete the normal War Festival; otherwise complete the double-cost Unconsecrated War Festival.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S0" Language="en_US"><Text>Ultimate Sequence 0, Red Priest, has been reached.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S9" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): each Path Holder XP increase +1; Establish a Church +1 every 3 turns; Establish the True God's Church +1 every turn.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S8" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): denounce a living major civilization not previously counted +1; Path Holder attacks a higher-base-strength unit +1; church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S7" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): successful Arson +1; Path Holder's ordinary pillage +1 (Arson's automatic pillage is excluded); church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S6" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): first enter war with the selected Planning target +1; church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S5" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): a friendly unit defeats an enemy +1; defeating a wounded enemy may add another +1 (event timing requires testing); church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S4" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): form a new Corps or Army +1; friendly kill inside the Path Holder's 6-tile aura +1; church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S3" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): conquer a city +1; church sources remain active. Military-unit training digestion is not implemented.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S2" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): while at war with any living major civilization, gain +1 each player turn; church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S1" Language="en_US"><Text>Digestion conditions (2 points per turn; 6 total): conquer an enemy city +1; if it is an original capital, gain another +1; church sources remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S0" Language="en_US"><Text>Sequence 0 requires no further digestion.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_NONE" Language="en_US"><Text>War Planning target: none</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_CURRENT" Language="en_US"><Text>War Planning target: {1_PlayerName}</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_BUTTON" Language="en_US"><Text>Change Planning Target</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_TOOLTIP" Language="en_US"><Text>Cycle through living major civilizations. Changing targets has a 10-turn cooldown.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_COOLDOWN" Language="en_US"><Text>War Planning target may be changed in {1_Turns} turn(s).</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_GOLD_TOOLTIP" Language="en_US"><Text>+{1_Amount} Planning</Text></Row>
+		<Row Tag="LOC_LOTM_RP_LETTER_GOLD_TOOLTIP" Language="en_US"><Text>+{1_Amount} Conspirator's Letter</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_YIELD_INCLUDED_TOOLTIP" Language="en_US"><Text>{1_Name} (included in per-turn total): {2_Amount}</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_YIELD_SETTLED_TOOLTIP" Language="en_US"><Text>{1_Name} (settled this turn): {2_Amount}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_HOLDER_GOOD_STRENGTH" Language="en_US"><Text>Random status · Holder in good condition: +5 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_HOLDER_UNSTABLE_STRENGTH" Language="en_US"><Text>Random status · Holder unstable: -5 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S6" Language="en_US"><Text>Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S5" Language="en_US"><Text>Reap (Sequence 5): after a friendly unit kills an enemy, it heals once per unit per turn: 60 for the holder and 30 for other friendly units.[NEWLINE][NEWLINE]Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S4" Language="en_US"><Text>Iron-Blooded Legion (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement without stacking.[NEWLINE][NEWLINE]Reap (Sequence 5): after a friendly unit kills an enemy, it heals once per unit per turn: 60 for the holder and 30 for other friendly units.[NEWLINE][NEWLINE]Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S3" Language="en_US"><Text>War Sermon (Sequence 3): while at war, every city gains +100% Production and war weariness is reduced by 100%; occupied cities immediately gain +15 Loyalty.[NEWLINE][NEWLINE]Iron-Blooded Legion (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement without stacking.[NEWLINE][NEWLINE]Reap (Sequence 5): after a friendly unit kills an enemy, it heals once per unit per turn: 60 for the holder and 30 for other friendly units.[NEWLINE][NEWLINE]Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S2" Language="en_US"><Text>Weather Manipulation (Sequence 2): all friendly units gain +2 Movement. Every non-team major civilization at war with you has -20 Combat Strength and -2 Movement on all units, and +100% overall war weariness. Multiple effects do not stack; penalties end dynamically at peace.[NEWLINE][NEWLINE]War Sermon (Sequence 3): while at war, every city gains +100% Production and war weariness is reduced by 100%; occupied cities immediately gain +15 Loyalty.[NEWLINE][NEWLINE]Iron-Blooded Legion (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement without stacking.[NEWLINE][NEWLINE]Reap (Sequence 5): after a friendly unit kills an enemy, it heals once per unit per turn: 60 for the holder and 30 for other friendly units.[NEWLINE][NEWLINE]Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S1" Language="en_US"><Text>Conquest (Sequence 1): every friendly combat unit deals massive damage when attacking Cities and Encampments.[NEWLINE][NEWLINE]Weather Manipulation (Sequence 2): all friendly units gain +2 Movement. Every non-team major civilization at war with you has -20 Combat Strength and -2 Movement on all units, and +100% overall war weariness. Multiple effects do not stack; penalties end dynamically at peace.[NEWLINE][NEWLINE]War Sermon (Sequence 3): while at war, every city gains +100% Production and war weariness is reduced by 100%; occupied cities immediately gain +15 Loyalty.[NEWLINE][NEWLINE]Iron-Blooded Legion (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement without stacking.[NEWLINE][NEWLINE]Reap (Sequence 5): after a friendly unit kills an enemy, it heals once per unit per turn: 60 for the holder and 30 for other friendly units.[NEWLINE][NEWLINE]Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S0" Language="en_US"><Text>Red Priest (Sequence 0): while at war with any other civilization, every city's total Production becomes 10 times its peacetime value; the bonus ends automatically at peace.[NEWLINE][NEWLINE]Conquest (Sequence 1): every friendly combat unit deals massive damage when attacking Cities and Encampments.[NEWLINE][NEWLINE]Weather Manipulation (Sequence 2): all friendly units gain +2 Movement. Every non-team major civilization at war with you has -20 Combat Strength and -2 Movement on all units, and +100% overall war weariness. Multiple effects do not stack; penalties end dynamically at peace.[NEWLINE][NEWLINE]War Sermon (Sequence 3): while at war, every city gains +100% Production and war weariness is reduced by 100%; occupied cities immediately gain +15 Loyalty.[NEWLINE][NEWLINE]Iron-Blooded Legion (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement without stacking.[NEWLINE][NEWLINE]Reap (Sequence 5): after a friendly unit kills an enemy, it heals once per unit per turn: 60 for the holder and 30 for other friendly units.[NEWLINE][NEWLINE]Conspirator (Sequence 6): select a living major civilization as the Planning target. The first time you enter war with that target, immediately gain 2000 Gold. While that war continues, gain 100 Gold at the start of each of your turns; this income stops at peace.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; instantly destroys every enemy unit on the tile, never affects cities or non-enemy units, consumes movement, has a 5-turn cooldown, and leaves a 9-turn burn marker.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_TITLE" Language="en_US"><Text>Congratulations on advancing to Red Priest</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_1" Language="en_US"><Text>Sovereign of conquest</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_2" Language="en_US"><Text>Commander of ten thousand armies</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_3" Language="en_US"><Text>Embodiment of crimson flame and war</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_4" Language="en_US"><Text>Blood Emperor who conquers all</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_TITLE" Language="en_US"><Text>Congratulations on advancing to Perfect</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_LINE_1" Language="en_US"><Text>Embodiment of Essence</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_LINE_2" Language="en_US"><Text>Guardian of Artisans</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_LINE_3" Language="en_US"><Text>Radiance of Technology</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_RED_PRIEST" Language="en_US"><Text>Choose Red Priest</Text></Row>
+		<Row Tag="LOC_LOTM_PP_PATH_CHOICE_PERFECT" Language="en_US"><Text>Choose Paragon Pathway</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_TITLE" Language="en_US"><Text>Paragon Pathway</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_PATH_DESCRIPTION" Language="en_US"><Text>Turn knowledge, relics, development, and production into an irreversible civilizational lead. This release supports Sequence 9 through Sequence 0.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE" Language="en_US"><Text>Current: Sequence {1_Sequence}  {2_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S9" Language="en_US"><Text>Generalist</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S8" Language="en_US"><Text>Archaeologist</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S7" Language="en_US"><Text>Appraiser</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S6" Language="en_US"><Text>Mechanical Expert</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S5" Language="en_US"><Text>Astronomer</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S4" Language="en_US"><Text>Alchemist</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S3" Language="en_US"><Text>Mystery Scholar</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S2" Language="en_US"><Text>Knowledge Mentor</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S1" Language="en_US"><Text>Enlightener</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S0" Language="en_US"><Text>Paragon</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S9" Language="en_US"><Text>Current skill: Generalist</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S8" Language="en_US"><Text>Current skill: Historical Relics (and Generalist)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S7" Language="en_US"><Text>Current skill: Appraisal (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S6" Language="en_US"><Text>Current skill: Mechanical Improvement (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S5" Language="en_US"><Text>Current skill: Astronomical Calculation (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S4" Language="en_US"><Text>Current skill: Alchemical Production (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S3" Language="en_US"><Text>Current skill: Mystery System (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S2" Language="en_US"><Text>Current skill: Knowledge Teaching (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S1" Language="en_US"><Text>Current skill: Civilizational Enlightenment (and prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S0" Language="en_US"><Text>Current skill: Perfect Civilization (and all prior skills)</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S9" Language="en_US"><Text>Next: reach 6 digestion, then complete the Archaeologist Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S8" Language="en_US"><Text>Next: reach 6 digestion, then complete the Appraiser Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S7" Language="en_US"><Text>Next: reach 6 digestion, then complete the Mechanical Expert Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S6" Language="en_US"><Text>Next: reach 6 digestion, then complete the Astronomer Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S5" Language="en_US"><Text>Next: reach 6 digestion, research Industrialization, then complete the Alchemist Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S4" Language="en_US"><Text>Next: reach 6 digestion, then complete the Mystery Scholar Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S3" Language="en_US"><Text>Next: reach 6 digestion, then complete the Knowledge Mentor Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S2" Language="en_US"><Text>Next: reach 6 digestion, then complete the Enlightener Potion project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S1" Language="en_US"><Text>Next: reach 6 digestion. With the True God's Church, complete normal Civilization Ascension; otherwise complete the double-cost Unconsecrated Civilization Ascension.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S0" Language="en_US"><Text>Sequence 0 Perfect has been reached; no further digestion or advancement is required.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S9" Language="en_US"><Text>Digest by triggering a technology Eureka or civic Inspiration; 6 total, at most 2 per turn.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S8" Language="en_US"><Text>Digest by gaining a Relic or discovering a Natural Wonder, Tribal Village, or new continent.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S7" Language="en_US"><Text>Digest when first acquiring and first placing a Great Work; the same new work can grant 2 points.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S6" Language="en_US"><Text>Digest by spending a Builder charge or completing a new improvement; one improvement can grant 2 points.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S5" Language="en_US"><Text>Digest by completing a technology, or a Campus, Campus building, or Space Race project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S4" Language="en_US"><Text>Digest by spending a Builder charge or completing a district, building, wonder, or city project.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S3" Language="en_US"><Text>Digest by completing a specialty district or one of its buildings; 6 total, at most 2 per turn.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S2" Language="en_US"><Text>Digest by completing a technology or civic; 6 total, at most 2 per turn.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S1" Language="en_US"><Text>Digest by recruiting a Great Scientist or completing a technology/civic. Without the True God's Church, the final ascension project costs double Production.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S0" Language="en_US"><Text>Sequence 0 requires no further potion digestion.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S9" Language="en_US"><Text>Generalist (Sequence 9): Eurekas and Inspirations grant 15% additional progress.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S8" Language="en_US"><Text>Historical Relics (Sequence 8): gain one Relic on advancement and another every 5 player turns, stopping after 5; the Palace gains 5 Relic slots.[NEWLINE][NEWLINE]Generalist remains active.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S7" Language="en_US"><Text>Appraisal (Sequence 7): double each Great Work's own base yields without doubling theming bonuses.[NEWLINE][NEWLINE]Historical Relics and Generalist remain active.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S6" Language="en_US"><Text>Mechanical Improvement (Sequence 6): every plot with an unpillaged improvement gains +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): all Great Works gain +100% of their base yields without doubling theming.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): gain up to five standard Relics over time; the Palace gains five Relic slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): Eurekas and Inspirations grant 15% additional progress.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S5" Language="en_US"><Text>Astronomical Calculation (Sequence 5): +100% Science from Campuses and Campus buildings; +100% Production toward Space Race projects.[NEWLINE][NEWLINE]Mechanical Improvement (Sequence 6): improved plots gain +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): Great Work base yields +100%.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): gain up to five Relics and five Palace slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): Eurekas and Inspirations grant 15% additional progress.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S4" Language="en_US"><Text>Alchemical Production (Sequence 4): all Builders gain +3 charges and all cities gain +40% Production.[NEWLINE][NEWLINE]Astronomical Calculation (Sequence 5): Campus Science +100% and Space Race Production +100%.[NEWLINE][NEWLINE]Mechanical Improvement (Sequence 6): improved plots gain +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): Great Work base yields +100%.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): gain up to five Relics and five Palace slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): Eurekas and Inspirations grant 15% additional progress.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S3" Language="en_US"><Text>Mystery System (Sequence 3): specialty districts and their buildings gain +60% Food, Production, Gold, Science, Culture, and Faith yields; Housing, Amenities, resources, Great Person points, combat, and defenses are not increased.[NEWLINE][NEWLINE]Alchemical Production (Sequence 4): Builders +3 charges and all cities +40% Production.[NEWLINE][NEWLINE]Astronomical Calculation (Sequence 5): Campus Science +100% and Space Race Production +100%.[NEWLINE][NEWLINE]Mechanical Improvement (Sequence 6): improved plots +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): Great Work base yields +100%.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): up to five Relics and five Palace slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): Eureka and Inspiration progress +15%.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S2" Language="en_US"><Text>Knowledge Teaching (Sequence 2): every unfinished technology and civic automatically receives its Eureka or Inspiration; with Generalist this grants 55% total progress once per item.[NEWLINE][NEWLINE]Mystery System (Sequence 3): specialty-district and building direct yields +60%.[NEWLINE][NEWLINE]Alchemical Production (Sequence 4): Builders +3 charges and cities +40% Production.[NEWLINE][NEWLINE]Astronomical Calculation (Sequence 5): Campus Science +100% and Space Race Production +100%.[NEWLINE][NEWLINE]Mechanical Improvement (Sequence 6): improved plots +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): Great Work base yields +100%.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): up to five Relics and Palace slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): Eureka and Inspiration progress +15%.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S1" Language="en_US"><Text>Civilizational Enlightenment (Sequence 1): on first advancement, gain 99,999 Great Scientist points once; all cities permanently gain +30% Science and Culture.[NEWLINE][NEWLINE]Knowledge Teaching (Sequence 2): all unfinished technologies and civics automatically receive 55% boost progress with Generalist.[NEWLINE][NEWLINE]Mystery System (Sequence 3): specialty-district and building direct yields +60%.[NEWLINE][NEWLINE]Alchemical Production (Sequence 4): Builders +3 charges and cities +40% Production.[NEWLINE][NEWLINE]Astronomical Calculation (Sequence 5): Campus Science +100% and Space Race Production +100%.[NEWLINE][NEWLINE]Mechanical Improvement (Sequence 6): improved plots +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): Great Work base yields +100%.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): up to five Relics and Palace slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): boost progress +15%.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S0" Language="en_US"><Text>Perfect Civilization (Sequence 0): all cities gain +100% Food, Production, Gold, Science, Culture, and Faith, including newly founded or captured cities; this stacks with all prior skills.[NEWLINE][NEWLINE]Civilizational Enlightenment (Sequence 1): once gain 99,999 Great Scientist points; cities gain +30% Science and Culture.[NEWLINE][NEWLINE]Knowledge Teaching (Sequence 2): all unfinished technologies and civics automatically receive 55% boost progress with Generalist.[NEWLINE][NEWLINE]Mystery System (Sequence 3): specialty-district and building direct yields +60%.[NEWLINE][NEWLINE]Alchemical Production (Sequence 4): Builders +3 charges and cities +40% Production.[NEWLINE][NEWLINE]Astronomical Calculation (Sequence 5): Campus Science +100% and Space Race Production +100%.[NEWLINE][NEWLINE]Mechanical Improvement (Sequence 6): improved plots +2 Production.[NEWLINE][NEWLINE]Appraisal (Sequence 7): Great Work base yields +100%.[NEWLINE][NEWLINE]Historical Relics (Sequence 8): up to five Relics and Palace slots.[NEWLINE][NEWLINE]Generalist (Sequence 9): boost progress +15%.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION_NAME" Language="en_US"><Text>Archaeologist Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 8</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Archaeologist after digesting Sequence 9.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_APPRAISER_POTION_NAME" Language="en_US"><Text>Appraiser Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_APPRAISER_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 7</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_APPRAISER_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Appraiser after digesting Sequence 8.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION_NAME" Language="en_US"><Text>Mechanical Expert Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 6</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Mechanical Expert after digesting Sequence 7.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ASTRONOMER_POTION_NAME" Language="en_US"><Text>Astronomer Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ASTRONOMER_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 5</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ASTRONOMER_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Astronomer after digesting Sequence 6.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ALCHEMIST_POTION_NAME" Language="en_US"><Text>Alchemist Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ALCHEMIST_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 4</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ALCHEMIST_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Alchemist after digesting Sequence 5 and researching Industrialization.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION_NAME" Language="en_US"><Text>Mystery Scholar Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 3</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Mystery Scholar after digesting Sequence 4.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION_NAME" Language="en_US"><Text>Knowledge Mentor Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 2</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Knowledge Mentor after digesting Sequence 3.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ENLIGHTENER_POTION_NAME" Language="en_US"><Text>Enlightener Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ENLIGHTENER_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 1</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ENLIGHTENER_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Enlightener after digesting Sequence 2.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_NAME" Language="en_US"><Text>Civilization Ascension</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_DESCRIPTION" Language="en_US"><Text>After digesting Sequence 1 and establishing the True God's Church, advance to Sequence 0 Perfect.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED_NAME" Language="en_US"><Text>Unconsecrated Civilization Ascension</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 0 at double Production</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED_DESCRIPTION" Language="en_US"><Text>Without the True God's Church, this ascension costs twice the normal base Production. Complete it after digesting Sequence 1 to advance to Sequence 0 Perfect.</Text></Row>
+
+		<Row Tag="LOC_UNIT_LOTM_BE_PATH_HOLDER_NAME" Language="en_US"><Text>Black Emperor Path Holder</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_BE_PATH_HOLDER_DESCRIPTION" Language="en_US"><Text>The unique Black Emperor Path Holder. Uses the shared technology growth and Combat Thrill / Road Runner promotion tree; returns five turns after death with experience, promotions, and name preserved.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PATH_CHOICE_BLACK_EMPEROR" Language="en_US"><Text>Choose Black Emperor</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_TITLE" Language="en_US"><Text>Black Emperor Path</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_PATH_DESCRIPTION" Language="en_US"><Text>Distort civilization through loopholes, wealth policies, frenzy, and Loyalty pressure. This release supports Sequences 9 through 0.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE" Language="en_US"><Text>Current: Sequence {1_Sequence}  {2_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S9" Language="en_US"><Text>Lawyer</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S8" Language="en_US"><Text>Barbarian</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S7" Language="en_US"><Text>Briber</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S6" Language="en_US"><Text>Baron of Corruption</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S5" Language="en_US"><Text>Chaos Mentor</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S4" Language="en_US"><Text>Count of Corruption</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S3" Language="en_US"><Text>Frenzy Mage</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S2" Language="en_US"><Text>Duke of Entropy</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S1" Language="en_US"><Text>Prince of Abolition</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S0" Language="en_US"><Text>Black Emperor</Text></Row>
+
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S9" Language="en_US"><Text>Lawyer | Rules Loophole</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S8" Language="en_US"><Text>Barbarian | Might; inherits Rules Loophole</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S7" Language="en_US"><Text>Briber | Buying Interests; inherits Might and Rules Loophole</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S6" Language="en_US"><Text>Baron of Corruption | Corrupt Wealth; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S5" Language="en_US"><Text>Chaos Mentor | Chaos Codex; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S4" Language="en_US"><Text>Count of Corruption | Corrupt Prosperity; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S3" Language="en_US"><Text>Frenzy Mage | Frenzy Codex; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S2" Language="en_US"><Text>Duke of Entropy | Imperial Entropy; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S1" Language="en_US"><Text>Prince of Abolition | Order Conversion; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S0" Language="en_US"><Text>Black Emperor | The Tale of Nine Mausoleums; inherits all prior skills</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S9" Language="en_US"><Text>Rules Loophole (Sequence 9): on first owning a city, immediately complete Code of Laws and permanently gain one Wildcard policy slot. This triggers once and is backfilled for eligible saves.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S8" Language="en_US"><Text>Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement. The strength bonus is an ordinary combat modifier and does not change panel base Combat Strength or civilian identity.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and permanently gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S7" Language="en_US"><Text>Buying Interests (Sequence 7): all domestic and international Trade Routes gain +10 Gold; every newly established route to a city-state grants one Envoy to that exact city-state.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement without changing base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S6" Language="en_US"><Text>Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): Trade Routes gain +10 Gold and new city-state routes grant an Envoy.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement without changing base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S5" Language="en_US"><Text>Chaos Codex (Sequence 5): explicitly unlocks the Economic policy Chaos I. While slotted, it provides a fixed -100 Gold and +100 Science per turn.[NEWLINE][NEWLINE]Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): Trade Routes gain +10 Gold and new city-state routes grant an Envoy.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S4" Language="en_US"><Text>Corrupt Prosperity (Sequence 4): all cities gain +100% Food; unlock Corruption I (-100 Gold, +10 Amenities in every city) and Chaos II (-500 Gold, +500 Science).[NEWLINE][NEWLINE]Chaos Codex (Sequence 5): unlock the Economic policy Chaos I; while slotted, it provides -100 Gold and +100 Science per turn.[NEWLINE][NEWLINE]Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): all Trade Routes gain +10 Gold; each new route to a city-state grants one Envoy to that exact city-state.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement; the strength bonus does not change base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and permanently gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S3" Language="en_US"><Text>Frenzy Codex (Sequence 3): unlock Frenzy I, reducing all six city yields by 30% for every major civilization currently at war with you; peace ends the penalty. Unlock Corruption II (-500 Gold, +50 Amenities in every city).[NEWLINE][NEWLINE]Corrupt Prosperity (Sequence 4): all cities gain +100% Food; unlock Corruption I (-100 Gold, +10 Amenities in every city) and Chaos II (-500 Gold, +500 Science).[NEWLINE][NEWLINE]Chaos Codex (Sequence 5): unlock Chaos I; while slotted, it provides -100 Gold and +100 Science per turn.[NEWLINE][NEWLINE]Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): all Trade Routes gain +10 Gold; each new route to a city-state grants one Envoy to that exact city-state.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement without changing base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and permanently gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S2" Language="en_US"><Text>Imperial Entropy (Sequence 2): every city produces +4 Loyalty pressure per citizen, making its outward population pressure five times the base value; every friendly city gains +99 Loyalty per turn, still capped at 100.[NEWLINE][NEWLINE]Frenzy Codex (Sequence 3): unlock Frenzy I, reducing all six city yields by 30% for every major civilization currently at war with you; peace ends the penalty. Unlock Corruption II (-500 Gold, +50 Amenities in every city).[NEWLINE][NEWLINE]Corrupt Prosperity (Sequence 4): all cities gain +100% Food; unlock Corruption I (-100 Gold, +10 Amenities in every city) and Chaos II (-500 Gold, +500 Science).[NEWLINE][NEWLINE]Chaos Codex (Sequence 5): unlock Chaos I; while slotted, it provides -100 Gold and +100 Science per turn.[NEWLINE][NEWLINE]Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): all Trade Routes gain +10 Gold; each new route to a city-state grants one Envoy to that exact city-state.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement without changing base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and permanently gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S1" Language="en_US"><Text>Order Conversion (Sequence 1): unlock the repeatable Transformation project in every city; while active, Production simultaneously converts at 100% to Science, 100% to Culture, and 200% to Gold. Unlock Chaos III (-1000 Gold, +1000 Science), Corruption III (-1000 Gold, +100 Amenities in every city), and Frenzy II (-50% to all six city yields for major civilizations at war with you).[NEWLINE][NEWLINE]Imperial Entropy (Sequence 2): outward population Loyalty pressure is five times its base value; every friendly city gains +99 Loyalty per turn.[NEWLINE][NEWLINE]Frenzy Codex (Sequence 3): Frenzy I reduces all six city yields by 30% for major civilizations at war with you; Corruption II gives -500 Gold and +50 Amenities in every city.[NEWLINE][NEWLINE]Corrupt Prosperity (Sequence 4): all cities gain +100% Food and unlock Corruption I and Chaos II.[NEWLINE][NEWLINE]Chaos Codex (Sequence 5): Chaos I gives -100 Gold and +100 Science.[NEWLINE][NEWLINE]Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): Trade Routes gain +10 Gold and new city-state routes grant an Envoy.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement without changing base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and permanently gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S0" Language="en_US"><Text>The Tale of Nine Mausoleums (Sequence 0): permanently gain three Military, three Economic, and three Wildcard policy slots, nine slots total; they stack with Sequence 9 and normal government slots.[NEWLINE][NEWLINE]Order Conversion (Sequence 1): unlock Transformation, converting Production at 100% to Science, 100% to Culture, and 200% to Gold; unlock Chaos III, Corruption III, and Frenzy II.[NEWLINE][NEWLINE]Imperial Entropy (Sequence 2): outward population Loyalty pressure is five times its base value; every friendly city gains +99 Loyalty per turn.[NEWLINE][NEWLINE]Frenzy Codex (Sequence 3): Frenzy I reduces all six city yields by 30% for major civilizations at war with you; Corruption II gives -500 Gold and +50 Amenities in every city.[NEWLINE][NEWLINE]Corrupt Prosperity (Sequence 4): all cities gain +100% Food and unlock Corruption I and Chaos II.[NEWLINE][NEWLINE]Chaos Codex (Sequence 5): Chaos I gives -100 Gold and +100 Science.[NEWLINE][NEWLINE]Corrupt Wealth (Sequence 6): all cities gain +100% Gold.[NEWLINE][NEWLINE]Buying Interests (Sequence 7): Trade Routes gain +10 Gold and new city-state routes grant an Envoy.[NEWLINE][NEWLINE]Might (Sequence 8): all friendly units gain +10 Combat Strength and +1 Movement without changing base Combat Strength.[NEWLINE][NEWLINE]Rules Loophole (Sequence 9): complete Code of Laws and permanently gain one Wildcard slot.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PREVIEW_MIGHT_STRENGTH" Language="en_US"><Text>Might: +10 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S9" Language="en_US"><Text>Digestion (6 total; no per-turn cap at this Sequence): complete each new civic +3. The automatically completed Code of Laws counts as one civic and therefore grants the initial 3 points; policy cards grant no digestion.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S8" Language="en_US"><Text>Digestion (2 per turn; 6 total): any friendly unit kill +2; any ordinary friendly pillage +1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S7" Language="en_US"><Text>Digestion (2 per turn; 6 total): establish a Trade Route +1; total Envoys increase +1 per Envoy. A new city-state route can grant both points.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S6" Language="en_US"><Text>Digestion (2 per turn; 6 total): complete a Commercial Hub, Harbor, or one of their buildings +1; buy a unit or building with Gold, or patronize a Great Person with Gold +1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S5" Language="en_US"><Text>Digestion (2 per turn; 6 total): if Chaos I is active at the start of the player's turn +1; complete a technology +1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S4" Language="en_US"><Text>Digestion (2 per turn; 6 total): city population growth +1; if Corruption I or Chaos II is active at turn start +1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S3" Language="en_US"><Text>Digestion (2 per turn; 6 total): Frenzy I active at turn start +1; Corruption II active at turn start +1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S2" Language="en_US"><Text>Digestion (2 per turn; 6 total): when a foreign or Free City joins through Loyalty, attempt to gain 3 points, limited by the remaining per-turn cap.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S1" Language="en_US"><Text>Digestion (2 per turn; 6 total): if any city is running Transformation at turn start +1; if Chaos III, Corruption III, or Frenzy II is active at turn start +1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S0" Language="en_US"><Text>Sequence 0 requires no further digestion.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S9" Language="en_US"><Text>At 6 digestion, unlock the Barbarian Potion to advance to Sequence 8.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S8" Language="en_US"><Text>At 6 digestion, unlock the Briber Potion to advance to Sequence 7.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S7" Language="en_US"><Text>At 6 digestion, unlock the Baron of Corruption Potion to advance to Sequence 6.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S6" Language="en_US"><Text>At 6 digestion, unlock the Chaos Mentor Potion to advance to Sequence 5.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S5" Language="en_US"><Text>At 6 digestion and after Industrialization, unlock the Count of Corruption Potion to advance to Sequence 4.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S4" Language="en_US"><Text>At 6 digestion, unlock the Frenzy Mage Potion to advance to Sequence 3.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S3" Language="en_US"><Text>At 6 digestion, unlock the Duke of Entropy Potion to advance to Sequence 2.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S2" Language="en_US"><Text>At 6 digestion, unlock the Prince of Abolition Potion to advance to Sequence 1.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S1" Language="en_US"><Text>At 6 digestion, unlock Black Emperor Enthronement with the True God's Church, or the double-cost Unconsecrated Black Emperor Enthronement without it. Complete the project to advance to Sequence 0.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S0" Language="en_US"><Text>All Black Emperor Path advancements are complete.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARBARIAN_POTION_NAME" Language="en_US"><Text>Barbarian Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARBARIAN_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 8</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARBARIAN_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Barbarian after digesting Sequence 9.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BRIBER_POTION_NAME" Language="en_US"><Text>Briber Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BRIBER_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 7</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BRIBER_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Briber after digesting Sequence 8.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION_NAME" Language="en_US"><Text>Baron of Corruption Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 6</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Baron of Corruption after digesting Sequence 7.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION_NAME" Language="en_US"><Text>Chaos Mentor Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 5</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Chaos Mentor after digesting Sequence 6.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION_NAME" Language="en_US"><Text>Count of Corruption Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 4</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION_DESCRIPTION" Language="en_US"><Text>After Industrialization, advance to Count of Corruption after digesting Sequence 5.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_FRENZY_MAGE_POTION_NAME" Language="en_US"><Text>Frenzy Mage Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_FRENZY_MAGE_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 3</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_FRENZY_MAGE_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Frenzy Mage after digesting Sequence 4.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION_NAME" Language="en_US"><Text>Duke of Entropy Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 2</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Duke of Entropy after digesting Sequence 3.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION_NAME" Language="en_US"><Text>Prince of Abolition Potion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 1</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION_DESCRIPTION" Language="en_US"><Text>Advance to Prince of Abolition after digesting Sequence 2.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_TRANSFORMATION_NAME" Language="en_US"><Text>Transformation</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_TRANSFORMATION_SHORT_NAME" Language="en_US"><Text>Convert Production into Science, Culture, and Gold</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_TRANSFORMATION_DESCRIPTION" Language="en_US"><Text>Repeatable. While active, every point of Production simultaneously yields 1 Science, 1 Culture, and 2 Gold.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_NAME" Language="en_US"><Text>Black Emperor Enthronement</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_DESCRIPTION" Language="en_US"><Text>After digesting Sequence 1 and establishing the True God's Church, advance to Sequence 0 Black Emperor.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED_NAME" Language="en_US"><Text>Unconsecrated Black Emperor Enthronement</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED_SHORT_NAME" Language="en_US"><Text>Advance to Sequence 0 at double Production</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED_DESCRIPTION" Language="en_US"><Text>Without the True God's Church, this enthronement costs twice the normal base Production. Complete it after digesting Sequence 1 to advance to Sequence 0 Black Emperor.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_I_NAME" Language="en_US"><Text>Chaos I</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_I_DESCRIPTION" Language="en_US"><Text>Fixed -100 Gold and +100 Science per turn.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_II_NAME" Language="en_US"><Text>Chaos II</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_II_DESCRIPTION" Language="en_US"><Text>Fixed -500 Gold and +500 Science per turn.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_III_NAME" Language="en_US"><Text>Chaos III</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_III_DESCRIPTION" Language="en_US"><Text>Fixed -1000 Gold and +1000 Science per turn.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_I_NAME" Language="en_US"><Text>Corruption I</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_I_DESCRIPTION" Language="en_US"><Text>Fixed -100 Gold per turn; +10 Amenities in every city.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_II_NAME" Language="en_US"><Text>Corruption II</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_II_DESCRIPTION" Language="en_US"><Text>Fixed -500 Gold per turn; +50 Amenities in every city.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_III_NAME" Language="en_US"><Text>Corruption III</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_III_DESCRIPTION" Language="en_US"><Text>Fixed -1000 Gold per turn; +100 Amenities in every city.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_I_NAME" Language="en_US"><Text>Frenzy I</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_I_DESCRIPTION" Language="en_US"><Text>All cities of major civilizations at war with you receive -30% Food, Production, Gold, Science, Culture, and Faith.</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_II_NAME" Language="en_US"><Text>Frenzy II</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_II_DESCRIPTION" Language="en_US"><Text>All cities of major civilizations at war with you receive -50% Food, Production, Gold, Science, Culture, and Faith.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_TITLE" Language="en_US"><Text>Congratulations on advancing to Black Emperor</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_1" Language="en_US"><Text>Master of Order's Shadow</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_2" Language="en_US"><Text>Embodiment of Rules Loopholes</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_3" Language="en_US"><Text>Emperor Above the Nine Mausoleums</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_4" Language="en_US"><Text>Destination of Every Empire and All Chaos</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_GOLDEN_APPRAISAL_MIRROR_NAME" Language="en_US"><Text>Golden Appraisal Mirror</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_PERPETUAL_GEARBOX_NAME" Language="en_US"><Text>Perpetual Gearbox</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_ERROR_ASTROLABE_NAME" Language="en_US"><Text>Erroneous Astrolabe</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_HERMES_FURNACE_NAME" Language="en_US"><Text>Hermes Furnace</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_MYSTERY_BLUEPRINT_NAME" Language="en_US"><Text>Mystery Blueprint</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_KNOWLEDGE_CASKET_NAME" Language="en_US"><Text>Casket of Knowledge</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_CIVILIZATION_STELE_NAME" Language="en_US"><Text>Civilization Enlightenment Stele</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_TITLE" Language="en_US"><Text>Sealed Artifacts</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_EQUIPPED" Language="en_US"><Text>Equipment Slots</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_INVENTORY" Language="en_US"><Text>Owned Artifacts</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_1" Language="en_US"><Text>Artifact Slot 1</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_2" Language="en_US"><Text>Artifact Slot 2</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_EMPTY" Language="en_US"><Text>Empty Slot</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_NUMBER" Language="en_US"><Text>Artifact Slot {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_ORGANIZE" Language="en_US"><Text>Organize Artifacts</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EQUIPPED_COUNT" Language="en_US"><Text>Equipped {1_Num}/{2_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_INVENTORY_COUNT" Language="en_US"><Text>Inventory {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_EMPTY_INVENTORY" Language="en_US"><Text>No unequipped artifacts</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_DRAG_HINT" Language="en_US"><Text>Drag an artifact into a left slot to equip it; drag it back or right-click to unequip.[NEWLINE]Each player turn reissues effects for that turn from the current slots. Unequipped effects expire no later than the next turn; already resolved one-time or per-turn effects are not reversed.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EQUIPMENT_GROUP" Language="en_US"><Text>Artifact Equipment {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_INVENTORY_GROUP" Language="en_US"><Text>Artifact Inventory {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_GROUP_SLOTS" Language="en_US"><Text>Positions {1_Num}–{2_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_TOOLTIP_EQUIPPED" Language="en_US"><Text>Equipped in slot {1_Num}. Drag right to unequip or onto another left slot to swap.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_TOOLTIP_INVENTORY" Language="en_US"><Text>In inventory. Drag onto a left slot to equip.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_TOOLTIP_META" Language="en_US"><Text>Level {1_Level} · {2_Path} · Sequence {3_Sequence} · {4_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EMPTY_EQUIPMENT_TOOLTIP" Language="en_US"><Text>Empty equipment slot {1_Num}. Drag an artifact here from the right.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EMPTY_INVENTORY_TOOLTIP" Language="en_US"><Text>Empty inventory position. Drag an equipped artifact here to unequip it.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_HEADER" Language="en_US"><Text>Your civilization has acquired a Sealed Artifact!</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_META" Language="en_US"><Text>Level: {1_Num}　|　Pathway: Paragon</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_META_ALL" Language="en_US"><Text>Level: {1_Num} | Pathway: {2_Path}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_VIEW" Language="en_US"><Text>View Sealed Artifacts</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_POSITIVE" Language="en_US"><Text>Positive effect: {1_Text}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_NEGATIVE" Language="en_US"><Text>Negative effect: {1_Text}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GOLDEN_POSITIVE" Language="en_US"><Text>+100% yields and Tourism from all Great Works.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GOLDEN_NEGATIVE" Language="en_US"><Text>-25% Great Person points.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GEARBOX_POSITIVE" Language="en_US"><Text>+2 Production on all improved tiles.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GEARBOX_NEGATIVE" Language="en_US"><Text>-1 Food on all improved tiles.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_ASTROLABE_POSITIVE" Language="en_US"><Text>+100% Campus adjacency, building and specialist Science, and Space Project Production.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_ASTROLABE_NEGATIVE" Language="en_US"><Text>-50% Faith and -20% Culture in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_FURNACE_POSITIVE" Language="en_US"><Text>+40% Production in all cities; Builders created while equipped permanently gain 3 charges.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_FURNACE_NEGATIVE" Language="en_US"><Text>-40% Gold and -2 Amenities in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_BLUEPRINT_POSITIVE" Language="en_US"><Text>+60% base yields from specialty district adjacency, buildings, and specialists.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_BLUEPRINT_NEGATIVE" Language="en_US"><Text>-30% Food and -50% Population Growth in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_CASKET_POSITIVE" Language="en_US"><Text>Triggers one random available, previously untriggered Eureka each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_CASKET_NEGATIVE" Language="en_US"><Text>-30% Culture in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_STELE_POSITIVE" Language="en_US"><Text>+30% Science and Culture in all cities; +500 Great Scientist points each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_STELE_NEGATIVE" Language="en_US"><Text>-500 Gold each turn; -30% Production in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_EMBER_EFFECT" Language="en_US"><Text>Pillaging costs 1 Movement and yields +100%; all cities lose 2 Amenities.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_LETTER_EFFECT" Language="en_US"><Text>Gain 1000 Gold on the first war and 50 Gold per wartime turn; -25% Gold while at peace.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_SICKLE_EFFECT" Language="en_US"><Text>Kills heal 30 HP; military units lose 5 HP per turn but cannot die from it.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_BANNER_EFFECT" Language="en_US"><Text>All units gain +30 Combat Strength and +3 Movement; -50% Gold and +100% maintenance.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_SCRIPTURE_EFFECT" Language="en_US"><Text>At war: +100% Production and -100% war weariness; at peace: -40% Production.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_WEATHER_EFFECT" Language="en_US"><Text>Allied units gain +2 Movement; wartime enemies suffer -20 Strength and -2 Movement; wartime cities lose 5 Amenities and 30% Food.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_CROWN_EFFECT" Language="en_US"><Text>+150 Strength when attacking district defenses; -20 Strength when defending.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_BRIBE_EFFECT" Language="en_US"><Text>Trade routes gain +10 Gold and city-state routes grant 1 Envoy; domestic routes have -3 Food and -3 Production.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_TAX_EFFECT" Language="en_US"><Text>+100% Gold; -30% Culture.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_CODEX_EFFECT" Language="en_US"><Text>Gain 30 Science and lose 100 Gold each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_FEAST_EFFECT" Language="en_US"><Text>+100% Food and +5 Amenities; lose 500 Gold each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_SCEPTER_EFFECT" Language="en_US"><Text>Enemy civilizations at war lose 30% of six yields; your cities gain 15 Amenities; lose 500 Gold each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_EMBER_EFFECT" Language="en_US"><Text>Positive: may pillage your own improvements and districts for double yields, using the standard pillage Movement cost. Negative: -2 Amenities in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_LETTER_EFFECT" Language="en_US"><Text>Positive: +50 Gold per turn. Negative: -20% Production in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_BANNER_EFFECT" Language="en_US"><Text>Positive: your units gain +30 Combat Strength and +3 Movement; units of formally allied AI civilizations gain +15 Combat Strength. Negative: -50% Gold and +100% unit maintenance.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_SCRIPTURE_EFFECT" Language="en_US"><Text>Positive: +60% Production in all cities. Negative: -20% Food in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_WEATHER_EFFECT" Language="en_US"><Text>Positive: your units gain +2 Movement; all roaming and central-workshop Rampagers suffer -1 Movement and -10 Combat Strength. Negative: -2 Amenities in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_CROWN_EFFECT" Language="en_US"><Text>Positive: the displayed shield defense and walled defense of all your cities gain +50; formally allied AI cities gain +30 to both. Negative: -2 Amenities in all cities.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_BE_SCEPTER_EFFECT" Language="en_US"><Text>Positive: Rampager global cap -3 and maximum spawn attempts per turn -2. Negative: -50 Gold per turn.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_WEATHER_MONSTER" Language="en_US"><Text>Disaster Weather Instrument</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_WEATHER_MONSTER_DESC" Language="en_US"><Text>Suppressed by the Disaster Weather Instrument: -10 Combat Strength and -1 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_WEATHER_MONSTER_PREVIEW" Language="en_US"><Text>Disaster Weather Instrument: -10 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_CROWN_SELF_PREVIEW" Language="en_US"><Text>Conqueror's Crown (You): +50 City Shield Defense</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_CROWN_ALLY_PREVIEW" Language="en_US"><Text>Conqueror's Crown (Formal AI Ally): +30 City Shield Defense</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_EMBER_PILLAGE_BUTTON" Language="en_US"><Text>Pillage Own Tile (Double Yield)</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_EMBER_PILLAGE_TOOLTIP" Language="en_US"><Text>Use the Disaster Ember to pillage one layer of your own improvement or district, receiving double yield at the standard pillage Movement cost.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_ENTROPY_EFFECT" Language="en_US"><Text>Gain 99 Loyalty per turn and triple outward pressure; -50% Culture.</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_ORDER_EFFECT" Language="en_US"><Text>-25% Production; the lost value becomes Science, Culture, and Gold.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_SEQUENCE_NAME" Language="en_US"><Text>Runaway Workshop Sequence Beyonder</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_SEQUENCE_DESCRIPTION" Language="en_US"><Text>Uses the melee baseline fixed at creation and cannot move.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_LOW_NAME" Language="en_US"><Text>Low-Tier Lost Controller</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_MID_NAME" Language="en_US"><Text>Mid-Tier Lost Controller</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_HIGH_NAME" Language="en_US"><Text>High-Tier Lost Controller</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_DESCRIPTION" Language="en_US"><Text>Fixed at the center of a Rampager Workshop. Combat Strength is frozen at birth from the world melee baseline, workshop tier, and current uncontrolled period.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PERIOD_STRENGTH_NAME" Language="en_US"><Text>World Uncontrolled Escalation</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PERIOD_STRENGTH_DESCRIPTION" Language="en_US"><Text>Birth-time Combat Strength from the current world uncontrolled period.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PREVIEW_PERIOD_STRENGTH" Language="en_US"><Text>Period escalation: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_PP_PREVIEW_BEYONDER_EFFECT" Language="en_US"><Text>+10 Beyonder Effect</Text></Row>
+		<Row Tag="LOC_LOTM_RP_WORKSHOP_HARVESTER_NAME" Language="en_US"><Text>Reaper</Text></Row>
+		<Row Tag="LOC_LOTM_RP_WORKSHOP_WAR_BISHOP_NAME" Language="en_US"><Text>War Bishop</Text></Row>
+		<Row Tag="LOC_LOTM_RP_WORKSHOP_CONQUEROR_NAME" Language="en_US"><Text>Conqueror</Text></Row>
+		<Row Tag="LOC_LOTM_BE_WORKSHOP_CHAOS_MENTOR_NAME" Language="en_US"><Text>Chaos Mentor</Text></Row>
+		<Row Tag="LOC_LOTM_BE_WORKSHOP_FRENZY_MAGE_NAME" Language="en_US"><Text>Frenzy Mage</Text></Row>
+		<Row Tag="LOC_LOTM_BE_WORKSHOP_PRINCE_NAME" Language="en_US"><Text>Prince of Abolition</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_LEVEL0_STRENGTH_NAME" Language="en_US"><Text>Perfect Armament</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_LEVEL0_STRENGTH_DESCRIPTION" Language="en_US"><Text>Spawned by a level 0 workshop: +10 Combat Strength and heals 10 each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HERMES_BUILDER_DESCRIPTION" Language="en_US"><Text>Created while Hermes Furnace was equipped: permanently gains 3 build charges.</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ASTRONOMER_NAME" Language="en_US"><Text>Astronomer</Text></Row>
+		<Row Tag="LOC_LOTM_PP_MYSTICIST_NAME" Language="en_US"><Text>Mysticologist</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ENLIGHTENER_NAME" Language="en_US"><Text>Enlightener</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_REWARD" Language="en_US"><Text>Sealed Artifact acquired: {1}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_ALL_COLLECTED" Language="en_US"><Text>All artifacts of this level have been collected.</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_DISASTER_EMBER_NAME" Language="en_US"><Text>Disaster Ember</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_CONSPIRATOR_LETTER_NAME" Language="en_US"><Text>Conspirator's Letter</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_BLOOD_HARVEST_SICKLE_NAME" Language="en_US"><Text>Blood Harvest Sickle</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_IRONBLOOD_BANNER_NAME" Language="en_US"><Text>Ironblood Banner</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_WAR_SCRIPTURE_NAME" Language="en_US"><Text>War Scripture</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_DISASTER_WEATHER_NAME" Language="en_US"><Text>Disaster Weather Instrument</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_CONQUEROR_CROWN_NAME" Language="en_US"><Text>Conqueror's Crown</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_GOLDEN_BRIBE_NAME" Language="en_US"><Text>Golden Bribe Contract</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_CORRUPTION_TAXBOOK_NAME" Language="en_US"><Text>Corruption Taxbook</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_CHAOS_CODEX_NAME" Language="en_US"><Text>Chaos Codex Fragment</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_DEPRAVED_FEAST_NAME" Language="en_US"><Text>Depraved Feast</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_FRENZY_SCEPTER_NAME" Language="en_US"><Text>Frenzy Scepter</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_ENTROPY_CROWN_NAME" Language="en_US"><Text>Entropy Crown</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_ORDER_CONVERTER_NAME" Language="en_US"><Text>Order Converter</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_GOOD" Language="en_US"><Text>Holder in Good Condition</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_GOOD_DESC" Language="en_US"><Text>+5 Combat Strength and +1 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_UNSTABLE" Language="en_US"><Text>Holder Unstable</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_UNSTABLE_DESC" Language="en_US"><Text>-5 Combat Strength and -1 Movement; minimum Movement is 1.</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_SATISFIED_SUMMARY" Language="en_US"><Text>Artifact Satisfied: {1_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_SATISFIED_MESSAGE" Language="en_US"><Text>{1_Name} is highly satisfied. For 5 player turns it keeps only its positive effects while equipped. Unequipping suppresses all effects without pausing the timer.</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_UNCONTROLLED_SUMMARY" Language="en_US"><Text>Artifact Uncontrolled: {1_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_UNCONTROLLED_MESSAGE" Language="en_US"><Text>{1_Name} is uncontrolled. For 5 player turns it applies only negative effects while equipped. You may unequip it to avoid those effects, but the uncontrolled timer will continue.</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_GOOD_SUMMARY" Language="en_US"><Text>Holder in Good Condition</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_GOOD_MESSAGE" Language="en_US"><Text>Your Pathway Holder is in good condition: +5 Combat Strength and +1 Movement for 5 player turns.</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_UNSTABLE_SUMMARY" Language="en_US"><Text>Holder Unstable</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_UNSTABLE_MESSAGE" Language="en_US"><Text>Your Pathway Holder is unstable: -5 Combat Strength and -1 Movement for 5 player turns, with a minimum Movement of 1.</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_FOOL_SAINT_NAME" Language="en_US"><Text>Church of the Fool - Saint</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_FOOL_ANGEL_NAME" Language="en_US"><Text>Church of the Fool - Angel</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_NIGHT_SAINT_NAME" Language="en_US"><Text>Church of the Evernight Goddess - Saint</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_NIGHT_ANGEL_NAME" Language="en_US"><Text>Church of the Evernight Goddess - Angel</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_STORM_SAINT_NAME" Language="en_US"><Text>Church of the Lord of Storms - Saint</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_STORM_ANGEL_NAME" Language="en_US"><Text>Church of the Lord of Storms - Angel</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_SAINT_DESCRIPTION" Language="en_US"><Text>A Saint of the corresponding church. Base Combat Strength 90, Movement 3, Sight 3; synchronously advances up to its Movement each turn to pursue and clear uncontrolled monsters first, then roaming ordinary Barbarians that are not defending camps. It never attacks or clears camps and workshops, never deliberately attacks players or normal AIs, and cannot capture cities.</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_ANGEL_DESCRIPTION" Language="en_US"><Text>An Angel of the corresponding church. Base Combat Strength 130, Movement 4, Sight 4; synchronously advances up to its Movement each turn to pursue and clear uncontrolled monsters first, then roaming ordinary Barbarians that are not defending camps. It never attacks or clears camps and workshops, never deliberately attacks players or normal AIs, and cannot capture cities.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION_NAME" Language="en_US"><Text>Legacy Guardian Protocol (Retired)</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION_DESCRIPTION" Language="en_US"><Text>Retained only to remove the old Phase 3 cannot-attack state from upgraded saves; newly generated units no longer receive it.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_TITLE" Language="en_US"><Text>Choose Redemption Difficulty</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_BODY" Language="en_US"><Text>Difficulty cannot be changed once confirmed.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_NORMAL_NAME" Language="en_US"><Text>Normal</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_HARD_NAME" Language="en_US"><Text>Hard</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_MADNESS_NAME" Language="en_US"><Text>Madness</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_SELECT" Language="en_US"><Text>Select Difficulty</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_EARLY_SEAL_NAME" Language="en_US"><Text>Seal: -10 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_EARLY_SEAL_DESCRIPTION" Language="en_US"><Text>World turns 1-20: -10 Combat Strength for ordinary lost-control monsters. Removed on turn 21; excludes Outer Gods and their minions.</Text></Row>
+			<Row Tag="LOC_LOTM_RESCUE_EARLY_SEAL_PREVIEW" Language="en_US"><Text>Seal: {1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_MADNESS_PREVIEW" Language="en_US"><Text>Purification Seal: {1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_5_NAME" Language="en_US"><Text>Purification Seal: -5 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_5_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 5. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_10_NAME" Language="en_US"><Text>Purification Seal: -10 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_10_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 10. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_15_NAME" Language="en_US"><Text>Purification Seal: -15 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_15_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 15. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_20_NAME" Language="en_US"><Text>Purification Seal: -20 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_20_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 20. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_25_NAME" Language="en_US"><Text>Purification Seal: -25 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_25_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 25. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_30_NAME" Language="en_US"><Text>Purification Seal: -30 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_30_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 30. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_35_NAME" Language="en_US"><Text>Purification Seal: -35 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_35_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 35. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_40_NAME" Language="en_US"><Text>Purification Seal: -40 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_40_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 40. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_45_NAME" Language="en_US"><Text>Purification Seal: -45 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_45_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 45. Stacks separately with the turns 1-20 Seal.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_50_NAME" Language="en_US"><Text>Purification Seal: -50 Combat Strength</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_50_DESCRIPTION" Language="en_US"><Text>Purification Energy reduces lost-control monster Combat Strength by 50. Stacks separately with the turns 1-20 Seal.</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_ARTIFACT_TAB_PERFECT" Language="en_US"><Text>Paragon Pathway</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_TAB_RED_PRIEST" Language="en_US"><Text>Red Priest Path</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_TAB_BLACK_EMPEROR" Language="en_US"><Text>Black Emperor Path</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_TITLE" Language="en_US"><Text>Extraordinary Gathering</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_ARTIFACT_INTRO" Language="en_US"><Text>You discover and attend a gathering of Beyonders. During it, someone offers to sell you a Sealed Artifact:</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_POTION_INTRO" Language="en_US"><Text>You discover and attend a gathering of Beyonders. During it, someone offers to sell you a potion:</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_QUESTION" Language="en_US"><Text>You recognize it as genuine. Would you like to buy it?</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_PRICE" Language="en_US"><Text>Price: {1_Num} Gold[NEWLINE]Current Gold: {2_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_BUY" Language="en_US"><Text>Buy</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_LEAVE" Language="en_US"><Text>Leave</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_STRENGTH_NAME" Language="en_US"><Text>Extraordinary Combat Baseline</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_STRENGTH_DESCRIPTION" Language="en_US"><Text>The synchronized world system sets Combat Strength from the barbarian melee baseline at creation.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_FRENZY_STRENGTH_NAME" Language="en_US"><Text>Frenzy</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_FRENZY_STRENGTH_DESCRIPTION" Language="en_US"><Text>This uncontrolled monster gains 15 Combat Strength over the strongest barbarian melee baseline frozen at creation. In Redemption Mode, each independently locks onto the nearest ordinary AI or city-state city on its continent. It completely ignores humans while any other faction remains and turns on humans only when the map contains only humans and the Redemption seal／three Churches.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_MID_STRENGTH_NAME" Language="en_US"><Text>Mid-tier Empowerment</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_MID_STRENGTH_DESCRIPTION" Language="en_US"><Text>A mid-tier uncontrolled monster gains 10 additional Combat Strength on top of Frenzy.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_HIGH_STRENGTH_NAME" Language="en_US"><Text>High-tier Empowerment</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_HIGH_STRENGTH_DESCRIPTION" Language="en_US"><Text>A high-tier uncontrolled monster gains 20 additional Combat Strength on top of Frenzy.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_MOVEMENT_NAME" Language="en_US"><Text>Uncontrolled Monster Movement</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_MOVEMENT_DESCRIPTION" Language="en_US"><Text>The synchronized world system sets this unit's additional Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_DYNAMIC_STRENGTH" Language="en_US"><Text>Extraordinary unit: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_MONSTER_FRENZY" Language="en_US"><Text>Frenzy: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_MONSTER_LOW_NAME" Language="en_US"><Text>Low-Tier Uncontrolled Monster</Text></Row>
+		<Row Tag="LOTM_WORLD_MONSTER_2" Language="en_US"><Text>Low-Tier Uncontrolled Monster</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_MONSTER_MID_NAME" Language="en_US"><Text>Mid-Tier Uncontrolled Monster</Text></Row>
+		<Row Tag="LOTM_WORLD_MONSTER_1" Language="en_US"><Text>Mid-Tier Uncontrolled Monster</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_MONSTER_HIGH_NAME" Language="en_US"><Text>High-Tier Uncontrolled Monster</Text></Row>
+		<Row Tag="LOTM_WORLD_MONSTER_0" Language="en_US"><Text>High-Tier Uncontrolled Monster</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_CENTER" Language="en_US"><Text>Seal: -10 Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_FOOL" Language="en_US"><Text>Fool</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_NIGHT" Language="en_US"><Text>Night</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_STORM" Language="en_US"><Text>Storm</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_TOOLTIP" Language="en_US"><Text>Planned {1_Name} center[NEWLINE]Coordinates: ({2_X}, {3_Y})[NEWLINE]Seal radius: {4_Radius}; directions: {5_Directions}[NEWLINE]Redemption Mode debug marker.</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_TITLE" Language="en_US"><Text>Outer Deity Weakening</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_VALUE" Language="en_US"><Text>Purification: {1_Total}/{2_Maximum}</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_VALUE_OVER" Language="en_US"><Text>Purification: {1_Total} (display cap {2_Maximum})</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_TOOLTIP" Language="en_US"><Text>Global Purification shared by all normal factions: {1_Total}[NEWLINE]Latest change: +{2_Delta} (world turn {3_Turn})[NEWLINE]The bar's display cap is {4_Maximum}; raw Purification can keep increasing. The four ticks at 500/1000/1500/2000 and the 3000 endpoint are Outer Deity strength-tier boundaries; the highest-tier threshold is {5_BestThreshold}.[NEWLINE]At final descent, 0–499 / 500–999 / 1000–1499 / 1500–1999 / 2000–2999 / ≥3000 lock one of six tiers; the tier does not change afterward.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_TITLE" Language="en_US"><Text>Purification Contribution Ranking</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_COMPACT" Language="en_US"><Text>Contributors: {1_Ranking}</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_ENTRY" Language="en_US"><Text>{1_Rank}. {2_Name}: {3_Value} ({4_Events} events)</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_EMPTY" Language="en_US"><Text>Contributors: no Purification recorded</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_CHURCH_FOOL" Language="en_US"><Text>Church of the Fool</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_CHURCH_NIGHT" Language="en_US"><Text>Church of Evernight</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_CHURCH_STORM" Language="en_US"><Text>Church of Storms</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_LEGACY" Language="en_US"><Text>Legacy unattributed records</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_UNKNOWN" Language="en_US"><Text>Unknown faction {1_Id}</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P9_RP_EXTRA_ATTACK_NAME" Language="en_US"><Text>Conqueror: Extra Attack</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P9_RP_EXTRA_ATTACK_DESCRIPTION" Language="en_US"><Text>This combat unit gains 1 additional attack each turn.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_RESCUE_PENDING" Language="en_US"><Text>Redemption Mode Arson is fixed at 70 direct damage. Gameplay synchronization data is currently unavailable, so the action did not fire or consume cooldown.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S9" Language="en_US"><Text>Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S8" Language="en_US"><Text>Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S7" Language="en_US"><Text>Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S6" Language="en_US"><Text>Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S5" Language="en_US"><Text>Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S4" Language="en_US"><Text>Iron-Blooded Knight (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement.[NEWLINE][NEWLINE]Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S3" Language="en_US"><Text>War Bishop (Sequence 3): all cities permanently gain +100% Production with no war requirement; it no longer grants War Weariness or occupied-city Loyalty effects.[NEWLINE][NEWLINE]Iron-Blooded Knight (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement.[NEWLINE][NEWLINE]Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S2" Language="en_US"><Text>Weather Warlock (Sequence 2): all friendly units gain another +30 Combat Strength and +3 Movement without weakening enemies; cumulative with Iron-Blooded Knight for +60 Combat Strength and +6 Movement.[NEWLINE][NEWLINE]War Bishop (Sequence 3): all cities permanently gain +100% Production with no war requirement; it no longer grants War Weariness or occupied-city Loyalty effects.[NEWLINE][NEWLINE]Iron-Blooded Knight (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement.[NEWLINE][NEWLINE]Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S1" Language="en_US"><Text>Conqueror (Sequence 1): all friendly combat units gain 1 additional attack each turn; the ordinary-mode advantage against Cities and Encampments is removed.[NEWLINE][NEWLINE]Weather Warlock (Sequence 2): all friendly units gain another +30 Combat Strength and +3 Movement without weakening enemies; cumulative with Iron-Blooded Knight for +60 Combat Strength and +6 Movement.[NEWLINE][NEWLINE]War Bishop (Sequence 3): all cities permanently gain +100% Production with no war requirement; it no longer grants War Weariness or occupied-city Loyalty effects.[NEWLINE][NEWLINE]Iron-Blooded Knight (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement.[NEWLINE][NEWLINE]Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S0" Language="en_US"><Text>Red Priest (Sequence 0): all cities permanently operate at ten times normal Production. After all three Churches reach 6 Envoys, complete War God's Relic to gain Divine Legion. A Sequence 0 player of any Pathway may sacrifice a friendly non-divine combat unit, permanently adding one tenth of its current Combat Strength, rounded down, to the true god; special units are eligible whenever their live Combat Strength is above 0.[NEWLINE][NEWLINE]Conqueror (Sequence 1): all friendly combat units gain 1 additional attack each turn; the ordinary-mode advantage against Cities and Encampments is removed.[NEWLINE][NEWLINE]Weather Warlock (Sequence 2): all friendly units gain another +30 Combat Strength and +3 Movement without weakening enemies; cumulative with Iron-Blooded Knight for +60 Combat Strength and +6 Movement.[NEWLINE][NEWLINE]War Bishop (Sequence 3): all cities permanently gain +100% Production with no war requirement; it no longer grants War Weariness or occupied-city Loyalty effects.[NEWLINE][NEWLINE]Iron-Blooded Knight (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement.[NEWLINE][NEWLINE]Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S9" Language="en_US"><Text>Each increase in experience: +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S8" Language="en_US"><Text>Path Holder actively attacks any uncontrolled monster or workshop center monster: +1; actively attacks a unit with higher base Combat Strength: +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S7" Language="en_US"><Text>Successfully use Arson and deal damage: +1; if that Arson directly kills a target: another +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S6" Language="en_US"><Text>Purchase a military unit with Gold: +1; normally train a military unit in a city: +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S5" Language="en_US"><Text>Any friendly unit kills: +1; if the target was already wounded before this attack: another +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S4" Language="en_US"><Text>A friendly unit kills within hex distance 6 of the Path Holder, including the sixth ring: +1; clear an uncontrolled workshop in that same range: +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S3" Language="en_US"><Text>Each military unit normally trained in a city: +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S2" Language="en_US"><Text>Kill a mid-tier uncontrolled monster: +1; kill a high-tier uncontrolled monster: +2.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S1" Language="en_US"><Text>Any friendly combat unit performs its second attack in the same turn: +1; if that second attack kills: another +1.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S0" Language="en_US"><Text>No further digestion.</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_FOOL_NAME" Language="en_US"><Text>The Fool</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_NIGHT_NAME" Language="en_US"><Text>Evernight Goddess</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_STORM_NAME" Language="en_US"><Text>Lord of Storms</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_RED_PRIEST_NAME" Language="en_US"><Text>Red Priest True God</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_PERFECT_NAME" Language="en_US"><Text>Perfect One True God</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_THIEF_NAME" Language="en_US"><Text>Error</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_BLACK_EMPEROR_NAME" Language="en_US"><Text>Black Emperor True God</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_AVATAR_NAME" Language="en_US"><Text>Outer Deity Avatar</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_MINION_NAME" Language="en_US"><Text>Outer Deity Minion</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_TRUE_GOD_DESCRIPTION" Language="en_US"><Text>One of the three orthodox deities, fixed at 550 Combat Strength. Controlled by the first human player; cannot be trained or capture cities.</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_PLAYER_GOD_DESCRIPTION" Language="en_US"><Text>A player's Sequence 0 true god with 550 base Combat Strength. After War God's Relic, a friendly non-divine combat unit may be sacrificed to permanently grant one tenth of its current Combat Strength, rounded down; special units qualify whenever their live Combat Strength is above 0. Its first death is followed by revival after 5 turns; a second death is permanent. It gains +30 Movement whenever live Combat Strength is strictly above 1000.</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_AVATAR_DESCRIPTION" Language="en_US"><Text>The final Outer Deity boss. Global Purification at descent locks its strength, health phases, healing, summoning, and attack tier. As a divine unit, it is immune to Arson.</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_MINION_DESCRIPTION" Language="en_US"><Text>A periodically summoned minion. Its summon interval and population cap depend on the locked Purification tier.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_DIVINE_POWER_NAME" Language="en_US"><Text>Divine Power Calibration</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_DIVINE_POWER_DESCRIPTION" Language="en_US"><Text>The synchronized system uses this ability to calibrate a true god's runtime Combat Strength to its target.</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RESCUE_WAR_GOD_RELIC_NAME" Language="en_US"><Text>War God's Relic</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RESCUE_WAR_GOD_RELIC_SHORT_NAME" Language="en_US"><Text>Gain Divine Legion</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RESCUE_WAR_GOD_RELIC_DESCRIPTION" Language="en_US"><Text>Unlocked after the Fool, Night and Storm Churches each have 6 Envoys. Complete this project to gain Divine Legion and sacrifice friendly military combat units; each grants the true god one tenth of its current Combat Strength, rounded down.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_DIVINE_LEGION_NAME" Language="en_US"><Text>Divine Legion</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_DIVINE_LEGION_DESCRIPTION" Language="en_US"><Text>After completing War God's Relic, sacrifice friendly military combat units. Each sacrificed unit permanently grants the true god one tenth of its current Combat Strength, rounded down; the unit is removed.</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PLAYER_GOD_MOBILITY_NAME" Language="en_US"><Text>Transcendent Speed</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PLAYER_GOD_MOBILITY_DESCRIPTION" Language="en_US"><Text>Gains +30 Movement when live Combat Strength is strictly above 1000 at the start of each player turn; removed immediately at 1000 or below.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_WAR_GOD_RELIC_TASK_ENVOYS" Language="en_US"><Text>Objective: reach 6 Envoys in all three Churches</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_WAR_GOD_RELIC_TASK_PROJECT" Language="en_US"><Text>Objective: complete War God's Relic</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_WAR_GOD_RELIC_TASK_COMPLETE" Language="en_US"><Text>Divine Legion acquired</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_CHURCH_ORACLE_STATES" Language="en_US"><Text>Later Church objectives: 10 Envoys ({1_State10}) | 15 Envoys ({2_State15})</Text></Row>
+		<Replace Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S0" Language="en_US"><Text>Red Priest (Sequence 0): all cities permanently operate at ten times normal Production. After all three Churches reach 6 Envoys, complete War God's Relic to gain Divine Legion; at final descent, the Red Priest true god inherits one tenth of the total Combat Strength of surviving military combat units, rounded down.[NEWLINE][NEWLINE]Conqueror (Sequence 1): all friendly combat units gain 1 additional attack each turn; the ordinary-mode advantage against Cities and Encampments is removed.[NEWLINE][NEWLINE]Weather Warlock (Sequence 2): all friendly units gain another +30 Combat Strength and +3 Movement without weakening enemies; cumulative with Iron-Blooded Knight for +60 Combat Strength and +6 Movement.[NEWLINE][NEWLINE]War Bishop (Sequence 3): all cities permanently gain +100% Production with no war requirement; it no longer grants War Weariness or occupied-city Loyalty effects.[NEWLINE][NEWLINE]Iron-Blooded Knight (Sequence 4): all friendly units gain +30 Combat Strength and +3 Movement.[NEWLINE][NEWLINE]Reaper (Sequence 5): after a friendly unit kills an enemy, that unit heals at most once per turn: 60 Health for the path holder and 30 for another friendly unit.[NEWLINE][NEWLINE]Conspirator (Sequence 6): military units cost 50% less Gold to purchase; each military unit has a fixed -2 Gold maintenance discount under the original maintenance rule and cannot fall below zero.[NEWLINE][NEWLINE]Arson (Sequence 7): target a visible non-City-Center land tile within 6 hexes containing units currently at war with you; directly deals 70 damage to every non-divine enemy unit on the tile, while divine units are immune. It does not execute, consume all Movement, leave a burn marker, or pillage; cooldown 5 turns.[NEWLINE][NEWLINE]Provoker (Sequence 8): the path holder gains +40 Combat Strength while fortified; at the start of each friendly turn, remaining fortified restores the holder to 100% health.[NEWLINE][NEWLINE]Hunter's Instinct (Sequence 9): +2 Movement and +5 Sight; ignores extra movement costs from Woods, Rainforest, and Hills; +30 Combat Strength when attacking Barbarians or wounded units, applied only once if both conditions are true.</Text></Replace>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_OUTER_SKILLS_NAME" Language="en_US"><Text>Outer Deity Attack Tier</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_OUTER_SKILLS_DESCRIPTION" Language="en_US"><Text>Grants additional attacks according to the Purification tier locked at descent.</Text></Row>
+		<Row Tag="LOC_BUILDING_LOTM_RESCUE_VICTORY_TOKEN_NAME" Language="en_US"><Text>Redemption Victory Token</Text></Row>
+		<Row Tag="LOC_BUILDING_LOTM_RESCUE_VICTORY_TOKEN_DESCRIPTION" Language="en_US"><Text>Internal victory token synchronized to human players after the final defeat of the Outer Deity.</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_NAME" Language="en_US"><Text>Redemption Victory</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_REQUIREMENT" Language="en_US"><Text>Advance to Sequence 0 and join the three true gods in defeating the Outer Deity avatar that has descended upon the world.</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_DESCRIPTION" Language="en_US"><Text>The extraordinary world has fallen out of control, and a deity from beyond the stars awaits its descent. Purge uncontrolled workshops and monsters, weaken the deity, and advance to Sequence 0 before the apocalypse. Then join the Fool, Evernight Goddess, and Lord of Storms against the Outer Deity avatar. Defeat it and save the world to earn a Redemption Victory.</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_BLURB" Language="en_US"><Text>The stars recede, and civilization endures.</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_FINAL" Language="en_US"><Text>The stars recede, and civilization endures.[NEWLINE][NEWLINE]The apocalypse is finally over. The avatar from beyond the stars has fallen before four true gods; madness retreats and uncontrolled extraordinary power grows still. The Fool, Evernight Goddess, Lord of Storms, and you have preserved this world. Having ascended to godhood, you joined them in the final divine war. Civilization survives at the brink of destruction, and the world has at last found redemption.</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_COMIC_TITLE" Language="en_US"><Text>Path Comics</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_START" Language="en_US"><Text>Prologue</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_VICTORY" Language="en_US"><Text>Victory Ending</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_DEFEAT" Language="en_US"><Text>Defeat Ending</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_REVIEW" Language="en_US"><Text>Review Comics</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_VIEW_ENDING" Language="en_US"><Text>View Comic</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_PREVIOUS" Language="en_US"><Text>Previous</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_NEXT" Language="en_US"><Text>Next</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_FINISH" Language="en_US"><Text>Finish</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_PAGE" Language="en_US"><Text>Page {1_Number} / {2_Number}</Text></Row>
+	</LocalizedText>
+</GameData>

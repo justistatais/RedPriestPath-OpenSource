@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\..\..\..\CivTech\Libs\ForgeUI\ForgeUI_Assets\Controls.xsd">
+	<Grid ID="Root" Anchor="L,T" Offset="0,31" Size="500,79" Hidden="0">
+		<Box ID="Background" Anchor="L,T" Offset="0,0" Size="500,79" Color="14,24,38,230"/>
+		<Box ID="BorderTop" Anchor="L,T" Offset="0,0" Size="500,1" Color="116,166,203,235"/>
+		<Box ID="BorderBottom" Anchor="L,B" Offset="0,0" Size="500,1" Color="116,166,203,235"/>
+		<Box ID="BorderLeft" Anchor="L,T" Offset="0,0" Size="1,79" Color="116,166,203,235"/>
+		<Box ID="BorderRight" Anchor="R,T" Offset="0,0" Size="1,79" Color="116,166,203,235"/>
+		<Label ID="Title" Anchor="C,T" Offset="0,3" Size="476,16" Align="Center" Style="FontNormal12" FontStyle="Shadow" Color="225,235,245,255" String="LOC_LOTM_RESCUE_PURIFICATION_TITLE"/>
+		<Box ID="TrackBorder" Anchor="L,T" Offset="12,21" Size="476,16" Color="116,166,203,255"/>
+		<Box ID="Track" Anchor="L,T" Offset="14,23" Size="472,12" Color="4,10,18,255"/>
+		<Box ID="ProgressFill" Anchor="L,T" Offset="14,23" Size="0,12" Color="44,160,224,255"/>
+		<Box ID="Mark1500" Anchor="L,T" Offset="0,21" Size="2,18" Color="255,220,120,255"/>
+		<Box ID="Mark500" Anchor="L,T" Offset="0,21" Size="2,18" Color="255,220,120,255"/>
+		<Box ID="Mark1000" Anchor="L,T" Offset="0,21" Size="2,18" Color="255,220,120,255"/>
+		<Box ID="Mark2000" Anchor="L,T" Offset="0,21" Size="2,18" Color="255,220,120,255"/>
+		<Label ID="Mark1500Label" Anchor="L,T" Offset="0,41" Size="44,14" Align="Center" Style="FontNormal10" FontStyle="Shadow" Color="255,220,120,255" String="1500"/>
+		<Label ID="Mark500Label" Anchor="L,T" Offset="0,41" Size="44,14" Align="Center" Style="FontNormal10" FontStyle="Shadow" Color="255,220,120,255" String="500"/>
+		<Label ID="Mark1000Label" Anchor="L,T" Offset="0,41" Size="44,14" Align="Center" Style="FontNormal10" FontStyle="Shadow" Color="255,220,120,255" String="1000"/>
+		<Label ID="Mark2000Label" Anchor="L,T" Offset="0,41" Size="44,14" Align="Center" Style="FontNormal10" FontStyle="Shadow" Color="255,220,120,255" String="2000"/>
+		<Label ID="Leaderboard" Anchor="C,T" Offset="0,59" Size="476,15" Align="Center" Style="FontNormal10" FontStyle="Shadow" Color="185,215,235,255" String="LOC_LOTM_RESCUE_PURIFICATION_RANKING_EMPTY"/>
+	</Grid>
+</Context>

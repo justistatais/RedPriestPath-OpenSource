@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Units>
+		<Row
+			UnitType="UNIT_LOTM_RP_PATH_HOLDER"
+			Name="LOC_UNIT_LOTM_RP_PATH_HOLDER_NAME"
+			Description="LOC_UNIT_LOTM_RP_PATH_HOLDER_DESCRIPTION"
+			BaseSightRange="2"
+			BaseMoves="3"
+			Combat="20"
+			Domain="DOMAIN_LAND"
+			FormationClass="FORMATION_CLASS_LAND_COMBAT"
+			Cost="1"
+			CanTrain="false"
+			CanCapture="true"
+			PromotionClass="PROMOTION_CLASS_LOTM_RP_PATH_HOLDER"
+			Maintenance="1"
+			ZoneOfControl="true"
+			AdvisorType="ADVISOR_GENERIC"
+			CanEarnExperience="true"/>
+		<Row
+			UnitType="UNIT_LOTM_PP_PATH_HOLDER"
+			Name="LOC_UNIT_LOTM_RP_PATH_HOLDER_NAME"
+			Description="LOC_UNIT_LOTM_RP_PATH_HOLDER_DESCRIPTION"
+			BaseSightRange="2"
+			BaseMoves="3"
+			Combat="20"
+			Domain="DOMAIN_LAND"
+			FormationClass="FORMATION_CLASS_LAND_COMBAT"
+			Cost="1"
+			CanTrain="false"
+			CanCapture="true"
+			PromotionClass="PROMOTION_CLASS_LOTM_RP_PATH_HOLDER"
+			Maintenance="1"
+			ZoneOfControl="true"
+			AdvisorType="ADVISOR_GENERIC"
+			CanEarnExperience="true"/>
+		<Row
+			UnitType="UNIT_LOTM_BE_PATH_HOLDER"
+			Name="LOC_UNIT_LOTM_BE_PATH_HOLDER_NAME"
+			Description="LOC_UNIT_LOTM_BE_PATH_HOLDER_DESCRIPTION"
+			BaseSightRange="2"
+			BaseMoves="3"
+			Combat="20"
+			Domain="DOMAIN_LAND"
+			FormationClass="FORMATION_CLASS_LAND_COMBAT"
+			Cost="1"
+			CanTrain="false"
+			CanCapture="true"
+			PromotionClass="PROMOTION_CLASS_LOTM_RP_PATH_HOLDER"
+			Maintenance="1"
+			ZoneOfControl="true"
+			AdvisorType="ADVISOR_GENERIC"
+			CanEarnExperience="true"/>
+	</Units>
+	<Units_XP2>
+		<Row UnitType="UNIT_LOTM_RP_PATH_HOLDER" CanEarnExperience="true" CanFormMilitaryFormation="false" MajorCivOnly="true"/>
+		<Row UnitType="UNIT_LOTM_PP_PATH_HOLDER" CanEarnExperience="true" CanFormMilitaryFormation="false" MajorCivOnly="true"/>
+		<Row UnitType="UNIT_LOTM_BE_PATH_HOLDER" CanEarnExperience="true" CanFormMilitaryFormation="false" MajorCivOnly="true"/>
+	</Units_XP2>
+	<TypeTags>
+		<Row Type="UNIT_LOTM_RP_PATH_HOLDER" Tag="CLASS_RECON"/>
+		<Row Type="UNIT_LOTM_RP_PATH_HOLDER" Tag="CLASS_REVEAL_STEALTH"/>
+		<Row Type="UNIT_LOTM_RP_PATH_HOLDER" Tag="CLASS_LOTM_RP_WAR_AURA_SOURCE_V2"/>
+		<Row Type="UNIT_LOTM_PP_PATH_HOLDER" Tag="CLASS_RECON"/>
+		<Row Type="UNIT_LOTM_PP_PATH_HOLDER" Tag="CLASS_REVEAL_STEALTH"/>
+		<Row Type="UNIT_LOTM_PP_PATH_HOLDER" Tag="CLASS_LOTM_RP_WAR_AURA_SOURCE_V2"/>
+		<Row Type="UNIT_LOTM_BE_PATH_HOLDER" Tag="CLASS_RECON"/>
+		<Row Type="UNIT_LOTM_BE_PATH_HOLDER" Tag="CLASS_REVEAL_STEALTH"/>
+		<Row Type="UNIT_LOTM_BE_PATH_HOLDER" Tag="CLASS_LOTM_RP_WAR_AURA_SOURCE_V2"/>
+	</TypeTags>
+</GameInfo>

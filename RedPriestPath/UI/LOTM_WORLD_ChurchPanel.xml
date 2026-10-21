@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\..\..\..\CivTech\Libs\ForgeUI\ForgeUI_Assets\Controls.xsd">
+ <Grid ID="Root" Anchor="R,C" Offset="-514,20" Size="500,720" Texture="Controls_DarkBox" Hidden="1" ConsumeMouse="1">
+  <Grid Size="parent,72" Texture="Controls_TitleBarDark"><Image ID="ChurchIcon" Anchor="L,C" Offset="12,0" Size="56,56"/><Label ID="Title" Anchor="L,C" Offset="78,-10" Style="FontFlair24"/><Label ID="Path" Anchor="L,C" Offset="78,17" Style="FontNormal16"/><Button ID="Close" Anchor="R,T" Offset="-4,4" Style="CloseButtonSmall"/></Grid>
+  <ScrollPanel Offset="14,78" Size="472,626" Vertical="1" AutoScrollBar="1"><Stack ID="Content" Size="448,auto" StackGrowth="Bottom" StackPadding="8">
+   <Label ID="Envoys" WrapWidth="438" Style="FontFlair20"/>
+   <Label ID="Permanent" WrapWidth="438" Style="FontNormal16"/>
+   <Label ID="Quests" WrapWidth="438" Style="FontNormal16"/>
+   <Label ID="Target" WrapWidth="438" Style="FontNormal16"/>
+   <Button ID="Locate" Size="210,34" Style="ButtonNormal" String="LOC_LOTM_CHURCH_LOCATE_TARGET"/>
+   <Label ID="Blessing" WrapWidth="438" Style="FontNormal16"/>
+   <Label ID="AssistWarning" WrapWidth="438" Style="FontNormal14" Color="255,200,120,255" String="LOC_LOTM_CHURCH_ASSIST_WARNING"/>
+  </Stack><ScrollBar Anchor="R,C" Style="ScrollVerticalBarAlt"/></ScrollPanel>
+ </Grid>
+</Context>

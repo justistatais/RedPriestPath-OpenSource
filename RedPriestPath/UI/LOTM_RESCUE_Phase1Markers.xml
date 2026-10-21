@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Layer="WorldAnchor">
+	<Container ID="MarkerContainer"/>
+	<Instance Name="RescuePhase1MarkerInstance">
+		<WorldAnchor ID="Anchor" Anchor="C,C" Size="2,2">
+			<Button ID="Button" Anchor="C,C" Offset="0,-36" Size="56,56" Texture="Controls_CircleRim40">
+				<Image ID="Badge" Anchor="C,C" Size="46,46" Texture="Controls_CircleBacking45"/>
+				<Label ID="Label" Anchor="C,C" Size="42,42" Font="FontNormal14" Color="White" Align="Center" WrapWidth="42"/>
+			</Button>
+		</WorldAnchor>
+	</Instance>
+</Context>

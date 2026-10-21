@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+ <Row Tag="LOC_LOTM_CULT_DIPLO_LABEL" Language="en_US"><Text>Cult Church</Text></Row>
+ <Row Tag="LOC_LOTM_TP_PRODUCTION_STEAL_TOOLTIP" Language="en_US"><Text>{1_Amount} from Pyromaniac (Sequence 6)</Text></Row>
+ <Row Tag="LOC_LOTM_TP_PRODUCTION_DEBUFF_TOOLTIP" Language="en_US"><Text>-10% Production: Pyromaniac (Sequence 6)</Text></Row>
+ <Row Tag="LOC_LOTM_TP_PRODUCTION_DEBUFF_PREVIEW" Language="en_US"><Text>Pyromaniac (Sequence 6): -10% Production</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIPLO_VALUE" Language="en_US"><Text>{1_Name} / Tier {2_Tier}: {3_Skill}</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_NAME" Language="en_US"><Text>Demoness Church</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_NAME" Language="en_US"><Text>Hanged Man Church</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_NAME" Language="en_US"><Text>Chained Church</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T1_NAME" Language="en_US"><Text>Witchcraft</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T2_NAME" Language="en_US"><Text>Catastrophe</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T3_NAME" Language="en_US"><Text>Despair</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T1_NAME" Language="en_US"><Text>Whispers</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T2_NAME" Language="en_US"><Text>Flesh</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T3_NAME" Language="en_US"><Text>Degeneration</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T1_NAME" Language="en_US"><Text>Restraint</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T2_NAME" Language="en_US"><Text>Curse</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T3_NAME" Language="en_US"><Text>Seal</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T1_DESCRIPTION" Language="en_US"><Text>Suppresses the score leader: -1 Food, Production, Science and Culture in every city, scaled by target tier.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T2_DESCRIPTION" Language="en_US"><Text>Suppresses the score leader: -20% Food and Production in every city, scaled by target tier. Witchcraft is not inherited.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T3_DESCRIPTION" Language="en_US"><Text>Suppresses the score leader: -5 Amenities and -50% Food and Production in every city, scaled by target tier. Earlier tiers are not inherited.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T1_DESCRIPTION" Language="en_US"><Text>While at war with another civilization, the other side's military units have -5 Combat Strength and it loses 5 Faith per turn.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T2_DESCRIPTION" Language="en_US"><Text>New current-baseline melee units become Flesh Puppets (baseline +10); a human attacking one loses base 10 Faith. No Whispers.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T3_DESCRIPTION" Language="en_US"><Text>War causes -20 combat strength and -20 Faith per turn; Flesh Puppets gain baseline +20 and cost an attacker base 20 Faith.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T1_DESCRIPTION" Language="en_US"><Text>While at war with a human on a formal Pathway, all combat units lose 1 Movement, scaled by target tier.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T2_DESCRIPTION" Language="en_US"><Text>War causes -1 Movement and -10 combat strength; the score leader has -50% natural border growth, all scaled by target tier.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T3_DESCRIPTION" Language="en_US"><Text>While at war, all cities have -50% Science and Culture. Movement, combat and border penalties are not inherited.</Text></Row>
+ <Row Tag="LOC_UNIT_LOTM_CULT_FLESH_PUPPET_NAME" Language="en_US"><Text>Flesh Puppet</Text></Row>
+ <Row Tag="LOC_UNIT_LOTM_CULT_FLESH_PUPPET_DESCRIPTION" Language="en_US"><Text>An equivalent melee replacement used by tier-2 and tier-3 Hanged Man cults. The live unit keeps the current highest unlocked generic melee model, experience, promotions and formation, and gains a fixed +10 or +20 over baseline B. A human attacking it loses Faith scaled by both tiers. This Civilopedia entry explains the mechanic and is not trainable.</Text></Row>
+ <Row Tag="LOC_ABILITY_LOTM_CULT_FLESH_PUPPET_10_DESCRIPTION" Language="en_US"><Text>Hanged Man tier-2 equivalent replacement: fixed +10 combat strength over the current melee baseline at creation.</Text></Row>
+ <Row Tag="LOC_ABILITY_LOTM_CULT_FLESH_PUPPET_20_DESCRIPTION" Language="en_US"><Text>Hanged Man tier-3 equivalent replacement: fixed +20 combat strength over the current melee baseline at creation.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_PREVIEW_HANGED" Language="en_US"><Text>Hanged Man cult: {1_Amount} Combat Strength</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_PREVIEW_CHAINED" Language="en_US"><Text>Chained cult: {1_Amount} Combat Strength</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_PREVIEW_FLESH_PUPPET" Language="en_US"><Text>Flesh Puppet: +{1_Amount} Combat Strength</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_FAITH_TOOLTIP" Language="en_US"><Text>{1_Amount} Hanged Man cult</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_TOP_YIELD_TOOLTIP" Language="en_US"><Text>{1_Amount} Demoness cult (all cities total)</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_CITY_FLAT_TOOLTIP" Language="en_US"><Text>{1_Amount} from the Demoness Church</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_CITY_PERCENT_TOOLTIP" Language="en_US"><Text>{1_Amount}% from the Demoness Church</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_TOP_YIELD_TOOLTIP" Language="en_US"><Text>-{1_Amount}% Chained cult (all cities)</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_DEMONESS_T1_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: +2 Food, Production, Science, and Culture in every city.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_DEMONESS_T2_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: inherits Stage 1; all cities gain another +40% Food and Production.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_DEMONESS_T3_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: inherits Stages 1-2; all cities gain another +10 Amenities and +100% Food and Production.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_HANGED_MAN_T1_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: all combat units gain +10 Combat Strength; +10 Faith per turn.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_HANGED_MAN_T2_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: inherits Stage 1; all combat units gain another +20 Combat Strength.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_HANGED_MAN_T3_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: inherits Stages 1-2; all combat units gain another +40 Combat Strength and +40 Faith per turn.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_CHAINED_T1_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: all combat units gain +2 Movement.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_CHAINED_T2_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: inherits Stage 1; all combat units gain another +2 Movement and +20 Combat Strength; natural border growth +100%.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_CHAINED_T3_DESCRIPTION" Language="en_US"><Text>Rescue cumulative bonus: inherits Stages 1-2; all cities gain another +100% Science and Culture.</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_PREVIEW" Language="en_US"><Text>Rescue cult bonus: +{1_Amount} Combat Strength</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_NOTIFICATION_APPLIED" Language="en_US"><Text>{1_Name}: {2_Skill} is affecting you.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_NOTIFICATION_ENDED" Language="en_US"><Text>{1_Name}: {2_Skill} no longer affects you.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_NOTIFICATION_ENDED_SUMMARY" Language="en_US"><Text>The score target, war state, surviving cults or shared tier has changed.</Text></Row>
+</LocalizedText></GameData>

@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_PATH_PROJECT_GATE_NAME" Language="zh_Hans_CN"><Text>当前序列已消化并满足晋升条件</Text></Row>
+		<Row Tag="LOC_LOTM_TEST_COMBAT_PLUS" Language="zh_Hans_CN"><Text>测试：战斗力 +200</Text></Row>
+		<Row Tag="LOC_LOTM_TEST_COMBAT_NORMAL" Language="zh_Hans_CN"><Text>测试：恢复正常</Text></Row>
+		<Row Tag="LOC_LOTM_TEST_COMBAT_TOOLTIP" Language="zh_Hans_CN"><Text>测试按钮：交替为序列者增加 200 战斗力、首都生产力+999，或恢复正常。</Text></Row>
+		<Row Tag="LOC_PROMOTION_CLASS_LOTM_RP_PATH_HOLDER_NAME" Language="zh_Hans_CN"><Text>途径持有者晋升</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_1_NAME" Language="zh_Hans_CN"><Text>战斗爽1</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_1_DESCRIPTION" Language="zh_Hans_CN"><Text>基础战斗力+10，直接计入单位面板。</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_2_NAME" Language="zh_Hans_CN"><Text>战斗爽2</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_2_DESCRIPTION" Language="zh_Hans_CN"><Text>基础战斗力+15，直接计入单位面板。</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_3_NAME" Language="zh_Hans_CN"><Text>战斗爽3</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_COMBAT_3_DESCRIPTION" Language="zh_Hans_CN"><Text>基础战斗力+15，直接计入单位面板。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_WAR_AURA_NAME" Language="zh_Hans_CN"><Text>战争光环</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_WAR_AURA_DESCRIPTION" Language="zh_Hans_CN"><Text>与拥有战斗爽3的序列者相邻时，战斗力+10。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_WAR_AURA_COMBAT_PREVIEW" Language="zh_Hans_CN"><Text>战争光环：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_1_NAME" Language="zh_Hans_CN"><Text>跑路王1</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_1_DESCRIPTION" Language="zh_Hans_CN"><Text>移动力+1。</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_2_NAME" Language="zh_Hans_CN"><Text>跑路王2</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_2_DESCRIPTION" Language="zh_Hans_CN"><Text>移动力+2。</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_3_NAME" Language="zh_Hans_CN"><Text>跑路王3</Text></Row>
+		<Row Tag="LOC_PROMOTION_LOTM_RP_MOVEMENT_3_DESCRIPTION" Language="zh_Hans_CN"><Text>移动力+2。</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RP_PATH_HOLDER_NAME" Language="zh_Hans_CN">
+			<Text>途径持有者</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_LOTM_RP_PATH_HOLDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>唯一途径英雄。不能训练，也不能组成军团或军队；其能力由开局选择的途径决定。</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_HUNTER_INSTINCT_NAME" Language="zh_Hans_CN">
+			<Text>猎人本能</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_HUNTER_INSTINCT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>移动力+2，视野+5。忽略树林、雨林和丘陵的额外移动力消耗。攻击蛮族或非满血单位时战斗力+30；两个条件同时满足时不叠加。</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_NAME" Language="zh_Hans_CN">
+			<Text>挑衅者</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>驻扎期间战斗力+40；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_GARRISONED_NAME" Language="zh_Hans_CN">
+			<Text>挑衅者：驻扎</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_PROVOKER_GARRISONED_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>驻扎期间战斗力+40。</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PROVOKER_POTION_NAME" Language="zh_Hans_CN">
+			<Text>挑衅者魔药</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PROVOKER_POTION_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>挑衅者魔药</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PROVOKER_POTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>序列9两类消化合计达到6点后完成此项目，晋升序列8。永久保留序列9能力，并清空消化进度。</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PYROMANIAC_POTION_NAME" Language="zh_Hans_CN">
+			<Text>纵火家魔药</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PYROMANIAC_POTION_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>纵火家魔药</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_PYROMANIAC_POTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>序列8两类消化合计达到6点后完成此项目，晋升序列7。永久保留旧序列能力，并清空消化进度。序列7解锁纵火。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_HUNTER_COMBAT" Language="zh_Hans_CN">
+			<Text>猎人本能：+30战斗力</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_PROVOKER_AURA" Language="zh_Hans_CN">
+			<Text>挑衅光环：战斗力{1_Amount}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_PROVOKER_DEFENSE" Language="zh_Hans_CN">
+			<Text>挑衅者近战防御：战斗力+{1_Amount}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_PROVOKER_GARRISON" Language="zh_Hans_CN">
+			<Text>挑衅者驻扎：+40战斗力</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PROBE_BUTTON" Language="zh_Hans_CN">
+			<Text>发送同步探针</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PROBE_TOOLTIP" Language="zh_Hans_CN">
+			<Text>仅供开发：提交EXECUTE_SCRIPT命令，仅在Gameplay日志记录参数，不改变游戏状态。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_TITLE" Language="zh_Hans_CN">
+			<Text>红祭司途径</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE" Language="zh_Hans_CN">
+			<Text>当前：序列{1_Sequence}　{2_Name}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S9" Language="zh_Hans_CN"><Text>猎人</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S8" Language="zh_Hans_CN"><Text>挑衅者</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S7" Language="zh_Hans_CN"><Text>纵火家</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S6" Language="zh_Hans_CN"><Text>阴谋家</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S5" Language="zh_Hans_CN"><Text>收割者</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S4" Language="zh_Hans_CN"><Text>铁血骑士</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S3" Language="zh_Hans_CN"><Text>战争主教</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S2" Language="zh_Hans_CN"><Text>天气术士</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S1" Language="zh_Hans_CN"><Text>征服者</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SEQUENCE_NAME_S0" Language="zh_Hans_CN"><Text>红祭司</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_PROGRESS_SINGLE" Language="zh_Hans_CN">
+			<Text>消化进度：{1_Total}/6</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_PROGRESS_COMPLETE" Language="zh_Hans_CN">
+			<Text>终极序列：无需继续消化</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S9" Language="zh_Hans_CN">
+			<Text>当前技能：猎人本能</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S8" Language="zh_Hans_CN">
+			<Text>当前技能：挑衅者（并继承猎人本能）</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S7" Language="zh_Hans_CN">
+			<Text>当前技能：纵火（并继承挑衅者、猎人本能）</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S9" Language="zh_Hans_CN">
+			<Text>下一晋升：途径持有者每次经验增长计1点；总计达到6点后完成挑衅者魔药。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S8" Language="zh_Hans_CN">
+			<Text>下一晋升：合计达到6点后完成纵火家魔药。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_HUD_ARSON" Language="zh_Hans_CN">
+			<Text>纵火冷却：{1_Status}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_READY" Language="zh_Hans_CN">
+			<Text>可用</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_COOLDOWN" Language="zh_Hans_CN">
+			<Text>剩余{1_Turns}回合</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_BUTTON" Language="zh_Hans_CN">
+			<Text>纵火</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_BUTTON_COOLDOWN" Language="zh_Hans_CN">
+			<Text>纵火（{1_Turns}）</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_TOOLTIP" Language="zh_Hans_CN">
+			<Text>选择视野内6格、非城市中心且有交战敌军的陆地格，直接消灭格内全部敌方单位。不能对城市或非敌方单位生效；耗尽移动力，冷却5回合。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_COOLDOWN" Language="zh_Hans_CN">
+			<Text>纵火仍在冷却，剩余{1_Turns}回合。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_INACTIVE_TURN" Language="zh_Hans_CN">
+			<Text>当前不是你的行动回合，不能纵火。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_DEAD" Language="zh_Hans_CN">
+			<Text>登记英雄当前未存活。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_NO_TARGET" Language="zh_Hans_CN">
+			<Text>英雄6格内没有当前可见的合法陆地目标。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_TARGET_HINT" Language="zh_Hans_CN">
+			<Text>请选择6格内有交战敌军的非城市中心陆地格。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_SUCCESS" Language="zh_Hans_CN">
+			<Text>纵火：敌方单位已消灭</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_TITLE" Language="zh_Hans_CN">
+			<Text>选择途径</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_BODY" Language="zh_Hans_CN">
+			<Text>为本玩家选择“红祭司途径”“完美者途径”“黑皇帝途径”或救赎模式专用的“偷盗者途径”，也可以不启用。[NEWLINE][NEWLINE]选择途径后会立即在首都获得唯一的“途径持有者”。途径严格互斥，本局内不能更改。每名人类玩家独立选择，AI不能选择途径。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_ENABLE" Language="zh_Hans_CN">
+			<Text>选择红祭司</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_NONE" Language="zh_Hans_CN">
+			<Text>本局不启用</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_LAUNCH_TOOLTIP" Language="zh_Hans_CN">
+			<Text>红祭司途径</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_TITLE" Language="zh_Hans_CN">
+			<Text>红祭司途径</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_PATH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>唯一的“途径持有者”会在序列9至序列0的晋升中继承已有能力。消化进度仅本地玩家可见。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_HERO_ACTIVE" Language="zh_Hans_CN">
+			<Text>途径持有者：已生成</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_HERO_RESPAWN" Language="zh_Hans_CN">
+			<Text>途径持有者：{1_Turns}回合后复活</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_HERO_PENDING" Language="zh_Hans_CN">
+			<Text>途径持有者：等待首都或相邻合法地块</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_LOCATE_HERO" Language="zh_Hans_CN">
+			<Text>定位途径持有者</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_TITLE" Language="zh_Hans_CN">
+			<Text>技能作用</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S9" Language="zh_Hans_CN">
+			<Text>猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S8" Language="zh_Hans_CN">
+			<Text>挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S7" Language="zh_Hans_CN">
+			<Text>纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_ESTABLISH_CHURCH_NAME" Language="zh_Hans_CN">
+			<Text>建立教会</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_ESTABLISH_CHURCH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>选择任一途径时，每3回合自动获得1点当前序列的消化进度。该进度仍受每回合最多2点限制。</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_TRUE_GOD_CHURCH_NAME" Language="zh_Hans_CN">
+			<Text>建立真神教会</Text>
+		</Row>
+		<Row Tag="LOC_BELIEF_LOTM_RP_TRUE_GOD_CHURCH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>宗教创始人若选择了任一途径，每回合自动获得1点当前序列的消化进度；本途径序列0最终仪式使用正常生产力成本，未建立时则需支付双倍生产力。</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONSPIRATOR_POTION_NAME" Language="zh_Hans_CN"><Text>阴谋家魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONSPIRATOR_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列6</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONSPIRATOR_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列7后晋升为阴谋家。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_REAPER_POTION_NAME" Language="zh_Hans_CN"><Text>收割者魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_REAPER_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列5</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_REAPER_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列6后晋升为收割者。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION_NAME" Language="zh_Hans_CN"><Text>铁血骑士魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列4</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列5并完成工业化后晋升为铁血骑士。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_BISHOP_POTION_NAME" Language="zh_Hans_CN"><Text>战争主教魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_BISHOP_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列3</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_BISHOP_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>序列4总消化达到6点后，完成项目即晋升为战争主教。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION_NAME" Language="zh_Hans_CN"><Text>天气术士魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列2</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列3后晋升为天气术士。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONQUEROR_POTION_NAME" Language="zh_Hans_CN"><Text>征服者魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONQUEROR_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列1</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_CONQUEROR_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>序列2总消化达到6点后，完成项目即晋升为征服者。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_NAME" Language="zh_Hans_CN"><Text>战争祭典</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_DESCRIPTION" Language="zh_Hans_CN"><Text>序列1总消化达到6点且已建立真神教会后，完成祭典即晋升为红祭司。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED_NAME" Language="zh_Hans_CN"><Text>无圣战争祭典</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED_SHORT_NAME" Language="zh_Hans_CN"><Text>以双倍生产力晋升序列0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED_DESCRIPTION" Language="zh_Hans_CN"><Text>尚未建立真神教会时举行的战争祭典，基础生产力需求为正常祭典的2倍；序列1总消化达到6点后，完成祭典即晋升为红祭司。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS_NAME" Language="zh_Hans_CN"><Text>征服：城防毁灭</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RP_CONQUEST_BYPASS_WALLS_DESCRIPTION" Language="zh_Hans_CN"><Text>己方战斗单位攻击城市和军营时造成大量伤害。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_IRONBLOOD_STRENGTH" Language="zh_Hans_CN"><Text>铁血军团：+30战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_WEATHER_ENEMY_STRENGTH" Language="zh_Hans_CN"><Text>天气操纵：-20战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PREVIEW_CONQUEST_BYPASS_WALLS" Language="zh_Hans_CN"><Text>征服：攻击城市和军营时造成大量伤害</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S6" Language="zh_Hans_CN"><Text>当前技能：阴谋家（并继承纵火、挑衅者、猎人本能）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S5" Language="zh_Hans_CN"><Text>当前技能：收割（继承阴谋家、纵火、挑衅者、猎人本能）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S4" Language="zh_Hans_CN"><Text>当前技能：铁血军团（继承收割、阴谋家、纵火、挑衅者、猎人本能）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S3" Language="zh_Hans_CN"><Text>当前技能：战争布道（继承铁血军团及此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S2" Language="zh_Hans_CN"><Text>当前技能：天气操纵（继承战争布道及此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S1" Language="zh_Hans_CN"><Text>当前技能：征服（继承天气操纵及此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_SKILLS_S0" Language="zh_Hans_CN"><Text>当前技能：红祭司（继承全部此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S7" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“阴谋家魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S6" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“收割者魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S5" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点、完成工业化后完成“铁血骑士魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S5_UNLOCKED" Language="zh_Hans_CN"><Text>晋升项目已解锁：完成“工业化”科技后，“铁血骑士魔药”才会出现在城市项目列表；完成该项目即可晋升至序列4。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S4" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“战争主教魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S3" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“天气术士魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S2" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“征服者魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S1" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点；已建立真神教会时完成正常“战争祭典”，否则完成生产力需求翻倍的“无圣战争祭典”。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_NEXT_S0" Language="zh_Hans_CN"><Text>已达到终极序列0“红祭司”。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S9" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：途径持有者经验值每次增加+1；“建立教会”每3回合+1；“建立真神教会”每回合+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S8" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：主动谴责一个未重复的存活主要文明+1；途径持有者主动攻击基础战力更高的单位+1；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S7" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：成功施放纵火+1；途径持有者执行普通掠夺+1（纵火自动掠夺不重复计数）；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S6" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：与所选谋划目标首次进入战争状态时+1消化；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S5" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：己方单位击杀敌军+1；击杀受伤敌军可再+1（双计数结算时序待实测）；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S4" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：新组建军团或军队+1；途径持有者6格光环内的己方单位击杀敌军+1；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S3" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：占领城市+1；教会来源照常生效。训练军事单位消化尚未实装。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S2" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：与任一存活主要文明交战时，每个玩家回合+1；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S1" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，凑满6点）：占领敌方城市+1；若该城是敌方原始首都则额外+1；教会来源照常生效。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_HUD_DIGEST_S0" Language="zh_Hans_CN"><Text>序列0无需继续消化。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_NONE" Language="zh_Hans_CN"><Text>战争谋划目标：未选择</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_CURRENT" Language="zh_Hans_CN"><Text>战争谋划目标：{1_PlayerName}</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_BUTTON" Language="zh_Hans_CN"><Text>切换谋划目标</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_TOOLTIP" Language="zh_Hans_CN"><Text>在存活主要文明间循环选择谋划目标；更换后冷却10回合。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_TARGET_COOLDOWN" Language="zh_Hans_CN"><Text>更换谋划目标仍需{1_Turns}回合。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PLAN_GOLD_TOOLTIP" Language="zh_Hans_CN"><Text>+{1_Amount} 谋划</Text></Row>
+		<Row Tag="LOC_LOTM_RP_LETTER_GOLD_TOOLTIP" Language="zh_Hans_CN"><Text>+{1_Amount} 阴谋家的密信</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_YIELD_INCLUDED_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Name}（已计入每回合总值）：{2_Amount}</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_YIELD_SETTLED_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Name}（本回合已结算）：{2_Amount}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_HOLDER_GOOD_STRENGTH" Language="zh_Hans_CN"><Text>随机状态·状态良好：+5战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_HOLDER_UNSTABLE_STRENGTH" Language="zh_Hans_CN"><Text>随机状态·持有者失稳：-5战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S6" Language="zh_Hans_CN"><Text>阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S5" Language="zh_Hans_CN"><Text>收割（序列5）：己方单位击杀敌军后每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S4" Language="zh_Hans_CN"><Text>铁血军团（序列4）：己方所有单位+30战斗力、+3移动力，不叠加。[NEWLINE][NEWLINE]收割（序列5）：己方单位击杀敌军后每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S3" Language="zh_Hans_CN"><Text>战争布道（序列3）：处于战争时，所有城市生产力+100%，战争厌恶度降低100%；占领城市立即+15忠诚度。[NEWLINE][NEWLINE]铁血军团（序列4）：己方所有单位+30战斗力、+3移动力，不叠加。[NEWLINE][NEWLINE]收割（序列5）：己方单位击杀敌军后每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S2" Language="zh_Hans_CN"><Text>天气操纵（序列2）：己方所有单位+2移动力；所有与己方交战的非己方队伍主要文明，其全部单位-20战斗力、-2移动力，并使其总体战争厌恶度提高100%；多个效果不叠加，和平后减益自动失效。[NEWLINE][NEWLINE]战争布道（序列3）：处于战争时，所有城市生产力+100%，战争厌恶度降低100%；占领城市立即+15忠诚度。[NEWLINE][NEWLINE]铁血军团（序列4）：己方所有单位+30战斗力、+3移动力，不叠加。[NEWLINE][NEWLINE]收割（序列5）：己方单位击杀敌军后每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S1" Language="zh_Hans_CN"><Text>征服（序列1）：己方所有战斗单位攻击城市和军营时造成大量伤害。[NEWLINE][NEWLINE]天气操纵（序列2）：己方所有单位+2移动力；所有与己方交战的非己方队伍主要文明，其全部单位-20战斗力、-2移动力，并使其总体战争厌恶度提高100%；多个效果不叠加，和平后减益自动失效。[NEWLINE][NEWLINE]战争布道（序列3）：处于战争时，所有城市生产力+100%，战争厌恶度降低100%；占领城市立即+15忠诚度。[NEWLINE][NEWLINE]铁血军团（序列4）：己方所有单位+30战斗力、+3移动力，不叠加。[NEWLINE][NEWLINE]收割（序列5）：己方单位击杀敌军后每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_DETAILS_EFFECTS_S0" Language="zh_Hans_CN"><Text>红祭司（序列0）：只要与任一其他文明处于战争状态，所有城市的总生产力变为和平时的10倍；和平时该加成自动失效。[NEWLINE][NEWLINE]征服（序列1）：己方所有战斗单位攻击城市和军营时造成大量伤害。[NEWLINE][NEWLINE]天气操纵（序列2）：己方所有单位+2移动力；所有与己方交战的非己方队伍主要文明，其全部单位-20战斗力、-2移动力，并使其总体战争厌恶度提高100%；多个效果不叠加，和平后减益自动失效。[NEWLINE][NEWLINE]战争布道（序列3）：处于战争时，所有城市生产力+100%，战争厌恶度降低100%；占领城市立即+15忠诚度。[NEWLINE][NEWLINE]铁血军团（序列4）：己方所有单位+30战斗力、+3移动力，不叠加。[NEWLINE][NEWLINE]收割（序列5）：己方单位击杀敌军后每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：选择一个存活主要文明作为谋划目标；与其首次进入战争状态时立即获得2000金币。战争持续期间，每个己方回合获得100金币，和平后停止。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；直接消灭格内全部敌方单位，不影响城市或非敌方单位；耗尽移动力，冷却5回合并留下9回合燃烧标记。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_TITLE" Language="zh_Hans_CN"><Text>恭喜您晋升  红祭司</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_1" Language="zh_Hans_CN"><Text>征战的主宰</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_2" Language="zh_Hans_CN"><Text>万军的统帅</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_3" Language="zh_Hans_CN"><Text>红焰与战火的化身</Text></Row>
+		<Row Tag="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_4" Language="zh_Hans_CN"><Text>征服一切的血皇帝</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_TITLE" Language="zh_Hans_CN"><Text>恭喜您晋升  完美者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_LINE_1" Language="zh_Hans_CN"><Text>本质的化身</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_LINE_2" Language="zh_Hans_CN"><Text>工匠的守护者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SEQUENCE0_CEREMONY_LINE_3" Language="zh_Hans_CN"><Text>技术的光辉</Text></Row>
+		<Row Tag="LOC_LOTM_RP_PATH_CHOICE_RED_PRIEST" Language="zh_Hans_CN"><Text>选择红祭司</Text></Row>
+		<Row Tag="LOC_LOTM_PP_PATH_CHOICE_PERFECT" Language="zh_Hans_CN"><Text>选择完美者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_TITLE" Language="zh_Hans_CN"><Text>完美者途径</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_PATH_DESCRIPTION" Language="zh_Hans_CN"><Text>以知识、遗物、开发和生产推动文明不可逆地领先；当前版本开放序列9至序列0。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE" Language="zh_Hans_CN"><Text>当前：序列{1_Sequence}　{2_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S9" Language="zh_Hans_CN"><Text>通识者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S8" Language="zh_Hans_CN"><Text>考古学家</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S7" Language="zh_Hans_CN"><Text>鉴定师</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S6" Language="zh_Hans_CN"><Text>机械专家</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S5" Language="zh_Hans_CN"><Text>天文学家</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S4" Language="zh_Hans_CN"><Text>炼金术士</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S3" Language="zh_Hans_CN"><Text>奥秘学者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S2" Language="zh_Hans_CN"><Text>知识导师</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S1" Language="zh_Hans_CN"><Text>启蒙者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SEQUENCE_NAME_S0" Language="zh_Hans_CN"><Text>完美者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S9" Language="zh_Hans_CN"><Text>当前能力：通识</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S8" Language="zh_Hans_CN"><Text>当前能力：历史遗物（继承通识）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S7" Language="zh_Hans_CN"><Text>当前能力：价值鉴定（继承历史遗物、通识）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S6" Language="zh_Hans_CN"><Text>当前能力：机械改造（继承此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S5" Language="zh_Hans_CN"><Text>当前能力：星象演算（继承此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S4" Language="zh_Hans_CN"><Text>当前能力：炼金生产（继承此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S3" Language="zh_Hans_CN"><Text>当前能力：奥秘体系（继承此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S2" Language="zh_Hans_CN"><Text>当前能力：知识传授（继承此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S1" Language="zh_Hans_CN"><Text>当前能力：文明启蒙（继承此前能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_SKILLS_S0" Language="zh_Hans_CN"><Text>当前能力：完美文明（继承全部能力）</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S9" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“考古学家魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S8" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“鉴定师魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S7" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“机械专家魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S6" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“天文学家魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S5" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点并研究“工业化”后，完成“炼金术士魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S4" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“奥秘学者魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S3" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“知识导师魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S2" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点后完成“启蒙者魔药”项目。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S1" Language="zh_Hans_CN"><Text>下一晋升：总消化达到6点；已建立真神教会时完成正常“文明升格”，否则完成生产力需求翻倍的“无圣文明升格”。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_NEXT_S0" Language="zh_Hans_CN"><Text>已晋升序列0“完美者”；无需继续消化或晋升。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S9" Language="zh_Hans_CN"><Text>消化：触发科技尤里卡或市政鼓舞；合计6点，每回合最多2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S8" Language="zh_Hans_CN"><Text>消化：获得遗物，或发现自然奇观、部落村庄、新大陆；合计6点，每回合最多2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S7" Language="zh_Hans_CN"><Text>消化：首次获得伟大作品，以及首次将其放入可用槽位；合计6点，每回合最多2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S6" Language="zh_Hans_CN"><Text>消化：消耗一次建造者劳动力，或完成新的地块改良；同一次改良可获得2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S5" Language="zh_Hans_CN"><Text>消化：完成一项科技，或建成学院/学院建筑/太空竞赛项目；合计6点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S4" Language="zh_Hans_CN"><Text>消化：消耗建造者劳动力，或完成区域、建筑、奇观、城市项目；合计6点，每回合最多2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S3" Language="zh_Hans_CN"><Text>消化：完成一个专业区域，或完成一座专业区域建筑；合计6点，每回合最多2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S2" Language="zh_Hans_CN"><Text>消化：完成一项科技或完成一项市政；合计6点，每回合最多2点。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S1" Language="zh_Hans_CN"><Text>消化：招募一位大科学家，或完成一项科技/市政；合计6点。未建立真神教会时最终升格项目生产力需求翻倍。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HUD_DIGEST_S0" Language="zh_Hans_CN"><Text>序列0无需继续消化魔药。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S9" Language="zh_Hans_CN"><Text>通识（序列9）：科技尤里卡和市政鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S8" Language="zh_Hans_CN"><Text>历史遗物（序列8）：晋升时获得1件遗物，此后每5个玩家回合再获得1件，累计5件后停止；首都宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S7" Language="zh_Hans_CN"><Text>价值鉴定（序列7）：所有伟大作品自身的基础产出提高100%，不翻倍主题奖励。[NEWLINE][NEWLINE]历史遗物（序列8）：定时生成至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S6" Language="zh_Hans_CN"><Text>机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品自身的基础产出提高100%，不翻倍主题奖励。[NEWLINE][NEWLINE]历史遗物（序列8）：晋升后及每5个玩家回合获得标准遗物，累计5件后停止；宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：科技尤里卡和市政鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S5" Language="zh_Hans_CN"><Text>星象演算（序列5）：学院区域及学院建筑科技值+100%；太空竞赛项目生产力+100%。[NEWLINE][NEWLINE]机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品基础产出+100%，不翻倍主题奖励。[NEWLINE][NEWLINE]历史遗物（序列8）：定时获得至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S4" Language="zh_Hans_CN"><Text>炼金生产（序列4）：所有建造者+3劳动力；所有城市生产力+40%，适用于单位、建筑、区域、奇观和项目。[NEWLINE][NEWLINE]星象演算（序列5）：学院及学院建筑科技值+100%；太空竞赛项目生产力+100%。[NEWLINE][NEWLINE]机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品基础产出+100%，不翻倍主题奖励。[NEWLINE][NEWLINE]历史遗物（序列8）：定时获得至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S3" Language="zh_Hans_CN"><Text>奥秘体系（序列3）：所有专业区域及其区域建筑的食物、生产力、金币、科技、文化和信仰直接产出+60%；不强化住房、宜居度、战略资源、伟人点数、战斗力或区域防御。[NEWLINE][NEWLINE]炼金生产（序列4）：所有建造者+3劳动力；所有城市生产力+40%。[NEWLINE][NEWLINE]星象演算（序列5）：学院及学院建筑科技值+100%；太空竞赛项目生产力+100%。[NEWLINE][NEWLINE]机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品基础产出+100%，不翻倍主题奖励。[NEWLINE][NEWLINE]历史遗物（序列8）：定时获得至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S2" Language="zh_Hans_CN"><Text>知识传授（序列2）：所有尚未完成的科技和市政自动触发尤里卡或鼓舞；结合通识后获得原版40%加额外15%，合计55%进度，每项只触发一次。[NEWLINE][NEWLINE]奥秘体系（序列3）：所有专业区域及区域建筑的六项直接产出+60%，不强化住房、宜居度、资源、伟人点数或战斗属性。[NEWLINE][NEWLINE]炼金生产（序列4）：所有建造者+3劳动力；所有城市生产力+40%。[NEWLINE][NEWLINE]星象演算（序列5）：学院及学院建筑科技值+100%；太空竞赛项目生产力+100%。[NEWLINE][NEWLINE]机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品基础产出+100%。[NEWLINE][NEWLINE]历史遗物（序列8）：定时获得至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S1" Language="zh_Hans_CN"><Text>文明启蒙（序列1）：首次晋升一次性获得99999点大科学家点数，保存读取或复活不会重复发放；所有城市科技值和文化值永久+30%。[NEWLINE][NEWLINE]知识传授（序列2）：所有未完成科技和市政自动触发尤里卡或鼓舞，结合通识共获得55%进度。[NEWLINE][NEWLINE]奥秘体系（序列3）：所有专业区域及区域建筑的六项直接产出+60%。[NEWLINE][NEWLINE]炼金生产（序列4）：所有建造者+3劳动力；所有城市生产力+40%。[NEWLINE][NEWLINE]星象演算（序列5）：学院及学院建筑科技值+100%；太空竞赛项目生产力+100%。[NEWLINE][NEWLINE]机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品基础产出+100%。[NEWLINE][NEWLINE]历史遗物（序列8）：定时获得至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_DETAILS_EFFECTS_S0" Language="zh_Hans_CN"><Text>完美文明（序列0）：所有城市食物、生产力、金币、科技、文化和信仰+100%；新建与新占领城市同样生效，并与此前能力正常叠加。[NEWLINE][NEWLINE]文明启蒙（序列1）：首次晋升一次性获得99999点大科学家点数；所有城市科技值和文化值+30%。[NEWLINE][NEWLINE]知识传授（序列2）：所有未完成科技和市政自动触发尤里卡或鼓舞，结合通识共获得55%进度。[NEWLINE][NEWLINE]奥秘体系（序列3）：所有专业区域及区域建筑的六项直接产出+60%。[NEWLINE][NEWLINE]炼金生产（序列4）：所有建造者+3劳动力；所有城市生产力+40%。[NEWLINE][NEWLINE]星象演算（序列5）：学院及学院建筑科技值+100%；太空竞赛项目生产力+100%。[NEWLINE][NEWLINE]机械改造（序列6）：所有拥有未被掠夺改良设施的地块额外+2生产力。[NEWLINE][NEWLINE]价值鉴定（序列7）：所有伟大作品基础产出+100%。[NEWLINE][NEWLINE]历史遗物（序列8）：累计获得至多5件遗物，宫殿增加5个遗物槽。[NEWLINE][NEWLINE]通识（序列9）：尤里卡和鼓舞额外提供15%进度。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION_NAME" Language="zh_Hans_CN"><Text>考古学家魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列8</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列9后晋升为考古学家。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_APPRAISER_POTION_NAME" Language="zh_Hans_CN"><Text>鉴定师魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_APPRAISER_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列7</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_APPRAISER_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列8后晋升为鉴定师。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION_NAME" Language="zh_Hans_CN"><Text>机械专家魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列6</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列7后晋升为机械专家。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ASTRONOMER_POTION_NAME" Language="zh_Hans_CN"><Text>天文学家魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ASTRONOMER_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列5</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ASTRONOMER_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列6后晋升为天文学家。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ALCHEMIST_POTION_NAME" Language="zh_Hans_CN"><Text>炼金术士魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ALCHEMIST_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列4</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ALCHEMIST_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列5并研究工业化后晋升为炼金术士。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION_NAME" Language="zh_Hans_CN"><Text>奥秘学者魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列3</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列4后晋升为奥秘学者。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION_NAME" Language="zh_Hans_CN"><Text>知识导师魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列2</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列3后晋升为知识导师。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ENLIGHTENER_POTION_NAME" Language="zh_Hans_CN"><Text>启蒙者魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ENLIGHTENER_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列1</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_ENLIGHTENER_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列2后晋升为启蒙者。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_NAME" Language="zh_Hans_CN"><Text>文明升格</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列1且已经建立真神教会后，晋升序列0“完美者”。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED_NAME" Language="zh_Hans_CN"><Text>无圣文明升格</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED_SHORT_NAME" Language="zh_Hans_CN"><Text>以双倍生产力晋升序列0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED_DESCRIPTION" Language="zh_Hans_CN"><Text>尚未建立真神教会时进行的文明升格，基础生产力需求为正常项目的2倍；消化序列1后，完成项目即晋升序列0“完美者”。</Text></Row>
+
+		<Row Tag="LOC_UNIT_LOTM_BE_PATH_HOLDER_NAME" Language="zh_Hans_CN"><Text>黑皇帝途径持有者</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_BE_PATH_HOLDER_DESCRIPTION" Language="zh_Hans_CN"><Text>黑皇帝途径唯一持有者。沿用通用科技成长与专属战斗爽／跑路王晋升树；阵亡五回合后复活并保留经验、晋升和名称。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PATH_CHOICE_BLACK_EMPEROR" Language="zh_Hans_CN"><Text>选择黑皇帝</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_TITLE" Language="zh_Hans_CN"><Text>黑皇帝途径</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_PATH_DESCRIPTION" Language="zh_Hans_CN"><Text>以规则漏洞、财富政策、狂乱与忠诚度压力扭曲文明秩序；当前版本开放序列9至序列0。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE" Language="zh_Hans_CN"><Text>当前：序列{1_Sequence}　{2_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S9" Language="zh_Hans_CN"><Text>律师</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S8" Language="zh_Hans_CN"><Text>野蛮人</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S7" Language="zh_Hans_CN"><Text>贿赂者</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S6" Language="zh_Hans_CN"><Text>腐化男爵</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S5" Language="zh_Hans_CN"><Text>混乱导师</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S4" Language="zh_Hans_CN"><Text>堕落伯爵</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S3" Language="zh_Hans_CN"><Text>狂乱法师</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S2" Language="zh_Hans_CN"><Text>熵之公爵</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S1" Language="zh_Hans_CN"><Text>弑序亲王</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SEQUENCE_NAME_S0" Language="zh_Hans_CN"><Text>黑皇帝</Text></Row>
+
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S9" Language="zh_Hans_CN"><Text>律师｜规则漏洞</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S8" Language="zh_Hans_CN"><Text>野蛮人｜强权；继承规则漏洞</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S7" Language="zh_Hans_CN"><Text>贿赂者｜利益收买；继承强权与规则漏洞</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S6" Language="zh_Hans_CN"><Text>腐化男爵｜腐化财富；继承利益收买、强权与规则漏洞</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S5" Language="zh_Hans_CN"><Text>混乱导师｜混乱法典；继承腐化财富、利益收买、强权与规则漏洞</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S4" Language="zh_Hans_CN"><Text>堕落伯爵｜堕落繁荣；继承全部旧序列技能</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S3" Language="zh_Hans_CN"><Text>狂乱法师｜狂乱法典；继承全部旧序列技能</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S2" Language="zh_Hans_CN"><Text>熵之公爵｜帝国熵流；继承全部旧序列技能</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S1" Language="zh_Hans_CN"><Text>弑序亲王｜秩序转化；继承全部旧序列技能</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_SKILLS_S0" Language="zh_Hans_CN"><Text>黑皇帝｜9座陵寝的故事；继承全部旧序列技能</Text></Row>
+
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S9" Language="zh_Hans_CN"><Text>规则漏洞（序列9）：首次拥有城市时立即完成“法典”并永久获得1个万能政策槽；每名玩家只触发一次，旧档缺失时补发。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S8" Language="zh_Hans_CN"><Text>强权（序列8）：己方所有单位+10战斗力、+1移动力；战斗力为普通对战修正，不改变单位面板基础战斗力或平民单位类别。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S7" Language="zh_Hans_CN"><Text>利益收买（序列7）：所有国内、国际贸易路线+10金币；每次新建立通往城邦的贸易路线，准确向目标城邦增加1名使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力；不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S6" Language="zh_Hans_CN"><Text>腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；新建城邦路线向目标城邦+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力；不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S5" Language="zh_Hans_CN"><Text>混乱法典（序列5）：晋升时显式解锁经济政策“混乱Ⅰ”。装入政策槽后每回合固定金币-100、科技+100；移除后立即停止，不提供额外破产保护。[NEWLINE][NEWLINE]腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；新建城邦路线向目标城邦+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力；不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S4" Language="zh_Hans_CN"><Text>堕落繁荣（序列4）：所有城市食物产出+100%；解锁经济政策“堕落Ⅰ”（金币-100、所有城市+10宜居度）和“混乱Ⅱ”（金币-500、科技+500）。[NEWLINE][NEWLINE]混乱法典（序列5）：混乱Ⅰ每回合金币-100、科技+100。[NEWLINE][NEWLINE]腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；城邦路线+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S3" Language="zh_Hans_CN"><Text>狂乱法典（序列3）：解锁军事政策“狂乱Ⅰ”，使所有正在与自己交战的主要文明全部城市六项产出-30%；和平后立即失效。解锁经济政策“堕落Ⅱ”（金币-500、所有城市+50宜居度）。[NEWLINE][NEWLINE]堕落繁荣（序列4）：所有城市食物产出+100%；解锁经济政策“堕落Ⅰ”（金币-100、所有城市+10宜居度）和“混乱Ⅱ”（金币-500、科技+500）。[NEWLINE][NEWLINE]混乱法典（序列5）：解锁经济政策“混乱Ⅰ”；装入后每回合金币-100、科技+100。[NEWLINE][NEWLINE]腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；新建城邦路线向目标城邦+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力；战斗力为普通对战修正，不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S2" Language="zh_Hans_CN"><Text>帝国熵流（序列2）：己方城市每公民额外产生4点忠诚度压力，使对外人口忠诚度压力达到基础值5倍；所有己方城市每回合+99忠诚度，仍受100上限约束。[NEWLINE][NEWLINE]狂乱法典（序列3）：解锁军事政策“狂乱Ⅰ”，使所有正在与自己交战的主要文明全部城市六项产出-30%；和平后立即失效。解锁经济政策“堕落Ⅱ”（金币-500、所有城市+50宜居度）。[NEWLINE][NEWLINE]堕落繁荣（序列4）：所有城市食物产出+100%；解锁经济政策“堕落Ⅰ”（金币-100、所有城市+10宜居度）和“混乱Ⅱ”（金币-500、科技+500）。[NEWLINE][NEWLINE]混乱法典（序列5）：解锁经济政策“混乱Ⅰ”；装入后每回合金币-100、科技+100。[NEWLINE][NEWLINE]腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；新建城邦路线向目标城邦+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力；战斗力为普通对战修正，不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S1" Language="zh_Hans_CN"><Text>秩序转化（序列1）：所有城市解锁可重复项目“转化”，投入生产力期间按100%转为科技、100%转为文化、200%转为金币，三项同时获得；解锁“混乱Ⅲ”（金币-1000、科技+1000）、“堕落Ⅲ”（金币-1000、所有城市+100宜居度）和“狂乱Ⅱ”（交战主要文明所有城市六项产出-50%）。[NEWLINE][NEWLINE]帝国熵流（序列2）：己方城市对外人口忠诚度压力达到基础值5倍；所有己方城市每回合+99忠诚度。[NEWLINE][NEWLINE]狂乱法典（序列3）：狂乱Ⅰ使交战主要文明全部城市六项产出-30%；堕落Ⅱ为金币-500、所有城市+50宜居度。[NEWLINE][NEWLINE]堕落繁荣（序列4）：所有城市食物+100%；解锁堕落Ⅰ和混乱Ⅱ。[NEWLINE][NEWLINE]混乱法典（序列5）：混乱Ⅰ为金币-100、科技+100。[NEWLINE][NEWLINE]腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；新建城邦路线向目标城邦+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力，不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_DETAILS_EFFECTS_S0" Language="zh_Hans_CN"><Text>9座陵寝的故事（序列0）：永久增加3个军事政策槽、3个经济政策槽和3个万能政策槽，共9个槽位；与序列9及原版政府槽位正常叠加。[NEWLINE][NEWLINE]秩序转化（序列1）：解锁可重复项目“转化”，生产力按100%转为科技、100%转为文化、200%转为金币；解锁混乱Ⅲ、堕落Ⅲ和狂乱Ⅱ。[NEWLINE][NEWLINE]帝国熵流（序列2）：己方城市对外人口忠诚度压力达到基础值5倍；所有己方城市每回合+99忠诚度。[NEWLINE][NEWLINE]狂乱法典（序列3）：狂乱Ⅰ使交战主要文明全部城市六项产出-30%；堕落Ⅱ为金币-500、所有城市+50宜居度。[NEWLINE][NEWLINE]堕落繁荣（序列4）：所有城市食物+100%；解锁堕落Ⅰ和混乱Ⅱ。[NEWLINE][NEWLINE]混乱法典（序列5）：混乱Ⅰ为金币-100、科技+100。[NEWLINE][NEWLINE]腐化财富（序列6）：所有城市金币产出+100%。[NEWLINE][NEWLINE]利益收买（序列7）：所有贸易路线+10金币；新建城邦路线向目标城邦+1使者。[NEWLINE][NEWLINE]强权（序列8）：己方所有单位+10战斗力、+1移动力，不改变基础战斗力。[NEWLINE][NEWLINE]规则漏洞（序列9）：完成法典并永久获得1个万能政策槽。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PREVIEW_MIGHT_STRENGTH" Language="zh_Hans_CN"><Text>强权：+10战斗力</Text></Row>
+
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S9" Language="zh_Hans_CN"><Text>消化条件（总计6点，本序列无每回合上限）：每完成一项新的市政+3。首次拥有城市时自动完成的法典也算一个市政，因此初始获得3点；政策卡不计消化。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S8" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：己方单位击杀敌军+2；己方单位完成一次普通掠夺+1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S7" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：建立贸易路线+1；使者总数每增加1名+1。新建城邦路线可同时获得2点。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S6" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：完成商业中心、港口或其中建筑+1；用金币购买单位、建筑或赞助伟人+1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S5" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：玩家回合开始时“混乱Ⅰ”处于启用状态+1；每完成一项科技+1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S4" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：城市人口增长+1；“堕落Ⅰ”或“混乱Ⅱ”至少一张启用时，每回合+1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S3" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：“狂乱Ⅰ”启用时每回合+1；“堕落Ⅱ”启用时每回合+1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S2" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：自由城市或外国城市通过忠诚度加入己方时尝试获得3点，但仍受当前回合剩余上限约束。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S1" Language="zh_Hans_CN"><Text>消化条件（每回合最多2点，总计6点）：任一城市正在执行“转化”项目时每回合+1；“混乱Ⅲ”“堕落Ⅲ”或“狂乱Ⅱ”至少一张启用时每回合+1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_DIGEST_S0" Language="zh_Hans_CN"><Text>序列0无需继续消化。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S9" Language="zh_Hans_CN"><Text>消化达到6点后解锁“野蛮人魔药”，完成后晋升序列8。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S8" Language="zh_Hans_CN"><Text>消化达到6点后解锁“贿赂者魔药”，完成后晋升序列7。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S7" Language="zh_Hans_CN"><Text>消化达到6点后解锁“腐化男爵魔药”，完成后晋升序列6。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S6" Language="zh_Hans_CN"><Text>消化达到6点后解锁“混乱导师魔药”，完成后晋升序列5。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S5" Language="zh_Hans_CN"><Text>消化达到6点且完成“工业化”后解锁“堕落伯爵魔药”，完成后晋升序列4。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S4" Language="zh_Hans_CN"><Text>消化达到6点后解锁“狂乱法师魔药”，完成后晋升序列3。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S3" Language="zh_Hans_CN"><Text>消化达到6点后解锁“熵之公爵魔药”，完成后晋升序列2。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S2" Language="zh_Hans_CN"><Text>消化达到6点后解锁“弑序亲王魔药”，完成后晋升序列1。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S1" Language="zh_Hans_CN"><Text>消化达到6点后：已建立真神教会则解锁“黑皇帝登基仪式”；否则解锁基础成本翻倍的“无圣黑皇帝登基仪式”。完成后晋升序列0。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_HUD_NEXT_S0" Language="zh_Hans_CN"><Text>已完成黑皇帝途径全部晋升。</Text></Row>
+
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARBARIAN_POTION_NAME" Language="zh_Hans_CN"><Text>野蛮人魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARBARIAN_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列8</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARBARIAN_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列9后晋升为野蛮人。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BRIBER_POTION_NAME" Language="zh_Hans_CN"><Text>贿赂者魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BRIBER_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列7</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BRIBER_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列8后晋升为贿赂者。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION_NAME" Language="zh_Hans_CN"><Text>腐化男爵魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列6</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列7后晋升为腐化男爵。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION_NAME" Language="zh_Hans_CN"><Text>混乱导师魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列5</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列6后晋升为混乱导师。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION_NAME" Language="zh_Hans_CN"><Text>堕落伯爵魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列4</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>完成工业化并消化序列5后晋升为堕落伯爵。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_FRENZY_MAGE_POTION_NAME" Language="zh_Hans_CN"><Text>狂乱法师魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_FRENZY_MAGE_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列3</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_FRENZY_MAGE_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列4后晋升为狂乱法师。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION_NAME" Language="zh_Hans_CN"><Text>熵之公爵魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列2</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列3后晋升为熵之公爵。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION_NAME" Language="zh_Hans_CN"><Text>弑序亲王魔药</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列1</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列2后晋升为弑序亲王。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_TRANSFORMATION_NAME" Language="zh_Hans_CN"><Text>转化</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_TRANSFORMATION_SHORT_NAME" Language="zh_Hans_CN"><Text>将生产力同时转化为科技、文化与金币</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_TRANSFORMATION_DESCRIPTION" Language="zh_Hans_CN"><Text>可重复执行。项目进行期间，每投入1点生产力，同时获得1点科技、1点文化和2点金币。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_NAME" Language="zh_Hans_CN"><Text>黑皇帝登基仪式</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_SHORT_NAME" Language="zh_Hans_CN"><Text>晋升至序列0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_DESCRIPTION" Language="zh_Hans_CN"><Text>消化序列1且已经建立真神教会后，晋升序列0“黑皇帝”。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED_NAME" Language="zh_Hans_CN"><Text>无圣黑皇帝登基仪式</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED_SHORT_NAME" Language="zh_Hans_CN"><Text>以双倍生产力晋升序列0</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED_DESCRIPTION" Language="zh_Hans_CN"><Text>尚未建立真神教会时举行的登基仪式，基础生产力需求为正常项目的2倍；完成后晋升序列0“黑皇帝”。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_I_NAME" Language="zh_Hans_CN"><Text>混乱Ⅰ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_I_DESCRIPTION" Language="zh_Hans_CN"><Text>每回合固定金币-100、科技+100。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_II_NAME" Language="zh_Hans_CN"><Text>混乱Ⅱ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_II_DESCRIPTION" Language="zh_Hans_CN"><Text>每回合固定金币-500、科技+500。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_III_NAME" Language="zh_Hans_CN"><Text>混乱Ⅲ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CHAOS_III_DESCRIPTION" Language="zh_Hans_CN"><Text>每回合固定金币-1000、科技+1000。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_I_NAME" Language="zh_Hans_CN"><Text>堕落Ⅰ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_I_DESCRIPTION" Language="zh_Hans_CN"><Text>每回合固定金币-100；所有城市+10宜居度。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_II_NAME" Language="zh_Hans_CN"><Text>堕落Ⅱ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_II_DESCRIPTION" Language="zh_Hans_CN"><Text>每回合固定金币-500；所有城市+50宜居度。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_III_NAME" Language="zh_Hans_CN"><Text>堕落Ⅲ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_CORRUPTION_III_DESCRIPTION" Language="zh_Hans_CN"><Text>每回合固定金币-1000；所有城市+100宜居度。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_I_NAME" Language="zh_Hans_CN"><Text>狂乱Ⅰ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_I_DESCRIPTION" Language="zh_Hans_CN"><Text>所有正在与你交战的主要文明，其全部城市食物、生产力、金币、科技、文化和信仰-30%。</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_II_NAME" Language="zh_Hans_CN"><Text>狂乱Ⅱ</Text></Row>
+		<Row Tag="LOC_POLICY_LOTM_BE_FRENZY_II_DESCRIPTION" Language="zh_Hans_CN"><Text>所有正在与你交战的主要文明，其全部城市食物、生产力、金币、科技、文化和信仰-50%。</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_TITLE" Language="zh_Hans_CN"><Text>恭喜您晋升　黑皇帝</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_1" Language="zh_Hans_CN"><Text>秩序阴影的主宰</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_2" Language="zh_Hans_CN"><Text>规则漏洞的化身</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_3" Language="zh_Hans_CN"><Text>九座陵寝之上的皇帝</Text></Row>
+		<Row Tag="LOC_LOTM_BE_SEQUENCE0_CEREMONY_LINE_4" Language="zh_Hans_CN"><Text>一切帝国与混乱的归宿</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_GOLDEN_APPRAISAL_MIRROR_NAME" Language="zh_Hans_CN"><Text>黄金鉴定镜</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_PERPETUAL_GEARBOX_NAME" Language="zh_Hans_CN"><Text>永动齿轮箱</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_ERROR_ASTROLABE_NAME" Language="zh_Hans_CN"><Text>错误星盘</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_HERMES_FURNACE_NAME" Language="zh_Hans_CN"><Text>赫尔墨斯熔炉</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_MYSTERY_BLUEPRINT_NAME" Language="zh_Hans_CN"><Text>奥秘结构图</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_KNOWLEDGE_CASKET_NAME" Language="zh_Hans_CN"><Text>知识之匣</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_PP_CIVILIZATION_STELE_NAME" Language="zh_Hans_CN"><Text>文明启蒙碑</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_TITLE" Language="zh_Hans_CN"><Text>封印物</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_EQUIPPED" Language="zh_Hans_CN"><Text>装备槽</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_INVENTORY" Language="zh_Hans_CN"><Text>已有封印物</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_1" Language="zh_Hans_CN"><Text>封印物槽位 1</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_2" Language="zh_Hans_CN"><Text>封印物槽位 2</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_EMPTY" Language="zh_Hans_CN"><Text>空槽位</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SLOT_NUMBER" Language="zh_Hans_CN"><Text>封印物槽位 {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_ORGANIZE" Language="zh_Hans_CN"><Text>整理封印物</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EQUIPPED_COUNT" Language="zh_Hans_CN"><Text>已装备 {1_Num}/{2_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_INVENTORY_COUNT" Language="zh_Hans_CN"><Text>库存 {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_EMPTY_INVENTORY" Language="zh_Hans_CN"><Text>没有未装备的封印物</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACTS_DRAG_HINT" Language="zh_Hans_CN"><Text>把右侧封印物拖入左侧槽位以装备；拖回右侧或右键槽位可卸下。[NEWLINE]每个玩家回合都会按当前装备重新发放仅覆盖本回合的效果；卸下后最迟在下一回合失效，已经结算的一次性或回合效果不会回溯。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EQUIPMENT_GROUP" Language="zh_Hans_CN"><Text>封印物装备区 {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_INVENTORY_GROUP" Language="zh_Hans_CN"><Text>封印物库存区 {1_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_GROUP_SLOTS" Language="zh_Hans_CN"><Text>位置 {1_Num}–{2_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_TOOLTIP_EQUIPPED" Language="zh_Hans_CN"><Text>已装备于槽位 {1_Num}；拖到右侧卸下，或拖到其他左侧槽位交换。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_TOOLTIP_INVENTORY" Language="zh_Hans_CN"><Text>位于库存；拖到左侧槽位装备。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_TOOLTIP_META" Language="zh_Hans_CN"><Text>{1_Level}级 · {2_Path} · 序列{3_Sequence}·{4_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EMPTY_EQUIPMENT_TOOLTIP" Language="zh_Hans_CN"><Text>空装备槽位 {1_Num}；可从右侧拖入封印物。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_EMPTY_INVENTORY_TOOLTIP" Language="zh_Hans_CN"><Text>空库存位置；把左侧封印物拖到这里即可卸下。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_HEADER" Language="zh_Hans_CN"><Text>你的文明获得了封印物！</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_META" Language="zh_Hans_CN"><Text>等级：{1_Num}级　｜　途径：完美者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_META_ALL" Language="zh_Hans_CN"><Text>等级：{1_Num}级　｜　途径：{2_Path}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_VIEW" Language="zh_Hans_CN"><Text>查看封印物</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_POSITIVE" Language="zh_Hans_CN"><Text>正面效果：{1_Text}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ARTIFACT_SHOWCASE_NEGATIVE" Language="zh_Hans_CN"><Text>负面效果：{1_Text}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GOLDEN_POSITIVE" Language="zh_Hans_CN"><Text>全部伟大作品产出及旅游业绩+100%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GOLDEN_NEGATIVE" Language="zh_Hans_CN"><Text>伟人点数-25%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GEARBOX_POSITIVE" Language="zh_Hans_CN"><Text>所有已改良地块生产力+2。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_GEARBOX_NEGATIVE" Language="zh_Hans_CN"><Text>所有已改良地块食物-1。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_ASTROLABE_POSITIVE" Language="zh_Hans_CN"><Text>学院相邻、建筑、专家科技和太空项目生产力+100%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_ASTROLABE_NEGATIVE" Language="zh_Hans_CN"><Text>全城信仰-50%、文化-20%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_FURNACE_POSITIVE" Language="zh_Hans_CN"><Text>全城生产力+40%；装备期间新生成的建造者永久+3劳动力。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_FURNACE_NEGATIVE" Language="zh_Hans_CN"><Text>全城金币-40%、宜居度-2。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_BLUEPRINT_POSITIVE" Language="zh_Hans_CN"><Text>专业区域相邻、建筑和专家基础产出+60%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_BLUEPRINT_NEGATIVE" Language="zh_Hans_CN"><Text>全城食物-30%、人口增长-50%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_CASKET_POSITIVE" Language="zh_Hans_CN"><Text>每回合随机触发一项尚未触发的可用科技尤里卡。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_CASKET_NEGATIVE" Language="zh_Hans_CN"><Text>全城文化-30%。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_STELE_POSITIVE" Language="zh_Hans_CN"><Text>全城科技、文化+30%；每回合+500大科学家点数。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_SHOWCASE_STELE_NEGATIVE" Language="zh_Hans_CN"><Text>每回合-500金币；全城生产力-30%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_EMBER_EFFECT" Language="zh_Hans_CN"><Text>掠夺只消耗1移动力且收益+100%；所有城市宜居度-2。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_LETTER_EFFECT" Language="zh_Hans_CN"><Text>首次开战+1000金币，战争期间每回合+50金币；和平时金币-25%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_SICKLE_EFFECT" Language="zh_Hans_CN"><Text>击杀后恢复30生命；军事单位每回合损失5生命但不会死亡。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_BANNER_EFFECT" Language="zh_Hans_CN"><Text>所有单位+30战斗力、+3移动力；金币-50%、维护费+100%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_SCRIPTURE_EFFECT" Language="zh_Hans_CN"><Text>战争时生产力+100%、战争厌恶度-100%；和平时生产力-40%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_WEATHER_EFFECT" Language="zh_Hans_CN"><Text>己方+2移动力，交战敌军-20战斗力、-2移动力；战争时宜居度-5、食物-30%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_RP_CROWN_EFFECT" Language="zh_Hans_CN"><Text>攻击区域防御目标+150战斗力；防御时-20战斗力。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_BRIBE_EFFECT" Language="zh_Hans_CN"><Text>贸易路线+10金币，城邦路线+1使者；国内路线-3食物、-3生产力。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_TAX_EFFECT" Language="zh_Hans_CN"><Text>金币+100%；文化-30%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_CODEX_EFFECT" Language="zh_Hans_CN"><Text>每回合+30科技、-100金币。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_FEAST_EFFECT" Language="zh_Hans_CN"><Text>食物+100%、宜居度+5；每回合-500金币。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_SCEPTER_EFFECT" Language="zh_Hans_CN"><Text>交战文明六项产出-30%，己方宜居度+15；每回合-500金币。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_EMBER_EFFECT" Language="zh_Hans_CN"><Text>正面：允许掠夺己方改良设施和区域，并获得双倍产出；按标准掠夺消耗移动力。负面：所有城市宜居度-2。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_LETTER_EFFECT" Language="zh_Hans_CN"><Text>正面：每回合+50金币。负面：所有城市生产力-20%。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_BANNER_EFFECT" Language="zh_Hans_CN"><Text>正面：己方所有单位+30战斗力、+3移动力；正式同盟AI的所有单位+15战斗力。负面：金币-50%，单位维护费+100%。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_SCRIPTURE_EFFECT" Language="zh_Hans_CN"><Text>正面：所有城市生产力+60%。负面：所有城市食物-20%。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_WEATHER_EFFECT" Language="zh_Hans_CN"><Text>正面：己方所有单位+2移动力；游荡与中央工坊的所有疯狂者-1移动力、-10战斗力。负面：所有城市宜居度-2。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_RP_CROWN_EFFECT" Language="zh_Hans_CN"><Text>正面：己方所有城市UI护盾防御值及有墙防御+50；正式同盟AI的所有城市对应防御+30。负面：所有城市宜居度-2。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_BE_SCEPTER_EFFECT" Language="zh_Hans_CN"><Text>正面：疯狂者全图刷新上限-3，每回合最大允许刷新数-2。负面：每回合-50金币。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_WEATHER_MONSTER" Language="zh_Hans_CN"><Text>灾厄气象仪</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_WEATHER_MONSTER_DESC" Language="zh_Hans_CN"><Text>被灾厄气象仪压制：-10战斗力、-1移动力。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_WEATHER_MONSTER_PREVIEW" Language="zh_Hans_CN"><Text>灾厄气象仪：-10战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_CROWN_SELF_PREVIEW" Language="zh_Hans_CN"><Text>征服者遗冠（己方）：+50城市护盾防御</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_CROWN_ALLY_PREVIEW" Language="zh_Hans_CN"><Text>征服者遗冠（正式同盟AI）：+30城市护盾防御</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_EMBER_PILLAGE_BUTTON" Language="zh_Hans_CN"><Text>掠夺己方（双倍产出）</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_ARTIFACT_EMBER_PILLAGE_TOOLTIP" Language="zh_Hans_CN"><Text>使用灾炎余烬掠夺单位所在的己方改良设施或区域层级，获得双倍产出并消耗标准掠夺移动力。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_ENTROPY_EFFECT" Language="zh_Hans_CN"><Text>每回合+99忠诚度、对外压力3倍；文化-50%。</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_SHOWCASE_BE_ORDER_EFFECT" Language="zh_Hans_CN"><Text>生产力-25%，损失值转为科技、文化和金币。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_SEQUENCE_NAME" Language="zh_Hans_CN"><Text>失控工坊序列者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_SEQUENCE_DESCRIPTION" Language="zh_Hans_CN"><Text>创建时获得对应时代蛮族近战基准战斗力加成，无法移动。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_LOW_NAME" Language="zh_Hans_CN"><Text>低阶失控者</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_MID_NAME" Language="zh_Hans_CN"><Text>中阶失控者</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_HIGH_NAME" Language="zh_Hans_CN"><Text>高阶失控者</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_LOST_CONTROL_DESCRIPTION" Language="zh_Hans_CN"><Text>固定驻守失控工坊中心；战斗力在出生时按世界近战基准、工坊等级和当前失控时期冻结。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PERIOD_STRENGTH_NAME" Language="zh_Hans_CN"><Text>世界失控强化</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PERIOD_STRENGTH_DESCRIPTION" Language="zh_Hans_CN"><Text>出生时按当前世界失控时期获得并冻结的额外战斗力。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PREVIEW_PERIOD_STRENGTH" Language="zh_Hans_CN"><Text>时期强化：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_PP_PREVIEW_BEYONDER_EFFECT" Language="zh_Hans_CN"><Text>+10 非凡者效果</Text></Row>
+		<Row Tag="LOC_LOTM_RP_WORKSHOP_HARVESTER_NAME" Language="zh_Hans_CN"><Text>收割者</Text></Row>
+		<Row Tag="LOC_LOTM_RP_WORKSHOP_WAR_BISHOP_NAME" Language="zh_Hans_CN"><Text>战争主教</Text></Row>
+		<Row Tag="LOC_LOTM_RP_WORKSHOP_CONQUEROR_NAME" Language="zh_Hans_CN"><Text>征服者</Text></Row>
+		<Row Tag="LOC_LOTM_BE_WORKSHOP_CHAOS_MENTOR_NAME" Language="zh_Hans_CN"><Text>混乱导师</Text></Row>
+		<Row Tag="LOC_LOTM_BE_WORKSHOP_FRENZY_MAGE_NAME" Language="zh_Hans_CN"><Text>狂乱法师</Text></Row>
+		<Row Tag="LOC_LOTM_BE_WORKSHOP_PRINCE_NAME" Language="zh_Hans_CN"><Text>弑序亲王</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_LEVEL0_STRENGTH_NAME" Language="zh_Hans_CN"><Text>完美武装</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_LEVEL0_STRENGTH_DESCRIPTION" Language="zh_Hans_CN"><Text>来自0级失控工坊：战斗力+10，每回合回复10生命值。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_HERMES_BUILDER_DESCRIPTION" Language="zh_Hans_CN"><Text>在赫尔墨斯熔炉装备期间生成：永久+3劳动力。</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ASTRONOMER_NAME" Language="zh_Hans_CN"><Text>天文学家</Text></Row>
+		<Row Tag="LOC_LOTM_PP_MYSTICIST_NAME" Language="zh_Hans_CN"><Text>奥秘学者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_ENLIGHTENER_NAME" Language="zh_Hans_CN"><Text>启蒙者</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_REWARD" Language="zh_Hans_CN"><Text>获得封印物：{1}</Text></Row>
+		<Row Tag="LOC_LOTM_PP_WORKSHOP_ALL_COLLECTED" Language="zh_Hans_CN"><Text>该等级封印物已全部收集</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_DISASTER_EMBER_NAME" Language="zh_Hans_CN"><Text>灾炎余烬</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_CONSPIRATOR_LETTER_NAME" Language="zh_Hans_CN"><Text>阴谋家的密信</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_BLOOD_HARVEST_SICKLE_NAME" Language="zh_Hans_CN"><Text>嗜血收割镰</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_IRONBLOOD_BANNER_NAME" Language="zh_Hans_CN"><Text>铁血军旗</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_WAR_SCRIPTURE_NAME" Language="zh_Hans_CN"><Text>战争圣典</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_DISASTER_WEATHER_NAME" Language="zh_Hans_CN"><Text>灾厄气象仪</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_RP_CONQUEROR_CROWN_NAME" Language="zh_Hans_CN"><Text>征服者遗冠</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_GOLDEN_BRIBE_NAME" Language="zh_Hans_CN"><Text>黄金贿赂契约</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_CORRUPTION_TAXBOOK_NAME" Language="zh_Hans_CN"><Text>腐化税册</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_CHAOS_CODEX_NAME" Language="zh_Hans_CN"><Text>混乱法典残页</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_DEPRAVED_FEAST_NAME" Language="zh_Hans_CN"><Text>堕落盛宴</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_FRENZY_SCEPTER_NAME" Language="zh_Hans_CN"><Text>狂乱权杖</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_ENTROPY_CROWN_NAME" Language="zh_Hans_CN"><Text>熵流王冠</Text></Row>
+		<Row Tag="LOC_GREATWORK_LOTM_BE_ORDER_CONVERTER_NAME" Language="zh_Hans_CN"><Text>秩序转化器</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_GOOD" Language="zh_Hans_CN"><Text>非凡者状态良好</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_GOOD_DESC" Language="zh_Hans_CN"><Text>战斗力+5，移动力+1。</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_UNSTABLE" Language="zh_Hans_CN"><Text>非凡者状态不稳定</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_EVENT_HOLDER_UNSTABLE_DESC" Language="zh_Hans_CN"><Text>战斗力-5，移动力-1；移动力最低为1。</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_SATISFIED_SUMMARY" Language="zh_Hans_CN"><Text>封印物非常满意：{1_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_SATISFIED_MESSAGE" Language="zh_Hans_CN"><Text>{1_Name}对当前状态非常满意。未来5个玩家回合内，装备时只保留正面效果；卸下后效果停止，但倒计时继续。</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_UNCONTROLLED_SUMMARY" Language="zh_Hans_CN"><Text>封印物失控：{1_Name}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_ARTIFACT_UNCONTROLLED_MESSAGE" Language="zh_Hans_CN"><Text>{1_Name}已经失控。未来5个玩家回合内，装备时只产生负面效果。可以卸下该封印物规避其负面效果，但失控状态会继续持续至倒计时结束。</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_GOOD_SUMMARY" Language="zh_Hans_CN"><Text>非凡者状态良好</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_GOOD_MESSAGE" Language="zh_Hans_CN"><Text>你的途径持有者进入良好状态：未来5个玩家回合内，战斗力+5、移动力+1。</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_UNSTABLE_SUMMARY" Language="zh_Hans_CN"><Text>非凡者状态不稳定</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_UNSTABLE_MESSAGE" Language="zh_Hans_CN"><Text>你的途径持有者状态不稳定：未来5个玩家回合内，战斗力-5、移动力-1，移动力最低为1。</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_FOOL_SAINT_NAME" Language="zh_Hans_CN"><Text>愚者教会-圣者</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_FOOL_ANGEL_NAME" Language="zh_Hans_CN"><Text>愚者教会-天使</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_NIGHT_SAINT_NAME" Language="zh_Hans_CN"><Text>黑夜女神教会-圣者</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_NIGHT_ANGEL_NAME" Language="zh_Hans_CN"><Text>黑夜女神教会-天使</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_STORM_SAINT_NAME" Language="zh_Hans_CN"><Text>风暴之主教会-圣者</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_STORM_ANGEL_NAME" Language="zh_Hans_CN"><Text>风暴之主教会-天使</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_SAINT_DESCRIPTION" Language="zh_Hans_CN"><Text>对应教会的圣者。基础战斗力90、移动力3、视野3；每回合同步按移动力向失控魔物推进并优先清除它们，其次处理不驻守营地的游荡普通蛮族；不会攻击或清除营地与失控工坊，不主动攻击玩家或正常AI，不可占领城市。</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_ANGEL_DESCRIPTION" Language="zh_Hans_CN"><Text>对应教会的天使。基础战斗力130、移动力4、视野4；每回合同步按移动力向失控魔物推进并优先清除它们，其次处理不驻守营地的游荡普通蛮族；不会攻击或清除营地与失控工坊，不主动攻击玩家或正常AI，不可占领城市。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION_NAME" Language="zh_Hans_CN"><Text>旧守卫协议（已退役）</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_GUARDIAN_NON_AGGRESSION_DESCRIPTION" Language="zh_Hans_CN"><Text>仅用于清理旧存档中的阶段3不可攻击状态；新生成单位不再获得。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_TITLE" Language="zh_Hans_CN"><Text>选择救赎难度</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_BODY" Language="zh_Hans_CN"><Text>难度一经确认不可更改。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_NORMAL_NAME" Language="zh_Hans_CN"><Text>普通</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_HARD_NAME" Language="zh_Hans_CN"><Text>困难</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_MADNESS_NAME" Language="zh_Hans_CN"><Text>疯狂</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_DIFFICULTY_SELECT" Language="zh_Hans_CN"><Text>选择此难度</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_EARLY_SEAL_NAME" Language="zh_Hans_CN"><Text>封印：−10战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_EARLY_SEAL_DESCRIPTION" Language="zh_Hans_CN"><Text>世界回合1—20：疯狂者战斗力−10。第21回合解除；不影响外神及其眷属。</Text></Row>
+			<Row Tag="LOC_LOTM_RESCUE_EARLY_SEAL_PREVIEW" Language="zh_Hans_CN"><Text>封印：{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_MADNESS_PREVIEW" Language="zh_Hans_CN"><Text>净化封印：{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_5_NAME" Language="zh_Hans_CN"><Text>净化封印：−5战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_5_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−5。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_10_NAME" Language="zh_Hans_CN"><Text>净化封印：−10战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_10_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−10。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_15_NAME" Language="zh_Hans_CN"><Text>净化封印：−15战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_15_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−15。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_20_NAME" Language="zh_Hans_CN"><Text>净化封印：−20战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_20_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−20。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_25_NAME" Language="zh_Hans_CN"><Text>净化封印：−25战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_25_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−25。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_30_NAME" Language="zh_Hans_CN"><Text>净化封印：−30战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_30_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−30。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_35_NAME" Language="zh_Hans_CN"><Text>净化封印：−35战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_35_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−35。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_40_NAME" Language="zh_Hans_CN"><Text>净化封印：−40战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_40_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−40。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_45_NAME" Language="zh_Hans_CN"><Text>净化封印：−45战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_45_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−45。与前20回合的封印分别计算。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_50_NAME" Language="zh_Hans_CN"><Text>净化封印：−50战斗力</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PURIFICATION_MADNESS_50_DESCRIPTION" Language="zh_Hans_CN"><Text>净化能量削弱疯狂者，使其战斗力−50。与前20回合的封印分别计算。</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_ARTIFACT_TAB_PERFECT" Language="zh_Hans_CN"><Text>完美者途径</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_TAB_RED_PRIEST" Language="zh_Hans_CN"><Text>红祭司途径</Text></Row>
+		<Row Tag="LOC_LOTM_ARTIFACT_TAB_BLACK_EMPEROR" Language="zh_Hans_CN"><Text>黑皇帝途径</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_TITLE" Language="zh_Hans_CN"><Text>非凡聚会</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_ARTIFACT_INTRO" Language="zh_Hans_CN"><Text>你发现并参加了一场非凡者聚会，途中有人向你售卖一件封印物：</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_POTION_INTRO" Language="zh_Hans_CN"><Text>你发现并参加了一场非凡者聚会，途中有人向你售卖一瓶魔药：</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_QUESTION" Language="zh_Hans_CN"><Text>你认出来了那是真的，请问是否购买？</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_GATHERING_PRICE" Language="zh_Hans_CN"><Text>价格：{1_Num} 金币[NEWLINE]当前金币：{2_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_BUY" Language="zh_Hans_CN"><Text>购买</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_LEAVE" Language="zh_Hans_CN"><Text>离开</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_STRENGTH_NAME" Language="zh_Hans_CN"><Text>非凡战力基准</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_STRENGTH_DESCRIPTION" Language="zh_Hans_CN"><Text>由同步世界系统按出生时的蛮族近战基准设置战斗力。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_FRENZY_STRENGTH_NAME" Language="zh_Hans_CN"><Text>疯狂</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_FRENZY_STRENGTH_DESCRIPTION" Language="zh_Hans_CN"><Text>该失控魔物在出生时冻结的蛮族最强近战基准上获得15点战斗力。救援模式中会独立锁定同大陆最近的普通AI或城邦城市并持续进攻；只要仍有其他势力就完全忽略玩家，只有全地图仅剩玩家与救赎封印／三教会时才会转向玩家。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_MID_STRENGTH_NAME" Language="zh_Hans_CN"><Text>中阶强化</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_MID_STRENGTH_DESCRIPTION" Language="zh_Hans_CN"><Text>中阶失控魔物在“疯狂”基础上额外获得10点战斗力。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_HIGH_STRENGTH_NAME" Language="zh_Hans_CN"><Text>高阶强化</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_MONSTER_TIER_HIGH_STRENGTH_DESCRIPTION" Language="zh_Hans_CN"><Text>高阶失控魔物在“疯狂”基础上额外获得20点战斗力。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_MOVEMENT_NAME" Language="zh_Hans_CN"><Text>失控魔物移动</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_WORLD_DYNAMIC_MOVEMENT_DESCRIPTION" Language="zh_Hans_CN"><Text>由同步世界系统设置该单位的额外移动力。</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_DYNAMIC_STRENGTH" Language="zh_Hans_CN"><Text>非凡单位：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_PREVIEW_MONSTER_FRENZY" Language="zh_Hans_CN"><Text>疯狂：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_MONSTER_LOW_NAME" Language="zh_Hans_CN"><Text>低阶失控魔物</Text></Row>
+		<Row Tag="LOTM_WORLD_MONSTER_2" Language="zh_Hans_CN"><Text>低阶失控魔物</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_MONSTER_MID_NAME" Language="zh_Hans_CN"><Text>中阶失控魔物</Text></Row>
+		<Row Tag="LOTM_WORLD_MONSTER_1" Language="zh_Hans_CN"><Text>中阶失控魔物</Text></Row>
+		<Row Tag="LOC_LOTM_WORLD_MONSTER_HIGH_NAME" Language="zh_Hans_CN"><Text>高阶失控魔物</Text></Row>
+		<Row Tag="LOTM_WORLD_MONSTER_0" Language="zh_Hans_CN"><Text>高阶失控魔物</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_CENTER" Language="zh_Hans_CN"><Text>中央</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_FOOL" Language="zh_Hans_CN"><Text>愚者</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_NIGHT" Language="zh_Hans_CN"><Text>黑夜</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_STORM" Language="zh_Hans_CN"><Text>风暴</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MARKER_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Name}预定中心[NEWLINE]坐标：({2_X}, {3_Y})[NEWLINE]封印半径：{4_Radius}；方向组：{5_Directions}[NEWLINE]救赎模式调试标记。</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_TITLE" Language="zh_Hans_CN"><Text>外神削弱进度</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_VALUE" Language="zh_Hans_CN"><Text>净化值：{1_Total}/{2_Maximum}</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_VALUE_OVER" Language="zh_Hans_CN"><Text>净化值：{1_Total}（显示上限{2_Maximum}）</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_TOOLTIP" Language="zh_Hans_CN"><Text>所有正常阵营共同积累的全球净化值：{1_Total}[NEWLINE]最近变化：+{2_Delta}（世界回合 {3_Turn}）[NEWLINE]进度条显示上限为{4_Maximum}；净化原始值仍可继续增长。四条竖线500/1000/1500/2000与进度条终点3000共同构成外神强度档位边界，最高档门槛为{5_BestThreshold}。[NEWLINE]最终降临时会按0–499／500–999／1000–1499／1500–1999／2000–2999／≥3000六档锁定外神强度，降临后不再变档。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_TITLE" Language="zh_Hans_CN"><Text>净化值贡献榜</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_COMPACT" Language="zh_Hans_CN"><Text>贡献榜：{1_Ranking}</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_ENTRY" Language="zh_Hans_CN"><Text>{1_Rank}. {2_Name}：{3_Value}（{4_Events}次）</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_RANKING_EMPTY" Language="zh_Hans_CN"><Text>贡献榜：暂无净化记录</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_CHURCH_FOOL" Language="zh_Hans_CN"><Text>愚者教会</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_CHURCH_NIGHT" Language="zh_Hans_CN"><Text>黑夜教会</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_CHURCH_STORM" Language="zh_Hans_CN"><Text>风暴教会</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_LEGACY" Language="zh_Hans_CN"><Text>旧档未归属记录</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_PURIFICATION_UNKNOWN" Language="zh_Hans_CN"><Text>未知势力{1_Id}</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P9_RP_EXTRA_ATTACK_NAME" Language="zh_Hans_CN"><Text>征服者：额外攻击</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P9_RP_EXTRA_ATTACK_DESCRIPTION" Language="zh_Hans_CN"><Text>该战斗单位每回合额外获得1次攻击机会。</Text></Row>
+		<Row Tag="LOC_LOTM_RP_ARSON_DISABLED_RESCUE_PENDING" Language="zh_Hans_CN"><Text>救赎模式纵火固定为70点直接伤害；当前Gameplay同步数据不可用，因此未发动且未消耗冷却。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S9" Language="zh_Hans_CN"><Text>猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S8" Language="zh_Hans_CN"><Text>挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S7" Language="zh_Hans_CN"><Text>纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S6" Language="zh_Hans_CN"><Text>阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S5" Language="zh_Hans_CN"><Text>收割者（序列5）：己方单位击杀敌军后，该单位每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S4" Language="zh_Hans_CN"><Text>铁血骑士（序列4）：所有己方单位+30战斗力、+3移动力。[NEWLINE][NEWLINE]收割者（序列5）：己方单位击杀敌军后，该单位每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S3" Language="zh_Hans_CN"><Text>战争主教（序列3）：所有城市常驻+100%生产力，不要求处于战争；不再提供战争厌恶度或占领城市忠诚度效果。[NEWLINE][NEWLINE]铁血骑士（序列4）：所有己方单位+30战斗力、+3移动力。[NEWLINE][NEWLINE]收割者（序列5）：己方单位击杀敌军后，该单位每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S2" Language="zh_Hans_CN"><Text>天气术士（序列2）：所有己方单位再+30战斗力、+3移动力，不削弱敌方；与铁血骑士累计为+60战斗力、+6移动力。[NEWLINE][NEWLINE]战争主教（序列3）：所有城市常驻+100%生产力，不要求处于战争；不再提供战争厌恶度或占领城市忠诚度效果。[NEWLINE][NEWLINE]铁血骑士（序列4）：所有己方单位+30战斗力、+3移动力。[NEWLINE][NEWLINE]收割者（序列5）：己方单位击杀敌军后，该单位每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S1" Language="zh_Hans_CN"><Text>征服者（序列1）：所有己方战斗单位每回合额外攻击1次；移除普通模式对城市和军营的攻城优势。[NEWLINE][NEWLINE]天气术士（序列2）：所有己方单位再+30战斗力、+3移动力，不削弱敌方；与铁血骑士累计为+60战斗力、+6移动力。[NEWLINE][NEWLINE]战争主教（序列3）：所有城市常驻+100%生产力，不要求处于战争；不再提供战争厌恶度或占领城市忠诚度效果。[NEWLINE][NEWLINE]铁血骑士（序列4）：所有己方单位+30战斗力、+3移动力。[NEWLINE][NEWLINE]收割者（序列5）：己方单位击杀敌军后，该单位每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_EFFECTS_S0" Language="zh_Hans_CN"><Text>红祭司（序列0）：所有城市常驻达到正常生产力的10倍；三大教会使者均达到6后可完成“战神遗物”获得神圣军团。所有途径的序列0玩家都可献祭己方非神级战斗单位，每次将该单位当前战斗力的1/10（向下取整）永久加给真神；特殊单位只要实际战斗力大于0也可献祭。[NEWLINE][NEWLINE]征服者（序列1）：所有己方战斗单位每回合额外攻击1次；移除普通模式对城市和军营的攻城优势。[NEWLINE][NEWLINE]天气术士（序列2）：所有己方单位再+30战斗力、+3移动力，不削弱敌方；与铁血骑士累计为+60战斗力、+6移动力。[NEWLINE][NEWLINE]战争主教（序列3）：所有城市常驻+100%生产力，不要求处于战争；不再提供战争厌恶度或占领城市忠诚度效果。[NEWLINE][NEWLINE]铁血骑士（序列4）：所有己方单位+30战斗力、+3移动力。[NEWLINE][NEWLINE]收割者（序列5）：己方单位击杀敌军后，该单位每回合最多恢复一次；途径持有者恢复60生命，其他己方单位恢复30生命。[NEWLINE][NEWLINE]阴谋家（序列6）：使用金币购买军事单位时费用-50%；每个军事单位维护费固定-2金币，沿用原版维护费减免规则且不会降为负数。[NEWLINE][NEWLINE]纵火（序列7）：可选择视野内6格、非城市中心且存在交战敌军的陆地格；对格内每个非神级敌军直接造成70点伤害，神级单位免疫；不处决、不耗尽移动力、不留燃烧地块、不自动掠夺，冷却5回合。[NEWLINE][NEWLINE]挑衅者（序列8）：途径持有者驻扎期间+40战斗力；每个己方回合开始时若仍在驻扎，则恢复至100%生命值。[NEWLINE][NEWLINE]猎人本能（序列9）：移动力+2，视野+5；森林、雨林和丘陵忽略额外移动力消耗；攻击蛮族或非满血单位时+30战斗力，同时满足两项条件也只获得一次+30。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S9" Language="zh_Hans_CN"><Text>经验值每次增长：+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S8" Language="zh_Hans_CN"><Text>持有者主动攻击任意失控魔物／工坊中央失控魔物：+1；主动攻击基础战斗力高于自己的单位：+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S7" Language="zh_Hans_CN"><Text>成功使用纵火并造成伤害：+1；该次纵火直接击杀目标：再+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S6" Language="zh_Hans_CN"><Text>使用金币购买军事单位：+1；城市正常训练完成军事单位：+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S5" Language="zh_Hans_CN"><Text>己方单位击杀：+1；若目标在本次攻击前已经受伤：再+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S4" Language="zh_Hans_CN"><Text>途径持有者六角距离6格以内（含第6格）发生己方单位击杀：+1；同一范围内清除失控工坊：+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S3" Language="zh_Hans_CN"><Text>每正常训练完成一个军事单位：+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S2" Language="zh_Hans_CN"><Text>击杀中阶失控魔物：+1；击杀高阶失控魔物：+2。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S1" Language="zh_Hans_CN"><Text>任意己方战斗单位在同一回合执行第2次攻击：+1；该第2次攻击完成击杀：再+1。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_P9_RP_DIGEST_S0" Language="zh_Hans_CN"><Text>无后续消化。</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_FOOL_NAME" Language="zh_Hans_CN"><Text>愚者</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_NIGHT_NAME" Language="zh_Hans_CN"><Text>黑夜女神</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_STORM_NAME" Language="zh_Hans_CN"><Text>风暴之主</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_RED_PRIEST_NAME" Language="zh_Hans_CN"><Text>红祭司真神</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_PERFECT_NAME" Language="zh_Hans_CN"><Text>完美者真神</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_THIEF_NAME" Language="zh_Hans_CN"><Text>错误真神</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_GOD_BLACK_EMPEROR_NAME" Language="zh_Hans_CN"><Text>黑皇帝真神</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_AVATAR_NAME" Language="zh_Hans_CN"><Text>外神化身</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_MINION_NAME" Language="zh_Hans_CN"><Text>外神眷属</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_TRUE_GOD_DESCRIPTION" Language="zh_Hans_CN"><Text>三大正神之一，固定550战斗力。由第一位人类玩家控制，不可训练、不可占领城市。</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_PLAYER_GOD_DESCRIPTION" Language="zh_Hans_CN"><Text>玩家的序列0真神。基础战斗力550；完成“战神遗物”后可献祭己方非神级战斗单位，每次永久增加该单位当前战斗力的1/10（向下取整），实际战斗力大于0的特殊单位也有效。首次死亡会在5回合后复活，再次死亡则永久消失。每个玩家回合实时战斗力严格大于1000时，额外+30移动力。</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_AVATAR_DESCRIPTION" Language="zh_Hans_CN"><Text>最终外神Boss。降临时根据全球净化值锁定战斗力、阶段血条、恢复、召唤和攻击档位；神级单位免疫纵火。</Text></Row>
+		<Row Tag="LOC_UNIT_LOTM_RESCUE_OUTER_GOD_MINION_DESCRIPTION" Language="zh_Hans_CN"><Text>外神定期召唤的眷属，受净化值档位控制召唤间隔与数量上限。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_DIVINE_POWER_NAME" Language="zh_Hans_CN"><Text>神力校准</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_DIVINE_POWER_DESCRIPTION" Language="zh_Hans_CN"><Text>同步系统用此能力把真神的实时战斗力校准为目标值。</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RESCUE_WAR_GOD_RELIC_NAME" Language="zh_Hans_CN"><Text>战神遗物</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RESCUE_WAR_GOD_RELIC_SHORT_NAME" Language="zh_Hans_CN"><Text>获得神圣军团</Text></Row>
+		<Row Tag="LOC_PROJECT_LOTM_RESCUE_WAR_GOD_RELIC_DESCRIPTION" Language="zh_Hans_CN"><Text>愚者、黑夜与风暴三大教会的使者均达到6后解锁。完成项目即可获得“神圣军团”，允许献祭己方军事战斗单位；每个单位按当前战斗力的1/10（向下取整）永久增强真神。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_DIVINE_LEGION_NAME" Language="zh_Hans_CN"><Text>神圣军团</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_DIVINE_LEGION_DESCRIPTION" Language="zh_Hans_CN"><Text>完成“战神遗物”后可献祭己方军事战斗单位。每个被献祭单位按其当前战斗力的1/10（向下取整）永久增强真神；单位献祭后消失。</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PLAYER_GOD_MOBILITY_NAME" Language="zh_Hans_CN"><Text>超越神速</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_PLAYER_GOD_MOBILITY_DESCRIPTION" Language="zh_Hans_CN"><Text>每个玩家回合实时战斗力严格大于1000时，+30移动力；降至1000或以下时立即失效。</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_WAR_GOD_RELIC_TASK_ENVOYS" Language="zh_Hans_CN"><Text>任务：三大教会使者均达到6</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_WAR_GOD_RELIC_TASK_PROJECT" Language="zh_Hans_CN"><Text>任务：完成项目“战神遗物”</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_WAR_GOD_RELIC_TASK_COMPLETE" Language="zh_Hans_CN"><Text>神圣军团已获得</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_CHURCH_ORACLE_STATES" Language="zh_Hans_CN"><Text>后续教会任务：10使者（{1_State10}）｜15使者（{2_State15}）</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_OUTER_SKILLS_NAME" Language="zh_Hans_CN"><Text>外神攻击档位</Text></Row>
+		<Row Tag="LOC_ABILITY_LOTM_RESCUE_P10_OUTER_SKILLS_DESCRIPTION" Language="zh_Hans_CN"><Text>根据降临时锁定的净化档位获得额外攻击次数。</Text></Row>
+		<Row Tag="LOC_BUILDING_LOTM_RESCUE_VICTORY_TOKEN_NAME" Language="zh_Hans_CN"><Text>救赎胜利凭证</Text></Row>
+		<Row Tag="LOC_BUILDING_LOTM_RESCUE_VICTORY_TOKEN_DESCRIPTION" Language="zh_Hans_CN"><Text>内部胜利凭证：最终击败外神后同步授予人类玩家。</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_NAME" Language="zh_Hans_CN"><Text>救赎胜利</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_REQUIREMENT" Language="zh_Hans_CN"><Text>晋升序列0，与三大真神共同击败降临世界的域外邪神化身。</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_DESCRIPTION" Language="zh_Hans_CN"><Text>非凡世界已经失控，来自星空之外的邪神正在等待降临。清除失控工坊与失控者，削弱邪神的力量，并在末日到来前晋升序列0。最终与愚者、黑夜女神和风暴之主三位真神共同迎战域外邪神化身。击败邪神，拯救这个世界，即可获得救赎胜利。</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_BLURB" Language="zh_Hans_CN"><Text>星空退却，文明得以存续。</Text></Row>
+		<Row Tag="LOC_VICTORY_LOTM_RESCUE_FINAL" Language="zh_Hans_CN"><Text>星空退却，文明得以存续。[NEWLINE][NEWLINE]末日终于结束。来自星空之外的邪神化身在四位真神的围攻下陨落，笼罩世界的疯狂开始消退，失控的非凡力量重新归于平静。愚者、黑夜女神、风暴之主和你守住了这个世界，而已经登临神位的你，与祂们共同完成了最后的神战。文明从毁灭的边缘得以存续，这个世界最终获得了救赎。</Text></Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_COMIC_TITLE" Language="zh_Hans_CN"><Text>途径漫画</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_START" Language="zh_Hans_CN"><Text>序章</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_VICTORY" Language="zh_Hans_CN"><Text>胜利结局</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_DEFEAT" Language="zh_Hans_CN"><Text>失败结局</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_REVIEW" Language="zh_Hans_CN"><Text>回顾漫画</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_VIEW_ENDING" Language="zh_Hans_CN"><Text>查看漫画</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_PREVIOUS" Language="zh_Hans_CN"><Text>上一页</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_NEXT" Language="zh_Hans_CN"><Text>下一页</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_FINISH" Language="zh_Hans_CN"><Text>完成</Text></Row>
+		<Row Tag="LOC_LOTM_COMIC_PAGE" Language="zh_Hans_CN"><Text>第 {1_Number} / {2_Number} 页</Text></Row>
+	</LocalizedText>
+</GameData>

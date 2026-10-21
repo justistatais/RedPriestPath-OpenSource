@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<IconAtlases>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_MARK"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME"/>
+		<Row Name="ICON_ATLAS_LOTM_WORLD_MONSTER_MARK"/>
+		<Row Name="ICON_ATLAS_LOTM_RESCUE_OUTER_GOD_STAR_MARK"/>
+	</IconAtlases>
+	<IconTextureAtlases>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon22.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon30.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon32.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon38.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon50.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon64.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="70" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon70.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon80.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="95" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon95.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon200.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestGameIcon256.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon22.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon30.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon32.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon38.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon50.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon64.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="70" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon70.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon80.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="95" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon95.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon200.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_GAME" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectGameIcon256.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon22.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon30.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon32.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon38.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon50.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon64.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="70" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon70.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon80.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="95" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon95.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon200.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorGameIcon256.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" IconSize="40" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestMarkCentered40.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" IconSize="384" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestMarkCentered384.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" IconSize="512" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestMarkCentered512.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" IconSize="640" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestMarkCentered640.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" IconSize="768" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RP_RedPriestMarkCentered768.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_MARK" IconSize="40" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectMarkCentered40.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_MARK" IconSize="384" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectMarkCentered384.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_MARK" IconSize="512" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectMarkCentered512.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_MARK" IconSize="640" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectMarkCentered640.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_PP_PERFECT_MARK" IconSize="768" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_PP_PerfectMarkCentered768.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" IconSize="40" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorMarkCentered40.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" IconSize="384" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorMarkCentered384.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" IconSize="512" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorMarkCentered512.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" IconSize="640" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorMarkCentered640.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" IconSize="768" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_BE_BlackEmperorMarkCentered768.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_WORLD_MONSTER_MARK" IconSize="40" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_WORLD_MonsterMark40.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_WORLD_MONSTER_MARK" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_WORLD_MonsterMark256.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RESCUE_OUTER_GOD_STAR_MARK" IconSize="40" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RESCUE_OuterGodStarMark40.dds"/>
+		<Row Name="ICON_ATLAS_LOTM_RESCUE_OUTER_GOD_STAR_MARK" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_RESCUE_OuterGodStarMark256.dds"/>
+	</IconTextureAtlases>
+	<IconDefinitions>
+		<Row Name="ICON_LOTM_RP_RED_PRIEST_MARK" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" Index="0"/>
+		<Row Name="ICON_LOTM_PP_PERFECT_MARK" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_MARK" Index="0"/>
+		<Row Name="ICON_LOTM_BE_BLACK_EMPEROR_MARK" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" Index="0"/>
+		<Row Name="ICON_LOTM_WORLD_MONSTER_MARK" Atlas="ICON_ATLAS_LOTM_WORLD_MONSTER_MARK" Index="0"/>
+		<Row Name="ICON_LOTM_RESCUE_OUTER_GOD_STAR_MARK" Atlas="ICON_ATLAS_LOTM_RESCUE_OUTER_GOD_STAR_MARK" Index="0"/>
+		<Row Name="ICON_NOTIFICATION_USER_DEFINED_6" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_MARK" Index="0"/>
+		<Row Name="ICON_NOTIFICATION_USER_DEFINED_7" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" Index="0"/>
+		<Row Name="ICON_NOTIFICATION_USER_DEFINED_8" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_MARK" Index="0"/>
+		<Row Name="ICON_NOTIFICATION_USER_DEFINED_9" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_MARK" Index="0"/>
+		<!-- Reuse Firaxis relic art selected by the user: R19/R21/R02/R20/R13/R01/R15. -->
+		<Row Name="ICON_UNIT_LOTM_RP_PATH_HOLDER" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_RP_PATH_HOLDER_FOW" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_RP_PATH_HOLDER_WHITE" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_RP_PATH_HOLDER_BLACK" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_RP_PATH_HOLDER_PORTRAIT" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_PP_PATH_HOLDER" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_PP_PATH_HOLDER_FOW" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_PP_PATH_HOLDER_WHITE" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_PP_PATH_HOLDER_BLACK" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_PP_PATH_HOLDER_PORTRAIT" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_BE_PATH_HOLDER" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_BE_PATH_HOLDER_FOW" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_BE_PATH_HOLDER_WHITE" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_BE_PATH_HOLDER_BLACK" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_UNIT_LOTM_BE_PATH_HOLDER_PORTRAIT" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_PROVOKER_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_PYROMANIAC_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_CONSPIRATOR_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_REAPER_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_IRONBLOOD_KNIGHT_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_WAR_BISHOP_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_WEATHER_WARLOCK_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_CONQUEROR_POTION" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_WAR_FESTIVAL" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_RP_WAR_FESTIVAL_UNCONSECRATED" Atlas="ICON_ATLAS_LOTM_RP_RED_PRIEST_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_APPRAISER_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_ASTRONOMER_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_ALCHEMIST_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_ENLIGHTENER_POTION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED" Atlas="ICON_ATLAS_LOTM_PP_PERFECT_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_BARBARIAN_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_BRIBER_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_BARON_OF_CORRUPTION_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_CHAOS_MENTOR_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_COUNT_OF_CORRUPTION_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_FRENZY_MAGE_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_DUKE_OF_ENTROPY_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_PRINCE_OF_ABOLITION_POTION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_TRANSFORMATION" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_ENTHRONEMENT" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_PROJECT_LOTM_BE_ENTHRONEMENT_UNCONSECRATED" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_CHAOS_I" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_CHAOS_II" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_CHAOS_III" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_CORRUPTION_I" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_CORRUPTION_II" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_CORRUPTION_III" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_FRENZY_I" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_POLICY_LOTM_BE_FRENZY_II" Atlas="ICON_ATLAS_LOTM_BE_BLACK_EMPEROR_GAME" Index="0"/>
+		<Row Name="ICON_BELIEF_LOTM_RP_ESTABLISH_CHURCH" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="24"/>
+		<Row Name="ICON_BELIEF_LOTM_RP_TRUE_GOD_CHURCH" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="24"/>
+		<Row Name="ICON_PROMOTION_LOTM_RP_COMBAT_1" Atlas="ICON_ATLAS_PROMOTIONS" Index="11"/>
+		<Row Name="ICON_PROMOTION_LOTM_RP_COMBAT_2" Atlas="ICON_ATLAS_PROMOTIONS" Index="2"/>
+		<Row Name="ICON_PROMOTION_LOTM_RP_COMBAT_3" Atlas="ICON_ATLAS_PROMOTIONS" Index="25"/>
+		<Row Name="ICON_PROMOTION_LOTM_RP_MOVEMENT_1" Atlas="ICON_ATLAS_PROMOTIONS" Index="15"/>
+		<Row Name="ICON_PROMOTION_LOTM_RP_MOVEMENT_2" Atlas="ICON_ATLAS_PROMOTIONS" Index="22"/>
+		<Row Name="ICON_PROMOTION_LOTM_RP_MOVEMENT_3" Atlas="ICON_ATLAS_PROMOTIONS" Index="15"/>
+	</IconDefinitions>
+</GameInfo>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Parameters>
+		<Row
+			Key1="Ruleset"
+			Key2="RULESET_EXPANSION_2"
+			ParameterId="GameMode_LOTM_Rescue"
+			Name="LOC_GAMEMODE_LOTM_RESCUE_NAME"
+			Description="LOC_GAMEMODE_LOTM_RESCUE_DESCRIPTION"
+			Domain="bool"
+			DefaultValue="0"
+			ConfigurationGroup="Game"
+			ConfigurationId="GAMEMODE_LOTM_RESCUE"
+			NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES"
+			GroupId="GameModes"
+			Hash="0"
+			SupportsSinglePlayer="1"
+			SupportsLANMultiplayer="1"
+			SupportsInternetMultiplayer="1"
+			SupportsHotSeat="1"
+			SupportsPlayByCloud="1"
+			ChangeableAfterGameStart="0"
+			SortIndex="1991"/>
+		<Row
+			Key1="Ruleset"
+			Key2="RULESET_EXPANSION_2"
+			ParameterId="LOTM_RESCUE_MAJOR_ALLIANCE"
+			Name="LOC_LOTM_RESCUE_MAJOR_ALLIANCE_NAME"
+			Description="LOC_LOTM_RESCUE_MAJOR_ALLIANCE_DESCRIPTION"
+			Domain="bool"
+			DefaultValue="1"
+			ConfigurationGroup="Game"
+			ConfigurationId="LOTM_RESCUE_MAJOR_ALLIANCE"
+			GroupId="AdvancedOptions"
+			Hash="0"
+			SupportsSinglePlayer="1"
+			SupportsLANMultiplayer="1"
+			SupportsInternetMultiplayer="1"
+			SupportsHotSeat="1"
+			SupportsPlayByCloud="1"
+			ChangeableAfterGameStart="0"
+			SortIndex="1992"/>
+		<Row
+			Key1="Ruleset"
+			Key2="RULESET_EXPANSION_2"
+			ParameterId="LOTM_RP_TEXT_LANGUAGE"
+			Name="LOC_LOTM_RP_TEXT_LANGUAGE_NAME"
+			Description="LOC_LOTM_RP_TEXT_LANGUAGE_DESCRIPTION"
+			Domain="LOTM_RP_TEXT_LANGUAGE_VALUES"
+			DefaultValue="zh_Hans_CN"
+			ConfigurationGroup="Game"
+			ConfigurationId="LOTM_RP_TEXT_LANGUAGE"
+			GroupId="AdvancedOptions"
+			Hash="0"
+			SupportsSinglePlayer="1"
+			SupportsLANMultiplayer="1"
+			SupportsInternetMultiplayer="1"
+			SupportsHotSeat="1"
+			SupportsPlayByCloud="1"
+			ChangeableAfterGameStart="0"
+			UxHint="SimpleSelectPanel"
+			SortIndex="1990"/>
+		<Row
+			Key1="Ruleset"
+			Key2="RULESET_EXPANSION_2"
+			ParameterId="LOTM_RP_PATH"
+			Name="LOC_LOTM_RP_PATH_NAME"
+			Description="LOC_LOTM_RP_PATH_DESCRIPTION"
+			Domain="LOTM_RP_PATH_VALUES"
+			DefaultValue="NONE"
+			ConfigurationGroup="Player"
+			ConfigurationId="LOTM_RP_PATH"
+			GroupId="PlayerOptions"
+			Hash="0"
+			SupportsSinglePlayer="1"
+			SupportsLANMultiplayer="1"
+			SupportsInternetMultiplayer="1"
+			SupportsHotSeat="0"
+			SupportsPlayByCloud="0"
+			ChangeableAfterGameStart="0"
+			UxHint="SimpleSelectPanel"
+			SortIndex="950"/>
+	</Parameters>
+	<ParameterDependencies>
+		<Row ParameterId="LOTM_RESCUE_MAJOR_ALLIANCE" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_LOTM_RESCUE" Operator="Equals" ConfigurationValue="1"/>
+	</ParameterDependencies>
+	<DomainValues>
+		<Row Domain="LOTM_RP_TEXT_LANGUAGE_VALUES" Value="zh_Hans_CN" Name="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_NAME" Description="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="LOTM_RP_TEXT_LANGUAGE_VALUES" Value="en_US" Name="LOC_LOTM_RP_TEXT_LANGUAGE_EN_NAME" Description="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION" SortIndex="20"/>
+		<Row Domain="LOTM_RP_PATH_VALUES" Value="NONE" Name="LOC_LOTM_RP_PATH_NONE_NAME" Description="LOC_LOTM_RP_PATH_NONE_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="LOTM_RP_PATH_VALUES" Value="PATH_RED_PRIEST" Name="LOC_LOTM_RP_PATH_RED_PRIEST_NAME" Description="LOC_LOTM_RP_PATH_RED_PRIEST_DESCRIPTION" SortIndex="20"/>
+		<Row Domain="LOTM_RP_PATH_VALUES" Value="PATH_PERFECT" Name="LOC_LOTM_PP_PATH_NAME" Description="LOC_LOTM_PP_PATH_DESCRIPTION" SortIndex="30"/>
+		<Row Domain="LOTM_RP_PATH_VALUES" Value="PATH_BLACK_EMPEROR" Name="LOC_LOTM_BE_PATH_NAME" Description="LOC_LOTM_BE_PATH_DESCRIPTION" SortIndex="40"/>
+	</DomainValues>
+</GameInfo>

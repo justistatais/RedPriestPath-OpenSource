@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Types>
+		<Row Type="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" Kind="KIND_MODIFIER"/>
+	</Types>
+	<DynamicModifiers>
+		<!-- The stock player combat modifier only changes combat resolution and
+		     leaves Unit:GetCombat() at the database value.  This player-scoped
+		     base-strength effect keeps resolution and the unit panel in sync. -->
+		<Row>
+			<ModifierType>MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH</ModifierType>
+			<CollectionType>COLLECTION_PLAYER_UNITS</CollectionType>
+			<EffectType>EFFECT_ADJUST_UNIT_COMBAT_STRENGTH</EffectType>
+		</Row>
+	</DynamicModifiers>
+	<Modifiers>
+		<!-- Official flat per-turn yield effect, matching Kupe's
+		     SCIENCE_PRESETTLEMENT and Pirates' CRATES_OF_RUM.  Gameplay
+		     toggles it with a balancing negative attachment at peace. -->
+		<Row ModifierId="LOTM_RP_MOD_PLAN_GOLD_PER_TURN_START" ModifierType="MODIFIER_PLAYER_ADJUST_YIELD_CHANGE"/>
+		<Row ModifierId="LOTM_RP_MOD_PLAN_GOLD_PER_TURN_STOP" ModifierType="MODIFIER_PLAYER_ADJUST_YIELD_CHANGE"/>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_RIFLING_COMBAT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</SubjectRequirementSetId>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_PLASTICS_COMBAT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectRequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</SubjectRequirementSetId>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row ModifierId="LOTM_RP_MOD_TECH_IRON_WORKING_COMBAT" ModifierType="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" SubjectRequirementSetId="LOTM_RP_REQSET_PATH_HOLDER" Permanent="true"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_APPRENTICESHIP_COMBAT" ModifierType="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" SubjectRequirementSetId="LOTM_RP_REQSET_PATH_HOLDER" Permanent="true"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_GUNPOWDER_COMBAT" ModifierType="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" SubjectRequirementSetId="LOTM_RP_REQSET_PATH_HOLDER" Permanent="true"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_MILITARY_SCIENCE_COMBAT" ModifierType="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" SubjectRequirementSetId="LOTM_RP_REQSET_PATH_HOLDER" Permanent="true"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_REPLACEABLE_PARTS_COMBAT" ModifierType="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" SubjectRequirementSetId="LOTM_RP_REQSET_PATH_HOLDER" Permanent="true"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_SATELLITES_COMBAT" ModifierType="MODIFIER_LOTM_RP_PLAYER_UNITS_ADJUST_BASE_COMBAT_STRENGTH" SubjectRequirementSetId="LOTM_RP_REQSET_PATH_HOLDER" Permanent="true"/>
+	</Modifiers>
+	<ModifierArguments>
+		<Row ModifierId="LOTM_RP_MOD_PLAN_GOLD_PER_TURN_START" Name="YieldType" Value="YIELD_GOLD"/>
+		<Row ModifierId="LOTM_RP_MOD_PLAN_GOLD_PER_TURN_START" Name="Amount" Value="100"/>
+		<Row ModifierId="LOTM_RP_MOD_PLAN_GOLD_PER_TURN_STOP" Name="YieldType" Value="YIELD_GOLD"/>
+		<Row ModifierId="LOTM_RP_MOD_PLAN_GOLD_PER_TURN_STOP" Name="Amount" Value="-100"/>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_RIFLING_COMBAT</ModifierId>
+			<Name>Amount</Name>
+			<Value>0</Value>
+		</Row>
+		<Row>
+			<ModifierId>LOTM_RP_MOD_PLASTICS_COMBAT</ModifierId>
+			<Name>Amount</Name>
+			<Value>0</Value>
+		</Row>
+		<Row ModifierId="LOTM_RP_MOD_TECH_IRON_WORKING_COMBAT" Name="Amount" Value="15"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_APPRENTICESHIP_COMBAT" Name="Amount" Value="10"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_GUNPOWDER_COMBAT" Name="Amount" Value="10"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_MILITARY_SCIENCE_COMBAT" Name="Amount" Value="10"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_REPLACEABLE_PARTS_COMBAT" Name="Amount" Value="10"/>
+		<Row ModifierId="LOTM_RP_MOD_TECH_SATELLITES_COMBAT" Name="Amount" Value="10"/>
+	</ModifierArguments>
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ANY</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</RequirementSetId>
+			<RequirementId>LOTM_RP_REQUIRES_PATH_HOLDER</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</RequirementSetId>
+			<RequirementId>LOTM_PP_REQUIRES_PATH_HOLDER</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>LOTM_RP_REQSET_PATH_HOLDER</RequirementSetId>
+			<RequirementId>LOTM_BE_REQUIRES_PATH_HOLDER</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<Requirements>
+		<Row>
+			<RequirementId>LOTM_RP_REQUIRES_PATH_HOLDER</RequirementId>
+			<RequirementType>REQUIREMENT_UNIT_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>LOTM_PP_REQUIRES_PATH_HOLDER</RequirementId>
+			<RequirementType>REQUIREMENT_UNIT_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>LOTM_BE_REQUIRES_PATH_HOLDER</RequirementId>
+			<RequirementType>REQUIREMENT_UNIT_TYPE_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>LOTM_RP_REQUIRES_PATH_HOLDER</RequirementId>
+			<Name>UnitType</Name>
+			<Value>UNIT_LOTM_RP_PATH_HOLDER</Value>
+		</Row>
+		<Row>
+			<RequirementId>LOTM_PP_REQUIRES_PATH_HOLDER</RequirementId>
+			<Name>UnitType</Name>
+			<Value>UNIT_LOTM_PP_PATH_HOLDER</Value>
+		</Row>
+		<Row>
+			<RequirementId>LOTM_BE_REQUIRES_PATH_HOLDER</RequirementId>
+			<Name>UnitType</Name>
+			<Value>UNIT_LOTM_BE_PATH_HOLDER</Value>
+		</Row>
+	</RequirementArguments>
+</GameInfo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_NAME" Language="zh_Hans_CN"><Text>愚者教会</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_NAME" Language="zh_Hans_CN"><Text>黑夜女神教会</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_NAME" Language="zh_Hans_CN"><Text>风暴之主教会</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PATH" Language="zh_Hans_CN"><Text>对应途径：愚者途径</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PATH" Language="zh_Hans_CN"><Text>对应途径：黑暗途径</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PATH" Language="zh_Hans_CN"><Text>对应途径：暴君途径</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_VIRTUAL_TOOLTIP" Language="zh_Hans_CN"><Text>无城真神教会：可以派遣使者，但没有城市、军队或宗主国。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ENVOY_COUNT" Language="zh_Hans_CN"><Text>当前使者：{1_Num} [ICON_Envoy]</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_PERMANENT_HEADER" Language="zh_Hans_CN"><Text>永久使者效果</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ASSIST_WARNING" Language="zh_Hans_CN"><Text>如果任务目标被其他势力解决，只获得对应阶段的半强度真神赐福，不获得使者和封印物。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_QUESTS" Language="zh_Hans_CN"><Text>神谕状态：[NEWLINE]6使者：{1_String}[NEWLINE]10使者：{2_String}[NEWLINE]15使者：{3_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET" Language="zh_Hans_CN"><Text>当前任务：阶段{1_Num}；目标类型{2_String}；目标位置{3_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_CAMP_TARGET" Language="zh_Hans_CN"><Text>当前任务：{1_Num}使者神谕；清扫普通蛮族营地 {2_Num}/{3_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_TITLE" Language="zh_Hans_CN"><Text>{1_Num}使者神谕任务</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_MONSTER_TARGET" Language="zh_Hans_CN"><Text>消灭地图上已标记的失控魔物（目标位置：{2_String}）。点击教徽可直接定位。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_WORKSHOP_TARGET" Language="zh_Hans_CN"><Text>清除地图上已标记的失控工坊（目标位置：{2_String}）。点击教徽可直接定位。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_PENDING" Language="zh_Hans_CN"><Text>正在等待符合{1_Num}使者阶段的合法目标。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_REWARD" Language="zh_Hans_CN"><Text>自己解决：该教会+1使者，并按阶段概率获得同级封印物，否则获得完整赐福；他人解决：获得对应半赐福。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_NO_ACTIVE" Language="zh_Hans_CN"><Text>当前没有进行中的神谕任务。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_NOTIFICATION_MESSAGE" Language="zh_Hans_CN"><Text>{1_String}：{2_Num}使者神谕已完成</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_ARTIFACT" Language="zh_Hans_CN"><Text>获得封印物“{1_String}”，已直接收入封印物库；自己完成任务时获得的+1教会使者也已到账。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_FULL_BLESSING" Language="zh_Hans_CN"><Text>获得完整真神赐福：{1_String}[NEWLINE]该教会+1使者也已到账。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_HALF_BLESSING" Language="zh_Hans_CN"><Text>目标由其他势力解决，获得半赐福：{1_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_STATUS_ARTIFACT" Language="zh_Hans_CN"><Text>{1_Num}使者任务奖励：封印物“{2_String}”（已入库）</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_STATUS_BLESSING" Language="zh_Hans_CN"><Text>{1_Num}使者任务奖励：{2_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_STATES" Language="zh_Hans_CN"><Text>任务状态：6使者 {1_String}；10使者 {2_String}；15使者 {3_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_LOCKED" Language="zh_Hans_CN"><Text>未解锁</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_PENDING_TARGET" Language="zh_Hans_CN"><Text>等待目标</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_ACTIVE" Language="zh_Hans_CN"><Text>进行中</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_COMPLETED_SELF" Language="zh_Hans_CN"><Text>已由自己完成</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_COMPLETED_ASSIST" Language="zh_Hans_CN"><Text>已由他人完成</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_COORDINATES" Language="zh_Hans_CN"><Text>坐标（{1_Num}, {2_Num}）</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_LOCATION_UNKNOWN" Language="zh_Hans_CN"><Text>位置暂不可用</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_LOCATE_TARGET" Language="zh_Hans_CN"><Text>在地图上定位目标</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_MAP_MARKER_TOOLTIP" Language="zh_Hans_CN"><Text>{1_String}：{2_Num}使者神谕目标[NEWLINE]{3_String}[NEWLINE]点击将镜头移至目标。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_NONE" Language="zh_Hans_CN"><Text>无</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_MONSTER" Language="zh_Hans_CN"><Text>失控魔物</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_WORKSHOP" Language="zh_Hans_CN"><Text>失控工坊</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_BARB_CAMP_COUNT" Language="zh_Hans_CN"><Text>普通蛮族营地</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESSING" Language="zh_Hans_CN"><Text>当前赐福：阶段{1_Num}／{2_String}；剩余{3_Num}个玩家回合</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PERM_1" Language="zh_Hans_CN"><Text>1使者·命运的指引：首都+4文化、+4信仰；侦察系+1移动、+2视野；其他单位+1视野。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PERM_3" Language="zh_Hans_CN"><Text>3使者·灰雾聚会：所有城市文化、金币+5%；贸易路线+3金币、+1文化；伟人点数+15%。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PERM_6" Language="zh_Hans_CN"><Text>6使者·灰雾眷者：所有单位再+1移动、+1视野；伟人点总计+35%；贸易路线总计+6金币、+1文化；每世界时代随机1项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PERM_1" Language="zh_Hans_CN"><Text>1使者·宁静之夜：首都+4信仰、+4文化、+2宜居度。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PERM_3" Language="zh_Hans_CN"><Text>3使者·黑夜庇护：圣地与建筑+2信仰，剧院与建筑+2文化；所有城市+1宜居度、+2忠诚；本土战斗单位+5战斗力。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PERM_6" Language="zh_Hans_CN"><Text>6使者·隐秘眷者：所有城市总计+3宜居度、+5忠诚；本土战斗单位+10战斗力并每回合恢复10生命；敌方间谍降低1级。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PERM_1" Language="zh_Hans_CN"><Text>1使者·水手的祈祷：首都+5金币、+2生产；海军+1移动、+3战斗力。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PERM_3" Language="zh_Hans_CN"><Text>3使者·风暴航路：港口+3金币、+2生产，港口建筑+2金币、+1生产；改良海洋资源+1食物、+2金币；海军战斗力覆盖为+5。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PERM_6" Language="zh_Hans_CN"><Text>6使者·海王眷属：海军总计+10战斗、+2移动；水域陆军+2移动；港口城市生产、金币+15%；港口贸易路线+8金币。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_COMBAT_PREVIEW" Language="zh_Hans_CN"><Text>愚者赐福：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_COMBAT_PREVIEW" Language="zh_Hans_CN"><Text>黑夜庇护：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_HOME_ABILITY_DESCRIPTION" Language="zh_Hans_CN"><Text>黑夜庇护：在己方领土内获得战斗力加成。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_COMBAT_PREVIEW" Language="zh_Hans_CN"><Text>风暴眷顾：+{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_ENEMY_NAME" Language="zh_Hans_CN"><Text>黑夜压制</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_ENEMY_DESC" Language="zh_Hans_CN"><Text>位于受黑夜女神赐福文明领土内的交战敌军受到战斗力与移动力减益。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_ENEMY_PREVIEW" Language="zh_Hans_CN"><Text>黑夜压制：{1_Amount}战斗力</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_6_FULL" Language="zh_Hans_CN"><Text>命运偏转（完整）：10回合；文化/金币+50%，伟人点+100%，单位+2移动/+2视野，贸易+10金币；立即2项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_6_HALF" Language="zh_Hans_CN"><Text>命运偏转（半）：10回合；文化/金币+25%，伟人点+50%，单位+1移动/+1视野，贸易+5金币；立即1项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_10_FULL" Language="zh_Hans_CN"><Text>历史投影（完整）：12回合；生产+50%，文化/金币+75%，伟人点+150%，单位+3移动/+10战斗，维护-50%，贸易+15金币；立即3项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_10_HALF" Language="zh_Hans_CN"><Text>历史投影（半）：12回合；生产+25%，文化/金币+37%，伟人点+75%，单位+1移动/+5战斗，维护-25%，贸易+7金币；立即1项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_15_FULL" Language="zh_Hans_CN"><Text>奇迹（完整）：15回合；六项城市产出大幅提高，伟人点+300%，单位+5移动/+20战斗/+3视野，贸易+25金币/+5文化/+5科技；立即5项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_15_HALF" Language="zh_Hans_CN"><Text>奇迹（半）：15回合；六项城市产出半强度提高，伟人点+150%，单位+2移动/+10战斗/+1视野，贸易+12金币/+2文化/+2科技；立即2项尤里卡与鼓舞。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_6_FULL" Language="zh_Hans_CN"><Text>安眠（完整）：10回合；文化/信仰+50%，城市+5宜居/+20忠诚，本土战斗单位+15战斗/+1移动/恢复20，敌方间谍-2级。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_6_HALF" Language="zh_Hans_CN"><Text>安眠（半）：10回合；文化/信仰+25%，城市+2宜居/+10忠诚，本土战斗单位+7战斗/恢复10，敌方间谍-1级。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_10_FULL" Language="zh_Hans_CN"><Text>隐秘（完整）：12回合；文化+75%、信仰+100%，城市+8宜居/+50忠诚，本土单位+25战斗/+2移动/恢复30；领土内交战敌军-10战斗/-1移动。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_10_HALF" Language="zh_Hans_CN"><Text>隐秘（半）：12回合；文化+37%、信仰+50%，城市+4宜居/+25忠诚，本土单位+12战斗/+1移动/恢复15；领土内交战敌军-5战斗。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_15_FULL" Language="zh_Hans_CN"><Text>黑夜降临（完整）：15回合；文化+150%、信仰+200%，城市+15宜居/+99忠诚，本土单位+40战斗/+3移动/恢复50，敌军-20战斗/-2移动，城市中心/军营+20防御。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_15_HALF" Language="zh_Hans_CN"><Text>黑夜降临（半）：15回合；文化+75%、信仰+100%，城市+7宜居/+49忠诚，本土单位+20战斗/+1移动/恢复25，敌军-10战斗/-1移动，城市中心/军营+10防御。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_FULL" Language="zh_Hans_CN"><Text>风暴降临（完整）：10回合；海军+20战斗/+4移动/恢复20，港口城市生产/金币+50%，港口贸易+20金币，水域陆军+3移动。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_HALF" Language="zh_Hans_CN"><Text>风暴降临（半）：10回合；海军+10战斗/+2移动/恢复10，港口城市生产/金币+25%，港口贸易+10金币，水域陆军+1移动。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_FULL" Language="zh_Hans_CN"><Text>海王之怒（完整）：12回合；海军+30战斗/+5移动/恢复30，港口城市生产/金币+100%，海洋地块+2食物/+3生产/+5金币，港口贸易+30金币，水域陆军+4移动。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_HALF" Language="zh_Hans_CN"><Text>海王之怒（半）：12回合；海军+15战斗/+2移动/恢复15，港口城市生产/金币+50%，海洋地块+1食物/+1生产/+2金币，港口贸易+15金币，水域陆军+2移动。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_FULL" Language="zh_Hans_CN"><Text>天灾（完整）：15回合；海军+50战斗/+7移动/恢复50，港口城市生产/金币+200%，海洋地块+3食物/+5生产/+10金币，港口贸易+50金币，水域陆军+5移动，海军生产+200%。</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_HALF" Language="zh_Hans_CN"><Text>天灾（半）：15回合；海军+25战斗/+3移动/恢复25，港口城市生产/金币+100%，海洋地块+1食物/+2生产/+5金币，港口贸易+25金币，水域陆军+2移动，海军生产+100%。</Text></Row>
+	</LocalizedText>
+</GameData>

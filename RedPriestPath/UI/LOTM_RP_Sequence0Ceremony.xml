@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="BodyTextCool" FontStyle="Shadow">
+	<AlphaAnim
+		ID="CeremonyAnimation"
+		AlphaBegin="0"
+		AlphaEnd="1"
+		Speed="0.5"
+		Function="Root"
+		Size="parent,parent"
+		Cycle="Once"
+		Stopped="1">
+		<Grid
+			ID="CeremonyBackdrop"
+			Style="Divider6Grid"
+			ConsumeMouse="1"
+			Size="960,700"
+			Color="0,0,0,220"
+			Anchor="C,C">
+			<Image
+				ID="GradientT"
+				Anchor="L,T"
+				AnchorSide="I,O"
+				Texture="Controls_Gradient_HalfRadial"
+				Size="parent,180"
+				Color="0,0,0,255"/>
+			<Image
+				ID="GradientB"
+				Anchor="L,B"
+				AnchorSide="I,O"
+				Texture="Controls_Gradient_HalfRadial"
+				Size="parent,180"
+				Color="0,0,0,255"
+				FlipY="1"/>
+		</Grid>
+
+		<AlphaAnim
+			ID="ContentAlpha"
+			AlphaBegin="0"
+			AlphaEnd="1"
+			Speed="1"
+			Function="Root"
+			Cycle="Once"
+			Size="parent,parent"
+			Pause=".6"
+			Stopped="1">
+			<SlideAnim
+				ID="ContentSlide"
+				Start="0,50"
+				End="0,0"
+				Speed="0.95"
+				Cycle="Once"
+				Size="parent,parent"
+				Pause=".5">
+				<Image ID="CeremonyMark" Size="384,384" Anchor="C,C" Offset="0,-36"/>
+				<Label
+					ID="CeremonyTitle"
+					String="LOC_LOTM_RP_SEQUENCE0_CEREMONY_TITLE"
+					Anchor="C,C"
+					Offset="0,-310"
+					Style="ShellHeader"
+					Color="255,42,28,255"
+					Align="Center"/>
+				<Label ID="CeremonyLine1" String="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_1" Anchor="C,C" Offset="0,174" Style="FontFlair24" FontSize="26" Color="255,55,40,255" Align="Center"/>
+				<Label ID="CeremonyLine2" String="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_2" Anchor="C,C" Offset="0,206" Style="FontFlair24" FontSize="26" Color="255,55,40,255" Align="Center"/>
+				<Label ID="CeremonyLine3" String="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_3" Anchor="C,C" Offset="0,238" Style="FontFlair24" FontSize="26" Color="255,55,40,255" Align="Center"/>
+				<Label ID="CeremonyLine4" String="LOC_LOTM_RP_SEQUENCE0_CEREMONY_LINE_4" Anchor="C,C" Offset="0,270" Style="FontFlair24" FontSize="26" Color="255,55,40,255" Align="Center"/>
+				<GridButton
+					ID="ContinueButton"
+					Size="220,41"
+					Anchor="C,C"
+					Offset="0,324"
+					String="LOC_CONTINUE"
+					Style="MainButton"
+					FontStyle="Shadow"/>
+			</SlideAnim>
+		</AlphaAnim>
+	</AlphaAnim>
+</Context>

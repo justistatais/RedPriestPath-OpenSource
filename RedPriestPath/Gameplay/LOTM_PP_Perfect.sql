@@ -1,0 +1,311 @@
+-- Perfect Path database effects.  Every effect reuses a Firaxis modifier
+-- family; Lua only decides when the synchronized player receives it.
+
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType, Permanent) VALUES
+('LOTM_PP_MOD_GENERALIST_TECH_BOOST', 'MODIFIER_PLAYER_ADJUST_TECHNOLOGY_BOOST', 1),
+('LOTM_PP_MOD_GENERALIST_CIVIC_BOOST', 'MODIFIER_PLAYER_ADJUST_CIVIC_BOOST', 1),
+('LOTM_PP_MOD_PALACE_RELIC_SLOTS', 'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS', 1),
+('LOTM_PP_MOD_GRANT_RELIC_1', 'MODIFIER_PLAYER_GRANT_RELIC', 1),
+('LOTM_PP_MOD_GRANT_RELIC_2', 'MODIFIER_PLAYER_GRANT_RELIC', 1),
+('LOTM_PP_MOD_GRANT_RELIC_3', 'MODIFIER_PLAYER_GRANT_RELIC', 1),
+('LOTM_PP_MOD_GRANT_RELIC_4', 'MODIFIER_PLAYER_GRANT_RELIC', 1),
+('LOTM_PP_MOD_GRANT_RELIC_5', 'MODIFIER_PLAYER_GRANT_RELIC', 1),
+('LOTM_PP_MOD_MECHANICAL_IMPROVED_PLOT_PRODUCTION', 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD', 1),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_YIELD', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_BUILDINGS', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_MODIFIERS_FOR_DISTRICT', 1),
+('LOTM_PP_MOD_ASTRONOMER_SPACE_PROJECTS', 'MODIFIER_PLAYER_CITIES_ADJUST_SPACE_RACE_PROJECTS_PRODUCTION', 1),
+('LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES', 'MODIFIER_PLAYER_UNITS_ADJUST_BUILDER_CHARGES', 1),
+('LOTM_PP_MOD_ALCHEMIST_CITY_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_ALLOW_ARCHAEOLOGIST_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_APPRAISER_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_MECHANICAL_EXPERT_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_ASTRONOMER_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_ALCHEMIST_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1);
+
+-- Firaxis relic grants (Joan of Arc and Tribal Village) are one-shot,
+-- permanent modifiers.  The rc.26 IDs omitted RunOnce, so use new V2 IDs:
+-- existing Sequence-8 saves can safely attach each missing V2 grant once.
+INSERT OR IGNORE INTO Modifiers
+	(ModifierId, ModifierType, RunOnce, Permanent) VALUES
+('LOTM_PP_MOD_GRANT_RELIC_V2_1', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V2_2', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V2_3', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V2_4', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V2_5', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1);
+
+-- rc.27 still omitted the effect arguments. Firaxis' Joan of Arc supplies
+-- Amount=1, while the Tribal Village relic reward additionally marks the
+-- archaeological source. Use fresh V3 IDs so saves whose V2 properties were
+-- already committed execute the corrected one-shot effects.
+INSERT OR IGNORE INTO Modifiers
+	(ModifierId, ModifierType, RunOnce, Permanent) VALUES
+('LOTM_PP_MOD_GRANT_RELIC_V3_1', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V3_2', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V3_3', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V3_4', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1),
+('LOTM_PP_MOD_GRANT_RELIC_V3_5', 'MODIFIER_PLAYER_GRANT_RELIC', 1, 1);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT ModifierId, 'Amount', '1'
+FROM Modifiers
+WHERE ModifierId LIKE 'LOTM_PP_MOD_GRANT_RELIC_V3_%';
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT ModifierId, 'RelicSource', 'RELIC_SOURCE_TRIBAL_VILLAGE'
+FROM Modifiers
+WHERE ModifierId LIKE 'LOTM_PP_MOD_GRANT_RELIC_V3_%';
+
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES
+('LOTM_PP_REQSET_PLOT_HAS_IMPROVEMENT', 'REQUIREMENTSET_TEST_ALL');
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType) VALUES
+('LOTM_PP_REQUIRES_PLOT_HAS_IMPROVEMENT', 'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT');
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES
+('LOTM_PP_REQSET_PLOT_HAS_IMPROVEMENT', 'LOTM_PP_REQUIRES_PLOT_HAS_IMPROVEMENT');
+
+UPDATE Modifiers
+SET SubjectRequirementSetId = 'LOTM_PP_REQSET_PLOT_HAS_IMPROVEMENT'
+WHERE ModifierId = 'LOTM_PP_MOD_MECHANICAL_IMPROVED_PLOT_PRODUCTION';
+
+UPDATE Modifiers
+SET SubjectRequirementSetId = 'DISTRICT_IS_CAMPUS'
+WHERE ModifierId = 'LOTM_PP_MOD_ASTRONOMER_CAMPUS_YIELD';
+
+-- Resource 126 attached the Alchemist charge modifier to every player unit.
+-- Keep the legacy ID restricted and inert for clean saves, use a fresh
+-- builder-only ID for the live effect, and retain an unrestricted inverse
+-- solely for saves that serialized the old permanent +3 instance.
+UPDATE Modifiers
+SET SubjectRequirementSetId = 'UNIT_IS_BUILDER'
+WHERE ModifierId = 'LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES';
+
+INSERT OR IGNORE INTO Modifiers
+	(ModifierId, ModifierType, SubjectRequirementSetId, Permanent) VALUES
+('LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES_V2',
+ 'MODIFIER_PLAYER_UNITS_ADJUST_BUILDER_CHARGES', 'UNIT_IS_BUILDER', 1),
+('LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES_LEGACY_COMPENSATION',
+ 'MODIFIER_PLAYER_UNITS_ADJUST_BUILDER_CHARGES', NULL, 1);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value, Extra) VALUES
+('LOTM_PP_MOD_GENERALIST_TECH_BOOST', 'Amount', '15', '-1'),
+('LOTM_PP_MOD_GENERALIST_CIVIC_BOOST', 'Amount', '15', '-1');
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('LOTM_PP_MOD_PALACE_RELIC_SLOTS', 'BuildingType', 'BUILDING_PALACE'),
+('LOTM_PP_MOD_PALACE_RELIC_SLOTS', 'GreatWorkSlotType', 'GREATWORKSLOT_RELIC'),
+('LOTM_PP_MOD_PALACE_RELIC_SLOTS', 'Amount', '5'),
+('LOTM_PP_MOD_MECHANICAL_IMPROVED_PLOT_PRODUCTION', 'YieldType', 'YIELD_PRODUCTION'),
+('LOTM_PP_MOD_MECHANICAL_IMPROVED_PLOT_PRODUCTION', 'Amount', '2'),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_YIELD', 'YieldType', 'YIELD_SCIENCE'),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_YIELD', 'Amount', '100'),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_BUILDINGS', 'DistrictType', 'DISTRICT_CAMPUS'),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_BUILDINGS', 'YieldType', 'YIELD_SCIENCE'),
+('LOTM_PP_MOD_ASTRONOMER_CAMPUS_BUILDINGS', 'Amount', '100'),
+('LOTM_PP_MOD_ASTRONOMER_SPACE_PROJECTS', 'Amount', '100'),
+('LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES', 'Amount', '0'),
+('LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES_V2', 'Amount', '3'),
+('LOTM_PP_MOD_ALCHEMIST_BUILDER_CHARGES_LEGACY_COMPENSATION', 'Amount', '-3'),
+('LOTM_PP_MOD_ALCHEMIST_CITY_PRODUCTION', 'YieldType', 'YIELD_PRODUCTION'),
+('LOTM_PP_MOD_ALCHEMIST_CITY_PRODUCTION', 'Amount', '40'),
+('LOTM_PP_MOD_ALLOW_ARCHAEOLOGIST_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_ARCHAEOLOGIST_POTION'),
+('LOTM_PP_MOD_ALLOW_APPRAISER_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_APPRAISER_POTION'),
+('LOTM_PP_MOD_ALLOW_MECHANICAL_EXPERT_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_MECHANICAL_EXPERT_POTION'),
+('LOTM_PP_MOD_ALLOW_ASTRONOMER_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_ASTRONOMER_POTION'),
+('LOTM_PP_MOD_ALLOW_ALCHEMIST_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_ALCHEMIST_POTION');
+
+-- Sequence 3 through Sequence 0 use the same Firaxis yield/project shells as
+-- the earlier Perfect Path stages.
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType, Permanent) VALUES
+('LOTM_PP_MOD_ALLOW_MYSTERY_SCHOLAR_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_KNOWLEDGE_MENTOR_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_ENLIGHTENER_PROJECT', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_CIVILIZATION_ASCENSION', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ALLOW_UNCONSECRATED_CIVILIZATION_ASCENSION', 'MODIFIER_PLAYER_ALLOW_PROJECT', 1),
+('LOTM_PP_MOD_ENLIGHTENER_SCIENCE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_ENLIGHTENER_CULTURE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_PERFECT_FOOD', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_PERFECT_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_PERFECT_GOLD', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_PERFECT_SCIENCE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_PERFECT_CULTURE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1),
+('LOTM_PP_MOD_PERFECT_FAITH', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 1);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('LOTM_PP_MOD_ALLOW_MYSTERY_SCHOLAR_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_MYSTERY_SCHOLAR_POTION'),
+('LOTM_PP_MOD_ALLOW_KNOWLEDGE_MENTOR_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_KNOWLEDGE_MENTOR_POTION'),
+('LOTM_PP_MOD_ALLOW_ENLIGHTENER_PROJECT', 'ProjectType', 'PROJECT_LOTM_PP_ENLIGHTENER_POTION'),
+('LOTM_PP_MOD_ALLOW_CIVILIZATION_ASCENSION', 'ProjectType', 'PROJECT_LOTM_PP_CIVILIZATION_ASCENSION'),
+('LOTM_PP_MOD_ALLOW_UNCONSECRATED_CIVILIZATION_ASCENSION', 'ProjectType', 'PROJECT_LOTM_PP_CIVILIZATION_ASCENSION_UNCONSECRATED'),
+('LOTM_PP_MOD_ENLIGHTENER_SCIENCE', 'YieldType', 'YIELD_SCIENCE'),
+('LOTM_PP_MOD_ENLIGHTENER_SCIENCE', 'Amount', '30'),
+('LOTM_PP_MOD_ENLIGHTENER_CULTURE', 'YieldType', 'YIELD_CULTURE'),
+('LOTM_PP_MOD_ENLIGHTENER_CULTURE', 'Amount', '30'),
+('LOTM_PP_MOD_PERFECT_FOOD', 'YieldType', 'YIELD_FOOD'),
+('LOTM_PP_MOD_PERFECT_FOOD', 'Amount', '100'),
+('LOTM_PP_MOD_PERFECT_PRODUCTION', 'YieldType', 'YIELD_PRODUCTION'),
+('LOTM_PP_MOD_PERFECT_PRODUCTION', 'Amount', '100'),
+('LOTM_PP_MOD_PERFECT_GOLD', 'YieldType', 'YIELD_GOLD'),
+('LOTM_PP_MOD_PERFECT_GOLD', 'Amount', '100'),
+('LOTM_PP_MOD_PERFECT_SCIENCE', 'YieldType', 'YIELD_SCIENCE'),
+('LOTM_PP_MOD_PERFECT_SCIENCE', 'Amount', '100'),
+('LOTM_PP_MOD_PERFECT_CULTURE', 'YieldType', 'YIELD_CULTURE'),
+('LOTM_PP_MOD_PERFECT_CULTURE', 'Amount', '100'),
+('LOTM_PP_MOD_PERFECT_FAITH', 'YieldType', 'YIELD_FAITH'),
+('LOTM_PP_MOD_PERFECT_FAITH', 'Amount', '100');
+
+-- Every population-limited district is a specialty district, including
+-- civilization replacements and official-content additions. Build a
+-- district-specific subject requirement and two +60% yield modifiers for
+-- every base yield: one for the district itself and one for its buildings.
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType)
+SELECT 'LOTM_PP_REQSET_' || DistrictType, 'REQUIREMENTSET_TEST_ALL'
+FROM Districts
+WHERE RequiresPopulation = 1;
+
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType)
+SELECT 'LOTM_PP_REQUIRES_' || DistrictType, 'REQUIREMENT_DISTRICT_TYPE_MATCHES'
+FROM Districts
+WHERE RequiresPopulation = 1;
+
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId)
+SELECT 'LOTM_PP_REQSET_' || DistrictType, 'LOTM_PP_REQUIRES_' || DistrictType
+FROM Districts
+WHERE RequiresPopulation = 1;
+
+INSERT OR IGNORE INTO RequirementArguments (RequirementId, Name, Value)
+SELECT 'LOTM_PP_REQUIRES_' || DistrictType, 'DistrictType', DistrictType
+FROM Districts
+WHERE RequiresPopulation = 1;
+
+INSERT OR IGNORE INTO Modifiers
+	(ModifierId, ModifierType, SubjectRequirementSetId, Permanent)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_DISTRICT_' || D.DistrictType || '_' || Y.YieldType,
+	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',
+	'LOTM_PP_REQSET_' || D.DistrictType,
+	1
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_DISTRICT_' || D.DistrictType || '_' || Y.YieldType,
+	'YieldType',
+	Y.YieldType
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_DISTRICT_' || D.DistrictType || '_' || Y.YieldType,
+	'Amount',
+	'60'
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType, Permanent)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_BUILDING_' || D.DistrictType || '_' || Y.YieldType,
+	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_MODIFIERS_FOR_DISTRICT',
+	1
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_BUILDING_' || D.DistrictType || '_' || Y.YieldType,
+	'DistrictType',
+	D.DistrictType
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_BUILDING_' || D.DistrictType || '_' || Y.YieldType,
+	'YieldType',
+	Y.YieldType
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_MYSTERY_BUILDING_' || D.DistrictType || '_' || Y.YieldType,
+	'Amount',
+	'60'
+FROM Districts AS D
+CROSS JOIN Yields AS Y
+WHERE D.RequiresPopulation = 1
+	AND Y.YieldType IN (
+		'YIELD_FOOD', 'YIELD_PRODUCTION', 'YIELD_GOLD',
+		'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_FAITH'
+	);
+
+-- Firaxis' MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD is a flat
+-- per-object yield adjustment.  Generate one modifier for every Great Work
+-- object/yield pair actually present after Gathering Storm and enabled
+-- official content have loaded, using that pair's base yield as the added
+-- amount.  This doubles the work's own base yield without doubling theming.
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType, Permanent)
+SELECT
+	'LOTM_PP_MOD_GREATWORK_' || GW.GreatWorkObjectType || '_' || GY.YieldType,
+	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',
+	1
+FROM GreatWork_YieldChanges AS GY
+JOIN GreatWorks AS GW ON GW.GreatWorkType = GY.GreatWorkType
+GROUP BY GW.GreatWorkObjectType, GY.YieldType;
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_GREATWORK_' || GW.GreatWorkObjectType || '_' || GY.YieldType,
+	'GreatWorkObjectType',
+	GW.GreatWorkObjectType
+FROM GreatWork_YieldChanges AS GY
+JOIN GreatWorks AS GW ON GW.GreatWorkType = GY.GreatWorkType
+GROUP BY GW.GreatWorkObjectType, GY.YieldType;
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_GREATWORK_' || GW.GreatWorkObjectType || '_' || GY.YieldType,
+	'YieldType',
+	GY.YieldType
+FROM GreatWork_YieldChanges AS GY
+JOIN GreatWorks AS GW ON GW.GreatWorkType = GY.GreatWorkType
+GROUP BY GW.GreatWorkObjectType, GY.YieldType;
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value)
+SELECT
+	'LOTM_PP_MOD_GREATWORK_' || GW.GreatWorkObjectType || '_' || GY.YieldType,
+	'YieldChange',
+	MAX(GY.YieldChange)
+FROM GreatWork_YieldChanges AS GY
+JOIN GreatWorks AS GW ON GW.GreatWorkType = GY.GreatWorkType
+GROUP BY GW.GreatWorkObjectType, GY.YieldType;

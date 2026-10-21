@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context FontStyle="Stroke">
+	<Instance Name="LOTM_RP_LaunchBarItem">
+		<Button
+			ID="LaunchItemButton"
+			Anchor="L,C"
+			Size="49,49"
+			Texture="LaunchBar_Hook_GovernmentButton"
+			Style="ButtonNormalText"
+			StateOffsetIncrement="0,49"
+			ToolTip="LOC_LOTM_RP_LAUNCH_TOOLTIP">
+			<Image ID="LaunchItemIcon" Size="40,40" Anchor="C,C"/>
+		</Button>
+	</Instance>
+	<Instance Name="LOTM_RP_LaunchBarPin">
+		<Image
+			ID="Pin"
+			Anchor="L,C"
+			Offset="0,-2"
+			Size="7,7"
+			Texture="LaunchBar_TrackPip"
+			Color="255,255,255,200"/>
+	</Instance>
+</Context>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+ <Container ID="DifficultyPopup" Anchor="C,C" Size="900,540" Hidden="1" ConsumeMouse="1">
+  <Image ID="ModalBG" Size="900,540" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1"/>
+  <Grid Size="parent,52" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40">
+   <Label Anchor="C,C" Style="FontFlair26" FontStyle="glow" ColorSet="ShellHeader" String="LOC_LOTM_RESCUE_DIFFICULTY_TITLE"/>
+  </Grid>
+  <Label Anchor="C,T" Offset="0,70" WrapWidth="820" Style="FontNormal20" FontStyle="shadow" ColorSet="ShellHeader" Align="Center" String="LOC_LOTM_RESCUE_DIFFICULTY_BODY"/>
+
+  <Grid Offset="30,125" Size="260,330" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Image ID="NormalIcon" Anchor="C,T" Offset="0,24" Size="96,96"/>
+   <Label Anchor="C,T" Offset="0,130" Style="FontFlair24" ColorSet="ShellHeader" String="LOC_LOTM_RESCUE_DIFFICULTY_NORMAL_NAME"/>
+   <GridButton ID="NormalButton" Anchor="C,B" Offset="0,20" Size="190,44" Style="ButtonConfirm" String="LOC_LOTM_RESCUE_DIFFICULTY_SELECT"/>
+  </Grid>
+  <Grid Offset="320,125" Size="260,330" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Image ID="HardIcon" Anchor="C,T" Offset="0,24" Size="96,96"/>
+   <Label Anchor="C,T" Offset="0,130" Style="FontFlair24" ColorSet="ShellHeader" String="LOC_LOTM_RESCUE_DIFFICULTY_HARD_NAME"/>
+   <GridButton ID="HardButton" Anchor="C,B" Offset="0,20" Size="190,44" Style="ButtonConfirm" String="LOC_LOTM_RESCUE_DIFFICULTY_SELECT"/>
+  </Grid>
+  <Grid Offset="610,125" Size="260,330" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Image ID="MadnessIcon" Anchor="C,T" Offset="0,24" Size="96,96"/>
+   <Label Anchor="C,T" Offset="0,130" Style="FontFlair24" ColorSet="ShellHeader" String="LOC_LOTM_RESCUE_DIFFICULTY_MADNESS_NAME"/>
+   <GridButton ID="MadnessButton" Anchor="C,B" Offset="0,20" Size="190,44" Style="ButtonConfirm" String="LOC_LOTM_RESCUE_DIFFICULTY_SELECT"/>
+  </Grid>
+  <Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+ </Container>
+</Context>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Layer="WorldAnchor">
+ <Container ID="QuestMarkerContainer"/>
+ <Instance Name="ChurchQuestMarkerInstance">
+  <WorldAnchor ID="Anchor" Anchor="C,C" Size="2,2">
+   <Button ID="Button" Anchor="C,C" Offset="0,-38" Size="52,52" Texture="Controls_CircleRim40">
+    <Image ID="Icon" Anchor="C,C" Size="40,40" Texture="CivSymbols36"/>
+    <Label ID="Quest" Anchor="L,T" Offset="-8,-5" Size="28,28" String="[ICON_CityStateQuest]"/>
+   </Button>
+  </WorldAnchor>
+ </Instance>
+</Context>

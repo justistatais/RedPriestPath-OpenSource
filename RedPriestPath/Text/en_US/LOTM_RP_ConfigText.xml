@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_GAMEMODE_LOTM_RESCUE_NAME" Language="en_US"><Text>Redemption Mode</Text></Row>
+		<Row Tag="LOC_GAMEMODE_LOTM_RESCUE_DESCRIPTION" Language="en_US"><Text>Generates the central seal and the Fool, Evernight, and Storm reservations with permanent live visibility. A completed medieval Astral Descent seal city is created at game start. Redemption Victory is the only enabled victory in this mode; all others are disabled.</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MAJOR_ALLIANCE_NAME" Language="en_US"><Text>Redemption Mode: Permanent Major Alliance</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_MAJOR_ALLIANCE_DESCRIPTION" Language="en_US"><Text>Enabled by default. After Redemption Mode begins, all living major civilizations enter an engine-level permanent alliance, so no member—including the AI—can declare war. Disable this before starting the game to retain the player's freedom to wage war; with it disabled, AI war actions remain disfavored and AI-initiated wars are corrected, but no engine-level absolute prohibition is possible.</Text></Row>
+		<Row Tag="LOC_CIVILIZATION_LOTM_RESCUE_TEST_NAME" Language="en_US"><Text>Astral Descent Test Faction</Text></Row>
+		<Row Tag="LOC_CIVILIZATION_LOTM_RESCUE_TEST_DESCRIPTION" Language="en_US"><Text>Hidden faction used only by Redemption Mode Phase 2A.</Text></Row>
+		<Row Tag="LOC_CIVILIZATION_LOTM_RESCUE_TEST_ADJECTIVE" Language="en_US"><Text>Astral</Text></Row>
+		<Row Tag="LOC_LEADER_LOTM_RESCUE_TEST_NAME" Language="en_US"><Text>Unknown</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_TEST_ABILITY_NAME" Language="en_US"><Text>Central Seal</Text></Row>
+		<Row Tag="LOC_LOTM_RESCUE_TEST_ABILITY_DESCRIPTION" Language="en_US"><Text>Phase 2A engine probe only; does not participate in the normal city-state envoy system.</Text></Row>
+		<Row Tag="LOC_CITY_NAME_LOTM_RESCUE_TEST" Language="en_US"><Text>Astral Descent</Text></Row>
+		<Row Tag="LOC_BUILDING_LOTM_RESCUE_SEAL_CORE_NAME" Language="en_US"><Text>Central Seal Core</Text></Row>
+		<Row Tag="LOC_LOTM_RP_MOD_NAME" Language="en_US">
+			<Text>Lord of Mysteries Units &amp; Gameplay</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_MOD_TEASER" Language="en_US">
+			<Text>Paragon, Red Priest, and Black Emperor Pathways, Sequences 9–0.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_MOD_DESCRIPTION" Language="en_US">
+			<Text>Adds mutually exclusive Paragon, Red Priest, and Black Emperor Pathway choices for each human player in Gathering Storm.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_NAME" Language="en_US">
+			<Text>Path</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_DESCRIPTION" Language="en_US">
+			<Text>Select a path independently for this human player. AI players should remain set to None.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_NONE_NAME" Language="en_US">
+			<Text>None</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_NONE_DESCRIPTION" Language="en_US">
+			<Text>This player does not participate in a path.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_RED_PRIEST_NAME" Language="en_US">
+			<Text>Red Priest</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_RP_PATH_RED_PRIEST_DESCRIPTION" Language="en_US">
+			<Text>This human player participates in the Red Priest path.</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_PP_PATH_NAME" Language="en_US"><Text>Paragon Pathway</Text></Row>
+		<Row Tag="LOC_LOTM_PP_PATH_DESCRIPTION" Language="en_US"><Text>This human player follows the Paragon Pathway, currently through Sequence 0.</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PATH_NAME" Language="en_US"><Text>Black Emperor</Text></Row>
+		<Row Tag="LOC_LOTM_BE_PATH_DESCRIPTION" Language="en_US"><Text>This human player follows the Black Emperor Path, currently through Sequence 0.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_NAME" Language="en_US"><Text>Lord of Mysteries Mod Language</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_DESCRIPTION" Language="en_US"><Text>Select the language used by every name, description, button, and manual page in this mod for this game. Chinese is the default and the choice cannot be changed after the game starts.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_NAME" Language="en_US"><Text>简体中文 (Default)</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_DESCRIPTION" Language="en_US"><Text>Display Lord of Mysteries mod text in Simplified Chinese for this game.</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_NAME" Language="en_US"><Text>English</Text></Row>
+		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION" Language="en_US"><Text>Display Lord of Mysteries mod text in English for this game.</Text></Row>
+	</LocalizedText>
+</GameData>

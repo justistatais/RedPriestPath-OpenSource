@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Beliefs>
+		<Row
+			BeliefType="BELIEF_LOTM_RP_ESTABLISH_CHURCH"
+			Name="LOC_BELIEF_LOTM_RP_ESTABLISH_CHURCH_NAME"
+			Description="LOC_BELIEF_LOTM_RP_ESTABLISH_CHURCH_DESCRIPTION"
+			BeliefClassType="BELIEF_CLASS_PANTHEON"/>
+		<Row
+			BeliefType="BELIEF_LOTM_RP_TRUE_GOD_CHURCH"
+			Name="LOC_BELIEF_LOTM_RP_TRUE_GOD_CHURCH_NAME"
+			Description="LOC_BELIEF_LOTM_RP_TRUE_GOD_CHURCH_DESCRIPTION"
+			BeliefClassType="BELIEF_CLASS_FOUNDER"/>
+	</Beliefs>
+</GameInfo>

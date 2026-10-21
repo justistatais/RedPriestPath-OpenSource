@@ -1,0 +1,25 @@
+-- One tribal village selects exactly one reward category.  Gathering Storm
+-- has seven equally weighted native categories: 7*13 native versus 49 custom
+-- gives an exact configured weight ratio of 65:35.
+INSERT OR IGNORE INTO Types (Type,Kind) VALUES
+('GOODYHUT_LOTM_WORLD_GATHERING','KIND_GOODY_HUT');
+
+UPDATE GoodyHuts SET Weight=13 WHERE GoodyHutType IN
+('GOODYHUT_CULTURE','GOODYHUT_GOLD','GOODYHUT_FAITH','GOODYHUT_MILITARY',
+ 'GOODYHUT_SCIENCE','GOODYHUT_SURVIVORS','GOODYHUT_DIPLOMACY');
+
+INSERT OR REPLACE INTO GoodyHuts
+(GoodyHutType,ImprovementType,Weight,ShowMoment) VALUES
+('GOODYHUT_LOTM_WORLD_GATHERING','IMPROVEMENT_GOODY_HUT',49,0);
+
+INSERT OR REPLACE INTO GoodyHutSubTypes
+(GoodyHut,SubTypeGoodyHut,Description,Weight,ModifierID) VALUES
+('GOODYHUT_LOTM_WORLD_GATHERING','GOODYHUT_LOTM_WORLD_GATHERING_REWARD','',100,'LOTM_WORLD_GOODY_GATHERING_MARKER');
+
+INSERT OR IGNORE INTO Modifiers
+(ModifierId,ModifierType,RunOnce,Permanent) VALUES
+('LOTM_WORLD_GOODY_GATHERING_MARKER','MODIFIER_PLAYER_ADJUST_PROPERTY',1,1);
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId,Name,Value) VALUES
+('LOTM_WORLD_GOODY_GATHERING_MARKER','Key','LOTM_WORLD_GOODY_GATHERING_COUNT'),
+('LOTM_WORLD_GOODY_GATHERING_MARKER','Amount','1');

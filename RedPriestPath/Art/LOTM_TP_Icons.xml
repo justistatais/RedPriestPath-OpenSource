@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+  <IconAtlases>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD"/>
+  </IconAtlases>
+  <IconTextureAtlases>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon30.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon38.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon50.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon64.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="70" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon70.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon80.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="95" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon95.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon200.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_GAME" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon256.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="40" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefMarkCentered40.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="384" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefMarkCentered384.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="512" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefMarkCentered512.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="640" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefMarkCentered640.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="768" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefMarkCentered768.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon30.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon38.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon50.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon64.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon80.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon128.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_FAKE_GOLD" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_FakeGoldIcon256.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon30.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon38.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon50.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon64.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="70" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon70.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon80.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="95" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon95.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon200.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_TP_MARK" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_TP_ThiefGameIcon256.dds"/>
+  </IconTextureAtlases>
+  <IconDefinitions>
+    <Row Name="ICON_LOTM_TP_THIEF_MARK" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_UNIT_LOTM_TP_PATH_HOLDER" Atlas="ICON_ATLAS_LOTM_TP_GAME" Index="0"/>
+    <Row Name="ICON_UNIT_LOTM_TP_PATH_HOLDER_FOW" Atlas="ICON_ATLAS_LOTM_TP_GAME" Index="0"/>
+    <Row Name="ICON_UNIT_LOTM_TP_PATH_HOLDER_WHITE" Atlas="ICON_ATLAS_LOTM_TP_GAME" Index="0"/>
+    <Row Name="ICON_UNIT_LOTM_TP_PATH_HOLDER_BLACK" Atlas="ICON_ATLAS_LOTM_TP_GAME" Index="0"/>
+    <Row Name="ICON_UNIT_LOTM_TP_PATH_HOLDER_PORTRAIT" Atlas="ICON_ATLAS_LOTM_TP_GAME" Index="0"/>
+    <Row Name="ICON_RESOURCE_LOTM_TP_FAKE_GOLD" Atlas="ICON_ATLAS_LOTM_TP_FAKE_GOLD" Index="0"/>
+    <Row Name="ICON_RESOURCE_LOTM_TP_FAKE_GOLD_FOW" Atlas="ICON_ATLAS_LOTM_TP_FAKE_GOLD" Index="0"/>
+    <Row Name="ICON_RESOURCE_LOTM_TP_FAKE_GOLD_TRADE" Atlas="ICON_ATLAS_LOTM_TP_FAKE_GOLD" Index="0"/>
+    <Row Name="ICON_RESOURCE_LOTM_TP_FAKE_GOLD_TRADE_FOW" Atlas="ICON_ATLAS_LOTM_TP_FAKE_GOLD" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_SWINDLER_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_CRYPTOLOGIST_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_PROMETHEUS_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_DREAM_STEALER_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_PARASITE_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_MENTOR_OF_DECEIT_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_FATE_TROJAN_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_WORM_OF_TIME_POTION" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_ERROR_APOTHEOSIS" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_FAITH_TRANSFER" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_CULTURE_TRANSFER" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_FAITH_TRANSFER_II" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+    <Row Name="ICON_PROJECT_LOTM_TP_CULTURE_TRANSFER_II" Atlas="ICON_ATLAS_LOTM_TP_MARK" Index="0"/>
+  </IconDefinitions>
+</GameInfo>

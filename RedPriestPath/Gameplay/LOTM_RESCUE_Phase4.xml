@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Types>
+		<Row Type="UNIT_LOTM_RESCUE_LOST_CONTROL_LOW" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_LOST_CONTROL_MID" Kind="KIND_UNIT"/>
+		<Row Type="UNIT_LOTM_RESCUE_LOST_CONTROL_HIGH" Kind="KIND_UNIT"/>
+	</Types>
+	<Units>
+		<Row UnitType="UNIT_LOTM_RESCUE_LOST_CONTROL_LOW" Name="LOC_LOTM_RESCUE_LOST_CONTROL_LOW_NAME" Description="LOC_LOTM_RESCUE_LOST_CONTROL_DESCRIPTION" BaseSightRange="2" BaseMoves="2" Combat="20" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_LOST_CONTROL_MID" Name="LOC_LOTM_RESCUE_LOST_CONTROL_MID_NAME" Description="LOC_LOTM_RESCUE_LOST_CONTROL_DESCRIPTION" BaseSightRange="2" BaseMoves="2" Combat="20" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+		<Row UnitType="UNIT_LOTM_RESCUE_LOST_CONTROL_HIGH" Name="LOC_LOTM_RESCUE_LOST_CONTROL_HIGH_NAME" Description="LOC_LOTM_RESCUE_LOST_CONTROL_DESCRIPTION" BaseSightRange="2" BaseMoves="2" Combat="20" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" Cost="-1" CanTrain="false" CanCapture="false" PromotionClass="PROMOTION_CLASS_MELEE" Maintenance="0" ZoneOfControl="true" AdvisorType="ADVISOR_CONQUEST" CanEarnExperience="false"/>
+	</Units>
+	<TypeTags>
+		<Row Type="UNIT_LOTM_RESCUE_LOST_CONTROL_LOW" Tag="CLASS_RECON"/>
+		<Row Type="UNIT_LOTM_RESCUE_LOST_CONTROL_MID" Tag="CLASS_RECON"/>
+		<Row Type="UNIT_LOTM_RESCUE_LOST_CONTROL_HIGH" Tag="CLASS_RECON"/>
+	</TypeTags>
+</GameInfo>

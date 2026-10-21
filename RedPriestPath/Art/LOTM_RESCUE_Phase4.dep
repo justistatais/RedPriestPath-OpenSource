@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetObjects..GameDependencyData>
+	<ID><name text="LOTM_RESCUE_Phase4"/><id text="B12FA58C-1BA6-4E10-A405-6A1C6BE48150"/></ID>
+	<RequiredGameArtIDs/>
+	<SystemDependencies>
+		<Element><ConsumerName text="Units"/><ArtDefDependencyPaths><Element text="LOTM_RESCUE_Phase4_Units.artdef"/></ArtDefDependencyPaths><LibraryDependencies><Element text="Unit"/></LibraryDependencies><LoadsLibraries>true</LoadsLibraries></Element>
+	</SystemDependencies>
+	<ArtDefDependencies>
+		<Element><ArtDefPath text="LOTM_RESCUE_Phase4_Units.artdef"/><ArtDefDependencyPaths><Element text="Units.artdef"/></ArtDefDependencyPaths></Element>
+	</ArtDefDependencies>
+	<LibraryDependencies><Element><LibraryName text="Unit"/><PackageDependencies><Element text="units/units.blp"/></PackageDependencies></Element></LibraryDependencies>
+</AssetObjects..GameDependencyData>

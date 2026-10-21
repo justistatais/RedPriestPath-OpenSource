@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\..\..\..\CivTech\Libs\ForgeUI\ForgeUI_Assets\Controls.xsd">
+	<Container Style="FullScreenVignetteConsumer" />
+	<Grid ID="Background" Anchor="C,C" Size="1056,800" SliceCorner="33,163" SliceSize="6,7" SliceTextureSize="72,204" Texture="XP1Intro_Window" ConsumeMouse="1">
+		<Label ID="ManualTitle" Anchor="C,T" Offset="0,55" Style="BlueGlow" FontSize="30" Align="center" String="LOC_LOTM_MANUAL_TITLE" />
+		<Label ID="PageTitle" Anchor="C,T" Offset="0,112" Style="BlueGlow" FontSize="20" Align="center" WrapWidth="960" />
+
+		<Grid ID="IllustrationPanel" Anchor="L,T" Offset="30,160" Size="492,544" SliceCorner="10,10" SliceSize="1,1" SliceTextureSize="40,40" Texture="Controls_SubContainer3" Color="0,0,0,60">
+			<Image ID="Artifact1" Anchor="L,T" Offset="62,58" Size="64,64" />
+			<Image ID="Artifact2" Anchor="L,T" Offset="214,58" Size="64,64" />
+			<Image ID="Artifact3" Anchor="L,T" Offset="366,58" Size="64,64" />
+			<Image ID="Artifact4" Anchor="L,T" Offset="62,220" Size="64,64" />
+			<Image ID="Artifact5" Anchor="L,T" Offset="214,220" Size="64,64" />
+			<Image ID="Artifact6" Anchor="L,T" Offset="366,220" Size="64,64" />
+			<Image ID="Artifact7" Anchor="L,T" Offset="214,382" Size="64,64" />
+		</Grid>
+
+		<Grid ID="DescriptionColumn" Size="492,544" Anchor="R,T" Offset="38,170" SliceCorner="10,10" SliceSize="1,1" SliceTextureSize="40,40" Texture="Controls_SubContainer3" Color="0,0,0,60">
+			<Stack ID="RightDescStack" Anchor="C,C" StackGrowth="Down" StackPadding="0">
+				<Container ID="TopDescription" Anchor="C,T" Size="492,190">
+					<Label ID="Description" Anchor="C,C" Style="BlueGlow" FontSize="20" Align="center" WrapWidth="462" />
+				</Container>
+				<Grid ID="FrameDeco" Anchor="C,B" Size="462,310" Offset="0,10" SliceCorner="19,24" SliceSize="1,1" SliceTextureSize="39,49" Texture="Controls_Deco" Color="137,154,171,180">
+					<Box Size="parent-38,2" Anchor="C,T" Color="137,154,171,180" />
+					<ScrollPanel ID="DetailScroll" Anchor="C,C" Size="parent-20,parent-8" Vertical="1" AutoScrollBar="1">
+						<ScrollBar Anchor="R,C" Size="11,parent-32" AnchorSide="I,I" Offset="-4,0" Style="ScrollVerticalBar" />
+						<Label ID="Description2" Anchor="C,T" Offset="-4,10" Style="FontNormal14" Color="210,222,234,255" Align="Left" FontSize="18" WrapWidth="410" />
+					</ScrollPanel>
+					<Box Size="parent-38,2" Anchor="C,B" Color="137,154,171,180" />
+				</Grid>
+			</Stack>
+		</Grid>
+
+		<CheckBox ID="DontShowAgain" Anchor="L,B" Offset="30,33" ConsumeMouseOver="1" ButtonSize="35,35" ButtonTexture="Controls_CheckboxCircle" CheckTexture="Controls_CheckboxCircle" CheckSize="35,35" CheckTextureOffset="0,35" Style="FontNormal16" NoStateChange="1">
+			<Label ID="DontShowAgainLabel" Anchor="L,C" Offset="35,0" Style="BlueGlow" FontSize="14" String="LOC_LOTM_MANUAL_HIDE" />
+		</CheckBox>
+		<Stack ID="ButtonStack" Anchor="C,B" Offset="0,33" StackGrowth="Right" Padding="10">
+			<GridButton ID="Previous" Style="MainButton" Anchor="C,B" Size="200,41" String="LOC_LOTM_MANUAL_PREVIOUS" />
+			<GridButton ID="Next" Style="MainButton" Anchor="C,B" Size="200,41" String="LOC_LOTM_MANUAL_NEXT" />
+		</Stack>
+	</Grid>
+	<Button ID="Close" Anchor="R,T" Style="CloseButtonLarge" Offset="-8,-5" />
+</Context>

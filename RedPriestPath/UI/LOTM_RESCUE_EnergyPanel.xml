@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+ <Container ID="EnergyPopup" Anchor="C,C" Size="820,600" Hidden="1" ConsumeMouse="1">
+  <Image Size="820,600" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1"/>
+  <Grid Size="parent,52" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40">
+   <Label Anchor="C,C" Style="FontFlair26" FontStyle="glow" ColorSet="ShellHeader" String="LOC_LOTM_RESCUE_ENERGY_TITLE"/>
+  </Grid>
+  <!-- Keep the three counters in a bounded block.  The explicit sizes stop
+       long localized strings from intruding into the rows below. -->
+  <Grid ID="StatsFrame" Anchor="L,T" Offset="30,68" Size="760,90" Texture="Controls_ItemContainer" SliceCorner="8,8" SliceTextureSize="16,16">
+   <Label ID="Balance" Anchor="L,T" Offset="18,9" Size="700,24" Style="FontNormal18"/>
+   <Label ID="Spent" Anchor="L,T" Offset="18,36" Size="700,20" Style="FontNormal16"/>
+   <Label ID="Global" Anchor="L,T" Offset="18,60" Size="700,20" Style="FontNormal16"/>
+  </Grid>
+  <Grid ID="MadnessRow" Anchor="L,T" Offset="30,170" Size="760,78" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Label ID="MadnessName" Anchor="L,T" Offset="18,7" Style="FontFlair18" String="LOC_LOTM_RESCUE_ABILITY_MADNESS_NAME"/>
+   <Label ID="MadnessDescription" Anchor="L,T" Offset="18,31" Size="570,18" WrapWidth="570" Style="FontNormal12"/>
+   <Label ID="MadnessInfo" Anchor="L,T" Offset="18,54" Size="570,18" WrapWidth="570" Style="FontNormal14"/>
+   <GridButton ID="MadnessAdd" Anchor="L,T" Offset="620,21" Size="58,36" Style="ButtonConfirm" String="+"/>
+   <GridButton ID="MadnessMinus" Anchor="L,T" Offset="688,21" Size="58,36" Style="MainButton" String="-"/>
+  </Grid>
+  <Grid ID="EchoRow" Anchor="L,T" Offset="30,250" Size="760,78" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Label ID="EchoName" Anchor="L,T" Offset="18,7" Style="FontFlair18" String="LOC_LOTM_RESCUE_ABILITY_ECHO_NAME"/>
+   <Label ID="EchoDescription" Anchor="L,T" Offset="18,31" Size="570,18" WrapWidth="570" Style="FontNormal12"/>
+   <Label ID="EchoInfo" Anchor="L,T" Offset="18,54" Size="570,18" WrapWidth="570" Style="FontNormal14"/>
+   <GridButton ID="EchoAdd" Anchor="L,T" Offset="620,21" Size="58,36" Style="ButtonConfirm" String="+"/>
+   <GridButton ID="EchoMinus" Anchor="L,T" Offset="688,21" Size="58,36" Style="MainButton" String="-"/>
+  </Grid>
+  <Grid ID="ArmyRow" Anchor="L,T" Offset="30,330" Size="760,78" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Label ID="ArmyName" Anchor="L,T" Offset="18,7" Style="FontFlair18" String="LOC_LOTM_RESCUE_ABILITY_ARMY_NAME"/>
+   <Label ID="ArmyDescription" Anchor="L,T" Offset="18,31" Size="570,18" WrapWidth="570" Style="FontNormal12"/>
+   <Label ID="ArmyInfo" Anchor="L,T" Offset="18,54" Size="570,18" WrapWidth="570" Style="FontNormal14"/>
+   <GridButton ID="ArmyAdd" Anchor="L,T" Offset="620,21" Size="58,36" Style="ButtonConfirm" String="+"/>
+   <GridButton ID="ArmyMinus" Anchor="L,T" Offset="688,21" Size="58,36" Style="MainButton" String="-"/>
+  </Grid>
+  <Grid ID="WallRow" Anchor="L,T" Offset="30,410" Size="760,78" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+   <Label ID="WallName" Anchor="L,T" Offset="18,7" Style="FontFlair18" String="LOC_LOTM_RESCUE_ABILITY_WALL_NAME"/>
+   <Label ID="WallDescription" Anchor="L,T" Offset="18,31" Size="570,18" WrapWidth="570" Style="FontNormal12"/>
+   <Label ID="WallInfo" Anchor="L,T" Offset="18,54" Size="570,18" WrapWidth="570" Style="FontNormal14"/>
+   <GridButton ID="WallAdd" Anchor="L,T" Offset="620,21" Size="58,36" Style="ButtonConfirm" String="+"/>
+   <GridButton ID="WallMinus" Anchor="L,T" Offset="688,21" Size="58,36" Style="MainButton" String="-"/>
+  </Grid>
+  <GridButton ID="ResetAll" Anchor="L,B" Offset="30,25" Size="190,42" Style="ButtonConfirm" String="LOC_LOTM_RESCUE_ENERGY_RESET_ALL"/>
+  <GridButton ID="Close" Anchor="R,B" Offset="30,25" Size="150,42" Style="MainButton" String="LOC_CLOSE"/>
+  <Grid Offset="-8,-8" Size="parent+16,parent+16" Style="ScreenFrame"/>
+ </Container>
+</Context>

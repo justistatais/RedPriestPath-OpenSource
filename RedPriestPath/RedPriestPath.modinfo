@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="7E4D8D9C-0C96-4B9C-A3D4-6A1E6B19D970" version="393">
+	<Properties>
+		<Name>诡秘之主单位与玩法</Name>
+		<Teaser>Choose a Pathway and advance from Sequence 9 to 0 | 选择途径，从序列9晋升至序列0</Teaser>
+		<Description>Paragon, Red Priest and Black Emperor Pathways with potion digestion, Rampager Workshops, 21 unique Sealed Artifacts and a built-in manual. Supports 简体中文 and English.</Description>
+		<Authors>LOTM Red Priest Path Team</Authors>
+		<CompatibleVersions>2.0</CompatibleVersions>
+		<SupportsMultiplayer>1</SupportsMultiplayer>
+	</Properties>
+	<Dependencies>
+		<Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="LOC_EXPANSION2_MOD_TITLE"/>
+	</Dependencies>
+	<References>
+		<Mod id="5aceed03-8639-4a81-8cbf-03f54d543502" title="Quick Deals"/>
+	</References>
+	<ActionCriteria>
+		<Criteria id="LOTM_RP_EXPANSION_2">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+		</Criteria>
+		<Criteria id="LOTM_RP_RESCUE_MODE">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ConfigurationValueMatches>
+				<Group>Game</Group>
+				<ConfigurationId>GAMEMODE_LOTM_RESCUE</ConfigurationId>
+				<Value>1</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="LOTM_RP_NORMAL_MODE">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ConfigurationValueMatches>
+				<Group>Game</Group>
+				<ConfigurationId>GAMEMODE_LOTM_RESCUE</ConfigurationId>
+				<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="LOTM_RP_RESCUE_CLANS_MODE">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ConfigurationValueMatches>
+				<Group>Game</Group>
+				<ConfigurationId>GAMEMODE_LOTM_RESCUE</ConfigurationId>
+				<Value>1</Value>
+			</ConfigurationValueMatches>
+			<ConfigurationValueMatches>
+				<Group>Game</Group>
+				<ConfigurationId>GAMEMODE_BARBARIAN_CLANS</ConfigurationId>
+				<Value>1</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="LOTM_RP_LANGUAGE_ZH">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+		</Criteria>
+		<Criteria id="LOTM_RP_LANGUAGE_EN">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ConfigurationValueMatches>
+				<Group>Game</Group>
+				<ConfigurationId>LOTM_RP_TEXT_LANGUAGE</ConfigurationId>
+				<Value>en_US</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="LOTM_RP_EXPANSION_2_QUICK_DEALS">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ModInUse>5aceed03-8639-4a81-8cbf-03f54d543502</ModInUse>
+		</Criteria>
+		<Criteria id="LOTM_RP_EXPANSION_2_NO_QUICK_DEALS">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ModInUse inverse="1">5aceed03-8639-4a81-8cbf-03f54d543502</ModInUse>
+		</Criteria>
+		<Criteria id="LOTM_RP_EXPANSION_2_BETTER_CITY_STATES">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ModInUse>13E8BCDF-98EC-4C03-3641-72D519B0047C</ModInUse>
+		</Criteria>
+		<Criteria id="LOTM_RP_EXPANSION_2_NO_BETTER_CITY_STATES">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ModInUse inverse="1">13E8BCDF-98EC-4C03-3641-72D519B0047C</ModInUse>
+		</Criteria>
+	</ActionCriteria>
+	<FrontEndActions>
+		<UpdateDatabase id="LOTM_RP_CONFIG_DATABASE">
+			<Properties>
+				<LoadOrder>100</LoadOrder>
+			</Properties>
+			<File>Config/LOTM_RP_PathSelection.xml</File>
+		</UpdateDatabase>
+		<UpdateText id="LOTM_RP_CONFIG_TEXT">
+			<Properties>
+				<LoadOrder>110</LoadOrder>
+			</Properties>
+			<File>Text/en_US/LOTM_RP_ConfigText.xml</File>
+			<File>Text/zh_Hans_CN/LOTM_RP_ConfigText.xml</File>
+		</UpdateText>
+	</FrontEndActions>
+	<InGameActions>
+		<UpdateDatabase id="LOTM_RP_GAMEPLAY_DATABASE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>100</LoadOrder>
+			</Properties>
+			<File Priority="6">Gameplay/LOTM_RP_Types.xml</File>
+			<File Priority="5">Gameplay/LOTM_RP_Promotions.xml</File>
+			<File Priority="5">Gameplay/LOTM_RP_Beliefs.xml</File>
+			<File Priority="5">Gameplay/LOTM_RP_ProjectSupport.sql</File>
+			<File Priority="4">Gameplay/LOTM_RP_Units.xml</File>
+			<File Priority="3">Gameplay/LOTM_RP_Projects.xml</File>
+			<File Priority="2">Gameplay/LOTM_PP_Perfect.sql</File>
+			<File Priority="2">Gameplay/LOTM_PP_Artifacts.sql</File>
+			<File Priority="1">Gameplay/LOTM_WORLD_GoodyHuts.sql</File>
+			<File Priority="1">Gameplay/LOTM_WORLD_Events.sql</File>
+			<File Priority="1">Gameplay/LOTM_WORLD_Monsters.sql</File>
+			<File Priority="1">Gameplay/LOTM_WORLD_Churches.sql</File>
+			<File Priority="1">Gameplay/LOTM_AI_Cults.sql</File>
+			<File Priority="1">Gameplay/LOTM_BE_BlackEmperor.sql</File>
+			<File Priority="2">Gameplay/LOTM_RP_Modifiers.xml</File>
+			<File Priority="1">Gameplay/LOTM_RP_Abilities.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_TP_GAMEPLAY_DATABASE" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><LoadOrder>101</LoadOrder></Properties>
+			<File>Gameplay/LOTM_TP_Thief.sql</File>
+		</UpdateDatabase>
+		<UpdateArt id="LOTM_RP_ART" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>110</LoadOrder>
+			</Properties>
+			<File>Art/LOTM_RP.dep</File>
+		</UpdateArt>
+		<UpdateIcons id="LOTM_RP_ICONS" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>120</LoadOrder>
+			</Properties>
+			<File>Art/LOTM_RP_Icons.xml</File>
+			<File>Art/LOTM_Artifact_Icons.xml</File>
+			<File>Art/LOTM_Church_Icons.xml</File>
+			<File>Art/LOTM_AI_Cult_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_TP_ICONS" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><LoadOrder>121</LoadOrder></Properties>
+			<File>Art/LOTM_TP_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_RESCUE_TP_ICONS" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>122</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_TP_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateText id="LOTM_RP_GAMEPLAY_TEXT_ZH" criteria="LOTM_RP_LANGUAGE_ZH">
+			<Properties>
+				<LoadOrder>130</LoadOrder>
+			</Properties>
+			<File>Text/Selected/LOTM_RP_Selected_zh_Hans_CN.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_RP_GAMEPLAY_TEXT_EN" criteria="LOTM_RP_LANGUAGE_EN">
+			<Properties>
+				<LoadOrder>131</LoadOrder>
+			</Properties>
+			<File>Text/Selected/LOTM_RP_Selected_en_US.xml</File>
+		</UpdateText>
+		<UpdateDatabase id="LOTM_RESCUE_ARTIFACT_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>203</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Artifacts.sql</File>
+		</UpdateDatabase>
+		<ImportFiles id="LOTM_MP241_MAIN_AFTER_BOOTSTRAP" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>203</LoadOrder></Properties>
+			<File>Scripts/LOTM_MP241_MainBundle.lua</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_MP241_PHASE3_HELPER" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>203</LoadOrder></Properties>
+			<File>Scripts/LOTM_RESCUE_SyncActions.lua</File>
+		</ImportFiles>
+		<UpdateDatabase id="LOTM_RESCUE_CITY_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_City.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE3_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase3.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE4_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase4.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE5_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase5.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_CLAN_REGISTRY_DATABASE" criteria="LOTM_RP_RESCUE_CLANS_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_ClanRegistry.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE7_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase7.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE8_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase8.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE9_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase9.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_PHASE10_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Phase10.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_RESCUE_THIEF_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Thief.sql</File>
+		</UpdateDatabase>
+		<UpdateArt id="LOTM_RESCUE_PHASE3_ART" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_Phase3.dep</File>
+		</UpdateArt>
+		<UpdateArt id="LOTM_RESCUE_PHASE4_ART" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_Phase4.dep</File>
+		</UpdateArt>
+		<UpdateArt id="LOTM_RESCUE_PHASE10_ART" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTMGodModels/LOTMGodModels.dep</File>
+		</UpdateArt>
+		<UpdateIcons id="LOTM_RESCUE_PHASE3_ICONS" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_Phase3_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_RESCUE_PHASE4_ICONS" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_Phase4_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_RESCUE_PHASE10_ICONS" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_Phase10_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_RESCUE_ENERGY_ICONS" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_Energy_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_RESCUE_CLAN_REGISTRY_ICONS" criteria="LOTM_RP_RESCUE_CLANS_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_ClanRegistry_Icons.xml</File>
+		</UpdateIcons>
+		<ImportFiles id="LOTM_RESCUE_PHASE3_ICON_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon256.dds</File>
+			<File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon256.dds</File>
+			<File>Art/LOTM_RESCUE_STORM_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon256.dds</File>
+		</ImportFiles>
+		<AddGameplayScripts id="LOTM_RP_GAMEPLAY_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>204</LoadOrder>
+			</Properties>
+			<File>Scripts/LOTM_RP_Gameplay_Bundle.lua</File>
+		</AddGameplayScripts>
+		<ImportFiles id="LOTM_RP_UI_FILES" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>204</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_Probe.lua</File>
+			<File>UI/LOTM_RP_Probe.xml</File>
+			<File>UI/LOTM_RP_HUD.lua</File>
+			<File>UI/LOTM_RP_HUD.xml</File>
+			<File>UI/LOTM_RP_ComicViewer.lua</File>
+			<File>UI/LOTM_RP_ComicViewer.xml</File>
+			<File>Art/Comics/LOTM_Comic_1-1.dds</File><File>Art/Comics/LOTM_Comic_1-2.dds</File><File>Art/Comics/LOTM_Comic_1-3.dds</File>
+			<File>Art/Comics/LOTM_Comic_2-1.dds</File><File>Art/Comics/LOTM_Comic_2-2.dds</File><File>Art/Comics/LOTM_Comic_2-3.dds</File><File>Art/Comics/LOTM_Comic_2-4.dds</File>
+			<File>Art/Comics/LOTM_Comic_2-5.dds</File><File>Art/Comics/LOTM_Comic_2-6.dds</File><File>Art/Comics/LOTM_Comic_2-7.dds</File><File>Art/Comics/LOTM_Comic_2-8.dds</File>
+			<File>Art/Comics/LOTM_Comic_3-1.dds</File><File>Art/Comics/LOTM_Comic_3-2.dds</File>
+			<File>UI/LOTM_RP_PathChoice.lua</File>
+			<File>UI/LOTM_RP_PathChoice.xml</File>
+			<File>UI/LOTM_RP_LaunchButton.lua</File>
+			<File>UI/LOTM_RP_LaunchButton.xml</File>
+			<File>UI/LOTM_RP_Sequence0Ceremony.lua</File>
+			<File>UI/LOTM_RP_Sequence0Ceremony.xml</File>
+			<File>UI/LOTM_BE_EventObserver.lua</File>
+			<File>UI/LOTM_BE_EventObserver.xml</File>
+			<File>UI/LOTM_PP_ArtifactsScreen.lua</File>
+			<File>UI/LOTM_PP_ArtifactsScreen.xml</File>
+			<File>UI/LOTM_PP_ArtifactShowcase.lua</File>
+			<File>UI/LOTM_PP_ArtifactShowcase.xml</File>
+			<File>UI/LOTM_WORLD_Popup.lua</File>
+			<File>UI/LOTM_WORLD_Popup.xml</File>
+			<File>UI/LOTM_WORLD_ChurchPanel.lua</File>
+			<File>UI/LOTM_WORLD_ChurchPanel.xml</File>
+			<File>UI/LOTM_WORLD_CityStates.lua</File>
+			<File>UI/LOTM_WORLD_ChurchQuestMarkers.lua</File>
+			<File>UI/LOTM_WORLD_ChurchQuestMarkers.xml</File>
+			<File>UI/LOTM_RESCUE_Purification.lua</File>
+			<File>UI/LOTM_RESCUE_Purification.xml</File>
+			<File>UI/LOTM_AI_Cult_Diplomacy.lua</File>
+			<File>UI/LOTM_AI_Cult_Diplomacy_QuickDeals.lua</File>
+			<File>UI/LOTM_AI_Cult_Diplomacy_Extension.lua</File>
+			<File>UI/LOTM_AI_Cult_DiplomacyRow.lua</File>
+			<File>UI/LOTM_AI_Cult_DiplomacyRow.xml</File>
+			<File>UI/LOTM_AI_Cult_CityPanel.lua</File>
+			<File>UI/LOTM_RP_Manual.lua</File>
+			<File>UI/LOTM_RP_Manual.xml</File>
+			<File>UI/LOTM_RP_ExpansionIntroBridge.lua</File>
+			<File>Art/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_45.dds</File>
+			<File>Art/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_64.dds</File>
+			<File>Art/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_256.dds</File>
+			<File>Art/LOTM_ART_PP_PERPETUAL_GEARBOX_45.dds</File>
+			<File>Art/LOTM_ART_PP_PERPETUAL_GEARBOX_64.dds</File>
+			<File>Art/LOTM_ART_PP_PERPETUAL_GEARBOX_256.dds</File>
+			<File>Art/LOTM_ART_PP_ERROR_ASTROLABE_45.dds</File>
+			<File>Art/LOTM_ART_PP_ERROR_ASTROLABE_64.dds</File>
+			<File>Art/LOTM_ART_PP_ERROR_ASTROLABE_256.dds</File>
+			<File>Art/LOTM_ART_PP_HERMES_FURNACE_45.dds</File>
+			<File>Art/LOTM_ART_PP_HERMES_FURNACE_64.dds</File>
+			<File>Art/LOTM_ART_PP_HERMES_FURNACE_256.dds</File>
+			<File>Art/LOTM_ART_PP_MYSTERY_BLUEPRINT_45.dds</File>
+			<File>Art/LOTM_ART_PP_MYSTERY_BLUEPRINT_64.dds</File>
+			<File>Art/LOTM_ART_PP_MYSTERY_BLUEPRINT_256.dds</File>
+			<File>Art/LOTM_ART_PP_KNOWLEDGE_CASKET_45.dds</File>
+			<File>Art/LOTM_ART_PP_KNOWLEDGE_CASKET_64.dds</File>
+			<File>Art/LOTM_ART_PP_KNOWLEDGE_CASKET_256.dds</File>
+			<File>Art/LOTM_ART_PP_CIVILIZATION_STELE_45.dds</File>
+			<File>Art/LOTM_ART_PP_CIVILIZATION_STELE_64.dds</File>
+			<File>Art/LOTM_ART_PP_CIVILIZATION_STELE_256.dds</File>
+			<File>Art/LOTM_ART_RP_DISASTER_EMBER_45.dds</File>
+			<File>Art/LOTM_ART_RP_DISASTER_EMBER_64.dds</File>
+			<File>Art/LOTM_ART_RP_DISASTER_EMBER_256.dds</File>
+			<File>Art/LOTM_ART_RP_CONSPIRATOR_LETTER_45.dds</File>
+			<File>Art/LOTM_ART_RP_CONSPIRATOR_LETTER_64.dds</File>
+			<File>Art/LOTM_ART_RP_CONSPIRATOR_LETTER_256.dds</File>
+			<File>Art/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_45.dds</File>
+			<File>Art/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_64.dds</File>
+			<File>Art/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_256.dds</File>
+			<File>Art/LOTM_ART_RP_IRONBLOOD_BANNER_45.dds</File>
+			<File>Art/LOTM_ART_RP_IRONBLOOD_BANNER_64.dds</File>
+			<File>Art/LOTM_ART_RP_IRONBLOOD_BANNER_256.dds</File>
+			<File>Art/LOTM_ART_RP_WAR_SCRIPTURE_45.dds</File>
+			<File>Art/LOTM_ART_RP_WAR_SCRIPTURE_64.dds</File>
+			<File>Art/LOTM_ART_RP_WAR_SCRIPTURE_256.dds</File>
+			<File>Art/LOTM_ART_RP_DISASTER_WEATHER_45.dds</File>
+			<File>Art/LOTM_ART_RP_DISASTER_WEATHER_64.dds</File>
+			<File>Art/LOTM_ART_RP_DISASTER_WEATHER_256.dds</File>
+			<File>Art/LOTM_ART_RP_CONQUEROR_CROWN_45.dds</File>
+			<File>Art/LOTM_ART_RP_CONQUEROR_CROWN_64.dds</File>
+			<File>Art/LOTM_ART_RP_CONQUEROR_CROWN_256.dds</File>
+			<File>Art/LOTM_ART_BE_GOLDEN_BRIBE_45.dds</File>
+			<File>Art/LOTM_ART_BE_GOLDEN_BRIBE_64.dds</File>
+			<File>Art/LOTM_ART_BE_GOLDEN_BRIBE_256.dds</File>
+			<File>Art/LOTM_ART_BE_CORRUPTION_TAXBOOK_45.dds</File>
+			<File>Art/LOTM_ART_BE_CORRUPTION_TAXBOOK_64.dds</File>
+			<File>Art/LOTM_ART_BE_CORRUPTION_TAXBOOK_256.dds</File>
+			<File>Art/LOTM_ART_BE_CHAOS_CODEX_45.dds</File>
+			<File>Art/LOTM_ART_BE_CHAOS_CODEX_64.dds</File>
+			<File>Art/LOTM_ART_BE_CHAOS_CODEX_256.dds</File>
+			<File>Art/LOTM_ART_BE_DEPRAVED_FEAST_45.dds</File>
+			<File>Art/LOTM_ART_BE_DEPRAVED_FEAST_64.dds</File>
+			<File>Art/LOTM_ART_BE_DEPRAVED_FEAST_256.dds</File>
+			<File>Art/LOTM_ART_BE_FRENZY_SCEPTER_45.dds</File>
+			<File>Art/LOTM_ART_BE_FRENZY_SCEPTER_64.dds</File>
+			<File>Art/LOTM_ART_BE_FRENZY_SCEPTER_256.dds</File>
+			<File>Art/LOTM_ART_BE_ENTROPY_CROWN_45.dds</File>
+			<File>Art/LOTM_ART_BE_ENTROPY_CROWN_64.dds</File>
+			<File>Art/LOTM_ART_BE_ENTROPY_CROWN_256.dds</File>
+			<File>Art/LOTM_ART_BE_ORDER_CONVERTER_45.dds</File>
+			<File>Art/LOTM_ART_BE_ORDER_CONVERTER_64.dds</File>
+			<File>Art/LOTM_ART_BE_ORDER_CONVERTER_256.dds</File>
+			<File>Art/LOTM_ArtifactLaunchIcon40.dds</File>
+			<File>Art/LOTM_ArtifactLaunchIcon64.dds</File>
+			<File>Art/LOTM_ArtifactLaunchIcon256.dds</File>
+			<File>Art/LOTM_RP_RedPriestMarkCentered40.dds</File>
+			<File>Art/LOTM_RP_RedPriestMarkCentered384.dds</File>
+			<File>Art/LOTM_RP_RedPriestMarkCentered512.dds</File>
+			<File>Art/LOTM_RP_RedPriestMarkCentered640.dds</File>
+			<File>Art/LOTM_RP_RedPriestMarkCentered768.dds</File>
+			<File>Art/LOTM_PP_PerfectMarkCentered40.dds</File>
+			<File>Art/LOTM_PP_PerfectMarkCentered384.dds</File>
+			<File>Art/LOTM_PP_PerfectMarkCentered512.dds</File>
+			<File>Art/LOTM_PP_PerfectMarkCentered640.dds</File>
+			<File>Art/LOTM_PP_PerfectMarkCentered768.dds</File>
+			<File>Art/LOTM_WORLD_MonsterMark40.dds</File>
+			<File>Art/LOTM_WORLD_MonsterMark256.dds</File>
+			<File>Art/LOTM_RESCUE_OuterGodStarMark40.dds</File>
+			<File>Art/LOTM_RESCUE_OuterGodStarMark256.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorMarkCentered40.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorMarkCentered384.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorMarkCentered512.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorMarkCentered640.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorMarkCentered768.dds</File>
+			<File>Art/LOTM_RESCUE_AstralDescent_22.dds</File>
+			<File>Art/LOTM_Church_FOOL_22.dds</File>
+			<File>Art/LOTM_Church_NIGHT_22.dds</File>
+			<File>Art/LOTM_Church_STORM_22.dds</File>
+			<File>Art/LOTM_Church_FOOL_26.dds</File>
+			<File>Art/LOTM_Church_FOOL_32.dds</File>
+			<File>Art/LOTM_Church_FOOL_40.dds</File>
+			<File>Art/LOTM_Church_FOOL_56.dds</File>
+			<File>Art/LOTM_Church_FOOL_64.dds</File>
+			<File>Art/LOTM_Church_FOOL_128.dds</File>
+			<File>Art/LOTM_Church_FOOL_200.dds</File>
+			<File>Art/LOTM_Church_FOOL_256.dds</File>
+			<File>Art/LOTM_Church_NIGHT_26.dds</File>
+			<File>Art/LOTM_Church_NIGHT_32.dds</File>
+			<File>Art/LOTM_Church_NIGHT_40.dds</File>
+			<File>Art/LOTM_Church_NIGHT_56.dds</File>
+			<File>Art/LOTM_Church_NIGHT_64.dds</File>
+			<File>Art/LOTM_Church_NIGHT_128.dds</File>
+			<File>Art/LOTM_Church_NIGHT_200.dds</File>
+			<File>Art/LOTM_Church_NIGHT_256.dds</File>
+			<File>Art/LOTM_Church_STORM_26.dds</File>
+			<File>Art/LOTM_Church_STORM_32.dds</File>
+			<File>Art/LOTM_Church_STORM_40.dds</File>
+			<File>Art/LOTM_Church_STORM_56.dds</File>
+			<File>Art/LOTM_Church_STORM_64.dds</File>
+			<File>Art/LOTM_Church_STORM_128.dds</File>
+			<File>Art/LOTM_Church_STORM_200.dds</File>
+			<File>Art/LOTM_Church_STORM_256.dds</File>
+			<File>Art/LOTM_AI_Cult_Demoness_22.dds</File><File>Art/LOTM_AI_Cult_Demoness_32.dds</File><File>Art/LOTM_AI_Cult_Demoness_40.dds</File><File>Art/LOTM_AI_Cult_Demoness_50.dds</File><File>Art/LOTM_AI_Cult_Demoness_64.dds</File><File>Art/LOTM_AI_Cult_Demoness_80.dds</File><File>Art/LOTM_AI_Cult_Demoness_128.dds</File><File>Art/LOTM_AI_Cult_Demoness_200.dds</File><File>Art/LOTM_AI_Cult_Demoness_256.dds</File>
+			<File>Art/LOTM_AI_Cult_HangedMan_22.dds</File><File>Art/LOTM_AI_Cult_HangedMan_32.dds</File><File>Art/LOTM_AI_Cult_HangedMan_40.dds</File><File>Art/LOTM_AI_Cult_HangedMan_50.dds</File><File>Art/LOTM_AI_Cult_HangedMan_64.dds</File><File>Art/LOTM_AI_Cult_HangedMan_80.dds</File><File>Art/LOTM_AI_Cult_HangedMan_128.dds</File><File>Art/LOTM_AI_Cult_HangedMan_200.dds</File><File>Art/LOTM_AI_Cult_HangedMan_256.dds</File>
+			<File>Art/LOTM_AI_Cult_Chained_22.dds</File><File>Art/LOTM_AI_Cult_Chained_32.dds</File><File>Art/LOTM_AI_Cult_Chained_40.dds</File><File>Art/LOTM_AI_Cult_Chained_50.dds</File><File>Art/LOTM_AI_Cult_Chained_64.dds</File><File>Art/LOTM_AI_Cult_Chained_80.dds</File><File>Art/LOTM_AI_Cult_Chained_128.dds</File><File>Art/LOTM_AI_Cult_Chained_200.dds</File><File>Art/LOTM_AI_Cult_Chained_256.dds</File>
+			<File>Art/LOTM_AI_Cult_FleshPuppetMark_40.dds</File><File>Art/LOTM_AI_Cult_FleshPuppetMark_64.dds</File><File>Art/LOTM_AI_Cult_FleshPuppetMark_256.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon22.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon30.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon32.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon38.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon50.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon70.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon80.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon95.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon200.dds</File>
+			<File>Art/LOTM_RP_RedPriestGameIcon256.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon22.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon30.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon32.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon38.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon50.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon70.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon80.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon95.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon200.dds</File>
+			<File>Art/LOTM_PP_PerfectGameIcon256.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon22.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon30.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon32.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon38.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon50.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon70.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon80.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon95.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon200.dds</File>
+			<File>Art/LOTM_BE_BlackEmperorGameIcon256.dds</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_TP_ART_FILES" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>UI/LOTM_TP_ControlPanel.lua</File><File>UI/LOTM_TP_ControlPanel.xml</File>
+			<File>UI/LOTM_TP_CityAction.lua</File><File>UI/LOTM_TP_CityAction.xml</File>
+			<File>UI/DiplomacyDealView_LOTM_TP.lua</File>
+			<File>Art/LOTM_TP_ThiefGameIcon22.dds</File><File>Art/LOTM_TP_ThiefGameIcon30.dds</File><File>Art/LOTM_TP_ThiefGameIcon32.dds</File><File>Art/LOTM_TP_ThiefGameIcon38.dds</File><File>Art/LOTM_TP_ThiefGameIcon50.dds</File><File>Art/LOTM_TP_ThiefGameIcon64.dds</File><File>Art/LOTM_TP_ThiefGameIcon70.dds</File><File>Art/LOTM_TP_ThiefGameIcon80.dds</File><File>Art/LOTM_TP_ThiefGameIcon95.dds</File><File>Art/LOTM_TP_ThiefGameIcon200.dds</File><File>Art/LOTM_TP_ThiefGameIcon256.dds</File>
+			<File>Art/LOTM_TP_ThiefMarkCentered40.dds</File><File>Art/LOTM_TP_ThiefMarkCentered384.dds</File><File>Art/LOTM_TP_ThiefMarkCentered512.dds</File><File>Art/LOTM_TP_ThiefMarkCentered640.dds</File><File>Art/LOTM_TP_ThiefMarkCentered768.dds</File>
+			<File>Art/LOTM_TP_FakeGoldIcon22.dds</File><File>Art/LOTM_TP_FakeGoldIcon30.dds</File><File>Art/LOTM_TP_FakeGoldIcon32.dds</File><File>Art/LOTM_TP_FakeGoldIcon38.dds</File><File>Art/LOTM_TP_FakeGoldIcon50.dds</File><File>Art/LOTM_TP_FakeGoldIcon64.dds</File><File>Art/LOTM_TP_FakeGoldIcon80.dds</File><File>Art/LOTM_TP_FakeGoldIcon128.dds</File><File>Art/LOTM_TP_FakeGoldIcon256.dds</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_RESCUE_DIFFICULTY_UI_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_DifficultyChoice.lua</File>
+			<File>UI/LOTM_RESCUE_DifficultyChoice.xml</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_RESCUE_ENERGY_ASSET_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_RESCUE_PurificationEnergy.png</File>
+			<File>Art/LOTM_RESCUE_PurificationEnergy22.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy30.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy32.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy38.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy50.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy64.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy80.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy128.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy256.dds</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_RESCUE_TP_ICON_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>Art/LOTM_TP_ThiefGameIcon22.dds</File><File>Art/LOTM_TP_ThiefGameIcon30.dds</File><File>Art/LOTM_TP_ThiefGameIcon32.dds</File><File>Art/LOTM_TP_ThiefGameIcon38.dds</File><File>Art/LOTM_TP_ThiefGameIcon50.dds</File><File>Art/LOTM_TP_ThiefGameIcon64.dds</File><File>Art/LOTM_TP_ThiefGameIcon70.dds</File><File>Art/LOTM_TP_ThiefGameIcon80.dds</File><File>Art/LOTM_TP_ThiefGameIcon95.dds</File><File>Art/LOTM_TP_ThiefGameIcon200.dds</File><File>Art/LOTM_TP_ThiefGameIcon256.dds</File>
+			<File>Art/LOTM_TP_ThiefMarkCentered40.dds</File><File>Art/LOTM_TP_ThiefMarkCentered384.dds</File><File>Art/LOTM_TP_ThiefMarkCentered512.dds</File><File>Art/LOTM_TP_ThiefMarkCentered640.dds</File><File>Art/LOTM_TP_ThiefMarkCentered768.dds</File>
+		</ImportFiles>
+		<!-- Import the controller before the XML add-in creates its context. -->
+		<ImportFiles id="LOTM_RESCUE_ENERGY_UI_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_EnergyPanel.lua</File>
+			<File>UI/LOTM_RESCUE_EnergyPanel.xml</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_RESCUE_SACRIFICE_UI_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_Sacrifice.lua</File>
+		</ImportFiles>
+		<UpdateDatabase id="LOTM_PATH_PROJECT_RULES_DATABASE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>205</LoadOrder></Properties>
+			<File>Gameplay/LOTM_PathProjectRules.sql</File>
+		</UpdateDatabase>
+		<AddGameplayScripts id="LOTM_RESCUE_PHASE1_GAMEPLAY_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>205</LoadOrder></Properties>
+			<File>Scripts/LOTM_MP241_Phase1.lua</File>
+		</AddGameplayScripts>
+		<AddGameplayScripts id="LOTM_RESCUE_PHASE2A_GAMEPLAY_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>206</LoadOrder></Properties>
+			<File>Scripts/LOTM_MP241_Phase2.lua</File>
+		</AddGameplayScripts>
+		<AddGameplayScripts id="LOTM_RESCUE_PHASE3_GAMEPLAY_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>207</LoadOrder></Properties>
+			<File>Scripts/LOTM_MP241_Phase3.lua</File>
+		</AddGameplayScripts>
+		<AddGameplayScripts id="LOTM_MP241_PRE_MAIN_BOOTSTRAP" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>208</LoadOrder></Properties>
+			<File>Scripts/LOTM_MP241_PreMainBootstrap.lua</File>
+		</AddGameplayScripts>
+		<AddUserInterfaces id="LOTM_RP_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>210</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_Probe.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RP_COMIC_VIEWER_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>215</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_ComicViewer.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RP_HUD_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>220</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_HUD.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RP_PATH_CHOICE_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>230</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_PathChoice.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RP_LAUNCH_BUTTON_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>240</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_LaunchButton.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RP_SEQUENCE0_CEREMONY_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>250</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_Sequence0Ceremony.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_TP_CONTROL_PANEL_UI_ADDIN" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>255</LoadOrder></Properties>
+			<File>UI/LOTM_TP_ControlPanel.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_TP_CITY_ACTION_UI_ADDIN" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>256</LoadOrder></Properties>
+			<File>UI/LOTM_TP_CityAction.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_BE_EVENT_OBSERVER_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>260</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_BE_EventObserver.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_PP_ARTIFACTS_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>271</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_PP_ArtifactsScreen.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_PP_ARTIFACT_SHOWCASE_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>272</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_PP_ArtifactShowcase.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_ARTIFACT_PILLAGE_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>272</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_ArtifactPillage.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_SACRIFICE_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>273</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_Sacrifice.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_WORLD_GOODY_POPUP_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>274</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_WORLD_Popup.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RP_MANUAL_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<Context>InGame</Context>
+				<LoadOrder>274</LoadOrder>
+			</Properties>
+			<File>UI/LOTM_RP_Manual.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_WORLD_CHURCH_PANEL_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><Context>InGame</Context><LoadOrder>275</LoadOrder></Properties>
+			<File>UI/LOTM_WORLD_ChurchPanel.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_WORLD_CHURCH_MARKERS_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><Context>InGame</Context><LoadOrder>276</LoadOrder></Properties>
+			<File>UI/LOTM_WORLD_ChurchQuestMarkers.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_CITY_BOOTSTRAP_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>276</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_CityBootstrap.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_DIFFICULTY_CHOICE_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>276</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_DifficultyChoice.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_PHASE1_MARKERS_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>277</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_Phase1Markers.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_PHASE6_PURIFICATION_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>277</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_Purification.xml</File>
+		</AddUserInterfaces>
+		<AddUserInterfaces id="LOTM_RESCUE_ENERGY_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>278</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_EnergyPanel.xml</File>
+		</AddUserInterfaces>
+		<ImportFiles id="LOTM_RESCUE_RUNTIME_EVENTS_UI_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>278</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_RuntimeEvents.lua</File>
+		</ImportFiles>
+		<AddUserInterfaces id="LOTM_RESCUE_RUNTIME_EVENTS_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>278</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_RuntimeEvents.xml</File>
+		</AddUserInterfaces>
+		<ImportFiles id="LOTM_RESCUE_CAMP_ACTION_UI_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>278</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_CampAction.lua</File>
+		</ImportFiles>
+		<AddUserInterfaces id="LOTM_RESCUE_CAMP_ACTION_UI_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><Context>InGame</Context><LoadOrder>278</LoadOrder></Properties>
+			<File>UI/LOTM_RESCUE_CampAction.xml</File>
+		</AddUserInterfaces>
+		<ImportFiles id="LOTM_RESCUE_REDEMPTION_VICTORY_UI" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>278</LoadOrder></Properties>
+			<File>UI/EndGameMenu_LOTM_Redemption.lua</File>
+		</ImportFiles>
+		<ReplaceUIScript id="LOTM_RP_EXPANSION_INTRO_BRIDGE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>280</LoadOrder>
+				<LuaContext>ExpansionIntro</LuaContext>
+				<LuaReplace>UI/LOTM_RP_ExpansionIntroBridge.lua</LuaReplace>
+			</Properties>
+		</ReplaceUIScript>
+		<ReplaceUIScript id="LOTM_PP_WORKSHOP_UNIT_FLAGS" criteria="LOTM_RP_EXPANSION_2">
+			<Properties>
+				<LoadOrder>280</LoadOrder>
+				<LuaContext>UnitFlagManager</LuaContext>
+				<LuaReplace>UI/LOTM_PP_UnitFlagManager.lua</LuaReplace>
+			</Properties>
+		</ReplaceUIScript>
+		<ReplaceUIScript id="LOTM_AI_CULT_CITY_YIELD_SOURCES" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>281</LoadOrder><LuaContext>CityPanel</LuaContext><LuaReplace>UI/LOTM_AI_Cult_CityPanel.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<ReplaceUIScript id="LOTM_WORLD_VIRTUAL_CHURCH_CITY_STATES" criteria="LOTM_RP_EXPANSION_2_NO_BETTER_CITY_STATES">
+			<Properties><LoadOrder>99988</LoadOrder><LuaContext>CityStates</LuaContext><LuaReplace>UI/LOTM_WORLD_CityStates.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<ReplaceUIScript id="LOTM_WORLD_VIRTUAL_CHURCH_CITY_STATES_BETTER" criteria="LOTM_RP_EXPANSION_2_BETTER_CITY_STATES">
+			<Properties><LoadOrder>99989</LoadOrder><LuaContext>CityStates</LuaContext><LuaReplace>UI/LOTM_WORLD_CityStates_Better.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<ImportFiles id="LOTM_RESCUE_TWO_ROW_DIPLOMACY_RIBBON_XML" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>99990</LoadOrder></Properties>
+			<File>UI/DiplomacyRibbon.xml</File>
+		</ImportFiles>
+		<ReplaceUIScript id="LOTM_RESCUE_TWO_ROW_DIPLOMACY_RIBBON" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>99991</LoadOrder><LuaContext>DiplomacyRibbon</LuaContext><LuaReplace>UI/LOTM_RESCUE_DiplomacyRibbon.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<ReplaceUIScript id="LOTM_AI_CULT_DIPLOMACY_OVERVIEW" criteria="LOTM_RP_EXPANSION_2_NO_QUICK_DEALS">
+			<Properties><LoadOrder>100000</LoadOrder><LuaContext>DiplomacyActionView</LuaContext><LuaReplace>UI/LOTM_AI_Cult_Diplomacy.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<ReplaceUIScript id="LOTM_AI_CULT_DIPLOMACY_QUICK_DEALS" criteria="LOTM_RP_EXPANSION_2_QUICK_DEALS">
+			<Properties><LoadOrder>100001</LoadOrder><LuaContext>DiplomacyActionView</LuaContext><LuaReplace>UI/LOTM_AI_Cult_Diplomacy_QuickDeals.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<ImportFiles id="LOTM_RESCUE_CITY_BANNER_EXTENSION" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>100100</LoadOrder></Properties>
+			<File>UI/CityBannerManager_LOTM_RESCUE.lua</File>
+		</ImportFiles>
+		<AddGameplayScripts id="LOTM_QD_MULTIPLAYER_COMPAT" criteria="LOTM_RP_EXPANSION_2_QUICK_DEALS">
+			<Properties><LoadOrder>100101</LoadOrder></Properties>
+			<File>Scripts/LOTM_QD_MultiplayerCompat.lua</File>
+		</AddGameplayScripts>
+	</InGameActions>
+	<Files>
+		<File>Gameplay/LOTM_PathProjectRules.sql</File>
+		<File>Scripts/LOTM_StartupTrace.lua</File>
+		<File>UI/LOTM_RP_ComicViewer.lua</File>
+		<File>UI/LOTM_RP_ComicViewer.xml</File>
+		<File>Gameplay/LOTM_RESCUE_ClanRegistry.sql</File>
+		<File>Art/LOTM_RESCUE_ClanRegistry_Icons.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_RESCUE_ClanRegistryText.xml</File>
+		<File>Text/en_US/LOTM_RESCUE_ClanRegistryText.xml</File>
+		<File>Scripts/LOTM_RESCUE_SyncActions.lua</File>
+		<File>Scripts/LOTM_RESCUE_Difficulty.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase6.lua</File>
+		<File>Scripts/LOTM_RESCUE_Thief.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase7.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase8.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase9.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase9Digestion.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase10A.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase10.lua</File>
+		<File>Gameplay/LOTM_RESCUE_Phase10.sql</File>
+		<File>Art/LOTM_RESCUE_Phase10.dep</File>
+		<File>Art/LOTM_RESCUE_Phase10_Units.artdef</File>
+		<File>Art/LOTMGodModels/LOTMGodModels.dep</File>
+		<File>Art/LOTMGodModels/ArtDefs/Unit_Bins.artdef</File>
+		<File>Art/LOTMGodModels/ArtDefs/Units.artdef</File>
+		<File>Art/LOTMGodModels/Platforms/Windows/BLPs/LOTMGodModels.blp</File>
+		<File>Art/LOTMGodModels/Platforms/MacOS/BLPs/LOTMGodModels.blp</File>
+		<File>Art/LOTM_RESCUE_Phase10_Icons.xml</File>
+		<File>Gameplay/LOTM_RESCUE_Phase7.sql</File>
+		<File>Gameplay/LOTM_RESCUE_Phase8.sql</File>
+		<File>Gameplay/LOTM_RESCUE_Phase9.sql</File>
+		<File>UI/LOTM_RESCUE_Purification.lua</File>
+		<File>UI/EndGameMenu_LOTM_Redemption.lua</File>
+		<File>UI/LOTM_RESCUE_Purification.xml</File>
+		<File>UI/LOTM_RESCUE_EnergyPanel.lua</File>
+		<File>UI/LOTM_RESCUE_EnergyPanel.xml</File>
+		<File>Gameplay/LOTM_RESCUE_Thief.sql</File>
+		<File>Art/LOTM_RESCUE_PurificationEnergy.png</File>
+		<File>Art/LOTM_RESCUE_Energy_Icons.xml</File>
+		<File>Art/LOTM_RESCUE_PurificationEnergy22.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy30.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy32.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy38.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy50.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy64.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy80.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy128.dds</File><File>Art/LOTM_RESCUE_PurificationEnergy256.dds</File>
+		<File>UI/DiplomacyRibbon.xml</File>
+		<File>UI/LOTM_RESCUE_DiplomacyRibbon.lua</File>
+		<File>UI/LOTM_WORLD_CityStates_Better.lua</File>
+		<File>Gameplay/LOTM_RESCUE_Phase4.xml</File>
+		<File>Gameplay/LOTM_RESCUE_Phase5.sql</File>
+		<File>Scripts/LOTM_RESCUE_Phase5.lua</File>
+		<File>Scripts/LOTM_RESCUE_DirectMonsters.lua</File>
+		<File>Art/LOTM_RESCUE_Phase4.dep</File>
+		<File>Art/LOTM_RESCUE_Phase4_Units.artdef</File>
+		<File>Art/LOTM_RESCUE_Phase4_Icons.xml</File>
+		<File>Gameplay/LOTM_RESCUE_Phase3.xml</File>
+		<File>Scripts/LOTM_RESCUE_Phase3.lua</File>
+		<File>Art/LOTM_RESCUE_Phase3.dep</File>
+		<File>Art/LOTM_RESCUE_Phase3_Units.artdef</File>
+		<File>Art/LOTM_RESCUE_Phase3_Icons.xml</File>
+		<File>Gameplay/LOTM_RESCUE_City.xml</File>
+		<File>Scripts/LOTM_RESCUE_Phase2Test.lua</File>
+		<File>Scripts/LOTM_RESCUE_Phase1.lua</File>
+		<File>UI/LOTM_RESCUE_Phase1Markers.lua</File>
+		<File>UI/LOTM_RESCUE_Phase1Markers.xml</File>
+		<File>UI/LOTM_RESCUE_CityBootstrap.lua</File>
+		<File>UI/LOTM_RESCUE_CityBootstrap.xml</File>
+		<File>UI/LOTM_RESCUE_DifficultyChoice.lua</File>
+		<File>UI/LOTM_RESCUE_DifficultyChoice.xml</File>
+		<File>UI/LOTM_RESCUE_TerritoryColors.lua</File>
+		<File>UI/LOTM_RESCUE_TerritoryColors.xml</File>
+		<File>UI/CityBannerManager_LOTM_RESCUE.lua</File>
+		<File>Text/en_US/LOTM_RP_ManualText.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_RP_ManualText.xml</File>
+		<File>UI/LOTM_RP_Manual.lua</File>
+		<File>UI/LOTM_RP_Manual.xml</File>
+		<File>UI/LOTM_RP_ExpansionIntroBridge.lua</File>
+		<File>Art/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_45.dds</File>
+		<File>Art/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_64.dds</File>
+		<File>Art/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_256.dds</File>
+		<File>Art/LOTM_ART_PP_PERPETUAL_GEARBOX_45.dds</File>
+		<File>Art/LOTM_ART_PP_PERPETUAL_GEARBOX_64.dds</File>
+		<File>Art/LOTM_ART_PP_PERPETUAL_GEARBOX_256.dds</File>
+		<File>Art/LOTM_ART_PP_ERROR_ASTROLABE_45.dds</File>
+		<File>Art/LOTM_ART_PP_ERROR_ASTROLABE_64.dds</File>
+		<File>Art/LOTM_ART_PP_ERROR_ASTROLABE_256.dds</File>
+		<File>Art/LOTM_ART_PP_HERMES_FURNACE_45.dds</File>
+		<File>Art/LOTM_ART_PP_HERMES_FURNACE_64.dds</File>
+		<File>Art/LOTM_ART_PP_HERMES_FURNACE_256.dds</File>
+		<File>Art/LOTM_ART_PP_MYSTERY_BLUEPRINT_45.dds</File>
+		<File>Art/LOTM_ART_PP_MYSTERY_BLUEPRINT_64.dds</File>
+		<File>Art/LOTM_ART_PP_MYSTERY_BLUEPRINT_256.dds</File>
+		<File>Art/LOTM_ART_PP_KNOWLEDGE_CASKET_45.dds</File>
+		<File>Art/LOTM_ART_PP_KNOWLEDGE_CASKET_64.dds</File>
+		<File>Art/LOTM_ART_PP_KNOWLEDGE_CASKET_256.dds</File>
+		<File>Art/LOTM_ART_PP_CIVILIZATION_STELE_45.dds</File>
+		<File>Art/LOTM_ART_PP_CIVILIZATION_STELE_64.dds</File>
+		<File>Art/LOTM_ART_PP_CIVILIZATION_STELE_256.dds</File>
+		<File>Art/LOTM_ART_RP_DISASTER_EMBER_45.dds</File>
+		<File>Art/LOTM_ART_RP_DISASTER_EMBER_64.dds</File>
+		<File>Art/LOTM_ART_RP_DISASTER_EMBER_256.dds</File>
+		<File>Art/LOTM_ART_RP_CONSPIRATOR_LETTER_45.dds</File>
+		<File>Art/LOTM_ART_RP_CONSPIRATOR_LETTER_64.dds</File>
+		<File>Art/LOTM_ART_RP_CONSPIRATOR_LETTER_256.dds</File>
+		<File>Art/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_45.dds</File>
+		<File>Art/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_64.dds</File>
+		<File>Art/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_256.dds</File>
+		<File>Art/LOTM_ART_RP_IRONBLOOD_BANNER_45.dds</File>
+		<File>Art/LOTM_ART_RP_IRONBLOOD_BANNER_64.dds</File>
+		<File>Art/LOTM_ART_RP_IRONBLOOD_BANNER_256.dds</File>
+		<File>Art/LOTM_ART_RP_WAR_SCRIPTURE_45.dds</File>
+		<File>Art/LOTM_ART_RP_WAR_SCRIPTURE_64.dds</File>
+		<File>Art/LOTM_ART_RP_WAR_SCRIPTURE_256.dds</File>
+		<File>Art/LOTM_ART_RP_DISASTER_WEATHER_45.dds</File>
+		<File>Art/LOTM_ART_RP_DISASTER_WEATHER_64.dds</File>
+		<File>Art/LOTM_ART_RP_DISASTER_WEATHER_256.dds</File>
+		<File>Art/LOTM_ART_RP_CONQUEROR_CROWN_45.dds</File>
+		<File>Art/LOTM_ART_RP_CONQUEROR_CROWN_64.dds</File>
+		<File>Art/LOTM_ART_RP_CONQUEROR_CROWN_256.dds</File>
+		<File>Art/LOTM_ART_BE_GOLDEN_BRIBE_45.dds</File>
+		<File>Art/LOTM_ART_BE_GOLDEN_BRIBE_64.dds</File>
+		<File>Art/LOTM_ART_BE_GOLDEN_BRIBE_256.dds</File>
+		<File>Art/LOTM_ART_BE_CORRUPTION_TAXBOOK_45.dds</File>
+		<File>Art/LOTM_ART_BE_CORRUPTION_TAXBOOK_64.dds</File>
+		<File>Art/LOTM_ART_BE_CORRUPTION_TAXBOOK_256.dds</File>
+		<File>Art/LOTM_ART_BE_CHAOS_CODEX_45.dds</File>
+		<File>Art/LOTM_ART_BE_CHAOS_CODEX_64.dds</File>
+		<File>Art/LOTM_ART_BE_CHAOS_CODEX_256.dds</File>
+		<File>Art/LOTM_ART_BE_DEPRAVED_FEAST_45.dds</File>
+		<File>Art/LOTM_ART_BE_DEPRAVED_FEAST_64.dds</File>
+		<File>Art/LOTM_ART_BE_DEPRAVED_FEAST_256.dds</File>
+		<File>Art/LOTM_ART_BE_FRENZY_SCEPTER_45.dds</File>
+		<File>Art/LOTM_ART_BE_FRENZY_SCEPTER_64.dds</File>
+		<File>Art/LOTM_ART_BE_FRENZY_SCEPTER_256.dds</File>
+		<File>Art/LOTM_ART_BE_ENTROPY_CROWN_45.dds</File>
+		<File>Art/LOTM_ART_BE_ENTROPY_CROWN_64.dds</File>
+		<File>Art/LOTM_ART_BE_ENTROPY_CROWN_256.dds</File>
+		<File>Art/LOTM_ART_BE_ORDER_CONVERTER_45.dds</File>
+		<File>Art/LOTM_ART_BE_ORDER_CONVERTER_64.dds</File>
+		<File>Art/LOTM_ART_BE_ORDER_CONVERTER_256.dds</File>
+		<File>Art/LOTM_ArtifactLaunchIcon40.dds</File>
+		<File>Art/LOTM_ArtifactLaunchIcon64.dds</File>
+		<File>Art/LOTM_ArtifactLaunchIcon256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_GOLDEN_APPRAISAL_MIRROR_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_PERPETUAL_GEARBOX_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_PERPETUAL_GEARBOX_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_PERPETUAL_GEARBOX_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_ERROR_ASTROLABE_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_ERROR_ASTROLABE_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_ERROR_ASTROLABE_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_HERMES_FURNACE_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_HERMES_FURNACE_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_HERMES_FURNACE_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_MYSTERY_BLUEPRINT_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_MYSTERY_BLUEPRINT_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_MYSTERY_BLUEPRINT_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_KNOWLEDGE_CASKET_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_KNOWLEDGE_CASKET_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_KNOWLEDGE_CASKET_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_CIVILIZATION_STELE_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_CIVILIZATION_STELE_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_PP_CIVILIZATION_STELE_256.dds</File>
+		<File>Art/LOTM_Artifact_Icons.xml</File>
+		<File>Art/Artifacts/LOTM_ART_RP_DISASTER_EMBER_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_DISASTER_EMBER_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_DISASTER_EMBER_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_CONSPIRATOR_LETTER_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_CONSPIRATOR_LETTER_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_CONSPIRATOR_LETTER_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_BLOOD_HARVEST_SICKLE_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_IRONBLOOD_BANNER_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_IRONBLOOD_BANNER_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_IRONBLOOD_BANNER_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_WAR_SCRIPTURE_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_WAR_SCRIPTURE_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_WAR_SCRIPTURE_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_DISASTER_WEATHER_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_DISASTER_WEATHER_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_DISASTER_WEATHER_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_CONQUEROR_CROWN_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_CONQUEROR_CROWN_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_RP_CONQUEROR_CROWN_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_GOLDEN_BRIBE_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_GOLDEN_BRIBE_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_GOLDEN_BRIBE_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_CORRUPTION_TAXBOOK_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_CORRUPTION_TAXBOOK_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_CORRUPTION_TAXBOOK_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_CHAOS_CODEX_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_CHAOS_CODEX_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_CHAOS_CODEX_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_DEPRAVED_FEAST_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_DEPRAVED_FEAST_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_DEPRAVED_FEAST_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_FRENZY_SCEPTER_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_FRENZY_SCEPTER_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_FRENZY_SCEPTER_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_ENTROPY_CROWN_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_ENTROPY_CROWN_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_ENTROPY_CROWN_256.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_ORDER_CONVERTER_45.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_ORDER_CONVERTER_64.dds</File>
+		<File>Art/Artifacts/LOTM_ART_BE_ORDER_CONVERTER_256.dds</File>
+		<File>Art/LOTM_RP.dep</File>
+		<File>Art/Comics/LOTM_Comic_1-1.png</File><File>Art/Comics/LOTM_Comic_1-2.png</File><File>Art/Comics/LOTM_Comic_1-3.png</File>
+		<File>Art/Comics/LOTM_Comic_2-1.png</File><File>Art/Comics/LOTM_Comic_2-2.png</File><File>Art/Comics/LOTM_Comic_2-3.png</File><File>Art/Comics/LOTM_Comic_2-4.png</File>
+		<File>Art/Comics/LOTM_Comic_2-5.png</File><File>Art/Comics/LOTM_Comic_2-6.png</File><File>Art/Comics/LOTM_Comic_2-7.png</File><File>Art/Comics/LOTM_Comic_2-8.png</File>
+		<File>Art/Comics/LOTM_Comic_3-1.png</File><File>Art/Comics/LOTM_Comic_3-2.png</File>
+		<File>Art/Comics/LOTM_Comic_1-1.dds</File><File>Art/Comics/LOTM_Comic_1-2.dds</File><File>Art/Comics/LOTM_Comic_1-3.dds</File>
+		<File>Art/Comics/LOTM_Comic_2-1.dds</File><File>Art/Comics/LOTM_Comic_2-2.dds</File><File>Art/Comics/LOTM_Comic_2-3.dds</File><File>Art/Comics/LOTM_Comic_2-4.dds</File>
+		<File>Art/Comics/LOTM_Comic_2-5.dds</File><File>Art/Comics/LOTM_Comic_2-6.dds</File><File>Art/Comics/LOTM_Comic_2-7.dds</File><File>Art/Comics/LOTM_Comic_2-8.dds</File>
+		<File>Art/Comics/LOTM_Comic_3-1.dds</File><File>Art/Comics/LOTM_Comic_3-2.dds</File>
+		<File>Art/LOTM_RP_Icons.xml</File>
+		<File>Art/LOTM_RP_RedPriestMarkCentered40.dds</File>
+		<File>Art/LOTM_RP_RedPriestMarkCentered384.dds</File>
+		<File>Art/LOTM_RP_RedPriestMarkCentered512.dds</File>
+		<File>Art/LOTM_RP_RedPriestMarkCentered640.dds</File>
+		<File>Art/LOTM_RP_RedPriestMarkCentered768.dds</File>
+		<File>Art/LOTM_PP_PerfectMarkCentered40.dds</File>
+		<File>Art/LOTM_PP_PerfectMarkCentered384.dds</File>
+		<File>Art/LOTM_PP_PerfectMarkCentered512.dds</File>
+		<File>Art/LOTM_PP_PerfectMarkCentered640.dds</File>
+		<File>Art/LOTM_PP_PerfectMarkCentered768.dds</File>
+		<File>Art/LOTM_WORLD_MonsterMarkSource.png</File>
+		<File>Art/LOTM_WORLD_MonsterMark40.dds</File>
+		<File>Art/LOTM_WORLD_MonsterMark256.dds</File>
+		<File>Art/LOTM_RESCUE_OuterGodStarMarkSource.png</File>
+		<File>Art/LOTM_RESCUE_OuterGodStarMark40.dds</File>
+		<File>Art/LOTM_RESCUE_OuterGodStarMark256.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorMarkCentered40.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorMarkCentered384.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorMarkCentered512.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorMarkCentered640.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorMarkCentered768.dds</File>
+		<File>Art/LOTM_RESCUE_AstralDescent_22.dds</File>
+		<File>Art/LOTM_Church_FOOL_22.dds</File>
+		<File>Art/LOTM_Church_NIGHT_22.dds</File>
+		<File>Art/LOTM_Church_STORM_22.dds</File>
+		<File>Art/LOTM_Church_FOOL_26.dds</File>
+		<File>Art/LOTM_Church_FOOL_32.dds</File>
+		<File>Art/LOTM_Church_FOOL_36.dds</File>
+		<File>Art/LOTM_Church_FOOL_40.dds</File>
+		<File>Art/LOTM_Church_FOOL_56.dds</File>
+		<File>Art/LOTM_Church_FOOL_64.dds</File>
+		<File>Art/LOTM_Church_FOOL_128.dds</File>
+		<File>Art/LOTM_Church_FOOL_200.dds</File>
+		<File>Art/LOTM_Church_FOOL_256.dds</File>
+		<File>Art/LOTM_Church_NIGHT_26.dds</File>
+		<File>Art/LOTM_Church_NIGHT_32.dds</File>
+		<File>Art/LOTM_Church_NIGHT_36.dds</File>
+		<File>Art/LOTM_Church_NIGHT_40.dds</File>
+		<File>Art/LOTM_Church_NIGHT_56.dds</File>
+		<File>Art/LOTM_Church_NIGHT_64.dds</File>
+		<File>Art/LOTM_Church_NIGHT_128.dds</File>
+		<File>Art/LOTM_Church_NIGHT_200.dds</File>
+		<File>Art/LOTM_Church_NIGHT_256.dds</File>
+		<File>Art/LOTM_Church_STORM_26.dds</File>
+		<File>Art/LOTM_Church_STORM_32.dds</File>
+		<File>Art/LOTM_Church_STORM_36.dds</File>
+		<File>Art/LOTM_Church_STORM_40.dds</File>
+		<File>Art/LOTM_Church_STORM_56.dds</File>
+		<File>Art/LOTM_Church_STORM_64.dds</File>
+		<File>Art/LOTM_Church_STORM_128.dds</File>
+		<File>Art/LOTM_Church_STORM_200.dds</File>
+		<File>Art/LOTM_Church_STORM_256.dds</File>
+		<File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon256.dds</File>
+		<File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon256.dds</File>
+		<File>Art/LOTM_RESCUE_STORM_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon256.dds</File>
+		<File>Art/LOTM_AI_Cult_Demoness_22.dds</File><File>Art/LOTM_AI_Cult_Demoness_32.dds</File><File>Art/LOTM_AI_Cult_Demoness_40.dds</File><File>Art/LOTM_AI_Cult_Demoness_50.dds</File><File>Art/LOTM_AI_Cult_Demoness_64.dds</File><File>Art/LOTM_AI_Cult_Demoness_80.dds</File><File>Art/LOTM_AI_Cult_Demoness_128.dds</File><File>Art/LOTM_AI_Cult_Demoness_200.dds</File><File>Art/LOTM_AI_Cult_Demoness_256.dds</File>
+		<File>Art/LOTM_AI_Cult_HangedMan_22.dds</File><File>Art/LOTM_AI_Cult_HangedMan_32.dds</File><File>Art/LOTM_AI_Cult_HangedMan_40.dds</File><File>Art/LOTM_AI_Cult_HangedMan_50.dds</File><File>Art/LOTM_AI_Cult_HangedMan_64.dds</File><File>Art/LOTM_AI_Cult_HangedMan_80.dds</File><File>Art/LOTM_AI_Cult_HangedMan_128.dds</File><File>Art/LOTM_AI_Cult_HangedMan_200.dds</File><File>Art/LOTM_AI_Cult_HangedMan_256.dds</File>
+		<File>Art/LOTM_AI_Cult_Chained_22.dds</File><File>Art/LOTM_AI_Cult_Chained_32.dds</File><File>Art/LOTM_AI_Cult_Chained_40.dds</File><File>Art/LOTM_AI_Cult_Chained_50.dds</File><File>Art/LOTM_AI_Cult_Chained_64.dds</File><File>Art/LOTM_AI_Cult_Chained_80.dds</File><File>Art/LOTM_AI_Cult_Chained_128.dds</File><File>Art/LOTM_AI_Cult_Chained_200.dds</File><File>Art/LOTM_AI_Cult_Chained_256.dds</File>
+		<File>Art/LOTM_AI_Cult_FleshPuppetMark_40.dds</File><File>Art/LOTM_AI_Cult_FleshPuppetMark_64.dds</File><File>Art/LOTM_AI_Cult_FleshPuppetMark_256.dds</File>
+		<File>Art/LOTM_Church_Icons.xml</File>
+		<File>Art/LOTM_AI_Cult_Icons.xml</File>
+		<File>Gameplay/LOTM_WORLD_Churches.sql</File>
+		<File>Gameplay/LOTM_AI_Cults.sql</File>
+		<File>Scripts/LOTM_WORLD_Churches.lua</File>
+		<File>Scripts/LOTM_AI_Cults.lua</File>
+		<File>Scripts/LOTM_AI_Cult_Hanged.lua</File>
+		<File>UI/LOTM_WORLD_CityStates.lua</File>
+		<File>UI/LOTM_WORLD_ChurchPanel.lua</File>
+		<File>UI/LOTM_WORLD_ChurchPanel.xml</File>
+		<File>UI/LOTM_WORLD_ChurchQuestMarkers.lua</File>
+		<File>UI/LOTM_WORLD_ChurchQuestMarkers.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_WORLD_ChurchesText.xml</File>
+		<File>Text/en_US/LOTM_WORLD_ChurchesText.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_AI_CultsText.xml</File>
+		<File>Text/en_US/LOTM_AI_CultsText.xml</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon22.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon30.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon32.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon38.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon50.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon70.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon80.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon95.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon200.dds</File>
+		<File>Art/LOTM_RP_RedPriestGameIcon256.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon22.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon30.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon32.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon38.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon50.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon70.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon80.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon95.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon200.dds</File>
+		<File>Art/LOTM_PP_PerfectGameIcon256.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon22.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon30.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon32.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon38.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon50.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon70.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon80.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon95.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon200.dds</File>
+		<File>Art/LOTM_BE_BlackEmperorGameIcon256.dds</File>
+		<File>Art/LOTM_RP_Units.artdef</File>
+		<File>Config/LOTM_RP_PathSelection.xml</File>
+		<File>Gameplay/LOTM_RP_Types.xml</File>
+		<File>Gameplay/LOTM_RP_Promotions.xml</File>
+		<File>Gameplay/LOTM_RP_Beliefs.xml</File>
+		<File>Gameplay/LOTM_RP_Units.xml</File>
+		<File>Gameplay/LOTM_RP_ProjectSupport.sql</File>
+		<File>Gameplay/LOTM_RP_Projects.xml</File>
+		<File>Gameplay/LOTM_PP_Perfect.sql</File>
+		<File>Gameplay/LOTM_PP_Artifacts.sql</File>
+		<File>Gameplay/LOTM_RESCUE_Artifacts.sql</File>
+		<File>Gameplay/LOTM_WORLD_GoodyHuts.sql</File>
+		<File>Gameplay/LOTM_WORLD_Events.sql</File>
+		<File>Gameplay/LOTM_WORLD_Monsters.sql</File>
+		<File>Gameplay/LOTM_BE_BlackEmperor.sql</File>
+		<File>Gameplay/LOTM_TP_Thief.sql</File>
+		<File>Gameplay/LOTM_TP_Projects.xml</File>
+		<File>Gameplay/LOTM_RP_Modifiers.xml</File>
+		<File>Gameplay/LOTM_RP_Abilities.xml</File>
+		<File>Scripts/LOTM_RP_Gameplay.lua</File>
+		<File>Scripts/LOTM_RP_Gameplay_Bundle.lua</File>
+		<File>Scripts/LOTM_MP241_Compat.lua</File>
+		<File>Scripts/LOTM_MP241_Phase1.lua</File>
+		<File>Scripts/LOTM_MP241_Phase2.lua</File>
+		<File>Scripts/LOTM_MP241_Phase3.lua</File>
+		<File>Scripts/LOTM_MP241_PreMainBootstrap.lua</File>
+		<File>Scripts/LOTM_MP241_MainBundle.lua</File>
+		<File>Scripts/LOTM_MP_TurnSync.lua</File>
+		<File>Scripts/LOTM_QD_MultiplayerCompat.lua</File>
+		<File>Scripts/LOTM_UnitAddedPerf.lua</File>
+		<File>Scripts/LOTM_Effects.lua</File>
+		<File>Scripts/LOTM_RP_Lifecycle.lua</File>
+		<File>Scripts/LOTM_RP_Progression.lua</File>
+		<File>Scripts/LOTM_RP_Arson.lua</File>
+		<File>Scripts/LOTM_RP_Advanced.lua</File>
+		<File>Scripts/LOTM_PP_Perfect.lua</File>
+		<File>Scripts/LOTM_WORLD_State.lua</File>
+		<File>Scripts/LOTM_WORLD_Barbarians.lua</File>
+		<File>Scripts/LOTM_WORLD_Monsters.lua</File>
+		<File>Scripts/LOTM_WORLD_Events.lua</File>
+		<File>Scripts/LOTM_PP_Artifacts.lua</File>
+		<File>Scripts/LOTM_RESCUE_Artifacts.lua</File>
+		<File>Scripts/LOTM_WORLD_GoodyHuts.lua</File>
+		<File>Scripts/LOTM_PP_Workshops.lua</File>
+		<File>Scripts/LOTM_BE_BlackEmperor.lua</File>
+		<File>Scripts/LOTM_TP_Thief.lua</File>
+		<File>Scripts/LOTM_RP_CommandProbe.lua</File>
+		<File>Scripts/LOTM_DEV_QuickTest.lua</File>
+		<File>Text/en_US/LOTM_RP_ConfigText.xml</File>
+		<File>Text/en_US/LOTM_RP_GameplayText.xml</File>
+		<File>Text/en_US/LOTM_RP_ManualText.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_RP_ConfigText.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_RP_GameplayText.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_RP_ManualText.xml</File>
+		<File>Text/Selected/LOTM_RP_Selected_en_US.xml</File>
+		<File>Text/Selected/LOTM_RP_Selected_zh_Hans_CN.xml</File>
+		<File>Text/en_US/LOTM_TP_ThiefText.xml</File>
+		<File>Text/zh_Hans_CN/LOTM_TP_ThiefText.xml</File>
+		<File>UI/DiplomacyDealView_LOTM_TP.lua</File>
+		<File>UI/LOTM_RP_Probe.lua</File>
+		<File>UI/LOTM_RP_Probe.xml</File>
+		<File>UI/LOTM_RP_HUD.lua</File>
+		<File>UI/LOTM_RP_HUD.xml</File>
+		<File>UI/LOTM_RP_PathChoice.lua</File>
+		<File>UI/LOTM_RP_PathChoice.xml</File>
+		<File>UI/LOTM_RP_LaunchButton.lua</File>
+		<File>UI/LOTM_RP_LaunchButton.xml</File>
+		<File>UI/LOTM_RP_Sequence0Ceremony.lua</File>
+		<File>UI/LOTM_RP_Sequence0Ceremony.xml</File>
+		<File>UI/LOTM_TP_ControlPanel.lua</File>
+		<File>UI/LOTM_TP_ControlPanel.xml</File>
+		<File>UI/LOTM_TP_CityAction.lua</File>
+		<File>UI/LOTM_TP_CityAction.xml</File>
+		<File>UI/LOTM_BE_EventObserver.lua</File>
+		<File>UI/LOTM_BE_EventObserver.xml</File>
+		<File>UI/LOTM_PP_ArtifactsScreen.lua</File>
+		<File>UI/LOTM_PP_ArtifactsScreen.xml</File>
+		<File>UI/LOTM_PP_ArtifactShowcase.lua</File>
+		<File>UI/LOTM_PP_ArtifactShowcase.xml</File>
+		<File>UI/LOTM_RESCUE_ArtifactPillage.lua</File>
+		<File>UI/LOTM_RESCUE_ArtifactPillage.xml</File>
+		<File>UI/LOTM_RESCUE_Sacrifice.lua</File>
+		<File>UI/LOTM_RESCUE_Sacrifice.xml</File>
+		<File>UI/LOTM_RESCUE_CampAction.lua</File>
+		<File>UI/LOTM_RESCUE_CampAction.xml</File>
+		<File>UI/LOTM_RESCUE_RuntimeEvents.lua</File>
+		<File>UI/LOTM_RESCUE_RuntimeEvents.xml</File>
+		<File>Scripts/LOTM_RESCUE_RuntimeEvents.lua</File>
+		<File>UI/LOTM_WORLD_Popup.lua</File>
+		<File>UI/LOTM_WORLD_Popup.xml</File>
+		<File>UI/LOTM_PP_UnitFlagManager.lua</File>
+		<File>UI/LOTM_AI_Cult_Diplomacy.lua</File>
+		<File>UI/LOTM_AI_Cult_Diplomacy_QuickDeals.lua</File>
+		<File>UI/LOTM_AI_Cult_Diplomacy_Extension.lua</File>
+		<File>UI/LOTM_AI_Cult_DiplomacyRow.lua</File>
+		<File>UI/LOTM_AI_Cult_DiplomacyRow.xml</File>
+		<File>UI/LOTM_AI_Cult_CityPanel.lua</File>
+		<File>Art/LOTM_TP_Icons.xml</File>
+		<File>Art/LOTM_RESCUE_TP_Icons.xml</File>
+		<File>Art/LOTM_RESCUE_TimeWorm22.dds</File><File>Art/LOTM_RESCUE_TimeWorm30.dds</File><File>Art/LOTM_RESCUE_TimeWorm32.dds</File><File>Art/LOTM_RESCUE_TimeWorm38.dds</File><File>Art/LOTM_RESCUE_TimeWorm50.dds</File><File>Art/LOTM_RESCUE_TimeWorm64.dds</File><File>Art/LOTM_RESCUE_TimeWorm70.dds</File><File>Art/LOTM_RESCUE_TimeWorm80.dds</File><File>Art/LOTM_RESCUE_TimeWorm95.dds</File><File>Art/LOTM_RESCUE_TimeWorm200.dds</File><File>Art/LOTM_RESCUE_TimeWorm256.dds</File>
+		<File>Art/LOTM_TP_ThiefGameIcon22.dds</File><File>Art/LOTM_TP_ThiefGameIcon30.dds</File><File>Art/LOTM_TP_ThiefGameIcon32.dds</File><File>Art/LOTM_TP_ThiefGameIcon38.dds</File><File>Art/LOTM_TP_ThiefGameIcon50.dds</File><File>Art/LOTM_TP_ThiefGameIcon64.dds</File><File>Art/LOTM_TP_ThiefGameIcon70.dds</File><File>Art/LOTM_TP_ThiefGameIcon80.dds</File><File>Art/LOTM_TP_ThiefGameIcon95.dds</File><File>Art/LOTM_TP_ThiefGameIcon200.dds</File><File>Art/LOTM_TP_ThiefGameIcon256.dds</File>
+		<File>Art/LOTM_TP_ThiefMarkCentered40.dds</File><File>Art/LOTM_TP_ThiefMarkCentered384.dds</File><File>Art/LOTM_TP_ThiefMarkCentered512.dds</File><File>Art/LOTM_TP_ThiefMarkCentered640.dds</File><File>Art/LOTM_TP_ThiefMarkCentered768.dds</File>
+		<File>Art/LOTM_TP_FakeGoldIcon22.dds</File><File>Art/LOTM_TP_FakeGoldIcon30.dds</File><File>Art/LOTM_TP_FakeGoldIcon32.dds</File><File>Art/LOTM_TP_FakeGoldIcon38.dds</File><File>Art/LOTM_TP_FakeGoldIcon50.dds</File><File>Art/LOTM_TP_FakeGoldIcon64.dds</File><File>Art/LOTM_TP_FakeGoldIcon80.dds</File><File>Art/LOTM_TP_FakeGoldIcon128.dds</File><File>Art/LOTM_TP_FakeGoldIcon256.dds</File>
+	</Files>
+</Mod>

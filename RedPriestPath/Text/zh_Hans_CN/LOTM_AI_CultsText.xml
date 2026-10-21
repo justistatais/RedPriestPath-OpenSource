@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+ <Row Tag="LOC_LOTM_CULT_DIPLO_LABEL" Language="zh_Hans_CN"><Text>所属教会</Text></Row>
+ <Row Tag="LOC_LOTM_TP_PRODUCTION_STEAL_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Amount}来自盗火人（序列6）</Text></Row>
+ <Row Tag="LOC_LOTM_TP_PRODUCTION_DEBUFF_TOOLTIP" Language="zh_Hans_CN"><Text>-10%生产力：盗火人（序列6）</Text></Row>
+ <Row Tag="LOC_LOTM_TP_PRODUCTION_DEBUFF_PREVIEW" Language="zh_Hans_CN"><Text>盗火人（序列6）：生产力-10%</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIPLO_VALUE" Language="zh_Hans_CN"><Text>{1_Name} / 第{2_Tier}阶段：{3_Skill}</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_NAME" Language="zh_Hans_CN"><Text>魔女教会</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_NAME" Language="zh_Hans_CN"><Text>倒吊人教会</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_NAME" Language="zh_Hans_CN"><Text>被缚者教会</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T1_NAME" Language="zh_Hans_CN"><Text>巫术</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T2_NAME" Language="zh_Hans_CN"><Text>灾难</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T3_NAME" Language="zh_Hans_CN"><Text>绝望</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T1_NAME" Language="zh_Hans_CN"><Text>低语</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T2_NAME" Language="zh_Hans_CN"><Text>血肉</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T3_NAME" Language="zh_Hans_CN"><Text>堕落</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T1_NAME" Language="zh_Hans_CN"><Text>束缚</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T2_NAME" Language="zh_Hans_CN"><Text>诅咒</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T3_NAME" Language="zh_Hans_CN"><Text>封印</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T1_DESCRIPTION" Language="zh_Hans_CN"><Text>压制得分第一文明：所有城市食物、生产力、科技、文化各-1，并按目标阶段缩放。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T2_DESCRIPTION" Language="zh_Hans_CN"><Text>压制得分第一文明：所有城市食物与生产力-20%，并按目标阶段缩放；不继承巫术。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_T3_DESCRIPTION" Language="zh_Hans_CN"><Text>压制得分第一文明：所有城市宜居度-5、食物与生产力-50%，并按目标阶段缩放；不继承前阶段。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T1_DESCRIPTION" Language="zh_Hans_CN"><Text>与他人交战时，另一方军事单位-5战斗力且每回合-5信仰。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T2_DESCRIPTION" Language="zh_Hans_CN"><Text>新训练的当前主力近战单位成为血肉魔偶（基准+10）；人类主动攻击时基础损失10信仰。无低语。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_MAN_T3_DESCRIPTION" Language="zh_Hans_CN"><Text>与正式途径人类交战时-20战斗力、每回合-20信仰；血肉魔偶基准+20，主动攻击基础损失20信仰。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T1_DESCRIPTION" Language="zh_Hans_CN"><Text>与正式途径人类交战时，其所有战斗单位-1移动力，并按目标阶段缩放。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T2_DESCRIPTION" Language="zh_Hans_CN"><Text>战争中战斗单位-1移动力、-10战斗力；得分第一文明自然领土扩张-50%，均按目标阶段缩放。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_T3_DESCRIPTION" Language="zh_Hans_CN"><Text>与正式途径人类交战时，其所有城市科技与文化-50%；不继承移动、战斗力或领土惩罚。</Text></Row>
+ <Row Tag="LOC_UNIT_LOTM_CULT_FLESH_PUPPET_NAME" Language="zh_Hans_CN"><Text>血肉魔偶</Text></Row>
+ <Row Tag="LOC_UNIT_LOTM_CULT_FLESH_PUPPET_DESCRIPTION" Language="zh_Hans_CN"><Text>倒吊人邪教二、三阶段的等价替换近战单位。实际单位沿用当前最高已解锁通用近战单位的模型、经验、晋升与编队，并分别在基准战斗力B上固定获得+10或+20；玩家主动攻击时按双方阶段损失信仰。百科条目仅作机制说明，不是可训练单位。</Text></Row>
+ <Row Tag="LOC_ABILITY_LOTM_CULT_FLESH_PUPPET_10_DESCRIPTION" Language="zh_Hans_CN"><Text>倒吊人第二阶段等价替换单位：在出生时当前主力近战基准上固定获得10点战斗力。</Text></Row>
+ <Row Tag="LOC_ABILITY_LOTM_CULT_FLESH_PUPPET_20_DESCRIPTION" Language="zh_Hans_CN"><Text>倒吊人第三阶段等价替换单位：在出生时当前主力近战基准上固定获得20点战斗力。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_PREVIEW_HANGED" Language="zh_Hans_CN"><Text>倒吊人邪教：{1_Amount}战斗力</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_PREVIEW_CHAINED" Language="zh_Hans_CN"><Text>被缚者邪教：{1_Amount}战斗力</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_PREVIEW_FLESH_PUPPET" Language="zh_Hans_CN"><Text>血肉魔偶：+{1_Amount}战斗力</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_HANGED_FAITH_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Amount} 倒吊人邪教</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_TOP_YIELD_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Amount} 魔女邪教（全部城市合计）</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_CITY_FLAT_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Amount}来自魔女教会</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DEMONESS_CITY_PERCENT_TOOLTIP" Language="zh_Hans_CN"><Text>{1_Amount}%来自魔女教会</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_CHAINED_TOP_YIELD_TOOLTIP" Language="zh_Hans_CN"><Text>-{1_Amount}% 被缚者邪教（所有城市）</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_DEMONESS_T1_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：每座城市食物、生产、科技、文化各+2。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_DEMONESS_T2_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：继承阶段1；所有城市食物、生产再+40%。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_DEMONESS_T3_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：继承阶段1和2；所有城市再+10宜居度，食物、生产再+100%。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_HANGED_MAN_T1_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：所有战斗单位+10战斗力；每回合+10信仰。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_HANGED_MAN_T2_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：继承阶段1；所有战斗单位再+20战斗力。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_HANGED_MAN_T3_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：继承阶段1和2；所有战斗单位再+40战斗力，每回合再+40信仰。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_CHAINED_T1_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：所有战斗单位+2移动力。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_CHAINED_T2_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：继承阶段1；所有战斗单位再+2移动力、+20战斗力，自然领土扩张速度+100%。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_CHAINED_T3_DESCRIPTION" Language="zh_Hans_CN"><Text>救赎模式累计增益：继承阶段1和2；所有城市科技、文化再+100%。</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_PHASE7_PREVIEW" Language="zh_Hans_CN"><Text>救赎模式教会增益：+{1_Amount}战斗力</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_NOTIFICATION_APPLIED" Language="zh_Hans_CN"><Text>{1_Name}：{2_Skill}正在影响你。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_NOTIFICATION_ENDED" Language="zh_Hans_CN"><Text>{1_Name}：{2_Skill}已停止影响你。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_NOTIFICATION_ENDED_SUMMARY" Language="zh_Hans_CN"><Text>得分目标、战争状态、存活教会或共享阶段已经改变。</Text></Row>
+</LocalizedText></GameData>

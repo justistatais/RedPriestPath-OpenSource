@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Normal-mode Thief pathway projects.  The SQL file keeps the same rows
+     for database compatibility; this explicit XML surface guarantees that
+     the city-production UI receives the project definitions in the same
+     database action as the other pathway projects. -->
+<GameInfo>
+  <Projects>
+    <Row ProjectType="PROJECT_LOTM_TP_SWINDLER_POTION"
+         Name="LOC_PROJECT_LOTM_TP_SWINDLER_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_SWINDLER_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_SWINDLER_POTION_DESCRIPTION"
+         Cost="60" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_GENERIC"/>
+    <Row ProjectType="PROJECT_LOTM_TP_CRYPTOLOGIST_POTION"
+         Name="LOC_PROJECT_LOTM_TP_CRYPTOLOGIST_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_CRYPTOLOGIST_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_CRYPTOLOGIST_POTION_DESCRIPTION"
+         Cost="100" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_TECHNOLOGY"/>
+    <Row ProjectType="PROJECT_LOTM_TP_PROMETHEUS_POTION"
+         Name="LOC_PROJECT_LOTM_TP_PROMETHEUS_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_PROMETHEUS_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_PROMETHEUS_POTION_DESCRIPTION"
+         Cost="140" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_TECHNOLOGY"/>
+    <Row ProjectType="PROJECT_LOTM_TP_DREAM_STEALER_POTION"
+         Name="LOC_PROJECT_LOTM_TP_DREAM_STEALER_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_DREAM_STEALER_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_DREAM_STEALER_POTION_DESCRIPTION"
+         Cost="180" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_GENERIC"/>
+    <Row ProjectType="PROJECT_LOTM_TP_PARASITE_POTION"
+         Name="LOC_PROJECT_LOTM_TP_PARASITE_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_PARASITE_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_PARASITE_POTION_DESCRIPTION"
+         Cost="220" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_CONQUEST"/>
+    <Row ProjectType="PROJECT_LOTM_TP_MENTOR_OF_DECEIT_POTION"
+         Name="LOC_PROJECT_LOTM_TP_MENTOR_OF_DECEIT_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_MENTOR_OF_DECEIT_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_MENTOR_OF_DECEIT_POTION_DESCRIPTION"
+         Cost="260" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_CULTURE"/>
+    <Row ProjectType="PROJECT_LOTM_TP_FATE_TROJAN_POTION"
+         Name="LOC_PROJECT_LOTM_TP_FATE_TROJAN_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_FATE_TROJAN_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_FATE_TROJAN_POTION_DESCRIPTION"
+         Cost="300" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_GENERIC"/>
+    <Row ProjectType="PROJECT_LOTM_TP_WORM_OF_TIME_POTION"
+         Name="LOC_PROJECT_LOTM_TP_WORM_OF_TIME_POTION_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_WORM_OF_TIME_POTION_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_WORM_OF_TIME_POTION_DESCRIPTION"
+         Cost="340" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_TECHNOLOGY"/>
+    <Row ProjectType="PROJECT_LOTM_TP_ERROR_APOTHEOSIS"
+         Name="LOC_PROJECT_LOTM_TP_ERROR_APOTHEOSIS_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_ERROR_APOTHEOSIS_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_ERROR_APOTHEOSIS_DESCRIPTION"
+         Cost="380" MaxPlayerInstances="1" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_GENERIC"/>
+    <!-- Transfer projects intentionally omit MaxPlayerInstances so a
+         completed project can be queued again. -->
+    <Row ProjectType="PROJECT_LOTM_TP_FAITH_TRANSFER"
+         Name="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_DESCRIPTION"
+         Cost="1000" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_RELIGIOUS"/>
+    <Row ProjectType="PROJECT_LOTM_TP_CULTURE_TRANSFER"
+         Name="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_DESCRIPTION_RC316"
+         Cost="1000" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_CULTURE"/>
+    <Row ProjectType="PROJECT_LOTM_TP_FAITH_TRANSFER_II"
+         Name="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_II_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_II_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_II_DESCRIPTION"
+         Cost="2000" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_RELIGIOUS"/>
+    <Row ProjectType="PROJECT_LOTM_TP_CULTURE_TRANSFER_II"
+         Name="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_NAME"
+         ShortName="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_SHORT_NAME"
+         Description="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_DESCRIPTION_RC316"
+         Cost="2000" UnlocksFromEffect="true"
+         AdvisorType="ADVISOR_CULTURE"/>
+  </Projects>
+</GameInfo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+ <Button ID="ActionButton" Hidden="1" Anchor="C,B" Size="44,53" Texture="UnitPanel_ActionButton" ToolTip="LOC_LOTM_TP_CITY_ACTION_TOOLTIP">
+  <Image Anchor="C,C" Offset="0,-2" Size="38,38" Icon="ICON_PROJECT_LOTM_TP_PARASITE_POTION"/>
+ </Button>
+</Context>

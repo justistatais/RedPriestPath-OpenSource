@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_NAME" Language="en_US"><Text>Church of The Fool</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_NAME" Language="en_US"><Text>Church of the Evernight Goddess</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_NAME" Language="en_US"><Text>Church of the Lord of Storms</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PATH" Language="en_US"><Text>Pathway: Fool</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PATH" Language="en_US"><Text>Pathway: Darkness</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PATH" Language="en_US"><Text>Pathway: Tyrant</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_VIRTUAL_TOOLTIP" Language="en_US"><Text>Cityless divine church: accepts Envoys but has no city, army, or Suzerain.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ENVOY_COUNT" Language="en_US"><Text>Current Envoys: {1_Num} [ICON_Envoy]</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_PERMANENT_HEADER" Language="en_US"><Text>Permanent Envoy Effects</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ASSIST_WARNING" Language="en_US"><Text>If another power resolves the target, you receive only the half-strength blessing, with no Envoy or Sealed Artifact.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_QUESTS" Language="en_US"><Text>Oracle states:[NEWLINE]6 Envoys: {1_String}[NEWLINE]10 Envoys: {2_String}[NEWLINE]15 Envoys: {3_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET" Language="en_US"><Text>Current quest: tier {1_Num}; target {2_String}; location {3_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_CAMP_TARGET" Language="en_US"><Text>Current quest: {1_Num}-Envoy Oracle; clear ordinary Barbarian Camps {2_Num}/{3_Num}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_TITLE" Language="en_US"><Text>{1_Num}-Envoy Oracle Quest</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_MONSTER_TARGET" Language="en_US"><Text>Destroy the uncontrolled monster marked on the map (target location: {2_String}). Click the church emblem to locate it.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_WORKSHOP_TARGET" Language="en_US"><Text>Clear the Rampager Workshop marked on the map (target location: {2_String}). Click the church emblem to locate it.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_PENDING" Language="en_US"><Text>Waiting for a valid target for the {1_Num}-Envoy tier.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_REWARD" Language="en_US"><Text>Resolve it yourself: +1 Envoy to this church and the tier's chance for a matching Sealed Artifact, otherwise a full blessing. Another power resolves it: the matching half blessing.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_NO_ACTIVE" Language="en_US"><Text>There is no active Oracle quest.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_NOTIFICATION_MESSAGE" Language="en_US"><Text>{1_String}: {2_Num}-envoy oracle completed</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_ARTIFACT" Language="en_US"><Text>Gained the Sealed Artifact “{1_String}”, placed directly in the artifact inventory. The +1 church envoy for completing your own quest has also been granted.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_FULL_BLESSING" Language="en_US"><Text>Gained a full divine blessing: {1_String}[NEWLINE]+1 envoy to this church has also been granted.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_HALF_BLESSING" Language="en_US"><Text>Another power resolved the target; gained a half blessing: {1_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_STATUS_ARTIFACT" Language="en_US"><Text>{1_Num}-envoy reward: Sealed Artifact “{2_String}” (in inventory)</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_REWARD_STATUS_BLESSING" Language="en_US"><Text>{1_Num}-envoy reward: {2_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_ORACLE_STATES" Language="en_US"><Text>Quest states: 6 Envoys {1_String}; 10 Envoys {2_String}; 15 Envoys {3_String}</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_LOCKED" Language="en_US"><Text>Locked</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_PENDING_TARGET" Language="en_US"><Text>Waiting for target</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_ACTIVE" Language="en_US"><Text>Active</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_COMPLETED_SELF" Language="en_US"><Text>Completed by you</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STATE_COMPLETED_ASSIST" Language="en_US"><Text>Completed by another power</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_COORDINATES" Language="en_US"><Text>coordinates ({1_Num}, {2_Num})</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_LOCATION_UNKNOWN" Language="en_US"><Text>location currently unavailable</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_LOCATE_TARGET" Language="en_US"><Text>Locate target on map</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_MAP_MARKER_TOOLTIP" Language="en_US"><Text>{1_String}: {2_Num}-Envoy Oracle target[NEWLINE]{3_String}[NEWLINE]Click to move the camera to the target.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_NONE" Language="en_US"><Text>None</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_MONSTER" Language="en_US"><Text>Uncontrolled monster</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_WORKSHOP" Language="en_US"><Text>Rampager Workshop</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_TARGET_KIND_BARB_CAMP_COUNT" Language="en_US"><Text>ordinary Barbarian Camps</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESSING" Language="en_US"><Text>Current blessing: tier {1_Num}/{2_String}; {3_Num} player turns remaining</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PERM_1" Language="en_US"><Text>1 Envoy — Guidance of Fate: Capital +4 Culture and Faith; Recon +1 Movement and +2 Sight; other units +1 Sight.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PERM_3" Language="en_US"><Text>3 Envoys — Gathering Above the Gray Fog: all cities +5% Culture and Gold; routes +3 Gold and +1 Culture; Great Person points +15%.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_PERM_6" Language="en_US"><Text>6 Envoys — Favored of the Gray Fog: all units +1 Movement and Sight; Great Person points total +35%; routes total +6 Gold and +1 Culture; one random Eureka and Inspiration each world era.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PERM_1" Language="en_US"><Text>1 Envoy — Tranquil Night: Capital +4 Faith, +4 Culture, and +2 Amenities.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PERM_3" Language="en_US"><Text>3 Envoys — Evernight's Shelter: Holy Sites/buildings +2 Faith, Theater Squares/buildings +2 Culture; all cities +1 Amenity and +2 Loyalty; combat units in home territory +5 Strength.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_PERM_6" Language="en_US"><Text>6 Envoys — Favored of Concealment: all cities total +3 Amenities and +5 Loyalty; home combat units +10 Strength and heal 10; enemy Spies operate one level lower.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PERM_1" Language="en_US"><Text>1 Envoy — Sailor's Prayer: Capital +5 Gold and +2 Production; naval units +1 Movement and +3 Strength.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PERM_3" Language="en_US"><Text>3 Envoys — Storm Route: Harbors +3 Gold/+2 Production, Harbor buildings +2 Gold/+1 Production; improved sea resources +1 Food/+2 Gold; naval Strength becomes +5.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_PERM_6" Language="en_US"><Text>6 Envoys — Favored of the Sea King: naval total +10 Strength/+2 Movement; embarked land units +2 Movement; Harbor cities +15% Production/Gold; Harbor routes +8 Gold.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_FOOL_COMBAT_PREVIEW" Language="en_US"><Text>Blessing of The Fool: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_COMBAT_PREVIEW" Language="en_US"><Text>Evernight's Shelter: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_HOME_ABILITY_DESCRIPTION" Language="en_US"><Text>Evernight's Shelter: gains Combat Strength while in friendly territory.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_STORM_COMBAT_PREVIEW" Language="en_US"><Text>Storm's Favor: +{1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_ENEMY_NAME" Language="en_US"><Text>Suppression of Evernight</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_ENEMY_DESC" Language="en_US"><Text>Enemy units at war inside the territory of a civilization blessed by Evernight suffer Combat Strength and Movement penalties.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_NIGHT_ENEMY_PREVIEW" Language="en_US"><Text>Suppression of Evernight: {1_Amount} Combat Strength</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_6_FULL" Language="en_US"><Text>Fate Deflection (Full), 10 turns: cities +50% Culture/Gold, Great Person points +100%, units +2 Movement/Sight, routes +10 Gold; immediately trigger 2 Eurekas and 2 Inspirations.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_6_HALF" Language="en_US"><Text>Fate Deflection (Half), 10 turns: cities +25% Culture/Gold, Great Person points +50%, units +1 Movement/Sight, routes +5 Gold; immediately trigger 1 Eureka and 1 Inspiration.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_10_FULL" Language="en_US"><Text>Historical Projection (Full), 12 turns: cities +50% Production and +75% Culture/Gold; Great Person points +150%; units +3 Movement/+10 Strength, maintenance -50%, routes +15 Gold; immediately 3 Eurekas/Inspirations.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_10_HALF" Language="en_US"><Text>Historical Projection (Half), 12 turns: cities +25% Production and +37% Culture/Gold; Great Person points +75%; units +1 Movement/+5 Strength, maintenance -25%, routes +7 Gold; immediately 1 Eureka/Inspiration.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_15_FULL" Language="en_US"><Text>Miracle (Full), 15 turns: Food +50%, Production/Gold/Culture +100%, Science/Faith +50%; Great Person points +300%; units +5 Movement/+20 Strength/+3 Sight; routes +25 Gold/+5 Culture/Science; immediately 5 Eurekas/Inspirations.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_FOOL_15_HALF" Language="en_US"><Text>Miracle (Half), 15 turns: Food/Science/Faith +25%, Production/Gold/Culture +50%; Great Person points +150%; units +2 Movement/+10 Strength/+1 Sight; routes +12 Gold/+2 Culture/Science; immediately 2 Eurekas/Inspirations.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_6_FULL" Language="en_US"><Text>Slumber (Full), 10 turns: cities +50% Culture/Faith, +5 Amenities/+20 Loyalty; home combat units +15 Strength/+1 Movement/heal 20; enemy Spies -2 levels.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_6_HALF" Language="en_US"><Text>Slumber (Half), 10 turns: cities +25% Culture/Faith, +2 Amenities/+10 Loyalty; home combat units +7 Strength/heal 10; enemy Spies -1 level.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_10_FULL" Language="en_US"><Text>Concealment (Full), 12 turns: cities +75% Culture/+100% Faith, +8 Amenities/+50 Loyalty; home units +25 Strength/+2 Movement/heal 30; enemies at war in your territory -10 Strength/-1 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_10_HALF" Language="en_US"><Text>Concealment (Half), 12 turns: cities +37% Culture/+50% Faith, +4 Amenities/+25 Loyalty; home units +12 Strength/+1 Movement/heal 15; enemies at war in your territory -5 Strength.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_15_FULL" Language="en_US"><Text>Nightfall (Full), 15 turns: cities +150% Culture/+200% Faith, +15 Amenities/+99 Loyalty; home units +40 Strength/+3 Movement/heal 50; territorial enemies -20 Strength/-2 Movement; City Centers/Encampments +20 defense.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_NIGHT_15_HALF" Language="en_US"><Text>Nightfall (Half), 15 turns: cities +75% Culture/+100% Faith, +7 Amenities/+49 Loyalty; home units +20 Strength/+1 Movement/heal 25; territorial enemies -10 Strength/-1 Movement; City Centers/Encampments +10 defense.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_FULL" Language="en_US"><Text>Storm Descends (Full), 10 turns: naval units +20 Strength/+4 Movement/heal 20; Harbor cities +50% Production/Gold; routes from Harbor cities +20 Gold; embarked land units +3 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_HALF" Language="en_US"><Text>Storm Descends (Half), 10 turns: naval units +10 Strength/+2 Movement/heal 10; Harbor cities +25% Production/Gold; Harbor-origin routes +10 Gold; embarked land units +1 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_FULL" Language="en_US"><Text>Wrath of the Sea King (Full), 12 turns: naval units +30 Strength/+5 Movement/heal 30; Harbor cities +100% Production/Gold; Ocean +2 Food/+3 Production/+5 Gold; Harbor-origin routes +30 Gold; embarked land units +4 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_HALF" Language="en_US"><Text>Wrath of the Sea King (Half), 12 turns: naval units +15 Strength/+2 Movement/heal 15; Harbor cities +50% Production/Gold; Ocean +1 Food/+1 Production/+2 Gold; Harbor-origin routes +15 Gold; embarked land units +2 Movement.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_FULL" Language="en_US"><Text>Cataclysm (Full), 15 turns: naval units +50 Strength/+7 Movement/heal 50; Harbor cities +200% Production/Gold; Ocean +3 Food/+5 Production/+10 Gold; Harbor-origin routes +50 Gold; embarked land units +5 Movement; naval production +200%.</Text></Row>
+		<Row Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_HALF" Language="en_US"><Text>Cataclysm (Half), 15 turns: naval units +25 Strength/+3 Movement/heal 25; Harbor cities +100% Production/Gold; Ocean +1 Food/+2 Production/+5 Gold; Harbor-origin routes +25 Gold; embarked land units +2 Movement; naval production +100%.</Text></Row>
+	</LocalizedText>
+</GameData>

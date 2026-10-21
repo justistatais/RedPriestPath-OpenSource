@@ -1,0 +1,33 @@
+# Version
+
+- Mod ID: `{7E4D8D9C-0C96-4B9C-A3D4-6A1E6B19D970}`
+- Semantic version: `0.1.0-rc.361`
+- .modinfo resource version: `393`
+- Ruleset: `RULESET_EXPANSION_2`
+- State version: `LOTM_RP_STATE_VERSION=36`
+- Extraordinary World state version: `LOTM_WORLD_STATE_VERSION=6`
+- AI cult state version: `LOTM_CULT_STATE_VERSION=4`
+- Rescue Phase 2 state version: `LOTM_RESCUE_PHASE2A_VERSION=11`
+- Rescue Phase 3 state version: `LOTM_RESCUE_PHASE3_VERSION=12`
+- Rescue Phase 4 state version: `LOTM_RESCUE_PHASE4_VERSION=5`
+- Rescue difficulty state version: `LOTM_RESCUE_DIFFICULTY_VERSION=3`
+- Rescue Phase 5 state version: `LOTM_RESCUE_PHASE5_VERSION=26`
+- Rescue Phase 6 state version: `LOTM_RESCUE_PHASE6_VERSION=2`
+- Rescue Phase 7 state version: `LOTM_RESCUE_PHASE7_VERSION=5`
+- Rescue Phase 8 state version: `LOTM_RESCUE_PHASE8_VERSION=7`
+- Rescue Phase 9 state version: `LOTM_RESCUE_PHASE9_VERSION=9`
+- Rescue Phase 9 digestion version: `LOTM_RESCUE_PHASE9_DIGESTION_VERSION=2`
+- Rescue artifact runtime version: `VERSION=4` in `LOTM_RESCUE_Artifacts.lua`
+- Rescue Phase 10A measurement version: `LOTM_RESCUE_PHASE10A_VERSION=6`
+- Rescue Phase 10 final-battle version: `LOTM_RESCUE_PHASE10_VERSION=40`
+- Rescue synchronized action helper version: `9`
+- Multiplayer route: published rc.241/resource-273 four-context baseline plus an explicit post-rc.241 feature delta (`LOTM_MP_TurnSync.VERSION=241` compatibility surface; no unified dispatcher)
+- Current single-player turn dispatcher source version: `7`
+- Workshop registry version: `LOTM_PP_WORKSHOP_REGISTRY_VERSION=3`
+- Active monster index version: `CURRENT_ACTIVE_MONSTER_INDEX_VERSION=1`
+- Project qualification migration: `LOTM_PATH_PROJECT_GATE_VERSION=1`; unlock repair: `5`
+- Rescue barbarian cleanup migration: `LOTM_RESCUE_BARBARIAN_CLEANUP_VERSION=2`
+- Rescue runtime event bridge: `5`; early-seal migration: `1`
+- Scope: Resource 393 disables the normal-mode test combat button and command feature flag. Comics are rescue-only through the UI action criterion and runtime guards: normal pathway details have no review button, the launcher skips the prologue, and no automatic/manual ending comic can open or acknowledge itself. Existing rescue comic behavior and frozen rescue gameplay remain unchanged.
+- Verification boundary: static checks and hashes do not replace in-game or multiplayer verification.
+- 双客户端均待实测。

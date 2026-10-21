@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Hidden="1">
+	<Container ID="Vignette" Style="FullScreenVignetteConsumer" Hidden="1"/>
+	<Container
+		ID="DetailsPopup"
+		Anchor="C,C"
+		Size="840,1040"
+		Hidden="1"
+		ConsumeMouse="1">
+		<Image
+			ID="DetailsBackground"
+			Size="840,1040"
+			Texture="WorldBuilder_BG"
+			StretchMode="Tile"
+			ConsumeMouse="1"/>
+		<Grid
+			ID="DetailsHeader"
+			Size="parent,52"
+			Texture="Controls_SubHeader2"
+			SliceCorner="20,2"
+			SliceTextureSize="40,40">
+			<Label
+				ID="DetailsTitleLabel"
+				Anchor="C,C"
+				Style="FontFlair26"
+				FontStyle="glow"
+				ColorSet="ShellHeader"
+				String="LOC_LOTM_RP_DETAILS_TITLE"/>
+		</Grid>
+		<Button
+			ID="CloseButton"
+			Anchor="R,T"
+			Offset="12,10"
+			Style="CloseButtonSmall"
+			ToolTip="LOC_CLOSE"/>
+		<Grid
+			ID="DetailsFrame"
+			Offset="20,66"
+			Size="800,840"
+			Texture="Religion_OverviewFrame"
+			SliceCorner="15,15"
+			SliceTextureSize="34,33">
+			<GridButton
+				ID="ComicButton"
+				Anchor="R,T"
+				Offset="20,18"
+				Size="180,34"
+				Style="MainButton"
+				String="LOC_LOTM_COMIC_REVIEW"/>
+			<Label
+				ID="PathDescriptionLabel"
+				Anchor="L,T"
+				Offset="22,18"
+				WrapWidth="754"
+				Style="FontNormal16"
+				String="LOC_LOTM_RP_DETAILS_PATH_DESCRIPTION"/>
+			<Label ID="SequenceLabel" Anchor="L,T" Offset="22,78" Style="FontFlair22"/>
+			<GridButton ID="AllAbilitiesButton" Anchor="L,T" Offset="250,74" Size="78,32" Style="MainButton" String="LOC_LOTM_TP_EXPAND" Hidden="1"/>
+			<GridButton ID="PurificationButton" Anchor="L,T" Offset="340,74" Size="150,32" Style="MainButton" String="LOC_LOTM_RESCUE_ENERGY_BUTTON" Hidden="1"/>
+			<Label ID="ProgressLabel" Anchor="L,T" Offset="22,112" Style="FontNormal18"/>
+			<Image
+				Anchor="L,T"
+				Offset="20,150"
+				Size="760,2"
+				Texture="Controls_Divider"/>
+			<Label
+				ID="SkillsLabel"
+				Anchor="L,T"
+				Offset="22,168"
+				Style="FontNormal16"
+				WrapWidth="754"
+				Hidden="1"/>
+			<Label
+				ID="NextLabel"
+				Anchor="L,T"
+				Offset="22,168"
+				Style="FontNormal16"
+				WrapWidth="754"/>
+			<Label
+				ID="DigestionLabel"
+				Anchor="L,T"
+				Offset="22,216"
+				Style="FontNormal16"
+				WrapWidth="754"/>
+		<Label ID="PlanLabel" Anchor="L,T" Offset="22,312" Style="FontNormal16"/>
+		<!-- TEST ONLY: authoritative Gameplay toggle, easy to remove with the
+		     matching switch in LOTM_RP_Lifecycle.lua. -->
+		<GridButton
+			ID="TestCombatButton"
+			Anchor="L,T"
+			Offset="22,264"
+			Size="240,38"
+			Style="ButtonConfirm"
+			String="LOC_LOTM_TEST_COMBAT_PLUS"
+			Hidden="1"/>
+			<GridButton
+				ID="PlanTargetButton"
+				Anchor="R,T"
+				Offset="20,299"
+				Size="210,38"
+				Style="ButtonConfirm"
+				String="LOC_LOTM_RP_PLAN_TARGET_BUTTON"
+				Hidden="1"/>
+			<Image
+				Anchor="L,T"
+				Offset="20,354"
+				Size="760,2"
+				Texture="Controls_Divider"/>
+			<Label
+				Anchor="L,T"
+				Offset="22,370"
+				Style="FontFlair18"
+				String="LOC_LOTM_RP_DETAILS_EFFECTS_TITLE"/>
+			<ScrollPanel
+				ID="SkillEffectsScroll"
+				Anchor="L,T"
+				Offset="22,404"
+				Size="754,424"
+				Vertical="1"
+				AutoScrollBar="1"
+				ConsumeMouse="1">
+				<Stack ID="SkillEffectsStack" Anchor="L,T" StackGrowth="Down" StackPadding="10" Size="682,auto">
+					<Label
+						ID="SkillEffectsLabel"
+						Anchor="L,T"
+						Size="682,auto"
+						Style="FontNormal16"
+						WrapWidth="682"/>
+					<Label
+						ID="RescueCityAIHintLabel"
+						Anchor="L,T"
+						Size="682,auto"
+						Style="FontNormal16"
+						Color="199,82,255,255"
+						WrapWidth="682"
+						Hidden="1"/>
+				</Stack>
+				<ScrollBar Anchor="R,C" Offset="-4,0" Size="11,parent-32" AnchorSide="I,I" Style="ScrollVerticalBarAlt"/>
+			</ScrollPanel>
+		</Grid>
+		<GridButton
+			ID="LocateHeroButton"
+			Anchor="L,B"
+			Offset="30,28"
+			Size="180,48"
+			Style="MainButton"
+			String="LOC_LOTM_RP_DETAILS_LOCATE_HERO"
+			Hidden="1"/>
+		<GridButton
+			ID="ArsonButton"
+			Anchor="C,B"
+			Offset="0,28"
+			Size="180,48"
+			Style="ButtonConfirm"
+			String="LOC_LOTM_RP_ARSON_BUTTON"
+			ToolTip="LOC_LOTM_RP_ARSON_TOOLTIP"
+			Hidden="1"/>
+		<GridButton
+			ID="ManualButton"
+			Anchor="R,B"
+			Offset="30,28"
+			Size="180,48"
+			Style="MainButton"
+			String="LOC_LOTM_RP_DETAILS_VIEW_MANUAL"/>
+		<Grid
+			Offset="-8,-8"
+			Size="parent+16,parent+16"
+			Style="ScreenFrame"/>
+	</Container>
+	<Container ID="BorrowAbilityPopup" Anchor="C,C" Size="768,768" Hidden="1" ConsumeMouse="1">
+		<Container Style="FullScreenVignetteConsumer"/>
+		<Container Style="ModalScreenWide"/>
+		<Label ID="BorrowAbilityTitle" Anchor="C,T" Offset="0,14" Style="FontNormal18" String="LOC_LOTM_TP_ABILITY_CHOOSER_TITLE"/>
+		<Label ID="BorrowAbilityHint" Anchor="C,T" Offset="0,45" WrapWidth="700" Style="FontNormal16" String="LOC_LOTM_TP_ABILITY_CHOOSER_HINT"/>
+		<ScrollPanel ID="BorrowAbilityScroll" Anchor="C,T" Offset="0,100" Size="parent-20,parent-170" Vertical="1" AutoScrollBar="1">
+			<Stack ID="BorrowAbilityStack" Anchor="C,T" StackGrowth="Down" Padding="8" Size="716,auto"/>
+			<ScrollBar Anchor="R,T" Offset="-8,0" Size="8,parent-40" Style="ScrollVerticalBackingAlt">
+				<Thumb Style="ScrollThumbHAlt"/>
+			</ScrollBar>
+		</ScrollPanel>
+		<GridButton ID="BorrowAbilityConfirm" Anchor="C,B" Offset="0,16" Size="240,41" Style="MainButton" String="LOC_LOTM_TP_ABILITY_CONFIRM"/>
+	</Container>
+	<Instance Name="ThiefAbilityEntry">
+	<!-- Read-only mode reuses these same cards for Sequence 1. -->
+		<Container ID="Top" Size="716,100" Anchor="C,T">
+			<GridButton ID="Button" Size="716,100" Anchor="C,T">
+				<GridData Texture="Controls_ItemContainer" SliceCorner="8,8" SliceSize="1,1" SliceTextureSize="16,16"/>
+				<Grid ID="SelectorBrace" Size="716,100" Anchor="C,C" Texture="Controls_SelectorBrace" SliceCorner="29,29" SliceSize="2,2" SliceTextureSize="64,64">
+					<Label ID="Name" Anchor="C,T" Offset="0,10" Style="FontFlair16" ColorSet="ResScienceLabelCS"/>
+					<Label ID="Info" Anchor="L,T" Offset="18,40" Size="680,auto" WrapWidth="680" Style="FontNormal14"/>
+				</Grid>
+			</GridButton>
+		</Container>
+	</Instance>
+	<Container ID="ThiefFinalPopup" Anchor="C,C" Size="700,330" Hidden="1" ConsumeMouse="1">
+		<Container Style="FullScreenVignetteConsumer"/>
+		<Container Style="ModalScreenWide"/>
+		<Label Anchor="C,T" Offset="0,22" Style="FontFlair26" String="LOC_LOTM_TP_FINAL_TITLE"/>
+		<Label Anchor="C,T" Offset="0,85" WrapWidth="640" Align="Center" Style="FontNormal18" String="LOC_LOTM_TP_FINAL_BODY"/>
+		<Label ID="ThiefFinalEffect" Anchor="C,T" Offset="0,128" WrapWidth="640" Align="Center" Style="FontNormal16"/>
+		<GridButton ID="ThiefFinalTech" Anchor="L,B" Offset="28,28" Size="200,54" Style="ButtonConfirm" String="LOC_LOTM_TP_FINAL_TECH"/>
+		<GridButton ID="ThiefFinalFaith" Anchor="C,B" Offset="0,28" Size="200,54" Style="ButtonConfirm" String="LOC_LOTM_TP_FINAL_FAITH"/>
+		<GridButton ID="ThiefFinalCulture" Anchor="R,B" Offset="28,28" Size="200,54" Style="ButtonConfirm" String="LOC_LOTM_TP_FINAL_CULTURE"/>
+	</Container>
+	<Container ID="ThiefFakeGoldTopBar" Size="auto,auto" Hidden="1">
+		<!-- Restore Civ VI's native resource backing. The coin itself is still the
+		     transparent modeled DDS; this layer is only the standard resource UI. -->
+		<Image Anchor="C,C" Offset="45,0" Size="auto,24" Texture="TopBar_YieldBacking.dds"/>
+		<GridButton ID="ThiefFakeGoldTopBarBacking" Size="auto,24" AutoSizePadding="1,0"
+			Style="YieldBacking" Color="173,142,66,255" ToolTip="LOC_LOTM_TP_FAKE_GOLD_TOP_TOOLTIP">
+			<Stack ID="ThiefFakeGoldTopBarStack" Anchor="L,C" Offset="0,2" StackGrowth="Right">
+				<Image ID="ThiefFakeGoldTopBarIcon" Anchor="L,B" Offset="0,1" Size="22,22" Hidden="1"/>
+				<Label ID="ThiefFakeGoldTopBarBalance" Anchor="C,T" Offset="0,-1"
+					Style="FontNormal18" ColorSet="ResGoldLabelCS" String="0"/>
+				<Label ID="ThiefFakeGoldTopBarPerTurn" Offset="2,-2"
+					Style="FontNormal14" ColorSet="ResGoldLabelCS" FontStyle="Stroke" String="+0"/>
+			</Stack>
+		</GridButton>
+	</Container>
+	<Container ID="PurificationEnergyTopBar" Size="auto,auto" Hidden="1">
+		<Image Anchor="C,C" Offset="45,0" Size="auto,24" Texture="TopBar_YieldBacking.dds"/>
+		<GridButton ID="PurificationEnergyTopBarBacking" Size="auto,24" AutoSizePadding="1,0"
+			Style="YieldBacking" Color="206,156,58,255" ToolTip="LOC_LOTM_RESCUE_ENERGY_TOOLTIP">
+			<Stack ID="PurificationEnergyTopBarStack" Anchor="L,C" Offset="0,2" StackGrowth="Right">
+				<Image ID="PurificationEnergyTopBarIcon" Anchor="L,B" Offset="0,1" Size="22,22" Hidden="1"/>
+				<Label ID="PurificationEnergyTopBarBalance" Anchor="C,T" Offset="0,-1"
+					Style="FontNormal18" ColorSet="ResGoldLabelCS" String="0"/>
+				<Label ID="PurificationEnergyTopBarPerTurn" Offset="2,-2"
+					Style="FontNormal14" ColorSet="ResGoldLabelCS" FontStyle="Stroke" String="+0"/>
+			</Stack>
+		</GridButton>
+	</Container>
+	<Grid
+		ID="TargetHint"
+		Anchor="C,T"
+		Offset="0,90"
+		Size="430,36"
+		Texture="Tracker_OptionsBacking"
+		SliceCorner="55,61"
+		SliceSize="1,1"
+		SliceTextureSize="121,119"
+		Hidden="1">
+		<Label
+			Anchor="C,C"
+			Style="FontNormal16"
+			String="LOC_LOTM_RP_ARSON_TARGET_HINT"/>
+	</Grid>
+</Context>
