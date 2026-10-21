@@ -1,10 +1,10 @@
 -- BEGIN RC342 STARTUP TRACE
--- Optional startup diagnostics, resource 393. Embedded by generate_startup_trace.py so a
+-- Optional startup diagnostics, resource 435. Embedded by generate_startup_trace.py so a
 -- missing VFS import cannot hide the first startup checkpoint.
 -- Keep disabled in releases: high-frequency UI tracing caused severe stutter.
 -- To diagnose a new failure, enable and rerun both startup/bundle generators.
 if LOTM_StartupTrace == nil then
-	LOTM_StartupTrace = { Enabled=false, Resource=393 };
+	LOTM_StartupTrace = { Enabled=false, Resource=435 };
 	local trace = LOTM_StartupTrace;
 	local sequence = 0;
 	local unpackValues = table.unpack or unpack;
@@ -22,7 +22,7 @@ if LOTM_StartupTrace == nil then
 		sequence = sequence + 1;
 		local fields = {};
 		for index=1,select("#",...) do fields[index] = Scalar(select(index,...)); end
-		print("[LOTM_DIAG] r=393 seq=" .. sequence .. " ctx=" .. context
+		print("[LOTM_DIAG] r=435 seq=" .. sequence .. " ctx=" .. context
 			.. " point=" .. point .. (#fields>0 and " args=" .. table.concat(fields,"|") or ""));
 	end
 	-- A lexical proxy belongs to this module only. The actual Events tables,
@@ -616,6 +616,8 @@ local function GetBorrowDescription(civType, selectedAbilitySet, selectedTraitSe
 end
 
 local m_abilityReadOnly = false;
+local m_removeSelection=-1;
+local m_removeReceipt=-1;
 local function OpenBorrowAbilityPopup(readOnly)
 	local playerID, player = GetLocalPlayer();
 	local sequence = tonumber(GetProperty(player, "LOTM_RP_SEQUENCE", 9)) or 9;
@@ -645,6 +647,8 @@ local function OpenBorrowAbilityPopup(readOnly)
 	m_borrowIM:ResetInstances();
 	m_borrowInstances = {};
 	m_borrowAbilitySelected = -1;
+	m_removeSelection=-1;
+	m_removeReceipt=tonumber(GetProperty(player,"LOTM_TP_REMOVAL_SERIAL",0)) or 0;
 	m_rescueBorrowSelected = {};
 	local candidates = {};
 	for _, source in ipairs(PlayerManager.GetWasEverAliveMajors() or {}) do
@@ -665,6 +669,8 @@ local function OpenBorrowAbilityPopup(readOnly)
 		local description = GetBorrowDescription(civType, rescueSelectedAbilitySet, rescueSelectedTraitSet);
 		if civType ~= PlayerConfigurations[playerID]:GetCivilizationTypeName()
 			and (pendingCiv == "" or pendingCiv == civType)
+			and (not m_abilityReadOnly or GetProperty(Game,"LOTM_RESCUE_MODE",0)==1
+			 or GetProperty(player,"LOTM_TP_REMOVAL_DONE_"..civType,0)~=1)
 			and not seen[civType] and description ~= "" then
 			seen[civType] = true;
 			local entry = m_borrowIM:GetInstance();
@@ -673,7 +679,8 @@ local function OpenBorrowAbilityPopup(readOnly)
 			-- Label updates its measured height with SetText; unlike Stack it
 			-- does not expose CalculateSize on the shipped Civ VI UI runtime.
 			CalculateSizeIfSupported(entry.Info);
-			local height = math.max(100, entry.Info:GetSizeY() + 64);
+			local removable=m_abilityReadOnly and GetProperty(Game,"LOTM_RESCUE_MODE",0)~=1;
+			local height = math.max(100, entry.Info:GetSizeY() + (removable and 108 or 64));
 			entry.Top:SetSizeY(height);
 			entry.Button:SetSizeY(height);
 			entry.SelectorBrace:SetSizeY(height);
@@ -682,6 +689,24 @@ local function OpenBorrowAbilityPopup(readOnly)
 			entry.SourcePlayerID = sourceID;
 			table.insert(m_borrowInstances, entry);
 			local selectedID = sourceID;
+			entry.Remove:SetHide(not removable);
+			if removable then
+			 entry.Remove:SetDisabled(not player:IsTurnActive());
+			 entry.Remove:SetText(Locale.Lookup("LOC_LOTM_TP_REMOVE_ABILITY"));
+			 entry.Remove:RegisterCallback(Mouse.eLClick,function()
+			  if not player:IsTurnActive() then return;end
+			  if m_removeSelection~=selectedID then
+			   m_removeSelection=selectedID;
+			   for _,other in ipairs(m_borrowInstances) do other.Remove:SetText(Locale.Lookup("LOC_LOTM_TP_REMOVE_ABILITY"));end
+			   entry.Remove:SetText(Locale.Lookup("LOC_LOTM_TP_REMOVE_CONFIRM"));
+			   Controls.BorrowAbilityHint:SetText(Locale.Lookup("LOC_LOTM_TP_REMOVE_WARNING"));
+			   return;
+			  end
+			  UI.RequestPlayerOperation(playerID,PlayerOperations.EXECUTE_SCRIPT,{
+			   OnStart="LOTM_TP_Command_RemoveAbility",SourcePlayerID=selectedID});
+			  Controls.BorrowAbilityHint:SetText(Locale.Lookup("LOC_LOTM_TP_REMOVE_PENDING"));
+			 end);
+			end
 			entry.Button:RegisterCallback(Mouse.eLClick, function()
 				if m_borrowWaiting or m_abilityReadOnly then return; end
 				if GetProperty(Game, "LOTM_RESCUE_MODE", 0) == 1 then
@@ -717,6 +742,21 @@ local function OpenBorrowAbilityPopup(readOnly)
 	Controls.BorrowAbilityPopup:SetHide(false);
 	UI.PlaySound("CityStates_Panel_Open");
 end
+
+local function RefreshRemovalReceipt()
+ if not m_abilityReadOnly or Controls.BorrowAbilityPopup:IsHidden()
+  or GetProperty(Game,"LOTM_RESCUE_MODE",0)==1 then return;end
+ local _,player=GetLocalPlayer();if player==nil then return;end
+ local receipt=tonumber(GetProperty(player,"LOTM_TP_REMOVAL_SERIAL",0)) or 0;
+ if receipt==m_removeReceipt then return;end
+ local result=GetProperty(player,"LOTM_TP_REMOVAL_RESULT","");
+ if result=="REMOVED" then OpenBorrowAbilityPopup(true);
+ else
+  m_removeReceipt=receipt;
+  Controls.BorrowAbilityHint:SetText(Locale.Lookup(result=="PENDING" and "LOC_LOTM_TP_REMOVE_PENDING" or "LOC_LOTM_TP_REMOVE_FAILED"));
+ end
+end
+Events.GameCoreEventPublishComplete.Add(RefreshRemovalReceipt);
 
 local function ConfirmBorrowAbility()
 	if m_abilityReadOnly then

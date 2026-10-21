@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AssetObjects..GameDependencyData>
+	<ID>
+		<name text="LOTMHolyCities" />
+		<id text="3048bcc7-0e20-48ab-b626-37cac3730405" />
+	</ID>
+	<RequiredGameArtIDs>
+		<Element>
+			<name text="Civ6" />
+			<id text="cb2f71b7-843e-4af3-9ca7-992acda9c195" />
+		</Element>
+		<Element>
+			<name text="Expansion2" />
+			<id text="b1b63999-6b16-4dd2-a5b6-eb19794aa8ca" />
+		</Element>
+	</RequiredGameArtIDs>
+	<SystemDependencies>
+		<Element>
+			<ConsumerName text="Landmarks" />
+			<ArtDefDependencyPaths>
+				<Element text="Landmarks.artdef" />
+				<Element text="Buildings.artdef" />
+			</ArtDefDependencyPaths>
+			<LibraryDependencies>
+				<Element text="TileBase" />
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="WorldView_Translate" />
+			<ArtDefDependencyPaths>
+				<Element text="Buildings.artdef" />
+			</ArtDefDependencyPaths>
+			<LibraryDependencies />
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="StrategicView_Translate" />
+			<ArtDefDependencyPaths>
+				<Element text="Buildings.artdef" />
+			</ArtDefDependencyPaths>
+			<LibraryDependencies />
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+	</SystemDependencies>
+	<ArtDefDependencies>
+		<Element>
+			<ArtDefPath text="Buildings.artdef" />
+			<ArtDefDependencyPaths />
+		</Element>
+		<Element>
+			<ArtDefPath text="Landmarks.artdef" />
+			<ArtDefDependencyPaths>
+				<Element text="Buildings.artdef" />
+			</ArtDefDependencyPaths>
+		</Element>
+	</ArtDefDependencies>
+	<LibraryDependencies>
+		<Element>
+			<LibraryName text="TileBase" />
+			<PackageDependencies>
+				<Element text="LOTMHolyCities.blp" />
+			</PackageDependencies>
+		</Element>
+	</LibraryDependencies>
+</AssetObjects..GameDependencyData>

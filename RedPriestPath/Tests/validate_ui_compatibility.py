@@ -5,6 +5,7 @@ from pathlib import Path
 # Content contracts use unchanged code; test_rc342_startup_trace tests raw diagnostics.
 from generate_startup_trace import strip_trace
 import sys
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -14,9 +15,26 @@ def require(condition: bool, message: str, failures: list[str]) -> None:
         failures.append(message)
 
 
+def user_interface_context_failures(root: ET.Element) -> list[str]:
+    """Native loader aborts AddUserInterfaces with no Properties/Context.
+
+    Resource425 Modding.log identified this exact error for both blessing UI
+    components. Check every add-in, independent of whether its Criteria applies
+    to the database snapshot used by other release validators.
+    """
+    failures: list[str] = []
+    for component in root.findall("./InGameActions/AddUserInterfaces"):
+        context = component.findtext("./Properties/Context", default="")
+        if not context.strip():
+            failures.append(f"{component.get('id')}: AddUserInterfaces requires Properties/Context")
+    return failures
+
+
 def main() -> int:
     failures: list[str] = []
     modinfo = strip_trace((ROOT / "RedPriestPath.modinfo").read_text(encoding="utf-8"))
+    manifest = ET.fromstring(modinfo)
+    failures.extend(user_interface_context_failures(manifest))
     purification_lua = strip_trace((ROOT / "UI/LOTM_RESCUE_Purification.lua").read_text(encoding="utf-8"))
     purification_xml = strip_trace((ROOT / "UI/LOTM_RESCUE_Purification.xml").read_text(encoding="utf-8"))
     ribbon_lua = strip_trace((ROOT / "UI/LOTM_RESCUE_DiplomacyRibbon.lua").read_text(encoding="utf-8"))
@@ -102,7 +120,8 @@ def main() -> int:
         for failure in failures:
             print(f"[FAIL] {failure}")
         return 1
-    print("UI compatibility validation passed: 23 checks")
+    count = len(manifest.findall("./InGameActions/AddUserInterfaces"))
+    print(f"UI compatibility validation passed: 23 checks + {count} mandatory UI loading contexts")
     return 0
 
 

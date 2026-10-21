@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo><LocalizedText>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_NAME" Language="en_US"><Text>Fors Wall</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_TITLE" Language="en_US"><Text>The Magician</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_SHORT_TITLE" Language="en_US"><Text>Magician</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_DESCRIPTION" Language="en_US"><Text>A traveler's and writer's experience becomes civic memory and cultural wealth.</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_NAME" Language="en_US"><Text>Leonard Mitchell</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_TITLE" Language="en_US"><Text>The Star</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_SHORT_TITLE" Language="en_US"><Text>Star</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_DESCRIPTION" Language="en_US"><Text>A Nighthawk watches over cities and protects his civilization's secrets.</Text></Row>
+<Row Tag="LOC_LOTM_MS_GATE_NAME" Language="en_US"><Text>Traveler's Door</Text></Row>
+<Row Tag="LOC_LOTM_MS_GATE_DESC" Language="en_US"><Text>Establishes faster. Eligible ordinary land and naval units trained here permanently gain +1 Movement. Purchases and upgrade inheritance still need live verification.</Text></Row>
+<Row Tag="LOC_LOTM_MS_SERIAL_NAME" Language="en_US"><Text>Bestselling Serial</Text></Row>
+<Row Tag="LOC_LOTM_MS_SERIAL_DESC" Language="en_US"><Text>This city gains +4 Great Writer points per turn and +4 Culture from each Great Work of Writing.</Text></Row>
+<Row Tag="LOC_LOTM_MS_SUPPLY_NAME" Language="en_US"><Text>Travel Supplies</Text></Row>
+<Row Tag="LOC_LOTM_MS_SUPPLY_DESC" Language="en_US"><Text>Each of your domestic trade routes ending here grants its origin city +3 Food and +3 Production.</Text></Row>
+<Row Tag="LOC_LOTM_MS_RECORD_NAME" Language="en_US"><Text>Apprentice's Record</Text></Row>
+<Row Tag="LOC_LOTM_MS_RECORD_DESC" Language="en_US"><Text>This city gains +50% Production toward a building or district type your civilization completed before. Does not affect units or projects.</Text></Row>
+<Row Tag="LOC_LOTM_MS_REPLAY_NAME" Language="en_US"><Text>Experience Recreated</Text></Row>
+<Row Tag="LOC_LOTM_MS_REPLAY_DESC" Language="en_US"><Text>Eligible ordinary land and naval combat units trained here receive one selectable starting promotion. Purchases and stacking with other free promotions need live verification.</Text></Row>
+<Row Tag="LOC_LOTM_MS_BESTSELLER_NAME" Language="en_US"><Text>Worldwide Bestseller</Text></Row>
+<Row Tag="LOC_LOTM_MS_BESTSELLER_DESC" Language="en_US"><Text>Writing here has double base Tourism and +20 Gold per work. Standard writings gain +2 Culture, in addition to the +4 from Bestselling Serial.</Text></Row>
+<Row Tag="LOC_LOTM_MS_WATCHER_NAME" Language="en_US"><Text>Nighthawk</Text></Row>
+<Row Tag="LOC_LOTM_MS_WATCHER_DESC" Language="en_US"><Text>This city gains +4 Faith and continuous normal visibility within six hexes of its center.</Text></Row>
+<Row Tag="LOC_LOTM_MS_PATROL_NAME" Language="en_US"><Text>Night Patrol</Text></Row>
+<Row Tag="LOC_LOTM_MS_PATROL_DESC" Language="en_US"><Text>Ordinary recon units trained here permanently gain +2 Sight and +50% combat experience. Purchases and upgrade inheritance need live verification.</Text></Row>
+<Row Tag="LOC_LOTM_MS_INVESTIGATION_NAME" Language="en_US"><Text>Internal Investigation</Text></Row>
+<Row Tag="LOC_LOTM_MS_INVESTIGATION_DESC" Language="en_US"><Text>Enemy spy missions in this city suffer a -2 level modifier. Secret Guardian supersedes this with an empire-wide -3 effect.</Text></Row>
+<Row Tag="LOC_LOTM_MS_CONTACT_NAME" Language="en_US"><Text>Secret Contact</Text></Row>
+<Row Tag="LOC_LOTM_MS_CONTACT_DESC" Language="en_US"><Text>While established, gain one level of diplomatic visibility against other met major civilizations.</Text></Row>
+<Row Tag="LOC_LOTM_MS_INTERROGATION_NAME" Language="en_US"><Text>Interrogation Report</Text></Row>
+<Row Tag="LOC_LOTM_MS_INTERROGATION_DESC" Language="en_US"><Text>While established and active, each enemy spy captured in this city grants either 300 Science or 300 Culture at random, once per case.</Text></Row>
+<Row Tag="LOC_LOTM_MS_GUARDIAN_NAME" Language="en_US"><Text>Secret Guardian</Text></Row>
+<Row Tag="LOC_LOTM_MS_GUARDIAN_DESC" Language="en_US"><Text>While established and active, enemy spies operate 3 levels lower in all your cities and your counterspies gain 2 levels. The local Investigation bonus does not stack.</Text></Row>
+</LocalizedText></GameInfo>

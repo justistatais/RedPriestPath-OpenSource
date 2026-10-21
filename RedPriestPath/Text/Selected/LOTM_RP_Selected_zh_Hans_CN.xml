@@ -95,6 +95,30 @@
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION">
 			<Text>本局使用英文显示《诡秘之主》模组文本。</Text>
 		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_NAME">
+			<Text>AI邪教难度</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_DESCRIPTION">
+			<Text>普通模式邪教强度；默认简单。开局后锁定，多人共用主机设置。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_NAME">
+			<Text>简单</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_DESCRIPTION">
+			<Text>保留原有邪神教会强度，适合体验途径成长和模组主要内容。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_NAME">
+			<Text>困难</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DESCRIPTION">
+			<Text>邪神教会所属文明获得显著的发展和军事强化，需要充分利用途径、教会与战争机制进行对抗。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_NAME">
+			<Text>疯狂</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DESCRIPTION">
+			<Text>邪神教会文明获得极强的发展、军事和持续战争能力，面向熟悉本模组机制的挑战型玩家。</Text>
+		</Row>
 		<Row Tag="LOC_LOTM_PATH_PROJECT_GATE_NAME">
 			<Text>当前序列已消化并满足晋升条件</Text>
 		</Row>
@@ -2639,6 +2663,108 @@
 		<Row Tag="LOC_LOTM_CULT_NOTIFICATION_ENDED_SUMMARY">
 			<Text>得分目标、战争状态、存活教会或共享阶段已经改变。</Text>
 		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_CURRENT">
+			<Text>当前AI邪教难度：{1_Name}（开局锁定）</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIPLO_DIFFICULTY_VALUE">
+			<Text>{1_Difficulty} · {2_Cult}</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CDIFF_PREVIEW_COMMON">
+			<Text>邪教难度：+{1_Amount}战斗力</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CDIFF_PREVIEW_TERRITORY">
+			<Text>被缚者己方领土：+{1_Amount}战斗力</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_MANUAL">
+			<Text>保留原有邪神教会强度，适合体验途径成长和模组主要内容。 无新增AI自身强化，阶段、升级门槛、玩家惩罚和血肉魔偶沿用原规则。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_T1_DESCRIPTION">
+			<Text>简单：沿用原有邪教规则，无新增AI自身强化。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_T2_DESCRIPTION">
+			<Text>简单：沿用原有邪教规则，无新增AI自身强化。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_T3_DESCRIPTION">
+			<Text>简单：沿用原有邪教规则，无新增AI自身强化。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_T1_DESCRIPTION">
+			<Text>阶段1：科技/文化/信仰+20%；生产/金币+30%；军事战斗力+2；单位金币维护费减少10%。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DEMONESS_T1_DESCRIPTION">
+			<Text>魔女：城市食物+10%，宜居度+1。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_HANGED_MAN_T1_DESCRIPTION">
+			<Text>倒吊人：军事单位每个己方回合额外恢复3生命；每单位每回合一次，不超过满血。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_CHAINED_T1_DESCRIPTION">
+			<Text>被缚者：军事单位在自己领土额外+2战斗力，含通用加成总计+4；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_T2_DESCRIPTION">
+			<Text>阶段2：科技/文化/信仰+40%；生产/金币+60%；军事战斗力+4；单位金币维护费减少20%。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DEMONESS_T2_DESCRIPTION">
+			<Text>魔女：城市食物+20%，宜居度+2。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_HANGED_MAN_T2_DESCRIPTION">
+			<Text>倒吊人：军事单位每个己方回合额外恢复5生命；每单位每回合一次，不超过满血。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_CHAINED_T2_DESCRIPTION">
+			<Text>被缚者：军事单位在自己领土额外+3战斗力，含通用加成总计+7；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_T3_DESCRIPTION">
+			<Text>阶段3：科技/文化/信仰+60%；生产/金币+90%；军事战斗力+6；单位金币维护费减少30%。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DEMONESS_T3_DESCRIPTION">
+			<Text>魔女：城市食物+30%，宜居度+3。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_HANGED_MAN_T3_DESCRIPTION">
+			<Text>倒吊人：军事单位每个己方回合额外恢复8生命；每单位每回合一次，不超过满血。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_CHAINED_T3_DESCRIPTION">
+			<Text>被缚者：军事单位在自己领土额外+4战斗力，含通用加成总计+10；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_MANUAL">
+			<Text>邪神教会所属文明获得显著的发展和军事强化，需要充分利用途径、教会与战争机制进行对抗。[NEWLINE]阶段1/2/3各自替换，不累计；仅强化邪教所属AI。[NEWLINE]阶段1：科技/文化/信仰+20%；生产/金币+30%；军事战斗力+2；单位金币维护费减少10%。[NEWLINE]魔女：城市食物+10%，宜居度+1。[NEWLINE]倒吊人：军事单位每个己方回合额外恢复3生命；每单位每回合一次，不超过满血。[NEWLINE]被缚者：军事单位在自己领土额外+2战斗力，含通用加成总计+4；领土以当前地块所有权判定。[NEWLINE]阶段2：科技/文化/信仰+40%；生产/金币+60%；军事战斗力+4；单位金币维护费减少20%。[NEWLINE]魔女：城市食物+20%，宜居度+2。[NEWLINE]倒吊人：军事单位每个己方回合额外恢复5生命；每单位每回合一次，不超过满血。[NEWLINE]被缚者：军事单位在自己领土额外+3战斗力，含通用加成总计+7；领土以当前地块所有权判定。[NEWLINE]阶段3：科技/文化/信仰+60%；生产/金币+90%；军事战斗力+6；单位金币维护费减少30%。[NEWLINE]魔女：城市食物+30%，宜居度+3。[NEWLINE]倒吊人：军事单位每个己方回合额外恢复8生命；每单位每回合一次，不超过满血。[NEWLINE]被缚者：军事单位在自己领土额外+4战斗力，含通用加成总计+10；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_T1_DESCRIPTION">
+			<Text>阶段1：科技/文化/信仰+40%；生产/金币+60%；军事战斗力+4；单位金币维护费减少20%。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DEMONESS_T1_DESCRIPTION">
+			<Text>魔女：城市食物+20%，宜居度+2。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_HANGED_MAN_T1_DESCRIPTION">
+			<Text>倒吊人：军事单位每个己方回合额外恢复5生命；每单位每回合一次，不超过满血。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_CHAINED_T1_DESCRIPTION">
+			<Text>被缚者：军事单位在自己领土额外+3战斗力，含通用加成总计+7；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_T2_DESCRIPTION">
+			<Text>阶段2：科技/文化/信仰+80%；生产/金币+120%；军事战斗力+7；单位金币维护费减少35%。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DEMONESS_T2_DESCRIPTION">
+			<Text>魔女：城市食物+40%，宜居度+3。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_HANGED_MAN_T2_DESCRIPTION">
+			<Text>倒吊人：军事单位每个己方回合额外恢复8生命；每单位每回合一次，不超过满血。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_CHAINED_T2_DESCRIPTION">
+			<Text>被缚者：军事单位在自己领土额外+5战斗力，含通用加成总计+12；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_T3_DESCRIPTION">
+			<Text>阶段3：科技/文化/信仰+120%；生产/金币+180%；军事战斗力+10；单位金币维护费减少50%。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DEMONESS_T3_DESCRIPTION">
+			<Text>魔女：城市食物+60%，宜居度+4。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_HANGED_MAN_T3_DESCRIPTION">
+			<Text>倒吊人：军事单位每个己方回合额外恢复12生命；每单位每回合一次，不超过满血。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_CHAINED_T3_DESCRIPTION">
+			<Text>被缚者：军事单位在自己领土额外+7战斗力，含通用加成总计+17；领土以当前地块所有权判定。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_MANUAL">
+			<Text>邪神教会文明获得极强的发展、军事和持续战争能力，面向熟悉本模组机制的挑战型玩家。[NEWLINE]阶段1/2/3各自替换，不累计；仅强化邪教所属AI。[NEWLINE]阶段1：科技/文化/信仰+40%；生产/金币+60%；军事战斗力+4；单位金币维护费减少20%。[NEWLINE]魔女：城市食物+20%，宜居度+2。[NEWLINE]倒吊人：军事单位每个己方回合额外恢复5生命；每单位每回合一次，不超过满血。[NEWLINE]被缚者：军事单位在自己领土额外+3战斗力，含通用加成总计+7；领土以当前地块所有权判定。[NEWLINE]阶段2：科技/文化/信仰+80%；生产/金币+120%；军事战斗力+7；单位金币维护费减少35%。[NEWLINE]魔女：城市食物+40%，宜居度+3。[NEWLINE]倒吊人：军事单位每个己方回合额外恢复8生命；每单位每回合一次，不超过满血。[NEWLINE]被缚者：军事单位在自己领土额外+5战斗力，含通用加成总计+12；领土以当前地块所有权判定。[NEWLINE]阶段3：科技/文化/信仰+120%；生产/金币+180%；军事战斗力+10；单位金币维护费减少50%。[NEWLINE]魔女：城市食物+60%，宜居度+4。[NEWLINE]倒吊人：军事单位每个己方回合额外恢复12生命；每单位每回合一次，不超过满血。[NEWLINE]被缚者：军事单位在自己领土额外+7战斗力，含通用加成总计+17；领土以当前地块所有权判定。</Text>
+		</Row>
 		<Row Tag="LOC_LOTM_RESCUE_CLAN_WORKSHOP_001">
 			<Text>失控工坊1</Text>
 		</Row>
@@ -3603,7 +3729,7 @@
 			<Text>时之虫 · 文明能力</Text>
 		</Row>
 		<Row Tag="LOC_LOTM_TP_ALL_ABILITIES_HINT">
-			<Text>列出本局其他文明的可移植能力；条件效果满足条件时生效。</Text>
+			<Text>列出已获得的其他文明能力；条件效果满足条件时生效。可永久移除能力，移除后不可重新获得。</Text>
 		</Row>
 		<Row Tag="LOC_LOTM_TP_SELECTED_ABILITY_PREFIX">
 			<Text>已选择能力：</Text>
@@ -3784,6 +3910,24 @@
 		</Row>
 		<Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_CREATE">
 			<Text>原生建城未成功，单位及能力次数未消耗</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_TP_REMOVE_ABILITY">
+			<Text>移除</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_TP_REMOVE_CONFIRM">
+			<Text>确认永久移除</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_TP_REMOVE_WARNING">
+			<Text>确认后永久移除该文明能力，不可重新获得。已发放的单位、科技等奖励不追回。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_TP_REMOVE_PENDING">
+			<Text>正在移除，等待效果停用确认；请勿重复选择其他能力。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_TP_REMOVE_FAILED">
+			<Text>未能确认旧档效果可以安全停用，本次未移除。请保留日志。</Text>
+		</Row>
+		<Row Tag="LOC_LOTM_TP_REMOVED_ABILITY">
+			<Text>已移除的文明能力</Text>
 		</Row>
 	</BaseGameText>
 </GameData>

@@ -219,6 +219,9 @@ end
 
 local function BlessingRank(tier,strength) return tier*10+(strength=="FULL" and 2 or 1); end
 local function ApplyBlessing(p,church,tier,strength)
+ if church=="STORM" and (not RescueActive() or tier==10 or tier==15) then
+  return LOTM_GodBlessings~=nil and LOTM_GodBlessings.GrantStorm(p,tier,strength) or false;
+ end
  local oldTier=N(p,K(church,"BLESSING_TIER"),0); local oldStrength=tostring(p:GetProperty(K(church,"BLESSING_STRENGTH")) or "NONE");
  if oldTier>0 and BlessingRank(oldTier,oldStrength)>BlessingRank(tier,strength) then return false; end
  if oldTier==tier and oldStrength==strength and CurrentPlayerTurn(p)<N(p,K(church,"BLESSING_UNTIL"),0) then return true; end
@@ -235,6 +238,11 @@ local function ApplyBlessing(p,church,tier,strength)
  Log("blessing player="..p:GetID().." church="..church.." tier="..tier.." strength="..strength); return true;
 end
 
+function LOTM_WORLD_Churches.RemoveLegacyStormBlessing(p,tier,strength)
+ if not RescueActive() or (tier~=10 and tier~=15) or (strength~="FULL" and strength~="HALF") then return false; end
+ return Attach(p,"LOTM_CHURCH_STORM_BLESS_"..tier.."_"..strength.."_OFF");
+end
+
 local function ArtifactName(artifactType)
  local row=artifactType~=nil and GameInfo.GreatWorks[artifactType] or nil;
  return row~=nil and Locale.Lookup(row.Name) or tostring(artifactType or "");
@@ -246,6 +254,30 @@ local function RecordReward(p,church,tier,kind,artifact,strength)
   local serial=N(p,"LOTM_CHURCH_REWARD_SERIAL",0)+1; p:SetProperty("LOTM_CHURCH_REWARD_SERIAL",serial); p:SetProperty(QK(church,tier,"REWARD_SERIAL"),serial);
   p:SetProperty("LOTM_CHURCH_REWARD_CHURCH",church); p:SetProperty("LOTM_CHURCH_REWARD_TIER",tier); p:SetProperty("LOTM_CHURCH_REWARD_KIND",kind); p:SetProperty("LOTM_CHURCH_REWARD_ARTIFACT",artifact); p:SetProperty("LOTM_CHURCH_REWARD_STRENGTH",strength);
  end
+end
+
+local function MigrateNormalGodBlessings(p)
+ if RescueActive() or LOTM_GodBlessings==nil or not LOTM_GodBlessings.IsEnabled() or N(p,"LOTM_GOD_BLESSINGS_VERSION",0)>=1 then return; end
+ LOTM_GodBlessings.BaselineCapitalFX(p);
+ local tier=N(p,K("STORM","BLESSING_TIER"),0);
+ local strength=tostring(p:GetProperty(K("STORM","BLESSING_STRENGTH")) or "NONE");
+ if tier>0 then
+  -- Each serialized old ON bundle is cancelled exactly once. Expired rewards
+  -- are not awarded again; a still-active storm blessing becomes one charge.
+  Attach(p,"LOTM_CHURCH_STORM_BLESS_"..tier.."_"..strength.."_OFF");
+  if CurrentPlayerTurn(p)<N(p,K("STORM","BLESSING_UNTIL"),0) then
+   if p:GetProperty(QK("STORM",tier,"REWARD_KIND"))==nil then
+    RecordReward(p,"STORM",tier,strength=="HALF" and "HALF_BLESSING" or "FULL_BLESSING",nil,strength);
+    p:SetProperty(QK("STORM",tier,"REWARD_APPLIED"),1);
+   end
+   LOTM_GodBlessings.GrantStorm(p,tier,strength);
+  end
+  p:SetProperty(K("STORM","BLESSING_TIER"),0);
+  p:SetProperty(K("STORM","BLESSING_STRENGTH"),nil);
+  p:SetProperty(K("STORM","BLESSING_UNTIL"),-1);
+ end
+ p:SetProperty("LOTM_GOD_BLESSINGS_VERSION",1);
+ Log("normal god blessings migrated player="..p:GetID().." oldStormTier="..tier);
 end
 
 local function RunBlessingExtras(p,church,tier,strength)
@@ -303,15 +335,17 @@ local function RewardSelf(p,church,tier,targetKey)
  end
  if N(p,QK(church,tier,"REWARD_APPLIED"),0)~=1 then
   if kind=="ARTIFACT" then local granted=EnsureArtifactReward(p,church,tier); if granted then p:SetProperty(QK(church,tier,"REWARD_APPLIED"),1); end
-  else ApplyBlessing(p,church,tier,"FULL"); p:SetProperty(QK(church,tier,"REWARD_APPLIED"),1); end
+  else local applied=ApplyBlessing(p,church,tier,"FULL"); if applied or church~="STORM" or (RescueActive() and tier==6) then p:SetProperty(QK(church,tier,"REWARD_APPLIED"),1); end end
  end
  if kind~="ARTIFACT" then RunBlessingExtras(p,church,tier,"FULL"); end
+ if kind~="ARTIFACT" and N(p,QK(church,tier,"REWARD_APPLIED"),0)==1 and not RescueActive() and LOTM_GodBlessings~=nil then LOTM_GodBlessings.RecordCapitalFX(p,church,tier); end
  NotifyReward(p,church,tier);
 end
 
 local function RewardAssist(p,church,tier)
  local kind=p:GetProperty(QK(church,tier,"REWARD_KIND")); if kind==nil then RecordReward(p,church,tier,"HALF_BLESSING",nil,"HALF"); end
- if N(p,QK(church,tier,"REWARD_APPLIED"),0)~=1 then ApplyBlessing(p,church,tier,"HALF"); p:SetProperty(QK(church,tier,"REWARD_APPLIED"),1); end
+ if N(p,QK(church,tier,"REWARD_APPLIED"),0)~=1 then local applied=ApplyBlessing(p,church,tier,"HALF"); if applied or church~="STORM" or (RescueActive() and tier==6) then p:SetProperty(QK(church,tier,"REWARD_APPLIED"),1); end end
+ if N(p,QK(church,tier,"REWARD_APPLIED"),0)==1 and not RescueActive() and LOTM_GodBlessings~=nil then LOTM_GodBlessings.RecordCapitalFX(p,church,tier); end
  RunBlessingExtras(p,church,tier,"HALF"); NotifyReward(p,church,tier);
 end
 
@@ -374,7 +408,9 @@ local function ReconcileCompletedRewards(p,church)
 end
 
 local function EffectiveHeal(p,church)
+ if church=="STORM" and not RescueActive() then return 0; end
  local tier=N(p,K(church,"BLESSING_TIER"),0); local strength=tostring(p:GetProperty(K(church,"BLESSING_STRENGTH")) or "NONE");
+ if church=="STORM" and (tier==10 or tier==15) then return 0; end
  if church=="NIGHT" then if tier==6 then return strength=="FULL" and 20 or 10 elseif tier==10 then return strength=="FULL" and 30 or 15 elseif tier==15 then return strength=="FULL" and 50 or 25 end
   return LOTM_WORLD_Churches.GetEnvoys(p:GetID(),church)>=6 and 10 or 0;
  elseif church=="STORM" then if tier==6 then return strength=="FULL" and 20 or 10 elseif tier==10 then return strength=="FULL" and 30 or 15 elseif tier==15 then return strength=="FULL" and 50 or 25 end end
@@ -523,6 +559,7 @@ end
 local function OnPlayerTurn(playerID,isFirstTime)
  if isFirstTime==false then return; end local p=Player(playerID); if p==nil then return; end
  FinishRescueTier6Migration(p);
+ MigrateNormalGodBlessings(p);
  for _,church in ipairs(ORDER) do RefreshPermanent(p,church); ExpireBlessing(p,church); ReconcileQuest(p,church); ReconcileCompletedRewards(p,church); HealUnits(p,church,EffectiveHeal(p,church)); end RefreshNightHomeCombat(p); RefreshFoolSight(p); FoolEraBoon(p); RefreshAllNightEnemyPenalties();
 end
 
@@ -566,6 +603,6 @@ Events.DiplomacyMakePeace.Add(OnDiplomacyChanged);
 GameEvents.OnUnitMoved.Add(OnUnitMoved);
 if LOTM_WORLD_Monsters~=nil and LOTM_WORLD_Monsters.RegisterQuestResolver~=nil then LOTM_WORLD_Monsters.RegisterQuestResolver(LOTM_WORLD_Churches.ResolveMonsterQuest); end
 LOTM_MP_TurnSync.RunStartup(function()
- for _,id in ipairs(SortedIDs(PlayerManager.GetAliveMajorIDs())) do local p=Player(id); if p~=nil then FinishRescueTier6Migration(p); for _,church in ipairs(ORDER) do for _,tier in ipairs(QUEST_TIERS) do if p:GetProperty(QK(church,tier,"STATE"))==nil then SetQuestState(p,church,tier,STATE.LOCKED); end end RefreshPermanent(p,church); ReconcileQuest(p,church); ReconcileCompletedRewards(p,church); end RefreshNightHomeCombat(p); RefreshFoolSight(p); end end
+ for _,id in ipairs(SortedIDs(PlayerManager.GetAliveMajorIDs())) do local p=Player(id); if p~=nil then FinishRescueTier6Migration(p); MigrateNormalGodBlessings(p); for _,church in ipairs(ORDER) do for _,tier in ipairs(QUEST_TIERS) do if p:GetProperty(QK(church,tier,"STATE"))==nil then SetQuestState(p,church,tier,STATE.LOCKED); end end RefreshPermanent(p,church); ReconcileQuest(p,church); ReconcileCompletedRewards(p,church); end RefreshNightHomeCombat(p); RefreshFoolSight(p); end end
 end,"WorldChurches");
 Log("initialized virtual=3 thresholds=1/3/6 quests=ordinary:6/10/15 rescue:allThreeAt6WarGodRelicThen10/15 state=4");

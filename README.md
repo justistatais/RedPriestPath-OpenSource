@@ -8,7 +8,7 @@ Lua Gameplay / UI、SQL / XML 数据与运行资源均位于 `RedPriestPath/`。
 | 当前开发快照 0.1.0-rc.403 | 435 | `main` / `v0.1.0-rc.403` |
 | Steam 发布版 0.1.0-rc.361 | 393 | `steam` / `v0.1.0-rc.361` |
 
-**本快照：0.1.0-rc.361 / 资源 393。**
+**本快照：0.1.0-rc.403 / 资源 435。**
 
 Steam 工坊：[诡秘之主单位与玩法](https://steamcommunity.com/sharedfiles/filedetails/?id=3780342356)。
 两个快照按各自原始源码逐文件复制，以 `SOURCE_MANIFEST.sha256` 校验；

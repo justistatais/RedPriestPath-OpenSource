@@ -50,5 +50,14 @@
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_DESCRIPTION" Language="zh_Hans_CN"><Text>本局使用简体中文显示《诡秘之主》模组文本。</Text></Row>
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_NAME" Language="zh_Hans_CN"><Text>English</Text></Row>
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION" Language="zh_Hans_CN"><Text>本局使用英文显示《诡秘之主》模组文本。</Text></Row>
-	</LocalizedText>
+	
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_NAME" Language="zh_Hans_CN"><Text>AI邪教难度</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_DESCRIPTION" Language="zh_Hans_CN"><Text>普通模式邪教强度；默认简单。开局后锁定，多人共用主机设置。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_NAME" Language="zh_Hans_CN"><Text>简单</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_DESCRIPTION" Language="zh_Hans_CN"><Text>保留原有邪神教会强度，适合体验途径成长和模组主要内容。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_NAME" Language="zh_Hans_CN"><Text>困难</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DESCRIPTION" Language="zh_Hans_CN"><Text>邪神教会所属文明获得显著的发展和军事强化，需要充分利用途径、教会与战争机制进行对抗。</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_NAME" Language="zh_Hans_CN"><Text>疯狂</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DESCRIPTION" Language="zh_Hans_CN"><Text>邪神教会文明获得极强的发展、军事和持续战争能力，面向熟悉本模组机制的挑战型玩家。</Text></Row>
+</LocalizedText>
 </GameData>

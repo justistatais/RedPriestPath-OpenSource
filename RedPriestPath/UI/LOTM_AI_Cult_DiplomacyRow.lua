@@ -1,10 +1,10 @@
 -- BEGIN RC342 STARTUP TRACE
--- Optional startup diagnostics, resource 393. Embedded by generate_startup_trace.py so a
+-- Optional startup diagnostics, resource 435. Embedded by generate_startup_trace.py so a
 -- missing VFS import cannot hide the first startup checkpoint.
 -- Keep disabled in releases: high-frequency UI tracing caused severe stutter.
 -- To diagnose a new failure, enable and rerun both startup/bundle generators.
 if LOTM_StartupTrace == nil then
-	LOTM_StartupTrace = { Enabled=false, Resource=393 };
+	LOTM_StartupTrace = { Enabled=false, Resource=435 };
 	local trace = LOTM_StartupTrace;
 	local sequence = 0;
 	local unpackValues = table.unpack or unpack;
@@ -22,7 +22,7 @@ if LOTM_StartupTrace == nil then
 		sequence = sequence + 1;
 		local fields = {};
 		for index=1,select("#",...) do fields[index] = Scalar(select(index,...)); end
-		print("[LOTM_DIAG] r=393 seq=" .. sequence .. " ctx=" .. context
+		print("[LOTM_DIAG] r=435 seq=" .. sequence .. " ctx=" .. context
 			.. " point=" .. point .. (#fields>0 and " args=" .. table.concat(fields,"|") or ""));
 	end
 	-- A lexical proxy belongs to this module only. The actual Events tables,
@@ -95,8 +95,19 @@ local function Refresh(selectedPlayerID:number)
  local skillTag="LOC_LOTM_CULT_"..path.."_T"..tostring(tier).."_NAME";
  local rescue=tonumber(Game.GetProperty("LOTM_RESCUE_MODE") or 0)==1;
  local descriptionTag=rescue and ("LOC_LOTM_RESCUE_PHASE7_"..path.."_T"..tostring(tier).."_DESCRIPTION") or ("LOC_LOTM_CULT_"..path.."_T"..tostring(tier).."_DESCRIPTION");
- Controls.CultText:SetText(Locale.Lookup("LOC_LOTM_CULT_DIPLO_VALUE",Locale.Lookup(info.Name),tier,Locale.Lookup(skillTag)));
- Controls.CultText:SetToolTipString(Locale.Lookup(descriptionTag)); Controls.CultIcon:SetToolTipString(Locale.Lookup(descriptionTag)); ContextPtr:SetAutoSize(true);
+ local value=Locale.Lookup("LOC_LOTM_CULT_DIPLO_VALUE",Locale.Lookup(info.Name),tier,Locale.Lookup(skillTag));
+ local description=Locale.Lookup(descriptionTag);
+ if not rescue then
+  local difficulty=Game.GetProperty("LOTM_CULT_DIFFICULTY");
+  if difficulty~="HARD" and difficulty~="INSANE" then difficulty="EASY"; end
+  local name=Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_"..difficulty.."_NAME");
+  value=Locale.Lookup("LOC_LOTM_CULT_DIPLO_DIFFICULTY_VALUE",name,value);
+  description=description.."[NEWLINE][NEWLINE]"..Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_CURRENT",name)
+   .."[NEWLINE]"..Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_"..difficulty.."_T"..tier.."_DESCRIPTION");
+  if difficulty~="EASY" then description=description.."[NEWLINE]"..Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_"..difficulty.."_"..path.."_T"..tier.."_DESCRIPTION"); end
+ end
+ Controls.CultText:SetText(value);
+ Controls.CultText:SetToolTipString(description); Controls.CultIcon:SetToolTipString(description); ContextPtr:SetAutoSize(true);
 end
 local function Initialize() ContextPtr:SetAutoSize(true); LuaEvents.DiploScene_RefreshOverviewRows.Add(Refresh); end
 Initialize();

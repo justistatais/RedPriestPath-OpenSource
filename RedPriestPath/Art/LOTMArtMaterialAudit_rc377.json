@@ -1,0 +1,498 @@
+{
+  "cooked_color_checks": [
+    {
+      "package": "LOTMModelsV4",
+      "platform": "Windows",
+      "texture": "LOTM4_Saint_Body_BaseColor",
+      "mean_abs_error": [
+        0.609375,
+        0.3125,
+        0.75
+      ],
+      "cooked_sha256": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+      "source_sha256": "d908b5e48457dba43aa17134ddd68909ae5e2f35434f6d0abf9ec855cc84627d",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "Windows",
+      "texture": "LOTM4_Saint_Body_Emissive",
+      "mean_abs_error": [
+        0.0,
+        0.015625,
+        0.03125
+      ],
+      "cooked_sha256": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+      "source_sha256": "31c9da476cacd8c2714c42b8cbf1b42d5e19285aa7d2d719ac9ff3d819da6ff8",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Emissive"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "MacOS",
+      "texture": "LOTM4_Saint_Body_BaseColor",
+      "mean_abs_error": [
+        0.609375,
+        0.3125,
+        0.75
+      ],
+      "cooked_sha256": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+      "source_sha256": "d908b5e48457dba43aa17134ddd68909ae5e2f35434f6d0abf9ec855cc84627d",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "MacOS",
+      "texture": "LOTM4_Saint_Body_Emissive",
+      "mean_abs_error": [
+        0.0,
+        0.015625,
+        0.03125
+      ],
+      "cooked_sha256": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+      "source_sha256": "31c9da476cacd8c2714c42b8cbf1b42d5e19285aa7d2d719ac9ff3d819da6ff8",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Emissive"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "Windows",
+      "texture": "LOTM4_Angel_Body_BaseColor",
+      "mean_abs_error": [
+        0.609375,
+        0.3125,
+        0.75
+      ],
+      "cooked_sha256": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+      "source_sha256": "d908b5e48457dba43aa17134ddd68909ae5e2f35434f6d0abf9ec855cc84627d",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "Windows",
+      "texture": "LOTM4_Angel_Body_Emissive",
+      "mean_abs_error": [
+        0.0,
+        0.015625,
+        0.03125
+      ],
+      "cooked_sha256": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+      "source_sha256": "31c9da476cacd8c2714c42b8cbf1b42d5e19285aa7d2d719ac9ff3d819da6ff8",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Emissive"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "MacOS",
+      "texture": "LOTM4_Angel_Body_BaseColor",
+      "mean_abs_error": [
+        0.609375,
+        0.3125,
+        0.75
+      ],
+      "cooked_sha256": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+      "source_sha256": "d908b5e48457dba43aa17134ddd68909ae5e2f35434f6d0abf9ec855cc84627d",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "MacOS",
+      "texture": "LOTM4_Angel_Body_Emissive",
+      "mean_abs_error": [
+        0.0,
+        0.015625,
+        0.03125
+      ],
+      "cooked_sha256": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+      "source_sha256": "31c9da476cacd8c2714c42b8cbf1b42d5e19285aa7d2d719ac9ff3d819da6ff8",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Emissive"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "Windows",
+      "texture": "LOTM4_Angel_FX_BaseColor",
+      "mean_abs_error": [
+        0.09454345703125,
+        0.06280517578125,
+        0.11785888671875
+      ],
+      "cooked_sha256": "a6294ef08b3f3241da6ad98728c4e58270774947923358b67e0f0b24828cf972",
+      "source_sha256": "f4d2317756006117f571165cae91dfa42e207dd3a42098dd3120043649ec2da4",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "Windows",
+      "texture": "LOTM4_Angel_FX_Emissive",
+      "mean_abs_error": [
+        0.09454345703125,
+        0.06280517578125,
+        0.11785888671875
+      ],
+      "cooked_sha256": "4ae00a5a84648b5e29807a9c701ec4c43a5cd34eca9894bef66f136d0ce3239f",
+      "source_sha256": "f4d2317756006117f571165cae91dfa42e207dd3a42098dd3120043649ec2da4",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Emissive"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "MacOS",
+      "texture": "LOTM4_Angel_FX_BaseColor",
+      "mean_abs_error": [
+        0.09454345703125,
+        0.06280517578125,
+        0.11785888671875
+      ],
+      "cooked_sha256": "a6294ef08b3f3241da6ad98728c4e58270774947923358b67e0f0b24828cf972",
+      "source_sha256": "f4d2317756006117f571165cae91dfa42e207dd3a42098dd3120043649ec2da4",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint"
+    },
+    {
+      "package": "LOTMModelsV4",
+      "platform": "MacOS",
+      "texture": "LOTM4_Angel_FX_Emissive",
+      "mean_abs_error": [
+        0.09454345703125,
+        0.06280517578125,
+        0.11785888671875
+      ],
+      "cooked_sha256": "4ae00a5a84648b5e29807a9c701ec4c43a5cd34eca9894bef66f136d0ce3239f",
+      "source_sha256": "f4d2317756006117f571165cae91dfa42e207dd3a42098dd3120043649ec2da4",
+      "shipped_file": "Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Emissive"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "Windows",
+      "texture": "LHC_Fool_BaseColor",
+      "mean_abs_error": [
+        1.25,
+        1.0,
+        1.4375
+      ],
+      "cooked_sha256": "f35c1e91131c61bae7c7eb2cf3c455553e61c413c0e74002c92b3af5c8e84afc",
+      "source_sha256": "3fe36682207f68507b9dbd5a8e98eeea3b6a559728453a7b4a7c642c8f20f603",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "Windows",
+      "texture": "LHC_Fool_Emissive",
+      "mean_abs_error": [
+        0.0625,
+        0.1875,
+        0.125
+      ],
+      "cooked_sha256": "6dfe9c42fb735296bab58c6df6e02beec55577c2d9f5a72bb1c8a1a9b911db6e",
+      "source_sha256": "b23eb83f3c6d332a5f4a7373713b3d5a29a096a7a870675b4d4db1ac424fcc3e",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Emissive"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "MacOS",
+      "texture": "LHC_Fool_BaseColor",
+      "mean_abs_error": [
+        1.25,
+        1.0,
+        1.4375
+      ],
+      "cooked_sha256": "f35c1e91131c61bae7c7eb2cf3c455553e61c413c0e74002c92b3af5c8e84afc",
+      "source_sha256": "3fe36682207f68507b9dbd5a8e98eeea3b6a559728453a7b4a7c642c8f20f603",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Emissive",
+      "mean_abs_error": [
+        0.0625,
+        0.1875,
+        0.125
+      ],
+      "cooked_sha256": "6dfe9c42fb735296bab58c6df6e02beec55577c2d9f5a72bb1c8a1a9b911db6e",
+      "source_sha256": "b23eb83f3c6d332a5f4a7373713b3d5a29a096a7a870675b4d4db1ac424fcc3e",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Emissive"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "Windows",
+      "texture": "LHC_Night_BaseColor",
+      "mean_abs_error": [
+        1.6875,
+        0.875,
+        1.25
+      ],
+      "cooked_sha256": "97cb2aad7ae70ba54fabe563a3b9c1c9e6509c750977f98c4ae469aecce0b5c4",
+      "source_sha256": "ddd63302359163c376c763c85d170a77981c7a89285d830a6baee9416cba8a41",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "Windows",
+      "texture": "LHC_Night_Emissive",
+      "mean_abs_error": [
+        0.3125,
+        0.25,
+        0.0625
+      ],
+      "cooked_sha256": "bc22668db6ab751f1668b67d4078d6f04c24c310d6183623a0ce5b39727623f6",
+      "source_sha256": "20a8832616f4a20ad5d7898514a610ae3c431099ce7aad5526d484309cf2c133",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Emissive"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "MacOS",
+      "texture": "LHC_Night_BaseColor",
+      "mean_abs_error": [
+        1.6875,
+        0.875,
+        1.25
+      ],
+      "cooked_sha256": "97cb2aad7ae70ba54fabe563a3b9c1c9e6509c750977f98c4ae469aecce0b5c4",
+      "source_sha256": "ddd63302359163c376c763c85d170a77981c7a89285d830a6baee9416cba8a41",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "MacOS",
+      "texture": "LHC_Night_Emissive",
+      "mean_abs_error": [
+        0.3125,
+        0.25,
+        0.0625
+      ],
+      "cooked_sha256": "bc22668db6ab751f1668b67d4078d6f04c24c310d6183623a0ce5b39727623f6",
+      "source_sha256": "20a8832616f4a20ad5d7898514a610ae3c431099ce7aad5526d484309cf2c133",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Emissive"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "Windows",
+      "texture": "LHC_Storm_BaseColor",
+      "mean_abs_error": [
+        1.8125,
+        0.9375,
+        1.625
+      ],
+      "cooked_sha256": "e0c852fe374788ad49eacc590c9cf1f7dcc48d6511c7e1b7be7322f4e460d25a",
+      "source_sha256": "89bc3ed97c75deda12a05261736c1a4addd70d7a160bad0ad7a02a577a1e8b56",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "Windows",
+      "texture": "LHC_Storm_Emissive",
+      "mean_abs_error": [
+        0.1875,
+        0.0625,
+        0.3125
+      ],
+      "cooked_sha256": "9742c8579fdd6fbc3b9b9a43b6423900a25d112f31f095cae33197485f20eccb",
+      "source_sha256": "9df8ccde50ce912d793942e1d6f54feeccc00c49e4ca903d0d3d5ff5be549f4a",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Emissive"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "MacOS",
+      "texture": "LHC_Storm_BaseColor",
+      "mean_abs_error": [
+        1.8125,
+        0.9375,
+        1.625
+      ],
+      "cooked_sha256": "e0c852fe374788ad49eacc590c9cf1f7dcc48d6511c7e1b7be7322f4e460d25a",
+      "source_sha256": "89bc3ed97c75deda12a05261736c1a4addd70d7a160bad0ad7a02a577a1e8b56",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask"
+    },
+    {
+      "package": "LOTMHolyCities",
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Emissive",
+      "mean_abs_error": [
+        0.1875,
+        0.0625,
+        0.3125
+      ],
+      "cooked_sha256": "9742c8579fdd6fbc3b9b9a43b6423900a25d112f31f095cae33197485f20eccb",
+      "source_sha256": "9df8ccde50ce912d793942e1d6f54feeccc00c49e4ca903d0d3d5ff5be549f4a",
+      "shipped_file": "Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Emissive"
+    }
+  ],
+  "complete_materials": [
+    {
+      "name": "LOTM4_Saint_Body",
+      "maps": {
+        "BaseColor": "LOTM4_Saint_Body_BaseColor",
+        "Normal": "LOTM4_Saint_Body_Normal",
+        "AO": "LOTM4_Saint_Body_AO",
+        "Metalness": "LOTM4_Saint_Body_Metalness",
+        "TintMask": "LOTM4_NoTint",
+        "Gloss": "LOTM4_Saint_Body_Gloss",
+        "Emissive": "LOTM4_Saint_Body_Emissive"
+      }
+    },
+    {
+      "name": "LOTM4_Angel_Body",
+      "maps": {
+        "BaseColor": "LOTM4_Angel_Body_BaseColor",
+        "Normal": "LOTM4_Angel_Body_Normal",
+        "AO": "LOTM4_Angel_Body_AO",
+        "Metalness": "LOTM4_Angel_Body_Metalness",
+        "TintMask": "LOTM4_NoTint",
+        "Gloss": "LOTM4_Angel_Body_Gloss",
+        "Emissive": "LOTM4_Angel_Body_Emissive"
+      }
+    },
+    {
+      "name": "LOTM4_Angel_FX",
+      "maps": {
+        "BaseColor": "LOTM4_Angel_FX_BaseColor",
+        "Normal": "LOTM4_Angel_FX_Normal",
+        "AO": "LOTM4_Angel_FX_AO",
+        "Metalness": "LOTM4_Angel_FX_Metalness",
+        "TintMask": "LOTM4_NoTint",
+        "Gloss": "LOTM4_Angel_FX_Gloss",
+        "Emissive": "LOTM4_Angel_FX_Emissive"
+      }
+    },
+    {
+      "name": "LHC_Fool_Atlas",
+      "maps": {
+        "BaseColor": "LHC_Fool_BaseColor",
+        "Normal": "LHC_Fool_Normal",
+        "AO": "LHC_Fool_AO",
+        "Metalness": "LHC_Fool_Metalness",
+        "Opacity": "",
+        "Gloss": "LHC_Fool_Gloss",
+        "LightMap": "",
+        "Emissive": "LHC_Fool_Emissive",
+        "TintMask": "LHC_Fool_TintMask"
+      }
+    },
+    {
+      "name": "LHC_Night_Atlas",
+      "maps": {
+        "BaseColor": "LHC_Night_BaseColor",
+        "Normal": "LHC_Night_Normal",
+        "AO": "LHC_Night_AO",
+        "Metalness": "LHC_Night_Metalness",
+        "Opacity": "",
+        "Gloss": "LHC_Night_Gloss",
+        "LightMap": "",
+        "Emissive": "LHC_Night_Emissive",
+        "TintMask": "LHC_Night_TintMask"
+      }
+    },
+    {
+      "name": "LHC_Storm_Atlas",
+      "maps": {
+        "BaseColor": "LHC_Storm_BaseColor",
+        "Normal": "LHC_Storm_Normal",
+        "AO": "LHC_Storm_AO",
+        "Metalness": "LHC_Storm_Metalness",
+        "Opacity": "",
+        "Gloss": "LHC_Storm_Gloss",
+        "LightMap": "",
+        "Emissive": "LHC_Storm_Emissive",
+        "TintMask": "LHC_Storm_TintMask"
+      }
+    }
+  ],
+  "non_emitting_body_checks": [
+    {
+      "slug": "Saint",
+      "platform": "Windows",
+      "non_emitting_cells_confirmed_black": 23
+    },
+    {
+      "slug": "Saint",
+      "platform": "MacOS",
+      "non_emitting_cells_confirmed_black": 23
+    },
+    {
+      "slug": "Angel",
+      "platform": "Windows",
+      "non_emitting_cells_confirmed_black": 23
+    },
+    {
+      "slug": "Angel",
+      "platform": "MacOS",
+      "non_emitting_cells_confirmed_black": 23
+    }
+  ],
+  "non_emitting_city_checks": [
+    {
+      "slug": "Fool",
+      "platform": "Windows",
+      "non_emitting_cells_confirmed_black": 11
+    },
+    {
+      "slug": "Fool",
+      "platform": "MacOS",
+      "non_emitting_cells_confirmed_black": 11
+    },
+    {
+      "slug": "Night",
+      "platform": "Windows",
+      "non_emitting_cells_confirmed_black": 11
+    },
+    {
+      "slug": "Night",
+      "platform": "MacOS",
+      "non_emitting_cells_confirmed_black": 11
+    },
+    {
+      "slug": "Storm",
+      "platform": "Windows",
+      "non_emitting_cells_confirmed_black": 11
+    },
+    {
+      "slug": "Storm",
+      "platform": "MacOS",
+      "non_emitting_cells_confirmed_black": 11
+    }
+  ],
+  "geometry_unchanged": [
+    {
+      "name": "LOTM4_Angel.fgx",
+      "sha256": "4010c9c277ba15c7da40987f3a2e48d14c3878b12d2bebeb82d22ffe1befee83"
+    },
+    {
+      "name": "LOTM4_BlackEmperor.fgx",
+      "sha256": "6faaf1f67c0d9dde2e0f66984fa603fba8cae3c531c48395a57ef134c913a0e0"
+    },
+    {
+      "name": "LOTM4_Fool.fgx",
+      "sha256": "64453d1f54ae96ba840b012f01f839e57555ba30cedbfd90be6cbe0700e58f40"
+    },
+    {
+      "name": "LOTM4_Night.fgx",
+      "sha256": "f75ca591a2a36ea95d0adfb2d5bf29bc7089b2b3f83620682d358ee811570316"
+    },
+    {
+      "name": "LOTM4_OuterGod.fgx",
+      "sha256": "69389d6b56a09e7f2e200b451cb5452270b2056d9733339b02649a951dddea01"
+    },
+    {
+      "name": "LOTM4_Perfect.fgx",
+      "sha256": "cb072f9980f3d47c07c3b3b5f46c381a2cf565eea7955c32ca66bcd054e627f9"
+    },
+    {
+      "name": "LOTM4_RedPriest.fgx",
+      "sha256": "50ff4cfdd27d75ee5f66c09417716930823e8a65c1e2398d02306d6f0f460698"
+    },
+    {
+      "name": "LOTM4_Saint.fgx",
+      "sha256": "3a95e1ef8009d1c1810cfe9f2632b753e8df4b7c4a1e520d4404b3b7a9db9d9c"
+    },
+    {
+      "name": "LOTM4_Storm.fgx",
+      "sha256": "c29c8dcb79d5be27343740a9010f3b9c9da3c0b5fa7b22a9d5ffa64cf90b91b7"
+    }
+  ],
+  "package_hashes": {
+    "LOTMModelsV4/Platforms/Windows/BLPs/LOTMModelsV4.blp": "a8ba9b525d18a75e3000cc91447f73d5649ffd599c5746479d0c214a12e83d2d",
+    "LOTMModelsV4/Platforms/MacOS/BLPs/LOTMModelsV4.blp": "a8ba9b525d18a75e3000cc91447f73d5649ffd599c5746479d0c214a12e83d2d",
+    "LOTMHolyCities/Platforms/Windows/BLPs/LOTMHolyCities.blp": "b831a2c2ad74e1612df78e5129daa372d58c55c9e1fbef939ca22a54637b1183",
+    "LOTMHolyCities/Platforms/MacOS/BLPs/LOTMHolyCities.blp": "b831a2c2ad74e1612df78e5129daa372d58c55c9e1fbef939ca22a54637b1183"
+  },
+  "in_game_fixed": false,
+  "multiplayer_fixed": false,
+  "static_geometry_rebuilt": 27,
+  "external_dependencies_included": true
+}

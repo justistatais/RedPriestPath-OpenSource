@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GameInfo>
+  <LocalizedText>
+    <Row Tag="LOC_LOTM_RESCUE_STAR_CASE_NAME" Language="zh_Hans_CN">
+      <Text>案件档案</Text>
+    </Row>
+    <Row Tag="LOC_LOTM_RESCUE_STAR_CASE_DESC" Language="zh_Hans_CN">
+      <Text>有效就职时，己方在己方领土内每击杀一个敌方战斗单位，随机获得300科技或300文化；每次击杀只结算一次，没有每回合次数上限。</Text>
+    </Row>
+    <Row Tag="LOC_LOTM_RESCUE_STAR_GLOVES_NAME" Language="zh_Hans_CN">
+      <Text>红手套巡查</Text>
+    </Row>
+    <Row Tag="LOC_LOTM_RESCUE_STAR_GLOVES_DESC" Language="zh_Hans_CN">
+      <Text>有效就职时，所有己方普通侦察系单位＋1移动力。每个侦察单位结束移动后，在当前位置周围1格提供临时普通视野；再次结束移动刷新该单位的巡查点，下一己方回合开始清理。</Text>
+    </Row>
+    <Row Tag="LOC_LOTM_RESCUE_STAR_WORLD_NAME" Language="zh_Hans_CN">
+      <Text>隐秘世界</Text>
+    </Row>
+    <Row Tag="LOC_LOTM_RESCUE_STAR_WORLD_DESC" Language="zh_Hans_CN">
+      <Text>同时拥有“案件档案”和“红手套巡查”，且有效就职时，持续获得全图普通视野；离任、中和或城市丢失后撤销。不会发现间谍、绕过隐身或攻击合法性。</Text>
+    </Row>
+    <Replace Tag="LOC_LOTM_MS_INVESTIGATION_DESC" Language="zh_Hans_CN">
+      <Text>本城敌方间谍任务等级修正－2。</Text>
+    </Replace>
+  </LocalizedText>
+</GameInfo>

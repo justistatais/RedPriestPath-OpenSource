@@ -1,10 +1,10 @@
 -- BEGIN RC342 STARTUP TRACE
--- Optional startup diagnostics, resource 393. Embedded by generate_startup_trace.py so a
+-- Optional startup diagnostics, resource 435. Embedded by generate_startup_trace.py so a
 -- missing VFS import cannot hide the first startup checkpoint.
 -- Keep disabled in releases: high-frequency UI tracing caused severe stutter.
 -- To diagnose a new failure, enable and rerun both startup/bundle generators.
 if LOTM_StartupTrace == nil then
-	LOTM_StartupTrace = { Enabled=false, Resource=393 };
+	LOTM_StartupTrace = { Enabled=false, Resource=435 };
 	local trace = LOTM_StartupTrace;
 	local sequence = 0;
 	local unpackValues = table.unpack or unpack;
@@ -22,7 +22,7 @@ if LOTM_StartupTrace == nil then
 		sequence = sequence + 1;
 		local fields = {};
 		for index=1,select("#",...) do fields[index] = Scalar(select(index,...)); end
-		print("[LOTM_DIAG] r=393 seq=" .. sequence .. " ctx=" .. context
+		print("[LOTM_DIAG] r=435 seq=" .. sequence .. " ctx=" .. context
 			.. " point=" .. point .. (#fields>0 and " args=" .. table.concat(fields,"|") or ""));
 	end
 	-- A lexical proxy belongs to this module only. The actual Events tables,
@@ -188,6 +188,10 @@ local function Refresh()
  local now=turnValue~=nil and (tonumber(turnValue) or 0) or 0;
  local summary=bt>0 and Locale.Lookup("LOC_LOTM_CHURCH_BLESS_"..current.."_"..bt.."_"..bs) or Locale.Lookup("LOC_LOTM_CHURCH_BLESSING",0,"NONE",0);
  if Controls.Blessing~=nil then Controls.Blessing:SetText(Locale.Lookup("LOC_LOTM_CHURCH_BLESSING",bt,bs,math.max(0,untilTurn-now)).."[NEWLINE]"..summary); end
+ if current=="STORM" and GameInfo.WMDs.WMD_LOTM_LIGHTNING_STORM~=nil and Controls.Blessing~=nil then
+  local charges=player~=nil and tonumber(player:GetProperty("LOTM_STORM_CHARGES") or 0) or 0;
+  Controls.Blessing:SetText(Locale.Lookup("LOC_LOTM_STORM_TOOLTIP",charges));
+ end
  if Controls.Content~=nil then Controls.Content:CalculateSize(); end
  Log("refreshed church="..current.." envoys="..envoys.." tier="..tier.." target="..kind..":"..tostring(plot));
 end

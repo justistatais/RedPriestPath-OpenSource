@@ -1,11 +1,11 @@
 -- AUTO-GENERATED network main context loaded after the verbatim rc.241 rescue bootstrap.
 -- BEGIN RC342 STARTUP TRACE
--- Optional startup diagnostics, resource 393. Embedded by generate_startup_trace.py so a
+-- Optional startup diagnostics, resource 435. Embedded by generate_startup_trace.py so a
 -- missing VFS import cannot hide the first startup checkpoint.
 -- Keep disabled in releases: high-frequency UI tracing caused severe stutter.
 -- To diagnose a new failure, enable and rerun both startup/bundle generators.
 if LOTM_StartupTrace == nil then
-	LOTM_StartupTrace = { Enabled=false, Resource=393 };
+	LOTM_StartupTrace = { Enabled=false, Resource=435 };
 	local trace = LOTM_StartupTrace;
 	local sequence = 0;
 	local unpackValues = table.unpack or unpack;
@@ -23,7 +23,7 @@ if LOTM_StartupTrace == nil then
 		sequence = sequence + 1;
 		local fields = {};
 		for index=1,select("#",...) do fields[index] = Scalar(select(index,...)); end
-		print("[LOTM_DIAG] r=393 seq=" .. sequence .. " ctx=" .. context
+		print("[LOTM_DIAG] r=435 seq=" .. sequence .. " ctx=" .. context
 			.. " point=" .. point .. (#fields>0 and " args=" .. table.concat(fields,"|") or ""));
 	end
 	-- A lexical proxy belongs to this module only. The actual Events tables,
@@ -78,12 +78,12 @@ local m_isNetworkGame = GameConfiguration ~= nil
 if m_isNetworkGame then
 	print("[LOTM][BundleRouter] route=NETWORK_RC241_PLUS_DELTAS phase2BeforeMain="
 		.. tostring(Game.GetProperty("LOTM_RESCUE_PHASE2A_STATE") or "NOT_RESCUE"));
--- Optional startup diagnostics, resource 393. Embedded by generate_startup_trace.py so a
+-- Optional startup diagnostics, resource 435. Embedded by generate_startup_trace.py so a
 -- missing VFS import cannot hide the first startup checkpoint.
 -- Keep disabled in releases: high-frequency UI tracing caused severe stutter.
 -- To diagnose a new failure, enable and rerun both startup/bundle generators.
 if LOTM_StartupTrace == nil then
-	LOTM_StartupTrace = { Enabled=false, Resource=393 };
+	LOTM_StartupTrace = { Enabled=false, Resource=435 };
 	local trace = LOTM_StartupTrace;
 	local sequence = 0;
 	local unpackValues = table.unpack or unpack;
@@ -101,7 +101,7 @@ if LOTM_StartupTrace == nil then
 		sequence = sequence + 1;
 		local fields = {};
 		for index=1,select("#",...) do fields[index] = Scalar(select(index,...)); end
-		print("[LOTM_DIAG] r=393 seq=" .. sequence .. " ctx=" .. context
+		print("[LOTM_DIAG] r=435 seq=" .. sequence .. " ctx=" .. context
 			.. " point=" .. point .. (#fields>0 and " args=" .. table.concat(fields,"|") or ""));
 	end
 	-- A lexical proxy belongs to this module only. The actual Events tables,
@@ -176,6 +176,187 @@ function LOTM_MP241_LoadBundledModule(moduleName)
 	return true;
 end
 
+m_mp241Loaders["LOTM_AI_Cult_Difficulty"] = function()
+-- BEGIN POST_RC241_NEW MODULE: Scripts/LOTM_AI_Cult_Difficulty.lua
+-- BEGIN RC342 STARTUP TRACE
+LOTM_StartupTrace.Mark("MP.LOTM_AI_Cult_Difficulty","CONTEXT BEGIN");
+local Events = LOTM_StartupTrace.Events(Events,"MP.LOTM_AI_Cult_Difficulty","Events");
+local GameEvents = LOTM_StartupTrace.Events(GameEvents,"MP.LOTM_AI_Cult_Difficulty","GameEvents");
+-- END RC342 STARTUP TRACE
+
+-- Normal-mode AI self-bonuses. The host's game option is committed once to
+-- synchronized saved state, before the legacy cult startup assigns any AI.
+LOTM_AI_Cult_Difficulty = LOTM_AI_Cult_Difficulty or {};
+local KEY="LOTM_CULT_DIFFICULTY";
+local prefixCache={};
+local militaryPending={};
+local registered=false;
+local VALUES={
+ HARD={science={20,40,60},economy={30,60,90},combat={2,4,6},maintenance={10,20,30},
+  food={10,20,30},amenities={1,2,3},heal={3,5,8},territory={2,3,4}},
+ INSANE={science={40,80,120},economy={60,120,180},combat={4,7,10},maintenance={20,35,50},
+  food={20,40,60},amenities={2,3,4},heal={5,8,12},territory={3,5,7}}
+};
+local function Number(value,default) return tonumber(value) or default; end
+local function Log(message) print("[LOTM_CDIFF] "..tostring(message)); end
+local function RescueActive()
+ return LOTM_MP_TurnSync.IsRescueModeConfigured()
+  or Number(Game.GetProperty("LOTM_RESCUE_MODE"),0)==1;
+end
+local function Normalize(value)
+ return (value=="HARD" or value=="INSANE") and value or "EASY";
+end
+function LOTM_AI_Cult_Difficulty.Get() return Normalize(Game.GetProperty(KEY)); end
+function LOTM_AI_Cult_Difficulty.Initialize()
+ if RescueActive() then return; end
+ if Game.GetProperty(KEY)~=nil then return; end
+ -- A preexisting cult ledger identifies old saves even when a new front-end
+ -- default or room configuration is present. Never reset assignments/tiers.
+ local legacy=Game.GetProperty("LOTM_CULT_STATE_VERSION")~=nil
+  or Game.GetProperty("LOTM_CULT_ASSIGNMENTS_INITIALIZED")~=nil;
+ local configured=GameConfiguration.GetValue(KEY);
+ local difficulty=legacy and "EASY" or Normalize(configured);
+ Game.SetProperty(KEY,difficulty);
+ Game.SetProperty("LOTM_CULT_DIFFICULTY_SOURCE",legacy and "LEGACY_SAVE" or "GAME_CONFIG");
+ Game.SetProperty("LOTM_CULT_DIFFICULTY_VERSION",1);
+ Log("locked="..difficulty.." source="..(legacy and "LEGACY_SAVE" or "GAME_CONFIG"));
+end
+local function IsCultAI(player)
+ if player==nil or not player:IsAlive() or not player:IsMajor() or player:IsHuman() then return false; end
+ local path=player:GetProperty("LOTM_CULT_PATH");
+ return path=="DEMONESS" or path=="HANGED_MAN" or path=="CHAINED";
+end
+local function PrefixIds(prefix)
+ if prefixCache[prefix]~=nil then return prefixCache[prefix]; end
+ local result={};
+ for row in GameInfo.Modifiers() do
+  if string.sub(row.ModifierId,1,#prefix)==prefix then result[#result+1]=row.ModifierId; end
+ end
+ table.sort(result); prefixCache[prefix]=result; return result;
+end
+local function Attach(player,token,direction)
+ local ids=PrefixIds("LOTM_CDIFF_"..token.."_"..direction.."__");
+ assert(#ids>0,"missing cult difficulty SQL token "..token.." "..direction);
+ for _,id in ipairs(ids) do player:AttachModifierByID(id); end
+end
+local function Eligibility(player,token,desired)
+ local row=GameInfo.Resources["RESOURCE_LOTM_CDIFF_"..token];
+ assert(row~=nil,"missing cult difficulty eligibility resource "..token);
+ local resources=player:GetResources();
+ local amount=Number(resources:GetResourceAmount(row.Index),0);
+ if amount~=desired then resources:ChangeResourceAmount(row.Index,desired-amount); end
+end
+local function EnsureMilitary(player,slot,token)
+ if slot~="COMMON" and slot~="CHAINED" then return; end
+ -- A distinct receipt and native ID leave serialized rc390 effects alone.
+ -- The owner gate uses the same current stage resource as economy: when
+ -- that stage is retired, this parent and its non-permanent children expire.
+ local receipt="LOTM_CDIFF_MILITARY_V2_ATTACHED_"..token;
+ if Number(player:GetProperty(receipt),0)==1 then return; end
+ local ids=PrefixIds("LOTM_CDIFF_MILITARY_V2_"..token.."_ON__");
+ if #ids~=1 then
+  if not militaryPending[token] then
+   Log("military pending token="..token.." reason=MISSING_NATIVE_V2 count="..#ids);
+   militaryPending[token]=true;
+  end
+  return;
+ end
+ player:AttachModifierByID(ids[1]);
+ player:SetProperty(receipt,1);
+ Log("military v2 player="..player:GetID().." token="..token.." modifier="..ids[1]);
+end
+local function Switch(player,slot,desired)
+ local key="LOTM_CDIFF_APPLIED_"..slot;
+ local old=player:GetProperty(key) or "NONE"; desired=desired or "NONE";
+ if old~="NONE" and old~=desired then Eligibility(player,old,0); end
+ if desired~="NONE" then
+  local receipt="LOTM_CDIFF_ATTACHED_"..desired;
+  if Number(player:GetProperty(receipt),0)~=1 then
+   Attach(player,desired,"ON"); player:SetProperty(receipt,1);
+  end
+  Eligibility(player,desired,1);
+  EnsureMilitary(player,slot,desired);
+ end
+ if old==desired then return; end
+ player:SetProperty(key,desired);
+ Log("player="..player:GetID().." slot="..slot.." old="..old.." new="..desired);
+end
+function LOTM_AI_Cult_Difficulty.Reconcile()
+ if RescueActive() then return; end
+ LOTM_AI_Cult_Difficulty.Initialize();
+ local difficulty=LOTM_AI_Cult_Difficulty.Get();
+ local majors={};
+ for _,player in ipairs(PlayerManager.GetAliveMajors()) do majors[#majors+1]=player; end
+ table.sort(majors,function(a,b) return a:GetID()<b:GetID(); end);
+ for _,player in ipairs(majors) do
+  local valid=IsCultAI(player) and VALUES[difficulty]~=nil;
+  local path=player:GetProperty("LOTM_CULT_PATH");
+  local tier=valid and LOTM_AI_Cults.GetTier(path) or 1;
+  tier=math.max(1,math.min(3,Number(tier,1)));
+  local token=valid and (difficulty.."_T"..tier) or nil;
+  Switch(player,"COMMON",token and ("COMMON_"..token));
+  Switch(player,"DEMONESS",token and path=="DEMONESS" and ("DEMONESS_"..token) or nil);
+  Switch(player,"CHAINED",token and path=="CHAINED" and ("CHAINED_"..token) or nil);
+ end
+end
+local function Military(unit)
+ local row=GameInfo.Units[unit:GetType()];
+ return row~=nil and (Number(row.Combat,0)>0 or Number(row.RangedCombat,0)>0
+  or Number(row.Bombard,0)>0);
+end
+local function SettleMaintenance(player,percent,turn)
+ local key="LOTM_CDIFF_MAINTENANCE_TURN";
+ if Number(player:GetProperty(key),-1)==turn then return; end
+ local treasury=player:GetTreasury();
+ -- Firaxis' unit-maintenance modifier is a flat Gold discount per unit.
+ -- Refund the specified percentage of actual net unit upkeep instead: no
+ -- building/WMD upkeep, no refund on zero/negative costs, no yield multiplier.
+ if treasury==nil or type(treasury.GetUnitMaintenance)~="function" then
+  Log("maintenance pending player="..player:GetID().." reason=NO_NATIVE_GET_UNIT_MAINTENANCE"); return;
+ end
+ local cost=Number(treasury:GetUnitMaintenance(),0);
+ cost=math.max(0,cost);
+ local refund=math.min(cost,cost*math.max(0,math.min(50,percent))/100);
+ if refund>0 then treasury:ChangeGoldBalance(refund); end
+ player:SetProperty(key,turn);
+ player:SetProperty("LOTM_CDIFF_MAINTENANCE_BASE",cost);
+ player:SetProperty("LOTM_CDIFF_MAINTENANCE_REFUND",refund);
+ Log("maintenance player="..player:GetID().." turn="..turn.." base="..cost.." percent="..percent.." refund="..refund);
+end
+local function HealUnits(player,amount,turn)
+ local units={}; for _,unit in player:GetUnits():Members() do units[#units+1]=unit; end
+ table.sort(units,function(a,b) return a:GetID()<b:GetID(); end);
+ for _,unit in ipairs(units) do
+  if Military(unit) and not unit:IsDead() and not unit:IsDelayedDeath()
+   and Number(unit:GetProperty("LOTM_CDIFF_HEAL_TURN"),-1)~=turn then
+   local damage=math.max(0,Number(unit:GetDamage(),0));
+   local heal=math.min(damage,amount);
+   if heal>0 then unit:ChangeDamage(-heal); end
+   unit:SetProperty("LOTM_CDIFF_HEAL_TURN",turn);
+  end
+ end
+end
+local function OnTurn(playerID,isFirstTimeThisTurn)
+ if isFirstTimeThisTurn==false or RescueActive() then return; end
+ LOTM_AI_Cult_Difficulty.Reconcile();
+ local player=Players[playerID];
+ local values=VALUES[LOTM_AI_Cult_Difficulty.Get()];
+ if values==nil or not IsCultAI(player) then return; end
+ local tier=math.max(1,math.min(3,Number(LOTM_AI_Cults.GetTier(player:GetProperty("LOTM_CULT_PATH")),1)));
+ local turn=Game.GetCurrentGameTurn();
+ SettleMaintenance(player,values.maintenance[tier],turn);
+ if player:GetProperty("LOTM_CULT_PATH")=="HANGED_MAN" then HealUnits(player,values.heal[tier],turn); end
+end
+function LOTM_AI_Cult_Difficulty.Register()
+ if registered or RescueActive() then return; end
+ registered=true;
+ LOTM_MP_TurnSync.Add(OnTurn,"AICultDifficulty");
+ LOTM_MP_TurnSync.RunStartup(LOTM_AI_Cult_Difficulty.Reconcile,"AICultDifficulty");
+end
+LOTM_MP_TurnSync.RunStartup(LOTM_AI_Cult_Difficulty.Initialize,"AICultDifficultyLock");
+-- END POST_RC241_NEW MODULE: Scripts/LOTM_AI_Cult_Difficulty.lua
+end;
+
 m_mp241Loaders["LOTM_AI_Cult_Hanged"] = function()
 -- BEGIN RC241 MODULE: Scripts/LOTM_AI_Cult_Hanged.lua
 -- BEGIN RC342 STARTUP TRACE
@@ -184,6 +365,252 @@ local Events = LOTM_StartupTrace.Events(Events,"MP.LOTM_AI_Cult_Hanged","Events"
 local GameEvents = LOTM_StartupTrace.Events(GameEvents,"MP.LOTM_AI_Cult_Hanged","GameEvents");
 -- END RC342 STARTUP TRACE
 
+if not LOTM_MP_TurnSync.IsRescueModeConfigured() then
+-- Hanged Man flesh-puppet equivalent replacements. No unit is killed or
+-- rebuilt: a newly created current-baseline melee unit keeps its model,
+-- experience, promotions, formation and AI mission, while receiving a fixed
+-- +10/+20 ability, synchronized properties, name and UI emblem.
+LOTM_AI_Cult_Hanged = LOTM_AI_Cult_Hanged or {};
+
+local ABILITY_10="ABILITY_LOTM_CULT_FLESH_PUPPET_10";
+local ABILITY_20="ABILITY_LOTM_CULT_FLESH_PUPPET_20";
+local SOURCE_PROPERTY="LOTM_CULT_SOURCE_CULT";
+local TIER_PROPERTY="LOTM_CULT_TIER_AT_CREATE";
+local BASELINE_PROPERTY="LOTM_CULT_BASELINE_MELEE_STRENGTH";
+local pendingNetworkUnits={};
+local pendingNetworkUnitKeys={};
+local pendingRemovedUnits={};
+local INDEX_KEY="LOTM_CULT_HANGED_PUPPET_IDS";
+local INDEX_VERSION_KEY="LOTM_CULT_HANGED_PUPPET_INDEX_VERSION";
+
+local function Log(message) print("[LOTM_CULT][Hanged] "..tostring(message)); end
+local function Number(value,default) if value==nil then return default; end return tonumber(value) or default; end
+local function RescueActive()
+ return LOTM_MP_TurnSync.IsRescueModeConfigured()
+  or Number(Game.GetProperty("LOTM_RESCUE_MODE"),0)==1;
+end
+local function IsFormalHuman(player)
+ return player~=nil and LOTM_RP_State~=nil and LOTM_RP_State.IsAnyPathPlayer~=nil
+  and LOTM_RP_State.IsAnyPathPlayer(player:GetID());
+end
+local function IsPuppet(unit) return unit~=nil and unit:GetProperty(SOURCE_PROPERTY)=="HANGED_MAN"; end
+local function AliveMajors()
+ local result={}; for _,player in ipairs(PlayerManager.GetAliveMajors()) do result[#result+1]=player; end
+ table.sort(result,function(a,b) return a:GetID()<b:GetID(); end); return result;
+end
+local function SortedUnits(player)
+ local result={}; if player==nil then return result; end
+ for _,unit in player:GetUnits():Members() do result[#result+1]=unit; end
+ table.sort(result,function(a,b) return a:GetID()<b:GetID(); end); return result;
+end
+local function PuppetIDs(player)
+ local ids={}; local seen={};
+ for token in string.gmatch(tostring(player:GetProperty(INDEX_KEY) or ""),"%d+") do
+  local id=tonumber(token); if not seen[id] then ids[#ids+1]=id; seen[id]=true; end
+ end
+ table.sort(ids); return ids;
+end
+local function SavePuppetIDs(player,ids)
+ table.sort(ids); local values={}; for _,id in ipairs(ids) do values[#values+1]=tostring(id); end
+ local value=table.concat(values,",");
+ if player:GetProperty(INDEX_KEY)~=value then player:SetProperty(INDEX_KEY,value); end
+end
+local function TrackPuppet(player,unit)
+ local ids=PuppetIDs(player);
+ for _,id in ipairs(ids) do if id==unit:GetID() then return; end end
+ ids[#ids+1]=unit:GetID(); SavePuppetIDs(player,ids);
+end
+local function IsBaselineType(unitType,baselineIndex)
+ if unitType==baselineIndex then return true; end
+ -- A civilization's unique replacement is the same melee tier, rather than
+ -- a different ranged/cavalry candidate. Keep its actual model and identity.
+ local info=GameInfo.Units[unitType];
+ if info==nil or info.PromotionClass~="PROMOTION_CLASS_MELEE" or GameInfo.UnitReplaces==nil then return false; end
+ local baseline=GameInfo.Units[baselineIndex];
+ for row in GameInfo.UnitReplaces() do
+  if row.CivUniqueUnitType==info.UnitType and baseline~=nil and row.ReplacesUnitType==baseline.UnitType then return true; end
+ end
+ return false;
+end
+
+local function SetAbility(unit,abilityType,desired)
+ local abilities=unit~=nil and unit:GetAbility() or nil; if abilities==nil then return; end
+ local current=abilities:GetAbilityCount(abilityType) or 0; if current~=desired then abilities:ChangeAbilityCount(abilityType,desired-current); end
+end
+local function ApplyTier(unit,tier)
+ if unit==nil or not IsPuppet(unit) then return; end
+ SetAbility(unit,ABILITY_10,tier==2 and 1 or 0); SetAbility(unit,ABILITY_20,tier==3 and 1 or 0);
+ unit:SetProperty("LOTM_CULT_FLESH_PUPPET_ACTIVE_TIER",tier);
+ local experience=unit:GetExperience(); if experience~=nil then
+  local veteranName=LOTM_MP_TurnSync.IsNetworkGame() and ("LOTM_CULT_FLESH_PUPPET_"..tostring(tier))
+   or Locale.Lookup("LOC_UNIT_LOTM_CULT_FLESH_PUPPET_NAME");
+  experience:SetVeteranName(veteranName);
+ end
+end
+
+local function CaptureNewUnit(playerID,unitID)
+ if RescueActive() then return; end
+ local player=Players[playerID]; if player==nil or player:IsHuman() or not player:IsAlive() or not player:IsMajor() then return; end
+ if LOTM_AI_Cults.GetPlayerCult(playerID)~="HANGED_MAN" then return; end
+ local tier=LOTM_AI_Cults.GetTier("HANGED_MAN"); if tier~=2 and tier~=3 then return; end
+ local unit=UnitManager.GetUnit(playerID,unitID); if unit==nil then return; end
+ local baseline=LOTM_WORLD_Barbarians.ResolveMeleeBaseline(playerID);
+ if baseline==nil then return; end
+ if not IsPuppet(unit) and unit:GetType()~=baseline.Index and not IsBaselineType(unit:GetType(),baseline.Index) then return; end
+ return {PlayerID=playerID,UnitID=unitID,UnitType=unit:GetType(),TierAtCreate=tier,
+  BaselineIndex=baseline.Index,BaselineCombat=baseline.Combat,BaselineUnitType=baseline.UnitType};
+end
+local function ApplyCapturedNewUnit(entry)
+ if entry==nil or RescueActive() then return; end
+ local player=Players[entry.PlayerID];
+ local unit=player~=nil and UnitManager.GetUnit(entry.PlayerID,entry.UnitID) or nil;
+ if player==nil or unit==nil or player:IsHuman() or not player:IsAlive() or not player:IsMajor()
+  or LOTM_AI_Cults.GetPlayerCult(entry.PlayerID)~="HANGED_MAN" or unit:GetType()~=entry.UnitType
+  or (not IsPuppet(unit) and not IsBaselineType(entry.UnitType,entry.BaselineIndex)) then return; end
+ if IsPuppet(unit) then TrackPuppet(player,unit); ApplyTier(unit,LOTM_AI_Cults.GetTier("HANGED_MAN")); return; end
+ unit:SetProperty(SOURCE_PROPERTY,"HANGED_MAN"); unit:SetProperty(TIER_PROPERTY,entry.TierAtCreate);
+ unit:SetProperty(BASELINE_PROPERTY,entry.BaselineCombat);
+ unit:SetProperty("LOTM_CULT_BASELINE_MELEE_UNIT_TYPE",entry.BaselineUnitType);
+ TrackPuppet(player,unit);
+ local activeTier=LOTM_AI_Cults.GetTier("HANGED_MAN");
+ if activeTier==2 or activeTier==3 then ApplyTier(unit,activeTier); end
+ Log("marked player="..entry.PlayerID.." unit="..entry.UnitID.." baseline="
+  ..tostring(entry.BaselineUnitType)..":"..tostring(entry.BaselineCombat)
+  .." tierAtCreate="..tostring(entry.TierAtCreate).." activeTier="..tostring(activeTier));
+end
+local function ApplyNewUnit(playerID,unitID)
+ ApplyCapturedNewUnit(CaptureNewUnit(playerID,unitID));
+end
+local function QueueNetworkUnitInitialized(playerID,unitID)
+ local normalizedPlayerID=tonumber(playerID); local normalizedUnitID=tonumber(unitID);
+ if normalizedPlayerID==nil or normalizedUnitID==nil then return; end
+ local captured=CaptureNewUnit(normalizedPlayerID,normalizedUnitID); if captured==nil then return; end
+ local key=tostring(normalizedPlayerID)..":"..tostring(normalizedUnitID);
+ if pendingNetworkUnitKeys[key]~=nil then return; end
+ local entry=captured; entry.QueuedTurn=Game.GetCurrentGameTurn(); entry.Key=key;
+ pendingNetworkUnits[#pendingNetworkUnits+1]=entry; pendingNetworkUnitKeys[key]=entry;
+end
+local function ProcessNetworkUnitInitializations(playerID)
+ local network=LOTM_MP_TurnSync.IsNetworkGame();
+ if network and not LOTM_MP_TurnSync.IsStableAnchorPlayer(playerID) then return; end
+ local currentTurn=Game.GetCurrentGameTurn(); local ready={}; local waiting={};
+ for _,entry in ipairs(pendingNetworkUnits) do
+  if entry.Cancelled==true then
+   if pendingNetworkUnitKeys[entry.Key]==entry then pendingNetworkUnitKeys[entry.Key]=nil; end
+  elseif (network and entry.QueuedTurn<currentTurn)
+   or (not network and entry.PlayerID==playerID) then ready[#ready+1]=entry; else waiting[#waiting+1]=entry; end
+ end
+ pendingNetworkUnits=waiting;
+ table.sort(ready,function(a,b)
+  if a.PlayerID~=b.PlayerID then return a.PlayerID<b.PlayerID; end
+  return a.UnitID<b.UnitID;
+ end);
+ for _,entry in ipairs(ready) do
+  if pendingNetworkUnitKeys[entry.Key]==entry then pendingNetworkUnitKeys[entry.Key]=nil; end
+  ApplyCapturedNewUnit(entry);
+ end
+end
+local function TryMarkNewUnit(playerID,unitID)
+ if RescueActive() then return; end
+ if LOTM_MP_TurnSync.IsNetworkGame() then QueueNetworkUnitInitialized(playerID,unitID); return; end
+ ApplyNewUnit(playerID,unitID);
+end
+
+function LOTM_AI_Cult_Hanged.ReconcileAll()
+ if RescueActive() then return; end
+ local tier=LOTM_AI_Cults.GetTier("HANGED_MAN");
+ for _,player in ipairs(AliveMajors()) do
+  if not player:IsHuman() and LOTM_AI_Cults.GetPlayerCult(player:GetID())=="HANGED_MAN" then
+   if Number(player:GetProperty(INDEX_VERSION_KEY),0)<1 then
+    -- One bounded repair for old saves: recover omitted current-baseline
+    -- units and index existing puppets. Ordinary callbacks never rescan armies.
+    for _,unit in ipairs(SortedUnits(player)) do
+     if IsPuppet(unit) then TrackPuppet(player,unit);
+     elseif tier==2 or tier==3 then ApplyNewUnit(player:GetID(),unit:GetID()); end
+    end
+    player:SetProperty(INDEX_VERSION_KEY,1);
+    Log("index repaired player="..player:GetID().." tier="..tier.." ids="..tostring(player:GetProperty(INDEX_KEY) or ""));
+   end
+   if (tier==2 or tier==3) and Number(player:GetProperty("LOTM_CULT_HANGED_PUPPET_TIER_SYNC"),0)~=tier then
+    local living={};
+    for _,id in ipairs(PuppetIDs(player)) do
+     local unit=UnitManager.GetUnit(player:GetID(),id);
+     if IsPuppet(unit) then living[#living+1]=id; ApplyTier(unit,tier); end
+    end
+    SavePuppetIDs(player,living); player:SetProperty("LOTM_CULT_HANGED_PUPPET_TIER_SYNC",tier);
+   end
+  end
+ end
+end
+
+function LOTM_AI_Cult_Hanged.RetireForRescue()
+ if not RescueActive() then return; end
+ for _,player in ipairs(AliveMajors()) do
+  if not player:IsHuman() then for _,unit in ipairs(SortedUnits(player)) do if IsPuppet(unit) then
+   SetAbility(unit,ABILITY_10,0); SetAbility(unit,ABILITY_20,0);
+   unit:SetProperty(SOURCE_PROPERTY,nil); unit:SetProperty("LOTM_CULT_FLESH_PUPPET_ACTIVE_TIER",0);
+  end end end
+ end
+end
+
+local function OnTurn(playerID,isFirstTimeThisTurn)
+ if isFirstTimeThisTurn==false or RescueActive() then return; end
+ ProcessNetworkUnitInitializations(playerID);
+ if LOTM_MP_TurnSync.IsNetworkGame() and not LOTM_MP_TurnSync.IsStableAnchorPlayer(playerID) then return; end
+ table.sort(pendingRemovedUnits,function(a,b)
+  if a.PlayerID~=b.PlayerID then return a.PlayerID<b.PlayerID; end
+  return a.UnitID<b.UnitID;
+ end);
+ for _,entry in ipairs(pendingRemovedUnits) do
+  local player=Players[entry.PlayerID];
+  if player~=nil and UnitManager.GetUnit(entry.PlayerID,entry.UnitID)==nil then
+   local living={}; for _,id in ipairs(PuppetIDs(player)) do if id~=entry.UnitID then living[#living+1]=id; end end
+   if player:GetProperty(INDEX_KEY)~=nil then SavePuppetIDs(player,living); end
+  end
+ end
+ pendingRemovedUnits={};
+end
+
+local function OnUnitRemoved(playerID,unitID)
+ local key=tonumber(playerID)~=nil and tonumber(unitID)~=nil
+  and tostring(tonumber(playerID))..":"..tostring(tonumber(unitID)) or nil;
+ local entry=key~=nil and pendingNetworkUnitKeys[key] or nil;
+ if entry~=nil then
+  entry.Cancelled=true;
+  if pendingNetworkUnitKeys[key]==entry then pendingNetworkUnitKeys[key]=nil; end
+ end
+ if key~=nil and not RescueActive() then pendingRemovedUnits[#pendingRemovedUnits+1]={PlayerID=tonumber(playerID),UnitID=tonumber(unitID)}; end
+end
+
+local function SettleAttackFaith(attackerPlayerID,defenderPlayerID,defenderUnitID)
+ if RescueActive() then return; end
+ local defender=UnitManager.GetUnit(defenderPlayerID,defenderUnitID); if not IsPuppet(defender) then return; end
+ local attacker=Players[attackerPlayerID]; if not IsFormalHuman(attacker) then return; end
+ local tier=LOTM_AI_Cults.GetTier("HANGED_MAN"); if tier~=2 and tier~=3 then return; end
+ local base=tier==2 and 10 or 20; local targetTier=LOTM_AI_Cults.GetTargetTier(attacker); local amount=math.floor(base*LOTM_AI_Cults.GetMultiplier(tier,targetTier)+0.000001); if amount<=0 then return; end
+ local religion=attacker:GetReligion(); if religion==nil then return; end local balance=Number(religion:GetFaithBalance(),0); religion:ChangeFaithBalance(-math.min(balance,amount));
+ attacker:SetProperty("LOTM_CULT_FLESH_PUPPET_LAST_ATTACK_TURN",Game.GetCurrentGameTurn()); attacker:SetProperty("LOTM_CULT_FLESH_PUPPET_LAST_ATTACK_TARGET",tostring(defenderPlayerID)..":"..tostring(defenderUnitID));
+ Log("attack faith attacker="..attackerPlayerID.." defender="..defenderPlayerID..":"..defenderUnitID.." amount="..amount.." tier="..tier);
+end
+
+local function OnCombat(attackerPlayerID,attackerUnitID,defenderPlayerID,defenderUnitID)
+ -- The combat event fires only for the active attacker. This includes unit and
+ -- city ranged attacks; a puppet attacking the player has the arguments
+ -- reversed and therefore never charges faith.
+ SettleAttackFaith(attackerPlayerID,defenderPlayerID,defenderUnitID);
+end
+
+GameEvents.UnitInitialized.Add(TryMarkNewUnit);
+-- UnitInitialized can arrive before the native object is queryable. The map
+-- publication captures facts only; a synchronized turn owns the fallback.
+Events.UnitAddedToMap.Add(QueueNetworkUnitInitialized);
+Events.UnitRemovedFromMap.Add(OnUnitRemoved);
+GameEvents.OnCombatOccurred.Add(OnCombat);
+LOTM_MP_TurnSync.Add(OnTurn,"AICultHanged");
+LOTM_MP_TurnSync.RunStartup(LOTM_AI_Cult_Hanged.ReconcileAll,"AICultHanged");
+Log("initialized equivalent replacement bonus=10/20");
+
+else
 -- Hanged Man flesh-puppet equivalent replacements. No unit is killed or
 -- rebuilt: a newly created current-baseline melee unit keeps its model,
 -- experience, promotions, formation and AI mission, while receiving a fixed
@@ -269,6 +696,8 @@ GameEvents.UnitInitialized.Add(TryMarkNewUnit);
 GameEvents.OnCombatOccurred.Add(OnCombat);
 LOTM_AI_Cult_Hanged.ReconcileAll();
 Log("initialized equivalent replacement bonus=10/20");
+
+end
 -- END RC241 MODULE: Scripts/LOTM_AI_Cult_Hanged.lua
 end;
 
@@ -1820,6 +2249,1159 @@ end
 -- END POST_RC241_NEW MODULE: Scripts/LOTM_Effects.lua
 end;
 
+m_mp241Loaders["LOTM_GodBlessings"] = function()
+-- BEGIN POST_RC241_NEW MODULE: Scripts/LOTM_GodBlessings.lua
+-- BEGIN RC342 STARTUP TRACE
+LOTM_StartupTrace.Mark("MP.LOTM_GodBlessings","CONTEXT BEGIN");
+local Events = LOTM_StartupTrace.Events(Events,"MP.LOTM_GodBlessings","Events");
+local GameEvents = LOTM_StartupTrace.Events(GameEvents,"MP.LOTM_GodBlessings","GameEvents");
+-- END RC342 STARTUP TRACE
+
+-- Shared direct lightning impact. UI only submits EXECUTE_SCRIPT.
+-- No unit, launch facility, WMD stock, missile command or nuclear VFX is created.
+-- Native bindings apply our bounded nuclear-destruction profile directly.
+LOTM_GodBlessings = LOTM_GodBlessings or { VERSION=6 };
+local WEAPON="WMD_LOTM_LIGHTNING_STORM";
+local CARRIER="UNIT_LOTM_STORM_MANIFESTATION";
+local CHARGES="LOTM_STORM_CHARGES";
+local DELIVERY_VERSION=3;
+-- V4 frame99 is the first reviewed mass-strike frame (zero-based98, 4.083s).
+local IMPACT_FRAME=98;
+local STORM_DEBUG_UNLIMITED=false;
+-- Production casts spend earned charges. Keep the saved CAST_DEBUG identity
+-- only to reject or finish already accepted legacy test operations safely.
+local function Log(s) print("[LOTM][GodBlessings] "..tostring(s)); end
+local function N(o,k,d)
+ local v=o~=nil and o:GetProperty(k) or nil;
+ return v~=nil and tonumber(v) or d;
+end
+local function Loaded()
+ return GameInfo.WMDs~=nil and GameInfo.WMDs[WEAPON]~=nil
+  and GameInfo.Units~=nil and GameInfo.Units[CARRIER]~=nil;
+end
+local function Rescue() return LOTM_MP_TurnSync.IsRescueModeConfigured(); end
+local function StormEnabled()
+ return Loaded() and Rescue()==(tonumber(Game.GetProperty("LOTM_RESCUE_MODE") or 0)==1);
+end
+local function Normal() return StormEnabled() and not Rescue(); end
+function LOTM_GodBlessings.IsEnabled() return Normal(); end
+function LOTM_GodBlessings.IsStormEnabled() return StormEnabled(); end
+local function DebugUnlimited() return StormEnabled() and STORM_DEBUG_UNLIMITED==true; end
+local function Player(id)
+ local p=id~=nil and Players[id] or nil;
+ return p~=nil and p:IsAlive() and p:IsMajor() and p or nil;
+end
+local function Quest(church,tier,suffix)
+ return "LOTM_CHURCH_"..church.."_QUEST_"..tier.."_"..suffix;
+end
+local function PublishFX(p,kind,plotIndex,castSerial)
+ local plot=Map.GetPlotByIndex(plotIndex); if plot==nil then return false; end
+ local serial=N(p,"LOTM_GOD_FX_SERIAL",0)+1;
+ local key="LOTM_GOD_FX_"..serial.."_";
+ p:SetProperty(key.."KIND",kind); p:SetProperty(key.."PLOT",plotIndex);
+ if kind=="STORM" and castSerial~=nil then
+  p:SetProperty(key.."CAST_SERIAL",castSerial); p:SetProperty(key.."IMPACT_FRAME",IMPACT_FRAME);
+ end
+ p:SetProperty("LOTM_GOD_FX_SERIAL",serial);
+ Log("fx player="..p:GetID().." serial="..serial.." kind="..kind.." plot="..plotIndex);
+ return true;
+end
+function LOTM_GodBlessings.RecordCapitalFX(p,church,tier)
+ if not Normal() or (church~="FOOL" and church~="NIGHT") then return; end
+ local receipt=Quest(church,tier,"GOD_FX_RECORDED");
+ if N(p,receipt,0)==1 then return; end
+ local capital=p:GetCities():GetCapitalCity(); if capital==nil then return; end
+ local plot=Map.GetPlot(capital:GetX(),capital:GetY());
+ if plot~=nil and PublishFX(p,church,plot:GetIndex()) then p:SetProperty(receipt,1); end
+end
+function LOTM_GodBlessings.GrantStorm(p,tier,strength)
+ if not StormEnabled() or (tier~=6 and tier~=10 and tier~=15) then return false; end
+ if Rescue() and tier==6 then return false; end
+ local receipt=Quest("STORM",tier,"STORM_GRANTED");
+ if N(p,receipt,0)==1 then return true; end
+ p:SetProperty(CHARGES,N(p,CHARGES,0)+1);
+ p:SetProperty(receipt,1);
+ Log("grant player="..p:GetID().." tier="..tier.." strength="..tostring(strength)
+  .." charges="..N(p,CHARGES,0));
+ return true;
+end
+function LOTM_GodBlessings.BaselineCapitalFX(p)
+ if not Normal() then return; end
+ -- A version-gated migration suppresses animations for already awarded
+ -- historical blessings. New rewards receive their own persistent receipt.
+ for _,church in ipairs({"FOOL","NIGHT"}) do for _,tier in ipairs({6,10,15}) do
+  if N(p,Quest(church,tier,"REWARD_APPLIED"),0)==1 then
+   p:SetProperty(Quest(church,tier,"GOD_FX_RECORDED"),1);
+  end
+ end end
+end
+local function Carrier(p)
+ local id=N(p,"LOTM_STORM_CARRIER_ID",-1);
+ local unit=id>=0 and UnitManager.GetUnit(p:GetID(),id) or nil;
+ local row=GameInfo.Units[CARRIER];
+ if unit==nil or row==nil or unit:GetType()~=row.Index
+  or N(unit,"LOTM_STORM_CAST_SERIAL",-1)~=N(p,"LOTM_STORM_CAST_SERIAL",0) then return nil; end
+ return unit;
+end
+local function RemoveCarrier(p)
+ -- Resource428 and earlier saves may still contain a prepared carrier.
+ -- It is retained in the database solely for exact-identity cleanup.
+ local unit=Carrier(p); if unit~=nil then UnitManager.Kill(unit); end
+ p:SetProperty("LOTM_STORM_CARRIER_ID",-1);
+end
+local function OriginKey(plotIndex) return "LOTM_STORM_ORIGIN_"..plotIndex.."_"; end
+local function RemoveOrigin(p)
+ local index=N(p,"LOTM_STORM_SOURCE_PLOT",-1);
+ if N(p,"LOTM_STORM_SOURCE_TEMPORARY",0)==1 and index>=0 then
+  local key=OriginKey(index);
+  if tonumber(Game.GetProperty(key.."OWNER"))==p:GetID()
+   and tonumber(Game.GetProperty(key.."SERIAL"))==N(p,"LOTM_STORM_CAST_SERIAL",0) then
+   local plot=Map.GetPlotByIndex(index); local row=GameInfo.Improvements.IMPROVEMENT_MISSILE_SILO;
+   -- Do not remove an existing silo or a replacement made by another action.
+   if plot~=nil and row~=nil and plot:GetImprovementType()==row.Index then
+    ImprovementBuilder.SetImprovementType(plot,-1,-1);
+   end
+   Game.SetProperty(key.."OWNER",nil); Game.SetProperty(key.."SERIAL",nil);
+  end
+ end
+ p:SetProperty("LOTM_STORM_SOURCE_TEMPORARY",0);
+ p:SetProperty("LOTM_STORM_SOURCE_PLOT",-1);
+ p:SetProperty("LOTM_STORM_SOURCE_CITY_ID",-1);
+end
+
+local function Result(p,value)
+ p:SetProperty("LOTM_STORM_RESULT",value);
+ p:SetProperty("LOTM_STORM_RESULT_SERIAL",N(p,"LOTM_STORM_RESULT_SERIAL",0)+1);
+ Log("result player="..p:GetID().." value="..value.." charges="..N(p,CHARGES,0));
+end
+local function LegacyCleanup(p)
+ if N(p,"LOTM_STORM_DELIVERY_MIGRATED",0)>=DELIVERY_VERSION then return; end
+ -- Exact saved identities only; an ordinary silo is never created or removed.
+ RemoveCarrier(p); RemoveOrigin(p);
+ local row=GameInfo.WMDs[WEAPON]; local stock=p:GetWMDs();
+ if stock~=nil and stock.GetWeaponCount~=nil and stock.ChangeWeaponCount~=nil then
+  local count=stock:GetWeaponCount(row.Index); if count>0 then stock:ChangeWeaponCount(row.Index,-count); end
+ end
+ p:SetProperty("LOTM_STORM_PENDING",0); p:SetProperty("LOTM_STORM_ARMED",0);
+ p:SetProperty("LOTM_STORM_CAST_DEBUG",0);
+ p:SetProperty("LOTM_STORM_WINDUP",0); p:SetProperty("LOTM_STORM_START_FX_SERIAL",0);
+ p:SetProperty("LOTM_STORM_DELIVERY_MIGRATED",DELIVERY_VERSION);
+end
+local function Session(playerID,parameters)
+ if not StormEnabled() or type(parameters)~="table" then return nil; end
+ local p=Player(playerID);
+ return p~=nil and p:IsHuman() and tonumber(parameters.CastSerial)==N(p,"LOTM_STORM_CAST_SERIAL",0)
+  and N(p,"LOTM_STORM_PENDING",0)==1 and N(p,"LOTM_STORM_DELIVERY_VERSION",0)==DELIVERY_VERSION and p or nil;
+end
+local function Cancel(p)
+ if N(p,"LOTM_STORM_PENDING",0)~=1 or N(p,"LOTM_STORM_APPLYING",0)==1 or N(p,"LOTM_STORM_WINDUP",0)==1 then return; end
+ p:SetProperty("LOTM_STORM_PENDING",0); p:SetProperty("LOTM_STORM_ARMED",0);
+ p:SetProperty("LOTM_STORM_CAST_DEBUG",0); Result(p,"CANCELLED");
+end
+local function OnPrepare(playerID,parameters)
+ if not StormEnabled() or type(parameters)~="table" then return; end
+ local p=Player(playerID); if p==nil or not p:IsHuman() then return; end
+ if not p:IsTurnActive() then Result(p,"NOT_YOUR_TURN"); return; end
+ if tonumber(parameters.ExpectedSerial)~=N(p,"LOTM_STORM_CAST_SERIAL",0) then return; end
+ LegacyCleanup(p);
+ if N(p,"LOTM_STORM_PENDING",0)==1 then return; end
+ if not DebugUnlimited() and N(p,CHARGES,0)<=0 then Result(p,"NO_CHARGE"); return; end
+ p:SetProperty("LOTM_STORM_CAST_SERIAL",N(p,"LOTM_STORM_CAST_SERIAL",0)+1);
+ p:SetProperty("LOTM_STORM_DELIVERY_VERSION",DELIVERY_VERSION);
+ p:SetProperty("LOTM_STORM_PREPARED_TURN",Game.GetCurrentGameTurn());
+ p:SetProperty("LOTM_STORM_TARGET_PLOT",-1);
+ p:SetProperty("LOTM_STORM_CAST_DEBUG",DebugUnlimited() and 1 or 0);
+ p:SetProperty("LOTM_STORM_APPLYING",0); p:SetProperty("LOTM_STORM_PLAN_COUNT",0);
+ p:SetProperty("LOTM_STORM_WINDUP",0); p:SetProperty("LOTM_STORM_START_FX_SERIAL",0);
+ p:SetProperty("LOTM_STORM_ARMED",1); p:SetProperty("LOTM_STORM_PENDING",1); Result(p,"READY");
+end
+-- At most the target plus six adjacent hexes. No per-event map/player scan.
+local function BlastPlots(target)
+ local plots={}; local seen={};
+ for dy=-1,1 do for dx=-1,1 do
+  local plot=Map.GetPlotXYWithRangeCheck(target:GetX(),target:GetY(),dx,dy,1);
+  if plot~=nil and not seen[plot:GetIndex()] then seen[plot:GetIndex()]=true; plots[#plots+1]=plot; end
+ end end
+ table.sort(plots,function(a,b) return a:GetIndex()<b:GetIndex(); end); return plots;
+end
+-- Standard and modded ability-based WMD blast resistance, using actual DB
+-- amounts (the stock GDR is Blast=50). Cache metadata, never live unit state.
+local resistanceAbilities=nil;
+local districtReplacements=nil;
+local function DistrictTypes(row)
+ if districtReplacements==nil then
+  districtReplacements={};
+  for replacement in GameInfo.DistrictReplaces() do
+   districtReplacements[replacement.CivUniqueDistrictType]=replacement.ReplacesDistrictType;
+  end
+ end
+ local types={}; local current=row.DistrictType;
+ while current~=nil and not types[current] do types[current]=true; current=districtReplacements[current]; end
+ return types;
+end
+local function BlastResistance(unit)
+ if resistanceAbilities==nil then
+  resistanceAbilities={};
+  for link in GameInfo.UnitAbilityModifiers() do
+   local modifier=GameInfo.Modifiers[link.ModifierId];
+   local dynamic=modifier~=nil and GameInfo.DynamicModifiers[modifier.ModifierType] or nil;
+   if dynamic~=nil and dynamic.EffectType=="EFFECT_ADJUST_UNIT_WMD_PROTECTION" then
+    for argument in GameInfo.ModifierArguments() do
+     if argument.ModifierId==link.ModifierId and argument.Name=="Blast" then
+      resistanceAbilities[#resistanceAbilities+1]={Ability=link.UnitAbilityType,Amount=tonumber(argument.Value) or 0};
+     end
+    end
+   end
+  end
+  table.sort(resistanceAbilities,function(a,b) return a.Ability<b.Ability or (a.Ability==b.Ability and a.Amount<b.Amount); end);
+ end
+ local ability=unit:GetAbility(); if ability==nil or ability.GetAbilityCount==nil then error("UnitAbility.GetAbilityCount unavailable"); end
+ local total=0;
+ for _,entry in ipairs(resistanceAbilities) do
+  if ability:GetAbilityCount(entry.Ability)>0 then total=total+entry.Amount; end
+ end
+ return math.max(0,math.min(100,total));
+end
+local function IsOuterGod(unit)
+ if not Rescue() or not StormEnabled() or unit==nil then return false; end
+ local row=GameInfo.Units[unit:GetType()];
+ return (row~=nil and row.UnitType=="UNIT_LOTM_RESCUE_OUTER_GOD_AVATAR")
+  or (tostring(unit:GetProperty("LOTM_RESCUE_PHASE10_ROLE") or "")=="BOSS"
+   and N(unit,"LOTM_RESCUE_PHASE10_IS_GOD",0)==1);
+end
+local function OuterStep(unit)
+ local before=unit:GetDamage(); local maximum=unit:GetMaxDamage();
+ return {Kind="OUTER_GOD",Owner=unit:GetOwner(),ID=unit:GetID(),Value=math.min(maximum,before+20),
+  Extra=maximum,BaseDamage=before,OuterEpoch=N(unit,"LOTM_RESCUE_PHASE10_BOSS_EPOCH",0),OuterType=unit:GetType()};
+end
+local function CollectPlan(p,target)
+ local plan={}; local cities={}; local orderedCities={}; local owners={}; local ownerIDs={}; local seenUnits={};
+ local function Owner(id)
+  if id~=nil and id>=0 and id~=p:GetID() and Players[id]~=nil and not owners[id] then
+   owners[id]=true; ownerIDs[#ownerIDs+1]=id;
+  end
+ end
+ local function Add(kind,owner,id,value,extra)
+  plan[#plan+1]={Kind=kind,Owner=owner,ID=id,Value=value,Extra=extra or 0};
+ end
+ local function Unit(unit)
+  if unit==nil or unit:IsDead() or unit:IsDelayedDeath() then return; end
+  local owner=unit:GetOwner(); local id=unit:GetID(); local key=owner..":"..id;
+  if seenUnits[key] then return; end; seenUnits[key]=true; Owner(owner);
+  -- Decide before calculating a nuclear endpoint or queuing UnitManager.Kill.
+  -- Outer-God minions do not match the avatar/BOSS predicate.
+  if IsOuterGod(unit) then
+   if LOTM_RESCUE_Phase10==nil or LOTM_RESCUE_Phase10.ApplyStormDamage==nil then error("Outer God storm damage binding unavailable"); end
+   plan[#plan+1]=OuterStep(unit); return;
+  end
+  local damage=math.floor(unit:GetMaxDamage()*(100-BlastResistance(unit))/100);
+  if damage>0 then
+   if unit.ChangeDamage==nil or UnitManager.Kill==nil then error("Unit damage binding unavailable"); end
+   Add("UNIT",owner,id,math.min(unit:GetMaxDamage(),unit:GetDamage()+damage),unit:GetMaxDamage());
+  end
+ end
+ for _,plot in ipairs(BlastPlots(target)) do
+  Owner(plot:GetOwner());
+  local workers=plot:GetWorkerCount(); local working=Cities.GetPlotWorkingCity(plot:GetIndex());
+  if workers>0 and working~=nil then
+   local key=working:GetOwner()..":"..working:GetID();
+   if cities[key]==nil then cities[key]={City=working,Workers=0}; orderedCities[#orderedCities+1]=cities[key]; end
+   cities[key].Workers=cities[key].Workers+workers;
+  end
+  local units=Units.GetUnitsInPlot(plot) or {};
+  table.sort(units,function(a,b) return a:GetOwner()<b:GetOwner() or (a:GetOwner()==b:GetOwner() and a:GetID()<b:GetID()); end);
+  for _,unit in ipairs(units) do Unit(unit); end
+  -- Stationed aircraft use a separate plot collection in the native UI.
+  for _,air in ipairs(plot:GetAirUnits() or {}) do
+   local unit=air.GetOwner~=nil and air or UnitManager.GetUnit(air.player,air.id); Unit(unit);
+  end
+  if plot:GetImprovementType()>=0 and not plot:IsImprovementPillaged() then
+   if ImprovementBuilder.SetImprovementPillaged==nil then error("Improvement pillage binding unavailable"); end
+   Add("IMPROVEMENT",-1,plot:GetIndex(),1);
+  end
+  if plot:GetRouteType()>=0 and not plot:IsRoutePillaged() then
+   if RouteBuilder.SetRoutePillaged==nil then error("Route pillage binding unavailable"); end
+   Add("ROUTE",-1,plot:GetIndex(),1);
+  end
+  local city=Cities.GetPlotPurchaseCity(plot);
+  local district=city~=nil and city:GetDistricts():GetDistrictAtLocation(plot:GetIndex()) or nil;
+  local districtRow=district~=nil and GameInfo.Districts[district:GetType()] or nil;
+  if district~=nil and districtRow~=nil and districtRow.DistrictType~="DISTRICT_WONDER" then
+   for _,defense in ipairs({DefenseTypes.DISTRICT_GARRISON,DefenseTypes.DISTRICT_OUTER}) do
+    local maximum=district:GetMaxDamage(defense);
+    if maximum>district:GetDamage(defense) then
+     if district.ChangeDamage==nil then error("District.ChangeDamage unavailable"); end
+     Add("DEFENSE",district:GetOwner(),district:GetID(),maximum,defense);
+    end
+   end
+   local row=districtRow; local buildings=city:GetBuildings();
+   if row~=nil then
+    local allowedDistricts=DistrictTypes(row);
+    local candidates={};
+    for building in GameInfo.Buildings() do
+     if allowedDistricts[building.PrereqDistrict] and not building.IsWonder
+      and buildings:HasBuilding(building.Index) and not buildings:IsPillaged(building.Index) then
+      if buildings.SetPillaged==nil then error("CityBuildings.SetPillaged unavailable"); end
+      candidates[#candidates+1]=building.Index;
+     end
+    end
+    table.sort(candidates); for _,index in ipairs(candidates) do Add("BUILDING",city:GetOwner(),city:GetID(),1,index); end
+    if row.DistrictType~="DISTRICT_CITY_CENTER" and not district:IsPillaged() then
+     if district.SetPillaged==nil then error("District.SetPillaged unavailable"); end
+     Add("DISTRICT",district:GetOwner(),district:GetID(),1);
+    end
+   end
+  end
+ end
+ table.sort(orderedCities,function(a,b) return a.City:GetOwner()<b.City:GetOwner() or (a.City:GetOwner()==b.City:GetOwner() and a.City:GetID()<b.City:GetID()); end);
+ -- Snapshot all workers before any population change causes reassignment.
+ for _,entry in ipairs(orderedCities) do
+  local city=entry.City; if city.ChangePopulation==nil then error("City.ChangePopulation unavailable"); end
+  Add("POPULATION",city:GetOwner(),city:GetID(),math.max(1,city:GetPopulation()-entry.Workers));
+ end
+ local wars={}; local diplomacy=p:GetDiplomacy();
+ table.sort(ownerIDs); for _,id in ipairs(ownerIDs) do if not diplomacy:IsAtWarWith(id) then wars[#wars+1]=id; end end;
+ return plan,wars;
+end
+local function ApplyStep(step,caster,serial)
+ local p=step.Owner>=0 and Players[step.Owner] or nil;
+ if step.Kind=="OUTER_GOD" then
+  local unit=UnitManager.GetUnit(step.Owner,step.ID); if unit==nil or unit:IsDead() or unit:IsDelayedDeath() then return; end
+  if not IsOuterGod(unit) or unit:GetType()~=step.OuterType
+   or N(unit,"LOTM_RESCUE_PHASE10_BOSS_EPOCH",0)~=step.OuterEpoch then
+   Log("outer god step skipped identity changed owner="..step.Owner.." unit="..step.ID); return;
+  end
+  if LOTM_RESCUE_Phase10==nil or LOTM_RESCUE_Phase10.ApplyStormDamage==nil
+   or not LOTM_RESCUE_Phase10.ApplyStormDamage(unit,step.BaseDamage,step.Value,step.OuterEpoch,caster,serial) then
+   error("Outer God 20-point damage verification failed");
+  end
+ elseif step.Kind=="UNIT" then
+  local unit=UnitManager.GetUnit(step.Owner,step.ID); if unit==nil then return; end
+  if IsOuterGod(unit) then error("Outer God cannot use a nuclear kill step"); end
+  if step.Value>=step.Extra then UnitManager.Kill(unit);
+  elseif unit:GetDamage()<step.Value then unit:ChangeDamage(step.Value-unit:GetDamage()); end
+  local after=UnitManager.GetUnit(step.Owner,step.ID);
+  if after~=nil and not after:IsDead() and not after:IsDelayedDeath() and after:GetDamage()<step.Value then error("UNIT verification failed"); end
+ elseif step.Kind=="IMPROVEMENT" or step.Kind=="ROUTE" then
+  local plot=Map.GetPlotByIndex(step.ID); if plot==nil then return; end
+  if step.Kind=="IMPROVEMENT" then
+   ImprovementBuilder.SetImprovementPillaged(plot,true); if not plot:IsImprovementPillaged() then error("IMPROVEMENT verification failed"); end
+  else RouteBuilder.SetRoutePillaged(plot,true); if not plot:IsRoutePillaged() then error("ROUTE verification failed"); end end
+ elseif step.Kind=="DEFENSE" or step.Kind=="DISTRICT" then
+  local district=p~=nil and p:GetDistricts():FindID(step.ID) or nil; if district==nil then return; end
+  if step.Kind=="DEFENSE" then
+   local goal=math.min(step.Value,district:GetMaxDamage(step.Extra));
+   if district:GetDamage(step.Extra)<goal then district:ChangeDamage(step.Extra,goal-district:GetDamage(step.Extra)); end
+   if district:GetDamage(step.Extra)<goal then error("DEFENSE verification failed"); end
+  else district:SetPillaged(true); if not district:IsPillaged() then error("DISTRICT verification failed"); end end
+ elseif step.Kind=="BUILDING" or step.Kind=="POPULATION" then
+  local city=p~=nil and p:GetCities():FindID(step.ID) or nil; if city==nil then return; end
+  if step.Kind=="BUILDING" then
+   local buildings=city:GetBuildings(); buildings:SetPillaged(step.Extra,true);
+   if not buildings:IsPillaged(step.Extra) then error("BUILDING verification failed"); end
+  elseif city:GetPopulation()>step.Value then
+   city:ChangePopulation(step.Value-city:GetPopulation());
+   if city:GetPopulation()>step.Value then error("POPULATION verification failed"); end
+  end
+ end
+end
+local function ResumeImpact(p)
+ if N(p,"LOTM_STORM_APPLYING",0)~=1 then return; end
+ local count=N(p,"LOTM_STORM_PLAN_COUNT",0);
+ for index=N(p,"LOTM_STORM_PLAN_DONE",0)+1,count do
+  local prefix="LOTM_STORM_PLAN_"..index.."_";
+  local step={Kind=p:GetProperty(prefix.."Kind"),Owner=N(p,prefix.."Owner",-1),ID=N(p,prefix.."ID",-1),Value=N(p,prefix.."Value",0),Extra=N(p,prefix.."Extra",0),
+   BaseDamage=N(p,prefix.."BaseDamage",0),OuterEpoch=N(p,prefix.."OuterEpoch",0),OuterType=N(p,prefix.."OuterType",-1)};
+  -- Recheck serialized legacy UNIT plans before their lethal branch. Persist
+  -- the converted fixed endpoint before any damage so retries remain bounded.
+  if step.Kind=="UNIT" then
+   local unit=UnitManager.GetUnit(step.Owner,step.ID);
+   if IsOuterGod(unit) then
+    step=OuterStep(unit);
+    for _,key in ipairs({"Kind","Owner","ID","Value","Extra","BaseDamage","OuterEpoch","OuterType"}) do p:SetProperty(prefix..key,step[key]); end
+    Log("legacy nuclear step converted to outer god 20-point damage player="..p:GetID().." step="..index);
+   end
+  end
+  -- Absolute endpoints allow a retry after a native exception without applying
+  -- unit/population damage twice. Keep the incomplete receipt across reload.
+  local ok,err=pcall(ApplyStep,step,p:GetID(),N(p,"LOTM_STORM_CAST_SERIAL",0));
+  if not ok then Log("impact failed player="..p:GetID().." step="..index.." kind="..tostring(step.Kind).." error="..tostring(err)); Result(p,"IMPACT_FAILED"); return; end
+  p:SetProperty("LOTM_STORM_PLAN_DONE",index);
+ end
+ local serial=N(p,"LOTM_STORM_CAST_SERIAL",0);
+ p:SetProperty("LOTM_STORM_SETTLED_SERIAL",serial);
+ if N(p,"LOTM_STORM_CAST_DEBUG",0)~=1 then p:SetProperty(CHARGES,math.max(0,N(p,CHARGES,0)-1)); end
+ p:SetProperty("LOTM_STORM_CAST_DEBUG",0); p:SetProperty("LOTM_STORM_APPLYING",0);
+ p:SetProperty("LOTM_STORM_PENDING",0); p:SetProperty("LOTM_STORM_ARMED",0);
+ -- New casts already published the gathering/strike animation. Only legacy
+ -- partial plans from resource431 and earlier need the old completion FX.
+ if N(p,"LOTM_STORM_START_FX_SERIAL",0)==0 then PublishFX(p,"STORM",N(p,"LOTM_STORM_TARGET_PLOT",-1)); end
+ Result(p,"FIRED");
+ Log("direct impact player="..p:GetID().." serial="..serial.." plot="..N(p,"LOTM_STORM_TARGET_PLOT",-1).." steps="..count.." fallout=0 launcher=NONE");
+end
+local function ConfirmWars(p,wars,confirmed)
+ if #wars>0 then
+  local allowed={}; for value in tostring(confirmed or ""):gmatch("%d+") do allowed[tonumber(value)]=true; end
+  local diplomacy=p:GetDiplomacy();
+  if diplomacy.DeclareWarOn==nil then return "NATIVE_UNAVAILABLE"; end
+  -- Permission for a different owner in a stale dialog cannot start a new war.
+  -- Native friendship/alliance restrictions remain; no damage precedes war.
+  for _,id in ipairs(wars) do
+   if not allowed[id] or (diplomacy.HasAllied~=nil and diplomacy:HasAllied(id))
+    or (diplomacy.HasDeclaredFriendship~=nil and diplomacy:HasDeclaredFriendship(id))
+    or (diplomacy.CanDeclareWarOn~=nil and not diplomacy:CanDeclareWarOn(id)) then
+    return "WAR_REQUIRED";
+   end
+  end
+  for _,id in ipairs(wars) do
+   -- Firaxis WarMachineScenario.lua uses this exact three-argument binding.
+   local declared,err=pcall(function() diplomacy:DeclareWarOn(id,WarTypes.SURPRISE_WAR,true); end);
+   if not declared or not diplomacy:IsAtWarWith(id) then
+    Log("war declaration failed player="..p:GetID().." target="..id.." error="..tostring(err)); return "WAR_REQUIRED";
+   end
+  end
+ end
+ return nil;
+end
+local function OnFire(playerID,parameters)
+ -- Local aiming has no authoritative side effects. Its single confirmation
+ -- operation prepares and validates the cast on synchronized Gameplay here.
+ if StormEnabled() and type(parameters)=="table" and parameters.ExpectedSerial~=nil then
+  local owner=Player(playerID); if owner==nil or not owner:IsHuman() then return; end
+  local expected=tonumber(parameters.ExpectedSerial);
+  local serial=tonumber(parameters.CastSerial);
+  if expected==nil or expected%1~=0 or serial~=expected+1 then return; end
+  if serial==N(owner,"LOTM_STORM_SETTLED_SERIAL",-1) and serial==N(owner,"LOTM_STORM_CAST_SERIAL",0) then return; end
+  if parameters.ExpectedTurn~=nil and tonumber(parameters.ExpectedTurn)~=Game.GetCurrentGameTurn() then Result(owner,"STALE_REQUEST"); return; end
+  if N(owner,"LOTM_STORM_PENDING",0)~=1 then
+   if expected~=N(owner,"LOTM_STORM_CAST_SERIAL",0) then Result(owner,"STALE_REQUEST"); return; end
+   OnPrepare(playerID,{ExpectedSerial=expected});
+  elseif serial~=N(owner,"LOTM_STORM_CAST_SERIAL",0) then
+   Result(owner,"INVENTORY_BUSY"); return;
+  end
+ end
+ local p=Session(playerID,parameters); if p==nil then return; end
+ if N(p,"LOTM_STORM_CAST_DEBUG",0)==1 and not DebugUnlimited()
+  and N(p,"LOTM_STORM_APPLYING",0)~=1 and N(p,"LOTM_STORM_WINDUP",0)~=1 then Cancel(p); return; end
+ if N(p,"LOTM_STORM_APPLYING",0)==1 then ResumeImpact(p); return; end
+ if N(p,"LOTM_STORM_WINDUP",0)==1 then return; end
+ if not p:IsTurnActive() then Result(p,"NOT_YOUR_TURN"); return; end
+ if N(p,"LOTM_STORM_PREPARED_TURN",-1)~=Game.GetCurrentGameTurn() then Cancel(p); return; end
+ if N(p,"LOTM_STORM_ARMED",0)~=1 or N(p,"LOTM_STORM_SETTLED_SERIAL",0)>=N(p,"LOTM_STORM_CAST_SERIAL",0) then return; end
+ local index=tonumber(parameters.PlotIndex); if index==nil or index%1~=0 then return; end
+ local target=Map.GetPlotByIndex(index); local visibility=PlayersVisibility[playerID];
+ if target==nil or visibility==nil or not visibility:IsRevealed(target:GetX(),target:GetY()) then Result(p,"NO_TARGETS"); return; end
+ local ok,plan,wars=pcall(CollectPlan,p,target);
+ if not ok then Log("impact preflight failed player="..playerID.." error="..tostring(plan)); Result(p,"NATIVE_UNAVAILABLE"); return; end
+ local confirmed=tostring(parameters.ConfirmedWarOwners or "");
+ local error=ConfirmWars(p,wars,confirmed); if error~=nil then Result(p,error); return; end
+ p:SetProperty("LOTM_STORM_TARGET_PLOT",index);
+ p:SetProperty("LOTM_STORM_CONFIRMED_WARS",confirmed);
+ p:SetProperty("LOTM_STORM_IMPACT_FRAME",IMPACT_FRAME);
+ p:SetProperty("LOTM_STORM_TIMING_VERSION",1);
+ p:SetProperty("LOTM_STORM_PLAN_COUNT",0); p:SetProperty("LOTM_STORM_PLAN_DONE",0);
+ p:SetProperty("LOTM_STORM_WINDUP",1);
+ PublishFX(p,"STORM",index,N(p,"LOTM_STORM_CAST_SERIAL",0));
+ p:SetProperty("LOTM_STORM_START_FX_SERIAL",N(p,"LOTM_GOD_FX_SERIAL",0));
+ Result(p,"CASTING");
+ Log("storm windup player="..playerID.." serial="..N(p,"LOTM_STORM_CAST_SERIAL",0).." plot="..index.." impactFrame="..IMPACT_FRAME);
+end
+local function AbortWindup(p,error)
+ p:SetProperty("LOTM_STORM_WINDUP",0); p:SetProperty("LOTM_STORM_PENDING",0);
+ p:SetProperty("LOTM_STORM_ARMED",0); p:SetProperty("LOTM_STORM_CAST_DEBUG",0); Result(p,error);
+end
+local function OnImpact(playerID,parameters)
+ local p=Session(playerID,parameters); if p==nil or N(p,"LOTM_STORM_WINDUP",0)~=1 then return; end
+ local fx=N(p,"LOTM_STORM_START_FX_SERIAL",0); local key="LOTM_GOD_FX_"..fx.."_";
+ local frame=tonumber(parameters.PresentedFrame);
+ if fx<=0 or tonumber(parameters.FXSerial)~=fx or tonumber(parameters.PlotIndex)~=N(p,"LOTM_STORM_TARGET_PLOT",-1)
+  or N(p,key.."CAST_SERIAL",-1)~=N(p,"LOTM_STORM_CAST_SERIAL",0)
+  or frame==nil or frame%1~=0 or frame<N(p,"LOTM_STORM_IMPACT_FRAME",IMPACT_FRAME) or frame>=216 then return; end
+ -- The accepted cast may finish after its turn ends. Snapshot current objects
+ -- at impact, so an entity that moved away during gathering is not struck.
+ local target=Map.GetPlotByIndex(N(p,"LOTM_STORM_TARGET_PLOT",-1));
+ if target==nil then AbortWindup(p,"NO_TARGETS"); return; end
+ local ok,plan,wars=pcall(CollectPlan,p,target);
+ if not ok then Log("impact snapshot failed player="..playerID.." error="..tostring(plan)); AbortWindup(p,"NATIVE_UNAVAILABLE"); return; end
+ local error=ConfirmWars(p,wars,p:GetProperty("LOTM_STORM_CONFIRMED_WARS"));
+ if error~=nil then AbortWindup(p,error); return; end
+ for order,step in ipairs(plan) do
+  local prefix="LOTM_STORM_PLAN_"..order.."_";
+  for _,key in ipairs({"Kind","Owner","ID","Value","Extra","BaseDamage","OuterEpoch","OuterType"}) do p:SetProperty(prefix..key,step[key]); end
+ end
+ p:SetProperty("LOTM_STORM_PLAN_COUNT",#plan); p:SetProperty("LOTM_STORM_PLAN_DONE",0);
+ p:SetProperty("LOTM_STORM_WINDUP",0); p:SetProperty("LOTM_STORM_APPLYING",1); ResumeImpact(p);
+end
+local function MigrateRescueStormBlessing(p)
+ if not Rescue() or N(p,"LOTM_RESCUE_STORM_SKILL_VERSION",0)>=1 then return; end
+ local tier=N(p,"LOTM_CHURCH_STORM_BLESSING_TIER",0);
+ local strength=tostring(p:GetProperty("LOTM_CHURCH_STORM_BLESSING_STRENGTH") or "NONE");
+ if (tier==10 or tier==15) and (strength=="FULL" or strength=="HALF") then
+  -- Cancel only the old temporary storm bundle; permanent envoy effects and
+  -- the other churches are untouched. The existing grant receipt prevents
+  -- restoring an already spent resource434 charge.
+  if LOTM_WORLD_Churches==nil or LOTM_WORLD_Churches.RemoveLegacyStormBlessing==nil
+   or not LOTM_WORLD_Churches.RemoveLegacyStormBlessing(p,tier,strength) then return; end
+  if N(p,Quest("STORM",tier,"REWARD_APPLIED"),0)==1
+   or N(p,"LOTM_WORLD_PLAYER_TURN",0)<N(p,"LOTM_CHURCH_STORM_BLESSING_UNTIL",0) then
+   LOTM_GodBlessings.GrantStorm(p,tier,strength);
+  end
+  p:SetProperty("LOTM_CHURCH_STORM_BLESSING_TIER",0);
+  p:SetProperty("LOTM_CHURCH_STORM_BLESSING_STRENGTH",nil);
+  p:SetProperty("LOTM_CHURCH_STORM_BLESSING_UNTIL",-1);
+ end
+ p:SetProperty("LOTM_RESCUE_STORM_SKILL_VERSION",1);
+ Log("rescue storm skill migrated player="..p:GetID().." oldTier="..tier);
+end
+local function Reconcile(playerID)
+ if not StormEnabled() then return; end
+ local p=Player(playerID); if p==nil then return; end; LegacyCleanup(p);
+ if tonumber(Game.GetProperty("LOTM_STORM_DEBUG_UNLIMITED") or 0)~=(DebugUnlimited() and 1 or 0) then
+  Game.SetProperty("LOTM_STORM_DEBUG_UNLIMITED",DebugUnlimited() and 1 or 0);
+ end
+ if tonumber(Game.GetProperty("LOTM_GOD_BLESSINGS_READY") or 0)~=1 then Game.SetProperty("LOTM_GOD_BLESSINGS_READY",1); end
+ -- Two published rescue reward receipts only; no map/unit scan.
+ MigrateRescueStormBlessing(p);
+ if Rescue() then for _,tier in ipairs({10,15}) do
+  local kind=tostring(p:GetProperty(Quest("STORM",tier,"REWARD_KIND")) or "");
+  if N(p,Quest("STORM",tier,"REWARD_APPLIED"),0)==1 and (kind=="FULL_BLESSING" or kind=="HALF_BLESSING") then
+   LOTM_GodBlessings.GrantStorm(p,tier,kind=="HALF_BLESSING" and "HALF" or "FULL");
+  end
+ end end
+ if N(p,"LOTM_STORM_APPLYING",0)==1 then ResumeImpact(p);
+ elseif N(p,"LOTM_STORM_WINDUP",0)==1 then return;
+ elseif N(p,"LOTM_STORM_PENDING",0)==1 and N(p,"LOTM_STORM_CAST_DEBUG",0)==1 and not DebugUnlimited() then Cancel(p);
+ elseif N(p,"LOTM_STORM_PENDING",0)==1 and Game.GetCurrentGameTurn()>N(p,"LOTM_STORM_PREPARED_TURN",-1) then Cancel(p); end
+end
+if Loaded() then
+ GameEvents.LOTM_Storm_Prepare.Add(OnPrepare);
+ GameEvents.LOTM_Storm_Cancel.Add(function(id,args) local p=Session(id,args); if p~=nil then Cancel(p); end end);
+ GameEvents.LOTM_Storm_Fire.Add(OnFire);
+ GameEvents.LOTM_Storm_Impact.Add(OnImpact);
+ if Rescue() then LOTM_MP_TurnSync.AddSynchronized(Reconcile,"GodBlessings");
+ else LOTM_MP_TurnSync.Add(Reconcile,"GodBlessings"); end
+ LOTM_MP_TurnSync.RunStartup(function()
+  Game.SetProperty("LOTM_STORM_DEBUG_UNLIMITED",DebugUnlimited() and 1 or 0);
+  Game.SetProperty("LOTM_GOD_BLESSINGS_READY",1);
+  Log("initialized rescue="..tostring(Rescue()).." delivery=DIRECT_IMPACT version="..DELIVERY_VERSION.." fallout=0 radius=1 outerGodDamage=20 debugUnlimited="..tostring(DebugUnlimited()));
+  local ids=PlayerManager.GetAliveMajorIDs(); table.sort(ids); for _,id in ipairs(ids) do Reconcile(id); end
+ end,"GodBlessingsStartup");
+end
+-- END POST_RC241_NEW MODULE: Scripts/LOTM_GodBlessings.lua
+end;
+
+m_mp241Loaders["LOTM_JUSTICE_Governor"] = function()
+-- BEGIN POST_RC241_NEW MODULE: Scripts/LOTM_JUSTICE_Governor.lua
+-- BEGIN RC342 STARTUP TRACE
+LOTM_StartupTrace.Mark("MP.LOTM_JUSTICE_Governor","CONTEXT BEGIN");
+local Events = LOTM_StartupTrace.Events(Events,"MP.LOTM_JUSTICE_Governor","Events");
+local GameEvents = LOTM_StartupTrace.Events(GameEvents,"MP.LOTM_JUSTICE_Governor","GameEvents");
+-- END RC342 STARTUP TRACE
+
+-- Audrey Hall uses the same skills in normal and rescue games.
+-- All persistent state is Gameplay-owned; database availability gates loading.
+LOTM_JUSTICE = LOTM_JUSTICE or {};
+
+local GOVERNOR = "GOVERNOR_LOTM_JUSTICE";
+local PROMO = {
+ SPONSOR="GOVERNOR_PROMOTION_LOTM_JUSTICE_SPONSOR",
+ COUNSEL="GOVERNOR_PROMOTION_LOTM_JUSTICE_COUNSEL",
+ SALON="GOVERNOR_PROMOTION_LOTM_JUSTICE_SALON",
+ SUGGESTION="GOVERNOR_PROMOTION_LOTM_JUSTICE_SUGGESTION",
+ TAROT="GOVERNOR_PROMOTION_LOTM_JUSTICE_TAROT",
+ STORY="GOVERNOR_PROMOTION_LOTM_JUSTICE_STORY"
+};
+local STORY_COMMAND="LOTM_JUSTICE_CompleteStory";
+local PAUSE_BUILDING="BUILDING_LOTM_JUSTICE_STORY_PAUSE";
+local PAUSE_SOURCE_VERSION=5;
+local LEGACY_REPAIR_PHASE="JUSTICE_STORY_LEGACY_REPAIR_PHASE";
+local LEGACY_REPAIR_COUNT="JUSTICE_STORY_LEGACY_REPAIR_COUNT";
+local SPONSOR_ACTIVE="JUSTICE_SPONSOR_GOLD_NATIVE_ACTIVE";
+local SPONSOR_START="LOTM_JUSTICE_SPONSOR_GOLD_NATIVE_START";
+local SPONSOR_STOP="LOTM_JUSTICE_SPONSOR_GOLD_NATIVE_STOP";
+local function Log(s) print("[LOTM_JUSTICE] "..tostring(s)); end
+local function N(o,k,d)
+ if o==nil then return d; end
+ -- Native GetProperty can return no values for an unset key. Capture it first
+ -- so tonumber always receives one argument, including on a new game.
+ local raw=o:GetProperty(k);
+ local v=tonumber(raw);
+ return v~=nil and v or d;
+end
+local function Player(id)
+ local p=Players[id]; return p~=nil and p:IsAlive() and p:IsMajor() and p or nil;
+end
+local function Enabled()
+ return GameInfo.Governors~=nil and GameInfo.Governors[GOVERNOR]~=nil;
+end
+local function ActiveCity(p,typeName)
+ if p==nil or not Enabled() or N(p,"JUSTICE_GOVERNOR_ESTABLISHED",0)~=1
+  or N(p,"JUSTICE_GOVERNOR_NEUTRALIZED",0)~=0
+  or N(p,"JUSTICE_GOVERNOR_HAS_"..typeName,0)~=1 then return nil; end
+ local cityID=N(p,"JUSTICE_GOVERNOR_CITY_ID",-1);
+ local city=cityID>=0 and p:GetCities():FindID(cityID) or nil;
+ if city==nil or city:GetOwner()~=p:GetID() then return nil; end
+ return city;
+end
+
+local function SetSponsorIncome(p)
+ local active=ActiveCity(p,PROMO.SPONSOR)~=nil;
+ local attached=N(p,SPONSOR_ACTIVE,0)==1;
+ if active==attached then return; end
+ -- The same native Gold-per-turn modifier as the mod's planning income is
+ -- player-owned. A matching -15 attachment reverses it on transfer, removal,
+ -- or neutralization; the property makes retries and reloads idempotent.
+ p:AttachModifierByID(active and SPONSOR_START or SPONSOR_STOP);
+ p:SetProperty(SPONSOR_ACTIVE,active and 1 or 0);
+ Log("sponsor income player="..p:GetID().." active="..tostring(active));
+end
+
+function LOTM_JUSTICE.IsCounselingActive(playerID)
+ return ActiveCity(Player(playerID),PROMO.COUNSEL)~=nil;
+end
+
+local function ClearHolderUnstable(p)
+ if not LOTM_JUSTICE.IsCounselingActive(p:GetID()) then return; end
+ local turn=N(p,"LOTM_WORLD_PLAYER_TURN",0);
+ local untilTurn=N(p,"LOTM_HOLDER_UNSTABLE_STATE_UNTIL",-1);
+ if untilTurn>turn then p:SetProperty("LOTM_HOLDER_UNSTABLE_STATE_UNTIL",turn); end
+ local holder=LOTM_RP_State~=nil and LOTM_RP_State.FindHero(p:GetID()) or nil;
+ local ability=holder~=nil and holder:GetAbility() or nil;
+ if ability~=nil then
+  local count=ability:GetAbilityCount("ABILITY_LOTM_WORLD_HOLDER_UNSTABLE") or 0;
+  if count>0 then ability:ChangeAbilityCount("ABILITY_LOTM_WORLD_HOLDER_UNSTABLE",-count); end
+ end
+end
+
+local SALON_ORDER={"GREAT_PERSON_CLASS_WRITER","GREAT_PERSON_CLASS_ARTIST","GREAT_PERSON_CLASS_MUSICIAN"};
+local SALON_CLASSES={
+ GREAT_PERSON_CLASS_WRITER=true,
+ GREAT_PERSON_CLASS_ARTIST=true,
+ GREAT_PERSON_CLASS_MUSICIAN=true
+};
+local function WorkingDistrict(districts,index)
+ local district=districts:GetDistrictByType(index);
+ return district~=nil and district:IsComplete() and not district:IsPillaged();
+end
+local function SalonPoints(city)
+ local result={};
+ local districts=city:GetDistricts();
+ local buildings=city:GetBuildings();
+ for row in GameInfo.District_GreatPersonPoints() do
+  if SALON_CLASSES[row.GreatPersonClassType] then
+   local district=GameInfo.Districts[row.DistrictType];
+   if district~=nil and WorkingDistrict(districts,district.Index) then
+    result[row.GreatPersonClassType]=(result[row.GreatPersonClassType] or 0)+(tonumber(row.PointsPerTurn) or 0);
+   end
+  end
+ end
+ for row in GameInfo.Building_GreatPersonPoints() do
+  if SALON_CLASSES[row.GreatPersonClassType] then
+   local building=GameInfo.Buildings[row.BuildingType];
+   if building~=nil and buildings:HasBuilding(building.Index)
+    and not buildings:IsPillaged(building.Index) then
+    result[row.GreatPersonClassType]=(result[row.GreatPersonClassType] or 0)+(tonumber(row.PointsPerTurn) or 0);
+   end
+  end
+ end
+ -- Oracle's writer points are a district modifier, not a row in either
+ -- GreatPersonPoints table. Read its native Amount rather than hard-code it.
+ local oracle=GameInfo.Buildings.BUILDING_ORACLE;
+ if oracle~=nil and buildings:HasBuilding(oracle.Index) and not buildings:IsPillaged(oracle.Index) then
+  local theater=GameInfo.Districts.DISTRICT_THEATER;
+  local hasTheater=theater~=nil and WorkingDistrict(districts,theater.Index);
+  if not hasTheater and GameInfo.DistrictReplaces~=nil then
+   for row in GameInfo.DistrictReplaces() do
+    local replacement=GameInfo.Districts[row.CivUniqueDistrictType];
+    if row.ReplacesDistrictType=='DISTRICT_THEATER' and replacement~=nil
+     and WorkingDistrict(districts,replacement.Index) then hasTheater=true;break;end
+   end
+  end
+  if hasTheater then
+   for row in GameInfo.ModifierArguments() do
+    if row.ModifierId=='ORACLE_GREATWRITERPOINTS' and row.Name=='Amount' then
+     result.GREAT_PERSON_CLASS_WRITER=(result.GREAT_PERSON_CLASS_WRITER or 0)+(tonumber(row.Value) or 0);
+    end
+   end
+  end
+ end
+ return result;
+end
+local function GrantSalonPoints(p)
+ local city=ActiveCity(p,PROMO.SALON); if city==nil then return; end
+ local gpp=p:GetGreatPeoplePoints(); if gpp==nil then return; end
+ local sources=SalonPoints(city);
+ for _,classType in ipairs(SALON_ORDER) do
+ local points=sources[classType] or 0;
+ local row=GameInfo.GreatPersonClasses[classType];
+  if row~=nil and points>0 then
+   local key="JUSTICE_SALON_HALF_POINT_"..classType;
+   local exact=points*0.5+N(p,key,0);
+   local award=math.floor(exact);
+   p:SetProperty(key,exact-award);
+   if award>0 then gpp:ChangePointsTotal(row.Index,award); end
+  end
+ end
+end
+
+local function ClearStory(p,reason)
+ local marker=GameInfo.Buildings[PAUSE_BUILDING];
+ local cityID=N(p,"JUSTICE_STORY_PAUSE_CLEANUP_ID",-1);
+ local city=cityID>=0 and p:GetCities():FindID(cityID) or nil;
+ if city==nil and cityID>=0 then
+  local plot=Map.GetPlot(N(p,"JUSTICE_STORY_CITY_X",-1),N(p,"JUSTICE_STORY_CITY_Y",-1));
+  city=plot~=nil and Cities.GetCityInPlot(plot:GetIndex()) or nil;
+ end
+ if marker~=nil and city~=nil and city:GetBuildings():HasBuilding(marker.Index) then
+  city:SetProperty("JUSTICE_PRODUCTION_LEGACY_SOURCE",1);
+  local ok,err=pcall(function() city:GetBuildings():RemoveBuilding(marker.Index); end);
+  if not ok then Log("WARNING pause marker removal failed player="..p:GetID().." city="..cityID.." error="..tostring(err)); end
+ end
+ if city==nil or marker==nil or not city:GetBuildings():HasBuilding(marker.Index) then
+  p:SetProperty("JUSTICE_STORY_PAUSE_CLEANUP_ID",-1);
+ end
+ p:SetProperty("JUSTICE_STORY_PENDING",0);
+ p:SetProperty("JUSTICE_STORY_ARMED_CITY_ID",-1);
+ p:SetProperty("JUSTICE_STORY_CITY_ID",-1);
+ p:SetProperty("JUSTICE_STORY_PENDING_TURN",-1);
+ p:SetProperty("JUSTICE_STORY_ORIGINAL_CAPTURED",0);
+ local remaining=city~=nil and marker~=nil and city:GetBuildings():HasBuilding(marker.Index);
+ Log("story cleared player="..p:GetID().." reason="..tostring(reason)
+  .." marker="..tostring(remaining).." cleanupCity="..N(p,"JUSTICE_STORY_PAUSE_CLEANUP_ID",-1));
+end
+local function MigratePauseSource(p)
+ local previous=N(p,"JUSTICE_STORY_PAUSE_SOURCE_VERSION",0);
+ if previous>=PAUSE_SOURCE_VERSION then return true; end
+ local marker=GameInfo.Buildings[PAUSE_BUILDING];
+ local removed=0;
+ local complete=true;
+ -- One version-gated old-save scan. All pause buildings are inert from this
+ -- release onward; keep armed/pending story state without their yield effect.
+ if marker~=nil then
+  for _,city in p:GetCities():Members() do
+   local buildings=city:GetBuildings();
+    if buildings:HasBuilding(marker.Index) then
+     city:SetProperty("JUSTICE_PRODUCTION_LEGACY_SOURCE",1);
+    local ok,err=pcall(function() buildings:RemoveBuilding(marker.Index); end);
+    if not ok or buildings:HasBuilding(marker.Index) then
+     Log("WARNING legacy pause marker retained player="..p:GetID().." city="..city:GetID().." error="..tostring(err));
+     complete=false;
+    else
+     removed=removed+1;
+     if N(p,"JUSTICE_STORY_PAUSE_CLEANUP_ID",-1)==city:GetID() then
+      p:SetProperty("JUSTICE_STORY_PAUSE_CLEANUP_ID",-1);
+     end
+    end
+   end
+  end
+ end
+ if not complete then return false; end
+ p:SetProperty("JUSTICE_STORY_PAUSE_SOURCE_VERSION",PAUSE_SOURCE_VERSION);
+ Log("pause source migration player="..p:GetID().." removed="..removed);
+ return true;
+end
+
+local function RetireLegacyRepair(p)
+ if N(p,"JUSTICE_STORY_LEGACY_REPAIR_RETIRE_VERSION",0)>=2 then return true; end
+ local oldCount=N(p,LEGACY_REPAIR_COUNT,0);
+ local oldPhase=N(p,LEGACY_REPAIR_PHASE,0);
+ local receiptsCleared=0;
+ local seen={};
+ local key="JUSTICE_STORY_LEGACY_REPAIR_APPLIED_"..p:GetID();
+ local function RetireCity(city)
+  if city==nil then return true; end
+  local location=city:GetX()..":"..city:GetY();
+  if seen[location] then return true; end
+  seen[location]=true;
+  local applied=N(city,key,0);
+  if applied<0 or applied>4 then
+   Log("WARNING legacy repair ledger invalid player="..p:GetID().." city="..city:GetID()
+    .." applied="..applied);
+   return false;
+  end
+  if applied>0 then
+   city:SetProperty(key,0);
+   receiptsCleared=receiptsCleared+applied;
+  end
+  return true;
+ end
+ -- The database now makes both saved repair modifiers inert. Clear their old
+ -- bookkeeping without attaching an inverse that could itself persist.
+ if oldCount>0 or oldPhase>0 then
+  for _,city in p:GetCities():Members() do
+   if not RetireCity(city) then return false; end
+  end
+  local x=N(p,"JUSTICE_STORY_LEGACY_REPAIR_X",-1);
+  local y=N(p,"JUSTICE_STORY_LEGACY_REPAIR_Y",-1);
+  local plot=x>=0 and y>=0 and Map.GetPlot(x,y) or nil;
+  local former=plot~=nil and Cities.GetCityInPlot(plot:GetIndex()) or nil;
+  if not RetireCity(former) then return false; end
+ end
+ p:SetProperty(LEGACY_REPAIR_COUNT,0);
+ p:SetProperty(LEGACY_REPAIR_PHASE,5);
+ p:SetProperty("JUSTICE_STORY_LEGACY_REPAIR_RETIRE_VERSION",2);
+ if oldCount>0 or receiptsCleared>0 then
+  Log("legacy repair disabled player="..p:GetID().." recorded="..oldCount
+   .." receiptsCleared="..receiptsCleared);
+ end
+ return true;
+end
+
+-- The UI submits this once per loaded session through EXECUTE_SCRIPT. The
+-- monotonically increasing receipt prevents repeated city scans when the UI
+-- retries an operation whose acknowledgement was delayed.
+local function AuditProductionCache(p,data)
+ if type(data)~="string" then return true; end
+ local rows={}; local seen={};
+ for record in data:gmatch("[^;]+") do
+  local idText,percentText,yieldText=record:match("^([^,]+),([^,]+),([^,]+)$");
+  local id,percent,observed=tonumber(idText),tonumber(percentText),tonumber(yieldText);
+  if id==nil or percent==nil or observed==nil or percent~=math.floor(percent)
+   or math.abs(percent)>50000 or observed~=observed then return false; end
+  local city=p:GetCities():FindID(id);
+  if city==nil or city:GetOwner()~=p:GetID() or seen[id] then return false; end
+  seen[id]=true;
+  local actual=city:GetYield(YieldTypes.PRODUCTION);
+  if type(actual)~="number" or math.abs(actual-observed)>0.11 then
+   Log("production audit stale city="..id.." observed="..observed.." actual="..tostring(actual));
+   return false;
+  end
+  rows[#rows+1]={city=city,percent=percent,before=actual};
+ end
+ local tracked={}; local trackedSet={};
+ local function Track(id)
+  if not trackedSet[id] then trackedSet[id]=true; tracked[#tracked+1]=id; end
+ end
+ local previous=p:GetProperty("JUSTICE_PRODUCTION_AUDIT_CITIES") or "";
+ for id in tostring(previous):gmatch("%d+") do Track(tonumber(id)); end
+ local needsVerify=false;
+ for _,row in ipairs(rows) do
+  local city,percent=row.city,row.percent;
+  local id=city:GetID();
+  local pending=N(city,"JUSTICE_PRODUCTION_CACHE_PENDING",0);
+  if pending~=0 then
+   if percent~=0 then
+    -- The UI may still be reading the pre-operation snapshot. Never attach
+    -- another counter until the previous operation has been observed.
+    Log("production cache awaiting verification city="..id.." percent="..percent.." yield="..row.before);
+    return false;
+   end
+   city:SetProperty("JUSTICE_PRODUCTION_CACHE_PENDING",0);
+   Log("production cache VERIFIED city="..id.." yield="..row.before);
+  elseif percent~=0 then
+   local rawReceipt=city:GetProperty("JUSTICE_STORY_LEGACY_REPAIR_APPLIED_"..p:GetID());
+   local legacy=rawReceipt~=nil or N(city,"JUSTICE_PRODUCTION_LEGACY_SOURCE",0)==1
+    or (N(p,"JUSTICE_STORY_CITY_X",-1)==city:GetX()
+      and N(p,"JUSTICE_STORY_CITY_Y",-1)==city:GetY())
+    or (N(p,"JUSTICE_STORY_LEGACY_REPAIR_X",-1)==city:GetX()
+      and N(p,"JUSTICE_STORY_LEGACY_REPAIR_Y",-1)==city:GetY());
+   local units=math.floor(math.abs(percent)/1000+0.5)*(percent<0 and -1 or 1);
+   if not legacy or units==0 or math.abs(percent-units*1000)>100 then
+    Log("production cache not attributed to Justice city="..id.." percent="..percent);
+   else
+    city:SetProperty("JUSTICE_PRODUCTION_LEGACY_SOURCE",1);
+    local prefix=units>0 and "LOTM_JUSTICE_CACHE_MINUS_" or "LOTM_JUSTICE_CACHE_PLUS_";
+    for index=1,math.floor(math.abs(units)/10) do city:AttachModifierByID(prefix.."10000"); end
+    for index=1,math.abs(units)%10 do city:AttachModifierByID(prefix.."1000"); end
+    city:SetProperty("JUSTICE_PRODUCTION_CACHE_UNITS",N(city,"JUSTICE_PRODUCTION_CACHE_UNITS",0)-units);
+    city:SetProperty("JUSTICE_PRODUCTION_CACHE_PENDING",percent);
+    Track(id);
+    needsVerify=true;
+    Log("production cache corrected city="..id.." percent="..percent.." correction="..(-units*1000)
+     .." before="..row.before.." after="..tostring(city:GetYield(YieldTypes.PRODUCTION)));
+   end
+  end
+ end
+ table.sort(tracked);
+ local text={}; for _,id in ipairs(tracked) do text[#text+1]=tostring(id); end
+ p:SetProperty("JUSTICE_PRODUCTION_AUDIT_CITIES",table.concat(text,","));
+ p:SetProperty("JUSTICE_PRODUCTION_AUDIT_VERSION",1);
+ p:SetProperty("JUSTICE_PRODUCTION_VERIFY_NEEDED",needsVerify and 1 or 0);
+ return true;
+end
+
+local function AuditStoryLoad(p,serial,parameters)
+ local previous=N(p,"JUSTICE_STORY_LOAD_AUDIT_SERIAL",0);
+ if serial<=previous then return true; end
+ if serial~=previous+1 then return false; end
+ local migrated=MigratePauseSource(p);
+ local retired=RetireLegacyRepair(p);
+ if not migrated or not retired then return false; end
+ if not AuditProductionCache(p,parameters and parameters.ProductionAuditData) then return false; end
+ local turn=Game.GetCurrentGameTurn();
+ local pending=N(p,"JUSTICE_STORY_PENDING",0)==1;
+ local special=pending and N(p,"JUSTICE_STORY_PENDING_TURN",-1)==turn;
+ if pending and not special then ClearStory(p,"load-non-special-turn"); end
+ -- Version 5 performed the one-time full old-save scan. On later loads,
+ -- inspect only the current/cleanup city; no per-event all-city iteration.
+ local marker=GameInfo.Buildings[PAUSE_BUILDING];
+ local seen={};
+ local checked=0;
+ local removed=0;
+ local function CheckCity(cityID)
+  if cityID<0 or seen[cityID] then return true; end
+  seen[cityID]=true;
+  local city=p:GetCities():FindID(cityID);
+  if city==nil or marker==nil then return true; end
+  checked=checked+1;
+  local buildings=city:GetBuildings();
+   if not buildings:HasBuilding(marker.Index) then return true; end
+  local ok,err=pcall(function() buildings:RemoveBuilding(marker.Index); end);
+  if not ok or buildings:HasBuilding(marker.Index) then
+   Log("WARNING load audit pause marker retained player="..p:GetID().." city="..cityID
+    .." error="..tostring(err));
+   return false;
+  end
+  removed=removed+1;
+  return true;
+ end
+ if not CheckCity(N(p,"JUSTICE_GOVERNOR_CITY_ID",-1))
+  or not CheckCity(N(p,"JUSTICE_STORY_CITY_ID",-1))
+  or not CheckCity(N(p,"JUSTICE_STORY_PAUSE_CLEANUP_ID",-1)) then return false; end
+ p:SetProperty("JUSTICE_STORY_PAUSE_CLEANUP_ID",-1);
+ p:SetProperty("JUSTICE_STORY_LOAD_AUDIT_SERIAL",serial);
+ Log("load production audit player="..p:GetID().." serial="..serial.." turn="..turn
+  .." special="..tostring(special).." checked="..checked.." markersRemoved="..removed
+  .." legacyRepairRetired="..N(p,"JUSTICE_STORY_LEGACY_REPAIR_RETIRE_VERSION",0));
+ return true;
+end
+local function ArmStory(p,city)
+ p:SetProperty("JUSTICE_STORY_ARMED_CITY_ID",city:GetID());
+ Log("story armed player="..p:GetID().." city="..city:GetID());
+ return true;
+end
+local function BeginStory(p,city,turn)
+ if N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1)~=city:GetID() then return false; end
+ p:SetProperty("JUSTICE_STORY_ARMED_CITY_ID",-1);
+ p:SetProperty("JUSTICE_STORY_ORIGINAL_CAPTURED",0);
+ p:SetProperty("JUSTICE_STORY_RESULT",nil);
+ p:SetProperty("JUSTICE_STORY_CITY_ID",city:GetID());
+ p:SetProperty("JUSTICE_STORY_PENDING_TURN",turn);
+ p:SetProperty("JUSTICE_STORY_PENDING",1);
+ Log("story ready player="..p:GetID().." city="..city:GetID().." turn="..turn);
+ return true;
+end
+
+local function OnRecordStoryOriginal(playerID,parameters)
+ if not Enabled() or parameters==nil then return; end
+ local p=Player(playerID); if p==nil then return; end
+ if N(p,"JUSTICE_STORY_PENDING",0)~=1 or N(p,"JUSTICE_STORY_ORIGINAL_CAPTURED",0)==1
+  or N(p,"JUSTICE_STORY_PENDING_TURN",-1)~=Game.GetCurrentGameTurn()
+  or tonumber(parameters.CityID)~=N(p,"JUSTICE_STORY_CITY_ID",-1) then return; end
+ local kind=parameters.Kind;
+ if kind~="BUILDING" and kind~="PROJECT" and kind~="UNIT"
+  and kind~="DISTRICT" and kind~="NONE" then return; end
+ local typeIndex=tonumber(parameters.TypeID) or -1;
+ local progress=tonumber(parameters.Progress) or 0;
+ if typeIndex< -1 or progress<0 then return; end
+ p:SetProperty("JUSTICE_STORY_ORIGINAL_PRODUCTION_TYPE",kind);
+ p:SetProperty("JUSTICE_STORY_ORIGINAL_PRODUCTION_ID",typeIndex);
+ p:SetProperty("JUSTICE_STORY_ORIGINAL_PROGRESS",progress);
+ p:SetProperty("JUSTICE_STORY_ORIGINAL_CAPTURED",1);
+end
+
+local function OnTurn(playerID,isFirstTimeThisTurn)
+ if not Enabled() or isFirstTimeThisTurn==false then return; end
+ local p=Player(playerID); if p==nil then return; end
+ MigratePauseSource(p);
+ RetireLegacyRepair(p);
+ local turn=Game.GetCurrentGameTurn();
+ if N(p,"JUSTICE_LAST_SETTLED_TURN",-1)==turn then return; end
+ p:SetProperty("JUSTICE_LAST_SETTLED_TURN",turn);
+ if N(p,"JUSTICE_STORY_PAUSE_CLEANUP_ID",-1)>=0 and N(p,"JUSTICE_STORY_PENDING",0)~=1
+  and N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1)<0 then
+  ClearStory(p,"retry-pause-cleanup");
+ end
+ if N(p,"JUSTICE_STORY_PENDING",0)==1 and N(p,"JUSTICE_STORY_PENDING_TURN",-1)<turn then
+  ClearStory(p,"expired-on-next-turn");
+ end
+ SetSponsorIncome(p);
+ ClearHolderUnstable(p);
+ GrantSalonPoints(p);
+ local envoyCity=ActiveCity(p,PROMO.TAROT);
+ if envoyCity~=nil then
+  local count=N(p,"JUSTICE_FOOL_ENVOY_COUNTER",0)+1;
+  if count>=7 then
+   local source="JUSTICE:"..playerID..":"..turn;
+   local ok=LOTM_WORLD_Churches~=nil and LOTM_WORLD_Churches.ChangeEnvoys(playerID,"FOOL",1,source);
+   if ok then p:SetProperty("JUSTICE_FOOL_ENVOY_COUNTER",0);
+   else p:SetProperty("JUSTICE_FOOL_ENVOY_COUNTER",6); end
+   Log("envoy player="..playerID.." turn="..turn.." changed="..tostring(ok));
+  else p:SetProperty("JUSTICE_FOOL_ENVOY_COUNTER",count); end
+ end
+ local storyCity=ActiveCity(p,PROMO.STORY);
+ if N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1)>=0
+  and (storyCity==nil or storyCity:GetID()~=N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1)) then
+  ClearStory(p,"armed-governor-inactive");
+ end
+ if storyCity~=nil then
+  local count=N(p,"JUSTICE_STORY_COUNTER",0)+1;
+  Log("story clock player="..playerID.." city="..storyCity:GetID().." turn="..turn.." count="..count.."/7");
+  if count>=7 then
+   if BeginStory(p,storyCity,turn) then p:SetProperty("JUSTICE_STORY_COUNTER",0);
+   else
+    ArmStory(p,storyCity);
+    p:SetProperty("JUSTICE_STORY_COUNTER",6);
+   end
+  elseif count==6 then
+   if ArmStory(p,storyCity) then p:SetProperty("JUSTICE_STORY_COUNTER",6);
+   else p:SetProperty("JUSTICE_STORY_COUNTER",5); end
+  else p:SetProperty("JUSTICE_STORY_COUNTER",count); end
+ end
+end
+
+local function OnCompleteStory(playerID,parameters)
+ if not Enabled() then return; end
+ local p=Player(playerID); if p==nil or parameters==nil then return; end
+ local turn=Game.GetCurrentGameTurn();
+ if N(p,"JUSTICE_STORY_PENDING",0)~=1
+  or N(p,"JUSTICE_STORY_PENDING_TURN",-1)~=turn
+  or N(p,"JUSTICE_STORY_USED_TURN",-1)==turn then return; end
+ local city=ActiveCity(p,PROMO.STORY);
+ if city==nil or city:GetID()~=N(p,"JUSTICE_STORY_CITY_ID",-1) then
+  ClearStory(p,"governor-inactive"); return;
+ end
+ if tonumber(parameters.CityID)~=city:GetID() then
+  Log("story rejected player="..playerID.." reason=city-mismatch"); return;
+ end
+ local queue=city:GetBuildQueue(); if queue==nil then return; end
+ local kind=parameters.TargetKind;
+ local typeIndex=tonumber(parameters.TargetID) or -1;
+ if kind~="BUILDING" and kind~="PROJECT" then
+  Log("story rejected player="..playerID.." reason=invalid-target kind="..tostring(kind)); return;
+ end
+ local target=kind=="BUILDING" and GameInfo.Buildings[typeIndex] or GameInfo.Projects[typeIndex];
+ if target==nil or tonumber(parameters.TargetHash)~=target.Hash then
+  p:SetProperty("JUSTICE_STORY_RESULT","LOC_LOTM_JUSTICE_STORY_SELECT");
+  Log("story rejected invalid target id="..tostring(parameters.TargetID)); return;
+ end
+ -- Validate the item already accepted by the native queue. CanProduce is a
+ -- start-production/UI query, not a Gameplay completion precondition.
+ local readOK,current=pcall(function() return queue:CurrentlyBuilding(); end);
+ local currentRow=nil;
+ if readOK and current~=nil then
+  if kind=="BUILDING" then currentRow=GameInfo.Buildings[current];
+  elseif kind=="PROJECT" then currentRow=GameInfo.Projects[current]; end
+ end
+ if currentRow==nil or currentRow.Hash~=target.Hash then
+  p:SetProperty("JUSTICE_STORY_RESULT","LOC_LOTM_JUSTICE_STORY_SELECT");
+  Log("story rejected player="..playerID.." reason=current-target-mismatch target="
+   ..tostring(target.Hash).." readOK="..tostring(readOK).." current="..tostring(current)); return;
+ end
+ -- FinishProgress commits precisely the selected production item. Unlike
+ -- AddProgress(99999), it cannot carry unspent production into another item.
+ Log("story execute city="..city:GetID().." target="..target.Hash.." turn="..turn);
+ p:SetProperty("JUSTICE_STORY_USED_TURN",turn);
+ local finished,err=pcall(function() queue:FinishProgress(); end);
+ if not finished then
+  p:SetProperty("JUSTICE_STORY_USED_TURN",-1);
+  p:SetProperty("JUSTICE_STORY_RESULT","LOC_LOTM_JUSTICE_STORY_FAILED");
+  Log("WARNING story finish failed player="..playerID.." error="..tostring(err)); return;
+ end
+ ClearStory(p,"completed:"..kind..":"..tostring(target.Hash));
+end
+
+local function OnGovernorChanged(playerID)
+ if not Enabled() then return; end
+ local p=Player(playerID); if p==nil then return; end
+ SetSponsorIncome(p);
+ ClearHolderUnstable(p);
+ if N(p,"JUSTICE_STORY_PENDING",0)==1 then
+  local city=ActiveCity(p,PROMO.STORY);
+  if city==nil or city:GetID()~=N(p,"JUSTICE_STORY_CITY_ID",-1) then
+   ClearStory(p,"governor-changed");
+  end
+ end
+ if N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1)>=0 then
+  local city=ActiveCity(p,PROMO.STORY);
+  if city==nil or city:GetID()~=N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1) then
+   ClearStory(p,"armed-governor-changed");
+  end
+ end
+ if N(p,"JUSTICE_STORY_COUNTER",0)==6 and N(p,"JUSTICE_STORY_PENDING",0)~=1
+  and N(p,"JUSTICE_STORY_ARMED_CITY_ID",-1)<0 then
+  local city=ActiveCity(p,PROMO.STORY);
+  if city~=nil then ArmStory(p,city); end
+ end
+end
+
+local function OnGovernorSnapshot(playerID,parameters)
+ if not Enabled() or parameters==nil then return; end
+ local p=Player(playerID); if p==nil then return; end
+ local snapshotSerial=tonumber(parameters.SnapshotSerial);
+ local previousSerial=N(p,"JUSTICE_GOVERNOR_SNAPSHOT_SERIAL",0);
+ if snapshotSerial~=nil and (snapshotSerial~=math.floor(snapshotSerial)
+  or snapshotSerial<previousSerial or snapshotSerial>previousSerial+1) then return; end
+ local cityID=tonumber(parameters.CityID) or -1;
+ local city=cityID>=0 and p:GetCities():FindID(cityID) or nil;
+ if cityID>=0 and city==nil then return; end
+ p:SetProperty("JUSTICE_GOVERNOR_CITY_ID",cityID);
+ p:SetProperty("JUSTICE_GOVERNOR_ESTABLISHED",parameters.Established==1 and 1 or 0);
+ p:SetProperty("JUSTICE_GOVERNOR_NEUTRALIZED",parameters.Neutralized==1 and 1 or 0);
+ local has={};
+ for _,typeName in ipairs({PROMO.SPONSOR,PROMO.COUNSEL,PROMO.SALON,
+   PROMO.SUGGESTION,PROMO.TAROT,PROMO.STORY}) do
+  has[typeName]=parameters[typeName]==1;
+ end
+ -- HasPromotion is the ownership check. A saved, already purchased promotion
+ -- must not be revoked by reapplying today's purchase prerequisites.
+ -- The native governor tree still controls purchasing new promotions.
+ for _,typeName in ipairs({PROMO.SPONSOR,PROMO.COUNSEL,PROMO.SALON,
+   PROMO.SUGGESTION,PROMO.TAROT,PROMO.STORY}) do
+  p:SetProperty("JUSTICE_GOVERNOR_HAS_"..typeName,has[typeName] and 1 or 0);
+ end
+ Log("governor snapshot player="..playerID.." city="..cityID
+  .." established="..N(p,"JUSTICE_GOVERNOR_ESTABLISHED",0)
+  .." neutralized="..N(p,"JUSTICE_GOVERNOR_NEUTRALIZED",0)
+  .." counsel="..N(p,"JUSTICE_GOVERNOR_HAS_"..PROMO.COUNSEL,0)
+  .." salon="..N(p,"JUSTICE_GOVERNOR_HAS_"..PROMO.SALON,0)
+  .." suggestion="..N(p,"JUSTICE_GOVERNOR_HAS_"..PROMO.SUGGESTION,0)
+  .." tarot="..N(p,"JUSTICE_GOVERNOR_HAS_"..PROMO.TAROT,0)
+  .." nativeStory="..tostring(parameters[PROMO.STORY]==1 and 1 or 0)
+  .." story="..N(p,"JUSTICE_GOVERNOR_HAS_"..PROMO.STORY,0));
+ OnGovernorChanged(playerID);
+ local parts={tostring(cityID),tostring(parameters.Established==1 and 1 or 0),
+  tostring(parameters.Neutralized==1 and 1 or 0)};
+ for _,typeName in ipairs({PROMO.SPONSOR,PROMO.COUNSEL,PROMO.SALON,
+   PROMO.SUGGESTION,PROMO.TAROT,PROMO.STORY}) do
+  parts[#parts+1]=tostring(parameters[typeName]==1 and 1 or 0);
+ end
+ p:SetProperty("JUSTICE_GOVERNOR_SNAPSHOT_DIGEST",table.concat(parts,":"));
+ if snapshotSerial~=nil then p:SetProperty("JUSTICE_GOVERNOR_SNAPSHOT_SERIAL",snapshotSerial); end
+ -- The ownership receipt is independent of optional old-save production work.
+ -- Retain the old combined command only for already queued legacy UI requests.
+ MigratePauseSource(p);
+ RetireLegacyRepair(p);
+ local serial=tonumber(parameters.LoadAuditSerial);
+ if serial~=nil then AuditStoryLoad(p,serial,parameters); end
+end
+
+local function OnProductionAudit(playerID,parameters)
+ if not Enabled() or parameters==nil then return; end
+ local p=Player(playerID); if p==nil then return; end
+ if tonumber(parameters.GovernorSnapshotSerial)~=N(p,"JUSTICE_GOVERNOR_SNAPSHOT_SERIAL",-1)
+  or type(parameters.ProductionAuditData)~="string" then
+  Log("production audit rejected: missing snapshot receipt or observation player="..playerID);
+  return;
+ end
+ local serial=tonumber(parameters.LoadAuditSerial);
+ if serial==nil or serial~=math.floor(serial) then return; end
+ AuditStoryLoad(p,serial,parameters);
+end
+
+if Enabled() then
+ if LOTM_MP_TurnSync.IsRescueModeConfigured() then
+  LOTM_MP_TurnSync.AddSynchronized(OnTurn,"JusticeGovernor");
+ else LOTM_MP_TurnSync.Add(OnTurn,"JusticeGovernor"); end
+ GameEvents[STORY_COMMAND].Add(OnCompleteStory);
+ GameEvents.LOTM_JUSTICE_RecordStoryOriginal.Add(OnRecordStoryOriginal);
+ GameEvents.LOTM_JUSTICE_UpdateGovernor.Add(OnGovernorSnapshot);
+ GameEvents.LOTM_JUSTICE_AuditProduction.Add(OnProductionAudit);
+ Log("initialized governor; story command="..STORY_COMMAND);
+end
+-- END POST_RC241_NEW MODULE: Scripts/LOTM_JUSTICE_Governor.lua
+end;
+
 m_mp241Loaders["LOTM_MP241_Compat"] = function()
 -- BEGIN POST_RC241_NEW MODULE: Scripts/LOTM_MP241_Compat.lua
 -- BEGIN RC342 STARTUP TRACE
@@ -2026,6 +3608,446 @@ end
 
 print("[LOTM][MP241Compat] initialized version=241 directEvents=true synchronized=true unifiedDispatcher=false");
 -- END POST_RC241_NEW MODULE: Scripts/LOTM_MP241_Compat.lua
+end;
+
+m_mp241Loaders["LOTM_MS_Governors"] = function()
+-- BEGIN POST_RC241_NEW MODULE: Scripts/LOTM_MS_Governors.lua
+-- BEGIN RC342 STARTUP TRACE
+LOTM_StartupTrace.Mark("MP.LOTM_MS_Governors","CONTEXT BEGIN");
+local Events = LOTM_StartupTrace.Events(Events,"MP.LOTM_MS_Governors","Events");
+local GameEvents = LOTM_StartupTrace.Events(GameEvents,"MP.LOTM_MS_Governors","GameEvents");
+-- END RC342 STARTUP TRACE
+
+-- Shared Fors/Leonard A/B state. Rescue Leonard C/D use a separate module.
+-- Persistent history and visibility belong
+-- to synchronized Gameplay; the UI only submits native governor snapshots.
+LOTM_MS = LOTM_MS or {};
+
+local MAG = "MAGICIAN";
+local STAR = "STAR";
+local RECORD_PROMO = "GOVERNOR_PROMOTION_LOTM_MAGICIAN_RECORD";
+local WATCH_PROMO = "GOVERNOR_PROMOTION_LOTM_STAR_WATCHER";
+local RECORD_VERSION = 1;
+local SIGHT_VERSION = 1;
+local historyCache = {};
+local PROMOTIONS={
+ MAGICIAN={
+  "GOVERNOR_PROMOTION_LOTM_MAGICIAN_GATE",
+  "GOVERNOR_PROMOTION_LOTM_MAGICIAN_SERIAL",
+  "GOVERNOR_PROMOTION_LOTM_MAGICIAN_SUPPLY",
+  "GOVERNOR_PROMOTION_LOTM_MAGICIAN_RECORD",
+  "GOVERNOR_PROMOTION_LOTM_MAGICIAN_REPLAY",
+  "GOVERNOR_PROMOTION_LOTM_MAGICIAN_BESTSELLER"},
+ STAR={
+  "GOVERNOR_PROMOTION_LOTM_STAR_WATCHER",
+  "GOVERNOR_PROMOTION_LOTM_STAR_PATROL",
+  "GOVERNOR_PROMOTION_LOTM_STAR_INVESTIGATION",
+  "GOVERNOR_PROMOTION_LOTM_STAR_CONTACT",
+  "GOVERNOR_PROMOTION_LOTM_STAR_INTERROGATION",
+  "GOVERNOR_PROMOTION_LOTM_STAR_GUARDIAN"}
+};
+local function Log(message) print("[LOTM_MS] "..tostring(message)); end
+local function N(object,key,fallback)
+ if object==nil then return fallback; end
+ local raw=object:GetProperty(key);
+ local value=tonumber(raw);
+ return value~=nil and value or fallback;
+end
+local function Player(playerID)
+ local player=Players[playerID];
+ return player~=nil and player:IsAlive() and player:IsMajor() and player or nil;
+end
+local function Enabled()
+ return GameInfo.Governors~=nil and GameInfo.Governors["GOVERNOR_LOTM_MAGICIAN"]~=nil
+  and GameInfo.Governors["GOVERNOR_LOTM_STAR"]~=nil;
+end
+local function Rescue() return LOTM_MP_TurnSync.IsRescueModeConfigured(); end
+local RESCUE_STAR_PROMOTIONS={
+ "GOVERNOR_PROMOTION_LOTM_STAR_WATCHER",
+ "GOVERNOR_PROMOTION_LOTM_STAR_PATROL",
+ "GOVERNOR_PROMOTION_LOTM_STAR_INVESTIGATION",
+ "GOVERNOR_PROMOTION_LOTM_STAR_CASE_FILES",
+ "GOVERNOR_PROMOTION_LOTM_STAR_RED_GLOVES",
+ "GOVERNOR_PROMOTION_LOTM_STAR_HIDDEN_WORLD"};
+local function ActiveCity(player,governor,promotion)
+ if player==nil or not Enabled() then return nil; end
+ local prefix="LOTM_MS_"..governor.."_";
+ if N(player,prefix.."ESTABLISHED",0)~=1 or N(player,prefix.."NEUTRALIZED",0)~=0
+  or N(player,prefix.."HAS_"..promotion,0)~=1 then return nil; end
+ local cityID=N(player,prefix.."CITY_ID",-1);
+ local city=cityID>=0 and player:GetCities():FindID(cityID) or nil;
+ if city==nil or city:GetOwner()~=player:GetID() then return nil; end
+ return city;
+end
+
+local function RefreshPlayerEffects(player)
+ if Rescue() then
+  -- Retire any existing normal lease; never attach its modifiers in rescue.
+  for _,name in ipairs({"CONTACT_ACTIVE","CONTACT_NATIVE419_ACTIVE","GUARDIAN_ACTIVE"}) do
+   local row=GameInfo.Resources["RESOURCE_LOTM_MS_"..name];
+   if row~=nil then
+    local resources=player:GetResources(); local amount=resources:GetResourceAmount(row.Index) or 0;
+    if amount~=0 then resources:ChangeResourceAmount(row.Index,-amount); end
+   end
+  end
+  return;
+ end
+ -- Retire the old saved instance by its own gate; never apply an inverse
+ -- visibility modifier, which could subtract another source's contribution.
+ local legacy=GameInfo.Resources["RESOURCE_LOTM_MS_CONTACT_ACTIVE"];
+ if legacy~=nil then
+  local resources=player:GetResources();
+  local amount=resources:GetResourceAmount(legacy.Index) or 0;
+  if amount~=0 then resources:ChangeResourceAmount(legacy.Index,-amount);Log("retired custom visibility player="..player:GetID());end
+ end
+ local effects={
+  {"CONTACT_NATIVE419","GOVERNOR_PROMOTION_LOTM_STAR_CONTACT",{"LOTM_MS_CONTACT_PLAYER419"}},
+  {"GUARDIAN","GOVERNOR_PROMOTION_LOTM_STAR_GUARDIAN",{"LOTM_MS_GUARDIAN_PLAYER417","LOTM_MS_COUNTERSPY_PLAYER417"}}
+ };
+ for _,entry in ipairs(effects) do
+  local row=GameInfo.Resources["RESOURCE_LOTM_MS_"..entry[1].."_ACTIVE"];
+  if row~=nil then
+   local resource=player:GetResources();
+   local wanted=ActiveCity(player,STAR,entry[2])~=nil and 1 or 0;
+   for _,modifier in ipairs(entry[3]) do
+    local key="LOTM_MS_ATTACHED_"..modifier;
+    if N(player,key,0)~=1 then
+     local ok,result=pcall(function() return player:AttachModifierByID(modifier); end);
+     if ok and result~=false then player:SetProperty(key,1);
+     else Log("player effect attach failed "..modifier.." error="..tostring(result)); end
+    end
+   end
+   local current=resource:GetResourceAmount(row.Index) or 0;
+   if current~=wanted then
+    resource:ChangeResourceAmount(row.Index,wanted-current);
+    Log("player effect="..entry[1].." player="..player:GetID().." active="..wanted
+     .." actual="..tostring(resource:GetResourceAmount(row.Index)));
+   end
+  end
+ end
+end
+
+local function EligibleBuilding(row)
+ return row~=nil and (tonumber(row.Cost) or 0)>0 and row.InternalOnly~=true
+  and row.InternalOnly~=1;
+end
+local function EligibleDistrict(row)
+ return row~=nil and (tonumber(row.Cost) or 0)>0
+  and row.DistrictType~="DISTRICT_CITY_CENTER";
+end
+local function RecordKey(kind,typeName)
+ return "LOTM_MS_RECORD_"..kind.."_"..typeName;
+end
+local function Cache(player)
+ local playerID=player:GetID();
+ if historyCache[playerID]~=nil then return historyCache[playerID]; end
+ local cache={B={},D={},hasB={},hasD={}};
+ for row in GameInfo.Buildings() do
+  if EligibleBuilding(row) and N(player,RecordKey("B",row.BuildingType),0)==1 then
+   cache.B[#cache.B+1]=row.BuildingType; cache.hasB[row.BuildingType]=true;
+  end
+ end
+ for row in GameInfo.Districts() do
+  if EligibleDistrict(row) and N(player,RecordKey("D",row.DistrictType),0)==1 then
+   cache.D[#cache.D+1]=row.DistrictType; cache.hasD[row.DistrictType]=true;
+  end
+ end
+ table.sort(cache.B); table.sort(cache.D);
+ historyCache[playerID]=cache;
+ return cache;
+end
+local function SetCityModifier(city,playerID,kind,typeName,enable)
+ if city==nil then return false; end
+ local stateKey="LOTM_MS_RECORD_APPLIED_"..playerID.."_"..kind.."_"..typeName;
+ local attached=N(city,stateKey,0)==1;
+ if attached==enable then return true; end
+ local modifier="LOTM_MS_RECORD_"..kind.."_"..(enable and "POS_" or "NEG_")..typeName;
+ local ok,result=pcall(function() return city:AttachModifierByID(modifier); end);
+ if not ok or result==false then
+  Log("record modifier rejected city="..city:GetID().." modifier="..modifier.." error="..tostring(result));
+  return false;
+ end
+ city:SetProperty(stateKey,enable and 1 or 0);
+ return true;
+end
+local function ApplyAll(player,city,enable)
+ if city==nil then return; end
+ local cache=Cache(player);
+ for _,typeName in ipairs(cache.B) do SetCityModifier(city,player:GetID(),"B",typeName,enable); end
+ for _,typeName in ipairs(cache.D) do SetCityModifier(city,player:GetID(),"D",typeName,enable); end
+end
+local function FormerCity(player)
+ local x=N(player,"LOTM_MS_RECORD_ACTIVE_X",-1);
+ local y=N(player,"LOTM_MS_RECORD_ACTIVE_Y",-1);
+ local plot=x>=0 and y>=0 and Map.GetPlot(x,y) or nil;
+ return plot~=nil and Cities.GetCityInPlot(plot:GetIndex()) or nil;
+end
+local function RefreshRecordCity(player)
+ local desired=ActiveCity(player,MAG,RECORD_PROMO);
+ local desiredID=desired~=nil and desired:GetID() or -1;
+ local currentID=N(player,"LOTM_MS_RECORD_ACTIVE_CITY",-1);
+ local currentX=N(player,"LOTM_MS_RECORD_ACTIVE_X",-1);
+ local currentY=N(player,"LOTM_MS_RECORD_ACTIVE_Y",-1);
+ if currentID==desiredID and (desired==nil or
+  (currentX==desired:GetX() and currentY==desired:GetY())) then return; end
+ if currentID>=0 then ApplyAll(player,FormerCity(player),false); end
+ if desired~=nil then ApplyAll(player,desired,true); end
+ player:SetProperty("LOTM_MS_RECORD_ACTIVE_CITY",desiredID);
+ player:SetProperty("LOTM_MS_RECORD_ACTIVE_X",desired~=nil and desired:GetX() or -1);
+ player:SetProperty("LOTM_MS_RECORD_ACTIVE_Y",desired~=nil and desired:GetY() or -1);
+ Log("record city player="..player:GetID().." old="..currentID.." new="..desiredID);
+end
+local function Record(player,kind,row)
+ if row==nil then return; end
+ local typeName=kind=="B" and row.BuildingType or row.DistrictType;
+ if kind=="B" and not EligibleBuilding(row) then return; end
+ if kind=="D" and not EligibleDistrict(row) then return; end
+ local key=RecordKey(kind,typeName);
+ if N(player,key,0)==1 then return; end
+ player:SetProperty(key,1);
+ local cache=Cache(player);
+ local membership=kind=="B" and cache.hasB or cache.hasD;
+ if not membership[typeName] then
+  membership[typeName]=true;
+  cache[kind][#cache[kind]+1]=typeName;
+  table.sort(cache[kind]);
+ end
+ local city=ActiveCity(player,MAG,RECORD_PROMO);
+ if city~=nil then SetCityModifier(city,player:GetID(),kind,typeName,true); end
+ Log("history player="..player:GetID().." kind="..kind.." type="..typeName);
+end
+local function MigrateHistory(player)
+ if N(player,"LOTM_MS_RECORD_VERSION",0)>=RECORD_VERSION then return; end
+ local oldSave=Game.GetCurrentGameTurn()>1;
+ local buildings=0; local districts=0;
+ if oldSave then
+  -- One-time compatibility scan only. A new game records completed events.
+  for _,city in player:GetCities():Members() do
+   local cityBuildings=city:GetBuildings();
+   for row in GameInfo.Buildings() do
+    if EligibleBuilding(row) and cityBuildings:HasBuilding(row.Index) then
+     local before=N(player,RecordKey("B",row.BuildingType),0);
+     Record(player,"B",row);
+     if before==0 then buildings=buildings+1; end
+    end
+   end
+   local cityDistricts=city:GetDistricts();
+   for row in GameInfo.Districts() do
+    if EligibleDistrict(row) and cityDistricts:HasDistrict(row.Index,true) then
+     local before=N(player,RecordKey("D",row.DistrictType),0);
+     Record(player,"D",row);
+     if before==0 then districts=districts+1; end
+    end
+   end
+  end
+ end
+ player:SetProperty("LOTM_MS_RECORD_VERSION",RECORD_VERSION);
+ player:SetProperty("LOTM_MS_RECORD_MIGRATED_BUILDINGS",buildings);
+ player:SetProperty("LOTM_MS_RECORD_MIGRATED_DISTRICTS",districts);
+ Log("history initialized player="..player:GetID().." oldSave="..tostring(oldSave).." B="..buildings.." D="..districts);
+end
+
+local function CSV(indices)
+ local parts={}; for _,index in ipairs(indices) do parts[#parts+1]=tostring(index); end
+ return table.concat(parts,",");
+end
+local function FromCSV(value)
+ local result={}; local seen={};
+ for token in string.gmatch(tostring(value or ""),"[^,]+") do
+  local index=tonumber(token);
+  if index~=nil and not seen[index] and Map.GetPlotByIndex(index)~=nil then
+   result[#result+1]=index; seen[index]=true;
+  end
+ end
+ return result;
+end
+local function SightPlots(city)
+ local result={}; local seen={};
+ if city==nil then return result; end
+ for dx=-6,6 do for dy=-6,6 do
+  local plot=Map.GetPlotXYWithRangeCheck(city:GetX(),city:GetY(),dx,dy,6);
+  local index=plot~=nil and plot:GetIndex() or -1;
+  if index>=0 and not seen[index] then result[#result+1]=index; seen[index]=true; end
+ end end
+ table.sort(result);
+ return result;
+end
+local function RefreshSight(player)
+ local visibility=PlayersVisibility[player:GetID()]; if visibility==nil then return; end
+ local city=ActiveCity(player,STAR,WATCH_PROMO);
+ local wanted=SightPlots(city);
+ local wantedCSV=CSV(wanted);
+ local key="LOTM_MS_STAR_SIGHT_PLOTS_V"..SIGHT_VERSION;
+ local previousCSV=player:GetProperty(key) or "";
+ local previous=FromCSV(previousCSV);
+ local oldSet={}; local newSet={};
+ for _,index in ipairs(previous) do oldSet[index]=true; end
+ for _,index in ipairs(wanted) do newSet[index]=true; end
+ local restored=0;
+ -- The plot ledger survives a save. Restore a missing visibility contribution
+ -- when the engine has rebuilt sight without its runtime count.
+ for _,index in ipairs(wanted) do
+  if oldSet[index] and not visibility:IsVisible(index) then
+   visibility:ChangeVisibilityCount(index,1);
+   restored=restored+1;
+  end
+ end
+ if previousCSV==wantedCSV then
+  if restored>0 then Log("sight restored player="..player:GetID().." plots="..restored); end
+  return;
+ end
+ for _,index in ipairs(previous) do
+  if not newSet[index] and visibility:GetVisibilityCount(index)>0 then
+   visibility:ChangeVisibilityCount(index,-1);
+  end
+ end
+ for _,index in ipairs(wanted) do
+  if not oldSet[index] then visibility:ChangeVisibilityCount(index,1); end
+ end
+ player:SetProperty(key,wantedCSV);
+ Log("sight player="..player:GetID().." city="..tostring(city~=nil and city:GetID() or -1).." plots="..#wanted.." restored="..restored);
+end
+
+function LOTM_MS.RefreshStarSight(playerID)
+ local p=Players[playerID];
+ if p~=nil and p:IsMajor() and Enabled() then RefreshSight(p); end
+end
+
+local function OnBuildingConstructed(playerID,cityID,buildingIndex,plotIndex,isOriginalConstruction)
+ if not Enabled() or not isOriginalConstruction then return; end
+ local player=Player(playerID); if player==nil then return; end
+ local city=player:GetCities():FindID(cityID);
+ local row=GameInfo.Buildings[buildingIndex];
+ if city~=nil and row~=nil and city:GetBuildings():HasBuilding(row.Index) then
+  Record(player,"B",row);
+ end
+end
+local function OnDistrictConstructed(playerID,districtIndex,x,y)
+ if not Enabled() then return; end
+ local player=Player(playerID); if player==nil then return; end
+ local row=GameInfo.Districts[districtIndex];
+ local plot=Map.GetPlot(x,y);
+ local city=plot~=nil and Cities.GetCityInPlot(plot:GetIndex()) or nil;
+ if city~=nil and city:GetOwner()==playerID and row~=nil
+  and city:GetDistricts():HasDistrict(row.Index,true) then Record(player,"D",row); end
+end
+local function AuditPlayerEffects(player)
+ if Rescue() then return; end
+ -- One-time old-save audit, never a per-turn modifier scan. Native binding
+ -- usage follows Bug_Amon_Gameplay.GetExtraBoostFromModifiers.
+ if N(player,"LOTM_MS_EFFECT_AUDIT419",0)==1 or GameEffects==nil then return;end
+ local ok,err=pcall(function()
+  local found=0;
+  for _,id in ipairs(GameEffects.GetModifiers()) do
+   local definition=GameEffects.GetModifierDefinition(id);
+   if definition~=nil and (definition.Id=="LOTM_MS_CONTACT_PLAYER417" or definition.Id=="LOTM_MS_CONTACT_PLAYER419"
+    or definition.Id=="LOTM_MS_GUARDIAN_PLAYER417" or definition.Id=="LOTM_MS_COUNTERSPY_PLAYER417") then
+    local owner=GameEffects.GetModifierOwner(id);
+    if GameEffects.GetObjectsPlayerId(owner)==player:GetID() then
+     found=found+1;
+     local requirement=GameEffects.GetModifierOwnerRequirementSet(id);
+     local state=requirement and GameEffects.GetRequirementSetState(requirement) or "none";
+     Log("native effect audit player="..player:GetID().." id="..definition.Id
+      .." active="..tostring(GameEffects.GetModifierActive(id)).." ownerRequirement="..tostring(state));
+    end
+   end
+  end
+  Log("native effect audit player="..player:GetID().." instances="..found);
+ end);
+ -- The observation itself is optional and must never block snapshot receipts.
+ player:SetProperty("LOTM_MS_EFFECT_AUDIT419",1);
+ if not ok then Log("native effect audit unavailable: "..tostring(err));end
+end
+local function OnGovernorSnapshot(playerID,parameters)
+ if not Enabled() or parameters==nil then return; end
+ local player=Player(playerID); if player==nil then return; end
+ for _,governor in ipairs({MAG,STAR}) do
+  local statePrefix=governor.."_";
+  if parameters[statePrefix.."CityID"]~=nil then
+   local cityID=tonumber(parameters[statePrefix.."CityID"]) or -1;
+   local city=cityID>=0 and player:GetCities():FindID(cityID) or nil;
+   if cityID==-1 or city~=nil then
+    local prefix="LOTM_MS_"..governor.."_";
+    player:SetProperty(prefix.."CITY_ID",cityID);
+    player:SetProperty(prefix.."ESTABLISHED",parameters[statePrefix.."Established"]==1 and 1 or 0);
+    player:SetProperty(prefix.."NEUTRALIZED",parameters[statePrefix.."Neutralized"]==1 and 1 or 0);
+    -- Native HasPromotion is ownership; purchase prerequisites are not rechecked.
+    local promotions=governor==STAR and Rescue() and RESCUE_STAR_PROMOTIONS or PROMOTIONS[governor];
+    for _,promotion in ipairs(promotions) do
+     player:SetProperty(prefix.."HAS_"..promotion,parameters[promotion]==1 and 1 or 0);
+    end
+    if governor==STAR and Rescue() then
+     for _,promotion in ipairs({"CONTACT","INTERROGATION","GUARDIAN"}) do
+      player:SetProperty(prefix.."HAS_GOVERNOR_PROMOTION_LOTM_STAR_"..promotion,0);
+     end
+    end
+   end
+  end
+ end
+ MigrateHistory(player);
+ RefreshRecordCity(player);
+ RefreshSight(player);
+ RefreshPlayerEffects(player);
+ AuditPlayerEffects(player);
+ if Rescue() and LOTM_RESCUE_StarGovernor~=nil then LOTM_RESCUE_StarGovernor.Refresh(playerID); end
+ if parameters.SnapshotDigest~=nil then
+  player:SetProperty("LOTM_MS_SNAPSHOT_DIGEST",parameters.SnapshotDigest);
+  player:SetProperty("LOTM_MS_SNAPSHOT_SERIAL",parameters.SnapshotSerial);
+  Log("snapshot acknowledged player="..playerID.." serial="..tostring(parameters.SnapshotSerial));
+ end
+end
+local function OnInterrogation(playerID,parameters)
+ if not Enabled() or Rescue() or parameters==nil or parameters.Captured~=1 then return; end
+ local player=Player(playerID); if player==nil then return; end
+ local city=ActiveCity(player,STAR,"GOVERNOR_PROMOTION_LOTM_STAR_INTERROGATION");
+ local attacker=tonumber(parameters.AttackerID);
+ local mission=tonumber(parameters.MissionID);
+ local completion=tonumber(parameters.CompletionTurn);
+ local now=Game.GetCurrentGameTurn();
+ if city==nil or city:GetID()~=tonumber(parameters.CityID)
+  or attacker==nil or attacker==playerID or Player(attacker)==nil
+  or mission==nil or mission<0 or mission~=math.floor(mission)
+  or completion==nil or completion>now or now-completion>1 then return; end
+ local plot=Map.GetPlotByIndex(tonumber(parameters.PlotIndex) or -1);
+ local targetCity=plot~=nil and Cities.GetPlotPurchaseCity(plot) or nil;
+ if targetCity==nil or targetCity:GetOwner()~=playerID or targetCity:GetID()~=city:GetID() then return; end
+ local key="LOTM_MS_INTERROGATION_CASE_"..attacker.."_"..mission;
+ if N(player,key,0)==1 then return; end
+ local choiceKey=key.."_CHOICE";
+ local choice=N(player,choiceKey,-1);
+ if choice<0 then
+  choice=LOTM_MP_TurnSync.Random(2,"MS interrogation:"..playerID..":"..attacker..":"..mission);
+  player:SetProperty(choiceKey,choice);
+ end
+ local ok,err=pcall(function()
+  if choice==0 then player:GetTechs():ChangeCurrentResearchProgress(300);
+  else player:GetCulture():ChangeCurrentCulturalProgress(300); end
+ end);
+ if not ok then Log("interrogation reward failed "..tostring(err));return;end
+ player:SetProperty(key,1);
+ Log("interrogation player="..playerID.." case="..attacker..":"..mission
+  .." yield="..(choice==0 and "SCIENCE" or "CULTURE").." amount=300");
+end
+
+local function OnTurn(playerID,isFirstTimeThisTurn)
+ if not Enabled() or isFirstTimeThisTurn==false then return; end
+ local player=Player(playerID); if player==nil then return; end
+ MigrateHistory(player);
+ RefreshRecordCity(player);
+ RefreshSight(player);
+ RefreshPlayerEffects(player);
+end
+
+if Enabled() then
+ GameEvents.BuildingConstructed.Add(OnBuildingConstructed);
+ GameEvents.OnDistrictConstructed.Add(OnDistrictConstructed);
+ GameEvents.LOTM_MS_UpdateGovernor.Add(OnGovernorSnapshot);
+ GameEvents.LOTM_MS_Interrogation.Add(OnInterrogation);
+ if Rescue() then LOTM_MP_TurnSync.AddSynchronized(OnTurn,"MagicianStarGovernors");
+ else LOTM_MP_TurnSync.Add(OnTurn,"MagicianStarGovernors"); end
+ Log("initialized governors; rescue="..tostring(Rescue()).." record="..RECORD_VERSION.." sight="..SIGHT_VERSION);
+end
+-- END POST_RC241_NEW MODULE: Scripts/LOTM_MS_Governors.lua
 end;
 
 m_mp241Loaders["LOTM_PP_Artifacts"] = function()
@@ -6553,6 +8575,53 @@ local function AlliedAttack(attacker,boss)
  boss:ChangeDamage(damage); PublishNetworkConfirmedDamage(boss); return true,"DAMAGE",damage;
 end
 
+-- BEGIN USER AUTHORIZED RESCUE STORM DAMAGE (resource434)
+-- Called only by synchronized storm-plan execution. Keep this bounded API
+-- separate from native combat and retain the existing Boss phase/death path.
+function LOTM_RESCUE_Phase10.ApplyStormDamage(boss,baseline,goal,epoch,caster,serial)
+ if not Active() or boss==nil or boss:IsDead() or boss:IsDelayedDeath() then return false; end
+ local row=GameInfo.Units[boss:GetType()];
+ local isBoss=(row~=nil and row.UnitType==BOSS_TYPE)
+  or (tostring(boss:GetProperty("LOTM_RESCUE_PHASE10_ROLE") or "")=="BOSS" and IsGod(boss));
+ if not isBoss or Number(boss:GetProperty("LOTM_RESCUE_PHASE10_BOSS_EPOCH"),0)~=epoch
+  or baseline==nil or baseline<0 or caster==nil or serial==nil or serial<1 then return false; end
+ local maximum=Number(boss:GetMaxDamage(),100);
+ if goal~=math.min(maximum,baseline+20) then return false; end
+ local owner,id=boss:GetOwner(),boss:GetID(); local key=UnitKey(owner,id);
+ local receipt="LOTM_RESCUE_PHASE10_STORM_DAMAGE:"..caster..":"..serial;
+ local spent=math.max(0,math.min(20,Number(boss:GetProperty(receipt),0)));
+ local current=Number(boss:GetDamage(),0);
+ local delta=math.min(20-spent,math.max(0,math.min(goal,maximum-1)-current));
+ if delta>0 then
+  -- A scripted hit must not pair with an earlier unpaired native combat.
+  m_nativeDamageEvents[key]=nil; m_bossCombatEvents[key]=nil;
+  m_nativeDamageCorrections[key]={Old=current,New=current+delta};
+  local ok,err=pcall(function() boss:ChangeDamage(delta); end);
+  local after=UnitManager.GetUnit(owner,id);
+  if after==nil or after:IsDead() or after:IsDelayedDeath() then
+   if IsNetworkMultiplayer() and ResolveBossDefeat~=nil then ResolveBossDefeat(owner,id,"STORM_SKILL",epoch); end
+   Log("storm damage owner="..owner.." unit="..id.." cast="..caster..":"..serial.." before="..current.." amount="..delta.." phaseDefeated=true");
+   return true;
+  end
+  local observed=math.max(0,math.min(delta,Number(after:GetDamage(),current)-current));
+  spent=spent+observed; after:SetProperty(receipt,spent); PublishNetworkConfirmedDamage(after);
+  if not ok and observed<delta then Log("storm damage incomplete unit="..key.." error="..tostring(err)); return false; end
+  if observed<delta then return false; end
+  Log("storm damage owner="..owner.." unit="..id.." cast="..caster..":"..serial.." before="..current.." after="..Number(after:GetDamage(),0).." amount="..observed.." spent="..spent);
+  boss=after;
+ end
+ -- Existing terminal-damage semantics are retained: <=20 remaining HP can
+ -- defeat one phase; this API never manufactures a full-health nuclear kill.
+ if goal>=maximum-1 and Number(boss:GetDamage(),0)>=maximum-1 then
+  local killed=KillBossAtTerminalDamage(boss,"STORM_SKILL");
+  if killed and IsNetworkMultiplayer() and ResolveBossDefeat~=nil then ResolveBossDefeat(owner,id,"STORM_SKILL",epoch); end
+  return killed;
+ end
+ PublishNetworkConfirmedDamage(boss);
+ return spent>=20 or Number(boss:GetDamage(),0)>=goal;
+end
+-- END USER AUTHORIZED RESCUE STORM DAMAGE (resource434)
+
 local function OuterGodUnitAttack(boss,target)
  if boss==nil or target==nil or target:IsDead() or target:IsDelayedDeath() then return false,"TARGET_GONE",0; end
  if ProtectDescent(target,"OUTER_GOD_ATTACK") then return false,"DESCENT_PROTECTED",0; end
@@ -9056,6 +11125,350 @@ Log("loaded version=1 nativeSpawn=executeScript campReward=executeScript earlySe
 -- END POST_RC241_NEW MODULE: Scripts/LOTM_RESCUE_RuntimeEvents.lua
 end;
 
+m_mp241Loaders["LOTM_RESCUE_StarGovernor"] = function()
+-- BEGIN POST_RC241_NEW MODULE: Scripts/LOTM_RESCUE_StarGovernor.lua
+-- BEGIN RC342 STARTUP TRACE
+LOTM_StartupTrace.Mark("MP.LOTM_RESCUE_StarGovernor","CONTEXT BEGIN");
+local Events = LOTM_StartupTrace.Events(Events,"MP.LOTM_RESCUE_StarGovernor","Events");
+local GameEvents = LOTM_StartupTrace.Events(GameEvents,"MP.LOTM_RESCUE_StarGovernor","GameEvents");
+-- END RC342 STARTUP TRACE
+
+-- Rescue Leonard C/D. Only synchronized Gameplay events/operations write
+-- state. UI publication events merely submit completion/lifecycle observations.
+LOTM_RESCUE_StarGovernor=LOTM_RESCUE_StarGovernor or {};
+local API=LOTM_RESCUE_StarGovernor;
+local VERSION=1;
+local PREFIX="LOTM_RESCUE_STAR_";
+local CASE="GOVERNOR_PROMOTION_LOTM_STAR_CASE_FILES";
+local GLOVES="GOVERNOR_PROMOTION_LOTM_STAR_RED_GLOVES";
+local WORLD="GOVERNOR_PROMOTION_LOTM_STAR_HIDDEN_WORLD";
+local META=PREFIX.."UNIT_META:";
+local sessionRestored={};
+local function Log(s) print("[LOTM_RESCUE][Star] "..tostring(s)); end
+local function N(o,k,d)
+ local raw=o~=nil and o:GetProperty(k) or nil; local v=tonumber(raw);
+ return v~=nil and v or d;
+end
+local function GN(k,d)
+ local raw=Game.GetProperty(k); local v=tonumber(raw); return v~=nil and v or d;
+end
+local function Configured()
+ return LOTM_MP_TurnSync.IsRescueModeConfigured()
+  and GameInfo.GovernorPromotions~=nil and GameInfo.GovernorPromotions[WORLD]~=nil;
+end
+local function Enabled() return Configured() and GN("LOTM_RESCUE_MODE",0)==1; end
+local function Player(id)
+ local p=Players[id]; return p~=nil and p:IsAlive() and p:IsMajor() and p or nil;
+end
+local function Has(p,promotion) return N(p,"LOTM_MS_STAR_HAS_"..promotion,0)==1; end
+local function Effective(p,promotion)
+ if not Enabled() or p==nil or not p:IsAlive() or not Has(p,promotion)
+  or N(p,"LOTM_MS_STAR_ESTABLISHED",0)~=1 or N(p,"LOTM_MS_STAR_NEUTRALIZED",0)~=0 then return false; end
+ local c=p:GetCities():FindID(N(p,"LOTM_MS_STAR_CITY_ID",-1));
+ if c==nil or c:GetOwner()~=p:GetID() then return false; end
+ -- Native support checks all prerequisites. Retain an independent authority
+ -- guard here, including imported/saved ownership with a missing branch.
+ return promotion~=WORLD or (Has(p,CASE) and Has(p,GLOVES));
+end
+local function Unit(owner,id)
+ if tonumber(owner)==nil or tonumber(id)==nil or owner<0 or id<0 then return nil; end
+ return UnitManager.GetUnit(owner,id);
+end
+local function Dead(u) return u==nil or u:IsDead() or u:IsDelayedDeath(); end
+local function CombatRow(row)
+ return row~=nil and row.FormationClass~=nil and row.FormationClass~="FORMATION_CLASS_CIVILIAN"
+  and row.Spy~=true and row.Spy~=1 and row.MakeTradeRoute~=true and row.MakeTradeRoute~=1
+  and ((tonumber(row.Combat) or 0)>0 or (tonumber(row.RangedCombat) or 0)>0
+   or (tonumber(row.Bombard) or 0)>0 or (tonumber(row.AirCombat) or 0)>0);
+end
+local function Recon(u)
+ if Dead(u) then return false; end
+ local row=GameInfo.Units[u:GetType()];
+ return CombatRow(row) and row.PromotionClass=="PROMOTION_CLASS_RECON"
+  and not string.find(row.UnitType,"^UNIT_LOTM_") and not string.find(row.UnitType,"^UNIT_HERO_")
+  and row.LeaderType==nil;
+end
+local function Keys(t)
+ t=t or {}; local r={}; local k=next(t);
+ while k~=nil do r[#r+1]=k; k=next(t,k); end
+ table.sort(r); return r;
+end
+local function Copy(t)
+ t=t or {}; local r={}; for _,k in ipairs(Keys(t)) do r[k]=t[k]; end; return r;
+end
+local function Identity(u)
+ local id=N(u,PREFIX.."IDENTITY",0);
+ if id==0 then
+  id=GN(PREFIX.."NEXT_IDENTITY",0)+1;
+  Game.SetProperty(PREFIX.."NEXT_IDENTITY",id); u:SetProperty(PREFIX.."IDENTITY",id);
+ end
+ return id;
+end
+local function Observe(owner,id)
+ local u=Unit(owner,id); if u==nil then return nil; end
+ local plot=Map.GetPlot(u:GetX(),u:GetY()); local row=GameInfo.Units[u:GetType()];
+ if plot==nil or row==nil or u:GetOwner()~=owner then return nil; end
+ local fact={Identity=Identity(u),Type=u:GetType(),Plot=plot:GetIndex(),Owner=owner,UnitID=id};
+ Game.SetProperty(META..owner..":"..id,fact); return fact;
+end
+local function PlotList(value)
+ local r={}; for token in string.gmatch(tostring(value or ""),"[^,]+") do
+  local i=tonumber(token); if i~=nil and Map.GetPlotByIndex(i)~=nil then r[#r+1]=i; end
+ end; return r;
+end
+local function CSV(t)
+ local r={}; for _,i in ipairs(t) do r[#r+1]=tostring(i); end; return table.concat(r,",");
+end
+local function Ring(plot)
+ local r={}; local seen={};
+ for dx=-1,1 do for dy=-1,1 do
+  local p=Map.GetPlotXYWithRangeCheck(plot:GetX(),plot:GetY(),dx,dy,1);
+  if p~=nil and not seen[p:GetIndex()] then seen[p:GetIndex()]=true; r[#r+1]=p:GetIndex(); end
+ end end; table.sort(r); return r;
+end
+local function Change(p,plots,delta)
+ local visibility=PlayersVisibility[p:GetID()]; if visibility==nil then return false; end
+ for _,i in ipairs(plots) do
+  if delta>0 or visibility:GetVisibilityCount(i)>0 then visibility:ChangeVisibilityCount(i,delta); end
+ end; return true;
+end
+local function Patrols(p) return Copy(p:GetProperty(PREFIX.."PATROL_REFERENCES")); end
+local function DropPatrol(p,key,ledger)
+ local e=ledger[key]; if e==nil then return; end
+ if Change(p,PlotList(e.Plots),-1) then ledger[key]=nil; end
+end
+local function ReconcilePatrols(p,clearAll)
+ local ledger=Patrols(p);
+ for _,key in ipairs(Keys(ledger)) do
+  local e=ledger[key]; local u=Unit(p:GetID(),e.UnitID);
+  if clearAll or not Recon(u) or u:GetOwner()~=p:GetID() or N(u,PREFIX.."IDENTITY",0)~=e.Identity
+   or u:GetType()~=e.Type then
+   DropPatrol(p,key,ledger);
+  end
+ end
+ p:SetProperty(PREFIX.."PATROL_REFERENCES",ledger);
+end
+local function RestoreReferences(p)
+ if sessionRestored[p:GetID()] then return; end
+ local visibility=PlayersVisibility[p:GetID()]; if visibility==nil then return; end
+ local expected={};
+ local function Count(list) for _,i in ipairs(list) do expected[i]=(expected[i] or 0)+1; end end
+ Count(PlotList(p:GetProperty("LOTM_MS_STAR_SIGHT_PLOTS_V1")));
+ local patrols=Patrols(p);
+ for _,key in ipairs(Keys(patrols)) do Count(PlotList(patrols[key].Plots)); end
+ if N(p,PREFIX.."FULL_VISION_ACTIVE",0)==1 then
+  for i=0,Map.GetPlotCount()-1 do expected[i]=(expected[i] or 0)+1; end
+ end
+ local indices=Keys(expected);
+ local restored=0;
+ for _,i in ipairs(indices) do
+  local missing=expected[i]-visibility:GetVisibilityCount(i);
+  if missing>0 then visibility:ChangeVisibilityCount(i,missing); restored=restored+missing; end
+ end
+ sessionRestored[p:GetID()]=true;
+ Log("load references player="..p:GetID().." checked="..#indices.." restored="..restored);
+ -- Saved native counts and a saved source ledger are retained. Positive
+ -- counts alone cannot prove source identity after a native engine rebuild;
+ -- that mixed-source load case remains an explicit native acceptance test.
+end
+local function Movement(p,on)
+ local row=GameInfo.Resources["RESOURCE_LOTM_RESCUE_STAR_PATROL_ACTIVE"];
+ if row==nil then return; end
+ if N(p,PREFIX.."MOVEMENT_ATTACHED",0)~=1 then
+  local ok,r=pcall(function() return p:AttachModifierByID("LOTM_RESCUE_STAR_PATROL_MOVEMENT"); end);
+  if not ok or r==false then Log("movement attach rejected player="..p:GetID()); return; end
+  p:SetProperty(PREFIX.."MOVEMENT_ATTACHED",1);
+ end
+ local resources=p:GetResources(); local current=resources:GetResourceAmount(row.Index) or 0;
+ local wanted=on and 1 or 0;
+ if current~=wanted then
+  resources:ChangeResourceAmount(row.Index,wanted-current);
+  p:SetProperty(PREFIX.."MOVEMENT_EPOCH",N(p,PREFIX.."MOVEMENT_EPOCH",0)+1);
+ end
+ p:SetProperty(PREFIX.."MOVEMENT_ACTIVE",wanted);
+end
+local function FullVision(p,on)
+ local active=N(p,PREFIX.."FULL_VISION_ACTIVE",0)==1;
+ if active==on then return; end
+ local visibility=PlayersVisibility[p:GetID()]; if visibility==nil then return; end
+ local changed=0; local before=visibility:GetVisibilityCount(0);
+ -- This is an activation/deactivation edge, never a recurring turn scan.
+ for i=0,Map.GetPlotCount()-1 do
+  if on or visibility:GetVisibilityCount(i)>0 then
+   visibility:ChangeVisibilityCount(i,on and 1 or -1); changed=changed+1;
+  end
+ end
+ p:SetProperty(PREFIX.."FULL_VISION_ACTIVE",on and 1 or 0);
+ Log("full vision player="..p:GetID().." active="..tostring(on).." plots="..changed
+  .." sample0="..before.."->"..visibility:GetVisibilityCount(0));
+end
+local function InitializeUnitLedger()
+ if GN(PREFIX.."UNIT_LEDGER_VERSION",0)>=VERSION then return true; end
+ local ids=PlayerManager.GetAliveIDs(); table.sort(ids);
+ if #ids==0 then return false; end
+ for _,owner in ipairs(ids) do if Players[owner]==nil then return false; end end
+ for _,owner in ipairs(ids) do
+  local p=Players[owner]; local units={};
+  for _,u in p:GetUnits():Members() do units[#units+1]=u; end
+  table.sort(units,function(a,b) return a:GetID()<b:GetID(); end);
+  for _,u in ipairs(units) do Observe(owner,u:GetID()); end
+ end
+ Game.SetProperty(PREFIX.."UNIT_LEDGER_VERSION",VERSION);
+ Log("one-time unit ledger initialized version="..VERSION);
+ return true;
+end
+function API.Refresh(playerID)
+ if not Enabled() then return; end
+ if not InitializeUnitLedger() then return; end
+ local p=Players[playerID]; if p==nil or not p:IsMajor() then return; end
+ if LOTM_MS~=nil and LOTM_MS.RefreshStarSight~=nil then LOTM_MS.RefreshStarSight(playerID); end
+ RestoreReferences(p);
+ local patrol=Effective(p,GLOVES);
+ Movement(p,patrol); ReconcilePatrols(p,not patrol); FullVision(p,Effective(p,WORLD));
+ p:SetProperty(PREFIX.."STATE_VERSION",VERSION);
+end
+local function OnMoved(owner,id)
+ if not Enabled() then return; end
+ local fact=Observe(owner,id); if fact==nil then return; end
+ local u=Unit(owner,id); if not Recon(u) then return; end
+ local p=Player(owner); if not Effective(p,GLOVES) then return; end
+ local serial=N(u,PREFIX.."MOVE_SERIAL",0)+1;
+ u:SetProperty(PREFIX.."MOVE_SERIAL",serial);
+ u:SetProperty(PREFIX.."MOVE_TURN",Game.GetCurrentGameTurn());
+ u:SetProperty(PREFIX.."MOVE_EFFECT_EPOCH",N(p,PREFIX.."MOVEMENT_EPOCH",0));
+ -- The synchronous per-step hook records proof only. UnitMoveComplete in
+ -- UI requests the final endpoint, rather than granting sight while walking.
+end
+local function OnMoveComplete(playerID,data)
+ if not Enabled() or data==nil then return; end
+ local p=Player(playerID); if not Effective(p,GLOVES) then return; end
+ local u=Unit(playerID,tonumber(data.UnitID) or -1); if not Recon(u) then return; end
+ local turn=Game.GetCurrentGameTurn(); local serial=N(u,PREFIX.."MOVE_SERIAL",0);
+ local plot=Map.GetPlot(u:GetX(),u:GetY());
+ if serial<=0 or tonumber(data.MoveSerial)~=serial or tonumber(data.Identity)~=N(u,PREFIX.."IDENTITY",0)
+  or tonumber(data.Turn)~=turn or N(u,PREFIX.."MOVE_TURN",-1)~=turn
+  or N(u,PREFIX.."MOVE_EFFECT_EPOCH",-1)~=N(p,PREFIX.."MOVEMENT_EPOCH",0)
+  or plot==nil or tonumber(data.PlotIndex)~=plot:GetIndex() then return; end
+ API.Refresh(playerID);
+ local ledger=Patrols(p); local key=tostring(u:GetID()); local old=ledger[key];
+ if old~=nil and old.Identity==N(u,PREFIX.."IDENTITY",0) and old.MoveSerial==serial then return; end
+ DropPatrol(p,key,ledger);
+ local plots=Ring(plot);
+ if Change(p,plots,1) then
+  ledger[key]={UnitID=u:GetID(),Identity=N(u,PREFIX.."IDENTITY",0),Type=u:GetType(),Plots=CSV(plots),MoveSerial=serial,Turn=turn};
+  p:SetProperty(PREFIX.."PATROL_REFERENCES",ledger);
+  p:SetProperty(PREFIX.."MOVE_ACK_"..u:GetID(),tostring(N(u,PREFIX.."IDENTITY",0))..":"..serial);
+  Log("patrol stop player="..playerID.." unit="..u:GetID().." serial="..serial.." plots="..#plots);
+ end
+end
+local function OnLifecycle(playerID,data)
+ if not Enabled() or data==nil then return; end
+ local owner=tonumber(data.OwnerID); local id=tonumber(data.UnitID);
+ if owner==nil or id==nil or owner<0 or id<0 then return; end
+ -- A UI notification cannot invent unit metadata: read the native object now.
+ Observe(owner,id);
+ API.Refresh(owner);
+ if data.Token~=nil then
+  local sender=Player(playerID);
+  if sender~=nil then sender:SetProperty(PREFIX.."LIFE_ACK_"..owner..":"..id,tostring(data.Token)); end
+ end
+end
+local function Enemy(p,victimOwner)
+ if victimOwner==p:GetID() or Players[victimOwner]==nil then return false; end
+ local diplomacy=p:GetDiplomacy();
+ return diplomacy~=nil and diplomacy:IsAtWarWith(victimOwner);
+end
+local function SettleKill(killerOwner,killerUnitID,victimOwner,victimID,killerDistrictID,confirmedKill)
+ if tonumber(victimOwner)==nil or tonumber(victimID)==nil or victimOwner<0 or victimID<0 then return; end
+ local p=Player(killerOwner); if not Effective(p,CASE) or not Enemy(p,victimOwner) then return; end
+ local victim=Unit(victimOwner,victimID);
+ if not Dead(victim) then return; end -- No reward for saved/converted living units.
+ local attacker=Unit(killerOwner,killerUnitID);
+ local attributable=attacker~=nil and attacker:GetOwner()==killerOwner
+  and CombatRow(GameInfo.Units[attacker:GetType()]);
+ if not attributable and killerDistrictID~=nil and killerDistrictID>=0 then
+  -- Native OnCombatOccurred's district identity, never a UI-supplied city.
+  if p.GetDistricts~=nil then
+   local districts=p:GetDistricts();
+   local d=districts~=nil and districts.FindID~=nil and districts:FindID(killerDistrictID) or nil;
+   attributable=d~=nil and d:GetOwner()==killerOwner;
+  end
+ end
+ if not attributable then return; end
+ local fact=victim~=nil and Observe(victimOwner,victimID) or Game.GetProperty(META..victimOwner..":"..victimID);
+ if type(fact)~="table" or not CombatRow(GameInfo.Units[fact.Type]) then
+  Log("kill skipped missing native victim evidence owner="..victimOwner.." unit="..victimID); return;
+ end
+ local proof=Game.GetProperty(META..victimOwner..":"..victimID..":KILL_PROOF");
+ local proved=type(proof)=="table" and proof.Identity==fact.Identity
+  and proof.KillerOwner==killerOwner and proof.KillerUnitID==killerUnitID
+  and proof.Turn==Game.GetCurrentGameTurn();
+ -- A vanished object by itself is not a kill. Without the synchronized kill
+ -- hook's native proof, script deletion/conversion cannot become a reward.
+ if victim==nil and not proved then
+  Log("kill skipped absent fatal proof owner="..victimOwner.." unit="..victimID);return;
+ end
+ local key=PREFIX.."KILL:"..victimOwner..":"..victimID..":"..fact.Identity;
+ if GN(key,0)~=0 then return; end
+ local plot=Map.GetPlotByIndex(proved and proof.Plot or fact.Plot);
+ local territory=proved and proof.TerritoryOwner or (plot~=nil and plot:GetOwner() or -1);
+ if plot==nil or territory~=killerOwner then Game.SetProperty(key,-1);return; end
+ local choice=GN(key..":CHOICE",-1);
+ if choice<0 then
+  choice=LOTM_MP_TurnSync.Random(2,"Star case:"..killerOwner..":"..victimOwner..":"..victimID..":"..fact.Identity);
+  Game.SetProperty(key..":CHOICE",choice);
+ end
+ if choice==0 then p:GetTechs():ChangeCurrentResearchProgress(300);
+ else p:GetCulture():ChangeCurrentCulturalProgress(300); end
+ Game.SetProperty(key,1);
+ p:SetProperty(PREFIX.."LAST_REWARD",choice==0 and "SCIENCE" or "CULTURE");
+ p:SetProperty(PREFIX.."REWARD_SERIAL",N(p,PREFIX.."REWARD_SERIAL",0)+1);
+ Log("case kill player="..killerOwner.." victim="..victimOwner..":"..victimID
+  .." identity="..fact.Identity.." plot="..fact.Plot.." yield="..(choice==0 and "SCIENCE" or "CULTURE").." amount=300");
+end
+local function OnCombat(a,au,d,du,ad,dd)
+ if not Enabled() then return; end
+ SettleKill(a,au,d,du,ad,false); SettleKill(d,du,a,au,dd,false);
+ -- Refresh surviving identities at this synchronous endpoint.
+ Observe(a,au); Observe(d,du);
+ API.Refresh(a); if d~=a then API.Refresh(d); end
+end
+local function OnKilled(victimOwner,victimID,killerOwner,killerID)
+ if not Enabled() then return; end
+ -- Preserve the victim before native removal if this synchronized hook
+ -- precedes the final combat endpoint. Alive/saved units never pay here.
+ local fact=Observe(victimOwner,victimID) or Game.GetProperty(META..victimOwner..":"..victimID);
+ if type(fact)=="table" then
+  local plot=Map.GetPlotByIndex(fact.Plot);
+  Game.SetProperty(META..victimOwner..":"..victimID..":KILL_PROOF",{Identity=fact.Identity,
+   KillerOwner=killerOwner,KillerUnitID=killerID,Turn=Game.GetCurrentGameTurn(),Plot=fact.Plot,
+   TerritoryOwner=plot~=nil and plot:GetOwner() or -1});
+ end
+ SettleKill(killerOwner,killerID,victimOwner,victimID,nil,true);
+ local p=Player(victimOwner); if p~=nil and Dead(Unit(victimOwner,victimID)) then
+  local ledger=Patrols(p); DropPatrol(p,tostring(victimID),ledger); p:SetProperty(PREFIX.."PATROL_REFERENCES",ledger);
+ end
+end
+local function OnTurn(playerID,first)
+ if not Enabled() or first==false then return; end
+ local p=Player(playerID); if p==nil then return; end
+ local turn=Game.GetCurrentGameTurn();
+ API.Refresh(playerID);
+ if N(p,PREFIX.."PATROL_CLEAR_TURN",-1)==turn then return; end
+ ReconcilePatrols(p,true); p:SetProperty(PREFIX.."PATROL_CLEAR_TURN",turn);
+end
+if Configured() then
+ GameEvents.OnUnitMoved.Add(OnMoved);
+ GameEvents.OnCombatOccurred.Add(OnCombat);
+ GameEvents.UnitKilledInCombat.Add(OnKilled);
+ GameEvents.LOTM_RESCUE_StarMoveComplete.Add(OnMoveComplete);
+ GameEvents.LOTM_RESCUE_StarUnitLifecycle.Add(OnLifecycle);
+ LOTM_MP_TurnSync.AddSynchronized(OnTurn,"RescueStarGovernor");
+ Log("registered rescue C/D version="..VERSION.." movement=completionProof vision=sourceLedger kill=identityDedup");
+end
+-- END POST_RC241_NEW MODULE: Scripts/LOTM_RESCUE_StarGovernor.lua
+end;
+
 m_mp241Loaders["LOTM_RESCUE_SyncActions"] = function()
 -- BEGIN POST_RC241_DELTA MODULE: Scripts/LOTM_RESCUE_SyncActions.lua
 -- BEGIN RC342 STARTUP TRACE
@@ -10413,7 +12826,7 @@ local LOTM_RP_FORMATION_OBSERVED :string = "LOTM_RP_S4_FORMATION_OBSERVED";
 local LOTM_RP_PROVOKER_GARRISON_ABILITY :string =
 	"ABILITY_LOTM_RP_PROVOKER_GARRISONED";
 local LOTM_RP_PLAN_TARGET_COOLDOWN :number = 10;
-local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 2000;
+local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = LOTM_MP_TurnSync.IsRescueModeConfigured() and 2000 or 1000;
 
 local LOTM_RP_PROJECTS :table = {
 	["PROJECT_LOTM_RP_CONSPIRATOR_POTION"] = { from = 7, to = 6 },
@@ -14203,6 +16616,147 @@ local function GetCivAbilityModifiers(civType)
 	return result;
 end
 
+local function AbilityRemoved(player,civType)
+ return (player:GetProperty("LOTM_TP_REMOVED_CIV_"..civType) or 0)==1;
+end
+local function RemovalRow(modifierID)
+ if GameInfo.LOTM_TP_RemovableModifiers==nil then return nil;end
+ return GameInfo.LOTM_TP_RemovableModifiers[modifierID];
+end
+local function RemovalReply(player,civType,result)
+ player:SetProperty("LOTM_TP_REMOVAL_RESULT",result);
+ player:SetProperty("LOTM_TP_REMOVAL_CIV",civType);
+ player:SetProperty("LOTM_TP_REMOVAL_SERIAL",(player:GetProperty("LOTM_TP_REMOVAL_SERIAL") or 0)+1);
+ Log("ability removal player="..player:GetID().." civ="..civType.." result="..result);
+end
+local function RemovalInstances(player,modifierID)
+ local result={};
+ for id in string.gmatch(tostring(player:GetProperty("LOTM_TP_REMOVE_INSTANCES_"..modifierID) or ""),"[^,]+") do
+  result[#result+1]=tonumber(id);
+ end
+ return result;
+end
+local function IndexRemovalInstances(player)
+ if (player:GetProperty("LOTM_TP_REMOVAL_INDEX420") or 0)==1 then return true;end
+ -- Explicit old-save migration only. Subsequent removals read saved IDs.
+ local found,order={},{};
+ local ok,err=pcall(function()
+  for _,id in ipairs(GameEffects.GetModifiers()) do
+   local def=GameEffects.GetModifierDefinition(id);
+   if def~=nil and RemovalRow(def.Id)~=nil then
+    local owner=GameEffects.GetModifierOwner(id);
+    if GameEffects.GetObjectsPlayerId(owner)==player:GetID() then
+     if found[def.Id]==nil then found[def.Id]={};order[#order+1]=def.Id;end
+     table.insert(found[def.Id],id);
+    end
+   end
+  end
+ end);
+ if not ok then Log("removal migration unavailable "..tostring(err));return false;end
+ table.sort(order);
+ for _,modifierID in ipairs(order) do
+  local ids=found[modifierID];
+  table.sort(ids);player:SetProperty("LOTM_TP_REMOVE_INSTANCES_"..modifierID,table.concat(ids,","));
+ end
+ player:SetProperty("LOTM_TP_REMOVAL_INDEX420",1);return true;
+end
+local function HasNativeRemovalGate(instanceID,row,playerID)
+ local def=GameEffects.GetModifierDefinition(instanceID);
+ if def==nil or def.Id~=row.ModifierId then return false;end
+ if GameEffects.GetObjectsPlayerId(GameEffects.GetModifierOwner(instanceID))~=playerID then return false;end
+ local setID=GameEffects.GetModifierOwnerRequirementSet(instanceID);
+ if setID==nil then return false;end
+ for _,requirement in ipairs(GameEffects.GetRequirementSetInnerRequirements(setID)) do
+  local detail=GameEffects.GetRequirementDefinition(requirement);
+  -- Firaxis WorldRankings uses the uppercase ID field on requirements.
+  if detail~=nil and detail.ID==row.GateRequirement then return true;end
+ end
+ return false;
+end
+local function CheckRemovalComplete(player,civType)
+ for _,modifierID in ipairs(GetCivAbilityModifiers(civType)) do
+  if (player:GetProperty("LOTM_TP_RETIRED_MOD_"..modifierID) or 0)==1 then
+   local row=RemovalRow(modifierID);local resource=GameInfo.Resources[row.ResourceType];
+   local inventory=player:GetResources();local amount=inventory:GetResourceAmount(resource.Index) or 0;
+   if amount~=1 then inventory:ChangeResourceAmount(resource.Index,1-amount);end
+   for _,id in ipairs(RemovalInstances(player,modifierID)) do
+    if not HasNativeRemovalGate(id,row,player:GetID()) then return false;end
+    if GameEffects.GetModifierActive(id) then return false;end
+   end
+  end
+ end
+ player:SetProperty("LOTM_TP_REMOVAL_PENDING",nil);
+ player:SetProperty("LOTM_TP_REMOVAL_DONE_"..civType,1);
+ RemovalReply(player,civType,"REMOVED");return true;
+end
+local function OnRemoveAbility(playerID,parameters)
+ if not IsThief(playerID) or GetSequence(playerID)>1 or parameters==nil then return;end
+ local player=Players[playerID];local sourceID=tonumber(parameters.SourcePlayerID);
+ if sourceID==nil or sourceID==playerID or PlayerConfigurations[sourceID]==nil then return;end
+ local civType=GetCivType(sourceID);
+ if civType=="" or civType==GetCivType(playerID) then return;end
+ local inGame=false;
+ for _,source in ipairs(PlayerManager.GetWasEverAliveMajors() or {}) do if source:GetID()==sourceID then inGame=true;break;end end
+ if not inGame then return;end
+ if AbilityRemoved(player,civType) then
+  local ok=pcall(CheckRemovalComplete,player,civType);
+  if not ok then RemovalReply(player,civType,"PENDING");end
+  return;
+ end
+ if (player:GetProperty("LOTM_TP_ALL_ABILITIES_AUDIT_VERSION") or 0)<1
+  or tostring(player:GetProperty("LOTM_TP_ALL_ABILITIES_RETRY") or "")~=""
+  or tostring(player:GetProperty("LOTM_TP_REMOVAL_PENDING") or "")~="" then
+  RemovalReply(player,civType,"NOT_READY");return;
+ end
+ if not IndexRemovalInstances(player) then RemovalReply(player,civType,"UNVERIFIED");return;end
+ local kept={};
+ for _,id in ipairs(GetCivAbilityModifiers(GetCivType(playerID))) do kept[id]=true;end
+ -- Some original leaders and civilizations share the same root modifier.
+ -- Removing a copied civilization must not disable the player's own leader.
+ local config=PlayerConfigurations[playerID];
+ if config~=nil and config.GetLeaderTypeName~=nil and GameInfo.LeaderTraits~=nil then
+  local leader=config:GetLeaderTypeName();
+  for link in GameInfo.LeaderTraits() do
+   if link.LeaderType==leader then
+    for tm in GameInfo.TraitModifiers() do
+     if tm.TraitType==link.TraitType then kept[tm.ModifierId]=true;end
+    end
+   end
+  end
+ end
+ for _,source in ipairs(PlayerManager.GetWasEverAliveMajors() or {}) do
+  local other=GetCivType(source:GetID());
+  if other~=civType and not AbilityRemoved(player,other) then
+   for _,id in ipairs(GetCivAbilityModifiers(other)) do kept[id]=true;end
+  end
+ end
+ local retire={};
+ local ok,err=pcall(function()
+  for _,modifierID in ipairs(GetCivAbilityModifiers(civType)) do
+   if not kept[modifierID] then
+    local row=RemovalRow(modifierID);local ids=RemovalInstances(player,modifierID);
+    if row==nil or GameInfo.Resources[row.ResourceType]==nil or #ids==0 then error("missing instance "..modifierID);end
+    for _,id in ipairs(ids) do
+     if not HasNativeRemovalGate(id,row,playerID) then error("legacy instance lacks removal gate "..modifierID);end
+    end
+    retire[#retire+1]=row;
+   end
+  end
+ end);
+ if not ok then Log("removal preflight failed "..tostring(err));RemovalReply(player,civType,"UNVERIFIED");return;end
+ player:SetProperty("LOTM_TP_REMOVED_CIV_"..civType,1);
+ player:SetProperty("LOTM_TP_REMOVAL_PENDING",civType);
+ for _,row in ipairs(retire) do
+  player:SetProperty("LOTM_TP_RETIRED_MOD_"..row.ModifierId,1);
+  local resource=GameInfo.Resources[row.ResourceType];local inventory=player:GetResources();
+  local current=inventory:GetResourceAmount(resource.Index) or 0;
+  if current~=1 then inventory:ChangeResourceAmount(resource.Index,1-current);end
+ end
+ RemovalReply(player,civType,"PENDING");
+ local success=pcall(CheckRemovalComplete,player,civType);
+ if not success then Log("removal readback deferred player="..playerID);end
+end
+
 local function ApplyBorrowedAbility(playerID, civType)
 	local player = Players[playerID];
 	if civType == "" or civType == GetCivType(playerID) then
@@ -14241,17 +16795,21 @@ end
 local function ApplyAllAbilities(playerID)
 	local player = Players[playerID];
 	if player == nil then return; end
+	local removing=tostring(player:GetProperty("LOTM_TP_REMOVAL_PENDING") or "");
+	if removing~="" then pcall(CheckRemovalComplete,player,removing);end
 	if (player:GetProperty("LOTM_TP_ALL_ABILITIES_AUDIT_VERSION") or 0) >= 1 then
 		local pending = tostring(player:GetProperty("LOTM_TP_ALL_ABILITIES_RETRY") or "");
 		if pending == "" then return; end
 		local remaining = {};
 		local count = tonumber(player:GetProperty("LOTM_TP_ALL_ABILITIES_LOADED")) or 0;
 		for modifierID in string.gmatch(pending, "[^,]+") do
+		 if (player:GetProperty("LOTM_TP_RETIRED_MOD_"..modifierID) or 0)~=1 then
 			local ok, result = pcall(function() return player:AttachModifierByID(modifierID); end);
 			if ok and result ~= false then
 				player:SetProperty("LOTM_TP_ALL_APPLIED_" .. modifierID, 1);
 				player:SetProperty("LOTM_TP_ALL_STATUS_" .. modifierID, "ATTACHED"); count = count + 1;
 			else table.insert(remaining, modifierID); end
+		 end
 		end
 		player:SetProperty("LOTM_TP_ALL_ABILITIES_RETRY", table.concat(remaining, ","));
 		player:SetProperty("LOTM_TP_ALL_ABILITIES_LOADED", count);
@@ -14286,7 +16844,8 @@ local function ApplyAllAbilities(playerID)
 	end
 	for _, source in ipairs(sources or {}) do
 		local sourceID = source:GetID();
-		if sourceID ~= playerID and GetCivType(sourceID) ~= GetCivType(playerID) then
+		if sourceID ~= playerID and GetCivType(sourceID) ~= GetCivType(playerID)
+		 and not AbilityRemoved(player,GetCivType(sourceID)) then
 			for _, modifierID in ipairs(GetCivAbilityModifiers(GetCivType(sourceID))) do
 				if not seen[modifierID] then
 					seen[modifierID] = true; total = total + 1;
@@ -14861,6 +17420,7 @@ local function Initialize()
 	Events.CityProjectCompleted.Add(OnCityProjectCompleted);
 	GameEvents.LOTM_TP_Command_SetTarget.Add(OnSetTarget);
 	GameEvents.LOTM_TP_Command_SetBorrowedAbility.Add(OnSetBorrowedAbility);
+	GameEvents.LOTM_TP_Command_RemoveAbility.Add(OnRemoveAbility);
 	GameEvents.LOTM_TP_Command_ChooseFinalBranch.Add(OnChooseFinalBranch);
 	GameEvents.LOTM_TP_Command_SettleProduction.Add(OnSettleProduction);
 	GameEvents.LOTM_TP_Command_SettleFakeGoldDeal.Add(OnSettleFakeGoldDeal);
@@ -15861,6 +18421,8 @@ local function RefreshHolder(player,turn)
 	local hero=LOTM_RP_State.FindHero(player:GetID());
 	local goodWanted=turn<LOTM_WORLD_State.NumberProperty(player,"LOTM_HOLDER_GOOD_STATE_UNTIL",-1);
 	local badWanted=turn<LOTM_WORLD_State.NumberProperty(player,"LOTM_HOLDER_UNSTABLE_STATE_UNTIL",-1);
+	if LOTM_JUSTICE~=nil and LOTM_JUSTICE.IsCounselingActive~=nil
+		and LOTM_JUSTICE.IsCounselingActive(player:GetID()) then badWanted=false; end
 	local goodActual=SetAbility(hero,GOOD_ABILITY,goodWanted);
 	local badActual=SetAbility(hero,BAD_ABILITY,badWanted);
 	Log("holder effects player="..tostring(player:GetID()).." turn="..tostring(turn)
@@ -15929,7 +18491,8 @@ local function DeliverPendingNotification(player)
 	local delivered=LOTM_WORLD_State.NumberProperty(player,"LOTM_WORLD_NOTIFICATION_DELIVERED_SERIAL",0);
 	if serial<=0 or serial<=delivered then return; end
 	local kind=player:GetProperty("LOTM_WORLD_EVENT_KIND");
-	if kind==nil or NOTIFICATION_TYPES[tostring(player:GetProperty("LOTM_RP_PATH") or "")] == nil then return; end
+	if kind==nil or (kind~="HOLDER_COUNSELED"
+		and NOTIFICATION_TYPES[tostring(player:GetProperty("LOTM_RP_PATH") or "")] == nil) then return; end
 	RestoreExpiredPendingEffect(player,tostring(kind));
 	local ok,err=pcall(Notify,player,tostring(kind),player:GetProperty("LOTM_WORLD_EVENT_TARGET"));
 	if ok then
@@ -15953,9 +18516,16 @@ local function Trigger(player,turn)
 		kind=nature=="G" and "ARTIFACT_SATISFIED" or "ARTIFACT_UNCONTROLLED";
 		targetType=target.Type;
 	else
-		local key=nature=="G" and "LOTM_HOLDER_GOOD_STATE_UNTIL" or "LOTM_HOLDER_UNSTABLE_STATE_UNTIL";
-		player:SetProperty(key,turn+DURATION);
-		kind=nature=="G" and "HOLDER_GOOD" or "HOLDER_UNSTABLE";
+		local counseled=nature=="B" and LOTM_JUSTICE~=nil
+			and LOTM_JUSTICE.IsCounselingActive~=nil
+			and LOTM_JUSTICE.IsCounselingActive(player:GetID());
+		if counseled then
+			kind="HOLDER_COUNSELED";
+		else
+			local key=nature=="G" and "LOTM_HOLDER_GOOD_STATE_UNTIL" or "LOTM_HOLDER_UNSTABLE_STATE_UNTIL";
+			player:SetProperty(key,turn+DURATION);
+			kind=nature=="G" and "HOLDER_GOOD" or "HOLDER_UNSTABLE";
+		end
 	end
 	RecordEvent(player,kind,targetType,turn);
 	DeliverPendingNotification(player);
@@ -17482,14 +20052,21 @@ LOTM_MP241_LoadBundledModule("LOTM_MP241_Compat");
 local m_mp241Rescue = LOTM_MP_TurnSync.IsRescueModeConfigured();
 if m_mp241Rescue then
 	LOTM_MP241_LoadBundledModule("LOTM_RESCUE_DirectMonsters");
+else
+	LOTM_MP241_LoadBundledModule("LOTM_AI_Cult_Difficulty");
 end
 LOTM_MP241_LoadBundledModule("LOTM_RP_Gameplay");
 if m_mp241Rescue then
 	LOTM_MP241_LoadBundledModule("LOTM_RESCUE_RuntimeEvents");
 	LOTM_MP241_LoadBundledModule("LOTM_RESCUE_Thief");
+	LOTM_MP241_LoadBundledModule("LOTM_RESCUE_StarGovernor");
 else
 	LOTM_MP241_LoadBundledModule("LOTM_TP_Thief");
+	LOTM_AI_Cult_Difficulty.Register();
 end
+LOTM_MP241_LoadBundledModule("LOTM_JUSTICE_Governor");
+LOTM_MP241_LoadBundledModule("LOTM_MS_Governors");
+LOTM_MP241_LoadBundledModule("LOTM_GodBlessings");
 print("[LOTM][MP241] verified oldBase=rc.241 resource=273 rescue="..tostring(m_mp241Rescue)
 	.." unifiedDispatcher=false loaded="..tostring(#(function() local t={} for k in pairs(LOTM_MP241_BUNDLE_LOADED) do t[#t+1]=k; end return t; end)()));
 LOTM_MP241_MAIN_READY = true;

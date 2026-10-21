@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+ <BaseGameText>
+  <Replace Tag="LOC_LOTM_STORM_NAME"><Text>闪电风暴</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_DESCRIPTION"><Text>风暴之主的祝福授予闪电风暴技能次数。选择已探索的地块，确认后释放；每次成功结算消耗1次，未使用的次数永久保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_TOOLTIP"><Text>闪电风暴：剩余{1_Num}次。[NEWLINE]点击后选择已探索的地块，预览并确认释放。伤害与普通核弹一致，影响目标及周围1格，不留下核辐射。[NEWLINE]每次风暴祝福获得1次机会；取消保留次数。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_TARGET_HINT"><Text>选择目标并确认：普通核弹伤害，半径1格，无核辐射。取消瞄准保留次数。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_CANCEL"><Text>取消瞄准</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_CHARGE"><Text>尚未获得风暴祝福。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NOT_YOUR_TURN"><Text>请在自己的回合释放。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_CAPITAL"><Text>需要拥有首都才能瞄准。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NATIVE_UNAVAILABLE"><Text>投放准备失败，次数已保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_INVENTORY_BUSY"><Text>上一次投放尚未结算，请稍后再试。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_CARRIER"><Text>无法开始瞄准，次数已保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_TARGETS"><Text>当前没有可选目标，次数已保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_ORIGIN"><Text>首都附近没有可用的投放位置，次数已保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_FULL"><Text>获得1次闪电风暴：通过事件提示列左侧的雷霆徽章选点释放；伤害与普通核弹一致，半径1格，不留下核辐射。机会保留至使用。</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_HALF"><Text>获得1次闪电风暴：通过事件提示列左侧的雷霆徽章选点释放；伤害与普通核弹一致，半径1格，不留下核辐射。机会保留至使用。</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_FULL"><Text>获得1次闪电风暴：通过事件提示列左侧的雷霆徽章选点释放；伤害与普通核弹一致，半径1格，不留下核辐射。机会保留至使用。</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_HALF"><Text>获得1次闪电风暴：通过事件提示列左侧的雷霆徽章选点释放；伤害与普通核弹一致，半径1格，不留下核辐射。机会保留至使用。</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_FULL"><Text>获得1次闪电风暴：通过事件提示列左侧的雷霆徽章选点释放；伤害与普通核弹一致，半径1格，不留下核辐射。机会保留至使用。</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_HALF"><Text>获得1次闪电风暴：通过事件提示列左侧的雷霆徽章选点释放；伤害与普通核弹一致，半径1格，不留下核辐射。机会保留至使用。</Text></Replace>
+   <Replace Tag="LOC_LOTM_STORM_CONFIRM"><Text>在此处释放闪电风暴？[NEWLINE]风暴之主将降下伟力击杀范围内敌人。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_CONFIRM_CANCEL"><Text>取消</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_CONFIRM_FIRE"><Text>释放风暴</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_WAR_REQUIRED"><Text>目标包含尚未处于战争状态的文明，请重新确认宣战后释放。次数已保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_IMPACT_FAILED"><Text>风暴结算未完成，次数尚未扣除。再次点击技能可重试；详情已写入日志。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_STALE_REQUEST"><Text>此次瞄准已失效，请重新选择目标。次数已保留。</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_RESCUE_OUTER_HINT"><Text>救赎模式：10／15使者神谕的风暴祝福奖励各授予1次闪电风暴，保留至使用。外神每次最多承受20点伤害，眷属及其他目标按普通核弹规则结算。</Text></Replace>
+ </BaseGameText>
+</GameData>

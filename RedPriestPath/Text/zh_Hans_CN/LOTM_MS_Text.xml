@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo><LocalizedText>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_NAME" Language="zh_Hans_CN"><Text>佛尔思·沃尔</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_TITLE" Language="zh_Hans_CN"><Text>魔术师</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_SHORT_TITLE" Language="zh_Hans_CN"><Text>魔术师</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_MAGICIAN_DESCRIPTION" Language="zh_Hans_CN"><Text>旅行者与作家的见闻，化为城市的生产经验和文化财富。</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_NAME" Language="zh_Hans_CN"><Text>伦纳德·米切尔</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_TITLE" Language="zh_Hans_CN"><Text>星星</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_SHORT_TITLE" Language="zh_Hans_CN"><Text>星星</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_STAR_DESCRIPTION" Language="zh_Hans_CN"><Text>值夜者的警戒守护城市，并保护文明的秘密。</Text></Row>
+<Row Tag="LOC_LOTM_MS_GATE_NAME" Language="zh_Hans_CN"><Text>旅行家的门</Text></Row>
+<Row Tag="LOC_LOTM_MS_GATE_DESC" Language="zh_Hans_CN"><Text>转任就职速度提高；本城新训练的适用普通陆海单位永久＋1移动力。购买与升级继承仍待实机核验。</Text></Row>
+<Row Tag="LOC_LOTM_MS_SERIAL_NAME" Language="zh_Hans_CN"><Text>畅销连载</Text></Row>
+<Row Tag="LOC_LOTM_MS_SERIAL_DESC" Language="zh_Hans_CN"><Text>本城每回合＋4大作家点数；本城每件著作额外＋4文化。</Text></Row>
+<Row Tag="LOC_LOTM_MS_SUPPLY_NAME" Language="zh_Hans_CN"><Text>旅途补给</Text></Row>
+<Row Tag="LOC_LOTM_MS_SUPPLY_DESC" Language="zh_Hans_CN"><Text>己方每条以本城为终点的国内商路，为起点城市额外提供＋3食物和＋3生产力。</Text></Row>
+<Row Tag="LOC_LOTM_MS_RECORD_NAME" Language="zh_Hans_CN"><Text>学徒的记录</Text></Row>
+<Row Tag="LOC_LOTM_MS_RECORD_DESC" Language="zh_Hans_CN"><Text>本城建造己方历史上已完成过的同类建筑或区域时，建造生产力＋50%；不作用于单位或项目。</Text></Row>
+<Row Tag="LOC_LOTM_MS_REPLAY_NAME" Language="zh_Hans_CN"><Text>经验复现</Text></Row>
+<Row Tag="LOC_LOTM_MS_REPLAY_DESC" Language="zh_Hans_CN"><Text>本城新训练的适用普通陆海战斗单位获得一次可选择的初始晋升。购买与已有免费晋升叠加仍待实机核验。</Text></Row>
+<Row Tag="LOC_LOTM_MS_BESTSELLER_NAME" Language="zh_Hans_CN"><Text>世界畅销书</Text></Row>
+<Row Tag="LOC_LOTM_MS_BESTSELLER_DESC" Language="zh_Hans_CN"><Text>本城著作基础旅游翻倍、每件额外＋20金币；标准著作额外＋2文化，与“畅销连载”的＋4文化相加。</Text></Row>
+<Row Tag="LOC_LOTM_MS_WATCHER_NAME" Language="zh_Hans_CN"><Text>值夜者</Text></Row>
+<Row Tag="LOC_LOTM_MS_WATCHER_DESC" Language="zh_Hans_CN"><Text>本城＋4信仰；持续提供以城中心为中心、六角距离6格内的普通视野。</Text></Row>
+<Row Tag="LOC_LOTM_MS_PATROL_NAME" Language="zh_Hans_CN"><Text>夜间巡查</Text></Row>
+<Row Tag="LOC_LOTM_MS_PATROL_DESC" Language="zh_Hans_CN"><Text>本城新训练的普通侦察单位永久＋2视野，战斗经验获取＋50%。购买与升级继承仍待实机核验。</Text></Row>
+<Row Tag="LOC_LOTM_MS_INVESTIGATION_NAME" Language="zh_Hans_CN"><Text>内部调查</Text></Row>
+<Row Tag="LOC_LOTM_MS_INVESTIGATION_DESC" Language="zh_Hans_CN"><Text>本城敌方间谍任务等级修正－2。习得“隐秘守护”后由全国－3效果覆盖。</Text></Row>
+<Row Tag="LOC_LOTM_MS_CONTACT_NAME" Language="zh_Hans_CN"><Text>隐秘联络</Text></Row>
+<Row Tag="LOC_LOTM_MS_CONTACT_DESC" Language="zh_Hans_CN"><Text>有效就职时，对已相遇的其他主要文明增加1级外交能见度。</Text></Row>
+<Row Tag="LOC_LOTM_MS_INTERROGATION_NAME" Language="zh_Hans_CN"><Text>审讯报告</Text></Row>
+<Row Tag="LOC_LOTM_MS_INTERROGATION_DESC" Language="zh_Hans_CN"><Text>有效就职时，本城每抓获一名敌方间谍，随机获得300科技或300文化；每个案件只奖励一次。</Text></Row>
+<Row Tag="LOC_LOTM_MS_GUARDIAN_NAME" Language="zh_Hans_CN"><Text>隐秘守护</Text></Row>
+<Row Tag="LOC_LOTM_MS_GUARDIAN_DESC" Language="zh_Hans_CN"><Text>有效就职时，己方所有城市的敌方间谍任务等级修正－3，己方反间谍等级＋2；本城不与“内部调查”叠加。</Text></Row>
+</LocalizedText></GameInfo>

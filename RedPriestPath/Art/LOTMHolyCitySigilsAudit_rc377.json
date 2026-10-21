@@ -1,0 +1,3301 @@
+{
+  "version": "0.1.0-rc.377",
+  "resource": 409,
+  "materials": [
+    {
+      "name": "LHC_Fool_Sigil_Main",
+      "city": "Fool",
+      "part": "Main",
+      "radius": 760,
+      "seconds_per_turn": 36,
+      "polar_uv": true,
+      "scroll_u": 0.027777777777777776,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Fool_Sigil_Main_BaseColor",
+        "Emissive": "LHC_Fool_Sigil_Main_Emissive",
+        "Opacity": "LHC_Fool_Sigil_Main_Opacity"
+      },
+      "material_sha256": "1fef80a44af56fd63d17e1f2e6a410a1d5ae555a734c0a470ec4fdd6c0d059e4"
+    },
+    {
+      "name": "LHC_Fool_Sigil_Outer",
+      "city": "Fool",
+      "part": "Outer",
+      "radius": 845,
+      "seconds_per_turn": -54,
+      "polar_uv": true,
+      "scroll_u": -0.018518518518518517,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Fool_Sigil_Outer_BaseColor",
+        "Emissive": "LHC_Fool_Sigil_Outer_Emissive",
+        "Opacity": "LHC_Fool_Sigil_Outer_Opacity"
+      },
+      "material_sha256": "e6260c38ca374371ca874d3a6609839651af4a9005b41fc076dd6d98cf137834"
+    },
+    {
+      "name": "LHC_Night_Sigil_Main",
+      "city": "Night",
+      "part": "Main",
+      "radius": 760,
+      "seconds_per_turn": 36,
+      "polar_uv": true,
+      "scroll_u": 0.027777777777777776,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Night_Sigil_Main_BaseColor",
+        "Emissive": "LHC_Night_Sigil_Main_Emissive",
+        "Opacity": "LHC_Night_Sigil_Main_Opacity"
+      },
+      "material_sha256": "290f5847db7643e87a60100340d473e568ea85157ee2776f039aa5c262dd0107"
+    },
+    {
+      "name": "LHC_Night_Sigil_Outer",
+      "city": "Night",
+      "part": "Outer",
+      "radius": 845,
+      "seconds_per_turn": -54,
+      "polar_uv": true,
+      "scroll_u": -0.018518518518518517,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Night_Sigil_Outer_BaseColor",
+        "Emissive": "LHC_Night_Sigil_Outer_Emissive",
+        "Opacity": "LHC_Night_Sigil_Outer_Opacity"
+      },
+      "material_sha256": "9dc32c80f44843c5caf599fb5464b7c5cd22f7847d7308190c4883d2811f6597"
+    },
+    {
+      "name": "LHC_Storm_Sigil_Main",
+      "city": "Storm",
+      "part": "Main",
+      "radius": 760,
+      "seconds_per_turn": 36,
+      "polar_uv": true,
+      "scroll_u": 0.027777777777777776,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Storm_Sigil_Main_BaseColor",
+        "Emissive": "LHC_Storm_Sigil_Main_Emissive",
+        "Opacity": "LHC_Storm_Sigil_Main_Opacity"
+      },
+      "material_sha256": "c47b67eacd1ace73591f9e0e582c881527b46ea0387fa97b972054bc90eaf4f8"
+    },
+    {
+      "name": "LHC_Storm_Sigil_Outer",
+      "city": "Storm",
+      "part": "Outer",
+      "radius": 845,
+      "seconds_per_turn": -54,
+      "polar_uv": true,
+      "scroll_u": -0.018518518518518517,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Storm_Sigil_Outer_BaseColor",
+        "Emissive": "LHC_Storm_Sigil_Outer_Emissive",
+        "Opacity": "LHC_Storm_Sigil_Outer_Opacity"
+      },
+      "material_sha256": "e8af8e3a48782f3042941cd638340e4d938e331328db72ed2764e3636655624c"
+    },
+    {
+      "name": "LHC_Star_Sigil_Main",
+      "city": "Star",
+      "part": "Main",
+      "radius": 760,
+      "seconds_per_turn": 36,
+      "polar_uv": true,
+      "scroll_u": 0.027777777777777776,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Star_Sigil_Main_BaseColor",
+        "Emissive": "LHC_Star_Sigil_Main_Emissive",
+        "Opacity": "LHC_Star_Sigil_Main_Opacity"
+      },
+      "material_sha256": "6261fc872e3ad70cd7d8b36d438f5470439dd76d14d9b82d6b70ad1850f3e1ad"
+    },
+    {
+      "name": "LHC_Star_Sigil_Outer",
+      "city": "Star",
+      "part": "Outer",
+      "radius": 845,
+      "seconds_per_turn": -54,
+      "polar_uv": true,
+      "scroll_u": -0.018518518518518517,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Star_Sigil_Outer_BaseColor",
+        "Emissive": "LHC_Star_Sigil_Outer_Emissive",
+        "Opacity": "LHC_Star_Sigil_Outer_Opacity"
+      },
+      "material_sha256": "53b77681a7e527724c52b4a793ae10699a3432e7ef290c1d6c4d480d11633196"
+    },
+    {
+      "name": "LHC_Star_Portal",
+      "city": "Star",
+      "part": "Portal",
+      "radius": 155,
+      "seconds_per_turn": 64,
+      "polar_uv": true,
+      "scroll_u": 0.015625,
+      "shader": "Landmark",
+      "maps": {
+        "BaseColor": "LHC_Star_Portal_BaseColor",
+        "Emissive": "LHC_Star_Portal_Emissive",
+        "Opacity": "LHC_Star_Portal_Opacity"
+      },
+      "material_sha256": "5fda83b5953e35fc9681f5cf676a3616c0731ba3241c085d11109ddd0c6067ca"
+    }
+  ],
+  "decoded_texture_checks": [
+    {
+      "platform": "Windows",
+      "texture": "LHC_Fool_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null",
+      "sha256": "b4793d2157caf1372e95e6111ab53d2bfaf27054f5dd97b5094f50c398da4111",
+      "source_sha256": "fe54a7b36b4fcb3eaf3c3811530b492f835bb5699c1d8b34ba3df1ad6b5e8e38",
+      "mean_abs_error": [
+        0.11196613311767578,
+        0.13120746612548828,
+        0.17456960678100586
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Fool_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Emissive",
+      "sha256": "412be5f2bd114e90c9abc847a8cbb585d60bd28da5aa6237d4cd41f0e617e477",
+      "source_sha256": "03d9f5ea421f231f2d27d7dace7fd9055735d4606ca96afeabf9531b20d62855",
+      "mean_abs_error": [
+        0.11196613311767578,
+        0.13120746612548828,
+        0.17456960678100586
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Fool_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Opacity",
+      "sha256": "d1645ba94116e3bdf195e91cd3b975db1dfb9016242f66edbfd900b6b7a24df1",
+      "source_sha256": "69b41389077e7e79d334690ab0ce22bf97df935c95553976ec6f042de5e939ee",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9126148223876953,
+      "visible_fraction": 0.08738517761230469,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null",
+      "sha256": "b4793d2157caf1372e95e6111ab53d2bfaf27054f5dd97b5094f50c398da4111",
+      "source_sha256": "fe54a7b36b4fcb3eaf3c3811530b492f835bb5699c1d8b34ba3df1ad6b5e8e38",
+      "mean_abs_error": [
+        0.11196613311767578,
+        0.13120746612548828,
+        0.17456960678100586
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Emissive",
+      "sha256": "412be5f2bd114e90c9abc847a8cbb585d60bd28da5aa6237d4cd41f0e617e477",
+      "source_sha256": "03d9f5ea421f231f2d27d7dace7fd9055735d4606ca96afeabf9531b20d62855",
+      "mean_abs_error": [
+        0.11196613311767578,
+        0.13120746612548828,
+        0.17456960678100586
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Opacity",
+      "sha256": "d1645ba94116e3bdf195e91cd3b975db1dfb9016242f66edbfd900b6b7a24df1",
+      "source_sha256": "69b41389077e7e79d334690ab0ce22bf97df935c95553976ec6f042de5e939ee",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9126148223876953,
+      "visible_fraction": 0.08738517761230469,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Fool_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null",
+      "sha256": "a6eaacfcb2066596f492e28041f5b1429d5d6a45e7170cfb9ac932f5d3caefaf",
+      "source_sha256": "3310b339d87fa3a1d462b3085032af38285815000486c5e18117a762ea4fd95d",
+      "mean_abs_error": [
+        0.0507807731628418,
+        0.043277740478515625,
+        0.06702661514282227
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Fool_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Emissive",
+      "sha256": "773db2d7a8a83c04357057c7e1f13ad8f98a56c3d677587adca44125015832dd",
+      "source_sha256": "3cfd0e04d0a66b18670de55cce74a45936077ddeb285f1a63192eb7c48c77c62",
+      "mean_abs_error": [
+        0.0507807731628418,
+        0.043277740478515625,
+        0.06702661514282227
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Fool_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Opacity",
+      "sha256": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+      "source_sha256": "21ed819fa5d5b77c907df963872fd4c62566cf401585a27bac934cb696a9b736",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9799489974975586,
+      "visible_fraction": 0.020051002502441406,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null",
+      "sha256": "a6eaacfcb2066596f492e28041f5b1429d5d6a45e7170cfb9ac932f5d3caefaf",
+      "source_sha256": "3310b339d87fa3a1d462b3085032af38285815000486c5e18117a762ea4fd95d",
+      "mean_abs_error": [
+        0.0507807731628418,
+        0.043277740478515625,
+        0.06702661514282227
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Emissive",
+      "sha256": "773db2d7a8a83c04357057c7e1f13ad8f98a56c3d677587adca44125015832dd",
+      "source_sha256": "3cfd0e04d0a66b18670de55cce74a45936077ddeb285f1a63192eb7c48c77c62",
+      "mean_abs_error": [
+        0.0507807731628418,
+        0.043277740478515625,
+        0.06702661514282227
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Fool_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Opacity",
+      "sha256": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+      "source_sha256": "21ed819fa5d5b77c907df963872fd4c62566cf401585a27bac934cb696a9b736",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9799489974975586,
+      "visible_fraction": 0.020051002502441406,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Night_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null",
+      "sha256": "7a8685f16844c1fc3da4374f30ffb6295c1a1b3c5d56d83184ce8328aea6288d",
+      "source_sha256": "bd22453c5104414daaab61a81f9d0174a70ef462aa4cb19aea229fa6cc1fdfb0",
+      "mean_abs_error": [
+        0.1509404182434082,
+        0.13469171524047852,
+        0.01184701919555664
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Night_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Emissive",
+      "sha256": "e85326d1209b46d5d65a707527279cc9e736a22c900aa181d78739d2bc043c11",
+      "source_sha256": "2ae04c2a8669876f5ed19933f438125fe34ce759b49f71a63e462f5ca61196c0",
+      "mean_abs_error": [
+        0.1509404182434082,
+        0.13469171524047852,
+        0.01184701919555664
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Night_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Opacity",
+      "sha256": "4d4c02d082e4fc159ff24d3d7227a5696e552667656969507fbebd4c3d0064d5",
+      "source_sha256": "2fc0f3ffd6d36050d420fe14af7d529ab253c5ada40115cd0f0555b6d0bc9001",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9391322135925293,
+      "visible_fraction": 0.0608677864074707,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Night_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null",
+      "sha256": "7a8685f16844c1fc3da4374f30ffb6295c1a1b3c5d56d83184ce8328aea6288d",
+      "source_sha256": "bd22453c5104414daaab61a81f9d0174a70ef462aa4cb19aea229fa6cc1fdfb0",
+      "mean_abs_error": [
+        0.1509404182434082,
+        0.13469171524047852,
+        0.01184701919555664
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Night_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Emissive",
+      "sha256": "e85326d1209b46d5d65a707527279cc9e736a22c900aa181d78739d2bc043c11",
+      "source_sha256": "2ae04c2a8669876f5ed19933f438125fe34ce759b49f71a63e462f5ca61196c0",
+      "mean_abs_error": [
+        0.1509404182434082,
+        0.13469171524047852,
+        0.01184701919555664
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Night_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Opacity",
+      "sha256": "4d4c02d082e4fc159ff24d3d7227a5696e552667656969507fbebd4c3d0064d5",
+      "source_sha256": "2fc0f3ffd6d36050d420fe14af7d529ab253c5ada40115cd0f0555b6d0bc9001",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9391322135925293,
+      "visible_fraction": 0.0608677864074707,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Night_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null",
+      "sha256": "19d880700cb3b788a3946171c63ba8a64ccccc5ad907bd4b732c88df32f492d3",
+      "source_sha256": "2fb386ca430a3f70a5efc632b785bddf2cd9f746af52a30fa30144152e8e89ee",
+      "mean_abs_error": [
+        0.0606231689453125,
+        0.054442405700683594,
+        0.01304483413696289
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Night_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Emissive",
+      "sha256": "275a03e04bd8365acc668f5c29efd33c5248e4374f83d4f2b9cf7febbcf39dc3",
+      "source_sha256": "2f6ed71922909f095997ce8d2daa52dec695fd0aa741dee671ce1db5dc275f1a",
+      "mean_abs_error": [
+        0.0606231689453125,
+        0.054442405700683594,
+        0.01304483413696289
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Night_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Opacity",
+      "sha256": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+      "source_sha256": "8af6909a19a6c0aeb369283bca238f63ea4e211a2b5d7a53997c3b51700e8d8f",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9798293113708496,
+      "visible_fraction": 0.02017068862915039,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Night_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null",
+      "sha256": "19d880700cb3b788a3946171c63ba8a64ccccc5ad907bd4b732c88df32f492d3",
+      "source_sha256": "2fb386ca430a3f70a5efc632b785bddf2cd9f746af52a30fa30144152e8e89ee",
+      "mean_abs_error": [
+        0.0606231689453125,
+        0.054442405700683594,
+        0.01304483413696289
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Night_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Emissive",
+      "sha256": "275a03e04bd8365acc668f5c29efd33c5248e4374f83d4f2b9cf7febbcf39dc3",
+      "source_sha256": "2f6ed71922909f095997ce8d2daa52dec695fd0aa741dee671ce1db5dc275f1a",
+      "mean_abs_error": [
+        0.0606231689453125,
+        0.054442405700683594,
+        0.01304483413696289
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Night_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Opacity",
+      "sha256": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+      "source_sha256": "8af6909a19a6c0aeb369283bca238f63ea4e211a2b5d7a53997c3b51700e8d8f",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9798293113708496,
+      "visible_fraction": 0.02017068862915039,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Storm_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null",
+      "sha256": "d32c0f04c4e0aca06a589ac1d5f597321f47cc1aa9123ff175bf6effd8337b10",
+      "source_sha256": "545165958ed579ac29a12451830da34209757bf00fb33c446227ce9c90ac9bc4",
+      "mean_abs_error": [
+        0.2961578369140625,
+        0.048638343811035156,
+        0.13236141204833984
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Storm_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Emissive",
+      "sha256": "6b8be707e40bfb77bfa259ab0728418afa365920c88aac3f06e28d31a8965a24",
+      "source_sha256": "ec0dd7e54a19cec9a3ed2f04debc2b08735e546cf4e469872094ffa43996d590",
+      "mean_abs_error": [
+        0.2961578369140625,
+        0.048638343811035156,
+        0.13236141204833984
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Storm_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Opacity",
+      "sha256": "8e71242828cc5a6ed0f98e98404d05930df445b7352d04fa8a7ea853d46801fb",
+      "source_sha256": "4d3aae7ce2ef7b66eb68504555b4d00a97be32403c8fcf43283125db3361b7af",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9037070274353027,
+      "visible_fraction": 0.09629297256469727,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null",
+      "sha256": "d32c0f04c4e0aca06a589ac1d5f597321f47cc1aa9123ff175bf6effd8337b10",
+      "source_sha256": "545165958ed579ac29a12451830da34209757bf00fb33c446227ce9c90ac9bc4",
+      "mean_abs_error": [
+        0.2961578369140625,
+        0.048638343811035156,
+        0.13236141204833984
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Emissive",
+      "sha256": "6b8be707e40bfb77bfa259ab0728418afa365920c88aac3f06e28d31a8965a24",
+      "source_sha256": "ec0dd7e54a19cec9a3ed2f04debc2b08735e546cf4e469872094ffa43996d590",
+      "mean_abs_error": [
+        0.2961578369140625,
+        0.048638343811035156,
+        0.13236141204833984
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Opacity",
+      "sha256": "8e71242828cc5a6ed0f98e98404d05930df445b7352d04fa8a7ea853d46801fb",
+      "source_sha256": "4d3aae7ce2ef7b66eb68504555b4d00a97be32403c8fcf43283125db3361b7af",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9037070274353027,
+      "visible_fraction": 0.09629297256469727,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Storm_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null",
+      "sha256": "75a83ed81d2c5ad70dea401f80448db9097eb8c67a62514f74ff7180a84733b0",
+      "source_sha256": "e2feaf3ce13906e0b49561709141ce242582b0873c090399de002387d1815722",
+      "mean_abs_error": [
+        0.09901762008666992,
+        0.025615692138671875,
+        0.061809539794921875
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Storm_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Emissive",
+      "sha256": "9d4e3ad83298d08dfff2a092aff8ac723f46237755587e58c41058cbee0b0850",
+      "source_sha256": "5385e80daaf62ff1e3fa7613404904847b8e0a972cc452aa34b792bc3ed6c38b",
+      "mean_abs_error": [
+        0.09901762008666992,
+        0.025615692138671875,
+        0.061809539794921875
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Storm_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Opacity",
+      "sha256": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+      "source_sha256": "8af6909a19a6c0aeb369283bca238f63ea4e211a2b5d7a53997c3b51700e8d8f",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9798293113708496,
+      "visible_fraction": 0.02017068862915039,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null",
+      "sha256": "75a83ed81d2c5ad70dea401f80448db9097eb8c67a62514f74ff7180a84733b0",
+      "source_sha256": "e2feaf3ce13906e0b49561709141ce242582b0873c090399de002387d1815722",
+      "mean_abs_error": [
+        0.09901762008666992,
+        0.025615692138671875,
+        0.061809539794921875
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Emissive",
+      "sha256": "9d4e3ad83298d08dfff2a092aff8ac723f46237755587e58c41058cbee0b0850",
+      "source_sha256": "5385e80daaf62ff1e3fa7613404904847b8e0a972cc452aa34b792bc3ed6c38b",
+      "mean_abs_error": [
+        0.09901762008666992,
+        0.025615692138671875,
+        0.061809539794921875
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Storm_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Opacity",
+      "sha256": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+      "source_sha256": "8af6909a19a6c0aeb369283bca238f63ea4e211a2b5d7a53997c3b51700e8d8f",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9798293113708496,
+      "visible_fraction": 0.02017068862915039,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null",
+      "sha256": "fa83bdcf9952105e3bf6fee43a7f4623c3ad179a6372f1290902182c62526c8f",
+      "source_sha256": "ebe9aa29a18b8320de7c6881410e17637095d3e1f2f9c91ae10c7b5de89cca02",
+      "mean_abs_error": [
+        0.08477592468261719,
+        0.11546897888183594,
+        0.1473240852355957
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Emissive",
+      "sha256": "e6c56c84840bccc63e3f2ba9cd28a563ec84c2596c1cdfdb87f45a0edb19d0c2",
+      "source_sha256": "9e0ca50a69c62e82ba9519e66cd8474476bd56a2490d9d55caff711d03d0a1e3",
+      "mean_abs_error": [
+        0.08477592468261719,
+        0.11546897888183594,
+        0.1473240852355957
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Opacity",
+      "sha256": "6ea21f885f210763b5a7fe0078ce062517ac51021aec10982f5db3c80fd8bf6e",
+      "source_sha256": "0caf9c28abc72ae241b91ae836e58f633e46f28e09cf4146c5a3efecba96d96c",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9087924957275391,
+      "visible_fraction": 0.09120750427246094,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Sigil_Main_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null",
+      "sha256": "fa83bdcf9952105e3bf6fee43a7f4623c3ad179a6372f1290902182c62526c8f",
+      "source_sha256": "ebe9aa29a18b8320de7c6881410e17637095d3e1f2f9c91ae10c7b5de89cca02",
+      "mean_abs_error": [
+        0.08477592468261719,
+        0.11546897888183594,
+        0.1473240852355957
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Sigil_Main_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Emissive",
+      "sha256": "e6c56c84840bccc63e3f2ba9cd28a563ec84c2596c1cdfdb87f45a0edb19d0c2",
+      "source_sha256": "9e0ca50a69c62e82ba9519e66cd8474476bd56a2490d9d55caff711d03d0a1e3",
+      "mean_abs_error": [
+        0.08477592468261719,
+        0.11546897888183594,
+        0.1473240852355957
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Sigil_Main_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Opacity",
+      "sha256": "6ea21f885f210763b5a7fe0078ce062517ac51021aec10982f5db3c80fd8bf6e",
+      "source_sha256": "0caf9c28abc72ae241b91ae836e58f633e46f28e09cf4146c5a3efecba96d96c",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9087924957275391,
+      "visible_fraction": 0.09120750427246094,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null",
+      "sha256": "910e551042769e76b2d8d8f445325e2def11161fd7d44e27798f8b25251743d2",
+      "source_sha256": "f368a12da033b1246aa931081f31fe1ac76175ba6b41609d02057d5a31fd2755",
+      "mean_abs_error": [
+        0.009676933288574219,
+        0.029485225677490234,
+        0.049605369567871094
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Emissive",
+      "sha256": "a3098e99caadf2a3d75ec4e606c8344e8237f617c5dd8de3e5d9bfb12e9bbbc1",
+      "source_sha256": "78669df038e375507b8fd4c407d9085df45a2e8d8141107f7474ed8549212718",
+      "mean_abs_error": [
+        0.009676933288574219,
+        0.029485225677490234,
+        0.049605369567871094
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Opacity",
+      "sha256": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+      "source_sha256": "21ed819fa5d5b77c907df963872fd4c62566cf401585a27bac934cb696a9b736",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9799489974975586,
+      "visible_fraction": 0.020051002502441406,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Sigil_Outer_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null",
+      "sha256": "910e551042769e76b2d8d8f445325e2def11161fd7d44e27798f8b25251743d2",
+      "source_sha256": "f368a12da033b1246aa931081f31fe1ac76175ba6b41609d02057d5a31fd2755",
+      "mean_abs_error": [
+        0.009676933288574219,
+        0.029485225677490234,
+        0.049605369567871094
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Sigil_Outer_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Emissive",
+      "sha256": "a3098e99caadf2a3d75ec4e606c8344e8237f617c5dd8de3e5d9bfb12e9bbbc1",
+      "source_sha256": "78669df038e375507b8fd4c407d9085df45a2e8d8141107f7474ed8549212718",
+      "mean_abs_error": [
+        0.009676933288574219,
+        0.029485225677490234,
+        0.049605369567871094
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Sigil_Outer_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Opacity",
+      "sha256": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+      "source_sha256": "21ed819fa5d5b77c907df963872fd4c62566cf401585a27bac934cb696a9b736",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.9799489974975586,
+      "visible_fraction": 0.020051002502441406,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Portal_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null",
+      "sha256": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+      "source_sha256": "38f4724b6c13189f3c319728248266ad2fb6de620f1fa1739e43c35527396f5d",
+      "mean_abs_error": [
+        2.288062572479248,
+        0.8056826591491699,
+        1.7676353454589844
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Portal_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Emissive",
+      "sha256": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+      "source_sha256": "38f4724b6c13189f3c319728248266ad2fb6de620f1fa1739e43c35527396f5d",
+      "mean_abs_error": [
+        2.288062572479248,
+        0.8056826591491699,
+        1.7676353454589844
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "Windows",
+      "texture": "LHC_Star_Portal_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Opacity",
+      "sha256": "fbda86dc879fb94cdba96b8e3a0133f277ee8eed6cacddd31d8b7c952c992aa4",
+      "source_sha256": "c3e951a31f7904477c03d861d81c8cda442b090de5e34f1445ddc28600d5d3a9",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.0,
+      "visible_fraction": 1.0,
+      "decoded_channel": "red"
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Portal_BaseColor",
+      "channel": "BaseColor",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null",
+      "sha256": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+      "source_sha256": "38f4724b6c13189f3c319728248266ad2fb6de620f1fa1739e43c35527396f5d",
+      "mean_abs_error": [
+        2.288062572479248,
+        0.8056826591491699,
+        1.7676353454589844
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Portal_Emissive",
+      "channel": "Emissive",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Emissive",
+      "sha256": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+      "source_sha256": "38f4724b6c13189f3c319728248266ad2fb6de620f1fa1739e43c35527396f5d",
+      "mean_abs_error": [
+        2.288062572479248,
+        0.8056826591491699,
+        1.7676353454589844
+      ],
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "platform": "MacOS",
+      "texture": "LHC_Star_Portal_Opacity",
+      "channel": "Opacity",
+      "file": "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Opacity",
+      "sha256": "fbda86dc879fb94cdba96b8e3a0133f277ee8eed6cacddd31d8b7c952c992aa4",
+      "source_sha256": "c3e951a31f7904477c03d861d81c8cda442b090de5e34f1445ddc28600d5d3a9",
+      "mean_abs_error": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "width": 2048,
+      "height": 1024,
+      "transparent_fraction": 0.0,
+      "visible_fraction": 1.0,
+      "decoded_channel": "red"
+    }
+  ],
+  "new_geometry": [
+    {
+      "geometry": "LHC_Fool_Sigil_Main_Part01",
+      "vertices": 2475,
+      "triangles": 2800,
+      "max_index": 2474,
+      "position_error": 4.950000004555477e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Fool_Sigil_Main_Part01",
+        "vertices": 2475,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -452.8333,
+          -452.8333,
+          6.0
+        ],
+        [
+          514.2667,
+          514.2667,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Fool_Sigil_Main_Part02",
+      "vertices": 1102,
+      "triangles": 1808,
+      "max_index": 1101,
+      "position_error": 4.979999999932261e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Fool_Sigil_Main_Part02",
+        "vertices": 1102,
+        "indices": 0,
+        "indices16": 5424,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -760.0,
+          -760.0,
+          6.0
+        ],
+        [
+          760.0,
+          760.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Fool_Sigil_Outer_Part01",
+      "vertices": 579,
+      "triangles": 768,
+      "max_index": 578,
+      "position_error": 4.999999998744897e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Fool_Sigil_Outer_Part01",
+        "vertices": 579,
+        "indices": 0,
+        "indices16": 2304,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -845.0,
+          -845.0,
+          9.0
+        ],
+        [
+          845.0,
+          845.0,
+          9.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Night_Sigil_Main_Part01",
+      "vertices": 2475,
+      "triangles": 2800,
+      "max_index": 2474,
+      "position_error": 4.950000004555477e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Night_Sigil_Main_Part01",
+        "vertices": 2475,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -452.8333,
+          -452.8333,
+          6.0
+        ],
+        [
+          514.2667,
+          514.2667,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Night_Sigil_Main_Part02",
+      "vertices": 1102,
+      "triangles": 1808,
+      "max_index": 1101,
+      "position_error": 4.979999999932261e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Night_Sigil_Main_Part02",
+        "vertices": 1102,
+        "indices": 0,
+        "indices16": 5424,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -760.0,
+          -760.0,
+          6.0
+        ],
+        [
+          760.0,
+          760.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Night_Sigil_Outer_Part01",
+      "vertices": 579,
+      "triangles": 768,
+      "max_index": 578,
+      "position_error": 4.999999998744897e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Night_Sigil_Outer_Part01",
+        "vertices": 579,
+        "indices": 0,
+        "indices16": 2304,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -845.0,
+          -845.0,
+          9.0
+        ],
+        [
+          845.0,
+          845.0,
+          9.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Storm_Sigil_Main_Part01",
+      "vertices": 2475,
+      "triangles": 2800,
+      "max_index": 2474,
+      "position_error": 4.950000004555477e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Storm_Sigil_Main_Part01",
+        "vertices": 2475,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -452.8333,
+          -452.8333,
+          6.0
+        ],
+        [
+          514.2667,
+          514.2667,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Storm_Sigil_Main_Part02",
+      "vertices": 1102,
+      "triangles": 1808,
+      "max_index": 1101,
+      "position_error": 4.979999999932261e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Storm_Sigil_Main_Part02",
+        "vertices": 1102,
+        "indices": 0,
+        "indices16": 5424,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -760.0,
+          -760.0,
+          6.0
+        ],
+        [
+          760.0,
+          760.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Storm_Sigil_Outer_Part01",
+      "vertices": 579,
+      "triangles": 768,
+      "max_index": 578,
+      "position_error": 4.999999998744897e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Storm_Sigil_Outer_Part01",
+        "vertices": 579,
+        "indices": 0,
+        "indices16": 2304,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -845.0,
+          -845.0,
+          9.0
+        ],
+        [
+          845.0,
+          845.0,
+          9.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part01",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 4.979999999932261e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part01",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -245.0,
+          -296.5,
+          0.0
+        ],
+        [
+          245.0,
+          245.0,
+          478.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part02",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 4.99000000218075e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part02",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -191.0,
+          -17.8,
+          76.0
+        ],
+        [
+          216.7284,
+          14.0,
+          458.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part03",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 4.999999998744897e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part03",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          141.9531,
+          -18.5,
+          262.5
+        ],
+        [
+          216.6136,
+          14.0,
+          422.4897
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part04",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 5.000000001587068e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part04",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          33.05434,
+          -18.5,
+          352.8529
+        ],
+        [
+          176.8935,
+          14.0,
+          481.1011
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part05",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 4.999999998744897e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part05",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -121.2661,
+          -18.5,
+          419.8355
+        ],
+        [
+          102.1471,
+          14.0,
+          483.7284
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part06",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 5.000000001587068e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part06",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -210.8484,
+          -18.5,
+          315.4703
+        ],
+        [
+          -85.85288,
+          14.0,
+          446.9542
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part07",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 5.000000001587068e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part07",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -216.7284,
+          -18.5,
+          190.5644
+        ],
+        [
+          -152.8355,
+          14.0,
+          369.1471
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part08",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 5.000000001587068e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part08",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -209.5502,
+          -18.5,
+          71.09019
+        ],
+        [
+          -87.29797,
+          14.0,
+          271.5
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part09",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 3.900000000101045e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part09",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -102.1471,
+          -18.5,
+          50.27162
+        ],
+        [
+          62.50636,
+          14.0,
+          114.1645
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part10",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 5.000000000165983e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part10",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -4.500001,
+          -18.5,
+          54.12272
+        ],
+        [
+          167.7415,
+          14.0,
+          138.2287
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part11",
+      "vertices": 8400,
+      "triangles": 2800,
+      "max_index": 8399,
+      "position_error": 5.000000001587068e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part11",
+        "vertices": 8400,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          85.85289,
+          -117.8244,
+          94.20998
+        ],
+        [
+          214.1012,
+          14.0,
+          428.1496
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Gate_Part12",
+      "vertices": 7824,
+      "triangles": 2608,
+      "max_index": 7823,
+      "position_error": 4.979999999932261e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Gate_Part12",
+        "vertices": 7824,
+        "indices": 0,
+        "indices16": 7824,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -211.5088,
+          -213.0863,
+          38.5
+        ],
+        [
+          211.5088,
+          213.0863,
+          570.5
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Sigil_Main_Part01",
+      "vertices": 2475,
+      "triangles": 2800,
+      "max_index": 2474,
+      "position_error": 4.950000004555477e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Sigil_Main_Part01",
+        "vertices": 2475,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -452.8333,
+          -452.8333,
+          6.0
+        ],
+        [
+          514.2667,
+          514.2667,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Sigil_Main_Part02",
+      "vertices": 1102,
+      "triangles": 1808,
+      "max_index": 1101,
+      "position_error": 4.979999999932261e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Sigil_Main_Part02",
+        "vertices": 1102,
+        "indices": 0,
+        "indices16": 5424,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -760.0,
+          -760.0,
+          6.0
+        ],
+        [
+          760.0,
+          760.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Sigil_Outer_Part01",
+      "vertices": 579,
+      "triangles": 768,
+      "max_index": 578,
+      "position_error": 4.999999998744897e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Sigil_Outer_Part01",
+        "vertices": 579,
+        "indices": 0,
+        "indices16": 2304,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -845.0,
+          -845.0,
+          9.0
+        ],
+        [
+          845.0,
+          845.0,
+          9.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Portal_Part01",
+      "vertices": 2924,
+      "triangles": 2800,
+      "max_index": 2923,
+      "position_error": 4.989999999338579e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Portal_Part01",
+        "vertices": 2924,
+        "indices": 0,
+        "indices16": 8400,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -155.0,
+          -12.0,
+          112.0
+        ],
+        [
+          155.0,
+          -12.0,
+          422.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_Star_Portal_Part02",
+      "vertices": 1946,
+      "triangles": 2320,
+      "max_index": 1945,
+      "position_error": 4.989999999338579e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_Star_Portal_Part02",
+        "vertices": 1946,
+        "indices": 0,
+        "indices16": 6960,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -155.0,
+          -12.0,
+          112.0
+        ],
+        [
+          155.0,
+          -12.0,
+          422.0
+        ]
+      ]
+    },
+    {
+      "geometry": "LHC_CityFootprint",
+      "vertices": 7,
+      "triangles": 6,
+      "max_index": 6,
+      "position_error": 2.5542325232663643e-05,
+      "uv_error": 0.0,
+      "layout": {
+        "name": "LHC_CityFootprint",
+        "vertices": 7,
+        "indices": 0,
+        "indices16": 18,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "bounds": [
+        [
+          -249.0,
+          -215.6403,
+          0.0
+        ],
+        [
+          249.0,
+          215.6403,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "slug": "Fool",
+      "models": [
+        "LHC_Fool_Part01",
+        "LHC_Fool_Part02",
+        "LHC_Fool_Part03",
+        "LHC_Fool_Part04",
+        "LHC_Fool_Part05",
+        "LHC_Fool_Part06",
+        "LHC_Fool_Part07",
+        "LHC_Fool_Part08",
+        "LHC_Fool_Part09",
+        "LHC_Fool_Sigil_Main_Part01",
+        "LHC_Fool_Sigil_Main_Part02",
+        "LHC_Fool_Sigil_Outer_Part01"
+      ],
+      "footprint": "LHC_CityFootprint",
+      "auto_footprint": false
+    },
+    {
+      "slug": "Night",
+      "models": [
+        "LHC_Night_Part01",
+        "LHC_Night_Part02",
+        "LHC_Night_Part03",
+        "LHC_Night_Part04",
+        "LHC_Night_Part05",
+        "LHC_Night_Part06",
+        "LHC_Night_Part07",
+        "LHC_Night_Part08",
+        "LHC_Night_Part09",
+        "LHC_Night_Sigil_Main_Part01",
+        "LHC_Night_Sigil_Main_Part02",
+        "LHC_Night_Sigil_Outer_Part01"
+      ],
+      "footprint": "LHC_CityFootprint",
+      "auto_footprint": false
+    },
+    {
+      "slug": "Storm",
+      "models": [
+        "LHC_Storm_Part01",
+        "LHC_Storm_Part02",
+        "LHC_Storm_Part03",
+        "LHC_Storm_Part04",
+        "LHC_Storm_Part05",
+        "LHC_Storm_Part06",
+        "LHC_Storm_Part07",
+        "LHC_Storm_Part08",
+        "LHC_Storm_Part09",
+        "LHC_Storm_Sigil_Main_Part01",
+        "LHC_Storm_Sigil_Main_Part02",
+        "LHC_Storm_Sigil_Outer_Part01"
+      ],
+      "footprint": "LHC_CityFootprint",
+      "auto_footprint": false
+    },
+    {
+      "slug": "Star",
+      "models": [
+        "LHC_Star_Gate_Part01",
+        "LHC_Star_Gate_Part02",
+        "LHC_Star_Gate_Part03",
+        "LHC_Star_Gate_Part04",
+        "LHC_Star_Gate_Part05",
+        "LHC_Star_Gate_Part06",
+        "LHC_Star_Gate_Part07",
+        "LHC_Star_Gate_Part08",
+        "LHC_Star_Gate_Part09",
+        "LHC_Star_Gate_Part10",
+        "LHC_Star_Gate_Part11",
+        "LHC_Star_Gate_Part12",
+        "LHC_Star_Sigil_Main_Part01",
+        "LHC_Star_Sigil_Main_Part02",
+        "LHC_Star_Sigil_Outer_Part01",
+        "LHC_Star_Portal_Part01",
+        "LHC_Star_Portal_Part02"
+      ],
+      "footprint": "LHC_CityFootprint",
+      "auto_footprint": false
+    }
+  ],
+  "preserved_original_city_geometries": [
+    "LHC_Fool_Part01.fgx",
+    "LHC_Fool_Part02.fgx",
+    "LHC_Fool_Part03.fgx",
+    "LHC_Fool_Part04.fgx",
+    "LHC_Fool_Part05.fgx",
+    "LHC_Fool_Part06.fgx",
+    "LHC_Fool_Part07.fgx",
+    "LHC_Fool_Part08.fgx",
+    "LHC_Fool_Part09.fgx",
+    "LHC_Night_Part01.fgx",
+    "LHC_Night_Part02.fgx",
+    "LHC_Night_Part03.fgx",
+    "LHC_Night_Part04.fgx",
+    "LHC_Night_Part05.fgx",
+    "LHC_Night_Part06.fgx",
+    "LHC_Night_Part07.fgx",
+    "LHC_Night_Part08.fgx",
+    "LHC_Night_Part09.fgx",
+    "LHC_Storm_Part01.fgx",
+    "LHC_Storm_Part02.fgx",
+    "LHC_Storm_Part03.fgx",
+    "LHC_Storm_Part04.fgx",
+    "LHC_Storm_Part05.fgx",
+    "LHC_Storm_Part06.fgx",
+    "LHC_Storm_Part07.fgx",
+    "LHC_Storm_Part08.fgx",
+    "LHC_Storm_Part09.fgx"
+  ],
+  "footprint_radius": 249,
+  "package_hashes": {
+    "LOTMHolyCities/Platforms/Windows/BLPs/LOTMHolyCities.blp": "b831a2c2ad74e1612df78e5129daa372d58c55c9e1fbef939ca22a54637b1183",
+    "LOTMHolyCities/Platforms/MacOS/BLPs/LOTMHolyCities.blp": "b831a2c2ad74e1612df78e5129daa372d58c55c9e1fbef939ca22a54637b1183"
+  },
+  "cooker": [
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Buildings.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_sigils_rc377_20260926\\evidence\\cook_LOTMHolyCities_final_ArtDef_Windows_Buildings.artdef.log"
+    },
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Landmarks.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_sigils_rc377_20260926\\evidence\\cook_LOTMHolyCities_final_ArtDef_Windows_Landmarks.artdef.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "Windows",
+      "file": "lotm_holy_cities.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_sigils_rc377_20260926\\evidence\\cook_LOTMHolyCities_final_XLP_Windows_lotm_holy_cities.xlp.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "MacOS",
+      "file": "lotm_holy_cities.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_sigils_rc377_20260926\\evidence\\cook_LOTMHolyCities_final_XLP_MacOS_lotm_holy_cities.xlp.log"
+    }
+  ],
+  "in_game_verified": false,
+  "in_game_animation_verified": false,
+  "multiplayer_verified": false
+}

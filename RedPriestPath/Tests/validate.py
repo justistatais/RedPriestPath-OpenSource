@@ -193,8 +193,8 @@ def validate_structure(validation: Validation) -> None:
 
     version_text = strip_trace((ROOT / "VERSION.md").read_text(encoding="utf-8"))
     validation.check(
-        "`0.1.0-rc.361`" in version_text,
-		"semantic version must be 0.1.0-rc.361 for camp reward attribution and rescue barbarian cleanup",
+        "`0.1.0-rc.403`" in version_text,
+        "semantic version must be 0.1.0-rc.403 for production Storm charges and immediate local aiming",
     )
     validation.check(
         "双客户端均待实测" in version_text,
@@ -272,6 +272,19 @@ def validate_release_hygiene(validation: Validation) -> None:
     )
     allowed_custom_assets.add("Art/LOTM_RESCUE_AstralDescent_22.dds")
     allowed_custom_assets.update(
+        f"Art/LOTM_GOD_FX_{kind}_{sheet:02d}.dds"
+        for kind, count in (("STORM", 13), ("NIGHT", 11), ("FOOL", 12))
+        for sheet in range(count)
+    )
+    allowed_custom_assets.update(
+        f"Art/LOTM_GOD_FX_STORM_V4_{sheet:02d}.dds"
+        for sheet in range(14)
+    )
+    allowed_custom_assets.update(
+        f"Art/LOTM_StormBlessing{size}.dds"
+        for size in (22, 24, 30, 32, 38, 45, 50, 64, 80, 128, 256)
+    )
+    allowed_custom_assets.update(
         f"Art/LOTM_RESCUE_{church}_GuardianGameIcon{size}.dds"
         for church in ("FOOL", "NIGHT", "STORM")
         for size in (22, 30, 32, 38, 50, 70, 80, 95, 200, 256)
@@ -322,6 +335,26 @@ def validate_release_hygiene(validation: Validation) -> None:
         for size in (40, 64, 256)
     )
     allowed_custom_assets.update(
+        f"Art/LOTM_JUSTICE_Audrey{size}.dds"
+        for size in (24, 32, 64, 256)
+    )
+    allowed_custom_assets.update(
+        f"Art/LOTM_JUSTICE_Banner{kind}{size}.dds"
+        for kind in ("Fill", "Slot") for size in (22, 32)
+    )
+    allowed_custom_assets.update(
+        f"Art/LOTM_MS_{governor}{size}.dds"
+        for governor in ("Fors", "Leonard") for size in (24, 32, 64, 256)
+    )
+    allowed_custom_assets.update(
+        f"Art/LOTM_MS_{governor}Banner{kind}{size}.dds"
+        for governor in ("Fors", "Leonard")
+        for kind in ("Fill", "Slot") for size in (22, 32)
+    )
+    allowed_custom_assets.update((
+        "Art/LOTM_MS_ForsPortrait.png", "Art/LOTM_MS_LeonardPortrait.png"
+    ))
+    allowed_custom_assets.update(
         f"Art/Comics/LOTM_Comic_{prefix}-{index}.{extension}"
         for prefix, count in ((1, 3), (2, 8), (3, 2))
         for index in range(1, count + 1)
@@ -342,12 +375,12 @@ def validate_release_hygiene(validation: Validation) -> None:
     )
     release_builder = strip_trace((ROOT / "Tests" / "build_release.py").read_text(encoding="utf-8"))
     validation.check(
-        'VERSION = "0.1.0-rc.361"' in release_builder,
-		"release builder version must match rc.361",
+        'VERSION = "0.1.0-rc.403"' in release_builder,
+		"release builder version must match rc.403",
     )
     validation.check(
-        "RESOURCE_VERSION = 393" in release_builder,
-		"release builder resource version must match resource 393",
+        "RESOURCE_VERSION = 435" in release_builder,
+		"release builder resource version must match resource 435",
     )
     validation.check(
         "ZIP_TIMESTAMP_EPOCH + timedelta(minutes=RESOURCE_VERSION)" in release_builder
@@ -361,8 +394,8 @@ def validate_modinfo(validation: Validation, root: ET.Element) -> None:
     validation.check(root.tag == "Mod", "modinfo root must be Mod")
     validation.check(root.attrib.get("id", "").upper() == MOD_ID, "modinfo ID does not match contract")
     validation.check(
-        root.attrib.get("version") == "393",
-		"rc.361 camp reward attribution and rescue barbarian cleanup must use resource version 393",
+        root.attrib.get("version") == "435",
+		"rc.403 production Storm charges and immediate local aiming must use resource version 434",
     )
     supports_multiplayer = root.find("./Properties/SupportsMultiplayer")
     validation.check(
@@ -1574,13 +1607,53 @@ def validate_selected_language_packs(
         set(source_texts["zh_Hans_CN"]) == set(source_texts["en_US"]),
         "Chinese and English source localization tags must match exactly",
     )
-    # Resource 357 adds the rescue Swindler native-yield preview tag in
-    # addition to the Purification Energy ability descriptions. Keep this
-    # count explicit so a generated Selected pack cannot silently drift.
+    # The two new governors add 32 isolated normal-mode localization tags.
     validation.check(
-		len(source_texts["zh_Hans_CN"]) == 1261,
-		"selectable localization must currently contain exactly 1261 source tags",
+		len(source_texts["zh_Hans_CN"]) == 1382,
+		"source localization must currently contain exactly 1382 tags",
     )
+
+    # Justice has its own normal-mode UpdateText action. Including those rows
+    # again in the language-selected pack makes Civ VI reject the duplicate
+    # LocalizedText tags, as observed in the resource-394 Database.log.
+    justice_tags = {
+        row.attrib["Tag"]
+        for row in parsed[ROOT / "Text" / "zh_Hans_CN" / "LOTM_JUSTICE_Text.xml"].findall(
+            ".//LocalizedText/Row"
+        )
+    }
+    validation.check(len(justice_tags) == 26,
+                     "Justice must expose exactly 26 isolated localization tags")
+    ms_tags = {
+        row.attrib["Tag"]
+        for row in parsed[ROOT / "Text" / "zh_Hans_CN" / "LOTM_MS_Text.xml"].findall(
+            ".//LocalizedText/Row"
+        )
+    }
+    validation.check(len(ms_tags) == 32,
+                     "Magician and Star must expose exactly 32 isolated localization tags")
+    rescue_governor_tags = {
+        row.attrib["Tag"]
+        for row in parsed[ROOT / "Text" / "zh_Hans_CN" / "LOTM_RESCUE_Governors.xml"].findall(".//LocalizedText/Row")
+    }
+    validation.check(len(rescue_governor_tags) == 6,
+                     "rescue Star must expose exactly six isolated localization tags")
+    # Holy-city selectors have their own rescue-only UpdateText action, just
+    # as the two normal-mode systems above. Do not duplicate them in BaseGameText.
+    holy_city_tags = {
+        row.attrib["Tag"]
+        for row in parsed[ROOT / "Text" / "LOTM_RESCUE_HolyCityArt.xml"].findall(
+            ".//LocalizedText/Row"
+        )
+    }
+    validation.check(len(holy_city_tags) == 4,
+                     "Holy city art must expose exactly 4 isolated localization tags")
+    player_model_tags = {
+        row.attrib["Tag"]
+        for row in parsed[ROOT / "Text" / "LOTM_PlayerModels.xml"].findall(".//LocalizedText/Row")
+    }
+    validation.check(len(player_model_tags) == 5,
+                     "Player models must expose exactly 5 isolated localization tags")
 
     for language in ("zh_Hans_CN", "en_US"):
         selected_path = ROOT / "Text" / "Selected" / f"LOTM_RP_Selected_{language}.xml"
@@ -1611,7 +1684,8 @@ def validate_selected_language_packs(
             f"{language} selected pack rows must not retain Language attributes",
         )
         validation.check(
-            selected_texts == source_texts[language],
+            selected_texts == {tag: value for tag, value in source_texts[language].items()
+                               if tag not in justice_tags and tag not in ms_tags and tag not in holy_city_tags and tag not in player_model_tags and tag not in rescue_governor_tags},
             f"{language} selected pack is stale; run generate_selected_language_text.py",
         )
 
@@ -3371,7 +3445,7 @@ def validate_advanced_sequences(validation: Validation) -> None:
         "ability:ChangeAbilityCount",
         "hero:ChangeDamage(-damage)",
         "LOTM_RP_COMMAND_PLAN_TARGET",
-        "LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 2000",
+        "LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 1000",
         "LOTM_RP_PLAN_GOLD_START_MODIFIER",
         "LOTM_RP_PLAN_GOLD_STOP_MODIFIER",
         "LOTM_RP_PLAN_GOLD_MODIFIER_ACTIVE",

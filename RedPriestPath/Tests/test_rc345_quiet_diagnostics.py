@@ -192,7 +192,7 @@ assert(#logs==0);
             'LOTM_MP241_Phase1.lua', 'LOTM_MP241_Phase2.lua', 'LOTM_MP241_Phase3.lua',
             'LOTM_RP_Gameplay_Bundle.lua', 'LOTM_MP241_MainBundle.lua',
         )]
-        self.assertEqual(len(paths), 44)
+        self.assertEqual(len(paths), 50)  # God blessing contexts plus the rescue governor details panel.
         lua = self.runtime()
         compile_source = lua.eval('function(source) local f,e=loadstring(source); return f~=nil,e; end')
         for path in paths:

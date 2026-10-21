@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+  <IconAtlases>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS_FILL"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS_SLOT"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD_FILL"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD_SLOT"/>
+  </IconAtlases>
+  <IconTextureAtlases>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS" IconSize="24" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_Fors24.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_Fors32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_Fors64.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS_FILL" IconSize="22" Baseline="6" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_ForsBannerFill22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS_FILL" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_ForsBannerFill32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS_SLOT" IconSize="22" Baseline="6" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_ForsBannerSlot22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_FORS_SLOT" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_ForsBannerSlot32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD" IconSize="24" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_Leonard24.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_Leonard32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_Leonard64.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD_FILL" IconSize="22" Baseline="6" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_LeonardBannerFill22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD_FILL" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_LeonardBannerFill32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD_SLOT" IconSize="22" Baseline="6" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_LeonardBannerSlot22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_MS_LEONARD_SLOT" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_MS_LeonardBannerSlot32.dds"/>
+  </IconTextureAtlases>
+  <IconDefinitions>
+    <Row Name="ICON_GOVERNOR_LOTM_MAGICIAN" Atlas="ICON_ATLAS_LOTM_MS_FORS" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_MAGICIAN_PROMOTION" Atlas="ICON_ATLAS_LOTM_MS_FORS" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_MAGICIAN_FILL" Atlas="ICON_ATLAS_LOTM_MS_FORS_FILL" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_MAGICIAN_SLOT" Atlas="ICON_ATLAS_LOTM_MS_FORS_SLOT" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_STAR" Atlas="ICON_ATLAS_LOTM_MS_LEONARD" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_STAR_PROMOTION" Atlas="ICON_ATLAS_LOTM_MS_LEONARD" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_STAR_FILL" Atlas="ICON_ATLAS_LOTM_MS_LEONARD_FILL" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_STAR_SLOT" Atlas="ICON_ATLAS_LOTM_MS_LEONARD_SLOT" Index="0"/>
+  </IconDefinitions>
+  <IconAliases>
+    <Row Name="GOVERNOR_LOTM_MAGICIAN_FILL" OtherName="ICON_GOVERNOR_LOTM_MAGICIAN_FILL"/>
+    <Row Name="GOVERNOR_LOTM_MAGICIAN_SLOT" OtherName="ICON_GOVERNOR_LOTM_MAGICIAN_SLOT"/>
+    <Row Name="GOVERNOR_LOTM_STAR_FILL" OtherName="ICON_GOVERNOR_LOTM_STAR_FILL"/>
+    <Row Name="GOVERNOR_LOTM_STAR_SLOT" OtherName="ICON_GOVERNOR_LOTM_STAR_SLOT"/>
+  </IconAliases>
+</GameInfo>

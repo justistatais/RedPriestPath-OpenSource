@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+ <IconTextureAtlases>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing22.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="24" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing24.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing30.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing32.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing38.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing45.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing50.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing64.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing80.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing128.dds"/>
+  <Row Name="LOTM_STORM_BLESSING_ATLAS" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_StormBlessing256.dds"/>
+ </IconTextureAtlases>
+ <IconDefinitions>
+  <Row Name="ICON_LOTM_STORM_BLESSING" Atlas="LOTM_STORM_BLESSING_ATLAS" Index="0"/>
+  <Row Name="ICON_WMD_LOTM_LIGHTNING_STORM" Atlas="LOTM_STORM_BLESSING_ATLAS" Index="0"/>
+  <!-- Unit flags tint their RGB with civilization colors. Use the native
+       lightning glyph (Power, including 22/32px), not the colored portrait. -->
+  <Row Name="ICON_UNIT_LOTM_STORM_MANIFESTATION" Atlas="ICON_ATLAS_EXPANSION2_STATS" Index="10"/>
+  <Row Name="ICON_UNIT_LOTM_STORM_MANIFESTATION_PORTRAIT" Atlas="LOTM_STORM_BLESSING_ATLAS" Index="0"/>
+ </IconDefinitions>
+</GameData>

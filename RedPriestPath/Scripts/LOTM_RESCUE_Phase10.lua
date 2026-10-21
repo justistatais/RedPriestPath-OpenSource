@@ -571,6 +571,53 @@ local function AlliedAttack(attacker,boss)
  boss:ChangeDamage(damage); PublishNetworkConfirmedDamage(boss); return true,"DAMAGE",damage;
 end
 
+-- BEGIN USER AUTHORIZED RESCUE STORM DAMAGE (resource434)
+-- Called only by synchronized storm-plan execution. Keep this bounded API
+-- separate from native combat and retain the existing Boss phase/death path.
+function LOTM_RESCUE_Phase10.ApplyStormDamage(boss,baseline,goal,epoch,caster,serial)
+ if not Active() or boss==nil or boss:IsDead() or boss:IsDelayedDeath() then return false; end
+ local row=GameInfo.Units[boss:GetType()];
+ local isBoss=(row~=nil and row.UnitType==BOSS_TYPE)
+  or (tostring(boss:GetProperty("LOTM_RESCUE_PHASE10_ROLE") or "")=="BOSS" and IsGod(boss));
+ if not isBoss or Number(boss:GetProperty("LOTM_RESCUE_PHASE10_BOSS_EPOCH"),0)~=epoch
+  or baseline==nil or baseline<0 or caster==nil or serial==nil or serial<1 then return false; end
+ local maximum=Number(boss:GetMaxDamage(),100);
+ if goal~=math.min(maximum,baseline+20) then return false; end
+ local owner,id=boss:GetOwner(),boss:GetID(); local key=UnitKey(owner,id);
+ local receipt="LOTM_RESCUE_PHASE10_STORM_DAMAGE:"..caster..":"..serial;
+ local spent=math.max(0,math.min(20,Number(boss:GetProperty(receipt),0)));
+ local current=Number(boss:GetDamage(),0);
+ local delta=math.min(20-spent,math.max(0,math.min(goal,maximum-1)-current));
+ if delta>0 then
+  -- A scripted hit must not pair with an earlier unpaired native combat.
+  m_nativeDamageEvents[key]=nil; m_bossCombatEvents[key]=nil;
+  m_nativeDamageCorrections[key]={Old=current,New=current+delta};
+  local ok,err=pcall(function() boss:ChangeDamage(delta); end);
+  local after=UnitManager.GetUnit(owner,id);
+  if after==nil or after:IsDead() or after:IsDelayedDeath() then
+   if IsNetworkMultiplayer() and ResolveBossDefeat~=nil then ResolveBossDefeat(owner,id,"STORM_SKILL",epoch); end
+   Log("storm damage owner="..owner.." unit="..id.." cast="..caster..":"..serial.." before="..current.." amount="..delta.." phaseDefeated=true");
+   return true;
+  end
+  local observed=math.max(0,math.min(delta,Number(after:GetDamage(),current)-current));
+  spent=spent+observed; after:SetProperty(receipt,spent); PublishNetworkConfirmedDamage(after);
+  if not ok and observed<delta then Log("storm damage incomplete unit="..key.." error="..tostring(err)); return false; end
+  if observed<delta then return false; end
+  Log("storm damage owner="..owner.." unit="..id.." cast="..caster..":"..serial.." before="..current.." after="..Number(after:GetDamage(),0).." amount="..observed.." spent="..spent);
+  boss=after;
+ end
+ -- Existing terminal-damage semantics are retained: <=20 remaining HP can
+ -- defeat one phase; this API never manufactures a full-health nuclear kill.
+ if goal>=maximum-1 and Number(boss:GetDamage(),0)>=maximum-1 then
+  local killed=KillBossAtTerminalDamage(boss,"STORM_SKILL");
+  if killed and IsNetworkMultiplayer() and ResolveBossDefeat~=nil then ResolveBossDefeat(owner,id,"STORM_SKILL",epoch); end
+  return killed;
+ end
+ PublishNetworkConfirmedDamage(boss);
+ return spent>=20 or Number(boss:GetDamage(),0)>=goal;
+end
+-- END USER AUTHORIZED RESCUE STORM DAMAGE (resource434)
+
 local function OuterGodUnitAttack(boss,target)
  if boss==nil or target==nil or target:IsDead() or target:IsDelayedDeath() then return false,"TARGET_GONE",0; end
  if ProtectDescent(target,"OUTER_GOD_ATTACK") then return false,"DESCENT_PROTECTED",0; end

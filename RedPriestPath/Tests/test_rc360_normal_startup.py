@@ -63,6 +63,12 @@ class NormalStartupTests(unittest.TestCase):
    for name,digest in files.items():
     now=(ROOT/name).read_bytes();old=a.read('RedPriestPath/'+name)
     self.assertEqual(hashlib.sha256(old).hexdigest(),digest)
+    if name=='Scripts/LOTM_RESCUE_Phase10.lua':
+     # User's 2026-10-07 storm instruction authorizes this exact appended API.
+     # Every original Phase-10 byte and all other frozen files stay protected.
+     approved=(baseline/'authorized-deltas/20261007-rescue-storm-damage.lua').read_bytes()
+     self.assertEqual(now.count(approved),1)
+     now=now.replace(approved,b'',1)
     if name.startswith('UI/'):
      resource=ET.parse(ROOT/'RedPriestPath.modinfo').getroot().get('version').encode('ascii')
      for prefix in (b'resource ',b'Resource=',b'r='):

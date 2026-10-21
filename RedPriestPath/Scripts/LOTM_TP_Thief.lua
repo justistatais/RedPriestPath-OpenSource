@@ -772,6 +772,147 @@ local function GetCivAbilityModifiers(civType)
 	return result;
 end
 
+local function AbilityRemoved(player,civType)
+ return (player:GetProperty("LOTM_TP_REMOVED_CIV_"..civType) or 0)==1;
+end
+local function RemovalRow(modifierID)
+ if GameInfo.LOTM_TP_RemovableModifiers==nil then return nil;end
+ return GameInfo.LOTM_TP_RemovableModifiers[modifierID];
+end
+local function RemovalReply(player,civType,result)
+ player:SetProperty("LOTM_TP_REMOVAL_RESULT",result);
+ player:SetProperty("LOTM_TP_REMOVAL_CIV",civType);
+ player:SetProperty("LOTM_TP_REMOVAL_SERIAL",(player:GetProperty("LOTM_TP_REMOVAL_SERIAL") or 0)+1);
+ Log("ability removal player="..player:GetID().." civ="..civType.." result="..result);
+end
+local function RemovalInstances(player,modifierID)
+ local result={};
+ for id in string.gmatch(tostring(player:GetProperty("LOTM_TP_REMOVE_INSTANCES_"..modifierID) or ""),"[^,]+") do
+  result[#result+1]=tonumber(id);
+ end
+ return result;
+end
+local function IndexRemovalInstances(player)
+ if (player:GetProperty("LOTM_TP_REMOVAL_INDEX420") or 0)==1 then return true;end
+ -- Explicit old-save migration only. Subsequent removals read saved IDs.
+ local found,order={},{};
+ local ok,err=pcall(function()
+  for _,id in ipairs(GameEffects.GetModifiers()) do
+   local def=GameEffects.GetModifierDefinition(id);
+   if def~=nil and RemovalRow(def.Id)~=nil then
+    local owner=GameEffects.GetModifierOwner(id);
+    if GameEffects.GetObjectsPlayerId(owner)==player:GetID() then
+     if found[def.Id]==nil then found[def.Id]={};order[#order+1]=def.Id;end
+     table.insert(found[def.Id],id);
+    end
+   end
+  end
+ end);
+ if not ok then Log("removal migration unavailable "..tostring(err));return false;end
+ table.sort(order);
+ for _,modifierID in ipairs(order) do
+  local ids=found[modifierID];
+  table.sort(ids);player:SetProperty("LOTM_TP_REMOVE_INSTANCES_"..modifierID,table.concat(ids,","));
+ end
+ player:SetProperty("LOTM_TP_REMOVAL_INDEX420",1);return true;
+end
+local function HasNativeRemovalGate(instanceID,row,playerID)
+ local def=GameEffects.GetModifierDefinition(instanceID);
+ if def==nil or def.Id~=row.ModifierId then return false;end
+ if GameEffects.GetObjectsPlayerId(GameEffects.GetModifierOwner(instanceID))~=playerID then return false;end
+ local setID=GameEffects.GetModifierOwnerRequirementSet(instanceID);
+ if setID==nil then return false;end
+ for _,requirement in ipairs(GameEffects.GetRequirementSetInnerRequirements(setID)) do
+  local detail=GameEffects.GetRequirementDefinition(requirement);
+  -- Firaxis WorldRankings uses the uppercase ID field on requirements.
+  if detail~=nil and detail.ID==row.GateRequirement then return true;end
+ end
+ return false;
+end
+local function CheckRemovalComplete(player,civType)
+ for _,modifierID in ipairs(GetCivAbilityModifiers(civType)) do
+  if (player:GetProperty("LOTM_TP_RETIRED_MOD_"..modifierID) or 0)==1 then
+   local row=RemovalRow(modifierID);local resource=GameInfo.Resources[row.ResourceType];
+   local inventory=player:GetResources();local amount=inventory:GetResourceAmount(resource.Index) or 0;
+   if amount~=1 then inventory:ChangeResourceAmount(resource.Index,1-amount);end
+   for _,id in ipairs(RemovalInstances(player,modifierID)) do
+    if not HasNativeRemovalGate(id,row,player:GetID()) then return false;end
+    if GameEffects.GetModifierActive(id) then return false;end
+   end
+  end
+ end
+ player:SetProperty("LOTM_TP_REMOVAL_PENDING",nil);
+ player:SetProperty("LOTM_TP_REMOVAL_DONE_"..civType,1);
+ RemovalReply(player,civType,"REMOVED");return true;
+end
+local function OnRemoveAbility(playerID,parameters)
+ if not IsThief(playerID) or GetSequence(playerID)>1 or parameters==nil then return;end
+ local player=Players[playerID];local sourceID=tonumber(parameters.SourcePlayerID);
+ if sourceID==nil or sourceID==playerID or PlayerConfigurations[sourceID]==nil then return;end
+ local civType=GetCivType(sourceID);
+ if civType=="" or civType==GetCivType(playerID) then return;end
+ local inGame=false;
+ for _,source in ipairs(PlayerManager.GetWasEverAliveMajors() or {}) do if source:GetID()==sourceID then inGame=true;break;end end
+ if not inGame then return;end
+ if AbilityRemoved(player,civType) then
+  local ok=pcall(CheckRemovalComplete,player,civType);
+  if not ok then RemovalReply(player,civType,"PENDING");end
+  return;
+ end
+ if (player:GetProperty("LOTM_TP_ALL_ABILITIES_AUDIT_VERSION") or 0)<1
+  or tostring(player:GetProperty("LOTM_TP_ALL_ABILITIES_RETRY") or "")~=""
+  or tostring(player:GetProperty("LOTM_TP_REMOVAL_PENDING") or "")~="" then
+  RemovalReply(player,civType,"NOT_READY");return;
+ end
+ if not IndexRemovalInstances(player) then RemovalReply(player,civType,"UNVERIFIED");return;end
+ local kept={};
+ for _,id in ipairs(GetCivAbilityModifiers(GetCivType(playerID))) do kept[id]=true;end
+ -- Some original leaders and civilizations share the same root modifier.
+ -- Removing a copied civilization must not disable the player's own leader.
+ local config=PlayerConfigurations[playerID];
+ if config~=nil and config.GetLeaderTypeName~=nil and GameInfo.LeaderTraits~=nil then
+  local leader=config:GetLeaderTypeName();
+  for link in GameInfo.LeaderTraits() do
+   if link.LeaderType==leader then
+    for tm in GameInfo.TraitModifiers() do
+     if tm.TraitType==link.TraitType then kept[tm.ModifierId]=true;end
+    end
+   end
+  end
+ end
+ for _,source in ipairs(PlayerManager.GetWasEverAliveMajors() or {}) do
+  local other=GetCivType(source:GetID());
+  if other~=civType and not AbilityRemoved(player,other) then
+   for _,id in ipairs(GetCivAbilityModifiers(other)) do kept[id]=true;end
+  end
+ end
+ local retire={};
+ local ok,err=pcall(function()
+  for _,modifierID in ipairs(GetCivAbilityModifiers(civType)) do
+   if not kept[modifierID] then
+    local row=RemovalRow(modifierID);local ids=RemovalInstances(player,modifierID);
+    if row==nil or GameInfo.Resources[row.ResourceType]==nil or #ids==0 then error("missing instance "..modifierID);end
+    for _,id in ipairs(ids) do
+     if not HasNativeRemovalGate(id,row,playerID) then error("legacy instance lacks removal gate "..modifierID);end
+    end
+    retire[#retire+1]=row;
+   end
+  end
+ end);
+ if not ok then Log("removal preflight failed "..tostring(err));RemovalReply(player,civType,"UNVERIFIED");return;end
+ player:SetProperty("LOTM_TP_REMOVED_CIV_"..civType,1);
+ player:SetProperty("LOTM_TP_REMOVAL_PENDING",civType);
+ for _,row in ipairs(retire) do
+  player:SetProperty("LOTM_TP_RETIRED_MOD_"..row.ModifierId,1);
+  local resource=GameInfo.Resources[row.ResourceType];local inventory=player:GetResources();
+  local current=inventory:GetResourceAmount(resource.Index) or 0;
+  if current~=1 then inventory:ChangeResourceAmount(resource.Index,1-current);end
+ end
+ RemovalReply(player,civType,"PENDING");
+ local success=pcall(CheckRemovalComplete,player,civType);
+ if not success then Log("removal readback deferred player="..playerID);end
+end
+
 local function ApplyBorrowedAbility(playerID, civType)
 	local player = Players[playerID];
 	if civType == "" or civType == GetCivType(playerID) then
@@ -810,17 +951,21 @@ end
 local function ApplyAllAbilities(playerID)
 	local player = Players[playerID];
 	if player == nil then return; end
+	local removing=tostring(player:GetProperty("LOTM_TP_REMOVAL_PENDING") or "");
+	if removing~="" then pcall(CheckRemovalComplete,player,removing);end
 	if (player:GetProperty("LOTM_TP_ALL_ABILITIES_AUDIT_VERSION") or 0) >= 1 then
 		local pending = tostring(player:GetProperty("LOTM_TP_ALL_ABILITIES_RETRY") or "");
 		if pending == "" then return; end
 		local remaining = {};
 		local count = tonumber(player:GetProperty("LOTM_TP_ALL_ABILITIES_LOADED")) or 0;
 		for modifierID in string.gmatch(pending, "[^,]+") do
+		 if (player:GetProperty("LOTM_TP_RETIRED_MOD_"..modifierID) or 0)~=1 then
 			local ok, result = pcall(function() return player:AttachModifierByID(modifierID); end);
 			if ok and result ~= false then
 				player:SetProperty("LOTM_TP_ALL_APPLIED_" .. modifierID, 1);
 				player:SetProperty("LOTM_TP_ALL_STATUS_" .. modifierID, "ATTACHED"); count = count + 1;
 			else table.insert(remaining, modifierID); end
+		 end
 		end
 		player:SetProperty("LOTM_TP_ALL_ABILITIES_RETRY", table.concat(remaining, ","));
 		player:SetProperty("LOTM_TP_ALL_ABILITIES_LOADED", count);
@@ -855,7 +1000,8 @@ local function ApplyAllAbilities(playerID)
 	end
 	for _, source in ipairs(sources or {}) do
 		local sourceID = source:GetID();
-		if sourceID ~= playerID and GetCivType(sourceID) ~= GetCivType(playerID) then
+		if sourceID ~= playerID and GetCivType(sourceID) ~= GetCivType(playerID)
+		 and not AbilityRemoved(player,GetCivType(sourceID)) then
 			for _, modifierID in ipairs(GetCivAbilityModifiers(GetCivType(sourceID))) do
 				if not seen[modifierID] then
 					seen[modifierID] = true; total = total + 1;
@@ -1430,6 +1576,7 @@ local function Initialize()
 	Events.CityProjectCompleted.Add(OnCityProjectCompleted);
 	GameEvents.LOTM_TP_Command_SetTarget.Add(OnSetTarget);
 	GameEvents.LOTM_TP_Command_SetBorrowedAbility.Add(OnSetBorrowedAbility);
+	GameEvents.LOTM_TP_Command_RemoveAbility.Add(OnRemoveAbility);
 	GameEvents.LOTM_TP_Command_ChooseFinalBranch.Add(OnChooseFinalBranch);
 	GameEvents.LOTM_TP_Command_SettleProduction.Add(OnSettleProduction);
 	GameEvents.LOTM_TP_Command_SettleFakeGoldDeal.Add(OnSettleFakeGoldDeal);

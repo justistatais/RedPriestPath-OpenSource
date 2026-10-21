@@ -84,6 +84,8 @@ local function RefreshHolder(player,turn)
 	local hero=LOTM_RP_State.FindHero(player:GetID());
 	local goodWanted=turn<LOTM_WORLD_State.NumberProperty(player,"LOTM_HOLDER_GOOD_STATE_UNTIL",-1);
 	local badWanted=turn<LOTM_WORLD_State.NumberProperty(player,"LOTM_HOLDER_UNSTABLE_STATE_UNTIL",-1);
+	if LOTM_JUSTICE~=nil and LOTM_JUSTICE.IsCounselingActive~=nil
+		and LOTM_JUSTICE.IsCounselingActive(player:GetID()) then badWanted=false; end
 	local goodActual=SetAbility(hero,GOOD_ABILITY,goodWanted);
 	local badActual=SetAbility(hero,BAD_ABILITY,badWanted);
 	Log("holder effects player="..tostring(player:GetID()).." turn="..tostring(turn)
@@ -152,7 +154,8 @@ local function DeliverPendingNotification(player)
 	local delivered=LOTM_WORLD_State.NumberProperty(player,"LOTM_WORLD_NOTIFICATION_DELIVERED_SERIAL",0);
 	if serial<=0 or serial<=delivered then return; end
 	local kind=player:GetProperty("LOTM_WORLD_EVENT_KIND");
-	if kind==nil or NOTIFICATION_TYPES[tostring(player:GetProperty("LOTM_RP_PATH") or "")] == nil then return; end
+	if kind==nil or (kind~="HOLDER_COUNSELED"
+		and NOTIFICATION_TYPES[tostring(player:GetProperty("LOTM_RP_PATH") or "")] == nil) then return; end
 	RestoreExpiredPendingEffect(player,tostring(kind));
 	-- NotificationManager and Locale are presentation services.  A client-side
 	-- notification failure must never decide whether synchronized Gameplay
@@ -194,9 +197,16 @@ local function Trigger(player,turn)
 		kind=nature=="G" and "ARTIFACT_SATISFIED" or "ARTIFACT_UNCONTROLLED";
 		targetType=target.Type;
 	else
-		local key=nature=="G" and "LOTM_HOLDER_GOOD_STATE_UNTIL" or "LOTM_HOLDER_UNSTABLE_STATE_UNTIL";
-		player:SetProperty(key,turn+DURATION);
-		kind=nature=="G" and "HOLDER_GOOD" or "HOLDER_UNSTABLE";
+		local counseled=nature=="B" and LOTM_JUSTICE~=nil
+			and LOTM_JUSTICE.IsCounselingActive~=nil
+			and LOTM_JUSTICE.IsCounselingActive(player:GetID());
+		if counseled then
+			kind="HOLDER_COUNSELED";
+		else
+			local key=nature=="G" and "LOTM_HOLDER_GOOD_STATE_UNTIL" or "LOTM_HOLDER_UNSTABLE_STATE_UNTIL";
+			player:SetProperty(key,turn+DURATION);
+			kind=nature=="G" and "HOLDER_GOOD" or "HOLDER_UNSTABLE";
+		end
 	end
 	RecordEvent(player,kind,targetType,turn);
 	DeliverPendingNotification(player);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+ <!-- 1920x1080 reference: button center 1820,752, in the user's red circle.
+      Lua positions from the viewport because an add-in parent may have no size. -->
+ <Container ID="Root" Anchor="L,T" Offset="1784,714" Size="72,76">
+  <Button ID="StormButton" Anchor="C,C" Size="64,64" ConsumeMouse="1">
+   <Image ID="StormIcon" Anchor="C,C" Size="64,64" Texture="LOTM_StormBlessing64.dds"/>
+   <Grid ID="CountBacking" Anchor="R,B" Offset="-2,-2" Size="28,23" Style="Grid9Detail2">
+    <Label ID="Count" Anchor="C,C" Font="FontNormal16" Color="White" String="0"/>
+   </Grid>
+  </Button>
+ </Container>
+ <Container ID="TargetHint" Anchor="L,T" Offset="816,132" Size="288,64" Hidden="1">
+  <Button ID="Cancel" Anchor="C,C" Size="280,56" Style="BaseButton" ConsumeMouse="1">
+   <Label Anchor="C,C" Style="FontNormal24" Color="White" String="LOC_LOTM_STORM_CANCEL"/>
+  </Button>
+ </Container>
+</Context>

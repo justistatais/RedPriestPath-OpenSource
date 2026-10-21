@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="7E4D8D9C-0C96-4B9C-A3D4-6A1E6B19D970" version="393">
+<Mod id="7E4D8D9C-0C96-4B9C-A3D4-6A1E6B19D970" version="435">
 	<Properties>
 		<Name>诡秘之主单位与玩法</Name>
 		<Teaser>Choose a Pathway and advance from Sequence 9 to 0 | 选择途径，从序列9晋升至序列0</Teaser>
@@ -46,6 +46,16 @@
 				<ConfigurationId>GAMEMODE_BARBARIAN_CLANS</ConfigurationId>
 				<Value>1</Value>
 			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="LOTM_RP_NORMAL_LANGUAGE_EN">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ConfigurationValueMatches><Group>Game</Group><ConfigurationId>GAMEMODE_LOTM_RESCUE</ConfigurationId><Value>0</Value></ConfigurationValueMatches>
+			<ConfigurationValueMatches><Group>Game</Group><ConfigurationId>LOTM_RP_TEXT_LANGUAGE</ConfigurationId><Value>en_US</Value></ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="LOTM_RP_RESCUE_LANGUAGE_EN">
+			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+			<ConfigurationValueMatches><Group>Game</Group><ConfigurationId>GAMEMODE_LOTM_RESCUE</ConfigurationId><Value>1</Value></ConfigurationValueMatches>
+			<ConfigurationValueMatches><Group>Game</Group><ConfigurationId>LOTM_RP_TEXT_LANGUAGE</ConfigurationId><Value>en_US</Value></ConfigurationValueMatches>
 		</Criteria>
 		<Criteria id="LOTM_RP_LANGUAGE_ZH">
 			<RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -116,6 +126,18 @@
 			<Properties><LoadOrder>101</LoadOrder></Properties>
 			<File>Gameplay/LOTM_TP_Thief.sql</File>
 		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_JUSTICE_GAMEPLAY_DATABASE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>102</LoadOrder></Properties>
+			<File>Gameplay/LOTM_JUSTICE_Governor.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_MS_GAMEPLAY_DATABASE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>103</LoadOrder></Properties>
+			<File>Gameplay/LOTM_MS_Governors.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_GOD_BLESSINGS_DATABASE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>104</LoadOrder></Properties>
+			<File>Gameplay/LOTM_GodBlessings.sql</File>
+		</UpdateDatabase>
 		<UpdateArt id="LOTM_RP_ART" criteria="LOTM_RP_EXPANSION_2">
 			<Properties>
 				<LoadOrder>110</LoadOrder>
@@ -135,6 +157,18 @@
 			<Properties><LoadOrder>121</LoadOrder></Properties>
 			<File>Art/LOTM_TP_Icons.xml</File>
 		</UpdateIcons>
+		<UpdateIcons id="LOTM_JUSTICE_ICONS" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>121</LoadOrder></Properties>
+			<File>Art/LOTM_JUSTICE_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_MS_ICONS" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>122</LoadOrder></Properties>
+			<File>Art/LOTM_MS_Icons.xml</File>
+		</UpdateIcons>
+		<UpdateIcons id="LOTM_GOD_BLESSINGS_ICONS" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>122</LoadOrder></Properties>
+			<File>Art/LOTM_GodBlessingsIcons.xml</File>
+		</UpdateIcons>
 		<UpdateIcons id="LOTM_RESCUE_TP_ICONS" criteria="LOTM_RP_RESCUE_MODE">
 			<Properties><LoadOrder>122</LoadOrder></Properties>
 			<File>Art/LOTM_RESCUE_TP_Icons.xml</File>
@@ -150,6 +184,32 @@
 				<LoadOrder>131</LoadOrder>
 			</Properties>
 			<File>Text/Selected/LOTM_RP_Selected_en_US.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_JUSTICE_GAMEPLAY_TEXT" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>132</LoadOrder></Properties>
+			<File>Text/zh_Hans_CN/LOTM_JUSTICE_Text.xml</File>
+			<File>Text/en_US/LOTM_JUSTICE_Text.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_MS_GAMEPLAY_TEXT" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>133</LoadOrder></Properties>
+			<File>Text/zh_Hans_CN/LOTM_MS_Text.xml</File>
+			<File>Text/en_US/LOTM_MS_Text.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_NORMAL_BALANCE_TEXT_ZH" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><LoadOrder>134</LoadOrder></Properties>
+			<File>Text/Selected/LOTM_NormalBalance_zh_Hans_CN.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_NORMAL_BALANCE_TEXT_EN" criteria="LOTM_RP_NORMAL_LANGUAGE_EN">
+			<Properties><LoadOrder>135</LoadOrder></Properties>
+			<File>Text/Selected/LOTM_NormalBalance_en_US.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_GOD_BLESSINGS_TEXT_ZH" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>136</LoadOrder></Properties>
+			<File>Text/Selected/LOTM_GodBlessings_zh_Hans_CN.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_GOD_BLESSINGS_TEXT_EN" criteria="LOTM_RP_LANGUAGE_EN">
+			<Properties><LoadOrder>137</LoadOrder></Properties>
+			<File>Text/Selected/LOTM_GodBlessings_en_US.xml</File>
 		</UpdateText>
 		<UpdateDatabase id="LOTM_RESCUE_ARTIFACT_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
 			<Properties><LoadOrder>203</LoadOrder></Properties>
@@ -240,6 +300,28 @@
 			<File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_FOOL_GuardianGameIcon256.dds</File>
 			<File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_NIGHT_GuardianGameIcon256.dds</File>
 			<File>Art/LOTM_RESCUE_STORM_GuardianGameIcon22.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon30.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon32.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon38.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon50.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon70.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon80.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon95.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon200.dds</File><File>Art/LOTM_RESCUE_STORM_GuardianGameIcon256.dds</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_JUSTICE_UI_FILES" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>UI/LOTM_JUSTICE_Story.lua</File>
+			<File>UI/LOTM_JUSTICE_Story.xml</File>
+			<File>Art/LOTM_JUSTICE_Audrey24.dds</File>
+			<File>Art/LOTM_JUSTICE_Audrey32.dds</File>
+			<File>Art/LOTM_JUSTICE_Audrey64.dds</File>
+			<File>Art/LOTM_JUSTICE_Audrey256.dds</File>
+			<File>Art/LOTM_JUSTICE_BannerFill22.dds</File>
+			<File>Art/LOTM_JUSTICE_BannerFill32.dds</File>
+			<File>Art/LOTM_JUSTICE_BannerSlot22.dds</File>
+			<File>Art/LOTM_JUSTICE_BannerSlot32.dds</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_MS_UI_FILES" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>204</LoadOrder></Properties>
+			<File>UI/LOTM_MS_Governors.lua</File>
+			<File>UI/LOTM_MS_Governors.xml</File>
+			<File>Art/LOTM_MS_Fors24.dds</File><File>Art/LOTM_MS_Fors32.dds</File><File>Art/LOTM_MS_Fors64.dds</File><File>Art/LOTM_MS_Fors256.dds</File>
+			<File>Art/LOTM_MS_Leonard24.dds</File><File>Art/LOTM_MS_Leonard32.dds</File><File>Art/LOTM_MS_Leonard64.dds</File><File>Art/LOTM_MS_Leonard256.dds</File>
+			<File>Art/LOTM_MS_ForsBannerFill22.dds</File><File>Art/LOTM_MS_ForsBannerFill32.dds</File><File>Art/LOTM_MS_ForsBannerSlot22.dds</File><File>Art/LOTM_MS_ForsBannerSlot32.dds</File>
+			<File>Art/LOTM_MS_LeonardBannerFill22.dds</File><File>Art/LOTM_MS_LeonardBannerFill32.dds</File><File>Art/LOTM_MS_LeonardBannerSlot22.dds</File><File>Art/LOTM_MS_LeonardBannerSlot32.dds</File>
 		</ImportFiles>
 		<AddGameplayScripts id="LOTM_RP_GAMEPLAY_ADDIN" criteria="LOTM_RP_EXPANSION_2">
 			<Properties>
@@ -473,6 +555,18 @@
 			<Properties><LoadOrder>204</LoadOrder></Properties>
 			<File>UI/LOTM_RESCUE_Sacrifice.lua</File>
 		</ImportFiles>
+		<UpdateArt id="LOTM_MODELS_V4_ART" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>205</LoadOrder></Properties>
+			<File>Art/LOTMModelsV4/LOTMModelsV4.dep</File>
+		</UpdateArt>
+		<UpdateDatabase id="LOTM_RESCUE_HOLY_CITY_ART_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>205</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_HolyCityArt.sql</File>
+		</UpdateDatabase>
+		<UpdateText id="LOTM_RESCUE_HOLY_CITY_ART_TEXT" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>205</LoadOrder></Properties>
+			<File>Text/LOTM_RESCUE_HolyCityArt.xml</File>
+		</UpdateText>
 		<UpdateDatabase id="LOTM_PATH_PROJECT_RULES_DATABASE" criteria="LOTM_RP_EXPANSION_2">
 			<Properties><LoadOrder>205</LoadOrder></Properties>
 			<File>Gameplay/LOTM_PathProjectRules.sql</File>
@@ -481,6 +575,10 @@
 			<Properties><LoadOrder>205</LoadOrder></Properties>
 			<File>Scripts/LOTM_MP241_Phase1.lua</File>
 		</AddGameplayScripts>
+		<UpdateArt id="LOTM_RESCUE_HOLY_CITY_ART" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>206</LoadOrder></Properties>
+			<File>Art/LOTMHolyCities/LOTMHolyCities.dep</File>
+		</UpdateArt>
 		<AddGameplayScripts id="LOTM_RESCUE_PHASE2A_GAMEPLAY_ADDIN" criteria="LOTM_RP_RESCUE_MODE">
 			<Properties><LoadOrder>206</LoadOrder></Properties>
 			<File>Scripts/LOTM_MP241_Phase2.lua</File>
@@ -492,6 +590,10 @@
 		<AddGameplayScripts id="LOTM_MP241_PRE_MAIN_BOOTSTRAP" criteria="LOTM_RP_RESCUE_MODE">
 			<Properties><LoadOrder>208</LoadOrder></Properties>
 			<File>Scripts/LOTM_MP241_PreMainBootstrap.lua</File>
+		</AddGameplayScripts>
+		<AddGameplayScripts id="LOTM_RESCUE_HOLY_CITY_ART_GAMEPLAY" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>209</LoadOrder></Properties>
+			<File>Scripts/LOTM_RESCUE_HolyCityArt.lua</File>
 		</AddGameplayScripts>
 		<AddUserInterfaces id="LOTM_RP_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
 			<Properties>
@@ -507,6 +609,38 @@
 			</Properties>
 			<File>UI/LOTM_RP_ComicViewer.xml</File>
 		</AddUserInterfaces>
+		<UpdateDatabase id="LOTM_PLAYER_MODELS_DATABASE" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>215</LoadOrder></Properties><File>Gameplay/LOTM_PlayerModels.sql</File>
+		</UpdateDatabase>
+		<UpdateText id="LOTM_PLAYER_MODELS_TEXT" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>215</LoadOrder></Properties><File>Text/LOTM_PlayerModels.xml</File>
+		</UpdateText>
+		<UpdateArt id="LOTM_PLAYER_MODELS_ART" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>215</LoadOrder></Properties><File>Art/LOTMPlayerModels/LOTMPlayerModels.dep</File>
+		</UpdateArt>
+		<AddUserInterfaces id="LOTM_JUSTICE_STORY_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><Context>InGame</Context><LoadOrder>216</LoadOrder></Properties>
+			<File>UI/LOTM_JUSTICE_Story.xml</File>
+		</AddUserInterfaces>
+		<UpdateArt id="LOTM_PLAYER_GODS_ART" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>216</LoadOrder></Properties><File>Art/LOTMPlayerModels/LOTMPlayerGods.dep</File>
+		</UpdateArt>
+		<UpdateDatabase id="LOTM_RESCUE_GOVERNORS_DATABASE" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>216</LoadOrder></Properties>
+			<File>Gameplay/LOTM_RESCUE_Governors.sql</File>
+		</UpdateDatabase>
+		<AddUserInterfaces id="LOTM_MS_GOVERNORS_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><Context>InGame</Context><LoadOrder>217</LoadOrder></Properties>
+			<File>UI/LOTM_MS_Governors.xml</File>
+		</AddUserInterfaces>
+		<UpdateText id="LOTM_RESCUE_GOVERNORS_TEXT" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>218</LoadOrder></Properties>
+			<File>Text/Selected/LOTM_RESCUE_Governors_zh_Hans_CN.xml</File>
+		</UpdateText>
+		<UpdateText id="LOTM_RESCUE_GOVERNORS_TEXT_EN" criteria="LOTM_RP_RESCUE_LANGUAGE_EN">
+			<Properties><LoadOrder>219</LoadOrder></Properties>
+			<File>Text/Selected/LOTM_RESCUE_Governors_en_US.xml</File>
+		</UpdateText>
 		<AddUserInterfaces id="LOTM_RP_HUD_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
 			<Properties>
 				<Context>InGame</Context>
@@ -514,6 +648,9 @@
 			</Properties>
 			<File>UI/LOTM_RP_HUD.xml</File>
 		</AddUserInterfaces>
+		<AddGameplayScripts id="LOTM_PLAYER_MODELS_GAMEPLAY" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>220</LoadOrder></Properties><File>Scripts/LOTM_PlayerModels.lua</File>
+		</AddGameplayScripts>
 		<AddUserInterfaces id="LOTM_RP_PATH_CHOICE_UI_ADDIN" criteria="LOTM_RP_EXPANSION_2">
 			<Properties>
 				<Context>InGame</Context>
@@ -634,6 +771,9 @@
 			<Properties><LoadOrder>278</LoadOrder></Properties>
 			<File>UI/EndGameMenu_LOTM_Redemption.lua</File>
 		</ImportFiles>
+		<ImportFiles id="LOTM_RESCUE_GOVERNORS_UI_FILES" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>279</LoadOrder></Properties><File>UI/LOTM_RESCUE_GovernorDetailsPanel.lua</File>
+		</ImportFiles>
 		<ReplaceUIScript id="LOTM_RP_EXPANSION_INTRO_BRIDGE" criteria="LOTM_RP_EXPANSION_2">
 			<Properties>
 				<LoadOrder>280</LoadOrder>
@@ -651,6 +791,99 @@
 		<ReplaceUIScript id="LOTM_AI_CULT_CITY_YIELD_SOURCES" criteria="LOTM_RP_EXPANSION_2">
 			<Properties><LoadOrder>281</LoadOrder><LuaContext>CityPanel</LuaContext><LuaReplace>UI/LOTM_AI_Cult_CityPanel.lua</LuaReplace></Properties>
 		</ReplaceUIScript>
+		<ImportFiles id="LOTM_GOD_BLESSINGS_UI_FILES" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>281</LoadOrder></Properties>
+			<File>UI/LOTM_StormBlessing.lua</File>
+			<File>UI/LOTM_StormBlessing.xml</File>
+			<File>UI/LOTM_StormWorldInput.lua</File>
+			<File>UI/LOTM_GodBlessingFX.lua</File>
+			<File>UI/LOTM_GodBlessingFX.xml</File>
+		</ImportFiles>
+		<ImportFiles id="LOTM_GOD_BLESSINGS_ART_FILES" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>281</LoadOrder></Properties>
+			<File>Art/LOTM_GOD_FX_FOOL_00.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_01.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_02.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_03.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_04.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_05.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_06.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_07.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_08.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_09.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_10.dds</File>
+			<File>Art/LOTM_GOD_FX_FOOL_11.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_00.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_01.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_02.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_03.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_04.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_05.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_06.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_07.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_08.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_09.dds</File>
+			<File>Art/LOTM_GOD_FX_NIGHT_10.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_00.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_01.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_02.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_03.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_04.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_05.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_06.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_07.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_08.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_09.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_10.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_11.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_12.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_00.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_01.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_02.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_03.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_04.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_05.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_06.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_07.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_08.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_09.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_10.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_11.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_12.dds</File>
+			<File>Art/LOTM_GOD_FX_STORM_V4_13.dds</File>
+			<File>Art/LOTM_StormBlessing128.dds</File>
+			<File>Art/LOTM_StormBlessing22.dds</File>
+			<File>Art/LOTM_StormBlessing24.dds</File>
+			<File>Art/LOTM_StormBlessing256.dds</File>
+			<File>Art/LOTM_StormBlessing30.dds</File>
+			<File>Art/LOTM_StormBlessing32.dds</File>
+			<File>Art/LOTM_StormBlessing38.dds</File>
+			<File>Art/LOTM_StormBlessing45.dds</File>
+			<File>Art/LOTM_StormBlessing50.dds</File>
+			<File>Art/LOTM_StormBlessing64.dds</File>
+			<File>Art/LOTM_StormBlessing80.dds</File>
+		</ImportFiles>
+		<ReplaceUIScript id="LOTM_STORM_WORLD_INPUT" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><LoadOrder>282</LoadOrder><LuaContext>WorldInput</LuaContext><LuaReplace>UI/LOTM_StormWorldInput.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<AddUserInterfaces id="LOTM_STORM_BLESSING_UI" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><Context>InGame</Context><LoadOrder>283</LoadOrder></Properties><File>UI/LOTM_StormBlessing.xml</File>
+		</AddUserInterfaces>
+		<ReplaceUIScript id="LOTM_RESCUE_GOVERNORS_DETAILS" criteria="LOTM_RP_RESCUE_MODE">
+			<Properties><LoadOrder>283</LoadOrder><LuaContext>GovernorDetailsPanel</LuaContext><LuaReplace>UI/LOTM_RESCUE_GovernorDetailsPanel.lua</LuaReplace></Properties>
+		</ReplaceUIScript>
+		<AddUserInterfaces id="LOTM_GOD_BLESSING_FX_UI" criteria="LOTM_RP_EXPANSION_2">
+			<Properties><Context>InGame</Context><LoadOrder>284</LoadOrder></Properties><File>UI/LOTM_GodBlessingFX.xml</File>
+		</AddUserInterfaces>
+		<UpdateDatabase id="LOTM_NORMAL_BALANCE_DATABASE" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><LoadOrder>10000</LoadOrder></Properties>
+			<File>Gameplay/LOTM_NormalBalance.sql</File>
+			<File>Gameplay/LOTM_AI_Cult_Difficulty.sql</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="LOTM_TP_ABILITY_REMOVAL" criteria="LOTM_RP_NORMAL_MODE">
+			<Properties><LoadOrder>10000</LoadOrder></Properties>
+			<File>Gameplay/LOTM_TP_AbilityRemoval.sql</File>
+		</UpdateDatabase>
 		<ReplaceUIScript id="LOTM_WORLD_VIRTUAL_CHURCH_CITY_STATES" criteria="LOTM_RP_EXPANSION_2_NO_BETTER_CITY_STATES">
 			<Properties><LoadOrder>99988</LoadOrder><LuaContext>CityStates</LuaContext><LuaReplace>UI/LOTM_WORLD_CityStates.lua</LuaReplace></Properties>
 		</ReplaceUIScript>
@@ -678,8 +911,40 @@
 			<Properties><LoadOrder>100101</LoadOrder></Properties>
 			<File>Scripts/LOTM_QD_MultiplayerCompat.lua</File>
 		</AddGameplayScripts>
+
+
 	</InGameActions>
 	<Files>
+		<File>Gameplay/LOTM_MS_Governors.sql</File>
+		<File>Scripts/LOTM_MS_Governors.lua</File>
+		<File>Art/LOTM_MS_Icons.xml</File>
+		<File>Art/LOTM_MS_ForsPortrait.png</File>
+		<File>Art/LOTM_MS_LeonardPortrait.png</File>
+		<File>Art/LOTM_MS_Fors24.dds</File><File>Art/LOTM_MS_Fors32.dds</File><File>Art/LOTM_MS_Fors64.dds</File><File>Art/LOTM_MS_Fors256.dds</File>
+		<File>Art/LOTM_MS_Leonard24.dds</File><File>Art/LOTM_MS_Leonard32.dds</File><File>Art/LOTM_MS_Leonard64.dds</File><File>Art/LOTM_MS_Leonard256.dds</File>
+		<File>Art/LOTM_MS_ForsBannerFill22.dds</File><File>Art/LOTM_MS_ForsBannerFill32.dds</File><File>Art/LOTM_MS_ForsBannerSlot22.dds</File><File>Art/LOTM_MS_ForsBannerSlot32.dds</File>
+		<File>Art/LOTM_MS_LeonardBannerFill22.dds</File><File>Art/LOTM_MS_LeonardBannerFill32.dds</File><File>Art/LOTM_MS_LeonardBannerSlot22.dds</File><File>Art/LOTM_MS_LeonardBannerSlot32.dds</File>
+		<File>Text/zh_Hans_CN/LOTM_MS_Text.xml</File>
+		<File>Text/en_US/LOTM_MS_Text.xml</File>
+		<File>UI/LOTM_MS_Governors.lua</File>
+		<File>UI/LOTM_MS_Governors.xml</File>
+		<File>Gameplay/LOTM_JUSTICE_Governor.sql</File>
+		<File>Scripts/LOTM_JUSTICE_Governor.lua</File>
+		<File>Art/LOTM_JUSTICE_Icons.xml</File>
+		<File>Art/LOTM_JUSTICE_Audrey24.dds</File>
+		<File>Art/LOTM_JUSTICE_Audrey32.dds</File>
+		<File>Art/LOTM_JUSTICE_Audrey64.dds</File>
+		<File>Art/LOTM_JUSTICE_Audrey256.dds</File>
+		<File>Art/LOTM_JUSTICE_AudreyPortrait.png</File>
+		<File>Art/LOTM_JUSTICE_AudreyBannerCircle.png</File>
+		<File>Art/LOTM_JUSTICE_BannerFill22.dds</File>
+		<File>Art/LOTM_JUSTICE_BannerFill32.dds</File>
+		<File>Art/LOTM_JUSTICE_BannerSlot22.dds</File>
+		<File>Art/LOTM_JUSTICE_BannerSlot32.dds</File>
+		<File>Text/zh_Hans_CN/LOTM_JUSTICE_Text.xml</File>
+		<File>Text/en_US/LOTM_JUSTICE_Text.xml</File>
+		<File>UI/LOTM_JUSTICE_Story.lua</File>
+		<File>UI/LOTM_JUSTICE_Story.xml</File>
 		<File>Gameplay/LOTM_PathProjectRules.sql</File>
 		<File>Scripts/LOTM_StartupTrace.lua</File>
 		<File>UI/LOTM_RP_ComicViewer.lua</File>
@@ -957,6 +1222,11 @@
 		<File>Scripts/LOTM_WORLD_Churches.lua</File>
 		<File>Scripts/LOTM_AI_Cults.lua</File>
 		<File>Scripts/LOTM_AI_Cult_Hanged.lua</File>
+		<File>Scripts/LOTM_AI_Cult_Difficulty.lua</File>
+		<File>Gameplay/LOTM_AI_Cult_Difficulty.sql</File>
+		<File>Gameplay/LOTM_NormalBalance.sql</File>
+		<File>Text/Selected/LOTM_NormalBalance_zh_Hans_CN.xml</File>
+		<File>Text/Selected/LOTM_NormalBalance_en_US.xml</File>
 		<File>UI/LOTM_WORLD_CityStates.lua</File>
 		<File>UI/LOTM_WORLD_ChurchPanel.lua</File>
 		<File>UI/LOTM_WORLD_ChurchPanel.xml</File>
@@ -1012,6 +1282,7 @@
 		<File>Gameplay/LOTM_WORLD_Monsters.sql</File>
 		<File>Gameplay/LOTM_BE_BlackEmperor.sql</File>
 		<File>Gameplay/LOTM_TP_Thief.sql</File>
+		<File>Gameplay/LOTM_TP_AbilityRemoval.sql</File>
 		<File>Gameplay/LOTM_TP_Projects.xml</File>
 		<File>Gameplay/LOTM_RP_Modifiers.xml</File>
 		<File>Gameplay/LOTM_RP_Abilities.xml</File>
@@ -1099,5 +1370,850 @@
 		<File>Art/LOTM_TP_ThiefGameIcon22.dds</File><File>Art/LOTM_TP_ThiefGameIcon30.dds</File><File>Art/LOTM_TP_ThiefGameIcon32.dds</File><File>Art/LOTM_TP_ThiefGameIcon38.dds</File><File>Art/LOTM_TP_ThiefGameIcon50.dds</File><File>Art/LOTM_TP_ThiefGameIcon64.dds</File><File>Art/LOTM_TP_ThiefGameIcon70.dds</File><File>Art/LOTM_TP_ThiefGameIcon80.dds</File><File>Art/LOTM_TP_ThiefGameIcon95.dds</File><File>Art/LOTM_TP_ThiefGameIcon200.dds</File><File>Art/LOTM_TP_ThiefGameIcon256.dds</File>
 		<File>Art/LOTM_TP_ThiefMarkCentered40.dds</File><File>Art/LOTM_TP_ThiefMarkCentered384.dds</File><File>Art/LOTM_TP_ThiefMarkCentered512.dds</File><File>Art/LOTM_TP_ThiefMarkCentered640.dds</File><File>Art/LOTM_TP_ThiefMarkCentered768.dds</File>
 		<File>Art/LOTM_TP_FakeGoldIcon22.dds</File><File>Art/LOTM_TP_FakeGoldIcon30.dds</File><File>Art/LOTM_TP_FakeGoldIcon32.dds</File><File>Art/LOTM_TP_FakeGoldIcon38.dds</File><File>Art/LOTM_TP_FakeGoldIcon50.dds</File><File>Art/LOTM_TP_FakeGoldIcon64.dds</File><File>Art/LOTM_TP_FakeGoldIcon80.dds</File><File>Art/LOTM_TP_FakeGoldIcon128.dds</File><File>Art/LOTM_TP_FakeGoldIcon256.dds</File>
+		<File>Gameplay/LOTM_RESCUE_HolyCityArt.sql</File>
+		<File>Scripts/LOTM_RESCUE_HolyCityArt.lua</File>
+		<File>Text/LOTM_RESCUE_HolyCityArt.xml</File>
+		<File>Art/LOTMModelsV4/ArtDefs/Unit_Bins.artdef</File>
+		<File>Art/LOTMModelsV4/ArtDefs/Units.artdef</File>
+		<File>Art/LOTMModelsV4/LOTMModelsV4.dep</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/LOTMModelsV4.blp</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_AircraftCarrier_IdleA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathFromHeroAttackA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_AA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_City_2hands</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Inf</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Ships</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Vehicle</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Idle1</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Forward</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Left</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Right</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Def_Inf</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_1</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_2</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_End</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Middle_Loop</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Start</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Walk_Forward</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Horseman_BipedalDeathMeleeA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Impr_HeroDeath</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Infantry_DeathB</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Attack</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Backward</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Forward</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleB</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleC</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleD</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Run</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Run_Stop</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathB</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Redcoat_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Redcoat_HeroicA_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Scout_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Scout_DeathB</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Slinger_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFlyBackA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Tank_MainGunDeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitHeavy_Death_HitToHeadA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_BreathingA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_LegionHeroAttackA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_SamuraiHeroAttackA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_ProjectileDeathFlyBackA</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_HeroDeath</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Warrior_DeathMeleeB</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_BlackEmperor_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Fool_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Night_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_OuterGod_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Perfect_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_RedPriest_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Storm_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_AO</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Gloss</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Metalness</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal0</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal1</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_AO</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Gloss</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Metalness</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal0</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal1</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_BlackEmperor_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Fool_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Night_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_OuterGod_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Perfect_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_RedPriest_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_AO</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Gloss</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Metalness</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal0</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal1</File>
+		<File>Art/LOTMModelsV4/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Storm_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/LOTMModelsV4.blp</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_AircraftCarrier_IdleA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathFromHeroAttackA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_AA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_City_2hands</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Inf</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Ships</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Vehicle</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Idle1</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Forward</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Left</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Right</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Def_Inf</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_1</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_2</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_End</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Middle_Loop</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Start</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Walk_Forward</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Horseman_BipedalDeathMeleeA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Impr_HeroDeath</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Infantry_DeathB</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Attack</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Backward</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Forward</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleB</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleC</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleD</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Run</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Run_Stop</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathB</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Redcoat_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Redcoat_HeroicA_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Scout_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Scout_DeathB</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Slinger_DeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFlyBackA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Tank_MainGunDeathA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitHeavy_Death_HitToHeadA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_BreathingA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_LegionHeroAttackA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_SamuraiHeroAttackA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_ProjectileDeathFlyBackA</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_Death</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_HeroDeath</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Warrior_DeathMeleeB</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_BlackEmperor_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Fool_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Night_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_OuterGod_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Perfect_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_RedPriest_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Storm_Body_BaseColor_LOTM4_NoTint</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_AO</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Gloss</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Metalness</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal0</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal1</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_AO</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Gloss</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Metalness</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal0</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal1</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_BlackEmperor_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Fool_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Night_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_OuterGod_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Perfect_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_RedPriest_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_AO</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Gloss</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Metalness</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal0</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal1</File>
+		<File>Art/LOTMModelsV4/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Storm_Body_Emissive</File>
+		<File>Art/LOTMModelsV4/manifest.json</File>
+		<File>Art/LOTMModelsV4/README.md</File>
+		<File>Art/LOTMHolyCities/ArtDefs/Buildings.artdef</File>
+		<File>Art/LOTMHolyCities/ArtDefs/Landmarks.artdef</File>
+		<File>Art/LOTMHolyCities/LOTMHolyCities.dep</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/LOTMHolyCities.blp</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Body_BaseColor_LHC_Star_Body_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/LOTMHolyCities.blp</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Body_BaseColor_LHC_Star_Body_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_AO</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Gloss</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Metalness</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal0</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal1</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Emissive</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Opacity</File>
+		<File>Art/LOTMHolyCities/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5</File>
+		<File>Art/LOTMHolyCities/manifest.json</File>
+		<File>Art/LOTMHolyCities/README.md</File>
+		<File>Art/LOTMArtMaterialAudit_rc378.json</File>
+		<File>Art/LOTMGeometryAudit_rc378.json</File>
+		<File>Art/LOTMHolyCitySigilsAudit_rc378.json</File>
+		<File>Art/LOTMHolyCitySurfaceAudit_rc378.json</File>
+		<File>Art/LOTMPlayerModels/ArtDefs/PlayerGods.artdef</File>
+		<File>Art/LOTMPlayerModels/ArtDefs/Unit_Bins.artdef</File>
+		<File>Art/LOTMPlayerModels/ArtDefs/Units.artdef</File>
+		<File>Art/LOTMPlayerModels/LOTMPlayerGods.dep</File>
+		<File>Art/LOTMPlayerModels/LOTMPlayerModels.dep</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/LOTMPlayerModels.blp</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathFromHeroAttackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Horseman_BipedalDeathMeleeA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Impr_HeroDeath</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Infantry_DeathB</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Attack</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Backward</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Death</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Forward</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleB</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleC</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleD</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Run</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Run_Stop</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathB</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Redcoat_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Redcoat_HeroicA_Death</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Scout_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Scout_DeathB</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Slinger_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFlyBackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Tank_MainGunDeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitHeavy_Death_HitToHeadA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_BreathingA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_LegionHeroAttackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_SamuraiHeroAttackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_ProjectileDeathFlyBackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_Death</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_HeroDeath</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Warrior_DeathMeleeB</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_Body_BaseColor_LPM_BlackEmperor_Seq00_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_FX_BaseColor_LPM_BlackEmperor_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_Body_BaseColor_LPM_BlackEmperor_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_FX_BaseColor_LPM_BlackEmperor_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_Body_BaseColor_LPM_BlackEmperor_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_FX_BaseColor_LPM_BlackEmperor_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq09_05_Body_BaseColor_LPM_BlackEmperor_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq00_Body_BaseColor_LPM_Perfect_Seq00_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq00_FX_BaseColor_LPM_Perfect_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_Body_BaseColor_LPM_Perfect_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_FX_BaseColor_LPM_Perfect_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_Body_BaseColor_LPM_Perfect_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_FX_BaseColor_LPM_Perfect_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq09_05_Body_BaseColor_LPM_Perfect_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq00_FX_BaseColor_LPM_RedPriest_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_Body_BaseColor_LPM_RedPriest_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_FX_BaseColor_LPM_RedPriest_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_Body_BaseColor_LPM_RedPriest_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_FX_BaseColor_LPM_RedPriest_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq09_05_Body_BaseColor_LPM_RedPriest_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq00_Body_BaseColor_LPM_Thief_Seq00_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq00_FX_BaseColor_LPM_Thief_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_Body_BaseColor_LPM_Thief_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_FX_BaseColor_LPM_Thief_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_Body_BaseColor_LPM_Thief_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_FX_BaseColor_LPM_Thief_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq09_05_Body_BaseColor_LPM_Thief_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/LOTMPlayerModels.blp</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathFromHeroAttackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Horseman_BipedalDeathMeleeA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Impr_HeroDeath</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Infantry_DeathB</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Attack</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Backward</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Death</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Forward</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleB</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleC</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleD</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Run</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Run_Stop</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathB</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Redcoat_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Redcoat_HeroicA_Death</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Scout_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Scout_DeathB</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Slinger_DeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFlyBackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Tank_MainGunDeathA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitHeavy_Death_HitToHeadA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_BreathingA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_LegionHeroAttackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_SamuraiHeroAttackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_ProjectileDeathFlyBackA</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_Death</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_HeroDeath</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Warrior_DeathMeleeB</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_Body_BaseColor_LPM_BlackEmperor_Seq00_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_FX_BaseColor_LPM_BlackEmperor_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_Body_BaseColor_LPM_BlackEmperor_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_FX_BaseColor_LPM_BlackEmperor_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_Body_BaseColor_LPM_BlackEmperor_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_FX_BaseColor_LPM_BlackEmperor_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq09_05_Body_BaseColor_LPM_BlackEmperor_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq00_Body_BaseColor_LPM_Perfect_Seq00_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq00_FX_BaseColor_LPM_Perfect_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_Body_BaseColor_LPM_Perfect_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_FX_BaseColor_LPM_Perfect_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_Body_BaseColor_LPM_Perfect_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_FX_BaseColor_LPM_Perfect_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Perfect_Seq09_05_Body_BaseColor_LPM_Perfect_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq00_FX_BaseColor_LPM_RedPriest_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_Body_BaseColor_LPM_RedPriest_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_FX_BaseColor_LPM_RedPriest_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_Body_BaseColor_LPM_RedPriest_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_FX_BaseColor_LPM_RedPriest_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_RedPriest_Seq09_05_Body_BaseColor_LPM_RedPriest_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq00_Body_BaseColor_LPM_Thief_Seq00_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq00_FX_BaseColor_LPM_Thief_Seq00_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_Body_BaseColor_LPM_Thief_Seq02_01_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_FX_BaseColor_LPM_Thief_Seq02_01_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_Body_BaseColor_LPM_Thief_Seq04_03_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_FX_BaseColor_LPM_Thief_Seq04_03_FX_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LPM_Thief_Seq09_05_Body_BaseColor_LPM_Thief_Seq09_05_Body_TintMask</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Perfect_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq00_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq02_01_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq04_03_FX_Normal1</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_AO</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Emissive</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Gloss</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Metalness</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Normal0</File>
+		<File>Art/LOTMPlayerModels/Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LPM_Thief_Seq09_05_Body_Normal1</File>
+		<File>Art/LOTMPlayerModels/README.md</File>
+		<File>Art/LOTMPlayerModels/audit.json</File>
+		<File>Art/LOTMPlayerModels/manifest.json</File>
+		<File>Gameplay/LOTM_PlayerModels.sql</File>
+		<File>Scripts/LOTM_PlayerModels.lua</File>
+		<File>Text/LOTM_PlayerModels.xml</File>
+		<File>Gameplay/LOTM_GodBlessings.sql</File>
+		<File>Scripts/LOTM_GodBlessings.lua</File>
+		<File>UI/LOTM_StormBlessing.lua</File>
+		<File>UI/LOTM_StormBlessing.xml</File>
+		<File>UI/LOTM_StormWorldInput.lua</File>
+		<File>UI/LOTM_GodBlessingFX.lua</File>
+		<File>UI/LOTM_GodBlessingFX.xml</File>
+		<File>Text/Selected/LOTM_GodBlessings_zh_Hans_CN.xml</File>
+		<File>Text/Selected/LOTM_GodBlessings_en_US.xml</File>
+		<File>Art/LOTM_GodBlessingsIcons.xml</File>
+		<File>Art/LOTM_StormBlessingSource.png</File>
+		<File>Art/LOTM_GOD_FX_FOOL_00.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_01.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_02.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_03.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_04.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_05.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_06.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_07.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_08.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_09.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_10.dds</File>
+		<File>Art/LOTM_GOD_FX_FOOL_11.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_00.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_01.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_02.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_03.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_04.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_05.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_06.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_07.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_08.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_09.dds</File>
+		<File>Art/LOTM_GOD_FX_NIGHT_10.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_00.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_01.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_02.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_03.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_04.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_05.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_06.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_07.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_08.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_09.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_10.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_11.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_12.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_00.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_01.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_02.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_03.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_04.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_05.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_06.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_07.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_08.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_09.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_10.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_11.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_12.dds</File>
+		<File>Art/LOTM_GOD_FX_STORM_V4_13.dds</File>
+		<File>Art/LOTM_StormBlessing128.dds</File>
+		<File>Art/LOTM_StormBlessing22.dds</File>
+		<File>Art/LOTM_StormBlessing24.dds</File>
+		<File>Art/LOTM_StormBlessing256.dds</File>
+		<File>Art/LOTM_StormBlessing30.dds</File>
+		<File>Art/LOTM_StormBlessing32.dds</File>
+		<File>Art/LOTM_StormBlessing38.dds</File>
+		<File>Art/LOTM_StormBlessing45.dds</File>
+		<File>Art/LOTM_StormBlessing50.dds</File>
+		<File>Art/LOTM_StormBlessing64.dds</File>
+		<File>Art/LOTM_StormBlessing80.dds</File>
+		<File>Gameplay/LOTM_RESCUE_Governors.sql</File>
+		<File>Scripts/LOTM_RESCUE_StarGovernor.lua</File>
+		<File>Text/zh_Hans_CN/LOTM_RESCUE_Governors.xml</File>
+		<File>Text/en_US/LOTM_RESCUE_Governors.xml</File>
+		<File>Text/Selected/LOTM_RESCUE_Governors_zh_Hans_CN.xml</File>
+		<File>Text/Selected/LOTM_RESCUE_Governors_en_US.xml</File>
+		<File>UI/LOTM_RESCUE_GovernorDetailsPanel.lua</File>
 	</Files>
 </Mod>

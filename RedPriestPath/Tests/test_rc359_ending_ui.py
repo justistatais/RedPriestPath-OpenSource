@@ -137,6 +137,11 @@ class EndingUITests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(),'0892d8b9d52e5d21dd4add2caee2dd743b84d148f13444e3eb55508618d42f4b')
         with zipfile.ZipFile(archive) as z:
             for name in ('Scripts/LOTM_RESCUE_Phase10.lua','Scripts/LOTM_RESCUE_Phase10A.lua','Gameplay/LOTM_RESCUE_Phase10.sql'):
-                self.assertEqual((ROOT/name).read_bytes(),z.read('RedPriestPath/'+name),name)
+                current=(ROOT/name).read_bytes()
+                if name=='Scripts/LOTM_RESCUE_Phase10.lua':
+                    approved=(ROOT.parent/'frozen-baselines/rescue-rc359-resource391/authorized-deltas/20261007-rescue-storm-damage.lua').read_bytes()
+                    self.assertEqual(current.count(approved),1,'Only the exact user-authorized storm API may be added')
+                    current=current.replace(approved,b'',1)
+                self.assertEqual(current,z.read('RedPriestPath/'+name),name)
 
 if __name__=='__main__':unittest.main(verbosity=2)

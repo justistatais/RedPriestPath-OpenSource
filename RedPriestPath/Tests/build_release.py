@@ -13,8 +13,8 @@ import zipfile
 from pathlib import Path
 
 
-VERSION = "0.1.0-rc.361"
-RESOURCE_VERSION = 393
+VERSION = "0.1.0-rc.403"
+RESOURCE_VERSION = 435
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
 DIST = WORKSPACE / "dist"
@@ -22,7 +22,7 @@ ARCHIVE = DIST / f"RedPriestPath-{VERSION}.zip"
 MANIFEST = DIST / f"RedPriestPath-{VERSION}.MANIFEST.sha256"
 ARCHIVE_HASH = DIST / f"RedPriestPath-{VERSION}.zip.sha256"
 EXCLUDED_PARTS = {"__pycache__", ".git", "backups"}
-EXCLUDED_SUFFIXES = {".pyc", ".pyo"}
+EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".civ6save"}
 
 # Civ VI keys its Mods.sqlite scan record to the .modinfo filesystem timestamp.
 # A single timestamp reused by every release can therefore leave a newer
@@ -42,6 +42,9 @@ def release_files() -> list[Path]:
         if not path.is_file():
             continue
         relative = path.relative_to(ROOT)
+        # Preserve prior audits in source; only the current repair audits are shipped.
+        if relative.as_posix() in ("Art/ExperimentalArtQuarantine.json", "Art/LOTMArtMaterialAudit_rc374.json", "Art/LOTMArtMaterialAudit_rc376.json", "Art/LOTMGeometryAudit_rc376.json", "Art/LOTMArtMaterialAudit_rc377.json", "Art/LOTMGeometryAudit_rc377.json", "Art/LOTMHolyCitySigilsAudit_rc377.json"):
+            continue
         if any(part in EXCLUDED_PARTS for part in relative.parts):
             continue
         if path.suffix.lower() in EXCLUDED_SUFFIXES:
@@ -101,6 +104,15 @@ def main() -> int:
         return 2
     database = database.resolve()
     database_validators = {
+        "test_rc403_storm_production.py",
+        "test_rc402_rescue_storm.py",
+        "test_rc401_governor_redemption.py",
+        "test_rc392_god_blessings.py",
+        "test_rc390_normal_balance.py",
+        "test_rc388_ability_removal.py",
+        "validate_magician_star.py",
+        "validate_justice_governor.py",
+        "validate_holy_city_art.py",
         "test_rc358_descent.py",
         "test_rc356_advanced_cities.py",
         "test_rc355_labels_units_icons.py",
@@ -115,7 +127,7 @@ def main() -> int:
         "validate_rescue_city_database.py",
         "validate_rescue_defense_effects.py",
     }
-    for validator in ("test_rc360_normal_startup.py", "test_rc359_ending_ui.py", "test_rc358_descent.py", "test_rc357_gameplay_city_api.py", "test_rc356_advanced_cities.py", "test_rc355_labels_units_icons.py", "test_rc354_project_completion.py", "test_rc353_reload_recovery.py", "test_rc352_potion_receipt.py", "test_rc351_runtime_dispatch.py", "test_rc350_turn_safety.py", "test_rc349_runtime_events.py", "test_rc348_camp_artifacts.py", "test_rc348_barbarian_spawn.py", "test_rc347_found_city_gate.py", "test_rc346_project_rules.py", "test_rc346_lifecycle_rules.py", "test_rc346_thief_rule_guards.py", "test_rc346_path_rules.py", "test_rc345_quiet_diagnostics.py", "test_rc345_purification_layout.py", "test_rc343_lua51_diagnostics.py", "test_rc342_startup_trace.py", "test_rc342_ui_trace.py", "test_rc341_command_bootstrap.py", "validate_refactor_router.py", "validate_effects_runtime.py", "test_mp241_runtime.py", "validate_qd_cache_migration.py", "validate_gameplay_bundle.py", "validate.py", "validate_multiplayer_rc241.py", "validate_perfect_network_event_queue.py", "validate_ai_cults.py", "validate_artifact_effects.py", "validate_rc80_village.py", "validate_rc81_random_events.py", "validate_rc82_monsters.py", "validate_rc83_churches.py", "validate_ui_compatibility.py", "validate_thief_path.py", "validate_resource249_gameplay_baseline.py", "validate_rescue_artifacts.py", "validate_rescue_city_database.py", "validate_rescue_defense_effects.py", "validate_rescue_difficulty.py", "validate_rescue_phase1.py", "validate_rescue_phase2a.py", "validate_rescue_phase3.py", "validate_rescue_phase4.py", "validate_rescue_phase5.py", "validate_rescue_phase6.py", "validate_rescue_phase7.py", "validate_rescue_phase8.py", "validate_rescue_phase9.py", "validate_rescue_phase9_digestion.py", "validate_rescue_phase10a.py", "validate_rescue_phase10.py", "validate_god_models.py"):
+    for validator in ("test_rc403_storm_production.py", "test_rc402_rescue_storm.py", "test_rc401_governor_redemption.py", "test_rc392_god_blessings.py", "test_rc391_cult_military.py", "test_rc390_normal_balance.py", "test_rc388_ability_removal.py", "test_magician_star_runtime.py", "validate_magician_star.py", "test_justice_story_runtime.py", "test_justice_story_ui.py", "validate_justice_governor.py", "test_rc360_normal_startup.py", "test_rc359_ending_ui.py", "test_rc358_descent.py", "test_rc357_gameplay_city_api.py", "test_rc356_advanced_cities.py", "test_rc355_labels_units_icons.py", "test_rc354_project_completion.py", "test_rc353_reload_recovery.py", "test_rc352_potion_receipt.py", "test_rc351_runtime_dispatch.py", "test_rc350_turn_safety.py", "test_rc349_runtime_events.py", "test_rc348_camp_artifacts.py", "test_rc348_barbarian_spawn.py", "test_rc347_found_city_gate.py", "test_rc346_project_rules.py", "test_rc346_lifecycle_rules.py", "test_rc346_thief_rule_guards.py", "test_rc346_path_rules.py", "test_rc345_quiet_diagnostics.py", "test_rc345_purification_layout.py", "test_rc343_lua51_diagnostics.py", "test_rc342_startup_trace.py", "test_rc342_ui_trace.py", "test_rc341_command_bootstrap.py", "validate_refactor_router.py", "validate_effects_runtime.py", "test_mp241_runtime.py", "validate_qd_cache_migration.py", "validate_gameplay_bundle.py", "validate.py", "validate_multiplayer_rc241.py", "validate_perfect_network_event_queue.py", "validate_ai_cults.py", "validate_artifact_effects.py", "validate_rc80_village.py", "validate_rc81_random_events.py", "validate_rc82_monsters.py", "validate_rc83_churches.py", "validate_ui_compatibility.py", "validate_thief_path.py", "validate_resource249_gameplay_baseline.py", "validate_rescue_artifacts.py", "validate_rescue_city_database.py", "validate_rescue_defense_effects.py", "validate_rescue_difficulty.py", "validate_rescue_phase1.py", "validate_rescue_phase2a.py", "validate_rescue_phase3.py", "validate_rescue_phase4.py", "validate_rescue_phase5.py", "validate_rescue_phase6.py", "validate_rescue_phase7.py", "validate_rescue_phase8.py", "validate_rescue_phase9.py", "validate_rescue_phase9_digestion.py", "validate_rescue_phase10a.py", "validate_rescue_phase10.py", "validate_god_models.py", "validate_models_v4.py", "test_holy_city_art_runtime.py", "validate_holy_city_art.py", "validate_art_materials.py", "validate_art_dependency_closure.py", "validate_holy_city_sigils.py", "validate_city_surface_bindings.py", "test_player_models_runtime.py", "validate_player_models.py"):
         command = [sys.executable, str(ROOT / "Tests" / validator)]
         if validator == "validate_rc80_village.py":
             command.extend(["--current-database", str(database)])
@@ -126,6 +138,11 @@ def main() -> int:
         validation = subprocess.run(
             command,
             cwd=WORKSPACE,
+            # Imported test fixtures can consume the positional path before a
+            # caller reads it. Preserve one selected read-only snapshot for
+            # every fixture, including after a failed native load clears cache.
+            env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1",
+                 "LOTM_TEST_GAMEPLAY_DATABASE": str(database)},
             check=False,
         )
         if validation.returncode != 0:

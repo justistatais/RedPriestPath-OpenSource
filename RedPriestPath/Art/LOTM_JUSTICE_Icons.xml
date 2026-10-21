@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+  <IconAtlases>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE_BANNER_FILL"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE_BANNER_SLOT"/>
+  </IconAtlases>
+  <IconTextureAtlases>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE" IconSize="24" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_Audrey24.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_Audrey32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_Audrey64.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE_BANNER_FILL" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_BannerFill32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE_BANNER_FILL" IconSize="22" Baseline="6" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_BannerFill22.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE_BANNER_SLOT" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_BannerSlot32.dds"/>
+    <Row Name="ICON_ATLAS_LOTM_JUSTICE_BANNER_SLOT" IconSize="22" Baseline="6" IconsPerRow="1" IconsPerColumn="1" Filename="LOTM_JUSTICE_BannerSlot22.dds"/>
+  </IconTextureAtlases>
+  <IconDefinitions>
+    <Row Name="ICON_GOVERNOR_LOTM_JUSTICE" Atlas="ICON_ATLAS_LOTM_JUSTICE" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_JUSTICE_PROMOTION" Atlas="ICON_ATLAS_LOTM_JUSTICE" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_JUSTICE_FILL" Atlas="ICON_ATLAS_LOTM_JUSTICE_BANNER_FILL" Index="0"/>
+    <Row Name="ICON_GOVERNOR_LOTM_JUSTICE_SLOT" Atlas="ICON_ATLAS_LOTM_JUSTICE_BANNER_SLOT" Index="0"/>
+  </IconDefinitions>
+  <IconAliases>
+    <Row Name="GOVERNOR_LOTM_JUSTICE_FILL" OtherName="ICON_GOVERNOR_LOTM_JUSTICE_FILL"/>
+    <Row Name="GOVERNOR_LOTM_JUSTICE_SLOT" OtherName="ICON_GOVERNOR_LOTM_JUSTICE_SLOT"/>
+  </IconAliases>
+</GameInfo>

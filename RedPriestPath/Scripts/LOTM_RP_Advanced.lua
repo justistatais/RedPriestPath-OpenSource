@@ -20,7 +20,7 @@ local LOTM_RP_FORMATION_OBSERVED :string = "LOTM_RP_S4_FORMATION_OBSERVED";
 local LOTM_RP_PROVOKER_GARRISON_ABILITY :string =
 	"ABILITY_LOTM_RP_PROVOKER_GARRISONED";
 local LOTM_RP_PLAN_TARGET_COOLDOWN :number = 10;
-local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 2000;
+local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 1000;
 local pendingNetworkProjects :table = {};
 local pendingNetworkProjectKeys :table = {};
 
@@ -227,7 +227,7 @@ local function ProcessPlannedWarEconomy(playerID :number)
 	local isAtWar = IsAtWar(playerID, targetID);
 	local wasAtWar = player:GetProperty(LOTM_RP_PLAN_WAS_AT_WAR);
 	if wasAtWar == nil or wasAtWar < 0 then
-		-- Save/load baseline: do not retroactively pay 2000 Gold for a war
+		-- Save/load baseline: do not retroactively pay first-war Gold for a war
 		-- which began before this version observed the relationship.
 		player:SetProperty(LOTM_RP_PLAN_WAS_AT_WAR, isAtWar and 1 or 0);
 		player:SetProperty(LOTM_RP_PLAN_GOLD_ACTIVE, isAtWar and 1 or 0);

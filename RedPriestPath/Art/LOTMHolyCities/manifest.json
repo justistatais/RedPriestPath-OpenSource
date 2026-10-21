@@ -1,0 +1,1451 @@
+{
+  "version": "0.1.0-rc.378",
+  "resource_version": 410,
+  "scope": "three rescue churches plus registered CENTER / Astral Descent",
+  "files": {
+    "ArtDefs/Buildings.artdef": "5a344fe211a64708fdce0e9356d4d59e37cf4213cbd843743453a84532179d63",
+    "ArtDefs/Landmarks.artdef": "c731a92825b7b60beab524da7dceb68df87cc4957ec564b2beefdcdfc1d92560",
+    "LOTMHolyCities.dep": "a8b066884eed509c8023ad79eb1bb4ae1a1a21b798f1d6b04a616db87e8ebcff",
+    "Platforms/MacOS/BLPs/LOTMHolyCities.blp": "a9f6e9b03d2c58de29787fdc4c58c239ae64f59da4402ed01a3ccdbc139b24ca",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask": "f35c1e91131c61bae7c7eb2cf3c455553e61c413c0e74002c92b3af5c8e84afc",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null": "b4793d2157caf1372e95e6111ab53d2bfaf27054f5dd97b5094f50c398da4111",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null": "a6eaacfcb2066596f492e28041f5b1429d5d6a45e7170cfb9ac932f5d3caefaf",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask": "97cb2aad7ae70ba54fabe563a3b9c1c9e6509c750977f98c4ae469aecce0b5c4",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null": "7a8685f16844c1fc3da4374f30ffb6295c1a1b3c5d56d83184ce8328aea6288d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null": "19d880700cb3b788a3946171c63ba8a64ccccc5ad907bd4b732c88df32f492d3",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Body_BaseColor_LHC_Star_Body_TintMask": "90f6fefdec41485dd2e8ce083641d8a514ec7ff3f37b0322d4d6a1d875fadf3a",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null": "fa83bdcf9952105e3bf6fee43a7f4623c3ad179a6372f1290902182c62526c8f",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null": "910e551042769e76b2d8d8f445325e2def11161fd7d44e27798f8b25251743d2",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask": "e0c852fe374788ad49eacc590c9cf1f7dcc48d6511c7e1b7be7322f4e460d25a",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null": "d32c0f04c4e0aca06a589ac1d5f597321f47cc1aa9123ff175bf6effd8337b10",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null": "75a83ed81d2c5ad70dea401f80448db9097eb8c67a62514f74ff7180a84733b0",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_AO": "25fe8fb95c1f082a317b1fe58a96519cefc779ca7840f07e4ffa7f38d33aee34",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Emissive": "6dfe9c42fb735296bab58c6df6e02beec55577c2d9f5a72bb1c8a1a9b911db6e",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Gloss": "2d755b88a82728f919d82aaa227c7e76701bf89add72744f00a5e0baba276eea",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Metalness": "5831bc4eeb75046e88718922303cc6acdf7c46a87ef81e61cba92964825bec00",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal0": "69b057eb5ed3153a227d2eefdd16b09add2b314ab7137ef2a1504c4e1b505432",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal1": "be9c7f03d006da63df8a3b26618128f2f8e815d6e6780f9261e481d299189ee7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Emissive": "412be5f2bd114e90c9abc847a8cbb585d60bd28da5aa6237d4cd41f0e617e477",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Opacity": "d1645ba94116e3bdf195e91cd3b975db1dfb9016242f66edbfd900b6b7a24df1",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Emissive": "773db2d7a8a83c04357057c7e1f13ad8f98a56c3d677587adca44125015832dd",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Opacity": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_AO": "25fe8fb95c1f082a317b1fe58a96519cefc779ca7840f07e4ffa7f38d33aee34",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Emissive": "bc22668db6ab751f1668b67d4078d6f04c24c310d6183623a0ce5b39727623f6",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Gloss": "2d755b88a82728f919d82aaa227c7e76701bf89add72744f00a5e0baba276eea",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Metalness": "5831bc4eeb75046e88718922303cc6acdf7c46a87ef81e61cba92964825bec00",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal0": "69b057eb5ed3153a227d2eefdd16b09add2b314ab7137ef2a1504c4e1b505432",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal1": "be9c7f03d006da63df8a3b26618128f2f8e815d6e6780f9261e481d299189ee7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Emissive": "e85326d1209b46d5d65a707527279cc9e736a22c900aa181d78739d2bc043c11",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Opacity": "4d4c02d082e4fc159ff24d3d7227a5696e552667656969507fbebd4c3d0064d5",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Emissive": "275a03e04bd8365acc668f5c29efd33c5248e4374f83d4f2b9cf7febbcf39dc3",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Opacity": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_AO": "7487670a6b278c5b4f4f817fb21cecd65982f467be426c70bd510fb5d70f6221",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Emissive": "7b829bbd77515302e23f160b5a9b79ace4dcb77d773e24f962437d69ad710c21",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Metalness": "9b73e7b04ccc087244b5542a02d554aadfc5de2ec26b02901f2ebb2d373b17e0",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal0": "7216fe7da4bb57f5a91871c6352f0074529ed2fbe0c9e3451513befb14f0bfa0",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal1": "c3635a7448518ff9c34622cb77cb02f418492beaab010748095254ffcc126c87",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Emissive": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Opacity": "fbda86dc879fb94cdba96b8e3a0133f277ee8eed6cacddd31d8b7c952c992aa4",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Emissive": "e6c56c84840bccc63e3f2ba9cd28a563ec84c2596c1cdfdb87f45a0edb19d0c2",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Opacity": "6ea21f885f210763b5a7fe0078ce062517ac51021aec10982f5db3c80fd8bf6e",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Emissive": "a3098e99caadf2a3d75ec4e606c8344e8237f617c5dd8de3e5d9bfb12e9bbbc1",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Opacity": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_AO": "25fe8fb95c1f082a317b1fe58a96519cefc779ca7840f07e4ffa7f38d33aee34",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Emissive": "9742c8579fdd6fbc3b9b9a43b6423900a25d112f31f095cae33197485f20eccb",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Gloss": "2d755b88a82728f919d82aaa227c7e76701bf89add72744f00a5e0baba276eea",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Metalness": "5831bc4eeb75046e88718922303cc6acdf7c46a87ef81e61cba92964825bec00",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal0": "69b057eb5ed3153a227d2eefdd16b09add2b314ab7137ef2a1504c4e1b505432",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal1": "be9c7f03d006da63df8a3b26618128f2f8e815d6e6780f9261e481d299189ee7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Emissive": "6b8be707e40bfb77bfa259ab0728418afa365920c88aac3f06e28d31a8965a24",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Opacity": "8e71242828cc5a6ed0f98e98404d05930df445b7352d04fa8a7ea853d46801fb",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Emissive": "9d4e3ad83298d08dfff2a092aff8ac723f46237755587e58c41058cbee0b0850",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Opacity": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5": "a1c755480a0f0e19526710796daf8c8d36aa2b74c418832fa5f2155d617176bc",
+    "Platforms/Windows/BLPs/LOTMHolyCities.blp": "a9f6e9b03d2c58de29787fdc4c58c239ae64f59da4402ed01a3ccdbc139b24ca",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask": "f35c1e91131c61bae7c7eb2cf3c455553e61c413c0e74002c92b3af5c8e84afc",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null": "b4793d2157caf1372e95e6111ab53d2bfaf27054f5dd97b5094f50c398da4111",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null": "a6eaacfcb2066596f492e28041f5b1429d5d6a45e7170cfb9ac932f5d3caefaf",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask": "97cb2aad7ae70ba54fabe563a3b9c1c9e6509c750977f98c4ae469aecce0b5c4",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null": "7a8685f16844c1fc3da4374f30ffb6295c1a1b3c5d56d83184ce8328aea6288d",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null": "19d880700cb3b788a3946171c63ba8a64ccccc5ad907bd4b732c88df32f492d3",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Body_BaseColor_LHC_Star_Body_TintMask": "90f6fefdec41485dd2e8ce083641d8a514ec7ff3f37b0322d4d6a1d875fadf3a",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null": "fa83bdcf9952105e3bf6fee43a7f4623c3ad179a6372f1290902182c62526c8f",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null": "910e551042769e76b2d8d8f445325e2def11161fd7d44e27798f8b25251743d2",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask": "e0c852fe374788ad49eacc590c9cf1f7dcc48d6511c7e1b7be7322f4e460d25a",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null": "d32c0f04c4e0aca06a589ac1d5f597321f47cc1aa9123ff175bf6effd8337b10",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null": "75a83ed81d2c5ad70dea401f80448db9097eb8c67a62514f74ff7180a84733b0",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_AO": "25fe8fb95c1f082a317b1fe58a96519cefc779ca7840f07e4ffa7f38d33aee34",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Emissive": "6dfe9c42fb735296bab58c6df6e02beec55577c2d9f5a72bb1c8a1a9b911db6e",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Gloss": "2d755b88a82728f919d82aaa227c7e76701bf89add72744f00a5e0baba276eea",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Metalness": "5831bc4eeb75046e88718922303cc6acdf7c46a87ef81e61cba92964825bec00",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal0": "69b057eb5ed3153a227d2eefdd16b09add2b314ab7137ef2a1504c4e1b505432",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Normal1": "be9c7f03d006da63df8a3b26618128f2f8e815d6e6780f9261e481d299189ee7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Emissive": "412be5f2bd114e90c9abc847a8cbb585d60bd28da5aa6237d4cd41f0e617e477",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Main_Opacity": "d1645ba94116e3bdf195e91cd3b975db1dfb9016242f66edbfd900b6b7a24df1",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Emissive": "773db2d7a8a83c04357057c7e1f13ad8f98a56c3d677587adca44125015832dd",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Fool_Sigil_Outer_Opacity": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_AO": "25fe8fb95c1f082a317b1fe58a96519cefc779ca7840f07e4ffa7f38d33aee34",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Emissive": "bc22668db6ab751f1668b67d4078d6f04c24c310d6183623a0ce5b39727623f6",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Gloss": "2d755b88a82728f919d82aaa227c7e76701bf89add72744f00a5e0baba276eea",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Metalness": "5831bc4eeb75046e88718922303cc6acdf7c46a87ef81e61cba92964825bec00",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal0": "69b057eb5ed3153a227d2eefdd16b09add2b314ab7137ef2a1504c4e1b505432",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Normal1": "be9c7f03d006da63df8a3b26618128f2f8e815d6e6780f9261e481d299189ee7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Emissive": "e85326d1209b46d5d65a707527279cc9e736a22c900aa181d78739d2bc043c11",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Main_Opacity": "4d4c02d082e4fc159ff24d3d7227a5696e552667656969507fbebd4c3d0064d5",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Emissive": "275a03e04bd8365acc668f5c29efd33c5248e4374f83d4f2b9cf7febbcf39dc3",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Night_Sigil_Outer_Opacity": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_AO": "7487670a6b278c5b4f4f817fb21cecd65982f467be426c70bd510fb5d70f6221",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Emissive": "7b829bbd77515302e23f160b5a9b79ace4dcb77d773e24f962437d69ad710c21",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Metalness": "9b73e7b04ccc087244b5542a02d554aadfc5de2ec26b02901f2ebb2d373b17e0",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal0": "7216fe7da4bb57f5a91871c6352f0074529ed2fbe0c9e3451513befb14f0bfa0",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Body_Normal1": "c3635a7448518ff9c34622cb77cb02f418492beaab010748095254ffcc126c87",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Emissive": "d995197485f8b9053dcfc5d9032fde5b2848d0e63110afaae20db5ea0d2be663",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Portal_Opacity": "fbda86dc879fb94cdba96b8e3a0133f277ee8eed6cacddd31d8b7c952c992aa4",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Emissive": "e6c56c84840bccc63e3f2ba9cd28a563ec84c2596c1cdfdb87f45a0edb19d0c2",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Main_Opacity": "6ea21f885f210763b5a7fe0078ce062517ac51021aec10982f5db3c80fd8bf6e",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Emissive": "a3098e99caadf2a3d75ec4e606c8344e8237f617c5dd8de3e5d9bfb12e9bbbc1",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Star_Sigil_Outer_Opacity": "096b3be0c912acdd9f4eca453076e44a8693df12d70c9278e9941da49c8c50a7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_AO": "25fe8fb95c1f082a317b1fe58a96519cefc779ca7840f07e4ffa7f38d33aee34",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Emissive": "9742c8579fdd6fbc3b9b9a43b6423900a25d112f31f095cae33197485f20eccb",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Gloss": "2d755b88a82728f919d82aaa227c7e76701bf89add72744f00a5e0baba276eea",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Metalness": "5831bc4eeb75046e88718922303cc6acdf7c46a87ef81e61cba92964825bec00",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal0": "69b057eb5ed3153a227d2eefdd16b09add2b314ab7137ef2a1504c4e1b505432",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Normal1": "be9c7f03d006da63df8a3b26618128f2f8e815d6e6780f9261e481d299189ee7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Emissive": "6b8be707e40bfb77bfa259ab0728418afa365920c88aac3f06e28d31a8965a24",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Main_Opacity": "8e71242828cc5a6ed0f98e98404d05930df445b7352d04fa8a7ea853d46801fb",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Emissive": "9d4e3ad83298d08dfff2a092aff8ac723f46237755587e58c41058cbee0b0850",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LHC_Storm_Sigil_Outer_Opacity": "b1bba6c2f4a9f963b9c8cede0140ec3565d4a247a5368e512d67794dc78a273c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5": "a1c755480a0f0e19526710796daf8c8d36aa2b74c418832fa5f2155d617176bc"
+  },
+  "roundtrip": [
+    {
+      "model": "Fool",
+      "bone_hierarchy_equal": true,
+      "bones": 1,
+      "meshes": [
+        {
+          "mesh": "LHC_Fool_Structure_Batch1",
+          "geometry": "LHC_Fool_Part01",
+          "vertices": 12000,
+          "triangles": 5593,
+          "position_max_error": 4.99000000218075e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -223.3017,
+              -194.4296,
+              -3.1e-07
+            ],
+            [
+              223.3017,
+              194.4296,
+              74.9
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_Structure_Batch2",
+          "geometry": "LHC_Fool_Part02",
+          "vertices": 11999,
+          "triangles": 5396,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -173.6,
+              -230.8,
+              13.8
+            ],
+            [
+              209.2328,
+              173.932,
+              113.8
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_Structure_Batch3",
+          "geometry": "LHC_Fool_Part03",
+          "vertices": 12000,
+          "triangles": 5200,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -129.4058,
+              -157.692,
+              19.125
+            ],
+            [
+              168.9792,
+              155.8496,
+              200.0
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_Structure_Batch4",
+          "geometry": "LHC_Fool_Part04",
+          "vertices": 11999,
+          "triangles": 5084,
+          "position_max_error": 4.995000000462824e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -223.3017,
+              -194.4296,
+              -3.1e-07
+            ],
+            [
+              223.3017,
+              194.4296,
+              305.14
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_Structure_Batch5",
+          "geometry": "LHC_Fool_Part05",
+          "vertices": 12000,
+          "triangles": 5112,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -173.6,
+              -230.8,
+              13.8
+            ],
+            [
+              212.0354,
+              173.932,
+              113.8
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_Structure_Batch6",
+          "geometry": "LHC_Fool_Part06",
+          "vertices": 11999,
+          "triangles": 5088,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -168.5688,
+              -157.692,
+              19.125
+            ],
+            [
+              168.9792,
+              155.8496,
+              188.3
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_Structure_Batch7",
+          "geometry": "LHC_Fool_Part07",
+          "vertices": 4884,
+          "triangles": 2167,
+          "position_max_error": 4.995000000462824e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -75.34076,
+              -61.0,
+              57.0
+            ],
+            [
+              95.09999,
+              81.4776,
+              305.14
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_RoofsAndDetails_Batch1",
+          "geometry": "LHC_Fool_Part08",
+          "vertices": 11149,
+          "triangles": 6000,
+          "position_max_error": 4.971999999270338e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -222.048,
+              -194.4492,
+              19.4
+            ],
+            [
+              222.048,
+              194.4492,
+              249.4
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Fool_RoofsAndDetails_Batch2",
+          "geometry": "LHC_Fool_Part09",
+          "vertices": 11618,
+          "triangles": 5804,
+          "position_max_error": 4.979999999932261e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -222.048,
+              -194.4492,
+              19.4
+            ],
+            [
+              222.048,
+              194.4492,
+              311.188
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Night",
+      "bone_hierarchy_equal": true,
+      "bones": 1,
+      "meshes": [
+        {
+          "mesh": "LHC_Night_Structure_Batch1",
+          "geometry": "LHC_Night_Part01",
+          "vertices": 12000,
+          "triangles": 5593,
+          "position_max_error": 4.99000000218075e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -223.3017,
+              -194.4296,
+              -3.1e-07
+            ],
+            [
+              223.3017,
+              194.4296,
+              74.9
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_Structure_Batch2",
+          "geometry": "LHC_Night_Part02",
+          "vertices": 12000,
+          "triangles": 5403,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -173.6,
+              -230.8,
+              13.8
+            ],
+            [
+              209.2328,
+              173.932,
+              100.1
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_Structure_Batch3",
+          "geometry": "LHC_Night_Part03",
+          "vertices": 11999,
+          "triangles": 5196,
+          "position_max_error": 4.994000001090626e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -129.4058,
+              -148.084,
+              19.125
+            ],
+            [
+              168.9792,
+              155.8496,
+              224.2
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_Structure_Batch4",
+          "geometry": "LHC_Night_Part04",
+          "vertices": 11999,
+          "triangles": 5014,
+          "position_max_error": 4.99000000218075e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -223.3017,
+              -194.4296,
+              -3.1e-07
+            ],
+            [
+              223.3017,
+              194.4296,
+              228.4
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_Structure_Batch5",
+          "geometry": "LHC_Night_Part05",
+          "vertices": 12000,
+          "triangles": 5137,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -173.6,
+              -230.8,
+              13.8
+            ],
+            [
+              209.2328,
+              173.932,
+              100.1
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_Structure_Batch6",
+          "geometry": "LHC_Night_Part06",
+          "vertices": 11999,
+          "triangles": 5112,
+          "position_max_error": 4.994000001090626e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -129.4058,
+              -148.084,
+              19.125
+            ],
+            [
+              168.9792,
+              155.8496,
+              224.2
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_Structure_Batch7",
+          "geometry": "LHC_Night_Part07",
+          "vertices": 601,
+          "triangles": 265,
+          "position_max_error": 4.658000000290485e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -28.40866,
+              23.99134,
+              197.325
+            ],
+            [
+              28.40866,
+              80.80865,
+              228.4
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_RoofsAndDetails_Batch1",
+          "geometry": "LHC_Night_Part08",
+          "vertices": 11058,
+          "triangles": 6000,
+          "position_max_error": 4.971999999270338e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -222.048,
+              -194.4492,
+              19.4
+            ],
+            [
+              222.048,
+              194.4492,
+              249.4
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Night_RoofsAndDetails_Batch2",
+          "geometry": "LHC_Night_Part09",
+          "vertices": 10507,
+          "triangles": 5000,
+          "position_max_error": 4.971999999270338e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -222.048,
+              -194.4492,
+              19.4
+            ],
+            [
+              222.048,
+              194.4492,
+              329.3297
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Storm",
+      "bone_hierarchy_equal": true,
+      "bones": 1,
+      "meshes": [
+        {
+          "mesh": "LHC_Storm_Structure_Batch1",
+          "geometry": "LHC_Storm_Part01",
+          "vertices": 12000,
+          "triangles": 5593,
+          "position_max_error": 4.99000000218075e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -223.3017,
+              -194.4296,
+              -3.1e-07
+            ],
+            [
+              223.3017,
+              194.4296,
+              74.9
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_Structure_Batch2",
+          "geometry": "LHC_Storm_Part02",
+          "vertices": 12000,
+          "triangles": 5403,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -173.6,
+              -230.8,
+              13.8
+            ],
+            [
+              209.2328,
+              173.932,
+              100.1
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_Structure_Batch3",
+          "geometry": "LHC_Storm_Part03",
+          "vertices": 11999,
+          "triangles": 5196,
+          "position_max_error": 4.994000001090626e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -129.4058,
+              -148.084,
+              19.125
+            ],
+            [
+              168.9792,
+              155.8496,
+              224.2
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_Structure_Batch4",
+          "geometry": "LHC_Storm_Part04",
+          "vertices": 12000,
+          "triangles": 5023,
+          "position_max_error": 4.99000000218075e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -223.3017,
+              -194.4296,
+              -3.1e-07
+            ],
+            [
+              223.3017,
+              194.4296,
+              257.6
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_Structure_Batch5",
+          "geometry": "LHC_Storm_Part05",
+          "vertices": 12000,
+          "triangles": 5135,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -173.6,
+              -230.8,
+              13.8
+            ],
+            [
+              209.2328,
+              173.932,
+              100.1
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_Structure_Batch6",
+          "geometry": "LHC_Storm_Part06",
+          "vertices": 11999,
+          "triangles": 5118,
+          "position_max_error": 4.994000001090626e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -129.4058,
+              -148.084,
+              19.125
+            ],
+            [
+              168.9792,
+              155.8496,
+              224.2
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_Structure_Batch7",
+          "geometry": "LHC_Storm_Part07",
+          "vertices": 785,
+          "triangles": 344,
+          "position_max_error": 4.658000000290485e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -28.40866,
+              23.99134,
+              197.325
+            ],
+            [
+              28.40866,
+              80.80865,
+              257.6
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_RoofsAndDetails_Batch1",
+          "geometry": "LHC_Storm_Part08",
+          "vertices": 11166,
+          "triangles": 6000,
+          "position_max_error": 4.971999999270338e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -222.048,
+              -194.4492,
+              19.4
+            ],
+            [
+              222.048,
+              194.4492,
+              318.506
+            ]
+          ]
+        },
+        {
+          "mesh": "LHC_Storm_RoofsAndDetails_Batch2",
+          "geometry": "LHC_Storm_Part09",
+          "vertices": 7778,
+          "triangles": 3032,
+          "position_max_error": 4.971999999270338e-05,
+          "uv_max_error": 9.999999994736442e-09,
+          "static_no_vertex_weights": true,
+          "bounds": [
+            [
+              -222.048,
+              -194.4492,
+              19.4
+            ],
+            [
+              222.048,
+              194.4492,
+              311.08
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "cooker": [
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Buildings.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_surface_fix_rc378_20260926\\evidence\\cook_LOTMHolyCities_ArtDef_Windows_Buildings.artdef.log"
+    },
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Landmarks.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_surface_fix_rc378_20260926\\evidence\\cook_LOTMHolyCities_ArtDef_Windows_Landmarks.artdef.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "Windows",
+      "file": "lotm_holy_cities.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_surface_fix_rc378_20260926\\evidence\\cook_LOTMHolyCities_XLP_Windows_lotm_holy_cities.xlp.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "MacOS",
+      "file": "lotm_holy_cities.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\文明6\\Civ6_3D_Modeling\\work\\city_surface_fix_rc378_20260926\\evidence\\cook_LOTMHolyCities_XLP_MacOS_lotm_holy_cities.xlp.log"
+    }
+  ],
+  "shared_city_fields": {
+    "DistrictGenerator": {
+      "m_ElementName": "Gen_CityCenter",
+      "m_RootCollectionName": "Generator",
+      "m_ArtDefPath": "CityGenerators.artdef",
+      "m_CollectionIsLocked": "false",
+      "m_TemplateName": ""
+    },
+    "TintColor": {
+      "m_r": "255.000000",
+      "m_g": "255.000000",
+      "m_b": "255.000000"
+    },
+    "DistrictDamagePillagesBuildings": {
+      "m_bValue": "true"
+    },
+    "IsAlignedToCoast": {
+      "m_bValue": "false"
+    },
+    "bUseCityScale": {
+      "m_bValue": "false"
+    },
+    "FlattenTerrain": {
+      "m_bValue": "true"
+    },
+    "ProceduralPlacementMode": {
+      "m_Value": "NONE"
+    }
+  },
+  "geometry": {
+    "Fool": {
+      "slug": "Fool",
+      "source_sha256": "3a2a1cdf33fc155e74433b0223ee600521d5b680598b35d979b4d1f823a3a03b",
+      "scale": 20.0,
+      "meshes": [
+        {
+          "name": "LHC_Fool_Structure",
+          "vertices": 17896,
+          "triangles": 33640
+        },
+        {
+          "name": "LHC_Fool_RoofsAndDetails",
+          "vertices": 6446,
+          "triangles": 11804
+        }
+      ],
+      "palette": [
+        {
+          "source": "HC_Fool_glass",
+          "color": [
+            0.8631572127342224,
+            0.5583403706550598,
+            0.22322796285152435
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.2000000476837158
+        },
+        {
+          "source": "HC_Fool_glow",
+          "color": [
+            0.6653872728347778,
+            0.7912979125976562,
+            0.8631572127342224
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 2.5999999046325684
+        },
+        {
+          "source": "HC_Fool_green",
+          "color": [
+            0.052860647439956665,
+            0.13013647496700287,
+            0.10224173218011856
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_ground",
+          "color": [
+            0.17144110798835754,
+            0.18447498977184296,
+            0.18447498977184296
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_light",
+          "color": [
+            0.8713670969009399,
+            0.7991027235984802,
+            0.5906188488006592
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_paving",
+          "color": [
+            0.4125426113605499,
+            0.3967552185058594,
+            0.3277781009674072
+          ],
+          "metal": 0.0,
+          "gloss": 0.3500000238418579,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_rock",
+          "color": [
+            0.06847816705703735,
+            0.0802198201417923,
+            0.09305896610021591
+          ],
+          "metal": 0.0,
+          "gloss": 0.3500000238418579,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_roof",
+          "color": [
+            0.06301001459360123,
+            0.12477181851863861,
+            0.17464740574359894
+          ],
+          "metal": 0.1599999964237213,
+          "gloss": 0.49000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_shade",
+          "color": [
+            0.4019777774810791,
+            0.3967552185058594,
+            0.31854677200317383
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_stone",
+          "color": [
+            0.7304607629776001,
+            0.672443151473999,
+            0.5088813304901123
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_trim",
+          "color": [
+            0.48514994978904724,
+            0.2961382567882538,
+            0.08228270709514618
+          ],
+          "metal": 0.5799999833106995,
+          "gloss": 0.6599999964237213,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_water",
+          "color": [
+            0.03560131415724754,
+            0.1119324266910553,
+            0.16513219475746155
+          ],
+          "metal": 0.23999999463558197,
+          "gloss": 0.7699999958276749,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Fool_wood",
+          "color": [
+            0.09758734703063965,
+            0.06301001459360123,
+            0.03189603239297867
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        }
+      ],
+      "texture_size": 512
+    },
+    "Night": {
+      "slug": "Night",
+      "source_sha256": "8bde510bb83541dd0ae3d9c253b9d6db171e8a05691a12bcd31f74801599de37",
+      "scale": 20.0,
+      "meshes": [
+        {
+          "name": "LHC_Night_Structure",
+          "vertices": 16936,
+          "triangles": 31720
+        },
+        {
+          "name": "LHC_Night_RoofsAndDetails",
+          "vertices": 6098,
+          "triangles": 11000
+        }
+      ],
+      "palette": [
+        {
+          "source": "HC_Night_glass",
+          "color": [
+            0.34670406579971313,
+            0.4564110338687897,
+            0.9215818643569946
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.2000000476837158
+        },
+        {
+          "source": "HC_Night_glow",
+          "color": [
+            0.4969329833984375,
+            0.5840784311294556,
+            1.0
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 2.5999999046325684
+        },
+        {
+          "source": "HC_Night_green",
+          "color": [
+            0.04373503103852272,
+            0.08650045841932297,
+            0.12213877588510513
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_ground",
+          "color": [
+            0.09530746936798096,
+            0.1119324266910553,
+            0.17144110798835754
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_light",
+          "color": [
+            0.44520118832588196,
+            0.4677838087081909,
+            0.5906188488006592
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_paving",
+          "color": [
+            0.18782077729701996,
+            0.21952620148658752,
+            0.2581828534603119
+          ],
+          "metal": 0.0,
+          "gloss": 0.3500000238418579,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_rock",
+          "color": [
+            0.06847816705703735,
+            0.0802198201417923,
+            0.09305896610021591
+          ],
+          "metal": 0.0,
+          "gloss": 0.3500000238418579,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_roof",
+          "color": [
+            0.02955683507025242,
+            0.02518685907125473,
+            0.08437620848417282
+          ],
+          "metal": 0.1599999964237213,
+          "gloss": 0.49000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_shade",
+          "color": [
+            0.09084171056747437,
+            0.11443537473678589,
+            0.177888423204422
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_stone",
+          "color": [
+            0.23839756846427917,
+            0.2581828534603119,
+            0.34191441535949707
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_trim",
+          "color": [
+            0.4125426113605499,
+            0.48514994978904724,
+            0.6104955673217773
+          ],
+          "metal": 0.5799999833106995,
+          "gloss": 0.6599999964237213,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_water",
+          "color": [
+            0.04970656707882881,
+            0.07421357184648514,
+            0.18116424977779388
+          ],
+          "metal": 0.23999999463558197,
+          "gloss": 0.7699999958276749,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Night_wood",
+          "color": [
+            0.0423114113509655,
+            0.0382043719291687,
+            0.07036009430885315
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        }
+      ],
+      "texture_size": 512
+    },
+    "Storm": {
+      "slug": "Storm",
+      "source_sha256": "df37ae89561552d4f39313e1802e06f284bafde61afe58131fd85ca9edd5f722",
+      "scale": 20.0,
+      "meshes": [
+        {
+          "name": "LHC_Storm_Structure",
+          "vertices": 16984,
+          "triangles": 31812
+        },
+        {
+          "name": "LHC_Storm_RoofsAndDetails",
+          "vertices": 5114,
+          "triangles": 9032
+        }
+      ],
+      "palette": [
+        {
+          "source": "HC_Storm_glass",
+          "color": [
+            0.2581828534603119,
+            0.7011018991470337,
+            0.68668532371521
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.2000000476837158
+        },
+        {
+          "source": "HC_Storm_glow",
+          "color": [
+            0.38642942905426025,
+            0.8962693810462952,
+            0.8879231214523315
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 2.5999999046325684
+        },
+        {
+          "source": "HC_Storm_green",
+          "color": [
+            0.03688944876194,
+            0.11443537473678589,
+            0.08865558356046677
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_ground",
+          "color": [
+            0.10461648553609848,
+            0.16513219475746155,
+            0.17464740574359894
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_light",
+          "color": [
+            0.5972017645835876,
+            0.637596845626831,
+            0.5647115111351013
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_paving",
+          "color": [
+            0.24228112399578094,
+            0.3277781009674072,
+            0.3277781009674072
+          ],
+          "metal": 0.0,
+          "gloss": 0.3500000238418579,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_rock",
+          "color": [
+            0.06847816705703735,
+            0.0802198201417923,
+            0.09305896610021591
+          ],
+          "metal": 0.0,
+          "gloss": 0.3500000238418579,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_roof",
+          "color": [
+            0.03433980792760849,
+            0.24228112399578094,
+            0.21223075687885284
+          ],
+          "metal": 0.1599999964237213,
+          "gloss": 0.49000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_shade",
+          "color": [
+            0.13013647496700287,
+            0.21223075687885284,
+            0.22322796285152435
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_stone",
+          "color": [
+            0.3613067865371704,
+            0.4677838087081909,
+            0.46207699179649353
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_trim",
+          "color": [
+            0.577580451965332,
+            0.37123769521713257,
+            0.109461709856987
+          ],
+          "metal": 0.5799999833106995,
+          "gloss": 0.6599999964237213,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_water",
+          "color": [
+            0.03560131415724754,
+            0.1119324266910553,
+            0.16513219475746155
+          ],
+          "metal": 0.23999999463558197,
+          "gloss": 0.7699999958276749,
+          "emission": 1.0
+        },
+        {
+          "source": "HC_Storm_wood",
+          "color": [
+            0.05126945674419403,
+            0.07818742096424103,
+            0.0802198201417923
+          ],
+          "metal": 0.0,
+          "gloss": 0.24000000953674316,
+          "emission": 1.0
+        }
+      ],
+      "texture_size": 512
+    }
+  },
+  "materials": {
+    "enabled": [
+      "BaseColor",
+      "Normal",
+      "AO",
+      "Metalness",
+      "Gloss",
+      "Emissive",
+      "TintMask"
+    ],
+    "disabled": [],
+    "reason": "Full RGBA8 source maps cook successfully; actual emission colors replace default-strength false glow."
+  },
+  "lod": {
+    "automatic_lod": false,
+    "configured_reductions": [],
+    "configured_transitions": [],
+    "runtime_transition_verified": false
+  },
+  "game_verified": false,
+  "multiplayer_verified": false,
+  "material_audit": "Art/LOTMArtMaterialAudit_rc378.json",
+  "binding_mode": "Four direct BuildingVariants selected by internal HeroBuilding markers: FOOL, NIGHT, STORM, CENTER; no custom district generator.",
+  "resource405_live_evidence": {
+    "three_markers_installed": true,
+    "art_package_loaded": true,
+    "holy_city_visible": false,
+    "source": "Reports/rc374-before-fix-logs and user screenshot"
+  },
+  "release_includes_all_cooker_outputs": true,
+  "cooker_shared_files": {
+    "Windows": [
+      "TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Star_Body_BaseColor_LHC_Star_Body_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null",
+      "TEXTURE_LHC_Fool_AO",
+      "TEXTURE_LHC_Fool_Emissive",
+      "TEXTURE_LHC_Fool_Gloss",
+      "TEXTURE_LHC_Fool_Metalness",
+      "TEXTURE_LHC_Fool_Normal0",
+      "TEXTURE_LHC_Fool_Normal1",
+      "TEXTURE_LHC_Fool_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Fool_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Fool_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Fool_Sigil_Outer_Opacity",
+      "TEXTURE_LHC_Night_AO",
+      "TEXTURE_LHC_Night_Emissive",
+      "TEXTURE_LHC_Night_Gloss",
+      "TEXTURE_LHC_Night_Metalness",
+      "TEXTURE_LHC_Night_Normal0",
+      "TEXTURE_LHC_Night_Normal1",
+      "TEXTURE_LHC_Night_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Night_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Night_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Night_Sigil_Outer_Opacity",
+      "TEXTURE_LHC_Star_Body_AO",
+      "TEXTURE_LHC_Star_Body_Emissive",
+      "TEXTURE_LHC_Star_Body_Gloss",
+      "TEXTURE_LHC_Star_Body_Metalness",
+      "TEXTURE_LHC_Star_Body_Normal0",
+      "TEXTURE_LHC_Star_Body_Normal1",
+      "TEXTURE_LHC_Star_Portal_Emissive",
+      "TEXTURE_LHC_Star_Portal_Opacity",
+      "TEXTURE_LHC_Star_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Star_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Star_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Star_Sigil_Outer_Opacity",
+      "TEXTURE_LHC_Storm_AO",
+      "TEXTURE_LHC_Storm_Emissive",
+      "TEXTURE_LHC_Storm_Gloss",
+      "TEXTURE_LHC_Storm_Metalness",
+      "TEXTURE_LHC_Storm_Normal0",
+      "TEXTURE_LHC_Storm_Normal1",
+      "TEXTURE_LHC_Storm_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Storm_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Storm_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Storm_Sigil_Outer_Opacity",
+      "TEXTURE_ProceduralNoiseTexture2D_0x304656c5"
+    ],
+    "MacOS": [
+      "TEXTURE_DiffuseTint_LHC_Fool_BaseColor_LHC_Fool_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Fool_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Fool_Sigil_Outer_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Night_BaseColor_LHC_Night_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Night_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Night_Sigil_Outer_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Star_Body_BaseColor_LHC_Star_Body_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Star_Portal_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Star_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Star_Sigil_Outer_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Storm_BaseColor_LHC_Storm_TintMask",
+      "TEXTURE_DiffuseTint_LHC_Storm_Sigil_Main_BaseColor_null",
+      "TEXTURE_DiffuseTint_LHC_Storm_Sigil_Outer_BaseColor_null",
+      "TEXTURE_LHC_Fool_AO",
+      "TEXTURE_LHC_Fool_Emissive",
+      "TEXTURE_LHC_Fool_Gloss",
+      "TEXTURE_LHC_Fool_Metalness",
+      "TEXTURE_LHC_Fool_Normal0",
+      "TEXTURE_LHC_Fool_Normal1",
+      "TEXTURE_LHC_Fool_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Fool_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Fool_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Fool_Sigil_Outer_Opacity",
+      "TEXTURE_LHC_Night_AO",
+      "TEXTURE_LHC_Night_Emissive",
+      "TEXTURE_LHC_Night_Gloss",
+      "TEXTURE_LHC_Night_Metalness",
+      "TEXTURE_LHC_Night_Normal0",
+      "TEXTURE_LHC_Night_Normal1",
+      "TEXTURE_LHC_Night_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Night_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Night_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Night_Sigil_Outer_Opacity",
+      "TEXTURE_LHC_Star_Body_AO",
+      "TEXTURE_LHC_Star_Body_Emissive",
+      "TEXTURE_LHC_Star_Body_Gloss",
+      "TEXTURE_LHC_Star_Body_Metalness",
+      "TEXTURE_LHC_Star_Body_Normal0",
+      "TEXTURE_LHC_Star_Body_Normal1",
+      "TEXTURE_LHC_Star_Portal_Emissive",
+      "TEXTURE_LHC_Star_Portal_Opacity",
+      "TEXTURE_LHC_Star_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Star_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Star_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Star_Sigil_Outer_Opacity",
+      "TEXTURE_LHC_Storm_AO",
+      "TEXTURE_LHC_Storm_Emissive",
+      "TEXTURE_LHC_Storm_Gloss",
+      "TEXTURE_LHC_Storm_Metalness",
+      "TEXTURE_LHC_Storm_Normal0",
+      "TEXTURE_LHC_Storm_Normal1",
+      "TEXTURE_LHC_Storm_Sigil_Main_Emissive",
+      "TEXTURE_LHC_Storm_Sigil_Main_Opacity",
+      "TEXTURE_LHC_Storm_Sigil_Outer_Emissive",
+      "TEXTURE_LHC_Storm_Sigil_Outer_Opacity",
+      "TEXTURE_ProceduralNoiseTexture2D_0x304656c5"
+    ]
+  },
+  "geometry_repair": {
+    "vertex_format": "static, 3 UV, no vertex bone attributes",
+    "stride": 84,
+    "independent_geometries": 27,
+    "max_vertices_per_geometry": 12000,
+    "max_triangles_per_geometry": 6000,
+    "automatic_lod": false,
+    "source_faces_preserved": true
+  },
+  "sigils_audit": "Art/LOTMHolyCitySigilsAudit_rc378.json",
+  "game_animation_verified": false,
+  "new_art": {
+    "static_geometry_resources": 27,
+    "native_scrolling_materials": 9,
+    "main_radius": 760,
+    "outer_radius": 845,
+    "physical_footprint_radius": 249,
+    "main_seconds": 36,
+    "outer_seconds": -54,
+    "portal_seconds": 64,
+    "star_selector": "CENTER"
+  },
+  "surface_binding_audit": "Art/LOTMHolyCitySurfaceAudit_rc378.json",
+  "resource409_live_evidence": {
+    "star_body_black": true,
+    "ground_sigils_incomplete": true,
+    "four_cosmetic_selectors_registered_in_lua_log": true,
+    "source": "Civ6_3D_Modeling/work/city_surface_fix_rc378_20260926/evidence"
+  },
+  "native_uv_fix": {
+    "blender_to_cn6_v": "1-v, all three UV channels",
+    "modified_geometries": 26,
+    "ground_z": {
+      "Main": 24,
+      "Outer": 28
+    },
+    "minimum_cull_radius_world": 100,
+    "obstruction_radius_source": 249
+  }
+}

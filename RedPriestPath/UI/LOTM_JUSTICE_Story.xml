@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+  <Container ID="StoryPanel" Hidden="1" Anchor="C,T" Offset="0,45" Size="620,194" ConsumeMouse="1">
+    <Image Size="620,194" Texture="WorldBuilder_BG" StretchMode="Tile"/>
+    <Grid Size="620,194" Style="ScreenFrame"/>
+    <Label ID="ReadyLabel" Anchor="C,T" Offset="0,14" Size="576,28" Align="center" Style="FontNormal24" String="LOC_LOTM_JUSTICE_STORY_READY"/>
+    <Label ID="CityLabel" Anchor="C,T" Offset="0,47" Size="576,22" Align="center" Style="FontNormal18"/>
+    <Label ID="HintLabel" Anchor="C,T" Offset="0,77" Size="576,54" Align="center" WrapWidth="576" Style="FontNormal14" String="LOC_LOTM_JUSTICE_STORY_HINT"/>
+    <GridButton ID="CompleteButton" Anchor="C,T" Offset="0,144" Size="300,34" Style="ButtonConfirm" String="LOC_LOTM_JUSTICE_STORY_COMPLETE"/>
+  </Container>
+</Context>

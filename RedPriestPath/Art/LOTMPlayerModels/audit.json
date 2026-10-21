@@ -1,0 +1,1619 @@
+{
+  "version": "0.1.0-rc.379",
+  "resource": 411,
+  "geometries": [
+    {
+      "name": "LPM_BlackEmperor_Seq00",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_BlackEmperor_Seq00_FX",
+          "vertices": 2430,
+          "triangles": 4548,
+          "position_max_error": 4.9150000009490213e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        },
+        {
+          "name": "LPM_BlackEmperor_Seq00_Body",
+          "vertices": 61,
+          "triangles": 98,
+          "position_max_error": 4.94999999745005e-06,
+          "uv_max_error": 0.0,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "8bdf4d67c3b4108ba47c2dfd41d686636ee1b58b05f3a7e78b1e15ad9acc0bb2"
+    },
+    {
+      "name": "LPM_BlackEmperor_Seq02_01",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_BlackEmperor_Seq02_01_Body",
+          "vertices": 2145,
+          "triangles": 3998,
+          "position_max_error": 4.984000000263222e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_BlackEmperor_Seq02_01_FX",
+          "vertices": 1764,
+          "triangles": 3280,
+          "position_max_error": 4.971000001319226e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "2036eb23cd44c9becb384fc266c00ad855ac4a4e6f94b791856a500145e0824e"
+    },
+    {
+      "name": "LPM_BlackEmperor_Seq04_03",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_BlackEmperor_Seq04_03_Body",
+          "vertices": 2057,
+          "triangles": 3862,
+          "position_max_error": 4.984000000263222e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_BlackEmperor_Seq04_03_FX",
+          "vertices": 486,
+          "triangles": 920,
+          "position_max_error": 2.0750000004454705e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "dc12453d0a80af68677a7ad27e6e86fc4d52785a3c040241c1cdbef3cf885d2c"
+    },
+    {
+      "name": "LPM_BlackEmperor_Seq09_05",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_BlackEmperor_Seq09_05_Body",
+          "vertices": 1785,
+          "triangles": 3358,
+          "position_max_error": 4.984000000263222e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "49d10bf2db9fac0dd2d92ef7f83edda115b501dc341a927804fc1e08c7bd62ad"
+    },
+    {
+      "name": "LPM_Carrier",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Carrier_Body",
+          "vertices": 22,
+          "triangles": 20,
+          "position_max_error": 2.599999999741698e-07,
+          "uv_max_error": 0.0,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "9aae153c93edbc2b40b8dd4e34e0edd2fde26e558d2fd773b28ad4ccadc4d687"
+    },
+    {
+      "name": "LPM_Perfect_Seq00",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Perfect_Seq00_FX",
+          "vertices": 2666,
+          "triangles": 5000,
+          "position_max_error": 4.956000000788663e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        },
+        {
+          "name": "LPM_Perfect_Seq00_Body",
+          "vertices": 54,
+          "triangles": 72,
+          "position_max_error": 2.0259999985228205e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "b3bcb4282460bf92f4f747c57474fda9cd2f7ca5390df8b77ea3225a75ad12b8"
+    },
+    {
+      "name": "LPM_Perfect_Seq02_01",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Perfect_Seq02_01_Body",
+          "vertices": 2004,
+          "triangles": 3788,
+          "position_max_error": 4.919000001279983e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_Perfect_Seq02_01_FX",
+          "vertices": 2194,
+          "triangles": 4120,
+          "position_max_error": 4.991000000131862e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "f7ac1322085425a2011064fc0f350879a517d5d20d945254d218f9fe235fa946"
+    },
+    {
+      "name": "LPM_Perfect_Seq04_03",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Perfect_Seq04_03_Body",
+          "vertices": 2000,
+          "triangles": 3788,
+          "position_max_error": 5.000000000165983e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_Perfect_Seq04_03_FX",
+          "vertices": 448,
+          "triangles": 864,
+          "position_max_error": 4.996000001256107e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "555dce11b1f04f541ddaa73fd7ad7220ba0c303c59d6a079a301cc337b6fda39"
+    },
+    {
+      "name": "LPM_Perfect_Seq09_05",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Perfect_Seq09_05_Body",
+          "vertices": 1458,
+          "triangles": 2736,
+          "position_max_error": 4.945999999961259e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "faa800cd2fb889133a1042c613ce806cffab9d470119bc5ab3dca721fdf9a421"
+    },
+    {
+      "name": "LPM_RedPriest_Seq00",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_RedPriest_Seq00_FX",
+          "vertices": 2560,
+          "triangles": 4860,
+          "position_max_error": 4.994000001090626e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "d68a4046bf23860d85ebe30fe20cfcf86ae954078cac50af02edb42e4e4cd5c8"
+    },
+    {
+      "name": "LPM_RedPriest_Seq02_01",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_RedPriest_Seq02_01_Body",
+          "vertices": 2253,
+          "triangles": 4230,
+          "position_max_error": 4.9689999997326595e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_RedPriest_Seq02_01_FX",
+          "vertices": 1741,
+          "triangles": 3250,
+          "position_max_error": 5.000000000165983e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "106307cc4173e6c6da694def6cb2700a2976ead52eacc84f211c8387ec1af10f"
+    },
+    {
+      "name": "LPM_RedPriest_Seq04_03",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_RedPriest_Seq04_03_Body",
+          "vertices": 2217,
+          "triangles": 4174,
+          "position_max_error": 4.9689999997326595e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_RedPriest_Seq04_03_FX",
+          "vertices": 464,
+          "triangles": 888,
+          "position_max_error": 4.885999999260093e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "03631eff66de86557575f7c3d209e47a16fb5fdda917b1cd89b17d00a9fcf2e9"
+    },
+    {
+      "name": "LPM_RedPriest_Seq09_05",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_RedPriest_Seq09_05_Body",
+          "vertices": 1845,
+          "triangles": 3506,
+          "position_max_error": 4.9689999997326595e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "8bbf9b8e188675a06bf79331f7f9a95042c11a505fa8d55dbc29f7fa2f29d6e9"
+    },
+    {
+      "name": "LPM_Thief_Seq00",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Thief_Seq00_FX",
+          "vertices": 3386,
+          "triangles": 6500,
+          "position_max_error": 5.000000000165983e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        },
+        {
+          "name": "LPM_Thief_Seq00_Body",
+          "vertices": 272,
+          "triangles": 528,
+          "position_max_error": 4.8669999998196545e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "4c9eb94b0cc5de016452bace6d8edbaeb0355be5071cf8c38b26e13166f431f6"
+    },
+    {
+      "name": "LPM_Thief_Seq02_01",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Thief_Seq02_01_Body",
+          "vertices": 2035,
+          "triangles": 3770,
+          "position_max_error": 4.966000000194981e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_Thief_Seq02_01_FX",
+          "vertices": 2994,
+          "triangles": 5744,
+          "position_max_error": 4.979999999932261e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "e7f2f899cd9e07030752f11732ce8307b956d24c54da2d81b74ce5176b9b1db2"
+    },
+    {
+      "name": "LPM_Thief_Seq04_03",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Thief_Seq04_03_Body",
+          "vertices": 1905,
+          "triangles": 3570,
+          "position_max_error": 4.995000000462824e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        },
+        {
+          "name": "LPM_Thief_Seq04_03_FX",
+          "vertices": 315,
+          "triangles": 606,
+          "position_max_error": 4.8209999988557684e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1
+        }
+      ],
+      "fgx_sha256": "4a0fdaf650df910a8d347ee8b45e89f207d4c2e83a64503c90909173281f95bb"
+    },
+    {
+      "name": "LPM_Thief_Seq09_05",
+      "bones": 63,
+      "bone_hierarchy_equal": true,
+      "meshes": [
+        {
+          "name": "LPM_Thief_Seq09_05_Body",
+          "vertices": 1466,
+          "triangles": 2764,
+          "position_max_error": 4.9619999998640196e-05,
+          "uv_max_error": 0.0,
+          "max_influences": 2
+        }
+      ],
+      "fgx_sha256": "9c0eb14e3c6aa82d017b56e2ce55ceea5ca414588f30091191a68aabffb8d288"
+    }
+  ],
+  "cooked_pixel_checks": [
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.06892903645833333
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.06892903645833333
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.036458333333333336
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.036458333333333336
+    },
+    {
+      "model": "BlackEmperor_Seq00",
+      "mesh": "LPM_BlackEmperor_Seq00_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.22395833333333334
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.22395833333333334
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq02_01",
+      "mesh": "LPM_BlackEmperor_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.22395833333333334
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.22395833333333334
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq04_03",
+      "mesh": "LPM_BlackEmperor_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.040354410807291664
+    },
+    {
+      "model": "BlackEmperor_Seq09_05",
+      "mesh": "LPM_BlackEmperor_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "BlackEmperor_Seq09_05",
+      "mesh": "LPM_BlackEmperor_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "BlackEmperor_Seq09_05",
+      "mesh": "LPM_BlackEmperor_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "BlackEmperor_Seq09_05",
+      "mesh": "LPM_BlackEmperor_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.07301839192708333
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.07301839192708333
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.03125
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.03125
+    },
+    {
+      "model": "Perfect_Seq00",
+      "mesh": "LPM_Perfect_Seq00_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.21875
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.21875
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq02_01",
+      "mesh": "LPM_Perfect_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.21875
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.21875
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq04_03",
+      "mesh": "LPM_Perfect_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.051259358723958336
+    },
+    {
+      "model": "Perfect_Seq09_05",
+      "mesh": "LPM_Perfect_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.21875
+    },
+    {
+      "model": "Perfect_Seq09_05",
+      "mesh": "LPM_Perfect_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Perfect_Seq09_05",
+      "mesh": "LPM_Perfect_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.21875
+    },
+    {
+      "model": "Perfect_Seq09_05",
+      "mesh": "LPM_Perfect_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "RedPriest_Seq00",
+      "mesh": "LPM_RedPriest_Seq00_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.08366902669270833
+    },
+    {
+      "model": "RedPriest_Seq00",
+      "mesh": "LPM_RedPriest_Seq00_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq00",
+      "mesh": "LPM_RedPriest_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.08366902669270833
+    },
+    {
+      "model": "RedPriest_Seq00",
+      "mesh": "LPM_RedPriest_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.15625
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.15625
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq02_01",
+      "mesh": "LPM_RedPriest_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.15625
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.15625
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq04_03",
+      "mesh": "LPM_RedPriest_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.057057698567708336
+    },
+    {
+      "model": "RedPriest_Seq09_05",
+      "mesh": "LPM_RedPriest_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.140625
+    },
+    {
+      "model": "RedPriest_Seq09_05",
+      "mesh": "LPM_RedPriest_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "RedPriest_Seq09_05",
+      "mesh": "LPM_RedPriest_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.140625
+    },
+    {
+      "model": "RedPriest_Seq09_05",
+      "mesh": "LPM_RedPriest_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.09019978841145833
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.041473388671875
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.09019978841145833
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.041473388671875
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.046875
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.046875
+    },
+    {
+      "model": "Thief_Seq00",
+      "mesh": "LPM_Thief_Seq00_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.09019978841145833
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.041473388671875
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.09019978841145833
+    },
+    {
+      "model": "Thief_Seq02_01",
+      "mesh": "LPM_Thief_Seq02_01_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.041473388671875
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.063873291015625
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_FX",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.015146891276041666
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.063873291015625
+    },
+    {
+      "model": "Thief_Seq04_03",
+      "mesh": "LPM_Thief_Seq04_03_FX",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.015146891276041666
+    },
+    {
+      "model": "Thief_Seq09_05",
+      "mesh": "LPM_Thief_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "Thief_Seq09_05",
+      "mesh": "LPM_Thief_Seq09_05_Body",
+      "platform": "Windows",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    },
+    {
+      "model": "Thief_Seq09_05",
+      "mesh": "LPM_Thief_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "BaseColor",
+      "mean_pixel_error": 0.203125
+    },
+    {
+      "model": "Thief_Seq09_05",
+      "mesh": "LPM_Thief_Seq09_05_Body",
+      "platform": "MacOS",
+      "channel": "Emissive",
+      "mean_pixel_error": 0.0
+    }
+  ],
+  "cooker": [
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Units.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\\u6587\u660e6\\Civ6_3D_Modeling\\work\\player_model_integration_rc379_20260927\\evidence\\final_cook_ArtDef_Windows_Units.artdef.log"
+    },
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Unit_Bins.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\\u6587\u660e6\\Civ6_3D_Modeling\\work\\player_model_integration_rc379_20260927\\evidence\\final_cook_ArtDef_Windows_Unit_Bins.artdef.log"
+    },
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "PlayerGods.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\\u6587\u660e6\\Civ6_3D_Modeling\\work\\player_model_integration_rc379_20260927\\evidence\\final_cook_ArtDef_Windows_PlayerGods.artdef.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "Windows",
+      "file": "lotm_player_models.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\\u6587\u660e6\\Civ6_3D_Modeling\\work\\player_model_integration_rc379_20260927\\evidence\\final_cook_XLP_Windows_lotm_player_models.xlp.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "MacOS",
+      "file": "lotm_player_models.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\\u6587\u660e6\\Civ6_3D_Modeling\\work\\player_model_integration_rc379_20260927\\evidence\\final_cook_XLP_MacOS_lotm_player_models.xlp.log"
+    }
+  ],
+  "shared_files": {
+    "Windows": [
+      "ANIMATION_Berzerker_DeathA",
+      "ANIMATION_Berzerker_DeathFromHeroAttackA",
+      "ANIMATION_Horseman_BipedalDeathMeleeA",
+      "ANIMATION_Impr_HeroDeath",
+      "ANIMATION_Infantry_DeathB",
+      "ANIMATION_Missionary_Attack",
+      "ANIMATION_Missionary_Backward",
+      "ANIMATION_Missionary_Death",
+      "ANIMATION_Missionary_Forward",
+      "ANIMATION_Missionary_IdleA",
+      "ANIMATION_Missionary_IdleB",
+      "ANIMATION_Missionary_IdleC",
+      "ANIMATION_Missionary_IdleD",
+      "ANIMATION_Missionary_Run",
+      "ANIMATION_Missionary_Run_Stop",
+      "ANIMATION_Pikeman_DeathA",
+      "ANIMATION_Pikeman_DeathB",
+      "ANIMATION_Redcoat_DeathA",
+      "ANIMATION_Redcoat_HeroicA_Death",
+      "ANIMATION_Scout_DeathA",
+      "ANIMATION_Scout_DeathB",
+      "ANIMATION_Slinger_DeathA",
+      "ANIMATION_Spearman_DeathFlyBackA",
+      "ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir",
+      "ANIMATION_Tank_MainGunDeathA",
+      "ANIMATION_UnitHeavy_Death_HitToHeadA",
+      "ANIMATION_UnitMedium_BreathingA",
+      "ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA",
+      "ANIMATION_UnitMedium_Death_LegionHeroAttackA",
+      "ANIMATION_UnitMedium_Death_SamuraiHeroAttackA",
+      "ANIMATION_UnitMedium_ProjectileDeathFlyBackA",
+      "ANIMATION_WarriorMonk_Death",
+      "ANIMATION_WarriorMonk_HeroDeath",
+      "ANIMATION_Warrior_DeathMeleeB",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_Body_BaseColor_LPM_BlackEmperor_Seq00_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_FX_BaseColor_LPM_BlackEmperor_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_Body_BaseColor_LPM_BlackEmperor_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_FX_BaseColor_LPM_BlackEmperor_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_Body_BaseColor_LPM_BlackEmperor_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_FX_BaseColor_LPM_BlackEmperor_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq09_05_Body_BaseColor_LPM_BlackEmperor_Seq09_05_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq00_Body_BaseColor_LPM_Perfect_Seq00_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq00_FX_BaseColor_LPM_Perfect_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_Body_BaseColor_LPM_Perfect_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_FX_BaseColor_LPM_Perfect_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_Body_BaseColor_LPM_Perfect_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_FX_BaseColor_LPM_Perfect_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq09_05_Body_BaseColor_LPM_Perfect_Seq09_05_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq00_FX_BaseColor_LPM_RedPriest_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_Body_BaseColor_LPM_RedPriest_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_FX_BaseColor_LPM_RedPriest_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_Body_BaseColor_LPM_RedPriest_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_FX_BaseColor_LPM_RedPriest_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq09_05_Body_BaseColor_LPM_RedPriest_Seq09_05_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq00_Body_BaseColor_LPM_Thief_Seq00_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq00_FX_BaseColor_LPM_Thief_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_Body_BaseColor_LPM_Thief_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_FX_BaseColor_LPM_Thief_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_Body_BaseColor_LPM_Thief_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_FX_BaseColor_LPM_Thief_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq09_05_Body_BaseColor_LPM_Thief_Seq09_05_Body_TintMask",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq00_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq00_FX_AO",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Emissive",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Gloss",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Metalness",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Normal0",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Normal1",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_AO",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_AO",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_AO",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_AO",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_AO",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_AO",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_AO",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_AO",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq00_Body_AO",
+      "TEXTURE_LPM_Thief_Seq00_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq00_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq00_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq00_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq00_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq00_FX_AO",
+      "TEXTURE_LPM_Thief_Seq00_FX_Emissive",
+      "TEXTURE_LPM_Thief_Seq00_FX_Gloss",
+      "TEXTURE_LPM_Thief_Seq00_FX_Metalness",
+      "TEXTURE_LPM_Thief_Seq00_FX_Normal0",
+      "TEXTURE_LPM_Thief_Seq00_FX_Normal1",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_AO",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_AO",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_AO",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_AO",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_AO",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Normal1"
+    ],
+    "MacOS": [
+      "ANIMATION_Berzerker_DeathA",
+      "ANIMATION_Berzerker_DeathFromHeroAttackA",
+      "ANIMATION_Horseman_BipedalDeathMeleeA",
+      "ANIMATION_Impr_HeroDeath",
+      "ANIMATION_Infantry_DeathB",
+      "ANIMATION_Missionary_Attack",
+      "ANIMATION_Missionary_Backward",
+      "ANIMATION_Missionary_Death",
+      "ANIMATION_Missionary_Forward",
+      "ANIMATION_Missionary_IdleA",
+      "ANIMATION_Missionary_IdleB",
+      "ANIMATION_Missionary_IdleC",
+      "ANIMATION_Missionary_IdleD",
+      "ANIMATION_Missionary_Run",
+      "ANIMATION_Missionary_Run_Stop",
+      "ANIMATION_Pikeman_DeathA",
+      "ANIMATION_Pikeman_DeathB",
+      "ANIMATION_Redcoat_DeathA",
+      "ANIMATION_Redcoat_HeroicA_Death",
+      "ANIMATION_Scout_DeathA",
+      "ANIMATION_Scout_DeathB",
+      "ANIMATION_Slinger_DeathA",
+      "ANIMATION_Spearman_DeathFlyBackA",
+      "ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir",
+      "ANIMATION_Tank_MainGunDeathA",
+      "ANIMATION_UnitHeavy_Death_HitToHeadA",
+      "ANIMATION_UnitMedium_BreathingA",
+      "ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA",
+      "ANIMATION_UnitMedium_Death_LegionHeroAttackA",
+      "ANIMATION_UnitMedium_Death_SamuraiHeroAttackA",
+      "ANIMATION_UnitMedium_ProjectileDeathFlyBackA",
+      "ANIMATION_WarriorMonk_Death",
+      "ANIMATION_WarriorMonk_HeroDeath",
+      "ANIMATION_Warrior_DeathMeleeB",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_Body_BaseColor_LPM_BlackEmperor_Seq00_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq00_FX_BaseColor_LPM_BlackEmperor_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_Body_BaseColor_LPM_BlackEmperor_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq02_01_FX_BaseColor_LPM_BlackEmperor_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_Body_BaseColor_LPM_BlackEmperor_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq04_03_FX_BaseColor_LPM_BlackEmperor_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_BlackEmperor_Seq09_05_Body_BaseColor_LPM_BlackEmperor_Seq09_05_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq00_Body_BaseColor_LPM_Perfect_Seq00_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq00_FX_BaseColor_LPM_Perfect_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_Body_BaseColor_LPM_Perfect_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq02_01_FX_BaseColor_LPM_Perfect_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_Body_BaseColor_LPM_Perfect_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq04_03_FX_BaseColor_LPM_Perfect_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Perfect_Seq09_05_Body_BaseColor_LPM_Perfect_Seq09_05_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq00_FX_BaseColor_LPM_RedPriest_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_Body_BaseColor_LPM_RedPriest_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq02_01_FX_BaseColor_LPM_RedPriest_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_Body_BaseColor_LPM_RedPriest_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq04_03_FX_BaseColor_LPM_RedPriest_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_RedPriest_Seq09_05_Body_BaseColor_LPM_RedPriest_Seq09_05_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq00_Body_BaseColor_LPM_Thief_Seq00_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq00_FX_BaseColor_LPM_Thief_Seq00_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_Body_BaseColor_LPM_Thief_Seq02_01_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq02_01_FX_BaseColor_LPM_Thief_Seq02_01_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_Body_BaseColor_LPM_Thief_Seq04_03_Body_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq04_03_FX_BaseColor_LPM_Thief_Seq04_03_FX_TintMask",
+      "TEXTURE_DiffuseTint_LPM_Thief_Seq09_05_Body_BaseColor_LPM_Thief_Seq09_05_Body_TintMask",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq00_Body_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq00_FX_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_AO",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_BlackEmperor_Seq09_05_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq00_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq00_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq00_FX_AO",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Emissive",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Gloss",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Metalness",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Normal0",
+      "TEXTURE_LPM_Perfect_Seq00_FX_Normal1",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_AO",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_Perfect_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_AO",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_Perfect_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_AO",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_Perfect_Seq09_05_Body_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_AO",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq00_FX_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_AO",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_AO",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_AO",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_AO",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_AO",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_RedPriest_Seq09_05_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq00_Body_AO",
+      "TEXTURE_LPM_Thief_Seq00_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq00_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq00_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq00_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq00_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq00_FX_AO",
+      "TEXTURE_LPM_Thief_Seq00_FX_Emissive",
+      "TEXTURE_LPM_Thief_Seq00_FX_Gloss",
+      "TEXTURE_LPM_Thief_Seq00_FX_Metalness",
+      "TEXTURE_LPM_Thief_Seq00_FX_Normal0",
+      "TEXTURE_LPM_Thief_Seq00_FX_Normal1",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_AO",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq02_01_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_AO",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Emissive",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Gloss",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Metalness",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Normal0",
+      "TEXTURE_LPM_Thief_Seq02_01_FX_Normal1",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_AO",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq04_03_Body_Normal1",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_AO",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Emissive",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Gloss",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Metalness",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Normal0",
+      "TEXTURE_LPM_Thief_Seq04_03_FX_Normal1",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_AO",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Emissive",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Gloss",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Metalness",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Normal0",
+      "TEXTURE_LPM_Thief_Seq09_05_Body_Normal1"
+    ]
+  },
+  "package_hashes": {
+    "Windows": "d046bb78e5187bccb25ebe2efe4465b25918124c6ec459a585ef57be63ff7c95",
+    "MacOS": "d046bb78e5187bccb25ebe2efe4465b25918124c6ec459a585ef57be63ff7c95"
+  },
+  "in_game_verified": false,
+  "multiplayer_verified": false
+}

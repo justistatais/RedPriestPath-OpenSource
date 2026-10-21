@@ -3,6 +3,9 @@ from pathlib import Path
 import os,sqlite3,sys,struct,unittest,xml.etree.ElementTree as ET,zlib
 ROOT=Path(__file__).resolve().parents[1]
 DB=Path(sys.argv.pop(1)) if len(sys.argv)>1 and not sys.argv[1].startswith('-') else Path(os.environ['LOCALAPPDATA'])/"Firaxis Games/Sid Meier's Civilization VI/Cache/DebugGameplay.sqlite"
+# A shared selected snapshot survives positional-argument consumption by imported fixtures.
+if os.environ.get("LOTM_TEST_GAMEPLAY_DATABASE"):
+    DB=Path(os.environ["LOTM_TEST_GAMEPLAY_DATABASE"])
 
 def database():
     db=sqlite3.connect(':memory:'); db.create_function('Make_Hash',1,lambda v:zlib.crc32(str(v).encode()))

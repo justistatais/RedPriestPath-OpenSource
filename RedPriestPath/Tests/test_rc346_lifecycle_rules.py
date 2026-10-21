@@ -23,6 +23,9 @@ import zlib
 ROOT = Path(__file__).resolve().parents[1]
 sys.dont_write_bytecode = True
 DATABASE = Path(os.environ.get("LOCALAPPDATA", "")) / "Firaxis Games" / "Sid Meier's Civilization VI" / "Cache" / "DebugGameplay.sqlite"
+# A shared selected snapshot survives positional-argument consumption by imported fixtures.
+if os.environ.get("LOTM_TEST_GAMEPLAY_DATABASE"):
+    DATABASE=Path(os.environ["LOTM_TEST_GAMEPLAY_DATABASE"])
 BASELINE = ROOT.parent / "dist/RedPriestPath-0.1.0-rc.345.zip"
 if len(sys.argv) > 1 and not sys.argv[1].startswith("-"):
     DATABASE = Path(sys.argv.pop(1))

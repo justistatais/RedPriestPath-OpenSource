@@ -1,0 +1,13 @@
+-- Separate promotion class: these markers cannot be selected in the hero promotion tree.
+INSERT INTO Types (Type, Kind) VALUES
+ ('PROMOTION_CLASS_LPM_VISUAL', 'KIND_PROMOTION_CLASS'),
+ ('PROMOTION_LPM_TIER_1', 'KIND_PROMOTION'),
+ ('PROMOTION_LPM_TIER_2', 'KIND_PROMOTION'),
+ ('PROMOTION_LPM_TIER_3', 'KIND_PROMOTION');
+INSERT INTO UnitPromotionClasses (PromotionClassType, Name)
+ VALUES ('PROMOTION_CLASS_LPM_VISUAL', 'LOC_LPM_VISUAL_CLASS');
+INSERT INTO UnitPromotions (UnitPromotionType, Name, Description, Level, PromotionClass) VALUES
+ ('PROMOTION_LPM_TIER_1', 'LOC_LPM_TIER_1', 'LOC_LPM_VISUAL_DESCRIPTION', 1, 'PROMOTION_CLASS_LPM_VISUAL'),
+ ('PROMOTION_LPM_TIER_2', 'LOC_LPM_TIER_2', 'LOC_LPM_VISUAL_DESCRIPTION', 1, 'PROMOTION_CLASS_LPM_VISUAL'),
+ ('PROMOTION_LPM_TIER_3', 'LOC_LPM_TIER_3', 'LOC_LPM_VISUAL_DESCRIPTION', 1, 'PROMOTION_CLASS_LPM_VISUAL');
+-- No modifiers, stats, XP, abilities or unit replacement.

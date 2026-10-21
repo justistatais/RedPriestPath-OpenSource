@@ -15,6 +15,9 @@ from generate_startup_trace import strip_trace
 
 ROOT=Path(__file__).resolve().parents[1]
 DATABASE=Path(sys.argv.pop(1)) if len(sys.argv)>1 and not sys.argv[1].startswith('-') else Path(os.environ['LOCALAPPDATA'])/'Firaxis Games/Sid Meier\'s Civilization VI/Cache/DebugGameplay.sqlite'
+# A shared selected snapshot survives positional-argument consumption by imported fixtures.
+if os.environ.get("LOTM_TEST_GAMEPLAY_DATABASE"):
+    DATABASE=Path(os.environ["LOTM_TEST_GAMEPLAY_DATABASE"])
 SOURCE=(ROOT/'Scripts/LOTM_RESCUE_RuntimeEvents.lua').read_text(encoding='utf-8')
 SEAL='ABILITY_LOTM_RESCUE_EARLY_SEAL'
 SETUP=r'''

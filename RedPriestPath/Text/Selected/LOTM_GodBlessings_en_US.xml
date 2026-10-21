@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+ <BaseGameText>
+  <Replace Tag="LOC_LOTM_STORM_NAME"><Text>Lightning Storm</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_DESCRIPTION"><Text>The Lord of Storms' blessing grants Lightning Storm charges. Choose an explored tile and confirm to cast. A successful impact spends one charge; unused charges never expire.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_TOOLTIP"><Text>Lightning Storm: {1_Num} charges.[NEWLINE]Click to select an explored tile, preview the blast and confirm. Normal nuclear damage to the target and adjacent tiles; no fallout.[NEWLINE]Each storm blessing grants one charge. Cancelling preserves it.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_TARGET_HINT"><Text>Select a target and confirm: normal nuclear damage, radius 1, no fallout. Cancel aiming to keep the charge.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_CANCEL"><Text>Cancel Aiming</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_CHARGE"><Text>No storm blessing available.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NOT_YOUR_TURN"><Text>Cast during your own turn.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_CAPITAL"><Text>A capital is required to aim.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NATIVE_UNAVAILABLE"><Text>Strike preparation failed. The charge is preserved.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_INVENTORY_BUSY"><Text>The previous strike is still resolving. Try again shortly.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_CARRIER"><Text>Unable to start aiming. The charge is preserved.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_TARGETS"><Text>There are no valid targets. The charge is preserved.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_NO_ORIGIN"><Text>No launch site is available near the capital. The charge is preserved.</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_FULL"><Text>Gain one Lightning Storm charge. Use the thunder badge left of the notification column to target a tile. Normal nuclear damage, radius 1, no fallout. The charge lasts until used.</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_6_HALF"><Text>Gain one Lightning Storm charge. Use the thunder badge left of the notification column to target a tile. Normal nuclear damage, radius 1, no fallout. The charge lasts until used.</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_FULL"><Text>Gain one Lightning Storm charge. Use the thunder badge left of the notification column to target a tile. Normal nuclear damage, radius 1, no fallout. The charge lasts until used.</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_10_HALF"><Text>Gain one Lightning Storm charge. Use the thunder badge left of the notification column to target a tile. Normal nuclear damage, radius 1, no fallout. The charge lasts until used.</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_FULL"><Text>Gain one Lightning Storm charge. Use the thunder badge left of the notification column to target a tile. Normal nuclear damage, radius 1, no fallout. The charge lasts until used.</Text></Replace>
+  <Replace Tag="LOC_LOTM_CHURCH_BLESS_STORM_15_HALF"><Text>Gain one Lightning Storm charge. Use the thunder badge left of the notification column to target a tile. Normal nuclear damage, radius 1, no fallout. The charge lasts until used.</Text></Replace>
+   <Replace Tag="LOC_LOTM_STORM_CONFIRM"><Text>Unleash Lightning Storm here?[NEWLINE]The Lord of Storms will unleash his might to slay enemies within range.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_CONFIRM_CANCEL"><Text>Cancel</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_CONFIRM_FIRE"><Text>Unleash Storm</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_WAR_REQUIRED"><Text>The target includes a civilization that is not at war. Confirm the war declaration and try again. Your charge is preserved.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_IMPACT_FAILED"><Text>The storm impact is incomplete. Your charge has not been spent. Click the skill again to retry; details are in the log.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_ERROR_STALE_REQUEST"><Text>This aiming session has expired. Choose a target again. Your charge is preserved.</Text></Replace>
+  <Replace Tag="LOC_LOTM_STORM_RESCUE_OUTER_HINT"><Text>Redemption mode: a storm blessing from each 10/15-envoy oracle grants one Lightning Storm charge that lasts until used. The Outer God takes at most 20 damage per cast. Minions and other targets follow normal nuclear damage rules.</Text></Replace>
+ </BaseGameText>
+</GameData>

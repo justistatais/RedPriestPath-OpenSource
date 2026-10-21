@@ -1,0 +1,713 @@
+{
+  "version": "0.1.0-rc.378",
+  "resource": 410,
+  "files": {
+    "ArtDefs/Unit_Bins.artdef": "3ed457f3eb67e52f20592b55fb84fdcf68acc573ca843fd9268b991b8df8e44b",
+    "ArtDefs/Units.artdef": "76f16d961590c1043e3b59fc339011e74f07f264a6622833fb160fef34891a63",
+    "LOTMModelsV4.dep": "2e7c25d3b64e3a3d688772c0ba7b54262550845b2cd64071a2c1192cd72b11d0",
+    "Platforms/MacOS/BLPs/LOTMModelsV4.blp": "a8ba9b525d18a75e3000cc91447f73d5649ffd599c5746479d0c214a12e83d2d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_AircraftCarrier_IdleA": "6b2bfe9b2a8a3c1841ae3f04d5ab65152dc9df38f5609587c3991790a8f5c480",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathA": "44f9da700fb1aeed722b3f0f0bf91fecb45b5ec4560b4948eb9a3ac2a549cd67",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathFromHeroAttackA": "8fe91889e923a91727798fbb57aa7b01459e6cb7c9f725c6d8c268d543661ec5",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_AA": "ec90d6dde76f0582e926f6ef468eac273b3605f7b6bb7de977d060c16258cf61",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_City_2hands": "673be1bfe7881185dfded0e8e6e0b114abeba8b3328ae467343424fcd15f8afb",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Inf": "2685dd07a452281ecb944463c83674f1bc2ecd0754dfa729ac7f066108458879",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Ships": "e6cc0cf291e531b4e453ec599890f399408db0536e80de8c3b27f66c20c8ebcb",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Vehicle": "8e109777d266c63e66878a435a6c7a42acf9367c217dcdbb3eb73fe33c3a8f98",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Idle1": "0099c5e47b0a7e65c1fcf901153fe0a283455afec2ff0ddc0f64cec73c6756d6",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Forward": "e1fef77cc5293c28205fe7e09a151d90b31981b21f1727191dc5b12959c5f5cf",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Left": "fae85d64d291c051e7e7cb6fa60eb8f6b4434961c1a699d08b7dc8a6a962c902",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Right": "a1aec4103e9951f59ad4e9f70966b8494954a9ad1d09aeb9a104d78375d45deb",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Death": "552674c0cbc9ef30efbab8da45829053b397c7ed206b9d1981324a6646db7897",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Def_Inf": "eca5ddc946219e461e656937ebd5e99f09ae55b993c86d5dec19f91066c2ebb4",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_1": "d4c628fb8e30cdf5d525475f5b60b9431d94301dfb1478c1f746a6341b2e928f",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_2": "48434230e568605f06fe84cee98e09d7154b767978abc4f46c24489604838a0a",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_End": "ad0a53498a278de90b21c69f5ea038f61dd6305bb89b3fc2b2621f9766c17564",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Middle_Loop": "dbea40d6c3e3d5c431268725ab8faace38566e96529371bfb4874365d5c194a1",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Start": "c6aed2d2f5d6afd27d8e3706d10ea838ec58cc6c8a57725343d144c43b1da536",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_GDR_Walk_Forward": "5c451152171d0aad15349e51b6cfe12385176db3af138c857320324fee9cac8f",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Horseman_BipedalDeathMeleeA": "5ba564ed6599091ecc5ada3e960c8b81e6f441aa5ed48d622837c31896d87115",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Impr_HeroDeath": "1441de6ec0e2e3539d3d7e02f72c2a97abbe151e4de61232319e09a26d8e222a",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Infantry_DeathB": "c363832c0b64bb69b8c232e2378e985d61bac8efac82d0281df726096d2b4dcf",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Attack": "9a74a0cd0d296fd43f79025b22ba9e626fba84fcab671debc344a9c656428655",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Backward": "bcd8bb1ace6fcd6c6ed23e1befc9c2ca67e99761b25a08f477678056bac7a108",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Death": "d7dba340d050b5f0acc72956fa1924fca12f6321fb423dbe5507a629f0a94ada",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Forward": "7c676c2710199123b51aa039957a1dca34814faa189ead46ec6c405fc5eeed28",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleA": "7a7df6b9570c9b742b000cced298a606dc64f31a124b8ae26999c48437f573e5",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleB": "c78f61e5da4f3c08044dc5b842c5daebcb33f27f3ff68dac80436040c8733bdd",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleC": "99eb7b8530dbfe263dd842674aa964e74000f4eca8f71c0999e17358b0d2799d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleD": "7d968032d813533c19d807671230d21742fedd5bde30fbfd5097772ec35026fd",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Run": "a136836d752de4d176b0cb85bcfee9f2eff0429dff0d799e421c6374934d2420",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Missionary_Run_Stop": "77e323715889699ff83e314bf346ddebc5d4a800f89f4e50303d59ae9e64447d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathA": "d640fc3f9db3cda3c1f6a3879d1de99781af931ad5fbd3e1facd96c34ae2f7ec",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathB": "17cb99eeae03e5f1ab8ab8e65e2cf35267d9f8435648cbb7696db21eed3ae295",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Redcoat_DeathA": "fe8af08f82a55c57a564cf3df25d4e7733891f76d93ca77bb61c7227cdceaafe",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Redcoat_HeroicA_Death": "6c4b00df87a98c7936a77a19be35dd96f045e6bdc0690218adcfbbd52a086083",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Scout_DeathA": "7f69f28792d3de6806304fec23dad2e16590347cb95b97accb9d6926fcc8cba3",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Scout_DeathB": "b87455a356805c3cb56c671227a0f3f9343468ac406d7d3646bdfb2c1a12972f",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Slinger_DeathA": "7e76e736c9399ee1a29cfea357a499275037ded477b67d981ac5ddf95837606c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFlyBackA": "212ae308cd856fd2a28ea0c9a8618f398a919a08fa916724bc326b66b2114da7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir": "1b24d817cccbdae006193b768138177e61507719b6cc45f126c2af4585d41ed3",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Tank_MainGunDeathA": "57ea10456ac152a9e1b284fa5deb2fb8e11a02de10d4ea083817c0ef51e4ae6c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitHeavy_Death_HitToHeadA": "c2cfd0988a249216d6755e5882fd48e690fae286401eccae778bab5125a99028",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_BreathingA": "6c15c316afa00b874621c3fc47ac80ba5e68feb4945e0960387f4d1ec26ec081",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA": "7f86387e9f4897f1b09a333d2c7cdd0ca5d0b335a3ec0380a1671cbf3cc08d2b",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_LegionHeroAttackA": "48ed3b5f32e223bdb0149368c3e18829ec6761f2dd6b0c5b2f8b5a301f142ed4",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_SamuraiHeroAttackA": "571eb1d9c8da337f70b6bf16754587a294528356f49f2def5c158da4bdd6a984",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_UnitMedium_ProjectileDeathFlyBackA": "50b396958a5e4f449d39036155ed817dd23538a70447665c98c4cd58cfab9130",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_Death": "fb628e3076a7a7b4384907cd0f0f6502a7e622abb9017b7e4c64e6c1c11e0c61",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_HeroDeath": "b9542d88f5566e1e62fd6af327154de13f69c42da8cbb7ef13a0f850d5ebfb93",
+    "Platforms/MacOS/BLPs/SHARED_DATA/ANIMATION_Warrior_DeathMeleeB": "3ed359dbea327e3322b775be52f7c9e0add6b5aadc983f53c6d2211116ad408a",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint": "a6294ef08b3f3241da6ad98728c4e58270774947923358b67e0f0b24828cf972",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_BlackEmperor_Body_BaseColor_LOTM4_NoTint": "d5782016190af86eee4a54f580e94c2ab88471baf7df4a2371586415b186dcea",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Fool_Body_BaseColor_LOTM4_NoTint": "36ded90c62d324610a386b874fb86398c9b20a8ad5c41e622d2832be9892541a",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Night_Body_BaseColor_LOTM4_NoTint": "fd2c1e60b6208911961cf7b21537fa56560fd9ed5f67bd7b027d162aba14108d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_OuterGod_Body_BaseColor_LOTM4_NoTint": "4117738f0a2c0a13bbcf0d4f3c853b0989bc0f317c09779d086ea06eb94a923c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Perfect_Body_BaseColor_LOTM4_NoTint": "7eff69bce3ecfea14415e4e56a2d75de257902f1853d5b694f284fbed2015bde",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_RedPriest_Body_BaseColor_LOTM4_NoTint": "7784909a2db24b7aa64da011c83725353356b37ec6272f29b5049779d3100c7d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Storm_Body_BaseColor_LOTM4_NoTint": "93160603141b0bf115d1ff6a68b267db7bb6ea9f35a05be38351e607413ed8c0",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_AO": "ba48ae98ee982068144016bbe7a73206c8c997c3cd6380445555c6751240946b",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Emissive": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Metalness": "7741606afaf48b93de4fbfc70ede1503112458e4fdccc8b7e8fedd31ef142692",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal0": "a878c522f169815061f9b47da0f9d49bd8b3909cea1453d47824a7d2885f32ed",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal1": "5db3ac1ff29ed6ddca850f63af3d60f8d24e36163ec172a4edf7046131b27169",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_AO": "ba48ae98ee982068144016bbe7a73206c8c997c3cd6380445555c6751240946b",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Emissive": "4ae00a5a84648b5e29807a9c701ec4c43a5cd34eca9894bef66f136d0ce3239f",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Metalness": "a34cb6b8780ecd6af1d703b61dd2f4fae540b48f1d9ff096d0e1eba281ee2644",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal0": "a878c522f169815061f9b47da0f9d49bd8b3909cea1453d47824a7d2885f32ed",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal1": "5db3ac1ff29ed6ddca850f63af3d60f8d24e36163ec172a4edf7046131b27169",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_BlackEmperor_Body_Emissive": "bcf2ef0c31bcce58279bc0e446f00c514788b19d302ad096927c68a3a177141d",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Fool_Body_Emissive": "8c4ce6f1863c57bc8f5fff3dca16cd70062d6c3ee83a02381468281c9aabfee0",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Night_Body_Emissive": "51185d71a175bdd21369300d6e8e0936bf2957cc484c643293c280f0fb250d48",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_OuterGod_Body_Emissive": "597f5950e2d9190022355e66478bbca8b36cf97fddfd230dc2ae9656f03d1c4b",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Perfect_Body_Emissive": "f13cfb5e80a2d643a05154e7c185bbf51306f6bc639cf7c16807ded0afd6437b",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_RedPriest_Body_Emissive": "84b2775b2154c4b6cd54fb1faf4c80f89c7d933e5ca7f3b15d9e4a3ab19b09ed",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_AO": "ba48ae98ee982068144016bbe7a73206c8c997c3cd6380445555c6751240946b",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Emissive": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Metalness": "7741606afaf48b93de4fbfc70ede1503112458e4fdccc8b7e8fedd31ef142692",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal0": "a878c522f169815061f9b47da0f9d49bd8b3909cea1453d47824a7d2885f32ed",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal1": "5db3ac1ff29ed6ddca850f63af3d60f8d24e36163ec172a4edf7046131b27169",
+    "Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_LOTM4_Storm_Body_Emissive": "8d30ecac1792239992ad92188b10a39fe7ef569b00819c50ca0285bc5839f387",
+    "Platforms/Windows/BLPs/LOTMModelsV4.blp": "a8ba9b525d18a75e3000cc91447f73d5649ffd599c5746479d0c214a12e83d2d",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_AircraftCarrier_IdleA": "6b2bfe9b2a8a3c1841ae3f04d5ab65152dc9df38f5609587c3991790a8f5c480",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathA": "44f9da700fb1aeed722b3f0f0bf91fecb45b5ec4560b4948eb9a3ac2a549cd67",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Berzerker_DeathFromHeroAttackA": "8fe91889e923a91727798fbb57aa7b01459e6cb7c9f725c6d8c268d543661ec5",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_AA": "ec90d6dde76f0582e926f6ef468eac273b3605f7b6bb7de977d060c16258cf61",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_City_2hands": "673be1bfe7881185dfded0e8e6e0b114abeba8b3328ae467343424fcd15f8afb",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Inf": "2685dd07a452281ecb944463c83674f1bc2ecd0754dfa729ac7f066108458879",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Ships": "e6cc0cf291e531b4e453ec599890f399408db0536e80de8c3b27f66c20c8ebcb",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Attack_Vehicle": "8e109777d266c63e66878a435a6c7a42acf9367c217dcdbb3eb73fe33c3a8f98",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Idle1": "0099c5e47b0a7e65c1fcf901153fe0a283455afec2ff0ddc0f64cec73c6756d6",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Forward": "e1fef77cc5293c28205fe7e09a151d90b31981b21f1727191dc5b12959c5f5cf",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Left": "fae85d64d291c051e7e7cb6fa60eb8f6b4434961c1a699d08b7dc8a6a962c902",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Combat_Walk_Turn_Right": "a1aec4103e9951f59ad4e9f70966b8494954a9ad1d09aeb9a104d78375d45deb",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Death": "552674c0cbc9ef30efbab8da45829053b397c7ed206b9d1981324a6646db7897",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Def_Inf": "eca5ddc946219e461e656937ebd5e99f09ae55b993c86d5dec19f91066c2ebb4",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_1": "d4c628fb8e30cdf5d525475f5b60b9431d94301dfb1478c1f746a6341b2e928f",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Idle_2": "48434230e568605f06fe84cee98e09d7154b767978abc4f46c24489604838a0a",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_End": "ad0a53498a278de90b21c69f5ea038f61dd6305bb89b3fc2b2621f9766c17564",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Middle_Loop": "dbea40d6c3e3d5c431268725ab8faace38566e96529371bfb4874365d5c194a1",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Jump_Start": "c6aed2d2f5d6afd27d8e3706d10ea838ec58cc6c8a57725343d144c43b1da536",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_GDR_Walk_Forward": "5c451152171d0aad15349e51b6cfe12385176db3af138c857320324fee9cac8f",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Horseman_BipedalDeathMeleeA": "5ba564ed6599091ecc5ada3e960c8b81e6f441aa5ed48d622837c31896d87115",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Impr_HeroDeath": "1441de6ec0e2e3539d3d7e02f72c2a97abbe151e4de61232319e09a26d8e222a",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Infantry_DeathB": "c363832c0b64bb69b8c232e2378e985d61bac8efac82d0281df726096d2b4dcf",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Attack": "9a74a0cd0d296fd43f79025b22ba9e626fba84fcab671debc344a9c656428655",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Backward": "bcd8bb1ace6fcd6c6ed23e1befc9c2ca67e99761b25a08f477678056bac7a108",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Death": "d7dba340d050b5f0acc72956fa1924fca12f6321fb423dbe5507a629f0a94ada",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Forward": "7c676c2710199123b51aa039957a1dca34814faa189ead46ec6c405fc5eeed28",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleA": "7a7df6b9570c9b742b000cced298a606dc64f31a124b8ae26999c48437f573e5",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleB": "c78f61e5da4f3c08044dc5b842c5daebcb33f27f3ff68dac80436040c8733bdd",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleC": "99eb7b8530dbfe263dd842674aa964e74000f4eca8f71c0999e17358b0d2799d",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_IdleD": "7d968032d813533c19d807671230d21742fedd5bde30fbfd5097772ec35026fd",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Run": "a136836d752de4d176b0cb85bcfee9f2eff0429dff0d799e421c6374934d2420",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Missionary_Run_Stop": "77e323715889699ff83e314bf346ddebc5d4a800f89f4e50303d59ae9e64447d",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathA": "d640fc3f9db3cda3c1f6a3879d1de99781af931ad5fbd3e1facd96c34ae2f7ec",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Pikeman_DeathB": "17cb99eeae03e5f1ab8ab8e65e2cf35267d9f8435648cbb7696db21eed3ae295",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Redcoat_DeathA": "fe8af08f82a55c57a564cf3df25d4e7733891f76d93ca77bb61c7227cdceaafe",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Redcoat_HeroicA_Death": "6c4b00df87a98c7936a77a19be35dd96f045e6bdc0690218adcfbbd52a086083",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Scout_DeathA": "7f69f28792d3de6806304fec23dad2e16590347cb95b97accb9d6926fcc8cba3",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Scout_DeathB": "b87455a356805c3cb56c671227a0f3f9343468ac406d7d3646bdfb2c1a12972f",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Slinger_DeathA": "7e76e736c9399ee1a29cfea357a499275037ded477b67d981ac5ddf95837606c",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFlyBackA": "212ae308cd856fd2a28ea0c9a8618f398a919a08fa916724bc326b66b2114da7",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir": "1b24d817cccbdae006193b768138177e61507719b6cc45f126c2af4585d41ed3",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Tank_MainGunDeathA": "57ea10456ac152a9e1b284fa5deb2fb8e11a02de10d4ea083817c0ef51e4ae6c",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitHeavy_Death_HitToHeadA": "c2cfd0988a249216d6755e5882fd48e690fae286401eccae778bab5125a99028",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_BreathingA": "6c15c316afa00b874621c3fc47ac80ba5e68feb4945e0960387f4d1ec26ec081",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA": "7f86387e9f4897f1b09a333d2c7cdd0ca5d0b335a3ec0380a1671cbf3cc08d2b",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_LegionHeroAttackA": "48ed3b5f32e223bdb0149368c3e18829ec6761f2dd6b0c5b2f8b5a301f142ed4",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_Death_SamuraiHeroAttackA": "571eb1d9c8da337f70b6bf16754587a294528356f49f2def5c158da4bdd6a984",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_UnitMedium_ProjectileDeathFlyBackA": "50b396958a5e4f449d39036155ed817dd23538a70447665c98c4cd58cfab9130",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_Death": "fb628e3076a7a7b4384907cd0f0f6502a7e622abb9017b7e4c64e6c1c11e0c61",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_WarriorMonk_HeroDeath": "b9542d88f5566e1e62fd6af327154de13f69c42da8cbb7ef13a0f850d5ebfb93",
+    "Platforms/Windows/BLPs/SHARED_DATA/ANIMATION_Warrior_DeathMeleeB": "3ed359dbea327e3322b775be52f7c9e0add6b5aadc983f53c6d2211116ad408a",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint": "a6294ef08b3f3241da6ad98728c4e58270774947923358b67e0f0b24828cf972",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_BlackEmperor_Body_BaseColor_LOTM4_NoTint": "d5782016190af86eee4a54f580e94c2ab88471baf7df4a2371586415b186dcea",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Fool_Body_BaseColor_LOTM4_NoTint": "36ded90c62d324610a386b874fb86398c9b20a8ad5c41e622d2832be9892541a",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Night_Body_BaseColor_LOTM4_NoTint": "fd2c1e60b6208911961cf7b21537fa56560fd9ed5f67bd7b027d162aba14108d",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_OuterGod_Body_BaseColor_LOTM4_NoTint": "4117738f0a2c0a13bbcf0d4f3c853b0989bc0f317c09779d086ea06eb94a923c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Perfect_Body_BaseColor_LOTM4_NoTint": "7eff69bce3ecfea14415e4e56a2d75de257902f1853d5b694f284fbed2015bde",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_RedPriest_Body_BaseColor_LOTM4_NoTint": "7784909a2db24b7aa64da011c83725353356b37ec6272f29b5049779d3100c7d",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint": "ade6a8891c5df70498d2695a1ecb5379ddd9622c25597a486366861c9724d055",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_LOTM4_Storm_Body_BaseColor_LOTM4_NoTint": "93160603141b0bf115d1ff6a68b267db7bb6ea9f35a05be38351e607413ed8c0",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_AO": "ba48ae98ee982068144016bbe7a73206c8c997c3cd6380445555c6751240946b",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Emissive": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Metalness": "7741606afaf48b93de4fbfc70ede1503112458e4fdccc8b7e8fedd31ef142692",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal0": "a878c522f169815061f9b47da0f9d49bd8b3909cea1453d47824a7d2885f32ed",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_Body_Normal1": "5db3ac1ff29ed6ddca850f63af3d60f8d24e36163ec172a4edf7046131b27169",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_AO": "ba48ae98ee982068144016bbe7a73206c8c997c3cd6380445555c6751240946b",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Emissive": "4ae00a5a84648b5e29807a9c701ec4c43a5cd34eca9894bef66f136d0ce3239f",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Metalness": "a34cb6b8780ecd6af1d703b61dd2f4fae540b48f1d9ff096d0e1eba281ee2644",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal0": "a878c522f169815061f9b47da0f9d49bd8b3909cea1453d47824a7d2885f32ed",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Angel_FX_Normal1": "5db3ac1ff29ed6ddca850f63af3d60f8d24e36163ec172a4edf7046131b27169",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_BlackEmperor_Body_Emissive": "bcf2ef0c31bcce58279bc0e446f00c514788b19d302ad096927c68a3a177141d",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Fool_Body_Emissive": "8c4ce6f1863c57bc8f5fff3dca16cd70062d6c3ee83a02381468281c9aabfee0",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Night_Body_Emissive": "51185d71a175bdd21369300d6e8e0936bf2957cc484c643293c280f0fb250d48",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_OuterGod_Body_Emissive": "597f5950e2d9190022355e66478bbca8b36cf97fddfd230dc2ae9656f03d1c4b",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Perfect_Body_Emissive": "f13cfb5e80a2d643a05154e7c185bbf51306f6bc639cf7c16807ded0afd6437b",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_RedPriest_Body_Emissive": "84b2775b2154c4b6cd54fb1faf4c80f89c7d933e5ca7f3b15d9e4a3ab19b09ed",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_AO": "ba48ae98ee982068144016bbe7a73206c8c997c3cd6380445555c6751240946b",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Emissive": "5671ae8f204a5f5ae263144d03c7766c3062ed90eca44e30c7b0d332dffcd9f7",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Gloss": "888ff5913b20801ad5225219dbfa4756ebc5d83423390bfc99c552da98a2a46c",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Metalness": "7741606afaf48b93de4fbfc70ede1503112458e4fdccc8b7e8fedd31ef142692",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal0": "a878c522f169815061f9b47da0f9d49bd8b3909cea1453d47824a7d2885f32ed",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Saint_Body_Normal1": "5db3ac1ff29ed6ddca850f63af3d60f8d24e36163ec172a4edf7046131b27169",
+    "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_LOTM4_Storm_Body_Emissive": "8d30ecac1792239992ad92188b10a39fe7ef569b00819c50ca0285bc5839f387"
+  },
+  "roundtrip": [
+    {
+      "model": "Angel",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 3.5580000002255474e-05,
+      "bones": 63,
+      "meshes": [
+        {
+          "mesh": "LOTM4_Angel_Body",
+          "vertices": 21346,
+          "triangles": 38000,
+          "position_max_error": 5.000000000165983e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 4,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -24.65369,
+              -56.26319,
+              -0.1480013
+            ],
+            [
+              24.68854,
+              43.67456,
+              159.3434
+            ]
+          ]
+        },
+        {
+          "mesh": "LOTM4_Angel_FX",
+          "vertices": 9872,
+          "triangles": 18000,
+          "position_max_error": 4.999999998744897e-05,
+          "uv_max_error": 5.00000000069889e-07,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -50.29717,
+              -84.80453,
+              1.636829
+            ],
+            [
+              54.42225,
+              84.78313,
+              157.3593
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "BlackEmperor",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_BlackEmperor_Body",
+          "vertices": 972,
+          "triangles": 1160,
+          "position_max_error": 4.999999998744897e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -60.86586,
+              -79.41338,
+              28.08353
+            ],
+            [
+              61.15079,
+              81.02403,
+              277.6376
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Fool",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_Fool_Body",
+          "vertices": 7170,
+          "triangles": 12564,
+          "position_max_error": 4.999999998744897e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -70.07143,
+              -88.09668,
+              19.65117
+            ],
+            [
+              83.47585,
+              96.37333,
+              275.75
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Night",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_Night_Body",
+          "vertices": 5624,
+          "triangles": 10108,
+          "position_max_error": 4.999999998744897e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -98.74586,
+              -86.05406,
+              21.94044
+            ],
+            [
+              74.45315,
+              72.32434,
+              274.3976
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "OuterGod",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_OuterGod_Body",
+          "vertices": 5342,
+          "triangles": 8348,
+          "position_max_error": 4.998000000000502e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -107.3326,
+              -101.07,
+              27.95553
+            ],
+            [
+              81.92838,
+              96.84723,
+              272.7011
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Perfect",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_Perfect_Body",
+          "vertices": 1722,
+          "triangles": 2824,
+          "position_max_error": 4.9850000010565054e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -69.57684,
+              -94.77511,
+              30.745
+            ],
+            [
+              69.57684,
+              94.77509,
+              289.96
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "RedPriest",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_RedPriest_Body",
+          "vertices": 4884,
+          "triangles": 7188,
+          "position_max_error": 4.995000000462824e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -102.6484,
+              -91.66153,
+              23.49945
+            ],
+            [
+              101.3415,
+              88.36836,
+              277.2924
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Saint",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 3.5580000002255474e-05,
+      "bones": 63,
+      "meshes": [
+        {
+          "mesh": "LOTM4_Saint_Body",
+          "vertices": 21346,
+          "triangles": 38000,
+          "position_max_error": 5.000000000165983e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 4,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -24.65369,
+              -56.26319,
+              -0.1480013
+            ],
+            [
+              24.68854,
+              43.67456,
+              159.3434
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Storm",
+      "bone_hierarchy_equal": true,
+      "bind_transform_max_error": 4.970999998477055e-05,
+      "bones": 160,
+      "meshes": [
+        {
+          "mesh": "LOTM4_Storm_Body",
+          "vertices": 5976,
+          "triangles": 8704,
+          "position_max_error": 4.999999998744897e-05,
+          "uv_max_error": 7.000000001866624e-08,
+          "max_influences": 1,
+          "weight_sum": 255,
+          "bounds": [
+            [
+              -105.4644,
+              -79.91247,
+              26.97572
+            ],
+            [
+              66.04038,
+              82.10278,
+              272.154
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "binding_count": 15,
+  "fx": {
+    "emissive": true,
+    "uv_scroll_rate": [
+      0.16,
+      0
+    ],
+    "geometry_animation": "native Missionary bones; Blender object-ring rotation, wing-flap and floating-mote keyframes are not imported",
+    "translucent_veil": "excluded; feather outlines retained"
+  },
+  "material_limit": "Saint/Angel now use all seven maps in RGBA8 input. Seven elemental models retain their resource404 materials; their disabled PBR slots are unchanged.",
+  "in_game_verified": false,
+  "multiplayer_verified": false,
+  "cooker": [
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Units.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\鏂囨槑6\\Civ6_3D_Modeling\\work\\art_fix_rc374_20260926\\evidence\\cook_LOTMModelsV4_ArtDef_Windows_Units.artdef.log"
+    },
+    {
+      "mode": "ArtDef",
+      "platform": "Windows",
+      "file": "Unit_Bins.artdef",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\鏂囨槑6\\Civ6_3D_Modeling\\work\\art_fix_rc374_20260926\\evidence\\cook_LOTMModelsV4_ArtDef_Windows_Unit_Bins.artdef.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "Windows",
+      "file": "lotm_models_v4.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\鏂囨槑6\\Civ6_3D_Modeling\\work\\art_fix_rc374_20260926\\evidence\\cook_LOTMModelsV4_XLP_Windows_lotm_models_v4.xlp.log"
+    },
+    {
+      "mode": "XLP",
+      "platform": "MacOS",
+      "file": "lotm_models_v4.xlp",
+      "returncode": 0,
+      "log": "D:\\codex_tasks\\鏂囨槑6\\Civ6_3D_Modeling\\work\\art_fix_rc374_20260926\\evidence\\cook_LOTMModelsV4_XLP_MacOS_lotm_models_v4.xlp.log"
+    }
+  ],
+  "material_audit": "Art/LOTMArtMaterialAudit_rc378.json",
+  "repaired_materials": {
+    "parts": [
+      "LOTM4_Saint_Body",
+      "LOTM4_Angel_Body",
+      "LOTM4_Angel_FX"
+    ],
+    "channels": [
+      "BaseColor",
+      "Normal",
+      "AO",
+      "Metalness",
+      "Gloss",
+      "Emissive",
+      "TintMask"
+    ],
+    "body_emissive_minimum": 0,
+    "fx_emissive_minimum": 1,
+    "false_emission_uses_actual_shader_color": true
+  },
+  "release_includes_all_cooker_outputs": true,
+  "cooker_shared_files": {
+    "Windows": [
+      "ANIMATION_AircraftCarrier_IdleA",
+      "ANIMATION_Berzerker_DeathA",
+      "ANIMATION_Berzerker_DeathFromHeroAttackA",
+      "ANIMATION_GDR_Attack_AA",
+      "ANIMATION_GDR_Attack_City_2hands",
+      "ANIMATION_GDR_Attack_Inf",
+      "ANIMATION_GDR_Attack_Ships",
+      "ANIMATION_GDR_Attack_Vehicle",
+      "ANIMATION_GDR_Combat_Idle1",
+      "ANIMATION_GDR_Combat_Walk_Forward",
+      "ANIMATION_GDR_Combat_Walk_Turn_Left",
+      "ANIMATION_GDR_Combat_Walk_Turn_Right",
+      "ANIMATION_GDR_Death",
+      "ANIMATION_GDR_Def_Inf",
+      "ANIMATION_GDR_Idle_1",
+      "ANIMATION_GDR_Idle_2",
+      "ANIMATION_GDR_Jump_End",
+      "ANIMATION_GDR_Jump_Middle_Loop",
+      "ANIMATION_GDR_Jump_Start",
+      "ANIMATION_GDR_Walk_Forward",
+      "ANIMATION_Horseman_BipedalDeathMeleeA",
+      "ANIMATION_Impr_HeroDeath",
+      "ANIMATION_Infantry_DeathB",
+      "ANIMATION_Missionary_Attack",
+      "ANIMATION_Missionary_Backward",
+      "ANIMATION_Missionary_Death",
+      "ANIMATION_Missionary_Forward",
+      "ANIMATION_Missionary_IdleA",
+      "ANIMATION_Missionary_IdleB",
+      "ANIMATION_Missionary_IdleC",
+      "ANIMATION_Missionary_IdleD",
+      "ANIMATION_Missionary_Run",
+      "ANIMATION_Missionary_Run_Stop",
+      "ANIMATION_Pikeman_DeathA",
+      "ANIMATION_Pikeman_DeathB",
+      "ANIMATION_Redcoat_DeathA",
+      "ANIMATION_Redcoat_HeroicA_Death",
+      "ANIMATION_Scout_DeathA",
+      "ANIMATION_Scout_DeathB",
+      "ANIMATION_Slinger_DeathA",
+      "ANIMATION_Spearman_DeathFlyBackA",
+      "ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir",
+      "ANIMATION_Tank_MainGunDeathA",
+      "ANIMATION_UnitHeavy_Death_HitToHeadA",
+      "ANIMATION_UnitMedium_BreathingA",
+      "ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA",
+      "ANIMATION_UnitMedium_Death_LegionHeroAttackA",
+      "ANIMATION_UnitMedium_Death_SamuraiHeroAttackA",
+      "ANIMATION_UnitMedium_ProjectileDeathFlyBackA",
+      "ANIMATION_WarriorMonk_Death",
+      "ANIMATION_WarriorMonk_HeroDeath",
+      "ANIMATION_Warrior_DeathMeleeB",
+      "TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_BlackEmperor_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Fool_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Night_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_OuterGod_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Perfect_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_RedPriest_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Storm_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_LOTM4_Angel_Body_AO",
+      "TEXTURE_LOTM4_Angel_Body_Emissive",
+      "TEXTURE_LOTM4_Angel_Body_Gloss",
+      "TEXTURE_LOTM4_Angel_Body_Metalness",
+      "TEXTURE_LOTM4_Angel_Body_Normal0",
+      "TEXTURE_LOTM4_Angel_Body_Normal1",
+      "TEXTURE_LOTM4_Angel_FX_AO",
+      "TEXTURE_LOTM4_Angel_FX_Emissive",
+      "TEXTURE_LOTM4_Angel_FX_Gloss",
+      "TEXTURE_LOTM4_Angel_FX_Metalness",
+      "TEXTURE_LOTM4_Angel_FX_Normal0",
+      "TEXTURE_LOTM4_Angel_FX_Normal1",
+      "TEXTURE_LOTM4_BlackEmperor_Body_Emissive",
+      "TEXTURE_LOTM4_Fool_Body_Emissive",
+      "TEXTURE_LOTM4_Night_Body_Emissive",
+      "TEXTURE_LOTM4_OuterGod_Body_Emissive",
+      "TEXTURE_LOTM4_Perfect_Body_Emissive",
+      "TEXTURE_LOTM4_RedPriest_Body_Emissive",
+      "TEXTURE_LOTM4_Saint_Body_AO",
+      "TEXTURE_LOTM4_Saint_Body_Emissive",
+      "TEXTURE_LOTM4_Saint_Body_Gloss",
+      "TEXTURE_LOTM4_Saint_Body_Metalness",
+      "TEXTURE_LOTM4_Saint_Body_Normal0",
+      "TEXTURE_LOTM4_Saint_Body_Normal1",
+      "TEXTURE_LOTM4_Storm_Body_Emissive"
+    ],
+    "MacOS": [
+      "ANIMATION_AircraftCarrier_IdleA",
+      "ANIMATION_Berzerker_DeathA",
+      "ANIMATION_Berzerker_DeathFromHeroAttackA",
+      "ANIMATION_GDR_Attack_AA",
+      "ANIMATION_GDR_Attack_City_2hands",
+      "ANIMATION_GDR_Attack_Inf",
+      "ANIMATION_GDR_Attack_Ships",
+      "ANIMATION_GDR_Attack_Vehicle",
+      "ANIMATION_GDR_Combat_Idle1",
+      "ANIMATION_GDR_Combat_Walk_Forward",
+      "ANIMATION_GDR_Combat_Walk_Turn_Left",
+      "ANIMATION_GDR_Combat_Walk_Turn_Right",
+      "ANIMATION_GDR_Death",
+      "ANIMATION_GDR_Def_Inf",
+      "ANIMATION_GDR_Idle_1",
+      "ANIMATION_GDR_Idle_2",
+      "ANIMATION_GDR_Jump_End",
+      "ANIMATION_GDR_Jump_Middle_Loop",
+      "ANIMATION_GDR_Jump_Start",
+      "ANIMATION_GDR_Walk_Forward",
+      "ANIMATION_Horseman_BipedalDeathMeleeA",
+      "ANIMATION_Impr_HeroDeath",
+      "ANIMATION_Infantry_DeathB",
+      "ANIMATION_Missionary_Attack",
+      "ANIMATION_Missionary_Backward",
+      "ANIMATION_Missionary_Death",
+      "ANIMATION_Missionary_Forward",
+      "ANIMATION_Missionary_IdleA",
+      "ANIMATION_Missionary_IdleB",
+      "ANIMATION_Missionary_IdleC",
+      "ANIMATION_Missionary_IdleD",
+      "ANIMATION_Missionary_Run",
+      "ANIMATION_Missionary_Run_Stop",
+      "ANIMATION_Pikeman_DeathA",
+      "ANIMATION_Pikeman_DeathB",
+      "ANIMATION_Redcoat_DeathA",
+      "ANIMATION_Redcoat_HeroicA_Death",
+      "ANIMATION_Scout_DeathA",
+      "ANIMATION_Scout_DeathB",
+      "ANIMATION_Slinger_DeathA",
+      "ANIMATION_Spearman_DeathFlyBackA",
+      "ANIMATION_Spearman_DeathFromJumpStabFlipUnitInAir",
+      "ANIMATION_Tank_MainGunDeathA",
+      "ANIMATION_UnitHeavy_Death_HitToHeadA",
+      "ANIMATION_UnitMedium_BreathingA",
+      "ANIMATION_UnitMedium_CorkscrewDeathFromSwordsmanHeroA",
+      "ANIMATION_UnitMedium_Death_LegionHeroAttackA",
+      "ANIMATION_UnitMedium_Death_SamuraiHeroAttackA",
+      "ANIMATION_UnitMedium_ProjectileDeathFlyBackA",
+      "ANIMATION_WarriorMonk_Death",
+      "ANIMATION_WarriorMonk_HeroDeath",
+      "ANIMATION_Warrior_DeathMeleeB",
+      "TEXTURE_DiffuseTint_LOTM4_Angel_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Angel_FX_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_BlackEmperor_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Fool_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Night_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_OuterGod_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Perfect_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_RedPriest_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Saint_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_DiffuseTint_LOTM4_Storm_Body_BaseColor_LOTM4_NoTint",
+      "TEXTURE_LOTM4_Angel_Body_AO",
+      "TEXTURE_LOTM4_Angel_Body_Emissive",
+      "TEXTURE_LOTM4_Angel_Body_Gloss",
+      "TEXTURE_LOTM4_Angel_Body_Metalness",
+      "TEXTURE_LOTM4_Angel_Body_Normal0",
+      "TEXTURE_LOTM4_Angel_Body_Normal1",
+      "TEXTURE_LOTM4_Angel_FX_AO",
+      "TEXTURE_LOTM4_Angel_FX_Emissive",
+      "TEXTURE_LOTM4_Angel_FX_Gloss",
+      "TEXTURE_LOTM4_Angel_FX_Metalness",
+      "TEXTURE_LOTM4_Angel_FX_Normal0",
+      "TEXTURE_LOTM4_Angel_FX_Normal1",
+      "TEXTURE_LOTM4_BlackEmperor_Body_Emissive",
+      "TEXTURE_LOTM4_Fool_Body_Emissive",
+      "TEXTURE_LOTM4_Night_Body_Emissive",
+      "TEXTURE_LOTM4_OuterGod_Body_Emissive",
+      "TEXTURE_LOTM4_Perfect_Body_Emissive",
+      "TEXTURE_LOTM4_RedPriest_Body_Emissive",
+      "TEXTURE_LOTM4_Saint_Body_AO",
+      "TEXTURE_LOTM4_Saint_Body_Emissive",
+      "TEXTURE_LOTM4_Saint_Body_Gloss",
+      "TEXTURE_LOTM4_Saint_Body_Metalness",
+      "TEXTURE_LOTM4_Saint_Body_Normal0",
+      "TEXTURE_LOTM4_Saint_Body_Normal1",
+      "TEXTURE_LOTM4_Storm_Body_Emissive"
+    ]
+  }
+}

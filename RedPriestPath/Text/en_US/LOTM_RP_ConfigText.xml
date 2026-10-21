@@ -50,5 +50,14 @@
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_DESCRIPTION" Language="en_US"><Text>Display Lord of Mysteries mod text in Simplified Chinese for this game.</Text></Row>
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_NAME" Language="en_US"><Text>English</Text></Row>
 		<Row Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION" Language="en_US"><Text>Display Lord of Mysteries mod text in English for this game.</Text></Row>
-	</LocalizedText>
+	
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_NAME" Language="en_US"><Text>AI Cult Difficulty</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_DESCRIPTION" Language="en_US"><Text>Normal-mode cult strength. Defaults to Easy, locked when the game starts, and shared from the host in multiplayer.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_NAME" Language="en_US"><Text>Easy</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_DESCRIPTION" Language="en_US"><Text>Preserves the existing cult rules, suited to exploring Pathway progression and the mod.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_NAME" Language="en_US"><Text>Hard</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DESCRIPTION" Language="en_US"><Text>Cult civilizations gain substantial development and military bonuses. Use Pathways, churches and warfare to counter them.</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_NAME" Language="en_US"><Text>Insane</Text></Row>
+ <Row Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DESCRIPTION" Language="en_US"><Text>Cult civilizations gain powerful development, military and sustained warfare bonuses, for experienced players seeking a challenge.</Text></Row>
+</LocalizedText>
 </GameData>

@@ -16,6 +16,7 @@ from luaparser import ast as lua_ast
 from generate_gameplay_bundle import (
     NETWORK_CURRENT_OVERRIDES, NETWORK_NEW_MODULES, NETWORK_RULE_FUNCTION_OVERRIDES,
     collect_network_modules, generate_current, lua_function_span, network_phase_source,
+    read_network_justice_events_source,
     read_network_source, read_rc241_source, read_source,
 )
 from generate_startup_trace import helper_source, strip_trace
@@ -42,7 +43,7 @@ NEW_MODULES = {
     "LOTM_RESCUE_RuntimeEvents",
     "LOTM_Effects",
     "LOTM_MP241_Compat", "LOTM_RESCUE_DirectMonsters",
-    "LOTM_RESCUE_Thief", "LOTM_TP_Thief",
+    "LOTM_RESCUE_Thief", "LOTM_TP_Thief", "LOTM_JUSTICE_Governor", "LOTM_RESCUE_StarGovernor", "LOTM_GodBlessings",
 }
 RULE_FUNCTIONS = {
     "LOTM_RP_Progression": {"OnCityProjectCompleted": "ApplyCityProjectCompleted"},
@@ -75,6 +76,19 @@ def validate_network_rule_sources() -> None:
         if module in NETWORK_CURRENT_OVERRIDES or module in NETWORK_NEW_MODULES:
             continue
         old, routed = read_rc241_source(module), read_network_source(module)
+        if module == "LOTM_WORLD_Events":
+            check(routed == read_network_justice_events_source(),
+                  "shared Counseling delta differs from guarded rc.241 patch")
+            continue
+        if module == "LOTM_AI_Cult_Hanged":
+            expected = ("if not LOTM_MP_TurnSync.IsRescueModeConfigured() then\n"
+                        + read_source(module) + "\nelse\n" + old + "\nend\n")
+            check(routed == expected, "normal Hanged lifecycle delta must preserve the exact rc.241 rescue branch")
+            continue
+        if module == "LOTM_RP_Advanced":
+            routed = routed.replace(
+                'local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = LOTM_MP_TurnSync.IsRescueModeConfigured() and 2000 or 1000;',
+                'local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 2000;')
         if module not in RULE_FUNCTIONS:
             check(routed == old, f"undeclared current changes in rc.241 module: {module}")
             continue

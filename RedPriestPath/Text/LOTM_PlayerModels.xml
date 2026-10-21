@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+ <Row Tag="LOC_LPM_VISUAL_CLASS" Language="zh_Hans_CN"><Text>序列外观</Text></Row>
+ <Row Tag="LOC_LPM_TIER_1" Language="zh_Hans_CN"><Text>圣者形态</Text></Row>
+ <Row Tag="LOC_LPM_TIER_2" Language="zh_Hans_CN"><Text>天使形态</Text></Row>
+ <Row Tag="LOC_LPM_TIER_3" Language="zh_Hans_CN"><Text>神性元素形态</Text></Row>
+ <Row Tag="LOC_LPM_VISUAL_DESCRIPTION" Language="zh_Hans_CN"><Text>随当前序列自动更新的外观，无属性加成。</Text></Row>
+ <Row Tag="LOC_LPM_VISUAL_CLASS" Language="en_US"><Text>Sequence Appearance</Text></Row>
+ <Row Tag="LOC_LPM_TIER_1" Language="en_US"><Text>Saint Form</Text></Row>
+ <Row Tag="LOC_LPM_TIER_2" Language="en_US"><Text>Angel Form</Text></Row>
+ <Row Tag="LOC_LPM_TIER_3" Language="en_US"><Text>Divine Elemental Form</Text></Row>
+ <Row Tag="LOC_LPM_VISUAL_DESCRIPTION" Language="en_US"><Text>Appearance follows the current Sequence. No attribute bonuses.</Text></Row>
+</LocalizedText></GameData>

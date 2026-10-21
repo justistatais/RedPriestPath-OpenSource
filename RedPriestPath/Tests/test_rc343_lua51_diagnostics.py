@@ -195,9 +195,9 @@ assert(run(true,'typed')==3);
 ''', "value,typed")
         self.assertEqual(standard_lua("local value:number=1;;"), "local value=1;;")
 
-    def test_all_39_current_ui_and_standalone_files_compile(self):
+    def test_all_45_current_ui_and_standalone_files_compile(self):
         paths = runtime_files()
-        self.assertEqual(len(paths), 39, "update this explicit coverage count if runtime actions change")
+        self.assertEqual(len(paths), 45, "update this explicit coverage count if runtime actions change")
         for path in paths:
             with self.subTest(file=path.name):
                 self.assertLess(path.stat().st_size, 500_000)
@@ -220,7 +220,7 @@ assert(run(true,'typed')==3);
             for path in targets():
                 # CampAction was first activated in resource 379; historical
                 # controls preserve the original 42 active targets.
-                if path.name in {"LOTM_RESCUE_CampAction.lua", "LOTM_RESCUE_RuntimeEvents.lua"}: continue
+                if path.name in {"LOTM_RESCUE_CampAction.lua", "LOTM_RESCUE_RuntimeEvents.lua", "LOTM_JUSTICE_Story.lua", "LOTM_MS_Governors.lua", "LOTM_GodBlessingFX.lua", "LOTM_StormBlessing.lua", "LOTM_StormWorldInput.lua", "LOTM_RESCUE_GovernorDetailsPanel.lua"}: continue
                 name = "RedPriestPath/" + path.relative_to(ROOT).as_posix()
                 with self.subTest(file=path.name):
                     self.assertLess(bundle.getinfo(name).file_size, 3_000_000)
@@ -236,7 +236,7 @@ assert(run(true,'typed')==3);
             for path in targets():
                 # CampAction was first activated in resource 379; historical
                 # controls preserve the original 42 active targets.
-                if path.name in {"LOTM_RESCUE_CampAction.lua", "LOTM_RESCUE_RuntimeEvents.lua"}: continue
+                if path.name in {"LOTM_RESCUE_CampAction.lua", "LOTM_RESCUE_RuntimeEvents.lua", "LOTM_JUSTICE_Story.lua", "LOTM_MS_Governors.lua", "LOTM_GodBlessingFX.lua", "LOTM_StormBlessing.lua", "LOTM_StormWorldInput.lua", "LOTM_RESCUE_GovernorDetailsPanel.lua"}: continue
                 name = "RedPriestPath/" + path.relative_to(ROOT).as_posix()
                 self.assertLess(bundle.getinfo(name).file_size, 3_000_000)
                 ok, error = self.compile(bundle.read(name).decode("utf-8-sig"), name)

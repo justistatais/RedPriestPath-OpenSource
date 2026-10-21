@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AssetObjects..GameDependencyData>
+	<ID>
+		<name text="LOTMPlayerModels" />
+		<id text="98d41f71-bad7-488a-91de-52776e5a0379" />
+	</ID>
+	<RequiredGameArtIDs>
+		<Element>
+			<name text="Civ6" />
+			<id text="cb2f71b7-843e-4af3-9ca7-992acda9c195" />
+		</Element>
+		<Element>
+			<name text="Expansion2" />
+			<id text="b1b63999-6b16-4dd2-a5b6-eb19794aa8ca" />
+		</Element>
+	</RequiredGameArtIDs>
+	<SystemDependencies>
+		<Element>
+			<ConsumerName text="Units" />
+			<ArtDefDependencyPaths>
+				<Element text="Unit_Bins.artdef" />
+				<Element text="Units.artdef" />
+			</ArtDefDependencyPaths>
+			<LibraryDependencies>
+				<Element text="Unit" />
+				<Element text="VFX" />
+				<Element text="Light" />
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+	</SystemDependencies>
+	<ArtDefDependencies>
+		<Element>
+			<ArtDefPath text="Unit_Bins.artdef" />
+			<ArtDefDependencyPaths />
+		</Element>
+		<Element>
+			<ArtDefPath text="Units.artdef" />
+			<ArtDefDependencyPaths>
+				<Element text="Units.artdef" />
+			</ArtDefDependencyPaths>
+		</Element>
+	</ArtDefDependencies>
+	<LibraryDependencies>
+		<Element>
+			<LibraryName text="Light" />
+			<PackageDependencies />
+		</Element>
+		<Element>
+			<LibraryName text="Unit" />
+			<PackageDependencies>
+				<Element text="LOTMPlayerModels.blp" />
+			</PackageDependencies>
+		</Element>
+		<Element>
+			<LibraryName text="VFX" />
+			<PackageDependencies />
+		</Element>
+	</LibraryDependencies>
+</AssetObjects..GameDependencyData>

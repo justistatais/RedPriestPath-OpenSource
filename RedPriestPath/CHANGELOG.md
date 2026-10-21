@@ -1,4 +1,107 @@
+# 0.1.0-rc.389 / resource421 (2026-09-29)
+
+- Redraw Magician/Fors in an amber-lit study with a magical doorway gesture.
+- Redraw Star/Leonard as a refined poet with notebook and quill on a moonlit garden terrace; distinguish both background and pose from Fors.
+- Regenerate all 16 DDS portraits/banner icons from the two PNG masters. Preserve circular transparent city-banner corners.
+- No governor mechanics or UI behavior changes; resource420 verification boundaries remain open.
+
+# 0.1.0-rc.388 / resource420 (2026-09-29)
+
+- Normal-mode Time Worm: irreversible Remove/Confirm UI with synchronized native effect gates and explicit failure/pending receipts. Preserve native/shared abilities and prior grants.
+- Justice: trust each native purchased promotion, preserve positive counseling states and clarify text; include Oracle in Salon points and exclude pillaged district base points.
+- Added removal and all-18 promotion ownership regression coverage. Native old-save removal and full external Salon modifier coverage are not claimed verified.
+
+## 0.1.0-rc.387 / Resource 419 — 2026-09-29
+
+- Resource418 live modifier is active/Met but custom visibility source is inactive and levels remain zero.
+- Switch to the exact base-game journalism visibility arguments; disable old source lease to avoid duplicates. Native visibility and Great Merchant stacking remain unverified.
+
+## 0.1.0-rc.386 / Resource 418 — 2026-09-28
+
+- Fix load-time snapshot retry exhaustion; add native diplomatic visibility and one-time modifier/requirement diagnostics.
+- Resource417 CONTACT=1 and receipt are confirmed in real logs, but actual visibility is not recorded. Do not claim diplomatic effect resolved.
+
+## 0.1.0-rc.385 / Resource 417 — 2026-09-28
+
+- Fix Star player effect ownership for diplomatic visibility and empire spy defense. Add counterspy +2.
+- Implement interrogation: random 300 science or culture for each captured enemy spy, once per case.
+- Retry governor/capture requests until receipt; use native promotion ownership.
+- Offline checks are not in-game or multiplayer validation. Salon currently counts base district/building points; full modifier coverage remains a known gap.
+
+# 0.1.0-rc.384 / resource416
+
+- 根据415实机can-produce-false日志，删除完成当前项目之前的CanProduce检查，改用Gameplay CurrentlyBuilding核对实际队列目标后立即FinishProgress。
+- 空队列和变更目标仍拒绝，保留机会；建筑/项目一次完成模拟通过，实机待验证。
+
+# 0.1.0-rc.383 / resource415
+
+- 剧情按钮直接结算当前合法建筑/奇观/项目，不再依赖旧快照或原目标留队列。
+- 原生队列类型值经GameInfo解析为标准编号与哈希；增加点击提示与提交/执行日志，保留一次使用和当回合资格。
+
+# 0.1.0-rc.382 / resource414
+
+- 剧情安排改为完整平铺背景，覆盖标题、城市名、说明和按钮。
+- 修复原目标进度变化导致完成按钮被拒绝；不重置原进度，保留队列、资格与一次完成限制。
+
+# 0.1.0-rc.381 / resource413
+
+- 修复剧情安排已触发但外层UI上下文仍隐藏，导致机会不可见且随后过期。按原生InGame加载行为显式显示上下文；补父级可见性及已有机会重载回归。
+- 412实机已证实七回合计数恢复；413显示与点击待实机验证。
+
+# 0.1.0-rc.380 — 2026-09-28
+
+- 正义拥有快照与旧档产能检查拆成独立同步请求及回执；产能读数缺失不再阻止技能同步。每次读档使用新快照序列，不能用旧摘要替代当前会话回执。
+- 提交重试按回合重置，并记录等待、提交、确认和产能延期原因；保留原3/7计数、七有效回合规则与产能校正。
+- 真实UI和Gameplay处理器联合模拟覆盖旧错误状态、请求丢失、产能不可读、四回合后面板和一次完成。新版仍待用户实机验证。
+
 # 当前版本记录
+
+# 0.1.0-rc.371 — 2026-09-24
+
+- 修复旧档已购买剧情安排但缺少另一分支晋升时，Lua再次检查购买前置而关闭技能的错误；剧情安排按原生HasPromotion判断已升级，未拥有仍禁用。
+- 增加七有效回合计数和原生Story标志日志；不追溯发放无法确认的过去回合奖励。资源402产能修复已有实机日志确认1315.59765625恢复15.59765625，保持其逻辑。
+
+# 0.1.0-rc.370 — 2026-09-24
+
+- 资源401实机已执行加载审计，四个旧数据库金额也为0，但北京仍有1315.5产能；因此加载改为读取城市当前生产提示与实际产能，校正有正义历史证据的千分比残留。
+- 校正经同步Gameplay校验城市归属和当前产能，使用固定金额的新修正恢复已保存的累计产能；首次校正后必须再读实际结果，旧UI快照／重复请求不能再次叠加。
+- 一次旧档迁移扫描后只核对已记录城市；后续剧情仍只完成一次目标，不增加持续生产加成。游戏内及双客户端待验证。
+
+# 0.1.0-rc.369 — 2026-09-24
+
+- 修复正义读档UI对未设置Property直接调用`tonumber`引发的循环报错，读档审计现能提交并取得同步回执。
+- 实机第50回合显示旧补偿仍提供+10000%生产力；旧档实例虽保存`00000`，资源400数据库定义仍为+10000。将冻结与正负补偿四种旧Modifier的数据库金额全部设0并加不可满足条件，迁移仅清旧收据，不再挂新反向修正。
+- 新剧情仍为七有效回合的一次原生生产完成；真实游戏内恢复、旧档与双客户端须重启验证。
+
+# 0.1.0-rc.368 — 2026-09-24
+
+- 正义剧情后续触发只调用原生队列一次完成目标，不再生成持续生产力修正；旧版两种冻结增加不可满足的数据库条件，旧存档正负补偿保持等量对冲。
+- 读档后 UI 提交同步总督快照和生产检查，按回执重试；Gameplay 一次迁移扫描旧标记，非剧情回合清除过期状态，此后读档只核对相关城市。旧存档补偿收据保持幂等。
+- 静态、Lua 状态机及安装校验不等同于实机或联机通过。
+
+# 0.1.0-rc.365 — 2026-09-24
+
+- 消除原版总督面板在无数据库 Modifier 的晋升上自动显示的 `<NOT IMPLEMENTED>`；零值占位不提供实际收益。
+- “剧情安排”旧总督归属的生产暂停修正改为零，并移除旧绑定；新的生产暂停仅由可移除的内部建筑提供。同步脚本按版本一次性清除旧档孤立标记，过期或取消后不再保留减产来源。
+- 正义、魔术师、星星的同步晋升快照增加前置关系校验；未升级的 Lua 能力不计数、不放置暂停标记、不提供历史建造或视野效果。新增对应状态机与数据库升级回归；真实游戏效果仍以实机为准。
+
+# 0.1.0-rc.364 — 2026-09-24
+
+- 普通模式新增魔术师·佛尔思与星星·伦纳德两位原生总督、各六节点晋升树、独立中英文本与圆形城市横幅肖像。
+- 接入著作文化/金币/旅游、作家点数、国内商路起点食物/生产、城市信仰、外交能见度、本城和全国反谍防护；同步 Gameplay 保存历史已建类型并按目标附加＋50%建造修正，星星持续视野按地块差量维护。
+- 审讯报告需要游戏提供可核验的反谍最终案件链，当前不发放300科技/文化；隐秘守护的己方反谍专用＋2尚未接入。生产/购买出生奖励、升级继承、即时就职及上述持续效果待游戏内和双客户端实测，不能据静态验证宣称通过。
+
+# 0.1.0-rc.363 — 2026-09-24
+
+- 正义城市横幅的就职进度图标改为透明圆形肖像，22/32 像素填充与空槽分别使用独立资源。
+- “霍尔家的资助”+15 金币改走模组既有原生玩家每回合金币加成：完成就职时挂载，转任、失效或中和时以 -15 平衡撤销；城市金币 +20% 保留。
+- 修正实机日志证实的正义模块未设 Property 读取异常，避免回合处理被 Lua 中断。真实游戏效果待用户重启核对。
+
+# 0.1.0-rc.362 — 2026-09-23
+
+- 普通模式新增“正义·奥黛丽”总督与六节点晋升树：霍尔家的资助、心理疏导、艺术沙龙、群体暗示、塔罗会的善意、剧情安排。
+- 剧情安排按独立七有效回合计数，玩家通过原版生产队列选择合法建筑、奇观或项目；同步 Gameplay 一次性完成目标，保留原生产进度，并以可移除内部建筑暂停触发回合的普通生产。城市 ID 校验和转任时预暂停标记转移已补齐。
+- 中英文本、肖像、图标及专用 UI 接入普通模式；救赎专用逻辑保持封存。静态与 Lua 替身回归不能代替游戏内及双客户端验收。
 
 # 0.1.0-rc.339 — 2026-09-18
 
@@ -1178,3 +1281,18 @@
 - Added rescue-only Thief pathway and Purification Energy resource/panel.
 - Added global rescue ability allocation, reset/refund ledger, fixed sequence effects, and monster reflection hook.
 - Ordinary-mode Thief, counterfeit gold, tourism and faith-conversion files remain unchanged.
+
+## 0.1.0-rc.401 / resource433 (2026-10-07)
+
+- Share Justice and Magician skills with rescue mode while retaining the normal Star tree.
+- Add rescue Star Case Files, Red Gloves Patrol and The Hidden World with synchronized kill rewards, movement completion receipts, independent visibility ledgers and both-branch promotion gates.
+- Generate isolated Chinese/English rescue text overlays. Keep rescue frozen content and resource432 storm behavior.
+- Native single-player, visibility serialization and multiplayer/reconnect acceptance remain pending; see GOVERNOR_REDEMPTION_MIGRATION_REPORT.md.
+
+
+## 0.1.0-rc.402 / 资源434 — 2026-10-07
+
+- 风暴按钮、直接选点和V4雷暴动画支持救赎，仍在密集雷击帧结算。
+- 收集核弹损伤计划前识别外神本体，仅生成20点专用步骤；眷属和其他目标沿用现有核弹流程，无新增辐射。
+- 旧未完成计划先转换；阶段身份、已承伤回执和原联机检查点支持重试并避免额外伤害。Phase10原代码保留，只新增限定接口。
+- 救赎原风暴祝福保留，正式FULL/HALF奖励一次补一发，既有无限DEBUG保持。单人/旧档/双端待原生验证。

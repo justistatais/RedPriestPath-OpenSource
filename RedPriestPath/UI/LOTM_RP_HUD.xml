@@ -190,6 +190,7 @@
 					<Label ID="Info" Anchor="L,T" Offset="18,40" Size="680,auto" WrapWidth="680" Style="FontNormal14"/>
 				</Grid>
 			</GridButton>
+			<GridButton ID="Remove" Anchor="R,B" Offset="16,8" Size="160,32" Style="MainButton" Hidden="1" String="LOC_LOTM_TP_REMOVE_ABILITY"/>
 		</Container>
 	</Instance>
 	<Container ID="ThiefFinalPopup" Anchor="C,C" Size="700,330" Hidden="1" ConsumeMouse="1">

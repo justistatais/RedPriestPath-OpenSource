@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameInfo>
 	<Parameters>
+		<!-- Same game-wide selector path as the text-language option. -->
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2"
+			ParameterId="LOTM_CULT_DIFFICULTY" Name="LOC_LOTM_CULT_DIFFICULTY_NAME"
+			Description="LOC_LOTM_CULT_DIFFICULTY_DESCRIPTION" Domain="LOTM_CULT_DIFFICULTY_VALUES"
+			DefaultValue="EASY" ConfigurationGroup="Game" ConfigurationId="LOTM_CULT_DIFFICULTY"
+			GroupId="AdvancedOptions" Hash="0" SupportsSinglePlayer="1" SupportsLANMultiplayer="1"
+			SupportsInternetMultiplayer="1" SupportsHotSeat="1" SupportsPlayByCloud="1"
+			ChangeableAfterGameStart="0" UxHint="SimpleSelectPanel" SortIndex="1989"/>
 		<Row
 			Key1="Ruleset"
 			Key2="RULESET_EXPANSION_2"
@@ -82,9 +90,13 @@
 			SortIndex="950"/>
 	</Parameters>
 	<ParameterDependencies>
+		<Row ParameterId="LOTM_CULT_DIFFICULTY" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_LOTM_RESCUE" Operator="Equals" ConfigurationValue="0"/>
 		<Row ParameterId="LOTM_RESCUE_MAJOR_ALLIANCE" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_LOTM_RESCUE" Operator="Equals" ConfigurationValue="1"/>
 	</ParameterDependencies>
 	<DomainValues>
+		<Row Domain="LOTM_CULT_DIFFICULTY_VALUES" Value="EASY" Name="LOC_LOTM_CULT_DIFFICULTY_EASY_NAME" Description="LOC_LOTM_CULT_DIFFICULTY_EASY_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="LOTM_CULT_DIFFICULTY_VALUES" Value="HARD" Name="LOC_LOTM_CULT_DIFFICULTY_HARD_NAME" Description="LOC_LOTM_CULT_DIFFICULTY_HARD_DESCRIPTION" SortIndex="20"/>
+		<Row Domain="LOTM_CULT_DIFFICULTY_VALUES" Value="INSANE" Name="LOC_LOTM_CULT_DIFFICULTY_INSANE_NAME" Description="LOC_LOTM_CULT_DIFFICULTY_INSANE_DESCRIPTION" SortIndex="30"/>
 		<Row Domain="LOTM_RP_TEXT_LANGUAGE_VALUES" Value="zh_Hans_CN" Name="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_NAME" Description="LOC_LOTM_RP_TEXT_LANGUAGE_ZH_DESCRIPTION" SortIndex="10"/>
 		<Row Domain="LOTM_RP_TEXT_LANGUAGE_VALUES" Value="en_US" Name="LOC_LOTM_RP_TEXT_LANGUAGE_EN_NAME" Description="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION" SortIndex="20"/>
 		<Row Domain="LOTM_RP_PATH_VALUES" Value="NONE" Name="LOC_LOTM_RP_PATH_NONE_NAME" Description="LOC_LOTM_RP_PATH_NONE_DESCRIPTION" SortIndex="10"/>

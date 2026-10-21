@@ -1,10 +1,10 @@
 -- BEGIN RC342 STARTUP TRACE
--- Optional startup diagnostics, resource 393. Embedded by generate_startup_trace.py so a
+-- Optional startup diagnostics, resource 435. Embedded by generate_startup_trace.py so a
 -- missing VFS import cannot hide the first startup checkpoint.
 -- Keep disabled in releases: high-frequency UI tracing caused severe stutter.
 -- To diagnose a new failure, enable and rerun both startup/bundle generators.
 if LOTM_StartupTrace == nil then
-	LOTM_StartupTrace = { Enabled=false, Resource=393 };
+	LOTM_StartupTrace = { Enabled=false, Resource=435 };
 	local trace = LOTM_StartupTrace;
 	local sequence = 0;
 	local unpackValues = table.unpack or unpack;
@@ -22,7 +22,7 @@ if LOTM_StartupTrace == nil then
 		sequence = sequence + 1;
 		local fields = {};
 		for index=1,select("#",...) do fields[index] = Scalar(select(index,...)); end
-		print("[LOTM_DIAG] r=393 seq=" .. sequence .. " ctx=" .. context
+		print("[LOTM_DIAG] r=435 seq=" .. sequence .. " ctx=" .. context
 			.. " point=" .. point .. (#fields>0 and " args=" .. table.concat(fields,"|") or ""));
 	end
 	-- A lexical proxy belongs to this module only. The actual Events tables,
@@ -283,6 +283,12 @@ local function Realize()
 	Controls.PageTitle:SetText(Locale.Lookup(page.title));
 	Controls.Description:SetText(Locale.Lookup(page.summary));
 	local details:string = Locale.Lookup(page.details);
+	if not m_isRescue and m_pageIndex==8 then
+		local difficulty=Game.GetProperty("LOTM_CULT_DIFFICULTY");
+		if difficulty~="HARD" and difficulty~="INSANE" then difficulty="EASY"; end
+		details=Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_CURRENT",Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_"..difficulty.."_NAME"))
+			.."[NEWLINE]"..Locale.Lookup("LOC_LOTM_CULT_DIFFICULTY_"..difficulty.."_MANUAL").."[NEWLINE][NEWLINE]"..details;
+	end
 	local artifacts:table = not m_isRescue and ARTIFACT_PAGES[m_pageIndex] or nil;
 	for _, control:table in ipairs(ART_CONTROLS) do control:SetHide(true); end
 	if artifacts ~= nil then

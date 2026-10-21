@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_FOOL_ART" Language="zh_Hans_CN"><Text>愚者教会圣城</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_NIGHT_ART" Language="zh_Hans_CN"><Text>黑夜女神教会圣城</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_STORM_ART" Language="zh_Hans_CN"><Text>风暴之主教会圣城</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_CENTER_ART" Language="zh_Hans_CN"><Text>星空降临之门</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_FOOL_ART" Language="en_US"><Text>Holy City of the Fool</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_NIGHT_ART" Language="en_US"><Text>Holy City of Evernight</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_STORM_ART" Language="en_US"><Text>Holy City of Storms</Text></Row>
+ <Row Tag="LOC_LOTM_RESCUE_HOLY_CITY_CENTER_ART" Language="en_US"><Text>Gate of Astral Descent</Text></Row>
+</LocalizedText></GameData>

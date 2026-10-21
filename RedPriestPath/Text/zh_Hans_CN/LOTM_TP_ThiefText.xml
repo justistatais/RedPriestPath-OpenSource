@@ -53,7 +53,7 @@
   <Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_NAME"><Text>文化转移Ⅱ</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_SHORT_NAME"><Text>文化转移Ⅱ</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_DESCRIPTION"><Text>完成后增加旅游业绩，并直接增加15名国际游客；可重复执行。</Text></Row>
   <Row Tag="LOC_LOTM_TP_EXPAND"><Text>详情</Text></Row>
   <Row Tag="LOC_LOTM_TP_ALL_ABILITIES_TITLE"><Text>时之虫 · 文明能力</Text></Row>
-  <Row Tag="LOC_LOTM_TP_ALL_ABILITIES_HINT"><Text>列出本局其他文明的可移植能力；条件效果满足条件时生效。</Text></Row>
+  <Row Tag="LOC_LOTM_TP_ALL_ABILITIES_HINT"><Text>列出已获得的其他文明能力；条件效果满足条件时生效。可永久移除能力，移除后不可重新获得。</Text></Row>
   <Row Tag="LOC_LOTM_TP_SELECTED_ABILITY_PREFIX"><Text>已选择能力：</Text></Row>
   <Row Tag="LOC_LOTM_TP_STATUS_CONFIRMED"><Text>已有挂载</Text></Row>
   <Row Tag="LOC_LOTM_TP_STATUS_ATTACHED"><Text>已提交挂载</Text></Row>
@@ -94,4 +94,10 @@
 <Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_CITY_DISTANCE"><Text>距离已有城市太近</Text></Row>
 <Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_API"><Text>建城接口不可用，请保留日志</Text></Row>
 <Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_CREATE"><Text>原生建城未成功，单位及能力次数未消耗</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_ABILITY"><Text>移除</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_CONFIRM"><Text>确认永久移除</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_WARNING"><Text>确认后永久移除该文明能力，不可重新获得。已发放的单位、科技等奖励不追回。</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_PENDING"><Text>正在移除，等待效果停用确认；请勿重复选择其他能力。</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_FAILED"><Text>未能确认旧档效果可以安全停用，本次未移除。请保留日志。</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVED_ABILITY"><Text>已移除的文明能力</Text></Row>
 </BaseGameText></GameData>

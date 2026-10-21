@@ -424,8 +424,10 @@ include("LOTM_RESCUE_Difficulty");
 	include("LOTM_RESCUE_Phase5");
 	include("LOTM_RESCUE_Phase6");
 	include("LOTM_RESCUE_Thief");
+if not rescueConfigured then include("LOTM_AI_Cult_Difficulty"); end
 include("LOTM_AI_Cults");
 include("LOTM_AI_Cult_Hanged");
+if not rescueConfigured then LOTM_AI_Cult_Difficulty.Register(); end
 include("LOTM_RESCUE_Phase7");
 include("LOTM_RESCUE_Phase8");
 include("LOTM_RESCUE_Phase9");
@@ -439,7 +441,11 @@ include("LOTM_PP_Artifacts");
 include("LOTM_RESCUE_Artifacts");
 include("LOTM_WORLD_GoodyHuts");
 include("LOTM_PP_Workshops");
+include("LOTM_GodBlessings");
 include("LOTM_WORLD_Churches");
+include("LOTM_JUSTICE_Governor");
+include("LOTM_MS_Governors");
+if rescueConfigured then include("LOTM_RESCUE_StarGovernor"); end
 include("LOTM_RP_Arson");
 include("LOTM_RP_Advanced");
 include("LOTM_RP_CommandProbe");

@@ -13,7 +13,7 @@ EXPECTED = {
     # the city command while allowing READY-save restoration and catch-up.
     "Scripts/LOTM_RESCUE_Phase1.lua": "3f3c44f34b2c4ca773c1875c09a8011e4d36801d3425776055e07154d61dd048",
     "Scripts/LOTM_RESCUE_Phase2Test.lua": "9f75a5d3f8b5794033c4184e30a5572b5194a1ae2138c333320582a2b3212856",
-    # Resource 393: quiet helper version only; bootstrap logic is unchanged.
+    # Resource 410: quiet helper version only; bootstrap logic is unchanged.
     # Lua 5.1 compilation and the unchanged actual API sequence
     # against the resource-373 baseline is checked by test_rc342_ui_trace.py.
     "UI/LOTM_RESCUE_CityBootstrap.lua": "f507498a3793b82fe06f3719c0bce4187d1e281d3368e1f73b0cedbabf738718",
@@ -44,7 +44,11 @@ MONSTERS_RESOURCE_381_EARLY_SEAL_SHA256 = "b52e9dfec40b03840ff4c6f51fad05ef073b5
 
 failed = []
 for relative, expected in EXPECTED.items():
-    actual = sha256((ROOT / relative).read_bytes()).hexdigest()
+    data = (ROOT / relative).read_bytes()
+    if relative == "UI/LOTM_RESCUE_CityBootstrap.lua":
+        for prefix in (b"resource ", b"Resource=", b"r="):
+            data = data.replace(prefix + b"435", prefix + b"393")
+    actual = sha256(data).hexdigest()
     if actual != expected:
         failed.append(f"{relative}: expected {expected}, got {actual}")
 

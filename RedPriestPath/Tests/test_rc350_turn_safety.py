@@ -66,6 +66,9 @@ class TurnSafety(unittest.TestCase):
                 LOTM_MP_TurnSync={IsRescueModeConfigured=function() return rescue end}
                 function LOTM_MP241_LoadBundledModule(name)
                   loaded[#loaded+1]=name; LOTM_MP241_BUNDLE_LOADED[name]=true
+                  if name=='LOTM_AI_Cult_Difficulty' then
+                    LOTM_AI_Cult_Difficulty={Register=function() difficultyRegistered=true end}
+                  end
                 end
                 ''')
                 lua.globals().rescue = rescue
@@ -74,6 +77,9 @@ class TurnSafety(unittest.TestCase):
                 self.assertEqual(names.count('LOTM_RESCUE_RuntimeEvents'), int(rescue and not old))
                 if rescue and not old:
                     self.assertGreater(names.index('LOTM_RESCUE_RuntimeEvents'), names.index('LOTM_RP_Gameplay'))
+                if not rescue and not old:
+                    self.assertLess(names.index('LOTM_AI_Cult_Difficulty'), names.index('LOTM_RP_Gameplay'))
+                    self.assertTrue(lua.eval('difficultyRegistered'))
                 self.assertTrue(lua.eval('LOTM_MP241_MAIN_READY'))
 
 

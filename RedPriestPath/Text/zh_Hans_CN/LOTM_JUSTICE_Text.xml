@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_NAME" Language="zh_Hans_CN"><Text>奥黛丽·霍尔</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_TITLE" Language="zh_Hans_CN"><Text>正义</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_SHORT_TITLE" Language="zh_Hans_CN"><Text>正义</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_DESCRIPTION" Language="zh_Hans_CN"><Text>霍尔家族的财富与观众途径的心理能力，为一座城市安排合理的发展。</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SPONSOR_NAME" Language="zh_Hans_CN"><Text>霍尔家的资助</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SPONSOR_DESCRIPTION" Language="zh_Hans_CN"><Text>完成就职后，帝国每回合+15金币；就职城市金币产出+20%。</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_COUNSEL_NAME" Language="zh_Hans_CN"><Text>心理疏导</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_COUNSEL_DESCRIPTION" Language="zh_Hans_CN"><Text>完成就职且未被中和时，己方途径持有者不会因随机状态事件失控；已有失控立即解除；正面状态仍可触发并保留原持续时间。封印物不受保护。</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SALON_NAME" Language="zh_Hans_CN"><Text>艺术沙龙</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SALON_DESCRIPTION" Language="zh_Hans_CN"><Text>就职城市的大作家、大艺术家和大音乐家点数+50%；每件著作类伟大作品额外+4金币。</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SUGGESTION_NAME" Language="zh_Hans_CN"><Text>群体暗示</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SUGGESTION_DESCRIPTION" Language="zh_Hans_CN"><Text>就职城市忠诚度为100时食物和生产力+25%；不足100时每回合+10忠诚度。两种状态互斥。</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_TAROT_NAME" Language="zh_Hans_CN"><Text>塔罗会的善意</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_TAROT_DESCRIPTION" Language="zh_Hans_CN"><Text>每经过7个有效玩家回合，愚者教会自动获得1名使者。转任或被中和时计数暂停。</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_STORY_NAME" Language="zh_Hans_CN"><Text>剧情安排</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_STORY_DESCRIPTION" Language="zh_Hans_CN"><Text>每7个有效玩家回合，在就职城市选择一项当前合法的建筑、奇观或项目直接完成一次。原生产进度保留；机会当回合有效。</Text></Row>
+<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_COUNSELED_MESSAGE" Language="zh_Hans_CN"><Text>正义阻止了途径持有者失控；已有正面状态不受影响。</Text></Row>
+<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_COUNSELED_SUMMARY" Language="zh_Hans_CN"><Text>心理疏导</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_READY" Language="zh_Hans_CN"><Text>剧情安排已就绪</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_HINT" Language="zh_Hans_CN"><Text>在正义所在城市选择要生产的建筑、奇观或项目，然后点击下方按钮立即完成。无需保留旧生产目标，本回合仅可使用一次。</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_COMPLETE" Language="zh_Hans_CN"><Text>完成当前剧情目标</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_WAIT" Language="zh_Hans_CN"><Text>正在同步，请稍后点击。</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_INACTIVE" Language="zh_Hans_CN"><Text>当前没有可用的剧情安排机会。</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_SELECT" Language="zh_Hans_CN"><Text>请先在正义所在城市选择可生产的建筑、奇观或项目。单位和区域不能使用此能力。</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_SUBMIT" Language="zh_Hans_CN"><Text>正在结算当前生产目标……</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_FAILED" Language="zh_Hans_CN"><Text>结算未完成，机会仍保留。请重新选择生产目标后重试。</Text></Row>
+</LocalizedText></GameData>

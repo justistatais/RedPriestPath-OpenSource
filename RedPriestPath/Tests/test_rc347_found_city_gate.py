@@ -18,6 +18,9 @@ from generate_startup_trace import strip_trace
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT.parent / "dist/RedPriestPath-0.1.0-rc.346.zip"
 DATABASE = Path(os.environ.get("LOCALAPPDATA", "")) / "Firaxis Games" / "Sid Meier's Civilization VI" / "Cache" / "DebugGameplay.sqlite"
+# A shared selected snapshot survives positional-argument consumption by imported fixtures.
+if os.environ.get("LOTM_TEST_GAMEPLAY_DATABASE"):
+    DATABASE=Path(os.environ["LOTM_TEST_GAMEPLAY_DATABASE"])
 if len(sys.argv) > 1 and Path(sys.argv[1]).suffix.lower() in {".sqlite", ".sqlite3", ".db"}:
     DATABASE = Path(sys.argv.pop(1))
 BASELINE_HASHES = {

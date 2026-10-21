@@ -75,8 +75,12 @@ RESCUE_REQUIRED = (
     "LOTM_RESCUE_Phase3",
     "LOTM_RESCUE_DirectMonsters",
     "LOTM_RESCUE_Thief",
+    "LOTM_JUSTICE_Governor",
+    "LOTM_MS_Governors",
+    "LOTM_RESCUE_StarGovernor",
+    "LOTM_GodBlessings",
 )
-NORMAL_REQUIRED = ("LOTM_TP_Thief",)
+NORMAL_REQUIRED = ("LOTM_TP_Thief", "LOTM_JUSTICE_Governor", "LOTM_MS_Governors", "LOTM_AI_Cult_Difficulty", "LOTM_GodBlessings")
 
 # The old Multiplayer implementation is sourced from the published rc.241
 # archive.  Existing rc.241 modules stay on that source unless a later feature
@@ -113,6 +117,11 @@ NETWORK_NEW_MODULES = (
     "LOTM_RESCUE_DirectMonsters",
     "LOTM_RESCUE_Thief",
     "LOTM_TP_Thief",
+    "LOTM_JUSTICE_Governor",
+    "LOTM_MS_Governors",
+    "LOTM_RESCUE_StarGovernor",
+    "LOTM_GodBlessings",
+    "LOTM_AI_Cult_Difficulty",
 )
 
 
@@ -207,9 +216,62 @@ def read_network_rule_source(module_name: str) -> str:
     return base
 
 
+def read_network_justice_events_source() -> str:
+    """Add only normal-mode Counseling checks to the frozen event source."""
+    source = read_rc241_source("LOTM_WORLD_Events")
+    replacements = (
+        (
+            '\tlocal badWanted=turn<LOTM_WORLD_State.NumberProperty(player,"LOTM_HOLDER_UNSTABLE_STATE_UNTIL",-1);\n',
+            '\tlocal badWanted=turn<LOTM_WORLD_State.NumberProperty(player,"LOTM_HOLDER_UNSTABLE_STATE_UNTIL",-1);\n'
+            '\tif LOTM_JUSTICE~=nil and LOTM_JUSTICE.IsCounselingActive~=nil\n'
+            '\t\tand LOTM_JUSTICE.IsCounselingActive(player:GetID()) then badWanted=false; end\n',
+        ),
+        (
+            '\tif kind==nil or NOTIFICATION_TYPES[tostring(player:GetProperty("LOTM_RP_PATH") or "")] == nil then return; end\n',
+            '\tif kind==nil or (kind~="HOLDER_COUNSELED"\n'
+            '\t\tand NOTIFICATION_TYPES[tostring(player:GetProperty("LOTM_RP_PATH") or "")] == nil) then return; end\n',
+        ),
+        (
+            '\t\tlocal key=nature=="G" and "LOTM_HOLDER_GOOD_STATE_UNTIL" or "LOTM_HOLDER_UNSTABLE_STATE_UNTIL";\n'
+            '\t\tplayer:SetProperty(key,turn+DURATION);\n'
+            '\t\tkind=nature=="G" and "HOLDER_GOOD" or "HOLDER_UNSTABLE";\n',
+            '\t\tlocal counseled=nature=="B" and LOTM_JUSTICE~=nil\n'
+            '\t\t\tand LOTM_JUSTICE.IsCounselingActive~=nil\n'
+            '\t\t\tand LOTM_JUSTICE.IsCounselingActive(player:GetID());\n'
+            '\t\tif counseled then\n'
+            '\t\t\tkind="HOLDER_COUNSELED";\n'
+            '\t\telse\n'
+            '\t\t\tlocal key=nature=="G" and "LOTM_HOLDER_GOOD_STATE_UNTIL" or "LOTM_HOLDER_UNSTABLE_STATE_UNTIL";\n'
+            '\t\t\tplayer:SetProperty(key,turn+DURATION);\n'
+            '\t\t\tkind=nature=="G" and "HOLDER_GOOD" or "HOLDER_UNSTABLE";\n'
+            '\t\tend\n',
+        ),
+    )
+    for old, new in replacements:
+        if source.count(old) != 1:
+            raise ValueError("rc.241 World Events Counseling patch anchor changed")
+        source = source.replace(old, new, 1)
+    return source
+
+
 def read_network_source(module_name: str) -> str:
+    if module_name == "LOTM_AI_Cult_Hanged":
+        # Keep the sealed rescue branch byte-for-byte, with the repaired
+        # unit lifecycle confined to normal games.
+        return ("if not LOTM_MP_TurnSync.IsRescueModeConfigured() then\n"
+                + read_source(module_name) + "\nelse\n"
+                + read_rc241_source(module_name) + "\nend\n")
+    if module_name == "LOTM_RP_Advanced":
+        source = read_network_rule_source(module_name)
+        old = 'local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = 2000;'
+        new = ('local LOTM_RP_PLAN_FIRST_WAR_GOLD :number = '
+               'LOTM_MP_TurnSync.IsRescueModeConfigured() and 2000 or 1000;')
+        assert source.count(old) == 1
+        return source.replace(old, new)
     if module_name in NETWORK_NEW_MODULES or module_name in NETWORK_CURRENT_OVERRIDES:
         return read_source(module_name)
+    if module_name == "LOTM_WORLD_Events":
+        return read_network_justice_events_source()
     if module_name in NETWORK_RULE_FUNCTION_OVERRIDES:
         return read_network_rule_source(module_name)
     return read_rc241_source(module_name)
@@ -429,14 +491,21 @@ def generate_rc241_network() -> str:
         "local m_mp241Rescue = LOTM_MP_TurnSync.IsRescueModeConfigured();",
         "if m_mp241Rescue then",
         '\tLOTM_MP241_LoadBundledModule("LOTM_RESCUE_DirectMonsters");',
+        "else",
+        '\tLOTM_MP241_LoadBundledModule("LOTM_AI_Cult_Difficulty");',
         "end",
         f'LOTM_MP241_LoadBundledModule("{ENTRY_MODULE}");',
         "if m_mp241Rescue then",
         '\tLOTM_MP241_LoadBundledModule("LOTM_RESCUE_RuntimeEvents");',
         '\tLOTM_MP241_LoadBundledModule("LOTM_RESCUE_Thief");',
+        '\tLOTM_MP241_LoadBundledModule("LOTM_RESCUE_StarGovernor");',
         "else",
         '\tLOTM_MP241_LoadBundledModule("LOTM_TP_Thief");',
+        '\tLOTM_AI_Cult_Difficulty.Register();',
         "end",
+        'LOTM_MP241_LoadBundledModule("LOTM_JUSTICE_Governor");',
+        'LOTM_MP241_LoadBundledModule("LOTM_MS_Governors");',
+        'LOTM_MP241_LoadBundledModule("LOTM_GodBlessings");',
         'print("[LOTM][MP241] verified oldBase=rc.241 resource=273 rescue="..tostring(m_mp241Rescue)',
         '\t.." unifiedDispatcher=false loaded="..tostring(#(function() local t={} for k in pairs(LOTM_MP241_BUNDLE_LOADED) do t[#t+1]=k; end return t; end)()));',
         'LOTM_MP241_MAIN_READY = true;',

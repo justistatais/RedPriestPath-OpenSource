@@ -11,10 +11,16 @@ local TIER_PROPERTY="LOTM_CULT_TIER_AT_CREATE";
 local BASELINE_PROPERTY="LOTM_CULT_BASELINE_MELEE_STRENGTH";
 local pendingNetworkUnits={};
 local pendingNetworkUnitKeys={};
+local pendingRemovedUnits={};
+local INDEX_KEY="LOTM_CULT_HANGED_PUPPET_IDS";
+local INDEX_VERSION_KEY="LOTM_CULT_HANGED_PUPPET_INDEX_VERSION";
 
 local function Log(message) print("[LOTM_CULT][Hanged] "..tostring(message)); end
 local function Number(value,default) if value==nil then return default; end return tonumber(value) or default; end
-local function RescueActive() return Number(Game.GetProperty("LOTM_RESCUE_MODE"),0)==1; end
+local function RescueActive()
+ return LOTM_MP_TurnSync.IsRescueModeConfigured()
+  or Number(Game.GetProperty("LOTM_RESCUE_MODE"),0)==1;
+end
 local function IsFormalHuman(player)
  return player~=nil and LOTM_RP_State~=nil and LOTM_RP_State.IsAnyPathPlayer~=nil
   and LOTM_RP_State.IsAnyPathPlayer(player:GetID());
@@ -28,6 +34,35 @@ local function SortedUnits(player)
  local result={}; if player==nil then return result; end
  for _,unit in player:GetUnits():Members() do result[#result+1]=unit; end
  table.sort(result,function(a,b) return a:GetID()<b:GetID(); end); return result;
+end
+local function PuppetIDs(player)
+ local ids={}; local seen={};
+ for token in string.gmatch(tostring(player:GetProperty(INDEX_KEY) or ""),"%d+") do
+  local id=tonumber(token); if not seen[id] then ids[#ids+1]=id; seen[id]=true; end
+ end
+ table.sort(ids); return ids;
+end
+local function SavePuppetIDs(player,ids)
+ table.sort(ids); local values={}; for _,id in ipairs(ids) do values[#values+1]=tostring(id); end
+ local value=table.concat(values,",");
+ if player:GetProperty(INDEX_KEY)~=value then player:SetProperty(INDEX_KEY,value); end
+end
+local function TrackPuppet(player,unit)
+ local ids=PuppetIDs(player);
+ for _,id in ipairs(ids) do if id==unit:GetID() then return; end end
+ ids[#ids+1]=unit:GetID(); SavePuppetIDs(player,ids);
+end
+local function IsBaselineType(unitType,baselineIndex)
+ if unitType==baselineIndex then return true; end
+ -- A civilization's unique replacement is the same melee tier, rather than
+ -- a different ranged/cavalry candidate. Keep its actual model and identity.
+ local info=GameInfo.Units[unitType];
+ if info==nil or info.PromotionClass~="PROMOTION_CLASS_MELEE" or GameInfo.UnitReplaces==nil then return false; end
+ local baseline=GameInfo.Units[baselineIndex];
+ for row in GameInfo.UnitReplaces() do
+  if row.CivUniqueUnitType==info.UnitType and baseline~=nil and row.ReplacesUnitType==baseline.UnitType then return true; end
+ end
+ return false;
 end
 
 local function SetAbility(unit,abilityType,desired)
@@ -50,8 +85,10 @@ local function CaptureNewUnit(playerID,unitID)
  local player=Players[playerID]; if player==nil or player:IsHuman() or not player:IsAlive() or not player:IsMajor() then return; end
  if LOTM_AI_Cults.GetPlayerCult(playerID)~="HANGED_MAN" then return; end
  local tier=LOTM_AI_Cults.GetTier("HANGED_MAN"); if tier~=2 and tier~=3 then return; end
- local unit=UnitManager.GetUnit(playerID,unitID); if unit==nil or IsPuppet(unit) then return; end
- local baseline=LOTM_WORLD_Barbarians.ResolveMeleeBaseline(playerID); if baseline==nil or unit:GetType()~=baseline.Index then return; end
+ local unit=UnitManager.GetUnit(playerID,unitID); if unit==nil then return; end
+ local baseline=LOTM_WORLD_Barbarians.ResolveMeleeBaseline(playerID);
+ if baseline==nil then return; end
+ if not IsPuppet(unit) and unit:GetType()~=baseline.Index and not IsBaselineType(unit:GetType(),baseline.Index) then return; end
  return {PlayerID=playerID,UnitID=unitID,UnitType=unit:GetType(),TierAtCreate=tier,
   BaselineIndex=baseline.Index,BaselineCombat=baseline.Combat,BaselineUnitType=baseline.UnitType};
 end
@@ -59,11 +96,14 @@ local function ApplyCapturedNewUnit(entry)
  if entry==nil or RescueActive() then return; end
  local player=Players[entry.PlayerID];
  local unit=player~=nil and UnitManager.GetUnit(entry.PlayerID,entry.UnitID) or nil;
- if player==nil or unit==nil or IsPuppet(unit) or unit:GetType()~=entry.UnitType
-  or entry.UnitType~=entry.BaselineIndex then return; end
+ if player==nil or unit==nil or player:IsHuman() or not player:IsAlive() or not player:IsMajor()
+  or LOTM_AI_Cults.GetPlayerCult(entry.PlayerID)~="HANGED_MAN" or unit:GetType()~=entry.UnitType
+  or (not IsPuppet(unit) and not IsBaselineType(entry.UnitType,entry.BaselineIndex)) then return; end
+ if IsPuppet(unit) then TrackPuppet(player,unit); ApplyTier(unit,LOTM_AI_Cults.GetTier("HANGED_MAN")); return; end
  unit:SetProperty(SOURCE_PROPERTY,"HANGED_MAN"); unit:SetProperty(TIER_PROPERTY,entry.TierAtCreate);
  unit:SetProperty(BASELINE_PROPERTY,entry.BaselineCombat);
  unit:SetProperty("LOTM_CULT_BASELINE_MELEE_UNIT_TYPE",entry.BaselineUnitType);
+ TrackPuppet(player,unit);
  local activeTier=LOTM_AI_Cults.GetTier("HANGED_MAN");
  if activeTier==2 or activeTier==3 then ApplyTier(unit,activeTier); end
  Log("marked player="..entry.PlayerID.." unit="..entry.UnitID.." baseline="
@@ -83,13 +123,14 @@ local function QueueNetworkUnitInitialized(playerID,unitID)
  pendingNetworkUnits[#pendingNetworkUnits+1]=entry; pendingNetworkUnitKeys[key]=entry;
 end
 local function ProcessNetworkUnitInitializations(playerID)
- if not LOTM_MP_TurnSync.IsNetworkGame()
-  or not LOTM_MP_TurnSync.IsStableAnchorPlayer(playerID) then return; end
+ local network=LOTM_MP_TurnSync.IsNetworkGame();
+ if network and not LOTM_MP_TurnSync.IsStableAnchorPlayer(playerID) then return; end
  local currentTurn=Game.GetCurrentGameTurn(); local ready={}; local waiting={};
  for _,entry in ipairs(pendingNetworkUnits) do
   if entry.Cancelled==true then
    if pendingNetworkUnitKeys[entry.Key]==entry then pendingNetworkUnitKeys[entry.Key]=nil; end
-  elseif entry.QueuedTurn<currentTurn then ready[#ready+1]=entry; else waiting[#waiting+1]=entry; end
+  elseif (network and entry.QueuedTurn<currentTurn)
+   or (not network and entry.PlayerID==playerID) then ready[#ready+1]=entry; else waiting[#waiting+1]=entry; end
  end
  pendingNetworkUnits=waiting;
  table.sort(ready,function(a,b)
@@ -109,10 +150,27 @@ end
 
 function LOTM_AI_Cult_Hanged.ReconcileAll()
  if RescueActive() then return; end
- local tier=LOTM_AI_Cults.GetTier("HANGED_MAN"); if tier~=2 and tier~=3 then return; end
+ local tier=LOTM_AI_Cults.GetTier("HANGED_MAN");
  for _,player in ipairs(AliveMajors()) do
   if not player:IsHuman() and LOTM_AI_Cults.GetPlayerCult(player:GetID())=="HANGED_MAN" then
-    for _,unit in ipairs(SortedUnits(player)) do if IsPuppet(unit) then ApplyTier(unit,tier); end end
+   if Number(player:GetProperty(INDEX_VERSION_KEY),0)<1 then
+    -- One bounded repair for old saves: recover omitted current-baseline
+    -- units and index existing puppets. Ordinary callbacks never rescan armies.
+    for _,unit in ipairs(SortedUnits(player)) do
+     if IsPuppet(unit) then TrackPuppet(player,unit);
+     elseif tier==2 or tier==3 then ApplyNewUnit(player:GetID(),unit:GetID()); end
+    end
+    player:SetProperty(INDEX_VERSION_KEY,1);
+    Log("index repaired player="..player:GetID().." tier="..tier.." ids="..tostring(player:GetProperty(INDEX_KEY) or ""));
+   end
+   if (tier==2 or tier==3) and Number(player:GetProperty("LOTM_CULT_HANGED_PUPPET_TIER_SYNC"),0)~=tier then
+    local living={};
+    for _,id in ipairs(PuppetIDs(player)) do
+     local unit=UnitManager.GetUnit(player:GetID(),id);
+     if IsPuppet(unit) then living[#living+1]=id; ApplyTier(unit,tier); end
+    end
+    SavePuppetIDs(player,living); player:SetProperty("LOTM_CULT_HANGED_PUPPET_TIER_SYNC",tier);
+   end
   end
  end
 end
@@ -128,8 +186,21 @@ function LOTM_AI_Cult_Hanged.RetireForRescue()
 end
 
 local function OnTurn(playerID,isFirstTimeThisTurn)
- if isFirstTimeThisTurn==false then return; end
+ if isFirstTimeThisTurn==false or RescueActive() then return; end
  ProcessNetworkUnitInitializations(playerID);
+ if LOTM_MP_TurnSync.IsNetworkGame() and not LOTM_MP_TurnSync.IsStableAnchorPlayer(playerID) then return; end
+ table.sort(pendingRemovedUnits,function(a,b)
+  if a.PlayerID~=b.PlayerID then return a.PlayerID<b.PlayerID; end
+  return a.UnitID<b.UnitID;
+ end);
+ for _,entry in ipairs(pendingRemovedUnits) do
+  local player=Players[entry.PlayerID];
+  if player~=nil and UnitManager.GetUnit(entry.PlayerID,entry.UnitID)==nil then
+   local living={}; for _,id in ipairs(PuppetIDs(player)) do if id~=entry.UnitID then living[#living+1]=id; end end
+   if player:GetProperty(INDEX_KEY)~=nil then SavePuppetIDs(player,living); end
+  end
+ end
+ pendingRemovedUnits={};
 end
 
 local function OnUnitRemoved(playerID,unitID)
@@ -140,6 +211,7 @@ local function OnUnitRemoved(playerID,unitID)
   entry.Cancelled=true;
   if pendingNetworkUnitKeys[key]==entry then pendingNetworkUnitKeys[key]=nil; end
  end
+ if key~=nil and not RescueActive() then pendingRemovedUnits[#pendingRemovedUnits+1]={PlayerID=tonumber(playerID),UnitID=tonumber(unitID)}; end
 end
 
 local function SettleAttackFaith(attackerPlayerID,defenderPlayerID,defenderUnitID)
@@ -161,6 +233,9 @@ local function OnCombat(attackerPlayerID,attackerUnitID,defenderPlayerID,defende
 end
 
 GameEvents.UnitInitialized.Add(TryMarkNewUnit);
+-- UnitInitialized can arrive before the native object is queryable. The map
+-- publication captures facts only; a synchronized turn owns the fallback.
+Events.UnitAddedToMap.Add(QueueNetworkUnitInitialized);
 Events.UnitRemovedFromMap.Add(OnUnitRemoved);
 GameEvents.OnCombatOccurred.Add(OnCombat);
 LOTM_MP_TurnSync.Add(OnTurn,"AICultHanged");

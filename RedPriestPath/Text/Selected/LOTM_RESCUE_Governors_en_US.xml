@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GameData>
+	<BaseGameText>
+		<!-- Generated from Text/en_US/LOTM_RESCUE_Governors.xml; rescue-only overlay. -->
+		<Replace Tag="LOC_LOTM_RESCUE_STAR_CASE_NAME">
+			<Text>Case Files</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_RESCUE_STAR_CASE_DESC">
+			<Text>While established, each enemy combat unit killed by your forces in your own territory grants either 300 Science or 300 Culture at random. Each kill pays once; there is no per-turn limit.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_RESCUE_STAR_GLOVES_NAME">
+			<Text>Red Gloves Patrol</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_RESCUE_STAR_GLOVES_DESC">
+			<Text>While established, all your ordinary Recon units gain +1 Movement. After each unit finishes moving, it provides temporary normal visibility within 1 tile of its destination. Moving again replaces that unit's patrol area; it expires at the start of your next turn.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_RESCUE_STAR_WORLD_NAME">
+			<Text>The Hidden World</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_RESCUE_STAR_WORLD_DESC">
+			<Text>Requires both Case Files and Red Gloves Patrol. While established, maintain normal visibility over the entire map. It ends on reassignment, neutralization or loss of the city, without revealing spies, bypassing invisibility or changing attack legality.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_MS_INVESTIGATION_DESC">
+			<Text>Enemy spies operate 2 levels below normal in this city.</Text>
+		</Replace>
+	</BaseGameText>
+</GameData>

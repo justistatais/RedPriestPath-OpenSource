@@ -1,0 +1,2290 @@
+{
+  "native_static_stride": 84,
+  "failed_city_stride": 76,
+  "geometries": [
+    {
+      "geometry": "LHC_Fool_Part01",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch1",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 16779,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch1",
+        "geometry": "LHC_Fool_Part01",
+        "vertices": 12000,
+        "triangles": 5593,
+        "position_max_error": 4.99000000218075e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -223.3017,
+            -194.4296,
+            -3.1e-07
+          ],
+          [
+            223.3017,
+            194.4296,
+            74.9
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part02",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch2",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 16188,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch2",
+        "geometry": "LHC_Fool_Part02",
+        "vertices": 11999,
+        "triangles": 5396,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -173.6,
+            -230.8,
+            13.8
+          ],
+          [
+            209.2328,
+            173.932,
+            113.8
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part03",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch3",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 15600,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch3",
+        "geometry": "LHC_Fool_Part03",
+        "vertices": 12000,
+        "triangles": 5200,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -129.4058,
+            -157.692,
+            19.125
+          ],
+          [
+            168.9792,
+            155.8496,
+            200.0
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part04",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch4",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15252,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch4",
+        "geometry": "LHC_Fool_Part04",
+        "vertices": 11999,
+        "triangles": 5084,
+        "position_max_error": 4.995000000462824e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -223.3017,
+            -194.4296,
+            -3.1e-07
+          ],
+          [
+            223.3017,
+            194.4296,
+            305.14
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part05",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch5",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 15336,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch5",
+        "geometry": "LHC_Fool_Part05",
+        "vertices": 12000,
+        "triangles": 5112,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -173.6,
+            -230.8,
+            13.8
+          ],
+          [
+            212.0354,
+            173.932,
+            113.8
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part06",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch6",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15264,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch6",
+        "geometry": "LHC_Fool_Part06",
+        "vertices": 11999,
+        "triangles": 5088,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -168.5688,
+            -157.692,
+            19.125
+          ],
+          [
+            168.9792,
+            155.8496,
+            188.3
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part07",
+      "layout": {
+        "name": "LHC_Fool_Structure_Batch7",
+        "vertices": 4884,
+        "indices": 0,
+        "indices16": 6501,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_Structure_Batch7",
+        "geometry": "LHC_Fool_Part07",
+        "vertices": 4884,
+        "triangles": 2167,
+        "position_max_error": 4.995000000462824e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -75.34076,
+            -61.0,
+            57.0
+          ],
+          [
+            95.09999,
+            81.4776,
+            305.14
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part08",
+      "layout": {
+        "name": "LHC_Fool_RoofsAndDetails_Batch1",
+        "vertices": 11149,
+        "indices": 0,
+        "indices16": 18000,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_RoofsAndDetails_Batch1",
+        "geometry": "LHC_Fool_Part08",
+        "vertices": 11149,
+        "triangles": 6000,
+        "position_max_error": 4.971999999270338e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -222.048,
+            -194.4492,
+            19.4
+          ],
+          [
+            222.048,
+            194.4492,
+            249.4
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Fool_Part09",
+      "layout": {
+        "name": "LHC_Fool_RoofsAndDetails_Batch2",
+        "vertices": 11618,
+        "indices": 0,
+        "indices16": 17412,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Fool_RoofsAndDetails_Batch2",
+        "geometry": "LHC_Fool_Part09",
+        "vertices": 11618,
+        "triangles": 5804,
+        "position_max_error": 4.979999999932261e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -222.048,
+            -194.4492,
+            19.4
+          ],
+          [
+            222.048,
+            194.4492,
+            311.188
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part01",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch1",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 16779,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch1",
+        "geometry": "LHC_Night_Part01",
+        "vertices": 12000,
+        "triangles": 5593,
+        "position_max_error": 4.99000000218075e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -223.3017,
+            -194.4296,
+            -3.1e-07
+          ],
+          [
+            223.3017,
+            194.4296,
+            74.9
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part02",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch2",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 16209,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch2",
+        "geometry": "LHC_Night_Part02",
+        "vertices": 12000,
+        "triangles": 5403,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -173.6,
+            -230.8,
+            13.8
+          ],
+          [
+            209.2328,
+            173.932,
+            100.1
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part03",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch3",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15588,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch3",
+        "geometry": "LHC_Night_Part03",
+        "vertices": 11999,
+        "triangles": 5196,
+        "position_max_error": 4.994000001090626e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -129.4058,
+            -148.084,
+            19.125
+          ],
+          [
+            168.9792,
+            155.8496,
+            224.2
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part04",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch4",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15042,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch4",
+        "geometry": "LHC_Night_Part04",
+        "vertices": 11999,
+        "triangles": 5014,
+        "position_max_error": 4.99000000218075e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -223.3017,
+            -194.4296,
+            -3.1e-07
+          ],
+          [
+            223.3017,
+            194.4296,
+            228.4
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part05",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch5",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 15411,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch5",
+        "geometry": "LHC_Night_Part05",
+        "vertices": 12000,
+        "triangles": 5137,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -173.6,
+            -230.8,
+            13.8
+          ],
+          [
+            209.2328,
+            173.932,
+            100.1
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part06",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch6",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15336,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch6",
+        "geometry": "LHC_Night_Part06",
+        "vertices": 11999,
+        "triangles": 5112,
+        "position_max_error": 4.994000001090626e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -129.4058,
+            -148.084,
+            19.125
+          ],
+          [
+            168.9792,
+            155.8496,
+            224.2
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part07",
+      "layout": {
+        "name": "LHC_Night_Structure_Batch7",
+        "vertices": 601,
+        "indices": 0,
+        "indices16": 795,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_Structure_Batch7",
+        "geometry": "LHC_Night_Part07",
+        "vertices": 601,
+        "triangles": 265,
+        "position_max_error": 4.658000000290485e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -28.40866,
+            23.99134,
+            197.325
+          ],
+          [
+            28.40866,
+            80.80865,
+            228.4
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part08",
+      "layout": {
+        "name": "LHC_Night_RoofsAndDetails_Batch1",
+        "vertices": 11058,
+        "indices": 0,
+        "indices16": 18000,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_RoofsAndDetails_Batch1",
+        "geometry": "LHC_Night_Part08",
+        "vertices": 11058,
+        "triangles": 6000,
+        "position_max_error": 4.971999999270338e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -222.048,
+            -194.4492,
+            19.4
+          ],
+          [
+            222.048,
+            194.4492,
+            249.4
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Night_Part09",
+      "layout": {
+        "name": "LHC_Night_RoofsAndDetails_Batch2",
+        "vertices": 10507,
+        "indices": 0,
+        "indices16": 15000,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Night_RoofsAndDetails_Batch2",
+        "geometry": "LHC_Night_Part09",
+        "vertices": 10507,
+        "triangles": 5000,
+        "position_max_error": 4.971999999270338e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -222.048,
+            -194.4492,
+            19.4
+          ],
+          [
+            222.048,
+            194.4492,
+            329.3297
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part01",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch1",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 16779,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch1",
+        "geometry": "LHC_Storm_Part01",
+        "vertices": 12000,
+        "triangles": 5593,
+        "position_max_error": 4.99000000218075e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -223.3017,
+            -194.4296,
+            -3.1e-07
+          ],
+          [
+            223.3017,
+            194.4296,
+            74.9
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part02",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch2",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 16209,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch2",
+        "geometry": "LHC_Storm_Part02",
+        "vertices": 12000,
+        "triangles": 5403,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -173.6,
+            -230.8,
+            13.8
+          ],
+          [
+            209.2328,
+            173.932,
+            100.1
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part03",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch3",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15588,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch3",
+        "geometry": "LHC_Storm_Part03",
+        "vertices": 11999,
+        "triangles": 5196,
+        "position_max_error": 4.994000001090626e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -129.4058,
+            -148.084,
+            19.125
+          ],
+          [
+            168.9792,
+            155.8496,
+            224.2
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part04",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch4",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 15069,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch4",
+        "geometry": "LHC_Storm_Part04",
+        "vertices": 12000,
+        "triangles": 5023,
+        "position_max_error": 4.99000000218075e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -223.3017,
+            -194.4296,
+            -3.1e-07
+          ],
+          [
+            223.3017,
+            194.4296,
+            257.6
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part05",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch5",
+        "vertices": 12000,
+        "indices": 0,
+        "indices16": 15405,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch5",
+        "geometry": "LHC_Storm_Part05",
+        "vertices": 12000,
+        "triangles": 5135,
+        "position_max_error": 4.998000000000502e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -173.6,
+            -230.8,
+            13.8
+          ],
+          [
+            209.2328,
+            173.932,
+            100.1
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part06",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch6",
+        "vertices": 11999,
+        "indices": 0,
+        "indices16": 15354,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch6",
+        "geometry": "LHC_Storm_Part06",
+        "vertices": 11999,
+        "triangles": 5118,
+        "position_max_error": 4.994000001090626e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -129.4058,
+            -148.084,
+            19.125
+          ],
+          [
+            168.9792,
+            155.8496,
+            224.2
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part07",
+      "layout": {
+        "name": "LHC_Storm_Structure_Batch7",
+        "vertices": 785,
+        "indices": 0,
+        "indices16": 1032,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_Structure_Batch7",
+        "geometry": "LHC_Storm_Part07",
+        "vertices": 785,
+        "triangles": 344,
+        "position_max_error": 4.658000000290485e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -28.40866,
+            23.99134,
+            197.325
+          ],
+          [
+            28.40866,
+            80.80865,
+            257.6
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part08",
+      "layout": {
+        "name": "LHC_Storm_RoofsAndDetails_Batch1",
+        "vertices": 11166,
+        "indices": 0,
+        "indices16": 18000,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_RoofsAndDetails_Batch1",
+        "geometry": "LHC_Storm_Part08",
+        "vertices": 11166,
+        "triangles": 6000,
+        "position_max_error": 4.971999999270338e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -222.048,
+            -194.4492,
+            19.4
+          ],
+          [
+            222.048,
+            194.4492,
+            318.506
+          ]
+        ]
+      }
+    },
+    {
+      "geometry": "LHC_Storm_Part09",
+      "layout": {
+        "name": "LHC_Storm_RoofsAndDetails_Batch2",
+        "vertices": 7778,
+        "indices": 0,
+        "indices16": 9096,
+        "boneBindings": 1,
+        "stride": 84,
+        "layout": [
+          {
+            "name": "Position",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 0
+          },
+          {
+            "name": "Normal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 12
+          },
+          {
+            "name": "Tangent",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 24
+          },
+          {
+            "name": "Binormal",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 36
+          },
+          {
+            "name": "TextureCoordinates0",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 48
+          },
+          {
+            "name": "TextureCoordinates1",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 60
+          },
+          {
+            "name": "TextureCoordinates2",
+            "type": 10,
+            "count": 3,
+            "length": 4,
+            "offset": 72
+          }
+        ]
+      },
+      "roundtrip": {
+        "mesh": "LHC_Storm_RoofsAndDetails_Batch2",
+        "geometry": "LHC_Storm_Part09",
+        "vertices": 7778,
+        "triangles": 3032,
+        "position_max_error": 4.971999999270338e-05,
+        "uv_max_error": 9.999999994736442e-09,
+        "static_no_vertex_weights": true,
+        "bounds": [
+          [
+            -222.048,
+            -194.4492,
+            19.4
+          ],
+          [
+            222.048,
+            194.4492,
+            311.08
+          ]
+        ]
+      }
+    }
+  ],
+  "preserved_faces": [
+    {
+      "slug": "Fool",
+      "original_triangles": 45444,
+      "final_triangles": 45444,
+      "batch_count": 9,
+      "maximum_vertices": 12000,
+      "maximum_indices": 18000,
+      "positions_uv_materials_unchanged": true,
+      "static_stride": 84,
+      "uv_sets": 3,
+      "automatic_lod": false
+    },
+    {
+      "slug": "Night",
+      "original_triangles": 42720,
+      "final_triangles": 42720,
+      "batch_count": 9,
+      "maximum_vertices": 12000,
+      "maximum_indices": 18000,
+      "positions_uv_materials_unchanged": true,
+      "static_stride": 84,
+      "uv_sets": 3,
+      "automatic_lod": false
+    },
+    {
+      "slug": "Storm",
+      "original_triangles": 40844,
+      "final_triangles": 40844,
+      "batch_count": 9,
+      "maximum_vertices": 12000,
+      "maximum_indices": 18000,
+      "positions_uv_materials_unchanged": true,
+      "static_stride": 84,
+      "uv_sets": 3,
+      "automatic_lod": false
+    }
+  ],
+  "package_hashes": {
+    "LOTMHolyCities/Platforms/Windows/BLPs/LOTMHolyCities.blp": "86ed833bb2a2dd10cd7749236df553d875683f758ff449805a4a1605f1a1e42c",
+    "LOTMHolyCities/Platforms/MacOS/BLPs/LOTMHolyCities.blp": "86ed833bb2a2dd10cd7749236df553d875683f758ff449805a4a1605f1a1e42c"
+  },
+  "in_game_verified": false
+}

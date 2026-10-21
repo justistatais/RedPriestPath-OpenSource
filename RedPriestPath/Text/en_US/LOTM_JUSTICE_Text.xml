@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_NAME" Language="en_US"><Text>Audrey Hall</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_TITLE" Language="en_US"><Text>Justice</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_SHORT_TITLE" Language="en_US"><Text>Justice</Text></Row>
+<Row Tag="LOC_GOVERNOR_LOTM_JUSTICE_DESCRIPTION" Language="en_US"><Text>Hall family wealth and Spectator powers guide one city's development.</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SPONSOR_NAME" Language="en_US"><Text>Hall Family Patronage</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SPONSOR_DESCRIPTION" Language="en_US"><Text>Once established, gain +15 Gold per turn for your empire; this city's Gold yields increase by 20%.</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_COUNSEL_NAME" Language="en_US"><Text>Psychological Counseling</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_COUNSEL_DESCRIPTION" Language="en_US"><Text>While established and not neutralized, prevents random loss of control for your Pathway Holder and clears an existing loss of control. Positive states can still occur and retain their original duration. Sealed Artifacts are unaffected.</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SALON_NAME" Language="en_US"><Text>Art Salon</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SALON_DESCRIPTION" Language="en_US"><Text>+50% Great Writer, Artist and Musician points in the established city; +4 Gold for each Great Work of Writing there.</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SUGGESTION_NAME" Language="en_US"><Text>Mass Suggestion</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_SUGGESTION_DESCRIPTION" Language="en_US"><Text>At 100 Loyalty, the established city gains +25% Food and Production. Below 100 Loyalty, it gains +10 Loyalty per turn instead.</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_TAROT_NAME" Language="en_US"><Text>Tarot Club Goodwill</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_TAROT_DESCRIPTION" Language="en_US"><Text>Every 7 active player turns, grant 1 Envoy to the Church of the Fool. The counter pauses during reassignment or neutralization.</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_STORY_NAME" Language="en_US"><Text>Story Arrangement</Text></Row>
+<Row Tag="LOC_GOVERNOR_PROMOTION_LOTM_JUSTICE_STORY_DESCRIPTION" Language="en_US"><Text>Every 7 active player turns, complete one currently legal Building, Wonder or Project in the established city. Preserves prior production progress. Expires this turn.</Text></Row>
+<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_COUNSELED_MESSAGE" Language="en_US"><Text>Justice prevented the Holder's loss of control. Positive states are unaffected.</Text></Row>
+<Row Tag="LOC_LOTM_WORLD_NOTIFICATION_HOLDER_COUNSELED_SUMMARY" Language="en_US"><Text>Psychological Counseling</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_READY" Language="en_US"><Text>Story Arrangement is ready</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_HINT" Language="en_US"><Text>Select a Building, Wonder or Project for production in Justice's city, then press Complete to finish it immediately. The old item need not stay queued. One use this turn.</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_COMPLETE" Language="en_US"><Text>Complete current story target</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_WAIT" Language="en_US"><Text>Synchronizing. Please try again shortly.</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_INACTIVE" Language="en_US"><Text>Story Arrangement is not currently available.</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_SELECT" Language="en_US"><Text>Choose a producible Building, Wonder or Project in Justice's city first. Units and Districts are not eligible.</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_SUBMIT" Language="en_US"><Text>Completing the current production item...</Text></Row>
+<Row Tag="LOC_LOTM_JUSTICE_STORY_FAILED" Language="en_US"><Text>Completion failed; the opportunity is retained. Select the production item again and retry.</Text></Row>
+</LocalizedText></GameData>

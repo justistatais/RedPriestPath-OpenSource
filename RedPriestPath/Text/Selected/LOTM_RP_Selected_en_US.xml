@@ -95,6 +95,30 @@
 		<Replace Tag="LOC_LOTM_RP_TEXT_LANGUAGE_EN_DESCRIPTION">
 			<Text>Display Lord of Mysteries mod text in English for this game.</Text>
 		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_NAME">
+			<Text>AI Cult Difficulty</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_DESCRIPTION">
+			<Text>Normal-mode cult strength. Defaults to Easy, locked when the game starts, and shared from the host in multiplayer.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_NAME">
+			<Text>Easy</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_DESCRIPTION">
+			<Text>Preserves the existing cult rules, suited to exploring Pathway progression and the mod.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_NAME">
+			<Text>Hard</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DESCRIPTION">
+			<Text>Cult civilizations gain substantial development and military bonuses. Use Pathways, churches and warfare to counter them.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_NAME">
+			<Text>Insane</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DESCRIPTION">
+			<Text>Cult civilizations gain powerful development, military and sustained warfare bonuses, for experienced players seeking a challenge.</Text>
+		</Replace>
 		<Replace Tag="LOC_LOTM_PATH_PROJECT_GATE_NAME">
 			<Text>Current potion digested and advancement requirements met</Text>
 		</Replace>
@@ -2639,6 +2663,108 @@
 		<Replace Tag="LOC_LOTM_CULT_NOTIFICATION_ENDED_SUMMARY">
 			<Text>The score target, war state, surviving cults or shared tier has changed.</Text>
 		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_CURRENT">
+			<Text>Current AI cult difficulty: {1_Name} (locked at game start)</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIPLO_DIFFICULTY_VALUE">
+			<Text>{1_Difficulty} · {2_Cult}</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CDIFF_PREVIEW_COMMON">
+			<Text>Cult difficulty: +{1_Amount} Combat Strength</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CDIFF_PREVIEW_TERRITORY">
+			<Text>Chained in own territory: +{1_Amount} Combat Strength</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_MANUAL">
+			<Text>Preserves the existing cult rules, suited to exploring Pathway progression and the mod. No added AI self-bonuses. Stages, thresholds, player penalties and Flesh Puppet bonuses keep their existing rules.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_T1_DESCRIPTION">
+			<Text>Easy: original cult rules; no added AI self-bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_T2_DESCRIPTION">
+			<Text>Easy: original cult rules; no added AI self-bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_EASY_T3_DESCRIPTION">
+			<Text>Easy: original cult rules; no added AI self-bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_T1_DESCRIPTION">
+			<Text>Stage 1: Science/Culture/Faith +20%; Production/Gold +30%; military Combat Strength +2; unit Gold upkeep reduced by 10%.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DEMONESS_T1_DESCRIPTION">
+			<Text>Demoness: city Food +10%, Amenities +1.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_HANGED_MAN_T1_DESCRIPTION">
+			<Text>Hanged Man: military units heal 3 extra HP at the start of their own turn; once per unit per turn, capped at full health.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_CHAINED_T1_DESCRIPTION">
+			<Text>Chained: military units gain +2 extra Combat Strength in their own territory (+4 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_T2_DESCRIPTION">
+			<Text>Stage 2: Science/Culture/Faith +40%; Production/Gold +60%; military Combat Strength +4; unit Gold upkeep reduced by 20%.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DEMONESS_T2_DESCRIPTION">
+			<Text>Demoness: city Food +20%, Amenities +2.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_HANGED_MAN_T2_DESCRIPTION">
+			<Text>Hanged Man: military units heal 5 extra HP at the start of their own turn; once per unit per turn, capped at full health.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_CHAINED_T2_DESCRIPTION">
+			<Text>Chained: military units gain +3 extra Combat Strength in their own territory (+7 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_T3_DESCRIPTION">
+			<Text>Stage 3: Science/Culture/Faith +60%; Production/Gold +90%; military Combat Strength +6; unit Gold upkeep reduced by 30%.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_DEMONESS_T3_DESCRIPTION">
+			<Text>Demoness: city Food +30%, Amenities +3.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_HANGED_MAN_T3_DESCRIPTION">
+			<Text>Hanged Man: military units heal 8 extra HP at the start of their own turn; once per unit per turn, capped at full health.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_CHAINED_T3_DESCRIPTION">
+			<Text>Chained: military units gain +4 extra Combat Strength in their own territory (+10 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_HARD_MANUAL">
+			<Text>Cult civilizations gain substantial development and military bonuses. Use Pathways, churches and warfare to counter them.[NEWLINE]Stage 1/2/3 replace one another; bonuses apply only to the owning cult AI.[NEWLINE]Stage 1: Science/Culture/Faith +20%; Production/Gold +30%; military Combat Strength +2; unit Gold upkeep reduced by 10%.[NEWLINE]Demoness: city Food +10%, Amenities +1.[NEWLINE]Hanged Man: military units heal 3 extra HP at the start of their own turn; once per unit per turn, capped at full health.[NEWLINE]Chained: military units gain +2 extra Combat Strength in their own territory (+4 including the common bonus), using current plot ownership.[NEWLINE]Stage 2: Science/Culture/Faith +40%; Production/Gold +60%; military Combat Strength +4; unit Gold upkeep reduced by 20%.[NEWLINE]Demoness: city Food +20%, Amenities +2.[NEWLINE]Hanged Man: military units heal 5 extra HP at the start of their own turn; once per unit per turn, capped at full health.[NEWLINE]Chained: military units gain +3 extra Combat Strength in their own territory (+7 including the common bonus), using current plot ownership.[NEWLINE]Stage 3: Science/Culture/Faith +60%; Production/Gold +90%; military Combat Strength +6; unit Gold upkeep reduced by 30%.[NEWLINE]Demoness: city Food +30%, Amenities +3.[NEWLINE]Hanged Man: military units heal 8 extra HP at the start of their own turn; once per unit per turn, capped at full health.[NEWLINE]Chained: military units gain +4 extra Combat Strength in their own territory (+10 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_T1_DESCRIPTION">
+			<Text>Stage 1: Science/Culture/Faith +40%; Production/Gold +60%; military Combat Strength +4; unit Gold upkeep reduced by 20%.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DEMONESS_T1_DESCRIPTION">
+			<Text>Demoness: city Food +20%, Amenities +2.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_HANGED_MAN_T1_DESCRIPTION">
+			<Text>Hanged Man: military units heal 5 extra HP at the start of their own turn; once per unit per turn, capped at full health.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_CHAINED_T1_DESCRIPTION">
+			<Text>Chained: military units gain +3 extra Combat Strength in their own territory (+7 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_T2_DESCRIPTION">
+			<Text>Stage 2: Science/Culture/Faith +80%; Production/Gold +120%; military Combat Strength +7; unit Gold upkeep reduced by 35%.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DEMONESS_T2_DESCRIPTION">
+			<Text>Demoness: city Food +40%, Amenities +3.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_HANGED_MAN_T2_DESCRIPTION">
+			<Text>Hanged Man: military units heal 8 extra HP at the start of their own turn; once per unit per turn, capped at full health.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_CHAINED_T2_DESCRIPTION">
+			<Text>Chained: military units gain +5 extra Combat Strength in their own territory (+12 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_T3_DESCRIPTION">
+			<Text>Stage 3: Science/Culture/Faith +120%; Production/Gold +180%; military Combat Strength +10; unit Gold upkeep reduced by 50%.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_DEMONESS_T3_DESCRIPTION">
+			<Text>Demoness: city Food +60%, Amenities +4.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_HANGED_MAN_T3_DESCRIPTION">
+			<Text>Hanged Man: military units heal 12 extra HP at the start of their own turn; once per unit per turn, capped at full health.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_CHAINED_T3_DESCRIPTION">
+			<Text>Chained: military units gain +7 extra Combat Strength in their own territory (+17 including the common bonus), using current plot ownership.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_CULT_DIFFICULTY_INSANE_MANUAL">
+			<Text>Cult civilizations gain powerful development, military and sustained warfare bonuses, for experienced players seeking a challenge.[NEWLINE]Stage 1/2/3 replace one another; bonuses apply only to the owning cult AI.[NEWLINE]Stage 1: Science/Culture/Faith +40%; Production/Gold +60%; military Combat Strength +4; unit Gold upkeep reduced by 20%.[NEWLINE]Demoness: city Food +20%, Amenities +2.[NEWLINE]Hanged Man: military units heal 5 extra HP at the start of their own turn; once per unit per turn, capped at full health.[NEWLINE]Chained: military units gain +3 extra Combat Strength in their own territory (+7 including the common bonus), using current plot ownership.[NEWLINE]Stage 2: Science/Culture/Faith +80%; Production/Gold +120%; military Combat Strength +7; unit Gold upkeep reduced by 35%.[NEWLINE]Demoness: city Food +40%, Amenities +3.[NEWLINE]Hanged Man: military units heal 8 extra HP at the start of their own turn; once per unit per turn, capped at full health.[NEWLINE]Chained: military units gain +5 extra Combat Strength in their own territory (+12 including the common bonus), using current plot ownership.[NEWLINE]Stage 3: Science/Culture/Faith +120%; Production/Gold +180%; military Combat Strength +10; unit Gold upkeep reduced by 50%.[NEWLINE]Demoness: city Food +60%, Amenities +4.[NEWLINE]Hanged Man: military units heal 12 extra HP at the start of their own turn; once per unit per turn, capped at full health.[NEWLINE]Chained: military units gain +7 extra Combat Strength in their own territory (+17 including the common bonus), using current plot ownership.</Text>
+		</Replace>
 		<Replace Tag="LOC_LOTM_RESCUE_CLAN_WORKSHOP_001">
 			<Text>Rampager Workshop 1</Text>
 		</Replace>
@@ -3603,7 +3729,7 @@
 			<Text>Worm of Time · Civilization Abilities</Text>
 		</Replace>
 		<Replace Tag="LOC_LOTM_TP_ALL_ABILITIES_HINT">
-			<Text>Transferable abilities from other civilizations in this game; conditional effects require their conditions.</Text>
+			<Text>Acquired abilities from other civilizations. You may remove an ability permanently; it cannot be regained. Conditional effects still require their conditions.</Text>
 		</Replace>
 		<Replace Tag="LOC_LOTM_TP_SELECTED_ABILITY_PREFIX">
 			<Text>Selected ability:</Text>
@@ -3784,6 +3910,24 @@
 		</Replace>
 		<Replace Tag="LOC_LOTM_RESCUE_FOUND_REASON_CREATE">
 			<Text>Native city creation failed; unit and ability use were not consumed</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_TP_REMOVE_ABILITY">
+			<Text>Remove</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_TP_REMOVE_CONFIRM">
+			<Text>Remove permanently</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_TP_REMOVE_WARNING">
+			<Text>Permanently remove this civilization ability. It cannot be regained. Previously granted units, technologies and rewards are not reversed.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_TP_REMOVE_PENDING">
+			<Text>Removal pending: waiting for the effects to stop.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_TP_REMOVE_FAILED">
+			<Text>Could not verify safe removal of the saved effects. Nothing was removed; please retain the log.</Text>
+		</Replace>
+		<Replace Tag="LOC_LOTM_TP_REMOVED_ABILITY">
+			<Text>Removed civilization ability</Text>
 		</Replace>
 	</BaseGameText>
 </GameData>

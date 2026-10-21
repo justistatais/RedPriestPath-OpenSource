@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Layer="WorldAnchor">
+ <Container ID="Effects"/>
+ <Instance Name="GodBlessingFXInstance">
+  <WorldAnchor ID="Anchor" Anchor="C,C" Size="2,2">
+   <Image ID="Frames" Anchor="C,B" Offset="0,-12" Size="256,256" Texture="LOTM_GOD_FX_NIGHT_00.dds"/>
+  </WorldAnchor>
+ </Instance>
+</Context>
+

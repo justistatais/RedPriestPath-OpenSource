@@ -41,7 +41,7 @@
   <Row Tag="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_NAME"><Text>Faith Conversion</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_SHORT_NAME"><Text>Faith Conversion</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_DESCRIPTION"><Text>Completion applies the equivalent of 10 missionary spreads to the nearest city that does not follow your religion; the project can be repeated.</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_NAME"><Text>Culture Transfer</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_SHORT_NAME"><Text>Culture Transfer</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_DESCRIPTION"><Text>Completion adds tourism and directly grants 5 international tourists; the project can be repeated.</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_II_NAME"><Text>Faith Conversion II</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_II_SHORT_NAME"><Text>Faith Conversion II</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_FAITH_TRANSFER_II_DESCRIPTION"><Text>Completion applies the equivalent of 10 missionary spreads to the 5 nearest cities that do not follow your religion; the project can be repeated.</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_NAME"><Text>Culture Transfer II</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_SHORT_NAME"><Text>Culture Transfer II</Text></Row><Row Tag="LOC_PROJECT_LOTM_TP_CULTURE_TRANSFER_II_DESCRIPTION"><Text>Completion adds tourism and directly grants 15 international tourists; the project can be repeated.</Text></Row>
   <Row Tag="LOC_LOTM_TP_EXPAND"><Text>Details</Text></Row>
   <Row Tag="LOC_LOTM_TP_ALL_ABILITIES_TITLE"><Text>Worm of Time · Civilization Abilities</Text></Row>
-  <Row Tag="LOC_LOTM_TP_ALL_ABILITIES_HINT"><Text>Transferable abilities from other civilizations in this game; conditional effects require their conditions.</Text></Row>
+  <Row Tag="LOC_LOTM_TP_ALL_ABILITIES_HINT"><Text>Acquired abilities from other civilizations. You may remove an ability permanently; it cannot be regained. Conditional effects still require their conditions.</Text></Row>
   <Row Tag="LOC_LOTM_TP_SELECTED_ABILITY_PREFIX"><Text>Selected ability:</Text></Row>
   <Row Tag="LOC_LOTM_TP_STATUS_CONFIRMED"><Text>Existing attachment</Text></Row>
   <Row Tag="LOC_LOTM_TP_STATUS_ATTACHED"><Text>Attachment accepted</Text></Row>
@@ -72,4 +72,10 @@
 <Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_CITY_DISTANCE"><Text>Too close to an existing city</Text></Row>
 <Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_API"><Text>City creation API unavailable; please keep the log</Text></Row>
 <Row Tag="LOC_LOTM_RESCUE_FOUND_REASON_CREATE"><Text>Native city creation failed; unit and ability use were not consumed</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_ABILITY"><Text>Remove</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_CONFIRM"><Text>Remove permanently</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_WARNING"><Text>Permanently remove this civilization ability. It cannot be regained. Previously granted units, technologies and rewards are not reversed.</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_PENDING"><Text>Removal pending: waiting for the effects to stop.</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVE_FAILED"><Text>Could not verify safe removal of the saved effects. Nothing was removed; please retain the log.</Text></Row>
+<Row Tag="LOC_LOTM_TP_REMOVED_ABILITY"><Text>Removed civilization ability</Text></Row>
 </BaseGameText></GameData>
